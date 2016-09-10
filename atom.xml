@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-09-09T15:34:46.096Z</updated>
+  <updated>2016-09-10T02:37:56.425Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2016/09/09/Chrome%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
     <id>http://damonare.github.io/2016/09/09/Chrome控制台使用总结/</id>
     <published>2016-09-09T12:43:11.000Z</published>
-    <updated>2016-09-09T15:34:46.096Z</updated>
+    <updated>2016-09-10T02:37:56.425Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因是它速度快，体积不大，支持的新特性也比其它浏览器多，还有一部分我想就是因为它的控制台功能强大了吧，说它是神器一点也不过分，很方便。但其实很多开发者并没有用出控制台的精髓，只是使用简单的console.log();其实控制台功能远远不止这么简单哦。</p>
@@ -99,7 +99,7 @@
 <p>debug同样也是接收一个函数名作为参数。当该函数执行时自动断下来以供调试，类似于在该函数的入口处打了个断点，可以通过debugger来做到，同时也可以通过在Chrome开发者工具里找到相应源码然后手动打断点。而undebug 则是解除该断点。而其他还有好些命令则让人没有说的欲望，因为好些都可以通过Chrome开发者工具的UI界面来操作并且比用在控制台输入要方便。</p>
 </blockquote>
 <p><img src="http://img.blog.csdn.net/20160909231322130" alt=""></p>
-<p><strong>本博文依据<a href="https://developers.google.com/web/tools/chrome-devtools/debug/console/console-reference?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3#consolelogobject-object" target="_blank" rel="external">Console API文档</a>和<a href="https://developers.google.com/web/tools/chrome-devtools/debug/command-line/command-line-reference?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3#debugfunction" target="_blank" rel="external">Commond API</a>书写。</strong></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p><strong>本博文依据<a href="https://developers.google.com/web/tools/chrome-devtools/debug/console/console-reference?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3#consolelogobject-object" target="_blank" rel="external">Console API文档</a>和<a href="https://developers.google.com/web/tools/chrome-devtools/debug/command-line/command-line-reference?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3#debugfunction" target="_blank" rel="external">Commond API</a>书写。</strong></p>
 ]]></content>
     
     <summary type="html">
@@ -122,17 +122,104 @@
     <link href="http://damonare.github.io/2016/09/09/%E8%81%8A%E8%81%8Aclip-path/"/>
     <id>http://damonare.github.io/2016/09/09/聊聊clip-path/</id>
     <published>2016-09-09T08:51:00.000Z</published>
-    <updated>2016-09-09T15:34:44.654Z</updated>
+    <updated>2016-09-10T10:41:03.185Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Flilter"><a href="#Flilter" class="headerlink" title="Flilter"></a>Flilter</h3><blockquote>
+<p>filter有十种特效来处理图片，博主只放几种特效的样例给大家看一下：</p>
+<p>照片反色效果：</p>
+<p><img src="http://img.blog.csdn.net/20160910104748479" alt="照片反色"></p>
+<p>照片褐色效果：</p>
+<p><img src="http://img.blog.csdn.net/20160910104803642" alt="照片褐色"></p>
+<p>照片阴影效果：</p>
+<p><img src="http://img.blog.csdn.net/20160910104818298" alt="阴影"></p>
+</blockquote>
+<p><strong>十种特效源码:</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">-webkit-<span class="attribute">filter</span>:opacity(.<span class="number">6</span>);<span class="comment">//透明度</span></div><div class="line"><span class="attribute">filter</span>:opacity(.<span class="number">6</span>);</div><div class="line">-webkit-<span class="attribute">filter</span>:blur(<span class="number">10px</span>);<span class="comment">//照片模糊</span></div><div class="line"><span class="attribute">filter</span>:blur(<span class="number">10px</span>);</div><div class="line">-webkit-<span class="attribute">filter</span>:invert(<span class="number">1</span>);</div><div class="line"><span class="attribute">filter</span>:invert(<span class="number">1</span>);</div><div class="line">-webkit-<span class="attribute">filter</span>:saturate(<span class="number">3</span>);<span class="comment">//照片饱和度</span></div><div class="line"><span class="attribute">filter</span>:saturate(<span class="number">3</span>);</div><div class="line">-webkit-<span class="attribute">filter</span>:grayscale(<span class="number">1</span>);<span class="comment">//照片灰度</span></div><div class="line"><span class="attribute">filter</span>:grayscale(<span class="number">1</span>);</div><div class="line">-webkit-<span class="attribute">filter</span>:sepia(<span class="number">1</span>);<span class="comment">//照片褐色</span></div><div class="line"><span class="attribute">filter</span>:sepia(<span class="number">1</span>);</div><div class="line">-webkit-<span class="attribute">filter</span>:hue-rotate(<span class="number">90deg</span>);<span class="comment">//色相旋转</span></div><div class="line"><span class="attribute">filter</span>:hue-rotate(<span class="number">90deg</span>);</div><div class="line">-webkit-<span class="attribute">filter</span>:brightness(.<span class="number">5</span>);<span class="comment">//亮度</span></div><div class="line"><span class="attribute">filter</span>:brightness(.<span class="number">5</span>);</div><div class="line">-webkit-<span class="attribute">filter</span>:contrast(<span class="number">2</span>);<span class="comment">//对比度</span></div><div class="line"><span class="attribute">filter</span>:contrast(<span class="number">2</span>);</div><div class="line">-webkit-<span class="attribute">filter</span>:drop-shadow(<span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> <span class="number">#ccc</span>);<span class="comment">//阴影</span></div><div class="line"><span class="attribute">filter</span>:drop-shadow(<span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> <span class="number">#ccc</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>但实际上这个属性兼容性很低：</p>
+<p><img src="http://img.blog.csdn.net/20160910105340845" alt="can I use"></p>
+</blockquote>
+<p><strong>截止博主发文日期，Filter的兼容性如上图，我们可以看到IE是完全不支持的，Edge也是部分支持。这可能也是Filter没法用在项目中的原因之一了。感兴趣的读者可以Copy博主代码本地测试一下，或是参照<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#blur%28%29_2" target="_blank" rel="external">MDN|Filter</a>了解。博主不在这里做过多的说明了。</strong></p>
+<h3 id="clip-amp-clip-path"><a href="#clip-amp-clip-path" class="headerlink" title="clip&amp;clip-path"></a>clip&amp;clip-path</h3><blockquote>
+<p>这两个属性正是今天的重头戏，博主曾在<a href="http://damonare.github.io/2016/09/05/%E4%BB%8E%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E8%B0%88%E8%B5%B7/#more">从隐藏元素谈起</a>提起过，但并没做深入解释。是的，它可以用来隐藏元素，当然也就能处理图片了。</p>
+</blockquote>
+<ul>
+<li>clip</li>
+</ul>
+<blockquote>
+<p>clip这个属性我相信会有很大一部分人不知道，因为这个属性使用率非常的低，因为很多情况下我们会直接重新切一张新图出来代替而不会去剪裁已有的图片，但实际上这个属性用在CSS sprite简直就如同神器一般，因为在很多情况下background-position并不符合我们的需求，比如,有时我们希望Sprite图片可以延迟滚动加载，或者是可以很轻松的右键图片另存为…或是其它background-position没法满足的情景。<br>废话不多说，看样例：<br><img src="http://img.blog.csdn.net/20160910144129604" alt="这里写图片描述"></p>
+</blockquote>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">position</span>:absolute;</div><div class="line"><span class="attribute">clip</span>:rect(<span class="number">50px</span> <span class="number">250px</span> <span class="number">250px</span> <span class="number">50px</span>); <span class="comment">/* IE6, IE7 */</span></div><div class="line"><span class="attribute">clip</span>:rect(<span class="number">50px</span>,<span class="number">250px</span>,<span class="number">250px</span>,<span class="number">50px</span>);</div></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20160910182933393" alt="这里写图片描述"></p>
+<p><strong>注意，元素定位position必须是absolute或是fixed的，兼容IE6，IE7需要将值之间的逗号去掉。另外，react（top,right,bottom,left）；四个值分别是相对于图片左上角为原点的坐标值。Clip基本所有的浏览器都支持，可以放心使用。</strong></p>
+<blockquote>
+<p>让人放弃它的原因无外乎：</p>
+<ul>
+<li>clip 只对绝对定位的元素有效对于position:relative和position:static无效</li>
+<li>clip 只能用于矩形，即rect()函数</li>
+</ul>
+</blockquote>
+<ul>
+<li>clip-path</li>
+</ul>
+<blockquote>
+<p>其实clip在HTML5中已经被废弃了(依然可用)，取而代之的是clip-path。本来clip还有一个circle(圆)，但基本没有浏览器实现这个属性值，只有rect()可是使用，可能W3C也是等不下去了吧，直接推出了一个更牛逼的属性——clip-path,这个属性起初是SVG里面的然后被挪用到了CSS里面。关于SVG博主有时间会再另外介绍，这里按下不表。效果图：<br><img src="http://img.blog.csdn.net/20160910165910381" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20160910165924100" alt="这里写图片描述"></p>
+</blockquote>
+<p><strong>读者可以在<a href="http://bennettfeely.com/clippy/" target="_blank" rel="external">这里自行体验</a></strong></p>
+<blockquote>
+<p>兼容：现在为止IE 和 Edge 不支持这个属性，Firefox 仅部分支持 clip-path ，<br>Chrome、Safari 和 Opera 需要使用 -webkit- 前缀支持此属性。<br><img src="http://img.blog.csdn.net/20160910172318567" alt="这里写图片描述"><br><strong>clip-path兼容性甚至比前面说到的filter还差，所以很难真正使用起来。更多使用效果<a href="http://codepen.io/wenbin5243/pen/iheHF" target="_blank" rel="external">戳这里</a>和<a href="http://species-in-pieces.com/#" target="_blank" rel="external">这里</a></strong></p>
+</blockquote>
+<p><strong>说一下它的四个属性值：</strong></p>
+<ul>
+<li>clip-source: 可以是内、外部的SVG的clipPath元素的URL引用;</li>
+</ul>
+<ul>
+<li><p>basic-shape: 使用一些基本的形状函数创建的一个形状。主要包括circle()、ellipse()、inset()和polygon()。</p>
+</li>
+<li><p>geometry-box: 是可选参数。此参数和basic-shape函数一起使用时，可以为basic-shape的裁剪工作提供参考盒子。如果geometry-box由自身指定，那么它会使用指定盒子形状作为裁剪的路径，包括任何(由border-radius提供的)的角的形状。</p>
+</li>
+</ul>
+<p><strong>开始使用clip-path</strong></p>
+<blockquote>
+<p>在开始使用clip-path绘制图形，或者说裁剪图形之前，有两点需要大家注意：</p>
+<ul>
+<li><p>使用clip-path要从同一个方向绘制，如果顺时针绘制就一律顺时针，逆时针就一律逆时针，因为polygon是一个连续线段，若线段彼此有交集，裁剪区域就会有相减的情况发生，当然如果你特意需要这样的效果除外。</p>
+</li>
+<li><p>如果绘制时采用比例的方式绘制，长宽就必须要先行设定，不然有可能绘制出来的长宽和我们想像的就会有差距，使用像素绘制就不会有这样的现象。</p>
+</li>
+</ul>
+<p>我们就拿上面途中的六边形作为polygon()函数示例：</p>
+</blockquote>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-webkit-<span class="keyword">clip</span>-path: polygon(<span class="number">0</span>% <span class="number">50</span>%, <span class="number">25</span>% <span class="number">0</span>%, <span class="number">75</span>% <span class="number">0</span>%, <span class="number">100</span>% <span class="number">50</span>%, <span class="number">75</span>% <span class="number">100</span>%, <span class="number">25</span>% <span class="number">100</span>%);</div><div class="line"><span class="keyword">clip</span>-path: polygon(<span class="number">0</span>% <span class="number">50</span>%, <span class="number">25</span>% <span class="number">0</span>%, <span class="number">75</span>% <span class="number">0</span>%, <span class="number">100</span>% <span class="number">50</span>%, <span class="number">75</span>% <span class="number">100</span>%, <span class="number">25</span>% <span class="number">100</span>%);</div></pre></td></tr></table></figure>
+<p><strong>效果图:</strong></p>
+<p><img src="http://img.blog.csdn.net/20160910174638529" alt="效果图"></p>
+<p><strong>讲解：</strong></p>
+<p><img src="http://img.blog.csdn.net/20160910174656822" alt="这里写图片描述"></p>
+<blockquote>
+<p>每个点的第一个坐标值决定了它在 x 轴上的位置，第二个坐标值指定了它在 y 轴的位置，所有点是顺时针绘制的。其实一个 polygon（）就能满足所有的形状需要了，有自定义的API用更加方便不是么。</p>
+</blockquote>
+<p><strong>注意：inset()这个真的坑，按说同样裁剪成方形应该是和clip的rect一样用法，可不一样！</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Clip的rect</span></div><div class="line"><span class="attribute">position</span>:absolute;</div><div class="line"><span class="attribute">clip</span>:rect(<span class="number">50px</span> <span class="number">250px</span> <span class="number">250px</span> <span class="number">50px</span>);</div><div class="line"><span class="comment">//clip-path</span></div><div class="line"><span class="attribute">clip-path</span>: inset(<span class="number">50px</span> <span class="number">50px</span> <span class="number">50px</span> <span class="number">50px</span>);</div><div class="line">-webkit-<span class="attribute">clip-path</span>: inset(<span class="number">50px</span> <span class="number">50px</span> <span class="number">50px</span> <span class="number">50px</span>);</div></pre></td></tr></table></figure>
+<p><strong>本文使用图片是300*300的。</strong></p>
+<blockquote>
+<p>很明显：</p>
+</blockquote>
+ <figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cl<span class="symbol">ip:re</span>ct(<span class="number">50</span>px <span class="number">250</span>px <span class="number">250</span>px <span class="number">50</span>px);</div><div class="line">=clip-pa<span class="symbol">th:</span> inset(<span class="number">50</span>px <span class="number">50</span>px <span class="number">50</span>px <span class="number">50</span>px);</div></pre></td></tr></table></figure>
+<p>好大的一个坑….</p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><blockquote>
+<p>相信随着时代发展，clip-path会慢慢被浏览器厂商接受的。<br>本文有任何错误，欢迎评论留言。</p>
 </blockquote>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;blockquote&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！&lt;/p&gt;
 &lt;/blockquote&gt;
-
     
     </summary>
     
@@ -1760,7 +1847,7 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/05/%E4%BB%8E%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E8%B0%88%E8%B5%B7/"/>
     <id>http://damonare.github.io/2016/09/05/从隐藏元素谈起/</id>
     <published>2016-09-05T13:54:57.873Z</published>
-    <updated>2016-09-06T04:05:25.908Z</updated>
+    <updated>2016-09-10T02:02:40.473Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：</p>
 <blockquote>
@@ -1885,9 +1972,9 @@ Model：数据访问层
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="http" scheme="http://damonare.github.io/tags/http/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="网络协议" scheme="http://damonare.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
     
@@ -2251,9 +2338,9 @@ important 比 内联优先级高
     
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="http" scheme="http://damonare.github.io/tags/http/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
