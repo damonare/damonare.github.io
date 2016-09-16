@@ -355,15 +355,13 @@
   </entry>
   
   <entry>
-    <title>前端面试题目（转载）</title>
+    <title>前端面试题目</title>
     <link href="http://damonare.github.io/2016/09/07/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%A4%A7%E5%85%A8%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/"/>
     <id>http://damonare.github.io/2016/09/07/前端面试大全（转载）/</id>
     <published>2016-09-07T14:06:38.001Z</published>
-    <updated>2016-09-07T14:08:40.175Z</updated>
+    <updated>2016-09-16T02:56:19.950Z</updated>
     
-    <content type="html"><![CDATA[<p>原文地址：<a href="https://github.com/helloqingfeng/Awsome-Front-End-learning-resource/tree/master/21-Front-end-Interview-questions" target="_blank" rel="external">前端面试</a><br>本文旨在加深对前端知识点的理解，资料来源于网络，由本人(博客：<a href="http://segmentfault.com/u/trigkit4" target="_blank" rel="external">http://segmentfault.com/u/trigkit4</a>) 收集整理。</p>
-<a id="more"></a>
-<h4 id="一些开放性题目"><a href="#一些开放性题目" class="headerlink" title="一些开放性题目"></a>一些开放性题目</h4><pre><code>1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
+    <content type="html"><![CDATA[<h4 id="一些开放性题目"><a href="#一些开放性题目" class="headerlink" title="一些开放性题目"></a>一些开放性题目</h4><pre><code>1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
 
 2.项目介绍
 
@@ -373,6 +371,7 @@
 
 5.未来三到五年的规划是怎样的？
 </code></pre><p><br></p>
+<a id="more"></a>
 <h4 id="position的值，-relative和absolute分别是相对于谁进行定位的？"><a href="#position的值，-relative和absolute分别是相对于谁进行定位的？" class="headerlink" title="position的值， relative和absolute分别是相对于谁进行定位的？"></a>position的值， relative和absolute分别是相对于谁进行定位的？</h4><ul>
 <li><p><code>absolute</code> :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。</p>
 </li>
@@ -1363,7 +1362,16 @@ Model：数据访问层
     
     <summary type="html">
     
-      &lt;p&gt;原文地址：&lt;a href=&quot;https://github.com/helloqingfeng/Awsome-Front-End-learning-resource/tree/master/21-Front-end-Interview-questions&quot;&gt;前端面试&lt;/a&gt;&lt;br&gt;本文旨在加深对前端知识点的理解，资料来源于网络，由本人(博客：&lt;a href=&quot;http://segmentfault.com/u/trigkit4&quot;&gt;http://segmentfault.com/u/trigkit4&lt;/a&gt;) 收集整理。&lt;/p&gt;
+      &lt;h4 id=&quot;一些开放性题目&quot;&gt;&lt;a href=&quot;#一些开放性题目&quot; class=&quot;headerlink&quot; title=&quot;一些开放性题目&quot;&gt;&lt;/a&gt;一些开放性题目&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
+
+2.项目介绍
+
+3.如何看待前端开发？
+
+4.平时是如何学习前端开发的？
+
+5.未来三到五年的规划是怎样的？
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1372,11 +1380,11 @@ Model：数据访问层
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
-      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
@@ -1832,11 +1840,11 @@ Model：数据访问层
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
-      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
       <category term="前端构建工具" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
     
@@ -1847,9 +1855,10 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/05/%E4%BB%8E%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E8%B0%88%E8%B5%B7/"/>
     <id>http://damonare.github.io/2016/09/05/从隐藏元素谈起/</id>
     <published>2016-09-05T13:54:57.873Z</published>
-    <updated>2016-09-10T02:02:40.473Z</updated>
+    <updated>2016-09-10T15:33:43.960Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：</p>
+    <content type="html"><![CDATA[<p><strong>念念不忘,必有回响,有一口气,点一盏灯。</strong></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：</p>
 <blockquote>
 <p>overflow:hidden<br>opacity:0；<br>visibility:hidden<br>display:none<br>position:absolute<br>clip(clip-path):rect()/inset()/polygon()<br>z-index:-1000</p>
 </blockquote>
@@ -1879,7 +1888,8 @@ Model：数据访问层
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;念念不忘,必有回响,有一口气,点一盏灯。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;overflow:hidden&lt;br&gt;opacity:0；&lt;br&gt;visibility:hidden&lt;br&gt;display:none&lt;br&gt;position:absolute&lt;br&gt;clip(clip-path):rect()/inset()/polygon()&lt;br&gt;z-index:-1000&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1972,9 +1982,9 @@ Model：数据访问层
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="http" scheme="http://damonare.github.io/tags/http/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="http" scheme="http://damonare.github.io/tags/http/"/>
     
       <category term="网络协议" scheme="http://damonare.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
     
@@ -2334,13 +2344,13 @@ important 比 内联优先级高
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
-      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
-      <category term="http" scheme="http://damonare.github.io/tags/http/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
+    
+      <category term="http" scheme="http://damonare.github.io/tags/http/"/>
     
   </entry>
   
