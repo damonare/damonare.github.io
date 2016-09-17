@@ -4,22 +4,35 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Damonare的个人博客</title>
+  <title>十大经典排序算法 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果时间可以停止，希望它就停止在现在。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Damonare的个人博客">
-<meta property="og:url" content="http://damonare.github.io/index.html">
+  <meta name="description" content="前言**读者自行尝试可以想看源码戳这，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374">
+<meta property="og:type" content="article">
+<meta property="og:title" content="十大经典排序算法">
+<meta property="og:url" content="http://damonare.github.io/2016/09/16/十大经典排序算法总结（javascript描述）/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="如果时间可以停止，希望它就停止在现在。">
+<meta property="og:description" content="前言**读者自行尝试可以想看源码戳这，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374">
+<meta property="og:image" content="http://img.blog.csdn.net/20160916160748389">
+<meta property="og:image" content="http://img.blog.csdn.net/20160916164754013">
+<meta property="og:image" content="http://img.blog.csdn.net/20160916174656100">
+<meta property="og:image" content="http://img.blog.csdn.net/20160916173802597">
+<meta property="og:image" content="http://img.blog.csdn.net/20160916235203417">
+<meta property="og:image" content="http://img.blog.csdn.net/20160917001326254">
+<meta property="og:image" content="http://img.blog.csdn.net/20160917003004906">
+<meta property="og:image" content="http://img.blog.csdn.net/20160917105502853">
+<meta property="og:image" content="http://img.blog.csdn.net/20160917110641479">
+<meta property="og:image" content="http://img.blog.csdn.net/20160917111945979">
+<meta property="og:image" content="http://img.blog.csdn.net/20160917123313659">
+<meta property="og:updated_time" content="2016-09-17T05:23:41.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Damonare的个人博客">
-<meta name="twitter:description" content="如果时间可以停止，希望它就停止在现在。">
+<meta name="twitter:title" content="十大经典排序算法">
+<meta name="twitter:description" content="前言**读者自行尝试可以想看源码戳这，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160916160748389">
   
   
     <link rel="icon" href="/./img/1.png">
   
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
   <link rel="stylesheet" href="../../../../css/css/font-awesome.min.css">
 </head>
 
@@ -92,19 +105,19 @@
 					<nav class="header-menu">
 						<ul>
 						
-							<li><a href="index.html">主页</a></li>
+							<li><a href="../../../../index.html">主页</a></li>
 				        
 							<li><a href="http://www.damonare.cn/">博客首页</a></li>
 				        
-							<li><a href="/archives">所有文章</a></li>
+							<li><a href="../../../../archives">所有文章</a></li>
 				        
-							<li><a href="/categories/随笔/">随笔</a></li>
+							<li><a href="../../../../categories/随笔/">随笔</a></li>
 				        
-							<li><a href="/categories/learn/">学习</a></li>
+							<li><a href="../../../../categories/learn/">学习</a></li>
 				        
-							<li><a href="/categories/life/">生活</a></li>
+							<li><a href="../../../../categories/life/">生活</a></li>
 				        
-							<li><a href="/categories/其它/">其它</a></li>
+							<li><a href="../../../../categories/其它/">其它</a></li>
 				        
 						</ul>
 					</nav>
@@ -127,7 +140,7 @@
 					        
 								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
 					        
-								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
 					        
 						</div>
 					</nav>
@@ -136,7 +149,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="tags/CSS/" style="font-size: 18px;">CSS</a> <a href="tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="tags/Fighting/" style="font-size: 12px;">Fighting</a> <a href="tags/HTML/" style="font-size: 14px;">HTML</a> <a href="tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="tags/http/" style="font-size: 12px;">http</a> <a href="tags/前端/" style="font-size: 16px;">前端</a> <a href="tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="tags/工具/" style="font-size: 10px;">工具</a> <a href="tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="tags/算法/" style="font-size: 10px;">算法</a> <a href="tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="tags/读书/" style="font-size: 10px;">读书</a> <a href="tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Fighting/" style="font-size: 12px;">Fighting</a> <a href="../../../../tags/HTML/" style="font-size: 14px;">HTML</a> <a href="../../../../tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/前端/" style="font-size: 16px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="../../../../tags/读书/" style="font-size: 10px;">读书</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -192,19 +205,19 @@
 			<nav class="header-menu">
 				<ul>
 				
-					<li><a href="index.html">主页</a></li>
+					<li><a href="../../../../index.html">主页</a></li>
 		        
 					<li><a href="http://www.damonare.cn/">博客首页</a></li>
 		        
-					<li><a href="/archives">所有文章</a></li>
+					<li><a href="../../../../archives">所有文章</a></li>
 		        
-					<li><a href="/categories/随笔/">随笔</a></li>
+					<li><a href="../../../../categories/随笔/">随笔</a></li>
 		        
-					<li><a href="/categories/learn/">学习</a></li>
+					<li><a href="../../../../categories/learn/">学习</a></li>
 		        
-					<li><a href="/categories/life/">生活</a></li>
+					<li><a href="../../../../categories/life/">生活</a></li>
 		        
-					<li><a href="/categories/其它/">其它</a></li>
+					<li><a href="../../../../categories/其它/">其它</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -228,7 +241,7 @@
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
 			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
 			        
 				</div>
 			</nav>
@@ -236,12 +249,10 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-十大经典排序算法总结（javascript描述）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-十大经典排序算法总结（javascript描述）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="2016/09/16/十大经典排序算法总结（javascript描述）/" class="article-date">
+      <a href="" class="article-date">
   	<time datetime="2016-09-16T06:39:04.538Z" itemprop="datePublished">2016-09-16</time>
 </a>
     </div>
@@ -254,17 +265,44 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/16/十大经典排序算法总结（javascript描述）/">十大经典排序算法</a>
+    <h1 class="article-title" itemprop="name">
+      十大经典排序算法
     </h1>
   
 
       </header>
       
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/算法/">算法</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../../../categories/learn/">学习</a>
+	</div>
+
+
+    
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  热度： <span id="busuanzi_value_page_pv"></span>℃</span>
+  </div>
+  
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
           <!-- Table of Contents -->
+      
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-选择排序（Selection-Sort）"><span class="toc-number">1.1.</span> <span class="toc-text">2.选择排序（Selection Sort）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法简介"><span class="toc-number">1.1.1.</span> <span class="toc-text">(1)算法简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-算法描述和实现"><span class="toc-number">1.1.2.</span> <span class="toc-text">(2)算法描述和实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-算法分析"><span class="toc-number">1.1.3.</span> <span class="toc-text">(3)算法分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-插入排序（Insertion-Sort）"><span class="toc-number">2.</span> <span class="toc-text">3.插入排序（Insertion Sort）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法简介-1"><span class="toc-number">2.0.1.</span> <span class="toc-text">(1)算法简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-算法描述和实现-1"><span class="toc-number">2.0.2.</span> <span class="toc-text">(2)算法描述和实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-算法分析-1"><span class="toc-number">2.0.3.</span> <span class="toc-text">(3)算法分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-希尔排序（Shell-Sort）"><span class="toc-number">2.1.</span> <span class="toc-text">4.希尔排序（Shell Sort）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法简介-2"><span class="toc-number">2.1.1.</span> <span class="toc-text">(1)算法简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-算法描述和实现-2"><span class="toc-number">2.1.2.</span> <span class="toc-text">(2)算法描述和实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）算法分析"><span class="toc-number">2.1.3.</span> <span class="toc-text">（3）算法分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-归并排序（Merge-Sort）"><span class="toc-number">2.2.</span> <span class="toc-text">5.归并排序（Merge Sort）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法简介-3"><span class="toc-number">2.2.1.</span> <span class="toc-text">(1)算法简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-算法描述和实现-3"><span class="toc-number">2.2.2.</span> <span class="toc-text">(2)算法描述和实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-算法分析-2"><span class="toc-number">2.2.3.</span> <span class="toc-text">(3)算法分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-快速排序（Quick-Sort）"><span class="toc-number">2.3.</span> <span class="toc-text">6.快速排序（Quick Sort）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法简介-4"><span class="toc-number">2.3.1.</span> <span class="toc-text">(1)算法简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-算法描述和实现-4"><span class="toc-number">2.3.2.</span> <span class="toc-text">(2)算法描述和实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-算法分析-3"><span class="toc-number">2.3.3.</span> <span class="toc-text">(3)算法分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-堆排序（Heap-Sort）"><span class="toc-number">2.4.</span> <span class="toc-text">7.堆排序（Heap Sort）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法简介-5"><span class="toc-number">2.4.1.</span> <span class="toc-text">(1)算法简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-算法描述和实现-5"><span class="toc-number">2.4.2.</span> <span class="toc-text">(2)算法描述和实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-算法分析-4"><span class="toc-number">2.4.3.</span> <span class="toc-text">(3)算法分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-计数排序（Counting-Sort）"><span class="toc-number">2.5.</span> <span class="toc-text">8.计数排序（Counting Sort）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法简介-6"><span class="toc-number">2.5.1.</span> <span class="toc-text">(1)算法简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-算法描述和实现-6"><span class="toc-number">2.5.2.</span> <span class="toc-text">(2)算法描述和实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-算法分析-5"><span class="toc-number">2.5.3.</span> <span class="toc-text">(3)算法分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-桶排序（Bucket-Sort）"><span class="toc-number">2.6.</span> <span class="toc-text">9.桶排序（Bucket Sort）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法简介-7"><span class="toc-number">2.6.1.</span> <span class="toc-text">(1)算法简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-算法描述和实现-7"><span class="toc-number">2.6.2.</span> <span class="toc-text">(2)算法描述和实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-算法分析-6"><span class="toc-number">2.6.3.</span> <span class="toc-text">(3)算法分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-基数排序（Radix-Sort）"><span class="toc-number">2.7.</span> <span class="toc-text">10.基数排序（Radix Sort）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法简介-8"><span class="toc-number">2.7.1.</span> <span class="toc-text">(1)算法简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-算法描述和实现-8"><span class="toc-number">2.7.2.</span> <span class="toc-text">(2)算法描述和实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-算法分析-7"><span class="toc-number">2.7.3.</span> <span class="toc-text">(3)算法分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
+        </div>
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>**读者自行尝试可以<a href="https://github.com/damonare/Sorts" target="_blank" rel="external">想看源码戳这</a>，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!-- more--&gt;</div><div class="line"></div><div class="line">&gt; - 这世界上总存在着那么一些看似相似但有完全不同的东西，比如雷锋和雷峰塔，小平和小平头，玛丽和马里奥，Java和javascript....当年javascript为了抱Java大腿恬不知耻的让自己变成了Java的干儿子，哦，不是应该是跪舔，毕竟都跟了Java的姓了。可如今，javascript来了个咸鱼翻身，几乎要统治web领域，Nodejs，React Native的出现使得javascript在后端和移动端都开始占有了一席之地。可以这么说,在Web的江湖，&lt;mark&gt;JavaScript可谓风头无两，已经坐上了头把交椅。&lt;/mark&gt;</div><div class="line">&gt; - 在传统的计算机算法和数据结构领域，大多数专业教材和书籍的默认语言都是Java或者C/C+ +，O’REILLY家倒是出了一本叫做《数据结构与算法javascript描述》的书，但不得不说，不知道是作者吃了shit还是译者根本就没校对，满书的小错误，这就像那种无穷无尽的小bug一样,简直就是让人有种嘴里塞满了shit的感觉，吐也不是咽下去也不是。对于一个前端来说，尤其是笔试面试的时候，算法方面考的其实不难（&lt;mark&gt;十大排序算法或是和十大排序算法同等难度的&lt;/mark&gt;），但就是之前没用javascript实现过或是没仔细看过相关算法的原理，导致写起来浪费很多时间。所以撸一撸袖子决定自己查资料自己总结一篇博客等用到了直接看自己的博客就OK了，正所谓靠天靠地靠大牛不如靠自己(ˉ(∞)ˉ)。</div><div class="line">&gt; - 算法的由来：9世纪波斯数学家提出的：“al-Khowarizmi”就是下图这货（感觉重要数学元素提出者貌似都戴了顶白帽子），开个玩笑，阿拉伯人对于数学史的贡献还是值得人敬佩的。</div><div class="line">&gt; ![大大](http://img.blog.csdn.net/20160916152402267)</div><div class="line"></div><div class="line">## 正文</div><div class="line"></div><div class="line">### 排序算法说明</div><div class="line"></div><div class="line">**（1）排序的定义：对一序列对象根据某个关键字进行排序；**</div><div class="line"></div><div class="line">输入：n个数：a1,a2,a3,...,an</div><div class="line">输出：n个数的排列:a1&apos;,a2&apos;,a3&apos;,...,an&apos;，使得a1&apos;&lt;=a2&apos;&lt;=a3&apos;&lt;=...&lt;=an&apos;。</div><div class="line"></div><div class="line">再讲的形象点就是排排坐，调座位，高的站在后面，矮的站在前面咯。</div><div class="line"></div><div class="line"></div><div class="line">**（3）对于评述算法优劣术语的说明**</div><div class="line"></div><div class="line">**稳定**：如果a原本在b前面，而a=b，排序之后a仍然在b的前面；</div><div class="line">**不稳定**：如果a原本在b的前面，而a=b，排序之后a可能会出现在b的后面；</div><div class="line"></div><div class="line">**内排序**：所有排序操作都在内存中完成；</div><div class="line">**外排序**：由于数据太大，因此把数据放在磁盘中，而排序通过磁盘和内存的数据传输才能进行；</div><div class="line"></div><div class="line">**时间复杂度**: 一个算法执行所耗费的时间。</div><div class="line">**空间复杂度**: 运行完一个程序所需内存的大小。</div><div class="line"></div><div class="line">关于时间空间复杂度的更多了解请戳[这里](http://blog.csdn.net/booirror/article/details/7707551/)，或是看书程杰大大编写的《大话数据结构》还是很赞的，通俗易懂。</div><div class="line"></div><div class="line">**（4）排序算法图片总结(图片来源于网络):**</div><div class="line"></div><div class="line">排序对比：</div><div class="line"></div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20160916153212716)</div><div class="line"></div><div class="line">**图片名词解释：**</div><div class="line">n: 数据规模</div><div class="line">k:“桶”的个数</div><div class="line">In-place: 占用常数内存，不占用额外内存</div><div class="line">Out-place: 占用额外内存</div><div class="line"></div><div class="line">排序分类：</div><div class="line"></div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20160916154036887)</div><div class="line"></div><div class="line">### 1.冒泡排序（Bubble Sort）</div><div class="line"></div><div class="line">&gt; 好的，开始总结第一个排序算法，冒泡排序。我想对于它每个学过C语言的都会了解的吧，这可能是很多人接触的第一个排序算法。</div><div class="line"></div><div class="line">#### (1)算法描述</div><div class="line"></div><div class="line">&gt; 冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</div><div class="line"></div><div class="line">#### (2)算法描述和实现</div><div class="line"></div><div class="line">具体算法描述如下：</div><div class="line"></div><div class="line">- &lt;1&gt;.比较相邻的元素。如果第一个比第二个大，就交换它们两个；</div><div class="line">-  &lt;2&gt;.对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</div><div class="line">-  &lt;3&gt;.针对所有的元素重复以上的步骤，除了最后一个；</div><div class="line">-  &lt;4&gt;.重复步骤1~3，直到排序完成。</div><div class="line"></div><div class="line">**JavaScript代码实现：**</div><div class="line"></div><div class="line">```</div><div class="line">function bubbleSort(arr) &#123;</div><div class="line">    var len = arr.length;</div><div class="line">    for (var i = 0; i &lt; len; i++) &#123;</div><div class="line">        for (var j = 0; j &lt; len - 1 - i; j++) &#123;</div><div class="line">            if (arr[j] &gt; arr[j+1]) &#123;        //相邻元素两两对比</div><div class="line">                var temp = arr[j+1];        //元素交换</div><div class="line">                arr[j+1] = arr[j];</div><div class="line">                arr[j] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return arr;</div><div class="line">&#125;</div><div class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</div><div class="line">console.log(bubbleSort(arr));//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</div><div class="line">```</div><div class="line">&gt;**改进冒泡排序： **设置一标志性变量pos,用于记录每趟排序中最后一次进行交换的位置。由于pos位置之后的记录均已交换到位,故在进行下一趟排序时只要扫描到pos位置即可。</div><div class="line"></div><div class="line">改进后算法如下:</div><div class="line">```</div><div class="line"></div><div class="line">function bubbleSort2(arr) &#123;</div><div class="line">    console.time(&apos;改进后冒泡排序耗时&apos;);</div><div class="line">    var i = arr.length-1;  //初始时,最后位置保持不变</div><div class="line">    while ( i&gt; 0) &#123;</div><div class="line">        var pos= 0; //每趟开始时,无记录交换</div><div class="line">        for (var j= 0; j&lt; i; j++)</div><div class="line">            if (arr[j]&gt; arr[j+1]) &#123;</div><div class="line">                pos= j; //记录交换的位置</div><div class="line">                var tmp = arr[j]; arr[j]=arr[j+1];arr[j+1]=tmp;</div><div class="line">            &#125;</div><div class="line">        i= pos; //为下一趟排序作准备</div><div class="line">     &#125;</div><div class="line">     console.timeEnd(&apos;改进后冒泡排序耗时&apos;);</div><div class="line">     return arr;</div><div class="line">&#125;</div><div class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</div><div class="line">console.log(bubbleSort2(arr));//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</div><div class="line">```</div><div class="line">&gt; 传统冒泡排序中每一趟排序操作只能找到一个最大值或最小值,我们考虑利用在每趟排序中进行正向和反向两遍冒泡的方法一次可以得到两个最终值(最大者和最小者) , 从而使排序趟数几乎减少了一半。</div><div class="line"></div><div class="line">改进后的算法实现为:</div><div class="line">```</div><div class="line">function bubbleSort3(arr3) &#123;</div><div class="line">    var low = 0;</div><div class="line">    var high= arr.length-1; //设置变量的初始值</div><div class="line">    var tmp,j;</div><div class="line">    console.time(&apos;2.改进后冒泡排序耗时&apos;);</div><div class="line">    while (low &lt; high) &#123;</div><div class="line">        for (j= low; j&lt; high; ++j) //正向冒泡,找到最大者</div><div class="line">            if (arr[j]&gt; arr[j+1]) &#123;</div><div class="line">                tmp = arr[j]; arr[j]=arr[j+1];arr[j+1]=tmp;</div><div class="line">            &#125;</div><div class="line">        --high;                 //修改high值, 前移一位</div><div class="line">        for (j=high; j&gt;low; --j) //反向冒泡,找到最小者</div><div class="line">            if (arr[j]&lt;arr[j-1]) &#123;</div><div class="line">                tmp = arr[j]; arr[j]=arr[j-1];arr[j-1]=tmp;</div><div class="line">            &#125;</div><div class="line">        ++low;                  //修改low值,后移一位</div><div class="line">    &#125;</div><div class="line">    console.timeEnd(&apos;2.改进后冒泡排序耗时&apos;);</div><div class="line">    return arr3;</div><div class="line">&#125;</div><div class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</div><div class="line">console.log(bubbleSort3(arr));//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</div><div class="line">```</div><div class="line">三种方法耗时对比：</div><div class="line"></div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20160916163126374)</div><div class="line"></div><div class="line">&gt; 由图可以看出改进后的冒泡排序明显的时间复杂度更低，耗时更短了。读者自行尝试可以戳这，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦</div></pre></td></tr></table></figure></p>
 <p><strong>冒泡排序动图演示:</strong></p>
@@ -516,24 +554,19 @@
   
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/算法/">算法</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/learn/">学习</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="../../09/Chrome控制台使用总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Chrome控制台实用指南</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
   
 
@@ -543,655 +576,43 @@
 
 
 
+<div class="ds-share" data-thread-key="十大经典排序算法总结（javascript描述）" data-title="十大经典排序算法" data-images="http://damonare.github.io" data-content="十大经典排序算法" data-url="https://damonare.github.io">
+	<div class="ds-share-inline">
+	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
+
+	   <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);"></a></li>
+	   <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+	   <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+	   <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+	   <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+
+	 </ul>
+	 <div class="ds-share-icons-more">
+	 </div>
+   </div>
+</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="十大经典排序算法总结（javascript描述）" data-title="十大经典排序算法" data-url="http://damonare.github.io"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"damonare"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://damonare.cn/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
-  
-    <article id="post-Chrome控制台使用总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/09/Chrome控制台使用总结/" class="article-date">
-  	<time datetime="2016-09-09T12:43:11.000Z" itemprop="datePublished">2016-09-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/09/Chrome控制台使用总结/">Chrome控制台实用指南</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因是它速度快，体积不大，支持的新特性也比其它浏览器多，还有一部分我想就是因为它的控制台功能强大了吧，说它是神器一点也不过分，很方便。但其实很多开发者并没有用出控制台的精髓，只是使用简单的console.log();其实控制台功能远远不止这么简单哦。</p>
-</blockquote>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/工具/">工具</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/其它/">其它</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/09/Chrome控制台使用总结/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-聊聊clip-path" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/09/聊聊clip-path/" class="article-date">
-  	<time datetime="2016-09-09T08:51:00.000Z" itemprop="datePublished">2016-09-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/09/聊聊clip-path/">聊聊Clip-Path</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！</p>
-</blockquote>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/CSS3/">CSS3</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/09/聊聊clip-path/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-《生死疲劳》读后感" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/07/《生死疲劳》读后感/" class="article-date">
-  	<time datetime="2016-09-07T14:46:12.078Z" itemprop="datePublished">2016-09-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/07/《生死疲劳》读后感/">书感</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>也看过不少的书，记忆中似乎也只有平凡的世界还尚可与之媲美。可今日只想独独为它写一篇日志，这本引起我诸多情感久久无法释怀的《生死疲劳》！</p>
-</blockquote>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/读书/">读书</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/其它/">其它</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/07/《生死疲劳》读后感/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-无论如何，一定要对得起自己的野心！——兼忆高三" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/07/无论如何，一定要对得起自己的野心！——兼忆高三/" class="article-date">
-  	<time datetime="2016-09-07T14:43:49.078Z" itemprop="datePublished">2016-09-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/07/无论如何，一定要对得起自己的野心！——兼忆高三/">无论如何，一定要对得起自己的野心</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>记忆刻满了泪痕，带着泪迹的我向青春诉说高三的往事，时间风干了写满字迹的试卷，却没有风干我们的记忆。那时候我们还在高三，那时候我们习惯在天朦胧时起床，习惯用冰凉的冷水洗漱，习惯了懒得吃早餐直奔教室，习惯了每天下午用零食对付晚饭，习惯了每节晚自习课代表催促交作业的声音。<br>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Fighting/">Fighting</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/life/">生活</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/07/无论如何，一定要对得起自己的野心！——兼忆高三/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-写在秋招之际" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/07/写在秋招之际/" class="article-date">
-  	<time datetime="2016-09-07T14:09:22.232Z" itemprop="datePublished">2016-09-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/07/写在秋招之际/">写在秋招之际</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>人生总是会存在那么些说不清道不明的关系。</strong></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。</p>
-</blockquote>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Fighting/">Fighting</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/其它/">其它</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/07/写在秋招之际/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-前端面试大全（转载）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/07/前端面试大全（转载）/" class="article-date">
-  	<time datetime="2016-09-07T14:06:38.001Z" itemprop="datePublished">2016-09-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/07/前端面试大全（转载）/">前端面试题目</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一些开放性题目"><a href="#一些开放性题目" class="headerlink" title="一些开放性题目"></a>一些开放性题目</h4><pre><code>1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
-
-2.项目介绍
-
-3.如何看待前端开发？
-
-4.平时是如何学习前端开发的？
-
-5.未来三到五年的规划是怎样的？
-</code></pre><p><br></p>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/面试/">面试</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/其它/">其它</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/07/前端面试大全（转载）/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Hexo折腾记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/06/Hexo折腾记/" class="article-date">
-  	<time datetime="2016-09-05T16:17:05.192Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/06/Hexo折腾记/">Hexo折腾记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>如果时间可以静止，我希望就停在此刻。</p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>博主之前也有折腾wordpress和jekyll可对于一个前端er来说，wordpress让人没法尽兴，因为不知道该如何添加自己的代码。而jekyll就太麻烦了每一次都需要重新提交，而且样式也不是很丰富，简直就和鸡肋一般。食之无味，弃之可惜。</p>
-</blockquote>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Hexo/">Hexo</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/life/">生活</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/06/Hexo折腾记/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-javascript作用域总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/06/javascript作用域总结/" class="article-date">
-  	<time datetime="2016-09-05T16:04:16.808Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/06/javascript作用域总结/">Javascript作用域总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><blockquote>
-<p>作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。</p>
-</blockquote>
-<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/06/javascript作用域总结/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-javscript闭包浅谈" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/06/javscript闭包浅谈/" class="article-date">
-  	<time datetime="2016-09-05T16:02:50.096Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/06/javscript闭包浅谈/">Javascript闭包总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript的闭包"><a href="#JavaScript的闭包" class="headerlink" title="JavaScript的闭包"></a>JavaScript的闭包</h2><hr>
-<p>&nbsp;&nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。</p>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/06/javscript闭包浅谈/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
-    </nav>
-  
 </div>
       
 <footer id="footer">
@@ -1213,7 +634,7 @@ var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a|
 
     </div>
     
-  <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -1221,8 +642,8 @@ var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a|
         fancybox: true,
         mathjax: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -1231,7 +652,7 @@ var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a|
 </script>
 <script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-<script src="js/main.js"></script>
+<script src="../../../../js/main.js"></script>
 
 
 
