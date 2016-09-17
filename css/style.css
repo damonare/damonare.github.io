@@ -908,6 +908,11 @@ a {
   margin-right: 10px;
   margin-top: 9px;
 }
+@media (max-width: 768px) {
+  #img_site {
+    width: 90%;
+  }
+}
 .article-hit {
   display: inline-block;
   text-decoration: none;
