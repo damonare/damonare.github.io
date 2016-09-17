@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-09-17T05:23:41.822Z</updated>
+  <updated>2016-09-17T05:38:26.646Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,9 +20,59 @@
     <link href="http://damonare.github.io/2016/09/16/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%EF%BC%88javascript%E6%8F%8F%E8%BF%B0%EF%BC%89/"/>
     <id>http://damonare.github.io/2016/09/16/十大经典排序算法总结（javascript描述）/</id>
     <published>2016-09-16T06:39:04.538Z</published>
-    <updated>2016-09-17T05:23:41.822Z</updated>
+    <updated>2016-09-17T05:38:26.646Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>**读者自行尝试可以<a href="https://github.com/damonare/Sorts" target="_blank" rel="external">想看源码戳这</a>，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!-- more--&gt;</div><div class="line"></div><div class="line">&gt; - 这世界上总存在着那么一些看似相似但有完全不同的东西，比如雷锋和雷峰塔，小平和小平头，玛丽和马里奥，Java和javascript....当年javascript为了抱Java大腿恬不知耻的让自己变成了Java的干儿子，哦，不是应该是跪舔，毕竟都跟了Java的姓了。可如今，javascript来了个咸鱼翻身，几乎要统治web领域，Nodejs，React Native的出现使得javascript在后端和移动端都开始占有了一席之地。可以这么说,在Web的江湖，&lt;mark&gt;JavaScript可谓风头无两，已经坐上了头把交椅。&lt;/mark&gt;</div><div class="line">&gt; - 在传统的计算机算法和数据结构领域，大多数专业教材和书籍的默认语言都是Java或者C/C+ +，O’REILLY家倒是出了一本叫做《数据结构与算法javascript描述》的书，但不得不说，不知道是作者吃了shit还是译者根本就没校对，满书的小错误，这就像那种无穷无尽的小bug一样,简直就是让人有种嘴里塞满了shit的感觉，吐也不是咽下去也不是。对于一个前端来说，尤其是笔试面试的时候，算法方面考的其实不难（&lt;mark&gt;十大排序算法或是和十大排序算法同等难度的&lt;/mark&gt;），但就是之前没用javascript实现过或是没仔细看过相关算法的原理，导致写起来浪费很多时间。所以撸一撸袖子决定自己查资料自己总结一篇博客等用到了直接看自己的博客就OK了，正所谓靠天靠地靠大牛不如靠自己(ˉ(∞)ˉ)。</div><div class="line">&gt; - 算法的由来：9世纪波斯数学家提出的：“al-Khowarizmi”就是下图这货（感觉重要数学元素提出者貌似都戴了顶白帽子），开个玩笑，阿拉伯人对于数学史的贡献还是值得人敬佩的。</div><div class="line">&gt; ![大大](http://img.blog.csdn.net/20160916152402267)</div><div class="line"></div><div class="line">## 正文</div><div class="line"></div><div class="line">### 排序算法说明</div><div class="line"></div><div class="line">**（1）排序的定义：对一序列对象根据某个关键字进行排序；**</div><div class="line"></div><div class="line">输入：n个数：a1,a2,a3,...,an</div><div class="line">输出：n个数的排列:a1&apos;,a2&apos;,a3&apos;,...,an&apos;，使得a1&apos;&lt;=a2&apos;&lt;=a3&apos;&lt;=...&lt;=an&apos;。</div><div class="line"></div><div class="line">再讲的形象点就是排排坐，调座位，高的站在后面，矮的站在前面咯。</div><div class="line"></div><div class="line"></div><div class="line">**（3）对于评述算法优劣术语的说明**</div><div class="line"></div><div class="line">**稳定**：如果a原本在b前面，而a=b，排序之后a仍然在b的前面；</div><div class="line">**不稳定**：如果a原本在b的前面，而a=b，排序之后a可能会出现在b的后面；</div><div class="line"></div><div class="line">**内排序**：所有排序操作都在内存中完成；</div><div class="line">**外排序**：由于数据太大，因此把数据放在磁盘中，而排序通过磁盘和内存的数据传输才能进行；</div><div class="line"></div><div class="line">**时间复杂度**: 一个算法执行所耗费的时间。</div><div class="line">**空间复杂度**: 运行完一个程序所需内存的大小。</div><div class="line"></div><div class="line">关于时间空间复杂度的更多了解请戳[这里](http://blog.csdn.net/booirror/article/details/7707551/)，或是看书程杰大大编写的《大话数据结构》还是很赞的，通俗易懂。</div><div class="line"></div><div class="line">**（4）排序算法图片总结(图片来源于网络):**</div><div class="line"></div><div class="line">排序对比：</div><div class="line"></div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20160916153212716)</div><div class="line"></div><div class="line">**图片名词解释：**</div><div class="line">n: 数据规模</div><div class="line">k:“桶”的个数</div><div class="line">In-place: 占用常数内存，不占用额外内存</div><div class="line">Out-place: 占用额外内存</div><div class="line"></div><div class="line">排序分类：</div><div class="line"></div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20160916154036887)</div><div class="line"></div><div class="line">### 1.冒泡排序（Bubble Sort）</div><div class="line"></div><div class="line">&gt; 好的，开始总结第一个排序算法，冒泡排序。我想对于它每个学过C语言的都会了解的吧，这可能是很多人接触的第一个排序算法。</div><div class="line"></div><div class="line">#### (1)算法描述</div><div class="line"></div><div class="line">&gt; 冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</div><div class="line"></div><div class="line">#### (2)算法描述和实现</div><div class="line"></div><div class="line">具体算法描述如下：</div><div class="line"></div><div class="line">- &lt;1&gt;.比较相邻的元素。如果第一个比第二个大，就交换它们两个；</div><div class="line">-  &lt;2&gt;.对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</div><div class="line">-  &lt;3&gt;.针对所有的元素重复以上的步骤，除了最后一个；</div><div class="line">-  &lt;4&gt;.重复步骤1~3，直到排序完成。</div><div class="line"></div><div class="line">**JavaScript代码实现：**</div><div class="line"></div><div class="line">```</div><div class="line">function bubbleSort(arr) &#123;</div><div class="line">    var len = arr.length;</div><div class="line">    for (var i = 0; i &lt; len; i++) &#123;</div><div class="line">        for (var j = 0; j &lt; len - 1 - i; j++) &#123;</div><div class="line">            if (arr[j] &gt; arr[j+1]) &#123;        //相邻元素两两对比</div><div class="line">                var temp = arr[j+1];        //元素交换</div><div class="line">                arr[j+1] = arr[j];</div><div class="line">                arr[j] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return arr;</div><div class="line">&#125;</div><div class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</div><div class="line">console.log(bubbleSort(arr));//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</div><div class="line">```</div><div class="line">&gt;**改进冒泡排序： **设置一标志性变量pos,用于记录每趟排序中最后一次进行交换的位置。由于pos位置之后的记录均已交换到位,故在进行下一趟排序时只要扫描到pos位置即可。</div><div class="line"></div><div class="line">改进后算法如下:</div><div class="line">```</div><div class="line"></div><div class="line">function bubbleSort2(arr) &#123;</div><div class="line">    console.time(&apos;改进后冒泡排序耗时&apos;);</div><div class="line">    var i = arr.length-1;  //初始时,最后位置保持不变</div><div class="line">    while ( i&gt; 0) &#123;</div><div class="line">        var pos= 0; //每趟开始时,无记录交换</div><div class="line">        for (var j= 0; j&lt; i; j++)</div><div class="line">            if (arr[j]&gt; arr[j+1]) &#123;</div><div class="line">                pos= j; //记录交换的位置</div><div class="line">                var tmp = arr[j]; arr[j]=arr[j+1];arr[j+1]=tmp;</div><div class="line">            &#125;</div><div class="line">        i= pos; //为下一趟排序作准备</div><div class="line">     &#125;</div><div class="line">     console.timeEnd(&apos;改进后冒泡排序耗时&apos;);</div><div class="line">     return arr;</div><div class="line">&#125;</div><div class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</div><div class="line">console.log(bubbleSort2(arr));//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</div><div class="line">```</div><div class="line">&gt; 传统冒泡排序中每一趟排序操作只能找到一个最大值或最小值,我们考虑利用在每趟排序中进行正向和反向两遍冒泡的方法一次可以得到两个最终值(最大者和最小者) , 从而使排序趟数几乎减少了一半。</div><div class="line"></div><div class="line">改进后的算法实现为:</div><div class="line">```</div><div class="line">function bubbleSort3(arr3) &#123;</div><div class="line">    var low = 0;</div><div class="line">    var high= arr.length-1; //设置变量的初始值</div><div class="line">    var tmp,j;</div><div class="line">    console.time(&apos;2.改进后冒泡排序耗时&apos;);</div><div class="line">    while (low &lt; high) &#123;</div><div class="line">        for (j= low; j&lt; high; ++j) //正向冒泡,找到最大者</div><div class="line">            if (arr[j]&gt; arr[j+1]) &#123;</div><div class="line">                tmp = arr[j]; arr[j]=arr[j+1];arr[j+1]=tmp;</div><div class="line">            &#125;</div><div class="line">        --high;                 //修改high值, 前移一位</div><div class="line">        for (j=high; j&gt;low; --j) //反向冒泡,找到最小者</div><div class="line">            if (arr[j]&lt;arr[j-1]) &#123;</div><div class="line">                tmp = arr[j]; arr[j]=arr[j-1];arr[j-1]=tmp;</div><div class="line">            &#125;</div><div class="line">        ++low;                  //修改low值,后移一位</div><div class="line">    &#125;</div><div class="line">    console.timeEnd(&apos;2.改进后冒泡排序耗时&apos;);</div><div class="line">    return arr3;</div><div class="line">&#125;</div><div class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</div><div class="line">console.log(bubbleSort3(arr));//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</div><div class="line">```</div><div class="line">三种方法耗时对比：</div><div class="line"></div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20160916163126374)</div><div class="line"></div><div class="line">&gt; 由图可以看出改进后的冒泡排序明显的时间复杂度更低，耗时更短了。读者自行尝试可以戳这，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>读者自行尝试可以<a href="https://github.com/damonare/Sorts" target="_blank" rel="external">想看源码戳这</a>，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦</strong></p>
+<a id="more"></a>
+<blockquote>
+<ul>
+<li>这世界上总存在着那么一些看似相似但有完全不同的东西，比如雷锋和雷峰塔，小平和小平头，玛丽和马里奥，Java和javascript….当年javascript为了抱Java大腿恬不知耻的让自己变成了Java的干儿子，哦，不是应该是跪舔，毕竟都跟了Java的姓了。可如今，javascript来了个咸鱼翻身，几乎要统治web领域，Nodejs，React Native的出现使得javascript在后端和移动端都开始占有了一席之地。可以这么说,在Web的江湖，<mark>JavaScript可谓风头无两，已经坐上了头把交椅。</mark></li>
+<li>在传统的计算机算法和数据结构领域，大多数专业教材和书籍的默认语言都是Java或者C/C+ +，O’REILLY家倒是出了一本叫做《数据结构与算法javascript描述》的书，但不得不说，不知道是作者吃了shit还是译者根本就没校对，满书的小错误，这就像那种无穷无尽的小bug一样,简直就是让人有种嘴里塞满了shit的感觉，吐也不是咽下去也不是。对于一个前端来说，尤其是笔试面试的时候，算法方面考的其实不难（<mark>十大排序算法或是和十大排序算法同等难度的</mark>），但就是之前没用javascript实现过或是没仔细看过相关算法的原理，导致写起来浪费很多时间。所以撸一撸袖子决定自己查资料自己总结一篇博客等用到了直接看自己的博客就OK了，正所谓靠天靠地靠大牛不如靠自己(ˉ(∞)ˉ)。</li>
+<li>算法的由来：9世纪波斯数学家提出的：“al-Khowarizmi”就是下图这货（感觉重要数学元素提出者貌似都戴了顶白帽子），开个玩笑，阿拉伯人对于数学史的贡献还是值得人敬佩的。<br><img src="http://img.blog.csdn.net/20160916152402267" alt="大大"></li>
+</ul>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="排序算法说明"><a href="#排序算法说明" class="headerlink" title="排序算法说明"></a>排序算法说明</h3><p><strong>（1）排序的定义：对一序列对象根据某个关键字进行排序；</strong></p>
+<p>输入：n个数：a1,a2,a3,…,an<br>输出：n个数的排列:a1’,a2’,a3’,…,an’，使得a1’&lt;=a2’&lt;=a3’&lt;=…&lt;=an’。</p>
+<p>再讲的形象点就是排排坐，调座位，高的站在后面，矮的站在前面咯。</p>
+<p><strong>（3）对于评述算法优劣术语的说明</strong></p>
+<p><strong>稳定</strong>：如果a原本在b前面，而a=b，排序之后a仍然在b的前面；<br><strong>不稳定</strong>：如果a原本在b的前面，而a=b，排序之后a可能会出现在b的后面；</p>
+<p><strong>内排序</strong>：所有排序操作都在内存中完成；<br><strong>外排序</strong>：由于数据太大，因此把数据放在磁盘中，而排序通过磁盘和内存的数据传输才能进行；</p>
+<p><strong>时间复杂度</strong>: 一个算法执行所耗费的时间。<br><strong>空间复杂度</strong>: 运行完一个程序所需内存的大小。</p>
+<p>关于时间空间复杂度的更多了解请戳<a href="http://blog.csdn.net/booirror/article/details/7707551/" target="_blank" rel="external">这里</a>，或是看书程杰大大编写的《大话数据结构》还是很赞的，通俗易懂。</p>
+<p><strong>（4）排序算法图片总结(图片来源于网络):</strong></p>
+<p>排序对比：</p>
+<p><img src="http://img.blog.csdn.net/20160916153212716" alt="这里写图片描述"></p>
+<p><strong>图片名词解释：</strong><br>n: 数据规模<br>k:“桶”的个数<br>In-place: 占用常数内存，不占用额外内存<br>Out-place: 占用额外内存</p>
+<p>排序分类：</p>
+<p><img src="http://img.blog.csdn.net/20160916154036887" alt="这里写图片描述"></p>
+<h3 id="1-冒泡排序（Bubble-Sort）"><a href="#1-冒泡排序（Bubble-Sort）" class="headerlink" title="1.冒泡排序（Bubble Sort）"></a>1.冒泡排序（Bubble Sort）</h3><blockquote>
+<p>好的，开始总结第一个排序算法，冒泡排序。我想对于它每个学过C语言的都会了解的吧，这可能是很多人接触的第一个排序算法。</p>
+</blockquote>
+<h4 id="1-算法描述"><a href="#1-算法描述" class="headerlink" title="(1)算法描述"></a>(1)算法描述</h4><blockquote>
+<p>冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+</blockquote>
+<h4 id="2-算法描述和实现"><a href="#2-算法描述和实现" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
+<ul>
+<li><1>.比较相邻的元素。如果第一个比第二个大，就交换它们两个；</1></li>
+<li><2>.对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</2></li>
+<li><3>.针对所有的元素重复以上的步骤，除了最后一个；</3></li>
+<li><4>.重复步骤1~3，直到排序完成。</4></li>
+</ul>
+<p><strong>JavaScript代码实现：</strong></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function bubbleSort(arr) &#123;</div><div class="line">    var len = arr.length;</div><div class="line">    for (var i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line">        for (var j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) &#123;</div><div class="line">            if (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;        <span class="comment">//相邻元素两两对比</span></div><div class="line">                var temp = arr[j+<span class="number">1</span>];        <span class="comment">//元素交换</span></div><div class="line">                arr[j+<span class="number">1</span>] = arr[j];</div><div class="line">                arr[j] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return arr;</div><div class="line">&#125;</div><div class="line">var arr=[<span class="number">3</span>,<span class="number">44</span>,<span class="number">38</span>,<span class="number">5</span>,<span class="number">47</span>,<span class="number">15</span>,<span class="number">36</span>,<span class="number">26</span>,<span class="number">27</span>,<span class="number">2</span>,<span class="number">46</span>,<span class="number">4</span>,<span class="number">19</span>,<span class="number">50</span>,<span class="number">48</span>];</div><div class="line">console.log(bubbleSort(arr));<span class="comment">//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>改进冒泡排序： </strong>设置一标志性变量pos,用于记录每趟排序中最后一次进行交换的位置。由于pos位置之后的记录均已交换到位,故在进行下一趟排序时只要扫描到pos位置即可。</p>
+</blockquote>
+<p>改进后算法如下:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">function bubbleSort2(arr) &#123;</div><div class="line">    console.time('改进后冒泡排序耗时');</div><div class="line">    var i = arr.length<span class="number">-1</span>;  <span class="comment">//初始时,最后位置保持不变</span></div><div class="line">    while ( i&gt; <span class="number">0</span>) &#123;</div><div class="line">        var pos= <span class="number">0</span>; <span class="comment">//每趟开始时,无记录交换</span></div><div class="line">        for (var j= <span class="number">0</span>; j&lt; i; j++)</div><div class="line">            if (arr[j]&gt; arr[j+<span class="number">1</span>]) &#123;</div><div class="line">                pos= j; <span class="comment">//记录交换的位置</span></div><div class="line">                var tmp = arr[j]; arr[j]=arr[j+<span class="number">1</span>];arr[j+<span class="number">1</span>]=tmp;</div><div class="line">            &#125;</div><div class="line">        i= pos; <span class="comment">//为下一趟排序作准备</span></div><div class="line">     &#125;</div><div class="line">     console.timeEnd('改进后冒泡排序耗时');</div><div class="line">     return arr;</div><div class="line">&#125;</div><div class="line">var arr=[<span class="number">3</span>,<span class="number">44</span>,<span class="number">38</span>,<span class="number">5</span>,<span class="number">47</span>,<span class="number">15</span>,<span class="number">36</span>,<span class="number">26</span>,<span class="number">27</span>,<span class="number">2</span>,<span class="number">46</span>,<span class="number">4</span>,<span class="number">19</span>,<span class="number">50</span>,<span class="number">48</span>];</div><div class="line">console.log(bubbleSort2(arr));<span class="comment">//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>传统冒泡排序中每一趟排序操作只能找到一个最大值或最小值,我们考虑利用在每趟排序中进行正向和反向两遍冒泡的方法一次可以得到两个最终值(最大者和最小者) , 从而使排序趟数几乎减少了一半。</p>
+</blockquote>
+<p>改进后的算法实现为:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function bubbleSort3(arr3) &#123;</div><div class="line">    var low = <span class="number">0</span>;</div><div class="line">    var high= arr.length<span class="number">-1</span>; <span class="comment">//设置变量的初始值</span></div><div class="line">    var tmp,j;</div><div class="line">    console.time('<span class="number">2.</span>改进后冒泡排序耗时');</div><div class="line">    while (low &lt; high) &#123;</div><div class="line">        for (j= low; j&lt; high; ++j) <span class="comment">//正向冒泡,找到最大者</span></div><div class="line">            if (arr[j]&gt; arr[j+<span class="number">1</span>]) &#123;</div><div class="line">                tmp = arr[j]; arr[j]=arr[j+<span class="number">1</span>];arr[j+<span class="number">1</span>]=tmp;</div><div class="line">            &#125;</div><div class="line">        --high;                 <span class="comment">//修改high值, 前移一位</span></div><div class="line">        for (j=high; j&gt;low; --j) <span class="comment">//反向冒泡,找到最小者</span></div><div class="line">            if (arr[j]&lt;arr[j<span class="number">-1</span>]) &#123;</div><div class="line">                tmp = arr[j]; arr[j]=arr[j<span class="number">-1</span>];arr[j<span class="number">-1</span>]=tmp;</div><div class="line">            &#125;</div><div class="line">        ++low;                  <span class="comment">//修改low值,后移一位</span></div><div class="line">    &#125;</div><div class="line">    console.timeEnd('<span class="number">2.</span>改进后冒泡排序耗时');</div><div class="line">    return arr3;</div><div class="line">&#125;</div><div class="line">var arr=[<span class="number">3</span>,<span class="number">44</span>,<span class="number">38</span>,<span class="number">5</span>,<span class="number">47</span>,<span class="number">15</span>,<span class="number">36</span>,<span class="number">26</span>,<span class="number">27</span>,<span class="number">2</span>,<span class="number">46</span>,<span class="number">4</span>,<span class="number">19</span>,<span class="number">50</span>,<span class="number">48</span>];</div><div class="line">console.log(bubbleSort3(arr));<span class="comment">//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</span></div></pre></td></tr></table></figure></p>
+<p>三种方法耗时对比：</p>
+<p><img src="http://img.blog.csdn.net/20160916163126374" alt="这里写图片描述"></p>
+<blockquote>
+<p>由图可以看出改进后的冒泡排序明显的时间复杂度更低，耗时更短了。读者自行尝试可以戳这，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦~~~</p>
+</blockquote>
 <p><strong>冒泡排序动图演示:</strong></p>
 <p><img src="http://img.blog.csdn.net/20160916160748389" alt="这里写图片描述"></p>
 <p><strong>(3)算法分析</strong></p>
@@ -47,7 +97,7 @@
 <h4 id="1-算法简介"><a href="#1-算法简介" class="headerlink" title="(1)算法简介"></a>(1)算法简介</h4><blockquote>
 <p>选择排序(Selection-sort)是一种简单直观的排序算法。它的工作原理：首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
 </blockquote>
-<h4 id="2-算法描述和实现"><a href="#2-算法描述和实现" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结果。具体算法描述如下：</p>
+<h4 id="2-算法描述和实现-1"><a href="#2-算法描述和实现-1" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结果。具体算法描述如下：</p>
 <ul>
 <li><1>.初始状态：无序区为R[1..n]，有序区为空；</1></li>
 <li><2>.第i趟排序(i=1,2,3…n-1)开始时，当前有序区和无序区分别为R[1..i-1]和R(i..n）。该趟排序从当前无序区中-选出关键字最小的记录 R[k]，将它与无序区的第1个记录R交换，使R[1..i]和R[i+1..n)分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；</2></li>
@@ -68,7 +118,7 @@
 <h4 id="1-算法简介-1"><a href="#1-算法简介-1" class="headerlink" title="(1)算法简介"></a>(1)算法简介</h4><blockquote>
 <p> 插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
 </blockquote>
-<h4 id="2-算法描述和实现-1"><a href="#2-算法描述和实现-1" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
+<h4 id="2-算法描述和实现-2"><a href="#2-算法描述和实现-2" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
 <ul>
 <li><1>.从第一个元素开始，该元素可以认为已经被排序；</1></li>
 <li><2>.取出下一个元素，在已经排序的元素序列中从后向前扫描；</2></li>
@@ -100,7 +150,7 @@
 <h4 id="1-算法简介-2"><a href="#1-算法简介-2" class="headerlink" title="(1)算法简介"></a>(1)算法简介</h4><blockquote>
 <p>希尔排序的核心在于间隔序列的设定。既可以提前设定好间隔序列，也可以动态的定义间隔序列。动态定义间隔序列的算法是《算法（第4版》的合著者Robert Sedgewick提出的。</p>
 </blockquote>
-<h4 id="2-算法描述和实现-2"><a href="#2-算法描述和实现-2" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，具体算法描述：</p>
+<h4 id="2-算法描述和实现-3"><a href="#2-算法描述和实现-3" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，具体算法描述：</p>
 <ul>
 <li><1>. 选择一个增量序列t1，t2，…，tk，其中ti&gt;tj，tk=1；</1></li>
 <li><2>.按增量序列个数k，对序列进行k 趟排序；</2></li>
@@ -121,7 +171,7 @@
 <h4 id="1-算法简介-3"><a href="#1-算法简介-3" class="headerlink" title="(1)算法简介"></a>(1)算法简介</h4><blockquote>
 <p>　归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。归并排序是一种稳定的排序方法。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为2-路归并。</p>
 </blockquote>
-<h4 id="2-算法描述和实现-3"><a href="#2-算法描述和实现-3" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
+<h4 id="2-算法描述和实现-4"><a href="#2-算法描述和实现-4" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
 <ul>
 <li><1>.把长度为n的输入序列分成两个长度为n/2的子序列；</1></li>
 <li><2>.对这两个子序列分别采用归并排序；</2></li>
@@ -142,7 +192,7 @@
 <h4 id="1-算法简介-4"><a href="#1-算法简介-4" class="headerlink" title="(1)算法简介"></a>(1)算法简介</h4><blockquote>
 <p>快速排序的基本思想：通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。</p>
 </blockquote>
-<h4 id="2-算法描述和实现-4"><a href="#2-算法描述和实现-4" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>快速排序使用分治法来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：</p>
+<h4 id="2-算法描述和实现-5"><a href="#2-算法描述和实现-5" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>快速排序使用分治法来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：</p>
 <ul>
 <li><1>.从数列中挑出一个元素，称为 “基准”（pivot）；</1></li>
 <li><2>.重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</2></li>
@@ -163,7 +213,7 @@
 <h4 id="1-算法简介-5"><a href="#1-算法简介-5" class="headerlink" title="(1)算法简介"></a>(1)算法简介</h4><blockquote>
 <p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
 </blockquote>
-<h4 id="2-算法描述和实现-5"><a href="#2-算法描述和实现-5" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
+<h4 id="2-算法描述和实现-6"><a href="#2-算法描述和实现-6" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
 <ul>
 <li><1>.将初始待排序关键字序列(R1,R2….Rn)构建成大顶堆，此堆为初始的无序区；</1></li>
 <li><2>.将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2…n-1]&lt;=R[n]；</2></li>
@@ -184,7 +234,7 @@
 <h4 id="1-算法简介-6"><a href="#1-算法简介-6" class="headerlink" title="(1)算法简介"></a>(1)算法简介</h4><blockquote>
 <p>计数排序(Counting sort)是一种稳定的排序算法。计数排序使用一个额外的数组C，其中第i个元素是待排序数组A中值等于i的元素的个数。然后根据数组C来将A中的元素排到正确的位置。它只能对整数进行排序。</p>
 </blockquote>
-<h4 id="2-算法描述和实现-6"><a href="#2-算法描述和实现-6" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
+<h4 id="2-算法描述和实现-7"><a href="#2-算法描述和实现-7" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
 <ul>
 <li><1>. 找出待排序的数组中最大和最小的元素；</1></li>
 <li><2>. 统计数组中每个值为i的元素出现的次数，存入数组C的第i项；</2></li>
@@ -209,7 +259,7 @@
 <h4 id="1-算法简介-7"><a href="#1-算法简介-7" class="headerlink" title="(1)算法简介"></a>(1)算法简介</h4><blockquote>
 <p>桶排序 (Bucket sort)的工作的原理：假设输入数据服从均匀分布，将数据分到有限数量的桶里，每个桶再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排</p>
 </blockquote>
-<h4 id="2-算法描述和实现-7"><a href="#2-算法描述和实现-7" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
+<h4 id="2-算法描述和实现-8"><a href="#2-算法描述和实现-8" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
 <ul>
 <li><1>.设置一个定量的数组当作空桶；</1></li>
 <li><2>.遍历输入数据，并且把数据一个一个放到对应的桶里去；</2></li>
@@ -235,7 +285,7 @@
 <h4 id="1-算法简介-8"><a href="#1-算法简介-8" class="headerlink" title="(1)算法简介"></a>(1)算法简介</h4><blockquote>
 <p>基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序。最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。基数排序基于分别排序，分别收集，所以是稳定的。</p>
 </blockquote>
-<h4 id="2-算法描述和实现-8"><a href="#2-算法描述和实现-8" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
+<h4 id="2-算法描述和实现-9"><a href="#2-算法描述和实现-9" class="headerlink" title="(2)算法描述和实现"></a>(2)算法描述和实现</h4><p>具体算法描述如下：</p>
 <ul>
 <li><1>.取得数组中的最大数，并取得位数；</1></li>
 <li><2>.arr为原始数组，从最低位开始取每个位组成radix数组；</2></li>
@@ -269,7 +319,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;**读者自行尝试可以&lt;a href=&quot;https://github.com/damonare/Sorts&quot; target=&quot;_blank&quot; 
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;读者自行尝试可以&lt;a href=&quot;https://github.com/damonare/Sorts&quot;&gt;想看源码戳这&lt;/a&gt;，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
