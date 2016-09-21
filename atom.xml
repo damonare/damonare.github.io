@@ -339,7 +339,7 @@
     <link href="http://damonare.github.io/2016/09/09/Chrome%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
     <id>http://damonare.github.io/2016/09/09/Chrome控制台使用总结/</id>
     <published>2016-09-09T12:43:11.000Z</published>
-    <updated>2016-09-21T08:47:24.162Z</updated>
+    <updated>2016-09-21T08:57:35.584Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因是它速度快，体积不大，支持的新特性也比其它浏览器多，还有一部分我想就是因为它的控制台功能强大了吧，说它是神器一点也不过分，很方便。但其实很多开发者并没有用出控制台的精髓，只是使用简单的console.log();其实控制台功能远远不止这么简单哦。</p>
@@ -403,17 +403,51 @@
 <p>当想要查看CPU使用相关的信息时，可以使用console.profile配合 console.profileEnd来完成这个需求。<br>这一功能可以通过UI界面来完成，Chrome 开发者工具里面有个tab便是Profile。使用方法和console.time基本一样，其实time开发者工具里也有个tab就是timeline。关于console.prefile博主就不做多余的介绍了。想要做更多了解的读者可以看<a href="https://developers.google.com/web/tools/chrome-devtools/debug/console/console-reference?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3#consolelogobject-object" target="_blank" rel="external">这里</a>。</p>
 </blockquote>
 <h2 id=""><a href="#" class="headerlink" title="$"></a>$</h2><blockquote>
-<p>讲真，米国程序员们真的很喜欢money啊（谁又不是呢），看看PHP就知道了,满屏的$。而在Chrome的控制台里，$用处同样是蛮多且方便的。</p>
+<p>讲真，米国程序员们真的很喜欢money啊（谁又不是呢），看看PHP就知道了,满屏的$符号。而在Chrome的控制台里，$用处同样是蛮多且方便的。</p>
 </blockquote>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span>+<span class="number">2</span><span class="comment">//回车，再</span></div><div class="line">$_+<span class="number">1</span><span class="comment">//回车得5</span></div></pre></td></tr></table></figure>
 <blockquote>
-<p>上面的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;什么意思呢？在页面右击选择审查元素，然后在弹出来的DOM结点树上面随便点选，这些被点过的节点会被记录下来，而$0会返回最近一次点选的DOM结点，以此类推，$1返回的是上上次点选的DOM节点，最多保存了5个，如果不够5个，则返回undefined。</div><div class="line"></div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20160909222120965)</div><div class="line"></div><div class="line">&gt; 另外值得一赞的是，Chrome 控制台中原生支持类jQuery的选择器，也就是说你可以用$加上熟悉的css选择器来选择DOM节点，多么滴熟悉。</div></pre></td></tr></table></figure></p>
+<p>上面的</p>
 </blockquote>
-<p>$(‘body’);<br>$$(‘div’);<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">![<span class="string">这里写图片描述</span>](<span class="link">http://img.blog.csdn.net/20160909223159417</span>)</div><div class="line"></div><div class="line">&gt;$(selector)返回的是满足选择条件的首个DOM元素。</div><div class="line">剥去她伪善的外衣，其实$(selector)是原生JavaScript document.querySelector() 的封装。</div><div class="line">同时另一个命令$$(selector)返回的是所有满足选择条件的元素的一个集合，是对document.querySelectorAll() 的封装。</div><div class="line"><span class="section">## $x(path)</span></div><div class="line"></div><div class="line"><span class="quote">&gt; 将所匹配的节点放在一个数组里返回</span></div></pre></td></tr></table></figure></p>
-<p>$x(“//p”);<br>$x(“//p[a]”);<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">![<span class="string">这里写图片描述</span>](<span class="link">http://img.blog.csdn.net/20160909232110728</span>)</div><div class="line"></div><div class="line"><span class="quote">&gt; $x("//p")匹配所有的p节点，$x("//p[a]");匹配所有子节点包含a的p节点</span></div><div class="line"><span class="section">## copy</span></div></pre></td></tr></table></figure></p>
-<p>copy(document.body)<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&gt;然后你就可以Ctrl+v了。</div><div class="line"></div><div class="line"><span class="strong">**注意：他不依附于任何全局变量比如window，所以其实在JS代码里是访问不了这个copy方法的，所以从代码层面来调用复制功能也就无从谈起。但愿有天浏览器会提供相应的JS实现吧~这样我们就可以通过js代码进行复制操作而不用再依赖Flash插件了。**</span></div><div class="line"></div><div class="line"><span class="section">## keys &amp; values</span></div><div class="line"></div><div class="line"><span class="quote">&gt; 这是一对基友。前者返回传入对象所有属性名组成的数据，后者返回所有属性值组成的数组。具体请看下面的例子：</span></div></pre></td></tr></table></figure></p>
-<p>var tfboy={name:’wayou’,gender:’unknown’,hobby:’opposite to the gender’};<br>keys(tfboy);<br>values(tfboy);<br><figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="markdown">![<span class="string">这里写图片描述</span>](<span class="link">http://img.blog.csdn.net/20160909225910811</span>)</span></div><div class="line"></div><div class="line"><span class="section">## monitor &amp; unmonitor</span></div><div class="line"></div><div class="line"><span class="quote">&gt; monitor(function)，它接收一个函数名作为参数，比如function a,每次a被执行了，都会在控制台输出一条信息，里面包含了函数的名称a及执行时所传入的参数。而unmonitor(function)便是用来停止这一监听。</span></div></pre></td></tr></table></figure></p>
-<p>function sayHello(name){<br>    alert(‘hello,’+name);<br>}<br>monitor(sayHello);<br>sayHello(‘damonare’);<br>sayHello(‘tjz’);<br>unmonitor(sayHello);<br>```</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$_</div></pre></td></tr></table></figure>
+<blockquote>
+<p>需要领悟其奥义才能使用得当，而</p>
+</blockquote>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$0~$4</div></pre></td></tr></table></figure>
+<blockquote>
+<p>则代表了最近5个你选择过的DOM节点。<br>什么意思呢？在页面右击选择审查元素，然后在弹出来的DOM结点树上面随便点选，这些被点过的节点会被记录下来，而$0会返回最近一次点选的DOM结点，以此类推，$1返回的是上上次点选的DOM节点，最多保存了5个，如果不够5个，则返回undefined。</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20160909222120965" alt="这里写图片描述"></p>
+<blockquote>
+<p>另外值得一赞的是，Chrome 控制台中原生支持类jQuery的选择器，也就是说你可以用$加上熟悉的css选择器来选择DOM节点，多么滴熟悉。</p>
+</blockquote>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span>(<span class="string">'body'</span>);</div><div class="line"><span class="symbol">$</span><span class="symbol">$</span>(<span class="string">'div'</span>);</div></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20160909223159417" alt="这里写图片描述"></p>
+<blockquote>
+<p>$(selector)返回的是满足选择条件的首个DOM元素。<br>剥去她伪善的外衣，其实$(selector)是原生JavaScript document.querySelector() 的封装。<br>同时另一个命令$$(selector)返回的是所有满足选择条件的元素的一个集合，是对document.querySelectorAll() 的封装。</p>
+</blockquote>
+<h2 id="x-path"><a href="#x-path" class="headerlink" title="$x(path)"></a>$x(path)</h2><blockquote>
+<p>将所匹配的节点放在一个数组里返回</p>
+</blockquote>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$x</span>("<span class="comment">//p");</span></div><div class="line"><span class="variable">$x</span>("<span class="comment">//p[a]");</span></div></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20160909232110728" alt="这里写图片描述"></p>
+<blockquote>
+<p>$x(“//p”)匹配所有的p节点，$x(“//p[a]”);匹配所有子节点包含a的p节点</p>
+</blockquote>
+<h2 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">copy</span><span class="params">(document.body)</span></span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>然后你就可以Ctrl+v了。</p>
+</blockquote>
+<p><strong>注意：他不依附于任何全局变量比如window，所以其实在JS代码里是访问不了这个copy方法的，所以从代码层面来调用复制功能也就无从谈起。但愿有天浏览器会提供相应的JS实现吧~这样我们就可以通过js代码进行复制操作而不用再依赖Flash插件了。</strong></p>
+<h2 id="keys-amp-values"><a href="#keys-amp-values" class="headerlink" title="keys &amp; values"></a>keys &amp; values</h2><blockquote>
+<p>这是一对基友。前者返回传入对象所有属性名组成的数据，后者返回所有属性值组成的数组。具体请看下面的例子：</p>
+</blockquote>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var tfboy=&#123;<span class="string">name:</span><span class="string">'wayou'</span>,<span class="string">gender:</span><span class="string">'unknown'</span>,<span class="string">hobby:</span><span class="string">'opposite to the gender'</span>&#125;;</div><div class="line">keys(tfboy);</div><div class="line">values(tfboy);</div></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20160909225910811" alt="这里写图片描述"></p>
+<h2 id="monitor-amp-unmonitor"><a href="#monitor-amp-unmonitor" class="headerlink" title="monitor &amp; unmonitor"></a>monitor &amp; unmonitor</h2><blockquote>
+<p>monitor(function)，它接收一个函数名作为参数，比如function a,每次a被执行了，都会在控制台输出一条信息，里面包含了函数的名称a及执行时所传入的参数。而unmonitor(function)便是用来停止这一监听。</p>
+</blockquote>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span><span class="params">(name)</span></span>&#123;</div><div class="line">    alert(<span class="string">'hello,'</span>+name);</div><div class="line">&#125;</div><div class="line">monitor(sayHello);</div><div class="line">sayHello(<span class="string">'damonare'</span>);</div><div class="line">sayHello(<span class="string">'tjz'</span>);</div><div class="line">unmonitor(sayHello);</div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160909230648805" alt="这里写图片描述"></p>
 <h2 id="debug-amp-undebug"><a href="#debug-amp-undebug" class="headerlink" title="debug &amp; undebug"></a>debug &amp; undebug</h2><blockquote>
 <p>debug同样也是接收一个函数名作为参数。当该函数执行时自动断下来以供调试，类似于在该函数的入口处打了个断点，可以通过debugger来做到，同时也可以通过在Chrome开发者工具里找到相应源码然后手动打断点。而undebug 则是解除该断点。而其他还有好些命令则让人没有说的欲望，因为好些都可以通过Chrome开发者工具的UI界面来操作并且比用在控制台输入要方便。</p>
@@ -1700,11 +1734,11 @@ Model：数据访问层
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
+      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
+    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
@@ -2160,11 +2194,11 @@ Model：数据访问层
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
+      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
+    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
       <category term="前端构建工具" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
     
@@ -2664,11 +2698,11 @@ important 比 内联优先级高
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
+      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
+    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
       <category term="http" scheme="http://damonare.github.io/tags/http/"/>
     
