@@ -1732,9 +1732,9 @@ Model：数据访问层
       <category term="其它" scheme="http://damonare.github.io/categories/%E5%85%B6%E5%AE%83/"/>
     
     
-      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
-    
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
+    
+      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
@@ -2192,9 +2192,9 @@ Model：数据访问层
       <category term="随笔" scheme="http://damonare.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
-    
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
+    
+      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
@@ -2336,9 +2336,9 @@ Model：数据访问层
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="http" scheme="http://damonare.github.io/tags/http/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="网络协议" scheme="http://damonare.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
     
@@ -2349,10 +2349,10 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/05/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%A4%A7%E5%85%A8/"/>
     <id>http://damonare.github.io/2016/09/05/前端面试大全/</id>
     <published>2016-09-05T13:10:55.167Z</published>
-    <updated>2016-09-06T04:06:09.034Z</updated>
+    <updated>2016-09-22T16:00:51.423Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="HTML面试题"><a href="#HTML面试题" class="headerlink" title="HTML面试题"></a>HTML面试题<br><br></h3><p>1.XHTML和HTML有什么区别</p>
-<blockquote>
+    <content type="html"><![CDATA[<h3 id="HTML面试题"><a href="#HTML面试题" class="headerlink" title="HTML面试题"></a>HTML面试题<br><br></h3><ol>
+<li>XHTML和HTML有什么区别<blockquote>
 <ul>
 <li>HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML的置标语言<br>最主要的不同：</li>
 <li>XHTML 元素必须被正确地嵌套。</li>
@@ -2361,11 +2361,18 @@ Model：数据访问层
 <li>XHTML 文档必须拥有根元素。</li>
 </ul>
 </blockquote>
+</li>
+</ol>
 <a id="more"></a>
 <p>2.前端页面有哪三层构成，分别是什么?作用是什么?</p>
 <blockquote>
 <ul>
-<li>结构层 Html 表示层 CSS 行为层 js;<br>3.你做的页面在哪些流览器测试过?这些浏览器的内核分别是什么?</li>
+<li>结构层 Html 表示层 CSS 行为层 js;</li>
+</ul>
+</blockquote>
+<p>3.你做的页面在哪些流览器测试过?这些浏览器的内核分别是什么?</p>
+<blockquote>
+<ul>
 <li>Ie(Ie内核) 火狐（Gecko） 谷歌（webkit,Blink） opera(Presto),Safari(wbkit)</li>
 </ul>
 </blockquote>
@@ -2440,7 +2447,7 @@ Model：数据访问层
 <li>Clip-path:clip-path 属性还没有在 IE 或者 Edge 下被完全支持。如果要在你的 clip-path 中使用外部的 SVG 文件，浏览器支持度还要低;</li>
 </ul>
 </blockquote>
-<p> 3.CSS清楚浮动的几种方法（至少两种）</p>
+<p> 3.CSS清除浮动的几种方法（至少两种）</p>
 <blockquote>
 <ul>
 <li>使用带clear属性的空元素</li>
@@ -2551,7 +2558,7 @@ important 比 内联优先级高
 <li>transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜<br>增加了更多的CSS选择器  多背景 rgba</li>
 </ul>
 </blockquote>
-<p>##JavaScript面试题<br> 1.javascript的typeof返回哪些数据类型</p>
+<h2 id="JavaScript面试题"><a href="#JavaScript面试题" class="headerlink" title="JavaScript面试题"></a>JavaScript面试题</h2><p> 1.javascript的typeof返回哪些数据类型</p>
 <blockquote>
 <ul>
 <li>Ｏbject number function boolean underfind;</li>
@@ -2604,7 +2611,10 @@ important 比 内联优先级高
 </blockquote>
 <p> 9.添加 删除 替换 插入到某个接点的方法</p>
 <blockquote>
-<p>obj.appendChidl()<br>obj.innersetBefore<br>obj.replaceChild<br>obj.removeChild<br> 10.说一下什么是javascript的同源策略？</p>
+<p>obj.appendChidl()<br>obj.innersetBefore<br>obj.replaceChild<br>obj.removeChild</p>
+</blockquote>
+<p> 10.说一下什么是javascript的同源策略？</p>
+<blockquote>
 <ul>
 <li>一段脚本只能读取来自于同一来源的窗口和文档的属性，这里的同一来源指的是主机名、协议和端口号的组合</li>
 </ul>
@@ -2680,8 +2690,8 @@ important 比 内联优先级高
     
     <summary type="html">
     
-      &lt;h3 id=&quot;HTML面试题&quot;&gt;&lt;a href=&quot;#HTML面试题&quot; class=&quot;headerlink&quot; title=&quot;HTML面试题&quot;&gt;&lt;/a&gt;HTML面试题&lt;br&gt;&lt;br&gt;&lt;/h3&gt;&lt;p&gt;1.XHTML和HTML有什么区别&lt;/p&gt;
-&lt;blockquote&gt;
+      &lt;h3 id=&quot;HTML面试题&quot;&gt;&lt;a href=&quot;#HTML面试题&quot; class=&quot;headerlink&quot; title=&quot;HTML面试题&quot;&gt;&lt;/a&gt;HTML面试题&lt;br&gt;&lt;br&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;XHTML和HTML有什么区别&lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML的置标语言&lt;br&gt;最主要的不同：&lt;/li&gt;
 &lt;li&gt;XHTML 元素必须被正确地嵌套。&lt;/li&gt;
@@ -2690,21 +2700,23 @@ important 比 内联优先级高
 &lt;li&gt;XHTML 文档必须拥有根元素。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
-    
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
+    
+      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="http" scheme="http://damonare.github.io/tags/http/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
