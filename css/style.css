@@ -9,6 +9,45 @@ body:after {
 body:after {
   clear: both;
 }
+.support-author {
+  padding: 25px;
+  background-color: #f5f5f5;
+  border-left: 4px solid #f57e42;
+  -webkit-box-shadow: 0 0 1px #d9d9d9;
+  -webkit-box-shadow: 0 0 1px #d9d9d9;
+  box-shadow: 0 0 1px #d9d9d9;
+  max-width: 375px;
+  margin: 40px auto 10px;
+  position: relative;
+  text-align: center;
+  width: 80%;
+}
+.support-author p {
+  margin: 0 auto 15px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.support-author button {
+  color: #fff;
+  border-color: #f57e42;
+  background: #f57e42;
+  margin: 10px 10px 5px 0;
+  font-size: 12px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding: 8px 12px;
+  display: inline-block;
+  outline: none;
+}
+.support-author img.qrcode {
+/*position: absolute;*/
+  display: none;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+/*right: 90px;
+    top: 2px;*/
+}
 @font-face {
   font-family: 'FontAwesome';
   src: url("fonts/fontawesome-webfont.eot");
