@@ -140,7 +140,7 @@ CSS居中一直是一个比较敏感的话题，为了以后开发的方便，�
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Fighting/" style="font-size: 12px;">Fighting</a> <a href="../../../../tags/HTML/" style="font-size: 14px;">HTML</a> <a href="../../../../tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/前端/" style="font-size: 16px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/微信开发/" style="font-size: 10px;">微信开发</a> <a href="../../../../tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="../../../../tags/读书/" style="font-size: 10px;">读书</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Fighting/" style="font-size: 12px;">Fighting</a> <a href="../../../../tags/HTML/" style="font-size: 14px;">HTML</a> <a href="../../../../tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/前端/" style="font-size: 16px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/微信开发/" style="font-size: 10px;">微信开发</a> <a href="../../../../tags/总结/" style="font-size: 10px;">总结</a> <a href="../../../../tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="../../../../tags/读书/" style="font-size: 10px;">读书</a> <a href="../../../../tags/随笔/" style="font-size: 10px;">随笔</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -386,8 +386,24 @@ CSS居中一直是一个比较敏感的话题，为了以后开发的方便，�
 
 
 
-<div style="width:100%;text-align:center;">
-	<img id="img_site" src="http://i.WoTuLa.com/wp.png" alt="">
+<div class="support-author">
+	<p>如果您觉得我的文章对您有用，请随意打赏。</p>
+	<p>您的支持将鼓励我继续创作！</p>
+	<button id='alipay'>￥支付宝支持</button>
+	<button id='wechat'>￥微信支持</button>
+	<p>
+		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+	</p>
+	<script type="text/javascript">
+	document.querySelector('#alipay').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	})
+	document.querySelector('#wechat').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	})
+	</script>
 </div>
 <div class="ds-share" data-thread-key="CSS居中小谈" data-title="CSS居中小谈" data-images="http://damonare.github.io" data-content="CSS居中小谈" data-url="https://damonare.github.io">
 	<div class="ds-share-inline">

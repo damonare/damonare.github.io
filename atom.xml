@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-09-25T14:31:09.804Z</updated>
+  <updated>2016-10-26T11:02:40.534Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>风雨彩虹</title>
+    <link href="http://damonare.github.io/2016/10/26/%E4%B8%80%E7%82%B9%E6%80%BB%E7%BB%93/"/>
+    <id>http://damonare.github.io/2016/10/26/一点总结/</id>
+    <published>2016-10-26T07:34:05.311Z</published>
+    <updated>2016-10-26T11:02:40.534Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>如果闲下来的时候才会去思考生活的意义，那我们活着又是为了什么呢？</strong></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>已经很久没有更新博客了，截止上篇博客发表之后快一个月了吧。博客还很稚嫩，搭建起来也不过才一个半月，很开心，在我没时间写博客的时候还会有人注意这个小站点，谢谢你们，正是因为有你们的评论和支持才会让我有动力继续写下去。这篇博文一是对于之前项目的一些总结，二是记录下这段时间的一些感想。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="伪正文"><a href="#伪正文" class="headerlink" title="伪正文"></a>伪正文</h3><p>&nbsp;&nbsp;相信看过博主博客的朋友应该了解到博主还在上大学，今年大三。讲真的，虽然在一所排名还可以的211大学，但博主真心没觉得从老师那里学到什么有用的东西，也许是因为博主太渣了吧，也没啥机会接触高层。接触更多的是学校的学长学姐，那种平等相处，却能从中学到很多东西的感觉让人十分受用。上大学之前，毫不夸张的说博主连C语言是啥都不知道，但好在有一群不求回报的学长学姐帮着博主提升技术，两年了，接触了很多人，做了很多项目，渐渐的才发现原来自己也算是成长了起来，也是可以对学弟学妹进行一些指导的学长一枚了呢。</p>
+<p>&nbsp;&nbsp;学校的这种学生与学生之间传承的感觉实在让人喜欢，这也可能是博主对于学校最感恩的地方了。谢谢这里给了博主吃饭的本事，让博主在接下来十年甚至更久的岁月里会有一份可以支撑家庭的工作。如果你想对于我们这所学校有所了解欢迎戳这里：<a href="http://www.xidian.edu.cn/" target="_blank" rel="external">西安电子科技大学官网</a></p>
+<p>&nbsp;&nbsp;当然，学校就业好，考研保研也不差，就博主目前了解，基本除了搞互联网的，其它人就是能够保研的存在了呢（似乎吹过了，不过保本校还是很多的）。好吧，再讲下去这篇博文就成了学校推广文章了，本着人道主义精神，还是要好好写一下博客的。</p>
+<h3 id="干货"><a href="#干货" class="headerlink" title="干货"></a>干货</h3><p>&nbsp;&nbsp;今年博主暑假基本没过，在家呆了6天，8月初就回到了学校，接了太多的项目，不回学校根本完成不了。两个半月一共是4个项目，讲真博主真心作死，非要把自己搞这么累。碍于一些项目的私密性，姑且以项目一，项目二称呼吧。</p>
+<blockquote>
+<ul>
+<li>项目一是个中途夭折的项目，博主在这不想多说了，因为没做完，是学长的一个创业项目，倒是想介绍下之前做过的一个项目，姑且也把它叫做项目一吧，因为这是博主做的第一个正儿八经的项目，这个项目的技术架构是由最基本的jquery+bootstrap建立起来的，后端用PHP实现。简单说是一个CMS后台管理系统，主要是用来方便用户对于数据的管理与操作，CMS系统有很多模板，这个项目比较新颖的就是没有使用模板，前端的实现都是jquery+bootstrap+大量原生代码实现的，主要是想多运用原生代码避免自己过于依赖框架，但因为项目进度的关系还是使用了很多封装的组件。在此期间，博主第一次使用原生代码实现模态框，登录判断，多级联动，图片轮播等比较基础的功能。总的来说还算顺利完成，不过水平有限，并没有兼容移动端（只使用了bootstrap的一些组件)</li>
+<li>项目二是一个仿淘宝的网上购物平台，不同的是线下完成交易，甲方是一家卖二手设备的公司，基本需求是实现用户在网上下单并配备相应的后台管理系统。该项目基于微信，使用了微信登录接口，前端技术架构由jade+gulp+scss+jquery+bootstrap实现，最近博主打算用react重构，这个项目基本是原生代码+flex布局间杂着些许的jquery和bootstrap,代码实在太脏了。通过这个项目开始明白了npm的强大作用，以及做好代码混淆压缩等处理的重要性，渐渐开始有了对项目的结构进行规划整理的思想。</li>
+<li>项目三是在某公司实习时做的，该项目是一个基于微信周边ibeacon设备的应用，使用了大量微信接口，包括微信摇一摇，微信登录，微信支付等等，后端使用phalcon框架，搭配volt模板引擎,主要功能实现是用户在ibeacon设备范围内打开手机蓝牙通过微信摇一摇获取相关界面，进入页面后通过微信接口进行一系列操作获取服务，比如摇一摇获取设备拥有者所投放的红包。另外，实习期间通过修改首页对于CSS3的动画有了更深层次的认识和理解。</li>
+<li>项目四是一个类似于分答，值乎的语音问答平台，项目类型外包，前端技术架构由vue+vue-cli+vue-router+scss+es6+webpack完成，后端是python，该项目基于微信，主要依赖于微信语音接口，比较值得一提的是该项目未使用一张图片，全是代码实现。整个设计十分符合博主的口味，头一次享受了那种很乐意将这种设计图用代码实现的感觉。</li>
+</ul>
+</blockquote>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>&nbsp;&nbsp;四个项目告一段落了，两个半月，终于可以好好休息了。有种解放了的感觉，等重构完了会再写一篇react相关的博客。加油吧！</p>
+<p>**在鱼和渔网之间选择渔网是个很冒险的选择，但既然选择了，何不走下去呢？</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;如果闲下来的时候才会去思考生活的意义，那我们活着又是为了什么呢？&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;已经很久没有更新博客了，截止上篇博客发表之后快一个月了吧。博客还很稚嫩，搭建起来也不过才一个半月，很开心，在我没时间写博客的时候还会有人注意这个小站点，谢谢你们，正是因为有你们的评论和支持才会让我有动力继续写下去。这篇博文一是对于之前项目的一些总结，二是记录下这段时间的一些感想。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://damonare.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://damonare.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="总结" scheme="http://damonare.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>来自于微信小程序的一封简讯</title>
@@ -1810,11 +1856,11 @@ Model：数据访问层
       <category term="其它" scheme="http://damonare.github.io/categories/%E5%85%B6%E5%AE%83/"/>
     
     
+      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
+    
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
-    
-      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
@@ -2270,11 +2316,11 @@ Model：数据访问层
       <category term="随笔" scheme="http://damonare.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
+      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
+    
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
-    
-      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
@@ -2332,9 +2378,9 @@ Model：数据访问层
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
-    
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
+    
+      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
@@ -2786,11 +2832,11 @@ important 比 内联优先级高
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
+      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
+    
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
-    
-      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
       <category term="http" scheme="http://damonare.github.io/tags/http/"/>
     
