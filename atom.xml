@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-10-26T11:02:40.534Z</updated>
+  <updated>2016-10-28T04:25:11.588Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2016/10/26/%E4%B8%80%E7%82%B9%E6%80%BB%E7%BB%93/"/>
     <id>http://damonare.github.io/2016/10/26/一点总结/</id>
     <published>2016-10-26T07:34:05.311Z</published>
-    <updated>2016-10-26T11:02:40.534Z</updated>
+    <updated>2016-10-28T04:25:11.588Z</updated>
     
     <content type="html"><![CDATA[<p><strong>如果闲下来的时候才会去思考生活的意义，那我们活着又是为了什么呢？</strong></p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
@@ -40,7 +40,7 @@
 </ul>
 </blockquote>
 <h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>&nbsp;&nbsp;四个项目告一段落了，两个半月，终于可以好好休息了。有种解放了的感觉，等重构完了会再写一篇react相关的博客。加油吧！</p>
-<p>**在鱼和渔网之间选择渔网是个很冒险的选择，但既然选择了，何不走下去呢？</p>
+<p><strong>在鱼和渔网之间选择渔网是个很冒险的选择，但既然选择了，何不走下去呢？</strong></p>
 ]]></content>
     
     <summary type="html">
@@ -2460,9 +2460,9 @@ Model：数据访问层
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="http" scheme="http://damonare.github.io/tags/http/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="http" scheme="http://damonare.github.io/tags/http/"/>
     
       <category term="网络协议" scheme="http://damonare.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
     
@@ -2838,9 +2838,9 @@ important 比 内联优先级高
     
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
-      <category term="http" scheme="http://damonare.github.io/tags/http/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="http" scheme="http://damonare.github.io/tags/http/"/>
     
   </entry>
   
