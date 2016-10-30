@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-10-30T13:17:10.053Z</updated>
+  <updated>2016-10-30T13:31:02.913Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,14 +20,13 @@
     <link href="http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/"/>
     <id>http://damonare.github.io/2016/10/30/前端跨域整理/</id>
     <published>2016-10-30T07:24:24.028Z</published>
-    <updated>2016-10-30T13:17:10.053Z</updated>
+    <updated>2016-10-30T13:31:02.913Z</updated>
     
-    <content type="html"><![CDATA[<p>###前言</p>
-<p>原文地址：<a href="http://" target="_blank" rel="external">前端跨域总结</a></p>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>原文地址：<a href="http://" target="_blank" rel="external">前端跨域总结</a></p>
 <p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
 <p><strong>相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。</strong></p>
-<p>###正文</p>
-<h4 id="1-什么是跨域？"><a href="#1-什么是跨域？" class="headerlink" title="1. 什么是跨域？"></a>1. 什么是跨域？</h4><blockquote>
+<a id="more"></a>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="1-什么是跨域？"><a href="#1-什么是跨域？" class="headerlink" title="1. 什么是跨域？"></a>1. 什么是跨域？</h4><blockquote>
 <p> 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。所以我们要通过一些方法使本域的js能够操作其他域的页面对象或者使其他域的js能操作本域的页面对象（iframe之间）。下面是具体的跨域情况详解：</p>
 </blockquote>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">URL                      说明       是否允许通信</div><div class="line"><span class="symbol">http:</span><span class="comment">//www.a.com/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//www.a.com/b.js     同一域名下   允许</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com/lab/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//www.a.com/script/b.js 同一域名下不同文件夹 允许</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com:8000/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//www.a.com/b.js     同一域名，不同端口  不允许</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line"><span class="symbol">https:</span><span class="comment">//www.a.com/b.js 同一域名，不同协议 不允许</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//70.32.92.74/b.js 域名和域名对应ip 不允许</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//script.a.com/b.js 主域相同，子域不同 不允许（cookie这种情况下也不允许访问）</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//a.com/b.js 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.cnblogs.com/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//www.a.com/b.js 不同域名 不允许</span></div></pre></td></tr></table></figure>
@@ -143,9 +142,9 @@
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.name; <span class="regexp">//</span> My <span class="built_in">window</span><span class="string">'s name</span></div></pre></td></tr></table></figure>
 <p>可以看到，如果在一个标签里面跳转网页的话，我们的 window.name 是不会改变的。<br>基于这个思想，我们可以在某个页面设置好 window.name 的值，然后跳转到另外一个页面。在这个页面中就可以获取到我们刚刚设置的 window.name 了。</p>
 <blockquote>
-<p>由于安全原因，浏览器始终会保持 window.name 是 string 类型。</p>
+<p>由于安全原因，浏览器始终会保持 window.name 是string 类型。</p>
 </blockquote>
-<p>同样这个方法也可以应用到和iframe的交互来：<br>比如：我的页面(<a href="http://damonare.cn/index.html)中内嵌了一个" target="_blank" rel="external">http://damonare.cn/index.html)中内嵌了一个</a> <iframe>：</iframe></p>
+<p>同样这个方法也可以应用到和iframe的交互来：<br>比如：我的页面(<a href="http://damonare.cn/index.html)中内嵌了一个iframe：" target="_blank" rel="external">http://damonare.cn/index.html)中内嵌了一个iframe：</a></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">id</span>=<span class="string">"iframe"</span> <span class="attr">src</span>=<span class="string">"http://www.google.com/iframe.html"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>在 iframe.html 中设置好了 window.name 为我们要传递的字符串。<br>我们在 index.html 中写了下面的代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>);</div><div class="line"><span class="keyword">var</span> data = <span class="string">''</span>;</div><div class="line"></div><div class="line">iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    data = iframe.contentWindow.name;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
@@ -167,9 +166,9 @@
     
     <summary type="html">
     
-      &lt;p&gt;###前言&lt;/p&gt;
-&lt;p&gt;原文地址：&lt;a href=&quot;http://&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端跨域总结&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot; target=&quot;_blank&quot; 
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://&quot;&gt;前端跨域总结&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2029,9 +2028,9 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
@@ -2489,9 +2488,9 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="前端构建工具" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
     
@@ -2549,9 +2548,9 @@ Model：数据访问层
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -3005,9 +3004,9 @@ important 比 内联优先级高
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="http" scheme="http://damonare.github.io/tags/http/"/>
     

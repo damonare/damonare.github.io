@@ -6,34 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>前端跨域整理 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###前言
-原文地址：前端跨域总结
+  <meta name="description" content="前言原文地址：前端跨域总结
 博主博客地址：Damonare的个人博客
-相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。
-###正文
-1. 什么是跨域？
- 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个">
+相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端跨域整理">
 <meta property="og:url" content="http://damonare.github.io/2016/10/30/前端跨域整理/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="###前言
-原文地址：前端跨域总结
+<meta property="og:description" content="前言原文地址：前端跨域总结
 博主博客地址：Damonare的个人博客
-相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。
-###正文
-1. 什么是跨域？
- 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个">
-<meta property="og:updated_time" content="2016-10-30T13:17:10.053Z">
+相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。">
+<meta property="og:updated_time" content="2016-10-30T13:31:02.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端跨域整理">
-<meta name="twitter:description" content="###前言
-原文地址：前端跨域总结
+<meta name="twitter:description" content="前言原文地址：前端跨域总结
 博主博客地址：Damonare的个人博客
-相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。
-###正文
-1. 什么是跨域？
- 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个">
+相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -309,15 +297,14 @@
       
         <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是跨域？"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是跨域？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-通过document-domain跨域"><span class="toc-number">2.</span> <span class="toc-text">2. 通过document.domain跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-通过location-hash跨域"><span class="toc-number">3.</span> <span class="toc-text">3. 通过location.hash跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-通过HTML5的postMessage方法跨域"><span class="toc-number">4.</span> <span class="toc-text">4. 通过HTML5的postMessage方法跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-通过jsonp跨域"><span class="toc-number">5.</span> <span class="toc-text">5.通过jsonp跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-通过CORS跨域"><span class="toc-number">6.</span> <span class="toc-text">6. 通过CORS跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-通过window-name跨域"><span class="toc-number">7.</span> <span class="toc-text">7. 通过window.name跨域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后记"><span class="toc-number"></span> <span class="toc-text">后记</span></a>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是跨域？"><span class="toc-number">2.1.</span> <span class="toc-text">1. 什么是跨域？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-通过document-domain跨域"><span class="toc-number">2.2.</span> <span class="toc-text">2. 通过document.domain跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-通过location-hash跨域"><span class="toc-number">2.3.</span> <span class="toc-text">3. 通过location.hash跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-通过HTML5的postMessage方法跨域"><span class="toc-number">2.4.</span> <span class="toc-text">4. 通过HTML5的postMessage方法跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-通过jsonp跨域"><span class="toc-number">2.5.</span> <span class="toc-text">5.通过jsonp跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-通过CORS跨域"><span class="toc-number">2.6.</span> <span class="toc-text">6. 通过CORS跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-通过window-name跨域"><span class="toc-number">2.7.</span> <span class="toc-text">7. 通过window.name跨域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
         </div>
       
-        <p>###前言</p>
-<p>原文地址：<a href="http://" target="_blank" rel="external">前端跨域总结</a></p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>原文地址：<a href="http://" target="_blank" rel="external">前端跨域总结</a></p>
 <p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
 <p><strong>相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。</strong></p>
-<p>###正文</p>
-<h4 id="1-什么是跨域？"><a href="#1-什么是跨域？" class="headerlink" title="1. 什么是跨域？"></a>1. 什么是跨域？</h4><blockquote>
+<a id="more"></a>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="1-什么是跨域？"><a href="#1-什么是跨域？" class="headerlink" title="1. 什么是跨域？"></a>1. 什么是跨域？</h4><blockquote>
 <p> 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。所以我们要通过一些方法使本域的js能够操作其他域的页面对象或者使其他域的js能操作本域的页面对象（iframe之间）。下面是具体的跨域情况详解：</p>
 </blockquote>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">URL                      说明       是否允许通信</div><div class="line"><span class="symbol">http:</span><span class="comment">//www.a.com/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//www.a.com/b.js     同一域名下   允许</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com/lab/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//www.a.com/script/b.js 同一域名下不同文件夹 允许</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com:8000/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//www.a.com/b.js     同一域名，不同端口  不允许</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line"><span class="symbol">https:</span><span class="comment">//www.a.com/b.js 同一域名，不同协议 不允许</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//70.32.92.74/b.js 域名和域名对应ip 不允许</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//script.a.com/b.js 主域相同，子域不同 不允许（cookie这种情况下也不允许访问）</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//a.com/b.js 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）</span></div><div class="line"><span class="symbol"></span></div><div class="line">http:<span class="comment">//www.cnblogs.com/a.js</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//www.a.com/b.js 不同域名 不允许</span></div></pre></td></tr></table></figure>
@@ -433,9 +420,9 @@
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.name; <span class="regexp">//</span> My <span class="built_in">window</span><span class="string">'s name</span></div></pre></td></tr></table></figure>
 <p>可以看到，如果在一个标签里面跳转网页的话，我们的 window.name 是不会改变的。<br>基于这个思想，我们可以在某个页面设置好 window.name 的值，然后跳转到另外一个页面。在这个页面中就可以获取到我们刚刚设置的 window.name 了。</p>
 <blockquote>
-<p>由于安全原因，浏览器始终会保持 window.name 是 string 类型。</p>
+<p>由于安全原因，浏览器始终会保持 window.name 是string 类型。</p>
 </blockquote>
-<p>同样这个方法也可以应用到和iframe的交互来：<br>比如：我的页面(<a href="http://damonare.cn/index.html)中内嵌了一个" target="_blank" rel="external">http://damonare.cn/index.html)中内嵌了一个</a> <iframe>：</iframe></p>
+<p>同样这个方法也可以应用到和iframe的交互来：<br>比如：我的页面(<a href="http://damonare.cn/index.html)中内嵌了一个iframe：" target="_blank" rel="external">http://damonare.cn/index.html)中内嵌了一个iframe：</a></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">id</span>=<span class="string">"iframe"</span> <span class="attr">src</span>=<span class="string">"http://www.google.com/iframe.html"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>在 iframe.html 中设置好了 window.name 为我们要传递的字符串。<br>我们在 index.html 中写了下面的代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>);</div><div class="line"><span class="keyword">var</span> data = <span class="string">''</span>;</div><div class="line"></div><div class="line">iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    data = iframe.contentWindow.name;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
