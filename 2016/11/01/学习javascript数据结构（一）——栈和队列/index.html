@@ -4,22 +4,41 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Damonare的个人博客</title>
+  <title>学习Javascript数据结构(一)——栈和队列 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果时间可以停止，希望它就停止在现在。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Damonare的个人博客">
-<meta property="og:url" content="http://damonare.github.io/page/3/index.html">
+  <meta name="description" content="前言只要你不计较得失，人生还有什么不能想法子克服的。
+原文地址：学习javascript数据结构(一)——栈和队列
+博主博客地址：Damonare的个人博客
+
+几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。
+
+正文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习Javascript数据结构(一)——栈和队列">
+<meta property="og:url" content="http://damonare.github.io/2016/11/01/学习javascript数据结构（一）——栈和队列/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="如果时间可以停止，希望它就停止在现在。">
+<meta property="og:description" content="前言只要你不计较得失，人生还有什么不能想法子克服的。
+原文地址：学习javascript数据结构(一)——栈和队列
+博主博客地址：Damonare的个人博客
+
+几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。
+
+正文">
+<meta property="og:updated_time" content="2016-11-01T14:56:58.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Damonare的个人博客">
-<meta name="twitter:description" content="如果时间可以停止，希望它就停止在现在。">
+<meta name="twitter:title" content="学习Javascript数据结构(一)——栈和队列">
+<meta name="twitter:description" content="前言只要你不计较得失，人生还有什么不能想法子克服的。
+原文地址：学习javascript数据结构(一)——栈和队列
+博主博客地址：Damonare的个人博客
+
+几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。
+
+正文">
   
   
     <link rel="icon" href="/./img/1.png">
   
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
   <link rel="stylesheet" href="../../../../css/css/font-awesome.min.css">
 </head>
 
@@ -94,17 +113,17 @@
 						
 							<li><a href="http://damonare.cn/">博客首页</a></li>
 				        
-							<li><a href="../../index.html">主页</a></li>
+							<li><a href="../../../../index.html">主页</a></li>
 				        
-							<li><a href="../../archives">所有文章</a></li>
+							<li><a href="../../../../archives">所有文章</a></li>
 				        
-							<li><a href="../../categories/随笔/">随笔</a></li>
+							<li><a href="../../../../categories/随笔/">随笔</a></li>
 				        
-							<li><a href="../../categories/learn/">学习</a></li>
+							<li><a href="../../../../categories/learn/">学习</a></li>
 				        
-							<li><a href="../../categories/life/">生活</a></li>
+							<li><a href="../../../../categories/life/">生活</a></li>
 				        
-							<li><a href="../../categories/其它/">其它</a></li>
+							<li><a href="../../../../categories/其它/">其它</a></li>
 				        
 						</ul>
 					</nav>
@@ -127,7 +146,7 @@
 					        
 								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
 					        
-								<a class="rss" target="_blank" href="../../atom.xml" title="rss">rss</a>
+								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
 					        
 						</div>
 					</nav>
@@ -136,7 +155,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../../tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../tags/Fighting/" style="font-size: 12.5px;">Fighting</a> <a href="../../tags/HTML/" style="font-size: 15px;">HTML</a> <a href="../../tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../tags/http/" style="font-size: 12.5px;">http</a> <a href="../../tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="../../tags/前端/" style="font-size: 17.5px;">前端</a> <a href="../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../tags/微信开发/" style="font-size: 10px;">微信开发</a> <a href="../../tags/总结/" style="font-size: 10px;">总结</a> <a href="../../tags/数据结构/" style="font-size: 12.5px;">数据结构</a> <a href="../../tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="../../tags/读书/" style="font-size: 10px;">读书</a> <a href="../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../tags/随笔/" style="font-size: 10px;">随笔</a> <a href="../../tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Fighting/" style="font-size: 12.5px;">Fighting</a> <a href="../../../../tags/HTML/" style="font-size: 15px;">HTML</a> <a href="../../../../tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/http/" style="font-size: 12.5px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="../../../../tags/前端/" style="font-size: 17.5px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/微信开发/" style="font-size: 10px;">微信开发</a> <a href="../../../../tags/总结/" style="font-size: 10px;">总结</a> <a href="../../../../tags/数据结构/" style="font-size: 12.5px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="../../../../tags/读书/" style="font-size: 10px;">读书</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/随笔/" style="font-size: 10px;">随笔</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -196,17 +215,17 @@
 				
 					<li><a href="http://damonare.cn/">博客首页</a></li>
 		        
-					<li><a href="../../index.html">主页</a></li>
+					<li><a href="../../../../index.html">主页</a></li>
 		        
-					<li><a href="../../archives">所有文章</a></li>
+					<li><a href="../../../../archives">所有文章</a></li>
 		        
-					<li><a href="../../categories/随笔/">随笔</a></li>
+					<li><a href="../../../../categories/随笔/">随笔</a></li>
 		        
-					<li><a href="../../categories/learn/">学习</a></li>
+					<li><a href="../../../../categories/learn/">学习</a></li>
 		        
-					<li><a href="../../categories/life/">生活</a></li>
+					<li><a href="../../../../categories/life/">生活</a></li>
 		        
-					<li><a href="../../categories/其它/">其它</a></li>
+					<li><a href="../../../../categories/其它/">其它</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -230,7 +249,7 @@
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
 			        
-						<a class="rss" target="_blank" href="../../atom.xml" title="rss">rss</a>
+						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
 			        
 				</div>
 			</nav>
@@ -238,13 +257,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-前端面试大全" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-学习javascript数据结构（一）——栈和队列" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="../../2016/09/05/前端面试大全/" class="article-date">
-  	<time datetime="2016-09-05T13:10:55.167Z" itemprop="datePublished">2016-09-05</time>
+      <a href="" class="article-date">
+  	<time datetime="2016-11-01T13:16:54.812Z" itemprop="datePublished">2016-11-01</time>
 </a>
     </div>
   
@@ -256,56 +273,68 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2016/09/05/前端面试大全/">前端面试题</a>
+    <h1 class="article-title" itemprop="name">
+      学习Javascript数据结构(一)——栈和队列
     </h1>
   
 
       </header>
       
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/数据结构与算法/">数据结构与算法</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../../../categories/learn/">学习</a>
+	</div>
+
+
+    
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  热度： <span id="busuanzi_value_page_pv"></span>℃</span>
+  </div>
+  
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="HTML面试题"><a href="#HTML面试题" class="headerlink" title="HTML面试题"></a>HTML面试题<br><br></h3><ol>
-<li>XHTML和HTML有什么区别<blockquote>
-<ul>
-<li>HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML的置标语言<br>最主要的不同：</li>
-<li>XHTML 元素必须被正确地嵌套。</li>
-<li>XHTML 元素必须被关闭。</li>
-<li>标签名必须用小写字母。</li>
-<li>XHTML 文档必须拥有根元素。</li>
-</ul>
+          <!-- Table of Contents -->
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>只要你不计较得失，人生还有什么不能想法子克服的。</strong></p>
+<p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">学习javascript数据结构(一)——栈和队列</a></p>
+<p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+<blockquote>
+<p>几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&nbsp;Array所内置的API可以很方便的模拟栈和队列。</p>
 </blockquote>
-</li>
-</ol>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
+</blockquote>
+
       
       
 
   
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="../../categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="../../2016/09/05/前端面试大全/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="../详解javascript的类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">详解Javascript的类(单身狗请自觉进入)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
   
 
@@ -315,83 +344,62 @@
 
 
 
+<div class="support-author">
+	<p>如果您觉得我的文章对您有用，请随意打赏。</p>
+	<p>您的支持将鼓励我继续创作！</p>
+	<button id='alipay'>￥支付宝支持</button>
+	<button id='wechat'>￥微信支持</button>
+	<p>
+		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+	</p>
+	<script type="text/javascript">
+	document.querySelector('#alipay').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	})
+	document.querySelector('#wechat').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	})
+	</script>
+</div>
+<div class="ds-share" data-thread-key="学习javascript数据结构（一）——栈和队列" data-title="学习Javascript数据结构(一)——栈和队列" data-images="http://damonare.github.io" data-content="学习Javascript数据结构(一)——栈和队列" data-url="https://damonare.github.io">
+	<div class="ds-share-inline">
+	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
 
+	   <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);"></a></li>
+	   <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+	   <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+	   <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+	   <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
 
-
-  
-    <article id="post-javascript填坑史" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="../../2016/09/05/javascript填坑史/" class="article-date">
-  	<time datetime="2016-09-05T08:08:22.180Z" itemprop="datePublished">2016-09-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2016/09/05/javascript填坑史/">Javascript填坑史</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>说明：</strong>&nbsp;&nbsp;这是笔者平时积累的一些觉得比较有意思或是比较有难度的JavaScript题目理解和心得，会保持长期更新。</p>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="../../categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="../../2016/09/05/javascript填坑史/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
+	 </ul>
+	 <div class="ds-share-icons-more">
+	 </div>
+   </div>
+</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="学习javascript数据结构（一）——栈和队列" data-title="学习Javascript数据结构(一)——栈和队列" data-url="http://damonare.github.io"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"damonare"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://damonare.cn/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="../2/">&laquo; Prev</a><a class="page-number" href="../../index.html">1</a><a class="page-number" href="../2/">2</a><span class="page-number current">3</span>
-    </nav>
-  
 </div>
       <footer id="footer">
     <div class="outer">
@@ -499,7 +507,7 @@
 
     </div>
     
-  <link rel="stylesheet" href="../../fancybox/jquery.fancybox.css">
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -507,8 +515,8 @@
         fancybox: true,
         mathjax: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -517,7 +525,7 @@
 </script>
 <script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-<script src="../../js/main.js"></script>
+<script src="../../../../js/main.js"></script>
 
 
 
