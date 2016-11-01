@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>详解Javascript的类(单身狗请自觉进入) | Damonare的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言生活有度，人生添寿。
+原文地址：详解javascript的类
+博主博客地址：Damonare的个人博客
+
+&amp;nbsp;&amp;nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="详解Javascript的类(单身狗请自觉进入)">
+<meta property="og:url" content="http://damonare.github.io/2016/11/01/详解javascript的类/index.html">
+<meta property="og:site_name" content="Damonare的个人博客">
+<meta property="og:description" content="前言生活有度，人生添寿。
+原文地址：详解javascript的类
+博主博客地址：Damonare的个人博客
+
+&amp;nbsp;&amp;nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数">
+<meta property="og:updated_time" content="2016-11-01T12:47:56.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="详解Javascript的类(单身狗请自觉进入)">
+<meta name="twitter:description" content="前言生活有度，人生添寿。
+原文地址：详解javascript的类
+博主博客地址：Damonare的个人博客
+
+&amp;nbsp;&amp;nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数">
+  
+  
+    <link rel="icon" href="/./img/1.png">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <link rel="stylesheet" href="../../../../css/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Damonare</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不念过去，不畏将来</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://damonare.cn/">博客首页</a></li>
+				        
+							<li><a href="../../../../index.html">主页</a></li>
+				        
+							<li><a href="../../../../archives">所有文章</a></li>
+				        
+							<li><a href="../../../../categories/随笔/">随笔</a></li>
+				        
+							<li><a href="../../../../categories/learn/">学习</a></li>
+				        
+							<li><a href="../../../../categories/life/">生活</a></li>
+				        
+							<li><a href="../../../../categories/其它/">其它</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+					        
+								<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+					        
+								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="../../../../tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Fighting/" style="font-size: 12.5px;">Fighting</a> <a href="../../../../tags/HTML/" style="font-size: 15px;">HTML</a> <a href="../../../../tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/http/" style="font-size: 12.5px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 10px;">javascript</a> <a href="../../../../tags/前端/" style="font-size: 17.5px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/微信开发/" style="font-size: 10px;">微信开发</a> <a href="../../../../tags/总结/" style="font-size: 10px;">总结</a> <a href="../../../../tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="../../../../tags/读书/" style="font-size: 10px;">读书</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/随笔/" style="font-size: 10px;">随笔</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
+					</div>
+				</section>
+				
+
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://xdlrt.github.io/">卢睿韬的自留地</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lcodecorex.github.io/">Oscar Blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://qiutc.me/">阿城的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://touch28.github.io/">Lingo的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lengxing.github.io/">冷星</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">姓名：谭继臻    性别：男     学习经历：2014-至今 就读于西安电子科技大学     邮箱：jztan1996@gmail.com     QQ:577964075      微信：tjz19960421</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Damonare</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Damonare</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不念过去，不畏将来</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://damonare.cn/">博客首页</a></li>
+		        
+					<li><a href="../../../../index.html">主页</a></li>
+		        
+					<li><a href="../../../../archives">所有文章</a></li>
+		        
+					<li><a href="../../../../categories/随笔/">随笔</a></li>
+		        
+					<li><a href="../../../../categories/learn/">学习</a></li>
+		        
+					<li><a href="../../../../categories/life/">生活</a></li>
+		        
+					<li><a href="../../../../categories/其它/">其它</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+			        
+						<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+			        
+						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-详解javascript的类" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="" class="article-date">
+  	<time datetime="2016-11-01T03:11:18.192Z" itemprop="datePublished">2016-11-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      详解Javascript的类(单身狗请自觉进入)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/深度玄学/">深度玄学</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../../../categories/learn/">学习</a>
+	</div>
+
+
+    
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  热度： <span id="busuanzi_value_page_pv"></span>℃</span>
+  </div>
+  
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          <!-- Table of Contents -->
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>生活有度，人生添寿。</strong></p>
+<p>原文地址：<a href="http://" target="_blank" rel="external">详解javascript的类</a></p>
+<p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+<blockquote>
+<p>&nbsp;&nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数千行，要是node后端那更不止几千行了。（WTF）代码量的增加给编程带来的首要的问题就是如何去编写和维护如此庞大的代码呢？答案就是模块化思想，其实就是面向对象（OOP）编程，如今比较流行的三大前端框架（angular,react,vue）基本都实现了组件化编程，但组件化和我们所说的模块化又有所不同，应该可以这么理解，组件化是模块化的升级版，模块化是组件化的基础。那么，问题来了，javascript怎么面向对象编程呢？我想这很多老鸟也不定说的清楚吧，前端杂而活跃的各种社区，很多前端er一度依赖各种插件，根本不需要去了解这些深层的东西却照样能完成任务。但我想作为一个有追求的前端er还是很有必要去学习这些看似用不着的东西的，别的不说，就单单因为我们是前端er,只会用jquery一个稍微厉害的后端都能代替你。好吧，废话不多说，到底如何面向对象coding呢…..<br><br><br>&nbsp;&nbsp;很不幸，es5中并没有给出明确的定义‘类’的概念，所以传统的面向对象编程似乎是行不通的，那么又该肿么办呢？值得庆幸的是，前辈们通过不断探索总结，成功的用javascript模拟出了“类”。那么，javascript的类又该怎么定义呢？<br><br></p>
+</blockquote>
+<p><strong>在面向对象编程中，类（class）是对象（object）的模板，定义了同一组对象（又称”实例”）共有的属性和方法。</strong></p>
+<a id="more"></a>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
+<p>说到javascript中的“类”就不得不说原型链和继承了，因为javascript是没有真正意义上的类的，所谓的类就是基于原型链和继承来实现的，即使ES6中加入了class,extends关键字实现类和继承，但实际上还是基于原型链和继承， ES6 类（class）是 JavaScript 现有的原型继承的语法糖。</p>
+</blockquote>
+<h4 id="1-原型链和继承"><a href="#1-原型链和继承" class="headerlink" title="1. 原型链和继承"></a>1. 原型链和继承</h4><p>“<br>    在 javaScript 中，每个对象都有一个指向它的原型（prototype）对象的内部链接。这个原型对象又有自己的原型，直到某个对象的原型为 null 为止（也就是不再有原型指向），组成这条链的最后一环。这种一级一级的链结构就称为原型链（prototype chain）。<br>”<br></p>
+<h5 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h5><blockquote>
+<p>实际上在定义一个对象的时候原型链本身就已经生成了，javascript处处皆对象的思想放在这里理解起来就很容易了，看完后你会发现万物始于Object.prototype。那么我们都是如何定义一个对象的呢，博主总结的方法如下几个：</p>
+</blockquote>
+<p>先初步来个demo具体解释下原型链是咋回事吧：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//someObject.<span class="string">[[Prototype]]</span> 符号是用于指派 someObject 的原型。这个等同于 JavaScript 的 __proto__  属性（现已弃用）。。从 ES6 开始, <span class="string">[[Prototype]]</span> 可以用Object.getPrototypeOf()和Object.setPrototypeOf()访问器来访问。这个方法可以放心使用博主亲测，主流浏览器已经支持了</div><div class="line">// 假定有一个对象 o, 其自身的属性（own properties）有 a 和 b：</div><div class="line">// &#123;a: <span class="number">1</span>, b: <span class="number">2</span>&#125;</div><div class="line">// o 的原型 o.<span class="string">[[Prototype]]</span>有属性 b 和 c：</div><div class="line">// &#123;b: <span class="number">3</span>, c: <span class="number">4</span>&#125;</div><div class="line">// 最后, o.<span class="string">[[Prototype]]</span>.<span class="string">[[Prototype]]</span> 是 null.</div><div class="line">// 这就是原型链的末尾，即 null，</div><div class="line">// 根据定义，null 没有<span class="string">[[Prototype]]</span>.</div><div class="line">// 综上，整个原型链如下:</div><div class="line">// &#123;a:<span class="number">1</span>, b:<span class="number">2</span>&#125; <span class="comment">---&gt; &#123;b:3, c:4&#125; ---&gt; null</span></div></pre></td></tr></table></figure>
+<p><strong>来来来，撸袖子搞出个对象！！！（马上狗节，单身狗请自觉阅读完此篇博客）</strong></p>
+<ul>
+<li><strong>使用普通方法来创建一个对象</strong></li>
+</ul>
+<p><strong>demo如下:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o=&#123;</div><div class="line">    a:<span class="number">0</span>,</div><div class="line">    b:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//创建一个对象</span></div><div class="line"><span class="comment">//原型链如下：</span></div><div class="line"><span class="comment">//o---&gt;Object.prototype---&gt;null</span></div><div class="line"><span class="keyword">var</span> a = [<span class="string">"yo"</span>, <span class="string">"whadup"</span>, <span class="string">"?"</span>];</div><div class="line"><span class="comment">//创建一个数组对象</span></div><div class="line"><span class="comment">//(indexOf, forEach等方法都是从它继承而来).</span></div><div class="line"><span class="comment">//原型链如下：</span></div><div class="line"><span class="comment">//a---&gt;Array.prototype ---&gt; Object.prototype ---&gt; null</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//创建一个函数对象</span></div><div class="line"><span class="comment">//(call, bind等方法都是从它继承而来):</span></div><div class="line"><span class="comment">//原型链如下：</span></div><div class="line"><span class="comment">//f ---&gt; Function.prototype ---&gt; Object.prototype ---&gt; null</span></div><div class="line"><span class="keyword">var</span> date=<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="comment">//创建一个日期对象</span></div><div class="line"><span class="comment">//原型链如下：</span></div><div class="line"><span class="comment">//date---&gt;Date.prototype---&gt;Object.pprototype---&gt;null</span></div></pre></td></tr></table></figure>
+<ul>
+<li>使用构造函数的方法</li>
+</ul>
+<blockquote>
+<p>在 JavaScript 中，构造器其实就是一个普通的函数。当使用 new 操作符 来作用这个函数时，它就可以被称为构造方法（构造函数）。——MDN</p>
+</blockquote>
+<p><strong>demo如下：</strong></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function <span class="function"><span class="title">fun</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.propA=<span class="string">'prop'</span>;</div><div class="line">    <span class="keyword">this</span>.propB=<span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">fun</span>.prototype=&#123;</span></div><div class="line">    methodA:function()&#123;</div><div class="line">        console.log(<span class="keyword">this</span>.propA)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> o=new <span class="function"><span class="title">fun</span><span class="params">()</span></span>;</div><div class="line">o.methodA();<span class="comment">//prop</span></div><div class="line"></div><div class="line"><span class="comment">// o是生成的对象,他的自身属性有'propA'和'propB'.</span></div><div class="line"><span class="comment">// 在o被实例化时,o.[[Prototype]]指向了fun.prototype.</span></div></pre></td></tr></table></figure>
+<ul>
+<li>使用Object.create创建对象</li>
+</ul>
+<blockquote>
+<p>ECMAScript 5 中引入了一个新方法：Object.create()。可以调用这个方法来创建一个新对象。新对象的原型就是调用 create 方法时传入的第一个参数：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;a: <span class="number">1</span>&#125;;</div><div class="line"><span class="comment">// a ---&gt; Object.prototype ---&gt; null</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> b = <span class="built_in">Object</span>.create(a);</div><div class="line"><span class="comment">// b ---&gt; a ---&gt; Object.prototype ---&gt; null</span></div><div class="line"><span class="built_in">console</span>.log(b.a); <span class="comment">// 1 (继承而来)继承概念下面会讲</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> c = <span class="built_in">Object</span>.create(b);</div><div class="line"><span class="comment">// c ---&gt; b ---&gt; a ---&gt; Object.prototype ---&gt; null</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> d = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</div><div class="line"><span class="comment">// d ---&gt; null</span></div><div class="line"><span class="built_in">console</span>.log(d.hasOwnProperty); <span class="comment">// undefined, 因为d没有继承Object.prototype</span></div></pre></td></tr></table></figure>
+<ul>
+<li>使用 class 关键字</li>
+</ul>
+<blockquote>
+<p>ECMAScript6 引入了一套新的关键字用来实现 class。使用基于类语言的开发人员会对这些结构感到熟悉，但它们是不一样的。 JavaScript 仍然是基于原型的。这些新的关键字包括 class, constructor, static, extends, 和 super.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygon</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(height, width) &#123;</div><div class="line">    <span class="keyword">this</span>.height = height;</div><div class="line">    <span class="keyword">this</span>.width = width;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//定义一个类Polygon</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">extends</span> <span class="title">Polygon</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(sideLength) &#123;</div><div class="line">    <span class="keyword">super</span>(sideLength, sideLength);</div><div class="line">  &#125;<span class="comment">//使用super引用父类</span></div><div class="line">  get area() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.height * <span class="keyword">this</span>.width;</div><div class="line">  &#125;</div><div class="line">  set sideLength(newLength) &#123;</div><div class="line">    <span class="keyword">this</span>.height = newLength;</div><div class="line">    <span class="keyword">this</span>.width = newLength;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//使用extends定义Squeare继承父类Polygon</span></div><div class="line"><span class="keyword">var</span> square = <span class="keyword">new</span> Square(<span class="number">2</span>);<span class="comment">//实例对象</span></div><div class="line"></div><div class="line"><span class="comment">//此时的原型链为：</span></div><div class="line"><span class="comment">//square---&gt;Square.prototype---&gt;Polygon.prototype---&gt;Object.prototype---&gt;null</span></div><div class="line"><span class="comment">//如果不理解为什么是这样，不要紧接着往下看类的说明</span></div></pre></td></tr></table></figure>
+<h5 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h5><p>其实在上面讲原型链的时候难以避免的也提到了继承，比如来自MDN的这个实例：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// 假定有一个对象 o, 其自身的属性（own properties）有 a 和 b：</div><div class="line">// &#123;a: <span class="number">1</span>, b: <span class="number">2</span>&#125;</div><div class="line">// o 的原型 o.<span class="string">[[Prototype]]</span>有属性 b 和 c：（someObject.<span class="string">[[Prototype]]</span> 符号是用于指派 someObject 的原型。这个等同于 JavaScript 的 __proto__  属性（现已弃用）。。从 ES6 开始, <span class="string">[[Prototype]]</span> 可以用Object.getPrototypeOf()和Object.setPrototypeOf()访问器来访问。）</div><div class="line">// &#123;b: <span class="number">3</span>, c: <span class="number">4</span>&#125;</div><div class="line">// 最后, o.<span class="string">[[Prototype]]</span>.<span class="string">[[Prototype]]</span> 是 null.</div><div class="line">// 这就是原型链的末尾，即 null，</div><div class="line">// 根据定义，null 没有<span class="string">[[Prototype]]</span>.</div><div class="line">// 综上，整个原型链如下:</div><div class="line">// &#123;a:<span class="number">1</span>, b:<span class="number">2</span>&#125; <span class="comment">---&gt; &#123;b:3, c:4&#125; ---&gt; null</span></div><div class="line">console.log(o.a); // <span class="number">1</span></div><div class="line">// a是o的自身属性吗？是的，该属性的值为<span class="number">1</span></div><div class="line"></div><div class="line">console.log(o.b); // <span class="number">2</span></div><div class="line">// b是o的自身属性吗？是的，该属性的值为<span class="number">2</span></div><div class="line">// o.<span class="string">[[Prototype]]</span>上还有一个<span class="string">'b'</span>属性,但是它不会被访问到.这种情况称为<span class="string">"属性遮蔽 (property shadowing)"</span>.</div><div class="line"></div><div class="line">console.log(o.c); // <span class="number">4</span></div><div class="line">// c是o的自身属性吗？不是，那看看o.<span class="string">[[Prototype]]</span>上有没有.</div><div class="line">// c是o.<span class="string">[[Prototype]]</span>的自身属性吗？是的,该属性的值为<span class="number">4</span></div><div class="line"></div><div class="line">console.log(o.d); // undefined</div><div class="line">// d是o的自身属性吗？不是,那看看o.<span class="string">[[Prototype]]</span>上有没有.</div><div class="line">// d是o.<span class="string">[[Prototype]]</span>的自身属性吗？不是，那看看o.<span class="string">[[Prototype]]</span>.<span class="string">[[Prototype]]</span>上有没有.</div><div class="line">// o.<span class="string">[[Prototype]]</span>.<span class="string">[[Prototype]]</span>为null，停止搜索，</div><div class="line">// 没有d属性，返回undefined</div></pre></td></tr></table></figure>
+<p><strong>—-以上内容来自<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="external">MDN继承与原型链</a></strong></p>
+<p>我想看到这里还是有些似懂非懂吧，那么来个例子吧：</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var <span class="keyword">object</span><span class="number">1</span>=&#123;</div><div class="line">    a:<span class="number">1</span>,</div><div class="line">    b:<span class="keyword">function</span>()&#123;</div><div class="line">        console.log(<span class="keyword">this</span>.a+<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//定义一个对象</span></div><div class="line">var <span class="keyword">object</span><span class="number">2</span>=Object.create(<span class="keyword">object</span><span class="number">1</span>);</div><div class="line"><span class="comment">//调用Object.create来创建一个新对象,新对象的原型就是调用 create 方法时传入的第一个参数,现在的原型链是：</span></div><div class="line"><span class="comment">//object2---&gt;object1---&gt;object1.prototype---&gt;null</span></div><div class="line"><span class="keyword">object</span><span class="number">2</span>.d=<span class="number">4</span>;</div><div class="line"><span class="keyword">object</span><span class="number">2</span>.a;</div><div class="line"><span class="comment">//1</span></div><div class="line"><span class="comment">//继承了object1的属性a</span></div><div class="line"><span class="keyword">object</span><span class="number">2</span>.b();</div><div class="line"><span class="comment">//2</span></div><div class="line"><span class="comment">//继承了object1的方法b</span></div><div class="line">Object.getPrototypeOf(<span class="keyword">object</span><span class="number">2</span>);</div><div class="line"><span class="comment">//object1得到object2的原型object1</span></div></pre></td></tr></table></figure>
+<p>我想现在应该是明白了吧，再不明白博主也是无能为力了，表达能力实在有限。</p>
+<h4 id="2-类"><a href="#2-类" class="headerlink" title="2. 类"></a>2. 类</h4><blockquote>
+<p>总算说到类了，由于javascript的类基于原型链和继承，因此在上面的内容中就已经定义了很多的类。咱们javascript的类同样能实现传统类的多态，封装，继承等特性，这里主要讲解了继承这个概念，但实际上很多时候不经意可能就用了这三个特性。很好玩不是么</p>
+</blockquote>
+<p>首先，我们先看下在ES5中定义一个类的形式：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span><span class="params">(name)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.sleep = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line">        console.log(<span class="keyword">this</span>.name+<span class="string">'正在睡觉'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;<span class="comment">//定义Animal类</span></div><div class="line">Animal.prototype = &#123;</div><div class="line">    eat: <span class="function"><span class="keyword">function</span><span class="params">(food)</span> </span>&#123;</div><div class="line">        console.log(<span class="keyword">this</span>.name+<span class="string">"正在吃"</span>+food);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">Cat.prototype = <span class="keyword">new</span> Animal(<span class="string">'Tom'</span>);</div><div class="line"><span class="keyword">var</span> Tom = <span class="keyword">new</span> Cat(<span class="string">'Tom'</span>);/Cat实例对象</div><div class="line">Tom.eat(<span class="string">'猫粮'</span>);</div><div class="line"><span class="comment">//Tom正在吃猫粮</span></div><div class="line"><span class="comment">//继承Animal方法</span></div><div class="line">Tom.sleep();</div><div class="line"><span class="comment">//Tom正在睡觉</span></div><div class="line"><span class="comment">//继承Animal方法</span></div><div class="line"><span class="comment">//现在的原型链：</span></div><div class="line"><span class="comment">//Tom(Cat实例对象)---&gt;Cat.prototype(Animal实例对象)---&gt;Animal.prototype---&gt;Object.prototype---&gt;null</span></div></pre></td></tr></table></figure>
+<p>好的，然后我们看下在ES6中改写上面的类：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">  constructor(name) &#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  sleep() &#123;</div><div class="line">    console.log(<span class="keyword">this</span>.name + ' 正在睡觉');</div><div class="line">  &#125;</div><div class="line">  eat(food)&#123;</div><div class="line">    console.log(<span class="keyword">this</span>.name+'正在吃'+food)  </div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">const <span class="type">Tom</span> = <span class="keyword">new</span> <span class="type">Cat</span>(<span class="symbol">'To</span>m');</div><div class="line"><span class="type">Tom</span>.eat('猫粮');</div><div class="line"><span class="comment">//Tom正在吃猫粮</span></div><div class="line"><span class="comment">//继承Animal方法</span></div><div class="line"><span class="type">Tom</span>.sleep();</div><div class="line"><span class="comment">//Tom正在睡觉</span></div><div class="line"><span class="comment">//继承Animal方法</span></div><div class="line"><span class="comment">//现在的原型链：</span></div><div class="line"><span class="comment">//Tom(Cat实例对象)---&gt;Cat.prototype(Animal实例对象)---&gt;Animal.prototype---&gt;Object.prototype---&gt;null</span></div></pre></td></tr></table></figure>
+<p>定义一个类的方法实际上也是上面所说的定义一个对象的方法，类本身就是一个对象，只不过这个对象里面的方法和属性可以供许多实例对象调用而已。</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><blockquote>
+<p>总的来说对于类的理解还是需要不断探索的，路漫漫其修远兮，吾将上下而求索。</p>
+</blockquote>
+
+      
+      
+
+  
+    </div>
+    
+  </div>
+
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="../../../10/30/前端跨域整理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端跨域整理</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+
+
+</article>
+
+
+
+
+<div class="support-author">
+	<p>如果您觉得我的文章对您有用，请随意打赏。</p>
+	<p>您的支持将鼓励我继续创作！</p>
+	<button id='alipay'>￥支付宝支持</button>
+	<button id='wechat'>￥微信支持</button>
+	<p>
+		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+	</p>
+	<script type="text/javascript">
+	document.querySelector('#alipay').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	})
+	document.querySelector('#wechat').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	})
+	</script>
+</div>
+<div class="ds-share" data-thread-key="详解javascript的类" data-title="详解Javascript的类(单身狗请自觉进入)" data-images="http://damonare.github.io" data-content="详解Javascript的类(单身狗请自觉进入)" data-url="https://damonare.github.io">
+	<div class="ds-share-inline">
+	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
+
+	   <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);"></a></li>
+	   <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+	   <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+	   <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+	   <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+
+	 </ul>
+	 <div class="ds-share-icons-more">
+	 </div>
+   </div>
+</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="详解javascript的类" data-title="详解Javascript的类(单身狗请自觉进入)" data-url="http://damonare.github.io"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"damonare"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://damonare.cn/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <span>由<a href="http://hexo.io/">Hexo</a>强力驱动</span> &copy;
+                2016
+                    Damonare
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten -->
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                <span id="busuanzi_container_site_uv">
+    您是本站第<span id="busuanzi_value_site_uv"></span>位访客
+                </span>
+                <span id="showDays"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    < script >
+        var birthDay = new Date('9/05/2016 18:34:23');
+    setInterval(function() {
+        var now = new Date();
+        var num_1 = 1000 * 60 * 60 * 24;
+        var num_2 = 1000 * 60 * 60;
+        var duration = now.getTime() - birthDay.getTime();
+        var total = Math.floor(duration / num_1);
+        var hour = Math.floor((duration % num_1) / num_2);
+        var minute = Math.floor(((duration % num_1) % num_2) / (1000 * 60));
+        var second = Math.floor((((duration % num_1) % num_2) % (1000 * 60)) / 1000);
+        document.getElementById("showDays").innerHTML = "本站已运行" + total + "天" + hour + '时' + minute + '分' + second + '秒';
+    }, 1000);
+</script>
+
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<script>
+    var bszCaller, bszTag;
+    ! function() {
+        var c, d, e, a = !1,
+            b = [];
+        ready = function(c) {
+            return a || "interactive" === document.readyState || "complete" === document.readyState ? c.call(document) : b.push(function() {
+                return c.call(this)
+            }), this
+        }, d = function() {
+            for (var a = 0, c = b.length; c > a; a++) b[a].apply(document);
+            b = []
+        }, e = function() {
+            a || (a = !0, d.call(window), document.removeEventListener ? document.removeEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.detachEvent("onreadystatechange", e), window == window.top && (clearInterval(c),
+                c = null)))
+        }, document.addEventListener ? document.addEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.attachEvent("onreadystatechange", function() {
+            /loaded|complete/.test(document.readyState) && e()
+        }), window == window.top && (c = setInterval(function() {
+            try {
+                a || document.documentElement.doScroll("left")
+            } catch (b) {
+                return
+            }
+            e()
+        }, 5)))
+    }(), bszCaller = {
+        fetch: function(a, b) {
+            var c = "BusuanziCallback_" + Math.floor(1099511627776 * Math.random());
+            window[c] = this.evalCall(b), a = a.replace("=BusuanziCallback", "=" + c), scriptTag = document.createElement("SCRIPT"), scriptTag.type = "text/javascript", scriptTag.defer = !0, scriptTag.src = a, document.getElementsByTagName(
+                "HEAD")[0].appendChild(scriptTag)
+        },
+        evalCall: function(a) {
+            return function(b) {
+                ready(function() {
+                    try {
+                        a(b), scriptTag.parentElement.removeChild(scriptTag)
+                    } catch (c) {
+                        bszTag.hides()
+                    }
+                })
+            }
+        }
+    }, bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", function(a) {
+        bszTag.texts(a), bszTag.shows()
+    }), bszTag = {
+        bszs: ["site_pv", "page_pv", "site_uv"],
+        texts: function(a) {
+            this.bszs.map(function(b) {
+                var c = document.getElementById("busuanzi_value_" + b);
+                c && (c.innerHTML = a[b])
+            })
+        },
+        hides: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "none")
+            })
+        },
+        shows: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "inline")
+            })
+        }
+    };
+</script>
+
+    </div>
+    
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        mathjax: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false
+    }
+</script>
+<script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="../../../../js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e839062c43d17bbd439d0bb5b80ab5e1";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+ eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('g(0).h(e(){e d(){0.9=0[b]?" 看这里，看这里！":a}f b,c,a=0.9;"2"!=4 0.8?(b="8",c="k"):"2"!=4 0.5?(b="5",c="j"):"2"!=4 0.6&&(b="6",c="l"),("2"!=4 0.7||"2"!=4 0[b])&&0.7(c,d,!1)});',22,22,'document||undefined||typeof|mozHidden|webkitHidden|addEventListener|hidden|title|||||function|var|jQuery|ready|Hi|mozvisibilitychange|visibilitychange|webkitvisibilitychange'.split('|'),0,{}))
+</script>
+<script>
+$(function(){
+    $('.ds-share').attr('data-url',window.location.href);
+})
+</script>
+
+  </div>
+</body>
+</html>
