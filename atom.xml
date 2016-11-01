@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-11-01T12:47:56.963Z</updated>
+  <updated>2016-11-01T12:51:40.803Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/"/>
     <id>http://damonare.github.io/2016/11/01/详解javascript的类/</id>
     <published>2016-11-01T03:11:18.192Z</published>
-    <updated>2016-11-01T12:47:56.963Z</updated>
+    <updated>2016-11-01T12:51:40.803Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>生活有度，人生添寿。</strong></p>
-<p>原文地址：<a href="http://" target="_blank" rel="external">详解javascript的类</a></p>
+<p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">详解javascript的类</a></p>
 <p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
 <blockquote>
 <p>&nbsp;&nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数千行，要是node后端那更不止几千行了。（WTF）代码量的增加给编程带来的首要的问题就是如何去编写和维护如此庞大的代码呢？答案就是模块化思想，其实就是面向对象（OOP）编程，如今比较流行的三大前端框架（angular,react,vue）基本都实现了组件化编程，但组件化和我们所说的模块化又有所不同，应该可以这么理解，组件化是模块化的升级版，模块化是组件化的基础。那么，问题来了，javascript怎么面向对象编程呢？我想这很多老鸟也不定说的清楚吧，前端杂而活跃的各种社区，很多前端er一度依赖各种插件，根本不需要去了解这些深层的东西却照样能完成任务。但我想作为一个有追求的前端er还是很有必要去学习这些看似用不着的东西的，别的不说，就单单因为我们是前端er,只会用jquery一个稍微厉害的后端都能代替你。好吧，废话不多说，到底如何面向对象coding呢…..<br><br><br>&nbsp;&nbsp;很不幸，es5中并没有给出明确的定义‘类’的概念，所以传统的面向对象编程似乎是行不通的，那么又该肿么办呢？值得庆幸的是，前辈们通过不断探索总结，成功的用javascript模拟出了“类”。那么，javascript的类又该怎么定义呢？<br><br></p>
@@ -38,7 +38,7 @@
 <p>实际上在定义一个对象的时候原型链本身就已经生成了，javascript处处皆对象的思想放在这里理解起来就很容易了，看完后你会发现万物始于Object.prototype。那么我们都是如何定义一个对象的呢，博主总结的方法如下几个：</p>
 </blockquote>
 <p>先初步来个demo具体解释下原型链是咋回事吧：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//someObject.<span class="string">[[Prototype]]</span> 符号是用于指派 someObject 的原型。这个等同于 JavaScript 的 __proto__  属性（现已弃用）。。从 ES6 开始, <span class="string">[[Prototype]]</span> 可以用Object.getPrototypeOf()和Object.setPrototypeOf()访问器来访问。这个方法可以放心使用博主亲测，主流浏览器已经支持了</div><div class="line">// 假定有一个对象 o, 其自身的属性（own properties）有 a 和 b：</div><div class="line">// &#123;a: <span class="number">1</span>, b: <span class="number">2</span>&#125;</div><div class="line">// o 的原型 o.<span class="string">[[Prototype]]</span>有属性 b 和 c：</div><div class="line">// &#123;b: <span class="number">3</span>, c: <span class="number">4</span>&#125;</div><div class="line">// 最后, o.<span class="string">[[Prototype]]</span>.<span class="string">[[Prototype]]</span> 是 null.</div><div class="line">// 这就是原型链的末尾，即 null，</div><div class="line">// 根据定义，null 没有<span class="string">[[Prototype]]</span>.</div><div class="line">// 综上，整个原型链如下:</div><div class="line">// &#123;a:<span class="number">1</span>, b:<span class="number">2</span>&#125; <span class="comment">---&gt; &#123;b:3, c:4&#125; ---&gt; null</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//someObject.<span class="string">[[Prototype]]</span> 符号是用于指派 someObject 的原型。这个等同于 JavaScript 的 __proto__  属性（现已弃用）。。从 ES6 开始, <span class="string">[[Prototype]]</span> 可以用Object.getPrototypeOf()和Object.setPrototypeOf()访问器来访问。这个方法可以放心使用博主亲测，主流浏览器已经支持了</div><div class="line">// 假定有一个对象 o, 其自身的属性（own properties）有 a 和 b：</div><div class="line">// &#123;a: <span class="number">1</span>, b: <span class="number">2</span>&#125;</div><div class="line">// o 的原型 o.<span class="string">[[Prototype]]</span>有属性 b 和 c：</div><div class="line">// &#123;b: <span class="number">3</span>, c: <span class="number">4</span>&#125;</div><div class="line">// 最后, o.<span class="string">[[Prototype]]</span>.<span class="string">[[Prototype]]</span> 是 null.</div><div class="line">// 这就是原型链的末尾，即 null，</div><div class="line">// 根据定义，null 没有<span class="string">[[Prototype]]</span>.</div><div class="line">// 综上，整个原型链如下:</div><div class="line">// &#123;a:<span class="number">1</span>, b:<span class="number">2</span>&#125;<span class="comment">---&gt; &#123;b:3, c:4&#125; ---&gt; null</span></div></pre></td></tr></table></figure>
 <p><strong>来来来，撸袖子搞出个对象！！！（马上狗节，单身狗请自觉阅读完此篇博客）</strong></p>
 <ul>
 <li><strong>使用普通方法来创建一个对象</strong></li>
@@ -89,7 +89,7 @@
     <summary type="html">
     
       &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;生活有度，人生添寿。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;原文地址：&lt;a href=&quot;http://&quot;&gt;详解javascript的类&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more&quot;&gt;详解javascript的类&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;nbsp;&amp;nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数千行，要是node后端那更不止几千行了。（WTF）代码量的增加给编程带来的首要的问题就是如何去编写和维护如此庞大的代码呢？答案就是模块化思想，其实就是面向对象（OOP）编程，如今比较流行的三大前端框架（angular,react,vue）基本都实现了组件化编程，但组件化和我们所说的模块化又有所不同，应该可以这么理解，组件化是模块化的升级版，模块化是组件化的基础。那么，问题来了，javascript怎么面向对象编程呢？我想这很多老鸟也不定说的清楚吧，前端杂而活跃的各种社区，很多前端er一度依赖各种插件，根本不需要去了解这些深层的东西却照样能完成任务。但我想作为一个有追求的前端er还是很有必要去学习这些看似用不着的东西的，别的不说，就单单因为我们是前端er,只会用jquery一个稍微厉害的后端都能代替你。好吧，废话不多说，到底如何面向对象coding呢…..&lt;br&gt;&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;很不幸，es5中并没有给出明确的定义‘类’的概念，所以传统的面向对象编程似乎是行不通的，那么又该肿么办呢？值得庆幸的是，前辈们通过不断探索总结，成功的用javascript模拟出了“类”。那么，javascript的类又该怎么定义呢？&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -2120,9 +2120,9 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
@@ -2580,9 +2580,9 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="前端构建工具" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
     
@@ -2640,9 +2640,9 @@ Model：数据访问层
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -3096,9 +3096,9 @@ important 比 内联优先级高
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="http" scheme="http://damonare.github.io/tags/http/"/>
     
