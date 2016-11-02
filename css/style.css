@@ -146,6 +146,9 @@ td {
 a img {
   border: none;
 }
+i {
+  font-style: normal;
+}
 ol {
   list-style: decimal;
   padding-left: 20px;
@@ -1088,7 +1091,7 @@ a {
   margin-top: 0;
 }
 .article-entry em {
-  font-style: italic;
+  font-style: normal;
 }
 .article-entry ul li:before {
   content: "";

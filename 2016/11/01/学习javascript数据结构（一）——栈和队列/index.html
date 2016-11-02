@@ -10,9 +10,7 @@
 原文地址：学习javascript数据结构(一)——栈和队列
 博主博客地址：Damonare的个人博客
 
-几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。
-
-正文">
+几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习Javascript数据结构(一)——栈和队列">
 <meta property="og:url" content="http://damonare.github.io/2016/11/01/学习javascript数据结构（一）——栈和队列/index.html">
@@ -21,19 +19,18 @@
 原文地址：学习javascript数据结构(一)——栈和队列
 博主博客地址：Damonare的个人博客
 
-几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。
-
-正文">
-<meta property="og:updated_time" content="2016-11-01T14:56:58.138Z">
+几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。">
+<meta property="og:image" content="http://img.blog.csdn.net/20161102145616341">
+<meta property="og:image" content="http://img.blog.csdn.net/20161102145601043">
+<meta property="og:updated_time" content="2016-11-02T08:11:46.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习Javascript数据结构(一)——栈和队列">
 <meta name="twitter:description" content="前言只要你不计较得失，人生还有什么不能想法子克服的。
 原文地址：学习javascript数据结构(一)——栈和队列
 博主博客地址：Damonare的个人博客
 
-几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。
-
-正文">
+几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20161102145616341">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -307,13 +304,61 @@
       
           <!-- Table of Contents -->
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>只要你不计较得失，人生还有什么不能想法子克服的。</strong></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>只要你不计较得失，人生还有什么不能想法子克服的。</strong></p>
 <p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">学习javascript数据结构(一)——栈和队列</a></p>
 <p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
 <blockquote>
 <p>几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&nbsp;Array所内置的API可以很方便的模拟栈和队列。</p>
 </blockquote>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote>
+<p>我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。</p>
+</blockquote>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p><strong>栈是一种遵从后进先出(LIFO)原则的有序集合。新添加的或是待删除的元素都保存在栈的末尾。我们称作栈顶，而另一端我们称作栈底。</strong><br><br><br>在现实生活中就有很多栈的例子，比如下图的书本，这一摞书如果要取肯定是先去最上面的那一本，但它是最后一个放上去的，也就是栈顶的元素都是待添加或是待删除的。这就是后进先出的实际例子。<br></p>
+<blockquote>
+<p><img src="http://img.blog.csdn.net/20161102145616341" alt="栈"></p>
+</blockquote>
+<h4 id="栈的创建"><a href="#栈的创建" class="headerlink" title="栈的创建"></a>栈的创建</h4><p>首先我们先创建一个类：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Stack</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">//各种属性和方法的声明</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后我们需要一种数据结构来保存栈里面的数据：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">var items</span>=[];</div></pre></td></tr></table></figure>
+<p>接下来，我们需要给栈声明一些方法：</p>
+<ul>
+<li>push(element):添加一个或是几个新元素到栈顶。</li>
+<li>pop():移除栈顶的元素，同时返回被移除元素。</li>
+<li>peek():返回栈顶的元素，但并不对栈顶的元素做出任何的修改。</li>
+<li>isEmpty():检查栈内是否有元素，如果有返回true，没有返回false。</li>
+<li>clear():清除栈里的元素。</li>
+<li>size():返回栈的元素个数。</li>
+<li>print():打印栈里的元素。</li>
+</ul>
+<h4 id="栈的完整代码"><a href="#栈的完整代码" class="headerlink" title="栈的完整代码"></a>栈的完整代码</h4><p>我们通过javascript提供的API，实现栈如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Stack</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> items = [];</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.push = <span class="function"><span class="keyword">function</span>(<span class="params">element</span>)</span>&#123;</div><div class="line">        items.push(element);</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.pop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> items.pop();</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.peek = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> items[items.length<span class="number">-1</span>];</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.isEmpty = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> items.length == <span class="number">0</span>;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.size = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> items.length;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.clear = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        items = [];</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(items.toString());</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> items.toString();</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="使用栈"><a href="#使用栈" class="headerlink" title="使用栈"></a>使用栈</h4><p>创建完了栈，也给他了方法，然后我们来实例化一个对象：</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> <span class="built_in">stack</span>=<span class="literal">new</span> <span class="built_in">Stack</span>();</div><div class="line">console.<span class="keyword">log</span>(<span class="built_in">stack</span>.isEmpty());</div><div class="line"><span class="comment">//true</span></div><div class="line"><span class="built_in">stack</span>.push(<span class="number">1</span>);</div><div class="line"><span class="built_in">stack</span>.push(<span class="number">3</span>);</div><div class="line"><span class="comment">//添加元素</span></div><div class="line">console.<span class="keyword">log</span>(<span class="built_in">stack</span>.peek());</div><div class="line"><span class="comment">//输出栈顶元素3</span></div><div class="line">console.<span class="keyword">log</span>(<span class="built_in">stack</span>.size());</div><div class="line"><span class="comment">//2</span></div><div class="line"><span class="comment">//输出元素个数</span></div></pre></td></tr></table></figure>
+<p>其余方法调用读者可自行尝试。</p>
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p><strong>我们已经接触了栈，接下来要说的队列和栈十分相似，他们都是线性表，元素都是有序的<br>。队列和栈不同的是，队列遵循的是FIFO，也就是先进先出的原则。队列从尾部添加新元素，从顶部移除元素，最新添加的元素必须排列在队列的末尾。</strong><br><br><br>在现实生活中，最常见的队列就是排队，如下图，先进入队列的先接受服务，后进入队列的必须排在队列末尾。</p>
+<blockquote>
+<p><img src="http://img.blog.csdn.net/20161102145601043" alt="队列"></p>
+</blockquote>
+<h4 id="队列的创建"><a href="#队列的创建" class="headerlink" title="队列的创建"></a>队列的创建</h4><p>首先我们声明一个类：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">//这里是队列的属性和方法</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后我们同样创建一个保存元素的数组：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">var items</span>=[];</div></pre></td></tr></table></figure>
+<p>接下来声明一些队列可用的方法：</p>
+<ul>
+<li>enqueue(element):向队列尾部添加一个（或是多个）元素。</li>
+<li>dequeue():移除队列的第一个元素，并返回被移除的元素。</li>
+<li>front():返回队列的第一个元素——最先被添加的也是最先被移除的元素。队列不做任何变动。</li>
+<li>isEmpty():检查队列内是否有元素，如果有返回true，没有返回false。</li>
+<li>size():返回队列的长度。</li>
+<li>print():打印队列的元素。</li>
+</ul>
+<h4 id="队列的完整代码"><a href="#队列的完整代码" class="headerlink" title="队列的完整代码"></a>队列的完整代码</h4><p>我们通过javascript提供的API，实现队列如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Queue</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> items = [];</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.enqueue = <span class="function"><span class="keyword">function</span>(<span class="params">element</span>)</span>&#123;</div><div class="line">        items.push(element);</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.dequeue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> items.shift();</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.front = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> items[<span class="number">0</span>];</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.isEmpty = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> items.length == <span class="number">0</span>;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.clear = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        items = [];</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.size = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> items.length;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(items.toString());</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="使用队列"><a href="#使用队列" class="headerlink" title="使用队列"></a>使用队列</h4><p>创建完了队列，也给他了方法，然后我们来实例化一个对象：</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> <span class="built_in">queue</span>=<span class="literal">new</span> <span class="built_in">Queue</span>();</div><div class="line">console.<span class="keyword">log</span>(<span class="built_in">queue</span>.isEmpty());</div><div class="line"><span class="comment">//true</span></div><div class="line"><span class="built_in">queue</span>.enqueue(<span class="number">1</span>);</div><div class="line"><span class="built_in">queue</span>.enqueue(<span class="number">3</span>);</div><div class="line"><span class="comment">//添加元素</span></div><div class="line">console.<span class="keyword">log</span>(<span class="built_in">queue</span>.front());</div><div class="line"><span class="comment">//返回队列的第一个元素1</span></div><div class="line">console.<span class="keyword">log</span>(<span class="built_in">queue</span>.size());</div><div class="line"><span class="comment">//2</span></div><div class="line"><span class="comment">//输出元素个数</span></div></pre></td></tr></table></figure>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><blockquote>
+<p>这篇博客使用javascript实现了栈和队列这两种数据结构。关于具体的应用的有机会补上。</p>
 </blockquote>
 
       
