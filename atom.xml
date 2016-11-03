@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-11-03T13:23:52.193Z</updated>
+  <updated>2016-11-03T13:25:32.517Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2016/11/03/JavaScript%20ES6%20%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E4%B8%80%E8%A7%88/"/>
     <id>http://damonare.github.io/2016/11/03/JavaScript ES6 核心功能一览/</id>
     <published>2016-11-03T13:22:28.392Z</published>
-    <updated>2016-11-03T13:23:52.193Z</updated>
+    <updated>2016-11-03T13:25:32.517Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>原文地址：<a href="http://adrianmejia.com/blog/2016/10/19/Overview-of-JavaScript-ES6-features-a-k-a-ECMAScript-6-and-ES2015/" target="_blank" rel="external">Overview of JavaScript ES6 features (a.k.a ECMAScript 6 and ES2015+)</a></li>
@@ -30,6 +30,7 @@
 <li>校对者：<a href="https://github.com/Tina92" target="_blank" rel="external">Tina92</a>，<a href="https://github.com/luoyaqifei" target="_blank" rel="external">luoyaqifei</a>，<a href="https://github.com/theJian" target="_blank" rel="external">theJian</a></li>
 </ul>
 <h1 id="JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）"><a href="#JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）" class="headerlink" title="JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）"></a>JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）</h1><p>JavaScript 在过去几年里发生了很大的变化。这里介绍 12 个你马上就能用的新功能。</p>
+<a id="more"></a>
 <h1 id="JavaScript-历史"><a href="#JavaScript-历史" class="headerlink" title="JavaScript 历史"></a>JavaScript 历史</h1><p>新的语言规范被称作 ECMAScript 6。也称为 ES6 或 ES2015+ 。</p>
 <p>自从 1995 年 JavaScript 诞生以来，它一直在缓慢地发展。每隔几年就会增加一些新内容。1997 年，ECMAScript 成为 JavaScript 语言实现的规范。它已经有了好几个版本，比如 ES3 , ES5 , ES6 等等。</p>
 <p><img src="http://adrianmejia.com/images/history-javascript-evolution-es6.png" alt="" title="JavaScript 发展史"></p>
@@ -218,7 +219,13 @@
     <summary type="html">
     
       &lt;ul&gt;
-&lt;li&gt;原文地址：&lt;a href=&quot;http://adrianmejia.com/blog/2016/10/19/Overview-of-JavaScript-ES6-features-a-k-a-ECMAScript-6-and-ES2015/&quot; target=&quot;_b
+&lt;li&gt;原文地址：&lt;a href=&quot;http://adrianmejia.com/blog/2016/10/19/Overview-of-JavaScript-ES6-features-a-k-a-ECMAScript-6-and-ES2015/&quot;&gt;Overview of JavaScript ES6 features (a.k.a ECMAScript 6 and ES2015+)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;原文作者：&lt;a href=&quot;http://adrianmejia.com/#about&quot;&gt;Adrian Mejia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;译文出自：&lt;a href=&quot;https://github.com/xitu/gold-miner&quot;&gt;掘金翻译计划&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;译者：&lt;a href=&quot;https://github.com/L9m&quot;&gt;L9m&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;校对者：&lt;a href=&quot;https://github.com/Tina92&quot;&gt;Tina92&lt;/a&gt;，&lt;a href=&quot;https://github.com/luoyaqifei&quot;&gt;luoyaqifei&lt;/a&gt;，&lt;a href=&quot;https://github.com/theJian&quot;&gt;theJian&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）&quot;&gt;&lt;a href=&quot;#JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）&quot; class=&quot;headerlink&quot; title=&quot;JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）&quot;&gt;&lt;/a&gt;JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）&lt;/h1&gt;&lt;p&gt;JavaScript 在过去几年里发生了很大的变化。这里介绍 12 个你马上就能用的新功能。&lt;/p&gt;
     
     </summary>
     
@@ -312,9 +319,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -1017,9 +1024,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
