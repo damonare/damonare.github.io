@@ -4,22 +4,48 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Damonare的个人博客</title>
+  <title>JavaScript ES6 核心功能一览 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果时间可以停止，希望它就停止在现在。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Damonare的个人博客">
-<meta property="og:url" content="http://damonare.github.io/index.html">
+  <meta name="description" content="原文地址：Overview of JavaScript ES6 features (a.k.a ECMAScript 6 and ES2015+)
+原文作者：Adrian Mejia
+译文出自：掘金翻译计划
+译者：L9m
+校对者：Tina92，luoyaqifei，theJian
+
+JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）JavaS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript ES6 核心功能一览">
+<meta property="og:url" content="http://damonare.github.io/2016/11/03/JavaScript ES6 核心功能一览/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="如果时间可以停止，希望它就停止在现在。">
+<meta property="og:description" content="原文地址：Overview of JavaScript ES6 features (a.k.a ECMAScript 6 and ES2015+)
+原文作者：Adrian Mejia
+译文出自：掘金翻译计划
+译者：L9m
+校对者：Tina92，luoyaqifei，theJian
+
+JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）JavaS">
+<meta property="og:image" content="http://adrianmejia.com/images/history-javascript-evolution-es6.png">
+<meta property="og:image" content="http://adrianmejia.com/images/es6-javascript-support.png">
+<meta property="og:image" content="http://adrianmejia.com/images/javascript-es6-classes-on-browser-console.png">
+<meta property="og:image" content="http://adrianmejia.com/images/javascript-es6-const-variables-example.png">
+<meta property="og:image" content="http://adrianmejia.com/images/superman_shield.svg">
+<meta property="og:image" content="http://adrianmejia.com/images/javascript-math-apply-arrays.png">
+<meta property="og:updated_time" content="2016-11-03T13:23:52.193Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Damonare的个人博客">
-<meta name="twitter:description" content="如果时间可以停止，希望它就停止在现在。">
+<meta name="twitter:title" content="JavaScript ES6 核心功能一览">
+<meta name="twitter:description" content="原文地址：Overview of JavaScript ES6 features (a.k.a ECMAScript 6 and ES2015+)
+原文作者：Adrian Mejia
+译文出自：掘金翻译计划
+译者：L9m
+校对者：Tina92，luoyaqifei，theJian
+
+JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）JavaS">
+<meta name="twitter:image" content="http://adrianmejia.com/images/history-javascript-evolution-es6.png">
   
   
     <link rel="icon" href="/./img/1.png">
   
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
   <link rel="stylesheet" href="../../../../css/css/font-awesome.min.css">
 </head>
 
@@ -94,17 +120,17 @@
 						
 							<li><a href="http://damonare.cn/">博客首页</a></li>
 				        
-							<li><a href="index.html">主页</a></li>
+							<li><a href="../../../../index.html">主页</a></li>
 				        
-							<li><a href="/archives">所有文章</a></li>
+							<li><a href="../../../../archives">所有文章</a></li>
 				        
-							<li><a href="/categories/随笔/">随笔</a></li>
+							<li><a href="../../../../categories/随笔/">随笔</a></li>
 				        
-							<li><a href="/categories/learn/">学习</a></li>
+							<li><a href="../../../../categories/learn/">学习</a></li>
 				        
-							<li><a href="/categories/life/">生活</a></li>
+							<li><a href="../../../../categories/life/">生活</a></li>
 				        
-							<li><a href="/categories/其它/">其它</a></li>
+							<li><a href="../../../../categories/其它/">其它</a></li>
 				        
 						</ul>
 					</nav>
@@ -127,7 +153,7 @@
 					        
 								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
 					        
-								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
 					        
 						</div>
 					</nav>
@@ -136,7 +162,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="tags/ES6/" style="font-size: 10px;">ES6</a> <a href="tags/Fighting/" style="font-size: 12.5px;">Fighting</a> <a href="tags/HTML/" style="font-size: 15px;">HTML</a> <a href="tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="tags/http/" style="font-size: 12.5px;">http</a> <a href="tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="tags/前端/" style="font-size: 17.5px;">前端</a> <a href="tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="tags/工具/" style="font-size: 10px;">工具</a> <a href="tags/微信开发/" style="font-size: 10px;">微信开发</a> <a href="tags/总结/" style="font-size: 10px;">总结</a> <a href="tags/数据结构/" style="font-size: 12.5px;">数据结构</a> <a href="tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="tags/算法/" style="font-size: 10px;">算法</a> <a href="tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="tags/读书/" style="font-size: 10px;">读书</a> <a href="tags/跨域/" style="font-size: 10px;">跨域</a> <a href="tags/转载/" style="font-size: 10px;">转载</a> <a href="tags/随笔/" style="font-size: 10px;">随笔</a> <a href="tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 12.5px;">Fighting</a> <a href="../../../../tags/HTML/" style="font-size: 15px;">HTML</a> <a href="../../../../tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/http/" style="font-size: 12.5px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="../../../../tags/前端/" style="font-size: 17.5px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/微信开发/" style="font-size: 10px;">微信开发</a> <a href="../../../../tags/总结/" style="font-size: 10px;">总结</a> <a href="../../../../tags/数据结构/" style="font-size: 12.5px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="../../../../tags/读书/" style="font-size: 10px;">读书</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/随笔/" style="font-size: 10px;">随笔</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -196,17 +222,17 @@
 				
 					<li><a href="http://damonare.cn/">博客首页</a></li>
 		        
-					<li><a href="index.html">主页</a></li>
+					<li><a href="../../../../index.html">主页</a></li>
 		        
-					<li><a href="/archives">所有文章</a></li>
+					<li><a href="../../../../archives">所有文章</a></li>
 		        
-					<li><a href="/categories/随笔/">随笔</a></li>
+					<li><a href="../../../../categories/随笔/">随笔</a></li>
 		        
-					<li><a href="/categories/learn/">学习</a></li>
+					<li><a href="../../../../categories/learn/">学习</a></li>
 		        
-					<li><a href="/categories/life/">生活</a></li>
+					<li><a href="../../../../categories/life/">生活</a></li>
 		        
-					<li><a href="/categories/其它/">其它</a></li>
+					<li><a href="../../../../categories/其它/">其它</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -230,7 +256,7 @@
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
 			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
 			        
 				</div>
 			</nav>
@@ -238,12 +264,10 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-JavaScript ES6 核心功能一览" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaScript ES6 核心功能一览" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="2016/11/03/JavaScript ES6 核心功能一览/" class="article-date">
+      <a href="" class="article-date">
   	<time datetime="2016-11-03T13:22:28.392Z" itemprop="datePublished">2016-11-03</time>
 </a>
     </div>
@@ -256,17 +280,44 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/11/03/JavaScript ES6 核心功能一览/">JavaScript ES6 核心功能一览</a>
+    <h1 class="article-title" itemprop="name">
+      JavaScript ES6 核心功能一览
     </h1>
   
 
       </header>
       
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/ES6/">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/转载/">转载</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../../../categories/learn/">学习</a>
+	</div>
+
+
+    
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  热度： <span id="busuanzi_value_page_pv"></span>℃</span>
+  </div>
+  
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
           <!-- Table of Contents -->
+      
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）"><span class="toc-number">1.</span> <span class="toc-text">JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-历史"><span class="toc-number">2.</span> <span class="toc-text">JavaScript 历史</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浏览器支持"><span class="toc-number">3.</span> <span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#核心-ES6-功能"><span class="toc-number">4.</span> <span class="toc-text">核心 ES6 功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#变量的块级作用域"><span class="toc-number">4.1.</span> <span class="toc-text">变量的块级作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板字面量"><span class="toc-number">4.2.</span> <span class="toc-text">模板字面量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多行字符串"><span class="toc-number">4.3.</span> <span class="toc-text">多行字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解构赋值"><span class="toc-number">4.4.</span> <span class="toc-text">解构赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类和对象"><span class="toc-number">4.5.</span> <span class="toc-text">类和对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-number">4.6.</span> <span class="toc-text">继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原生-Promises"><span class="toc-number">4.7.</span> <span class="toc-text">原生 Promises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#箭头函数"><span class="toc-number">4.8.</span> <span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#For…of"><span class="toc-number">4.9.</span> <span class="toc-text">For…of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#默认参数"><span class="toc-number">4.10.</span> <span class="toc-text">默认参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#剩余参数"><span class="toc-number">4.11.</span> <span class="toc-text">剩余参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#展开运算符"><span class="toc-number">4.12.</span> <span class="toc-text">展开运算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+        </div>
       
         <ul>
 <li>原文地址：<a href="http://adrianmejia.com/blog/2016/10/19/Overview-of-JavaScript-ES6-features-a-k-a-ECMAScript-6-and-ES2015/" target="_blank" rel="external">Overview of JavaScript ES6 features (a.k.a ECMAScript 6 and ES2015+)</a></li>
@@ -466,24 +517,19 @@
   
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/ES6/">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/转载/">转载</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/learn/">学习</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="../../01/学习javascript数据结构（一）——栈和队列/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习Javascript数据结构(一)——栈和队列</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
   
 
@@ -493,649 +539,62 @@
 
 
 
+<div class="support-author">
+	<p>如果您觉得我的文章对您有用，请随意打赏。</p>
+	<p>您的支持将鼓励我继续创作！</p>
+	<button id='alipay'>￥支付宝支持</button>
+	<button id='wechat'>￥微信支持</button>
+	<p>
+		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+	</p>
+	<script type="text/javascript">
+	document.querySelector('#alipay').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	})
+	document.querySelector('#wechat').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	})
+	</script>
+</div>
+<div class="ds-share" data-thread-key="JavaScript ES6 核心功能一览" data-title="JavaScript ES6 核心功能一览" data-images="http://damonare.github.io" data-content="JavaScript ES6 核心功能一览" data-url="https://damonare.github.io">
+	<div class="ds-share-inline">
+	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
+
+	   <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);"></a></li>
+	   <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+	   <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+	   <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+	   <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+
+	 </ul>
+	 <div class="ds-share-icons-more">
+	 </div>
+   </div>
+</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="JavaScript ES6 核心功能一览" data-title="JavaScript ES6 核心功能一览" data-url="http://damonare.github.io"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"damonare"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://damonare.cn/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
-  
-    <article id="post-学习javascript数据结构（一）——栈和队列" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/11/01/学习javascript数据结构（一）——栈和队列/" class="article-date">
-  	<time datetime="2016-11-01T13:16:54.812Z" itemprop="datePublished">2016-11-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/11/01/学习javascript数据结构（一）——栈和队列/">学习Javascript数据结构(一)——栈和队列</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>只要你不计较得失，人生还有什么不能想法子克服的。</strong></p>
-<p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/#more">学习javascript数据结构(一)——栈和队列</a></p>
-<p>博主博客地址：<a href="http://damonare.cn">Damonare的个人博客</a></p>
-<blockquote>
-<p>几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&nbsp;Array所内置的API可以很方便的模拟栈和队列。</p>
-</blockquote>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/数据结构与算法/">数据结构与算法</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/11/01/学习javascript数据结构（一）——栈和队列/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-详解javascript的类" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/11/01/详解javascript的类/" class="article-date">
-  	<time datetime="2016-11-01T03:11:18.192Z" itemprop="datePublished">2016-11-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/11/01/详解javascript的类/">详解Javascript的类(单身狗请自觉进入)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>生活有度，人生添寿。</strong></p>
-<p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">详解javascript的类</a></p>
-<p>博主博客地址：<a href="http://damonare.cn">Damonare的个人博客</a></p>
-<blockquote>
-<p>&nbsp;&nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数千行，要是node后端那更不止几千行了。（WTF）代码量的增加给编程带来的首要的问题就是如何去编写和维护如此庞大的代码呢？答案就是模块化思想，其实就是面向对象（OOP）编程，如今比较流行的三大前端框架（angular,react,vue）基本都实现了组件化编程，但组件化和我们所说的模块化又有所不同，应该可以这么理解，组件化是模块化的升级版，模块化是组件化的基础。那么，问题来了，javascript怎么面向对象编程呢？我想这很多老鸟也不定说的清楚吧，前端杂而活跃的各种社区，很多前端er一度依赖各种插件，根本不需要去了解这些深层的东西却照样能完成任务。但我想作为一个有追求的前端er还是很有必要去学习这些看似用不着的东西的，别的不说，就单单因为我们是前端er,只会用jquery一个稍微厉害的后端都能代替你。好吧，废话不多说，到底如何面向对象coding呢…..<br><br><br>&nbsp;&nbsp;很不幸，es5中并没有给出明确的定义‘类’的概念，所以传统的面向对象编程似乎是行不通的，那么又该肿么办呢？值得庆幸的是，前辈们通过不断探索总结，成功的用javascript模拟出了“类”。那么，javascript的类又该怎么定义呢？<br><br></p>
-</blockquote>
-<p><strong>在面向对象编程中，类（class）是对象（object）的模板，定义了同一组对象（又称”实例”）共有的属性和方法。</strong></p>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/深度玄学/">深度玄学</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/11/01/详解javascript的类/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-前端跨域整理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/10/30/前端跨域整理/" class="article-date">
-  	<time datetime="2016-10-30T07:24:24.028Z" itemprop="datePublished">2016-10-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/10/30/前端跨域整理/">前端跨域整理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>原文地址：<a href="http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more">前端跨域总结</a></p>
-<p>博主博客地址：<a href="http://damonare.cn">Damonare的个人博客</a></p>
-<p><strong>相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。</strong></p>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/跨域/">跨域</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/10/30/前端跨域整理/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-一点总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/10/26/一点总结/" class="article-date">
-  	<time datetime="2016-10-26T07:34:05.311Z" itemprop="datePublished">2016-10-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/10/26/一点总结/">风雨彩虹</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>如果闲下来的时候才会去思考生活的意义，那我们活着又是为了什么呢？</strong></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>已经很久没有更新博客了，截止上篇博客发表之后快一个月了吧。博客还很稚嫩，搭建起来也不过才一个半月，很开心，在我没时间写博客的时候还会有人注意这个小站点，谢谢你们，正是因为有你们的评论和支持才会让我有动力继续写下去。这篇博文一是对于之前项目的一些总结，二是记录下这段时间的一些感想。</p>
-</blockquote>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/随笔/">随笔</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/随笔/">随笔</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/10/26/一点总结/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-来自于微信小程序的一封简讯" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/25/来自于微信小程序的一封简讯/" class="article-date">
-  	<time datetime="2016-09-25T14:18:18.033Z" itemprop="datePublished">2016-09-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/25/来自于微信小程序的一封简讯/">来自于微信小程序的一封简讯</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>9月21晚间，微信向部分公众号发出公众平台-微信应用号（小程序）的内测邀请，向来较为低调的微信在这一晚没人再忽视它了。</strong></p>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/微信开发/">微信开发</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/随笔/">随笔</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/25/来自于微信小程序的一封简讯/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-十大经典排序算法总结（javascript描述）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/16/十大经典排序算法总结（javascript描述）/" class="article-date">
-  	<time datetime="2016-09-16T06:39:04.538Z" itemprop="datePublished">2016-09-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/16/十大经典排序算法总结（javascript描述）/">十大经典排序算法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>读者自行尝试可以<a href="https://github.com/damonare/Sorts">想看源码戳这</a>，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦</strong></p>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/算法/">算法</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/16/十大经典排序算法总结（javascript描述）/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Chrome控制台使用总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/09/Chrome控制台使用总结/" class="article-date">
-  	<time datetime="2016-09-09T12:43:11.000Z" itemprop="datePublished">2016-09-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/09/Chrome控制台使用总结/">Chrome控制台实用指南</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因是它速度快，体积不大，支持的新特性也比其它浏览器多，还有一部分我想就是因为它的控制台功能强大了吧，说它是神器一点也不过分，很方便。但其实很多开发者并没有用出控制台的精髓，只是使用简单的console.log();其实控制台功能远远不止这么简单哦。</p>
-</blockquote>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/工具/">工具</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/其它/">其它</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/09/Chrome控制台使用总结/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-聊聊clip-path" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/09/聊聊clip-path/" class="article-date">
-  	<time datetime="2016-09-09T08:51:00.000Z" itemprop="datePublished">2016-09-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/09/聊聊clip-path/">聊聊Clip-Path</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！</p>
-</blockquote>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/CSS3/">CSS3</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/09/聊聊clip-path/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-《生死疲劳》读后感" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/09/07/《生死疲劳》读后感/" class="article-date">
-  	<time datetime="2016-09-07T14:46:12.078Z" itemprop="datePublished">2016-09-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/09/07/《生死疲劳》读后感/">书感</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>也看过不少的书，记忆中似乎也只有平凡的世界还尚可与之媲美。可今日只想独独为它写一篇日志，这本引起我诸多情感久久无法释怀的《生死疲劳》！</p>
-</blockquote>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/读书/">读书</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="categories/其它/">其它</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="2016/09/07/《生死疲劳》读后感/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
-    </nav>
-  
 </div>
       <footer id="footer">
     <div class="outer">
@@ -1243,7 +702,7 @@
 
     </div>
     
-  <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -1251,8 +710,8 @@
         fancybox: true,
         mathjax: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -1261,7 +720,7 @@
 </script>
 <script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-<script src="js/main.js"></script>
+<script src="../../../../js/main.js"></script>
 
 
 
