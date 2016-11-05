@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-11-05T15:24:07.361Z</updated>
+  <updated>2016-11-05T15:28:27.828Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/"/>
     <id>http://damonare.github.io/2016/11/05/互联网协议入门/</id>
     <published>2016-11-05T04:00:49.017Z</published>
-    <updated>2016-11-05T15:24:07.361Z</updated>
+    <updated>2016-11-05T15:28:27.828Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>劳于读书，逸于作文。</strong></p>
 <p>原文地址：<a href="http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/#more">internet协议入门</a></p>
@@ -258,6 +258,10 @@
       <category term="网络协议" scheme="http://damonare.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
     
       <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
+    
+      <category term="TCP" scheme="http://damonare.github.io/tags/TCP/"/>
+    
+      <category term="IP" scheme="http://damonare.github.io/tags/IP/"/>
     
   </entry>
   
@@ -566,9 +570,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -1273,9 +1277,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -2683,9 +2687,9 @@ Model：数据访问层
     
       <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
     
-      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
@@ -3147,9 +3151,9 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端构建工具" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
     
