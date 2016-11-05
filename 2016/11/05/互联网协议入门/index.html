@@ -4,33 +4,30 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>聊聊Clip-Path | Damonare的个人博客</title>
+  <title>Internet协议入门 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！">
+  <meta name="description" content="前言劳于读书，逸于作文。
+原文地址：internet协议入门
+博主博客地址：Damonare的个人博客
+博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有疏漏之处，欢迎批评指正。
+正文概述1.1 模型划分首先我们需要明白的事互联网的实现是分层级的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="聊聊Clip-Path">
-<meta property="og:url" content="http://damonare.github.io/2016/09/09/聊聊clip-path/index.html">
+<meta property="og:title" content="Internet协议入门">
+<meta property="og:url" content="http://damonare.github.io/2016/11/05/互联网协议入门/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="前言
-图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910104748479">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910104803642">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910104818298">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910105340845">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910144129604">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910182933393">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910165910381">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910165924100">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910172318567">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910174638529">
-<meta property="og:image" content="http://img.blog.csdn.net/20160910174656822">
-<meta property="og:updated_time" content="2016-11-05T04:49:59.519Z">
+<meta property="og:description" content="前言劳于读书，逸于作文。
+原文地址：internet协议入门
+博主博客地址：Damonare的个人博客
+博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有疏漏之处，欢迎批评指正。
+正文概述1.1 模型划分首先我们需要明白的事互联网的实现是分层级的">
+<meta property="og:updated_time" content="2016-11-05T04:47:18.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="聊聊Clip-Path">
-<meta name="twitter:description" content="前言
-图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20160910104748479">
+<meta name="twitter:title" content="Internet协议入门">
+<meta name="twitter:description" content="前言劳于读书，逸于作文。
+原文地址：internet协议入门
+博主博客地址：Damonare的个人博客
+博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有疏漏之处，欢迎批评指正。
+正文概述1.1 模型划分首先我们需要明白的事互联网的实现是分层级的">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -254,11 +251,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-聊聊clip-path" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-互联网协议入门" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="" class="article-date">
-  	<time datetime="2016-09-09T08:51:00.000Z" itemprop="datePublished">2016-09-09</time>
+  	<time datetime="2016-11-05T04:00:49.017Z" itemprop="datePublished">2016-11-05</time>
 </a>
     </div>
   
@@ -271,7 +268,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      聊聊Clip-Path
+      Internet协议入门
     </h1>
   
 
@@ -280,7 +277,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/CSS3/">CSS3</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/网络协议/">网络协议</a></li></ul>
 	</div>
 
         
@@ -306,98 +303,18 @@
       
         <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Flilter"><span class="toc-number">2.1.</span> <span class="toc-text">Flilter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clip-amp-clip-path"><span class="toc-number">2.2.</span> <span class="toc-text">clip&clip-path</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束语"><span class="toc-number">3.</span> <span class="toc-text">结束语</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">2.1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-模型划分"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1 模型划分</span></a></li></ol></li></ol></li></ol>
         </div>
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Flilter"><a href="#Flilter" class="headerlink" title="Flilter"></a>Flilter</h3><blockquote>
-<p>filter有十种特效来处理图片，博主只放几种特效的样例给大家看一下：</p>
-<p>照片反色效果：</p>
-<p><img src="http://img.blog.csdn.net/20160910104748479" alt="照片反色"></p>
-<p>照片褐色效果：</p>
-<p><img src="http://img.blog.csdn.net/20160910104803642" alt="照片褐色"></p>
-<p>照片阴影效果：</p>
-<p><img src="http://img.blog.csdn.net/20160910104818298" alt="阴影"></p>
-</blockquote>
-<p><strong>十种特效源码:</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">-webkit-filter:opacity(.6);//透明度</div><div class="line">filter:opacity(.6);</div><div class="line">-webkit-filter:blur(10px);//照片模糊</div><div class="line">filter:blur(10px);</div><div class="line">-webkit-filter:invert(1);</div><div class="line">filter:invert(1);</div><div class="line">-webkit-filter:saturate(3);//照片饱和度</div><div class="line">filter:saturate(3);</div><div class="line">-webkit-filter:grayscale(1);//照片灰度</div><div class="line">filter:grayscale(1);</div><div class="line">-webkit-filter:sepia(1);//照片褐色</div><div class="line">filter:sepia(1);</div><div class="line">-webkit-filter:hue-rotate(90deg);//色相旋转</div><div class="line">filter:hue-rotate(90deg);</div><div class="line">-webkit-filter:brightness(.5);//亮度</div><div class="line">filter:brightness(.5);</div><div class="line">-webkit-filter:contrast(2);//对比度</div><div class="line">filter:contrast(2);</div><div class="line">-webkit-filter:drop-shadow(10px 10px 10px #ccc);//阴影</div><div class="line">filter:drop-shadow(10px 10px 10px #ccc);</div></pre></td></tr></table></figure>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>劳于读书，逸于作文。</strong></p>
+<p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">internet协议入门</a></p>
+<p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+<p>博主之前写过一篇博客：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有疏漏之处，欢迎批评指正。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h4 id="1-1-模型划分"><a href="#1-1-模型划分" class="headerlink" title="1.1 模型划分"></a>1.1 模型划分</h4><p>首先我们需要明白的事互联网的实现是分层级的，那么这个层级的划分根据不同的模型又有一些不同。其中又有两个模型的划分是我们最常见到的，一个是OSI七层划分，另一个是TCP/IP五层划分。他们分别把互联网分成了七层和五层。</p>
 <blockquote>
-<p>但实际上这个属性兼容性很低：</p>
-<p><img src="http://img.blog.csdn.net/20160910105340845" alt="can I use"></p>
+<p>OSI和TCP/IP是很基础但又非常重要的网络基础知识</p>
 </blockquote>
-<p><strong>截止博主发文日期，Filter的兼容性如上图，我们可以看到IE是完全不支持的，Edge也是部分支持。这可能也是Filter没法用在项目中的原因之一了。感兴趣的读者可以Copy博主代码本地测试一下，或是参照<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#blur%28%29_2" target="_blank" rel="external">MDN|Filter</a>了解。博主不在这里做过多的说明了。</strong></p>
-<h3 id="clip-amp-clip-path"><a href="#clip-amp-clip-path" class="headerlink" title="clip&amp;clip-path"></a>clip&amp;clip-path</h3><blockquote>
-<p>这两个属性正是今天的重头戏，博主曾在<a href="http://damonare.github.io/2016/09/05/%E4%BB%8E%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E8%B0%88%E8%B5%B7/#more">从隐藏元素谈起</a>提起过，但并没做深入解释。是的，它可以用来隐藏元素，当然也就能处理图片了。</p>
-</blockquote>
-<ul>
-<li>clip</li>
-</ul>
-<blockquote>
-<p>clip这个属性我相信会有很大一部分人不知道，因为这个属性使用率非常的低，因为很多情况下我们会直接重新切一张新图出来代替而不会去剪裁已有的图片，但实际上这个属性用在CSS sprite简直就如同神器一般，因为在很多情况下background-position并不符合我们的需求，比如,有时我们希望Sprite图片可以延迟滚动加载，或者是可以很轻松的右键图片另存为…或是其它background-position没法满足的情景。<br>废话不多说，看样例：<br><img src="http://img.blog.csdn.net/20160910144129604" alt="这里写图片描述"></p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</div><div class="line"><span class="selector-tag">clip</span><span class="selector-pseudo">:rect(50px</span> 250<span class="selector-tag">px</span> 250<span class="selector-tag">px</span> 50<span class="selector-tag">px</span>); <span class="comment">/* IE6, IE7 */</span></div><div class="line"><span class="selector-tag">clip</span><span class="selector-pseudo">:rect(50px</span>,250<span class="selector-tag">px</span>,250<span class="selector-tag">px</span>,50<span class="selector-tag">px</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20160910182933393" alt="这里写图片描述"></p>
-<p><strong>注意，元素定位position必须是absolute或是fixed的，兼容IE6，IE7需要将值之间的逗号去掉。另外，react（top,right,bottom,left）；四个值分别是相对于图片左上角为原点的坐标值。Clip基本所有的浏览器都支持，可以放心使用。</strong></p>
-<blockquote>
-<p>让人放弃它的原因无外乎：</p>
-<ul>
-<li>clip 只对绝对定位的元素有效对于position:relative和position:static无效</li>
-<li>clip 只能用于矩形，即rect()函数</li>
-</ul>
-</blockquote>
-<ul>
-<li>clip-path</li>
-</ul>
-<blockquote>
-<p>其实clip在HTML5中已经被废弃了(依然可用)，取而代之的是clip-path。本来clip还有一个circle(圆)，但基本没有浏览器实现这个属性值，只有rect()可是使用，可能W3C也是等不下去了吧，直接推出了一个更牛逼的属性——clip-path,这个属性起初是SVG里面的然后被挪用到了CSS里面。关于SVG博主有时间会再另外介绍，这里按下不表。效果图：<br><img src="http://img.blog.csdn.net/20160910165910381" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20160910165924100" alt="这里写图片描述"></p>
-</blockquote>
-<p><strong>读者可以在<a href="http://bennettfeely.com/clippy/" target="_blank" rel="external">这里自行体验</a></strong></p>
-<blockquote>
-<p>兼容：现在为止IE 和 Edge 不支持这个属性，Firefox 仅部分支持 clip-path ，<br>Chrome、Safari 和 Opera 需要使用 -webkit- 前缀支持此属性。<br><img src="http://img.blog.csdn.net/20160910172318567" alt="这里写图片描述"><br><strong>clip-path兼容性甚至比前面说到的filter还差，所以很难真正使用起来。更多使用效果<a href="http://codepen.io/wenbin5243/pen/iheHF" target="_blank" rel="external">戳这里</a>和<a href="http://species-in-pieces.com/#" target="_blank" rel="external">这里</a></strong></p>
-</blockquote>
-<p><strong>说一下它的四个属性值：</strong></p>
-<ul>
-<li>clip-source: 可以是内、外部的SVG的clipPath元素的URL引用;</li>
-</ul>
-<ul>
-<li><p>basic-shape: 使用一些基本的形状函数创建的一个形状。主要包括circle()、ellipse()、inset()和polygon()。</p>
-</li>
-<li><p>geometry-box: 是可选参数。此参数和basic-shape函数一起使用时，可以为basic-shape的裁剪工作提供参考盒子。如果geometry-box由自身指定，那么它会使用指定盒子形状作为裁剪的路径，包括任何(由border-radius提供的)的角的形状。</p>
-</li>
-</ul>
-<p><strong>开始使用clip-path</strong></p>
-<blockquote>
-<p>在开始使用clip-path绘制图形，或者说裁剪图形之前，有两点需要大家注意：</p>
-<ul>
-<li><p>使用clip-path要从同一个方向绘制，如果顺时针绘制就一律顺时针，逆时针就一律逆时针，因为polygon是一个连续线段，若线段彼此有交集，裁剪区域就会有相减的情况发生，当然如果你特意需要这样的效果除外。</p>
-</li>
-<li><p>如果绘制时采用比例的方式绘制，长宽就必须要先行设定，不然有可能绘制出来的长宽和我们想像的就会有差距，使用像素绘制就不会有这样的现象。</p>
-</li>
-</ul>
-<p>我们就拿上面途中的六边形作为polygon()函数示例：</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-webkit-clip-path</span>: <span class="selector-tag">polygon</span>(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);</div><div class="line"><span class="selector-tag">clip-path</span>: <span class="selector-tag">polygon</span>(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);</div></pre></td></tr></table></figure>
-<p><strong>效果图:</strong></p>
-<p><img src="http://img.blog.csdn.net/20160910174638529" alt="效果图"></p>
-<p><strong>讲解：</strong></p>
-<p><img src="http://img.blog.csdn.net/20160910174656822" alt="这里写图片描述"></p>
-<blockquote>
-<p>每个点的第一个坐标值决定了它在 x 轴上的位置，第二个坐标值指定了它在 y 轴的位置，所有点是顺时针绘制的。其实一个 polygon（）就能满足所有的形状需要了，有自定义的API用更加方便不是么。</p>
-</blockquote>
-<p><strong>注意：inset()这个真的坑，按说同样裁剪成方形应该是和clip的rect一样用法，可不一样！</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//Clip的rect</div><div class="line">position:absolute;</div><div class="line">clip:rect(50px 250px 250px 50px);</div><div class="line">//clip-path</div><div class="line">clip-path: inset(50px 50px 50px 50px);</div><div class="line">-webkit-clip-path: inset(50px 50px 50px 50px);</div></pre></td></tr></table></figure>
-<p><strong>本文使用图片是300*300的。</strong></p>
-<blockquote>
-<p>很明显：</p>
-</blockquote>
- <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">clip:rect(50px 250px 250px 50px);</div><div class="line">=clip-path: inset(50px 50px 50px 50px);</div></pre></td></tr></table></figure>
-<p>好大的一个坑….</p>
-<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><blockquote>
-<p>相信随着时代发展，clip-path会慢慢被浏览器厂商接受的。<br>本文有任何错误，欢迎评论留言。</p>
-</blockquote>
+<p><strong>(1) OSI七层模型</strong></p>
 
       
       
@@ -411,18 +328,9 @@
     
 <nav id="article-nav">
   
-    <a href="../Chrome控制台使用总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Chrome控制台实用指南
-        
-      </div>
-    </a>
   
-  
-    <a href="../../07/《生死疲劳》读后感/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">书感</div>
+    <a href="../../03/JavaScript ES6 核心功能一览/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript ES6 核心功能一览</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -455,7 +363,7 @@
 	})
 	</script>
 </div>
-<div class="ds-share" data-thread-key="聊聊clip-path" data-title="聊聊Clip-Path" data-images="http://damonare.github.io" data-content="聊聊Clip-Path" data-url="https://damonare.github.io">
+<div class="ds-share" data-thread-key="互联网协议入门" data-title="Internet协议入门" data-images="http://damonare.github.io" data-content="Internet协议入门" data-url="https://damonare.github.io">
 	<div class="ds-share-inline">
 	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
 
@@ -472,7 +380,7 @@
 </div>
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="聊聊clip-path" data-title="聊聊Clip-Path" data-url="http://damonare.github.io"></div>
+	<div class="ds-thread" data-thread-key="互联网协议入门" data-title="Internet协议入门" data-url="http://damonare.github.io"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
