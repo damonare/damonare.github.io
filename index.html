@@ -271,12 +271,215 @@
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>劳于读书，逸于作文。</strong></p>
 <p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">internet协议入门</a></p>
 <p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-<p>博主之前写过一篇博客：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有疏漏之处，欢迎批评指正。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h4 id="1-1-模型划分"><a href="#1-1-模型划分" class="headerlink" title="1.1 模型划分"></a>1.1 模型划分</h4><p>首先我们需要明白的事互联网的实现是分层级的，那么这个层级的划分根据不同的模型又有一些不同。其中又有两个模型的划分是我们最常见到的，一个是OSI七层划分，另一个是TCP/IP五层划分。他们分别把互联网分成了七层和五层。</p>
+<p>博主之前写过一篇博客：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p><strong>互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。</strong></p>
+<h4 id="1-1-模型划分"><a href="#1-1-模型划分" class="headerlink" title="1.1 模型划分"></a>1.1 模型划分</h4><p>首先我们需要明白的事互联网的实现是分层级的，那么这个层级的划分根据不同的模型又有一些不同。其中又有两个模型的划分是我们最常见到的，一个是OSI七层划分，另一个是TCP/IP五层划分。他们分别把互联网分成了七层和五层。</p>
 <blockquote>
-<p>OSI和TCP/IP是很基础但又非常重要的网络基础知识</p>
+<p>OSI和TCP/IP模型是很基础但又非常重要的网络基础知识</p>
 </blockquote>
-<p><strong>(1) OSI七层模型</strong></p>
+<p><strong>OSI七层模型</strong></p>
+<table>
+<thead>
+<tr>
+<th>OSI的层</th>
+<th>功能</th>
+<th>TCP/IP协议族</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层</td>
+<td>文件传输，电子邮件，文件服务，虚拟终端</td>
+<td>TFTP，HTTP，SNMP，FTP，SMTP，DNS，Telnet</td>
+</tr>
+<tr>
+<td>表示层</td>
+<td>数据格式化，代码转换，数据加密</td>
+<td>没有协议</td>
+</tr>
+<tr>
+<td>会话层</td>
+<td>解除或建立与别的接点的联系</td>
+<td>没有协议</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>提供端对端的接口</td>
+<td>TCP，UDP</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>为数据包选择路由</td>
+<td>IP，ICMP，RIP，OSPF，BGP，IGMP</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>传输有地址的帧以及错误检测功能</td>
+<td>SLIP，CSLIP，PPP，ARP，RARP，MTU</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>以二进制数据形式在物理媒体上传输数据</td>
+<td>ISO2110，IEEE802，IEEE802.2</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-2-层与协议"><a href="#1-2-层与协议" class="headerlink" title="1.2 层与协议"></a>1.2 层与协议</h4><p>每一层都是为了完成一种功能。为了实现这些功能，就需要大家都遵守共同的规则。<br><br>大家都遵守的规则，就叫做”协议”（protocol）。<br><br>这个协议就是我们所说的<code>互联网协议</code>（internet protocol）,每一层都有若干个协议，他们共同构成了我们所要讲的互联网协议。<br><br>由以上表格我们可以看出，在<code>OSI七层协议</code>模型里会话层和表示层是没有协议的，这里我们取的是<code>TCP/IP</code>模型，分成五层也比较容易解释。<br><br>那么这五层又都是什么呢？从上到下分别是：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>网络设备</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 应用层</td>
+<td>　也就是用户使用的应用了。</td>
+</tr>
+<tr>
+<td> 传输层</td>
+<td>四层交换机、也有工作在四层的路由器</td>
+</tr>
+<tr>
+<td> 网络层</td>
+<td>路由器、三层交换机</td>
+</tr>
+<tr>
+<td> 数据链路层</td>
+<td>网桥（现已很少使用）、以太网交换机（二层交换机）、网卡（其实网卡是一半工作在物理层、一半工作在数据链路层）</td>
+</tr>
+<tr>
+<td> 物理层</td>
+<td>网卡，光纤，CAT-5线，中继器、集线器、还有我们通常说的双绞线也工作在物理层</td>
+</tr>
+</tbody>
+</table>
+<p>如上表格所示，最底下的一层叫做<code>物理层</code>（Physical Layer），最上面的一层叫做<code>应用层</code>（Application Layer），中间的三层（自下而上）分别是<code>数据链路层</code>（Data Link Layer）、<code>网络层</code>（Network Layer）和<code>传输层</code>（Transport Layer）。越下面的层，越靠近硬件；越上面的层，越靠近用户。下面来介绍每一层的功能，着重介绍每一层的主要协议</p>
+<p>###　2. 物理层</p>
+<blockquote>
+<p>物理层规定:为传输数据所需要的物理链路创建、维持、拆除，而提供具有机械的，电子的，功能的和规范的特性 ——<a href="https://zh.wikipedia.org/wiki/%E7%89%A9%E7%90%86%E5%B1%82" target="_blank" rel="external">物理层(维基百科)</a></p>
+</blockquote>
+<p>上面维基百科对于物理层的解释说白了就是要把电脑连在一块，方法呢，可以用光缆、电缆、双绞线、无线电波等方式。<br><br><img src="http://img.taopic.com/uploads/allimg/130609/318761-13060Z0041268.jpg" alt="物理层连接"><br><strong><code>物理层</code>就是把电脑连接起来的物理手段。它主要规定了网络的一些电气特性，作用是负责传送0和1的电信号。</strong></p>
+<h3 id="3-数据链路层"><a href="#3-数据链路层" class="headerlink" title="3. 数据链路层"></a>3. 数据链路层</h3><blockquote>
+<p>在两个网络实体之间提供数据链路连接的创建、维持和释放管理。构成数据链路数据单元（frame：数据帧或帧），并对帧定界、同步、收发顺序的控制。 ——<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82" target="_blank" rel="external">数据链路层(维基百科)</a></p>
+</blockquote>
+<h4 id="3-1-定义"><a href="#3-1-定义" class="headerlink" title="3.1 定义"></a>3.1 定义</h4><p>上面说的网络实体也就是我们日常用到的手机电脑等联网设备了，我们刚刚了解到不同网络实体之间通过一些物理手段（光缆，双绞线，无线电波等）连接在了一起，来进行传输0和1电信号。单纯的传输0和1没有任何意义，肯定是要规定电信号的解读方式，多少个电信号是一组？每一组代表的意义又是什么？</p>
+<p><strong>这就是数据链路层的功能，规定这些电信号的分组方式。</strong></p>
+<h4 id="3-2-以太网协议"><a href="#3-2-以太网协议" class="headerlink" title="3.2 以太网协议"></a>3.2 以太网协议</h4><p>刚刚开始的时候，每一家公司都有自己的一套对于电信号的解读方式，后来随着时间的推移，一种叫做<code>以太网</code>(Ethernet)的协议，占据了主导地位。</p>
+<p><strong>以太网规定，一组电信号构成一个数据包，叫做”帧”（Frame）。每一帧分成两个部分：标头（Head）和数据（Data）。</strong></p>
+<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:80px;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block;width:160px;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Data</span><br></div><br><br><br><code>标头</code>包含数据包的一些说明项，比如发送者、接受者、数据类型等等；<code>数据</code>则是数据包的具体内容。</p>
+<p><code>标头</code>的长度，固定为18字节。<code>数据</code>的长度，最短为46字节，最长为1500字节。因此，整个<code>帧</code>最短为64字节，最长为1518字节。如果数据很长，就必须分割成多个<code>帧</code>进行发送。</p>
+<h4 id="3-3-MAC地址"><a href="#3-3-MAC地址" class="headerlink" title="3.3 MAC地址"></a>3.3 MAC地址</h4><p>我想在日常上网过程中，最为熟悉的就是用一根网线连接端口和电脑了吧，网线连接电脑实际上是连接的这个玩意儿：</p>
+<p><img src="http://e.hiphotos.baidu.com/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=81ba3d099658d109d0eea1e0b031a7da/b812c8fcc3cec3fda0edf902d288d43f869427f1.jpg" alt="网卡"></p>
+<p>上面就是我们所说的网卡了，它在物理层和数据链路层两个层级工作，正所谓能力越大责任越大，网卡的重要性自然不言而喻了。前面说，以太网规定每一个数据包都有一个<code>标头</code>（Head）来说明发送者，接受者信息，数据类型等信息。而网卡就是以太网规定的来标明发送者和接受者信息的工具。</p>
+<p><strong>网卡的地址，就是数据包的发送地址和接收地址，这叫做MAC地址。</strong></p>
+<p>这个Mac地址自然就是发送者，接受者信息的了，通过这个每台电脑独一无二的地址计算机就能通过一些方式找到另一台电脑了。每块网卡出厂的时候，都有一个全世界独一无二的MAC地址，长度是48个二进制位，通常用12个十六进制数表示。有了MAC地址，就可以定位网卡和数据包的路径了。</p>
+<h4 id="3-4-广播"><a href="#3-4-广播" class="headerlink" title="3.4 广播"></a>3.4 广播</h4><p>我们现在有了网卡，也知道每一块网卡都有一个世界上独一无二的Mac地址，那发送者应该怎么去找接受者这台设备呢，换句话说发送者怎么才能知道接受者的Mac地址呢？这就需要另一个协议了叫做ARP协议，这个协议留在后面介绍。这里我们只需要知道，发送者必须要知道接受者的Mac地址才能准确的发送数据。</p>
+<p>以太网采用了一种广撒网的方式，发送者发送的数据包会发送给本网络内所有的计算机，然后由接收到数据包的计算机来判断自己是不是接收方。</p>
+<p><img src="http://img.blog.csdn.net/20161105192250885" alt="广播"></p>
+<p>图片来自<a href="https://zh.wikipedia.org/wiki/%E5%BB%A3%E6%92%AD_(%E7%B6%B2%E8%B7%AF" target="_blank" rel="external">维基百科广播</a>)，如图所示，红色主机是发送方，绿色某一台是接收方，数据包会发送给同一个子网络的所有绿色主机，然后由绿色主机根据数据包的标头来判断自己是不是接收方。如果是，就接受这个包，不是则丢弃。这种发送数据的方式就是<code>广播</code>。</p>
+<p>综上，有了对于数据包的定义，网卡的Mac地址，广播的发送方式，数据链路层基本就算完整了，然后不同计算机之间就可以传送数据了。</p>
+<h3 id="4-网络层"><a href="#4-网络层" class="headerlink" title="4.网络层"></a>4.网络层</h3><blockquote>
+<p>网络层使两终端系统能够互连且决定最佳路径，并具有一定的拥塞控制和流量控制的能力。  ——<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E5%B1%82" target="_blank" rel="external">网络层(维基百科)</a></p>
+</blockquote>
+<h4 id="4-1-网络层的产生"><a href="#4-1-网络层的产生" class="headerlink" title="4.1 网络层的产生"></a>4.1 网络层的产生</h4><p>走到这里我们实现的只是在一个子网络里传送数据。但我们知道，互联网实际上是由大大小小的子网络组成的：</p>
+<p><img src="http://it.dgzx.net/zxkt/gaoerji/2005-2006-1N/images/lesson06_01.gif" alt="互联网"></p>
+<p>大到一个ISP（因特网服务提供商，国内较大的比如移动电信等），小到一个公司的局域网，正事这些大大小小的子网络组成了庞大的互联网体系。但实际上，广播的方式只能在子网络内进行，不同子网络之间广播方式是行不通的。</p>
+<p>因此我们需要一种方法能够判断两台主机是否在同一个子网络之内，如果在同一个子网络就以广播的方式传输数据，如果不在同一个子网络就以<code>路由</code>的方式传输（路由是个比较大的概念，本文不涉及），关于路由协议的了解戳这里(<a href="https://zh.wikipedia.org/wiki/%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE)，MAC地址做不到这一点，它只和厂商有关，和计算机所处的网络并没有关系。" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE)，MAC地址做不到这一点，它只和厂商有关，和计算机所处的网络并没有关系。</a></p>
+<p><strong>这就导致了”网络层”的诞生。它的作用是引进一套新的地址，使得我们能够区分不同的计算机是否属于同一个子网络。这套地址就叫做”网络地址”，简称”网址”。</strong></p>
+<p>网址的出现，使得每台计算机都有了两个地址，一个是出生就带着不会改变的Mac地址，一个是后期网络管理员分配的可变的网络地址。网址判断两台计算机是否在同一个子网络，Mac地址则是将数据准确的传递到目标计算机中。因此逻辑上可以判断必定是先处理网络地址，再处理Mac地址。</p>
+<h4 id="4-2-IP协议"><a href="#4-2-IP协议" class="headerlink" title="4.2 IP协议"></a>4.2 IP协议</h4><p><strong>规定网络地址的协议，叫做IP协议。它所定义的地址，就被称为IP地址。</strong></p>
+<p>现在广泛采用的是IP协议第四版，简称IPv4。这个版本规定，网络地址由32个二进制位组成，IPV6则是64个二进制组成。</p>
+<p><img src="http://img.blog.csdn.net/20161105200554600" alt="IP地址"></p>
+<p>由于IPV6还没有广泛应用，这里还是用IPV4讲解。一般我们用分成四段（IPV6分成八段）的十进制数表示IP地址，从0.0.0.0一直到255.255.255.255。这个地址分成两部分，前一部分是网络部分，后一部分代表主机。But!!!网络部分具体是前16位还是前24位，我们没法从IP地址进行判断，这是我们就需要另一参数叫做<code>子网掩码</code>。</p>
+<p>所谓”子网掩码”，就是表示子网络特征的一个参数。它在形式上等同于IP地址，也是一个32位二进制数字，它的网络部分全部为1，主机部分全部为0。比如，IP地址172.16.254.1，如果已知网络部分是前24位，主机部分是后8位，那么子网络掩码就是11111111.11111111.11111111.00000000，写成十进制就是255.255.255.0。</p>
+<p>知道”子网掩码”，我们就能判断，任意两个IP地址是否处在同一个子网络。方法是将两个IP地址与子网掩码分别进行AND运算（两个数位都为1，运算结果为1，否则为0），然后比较结果是否相同，如果是的话，就表明它们在同一个子网络中，否则就不是。</p>
+<p>比如，已知IP地址172.16.254.1和172.16.254.233的子网掩码都是255.255.255.0，请问它们是否在同一个子网络？两者与子网掩码分别进行AND运算，结果都是172.16.254.0，因此它们在同一个子网络。</p>
+<p>那么问题来了，IP地址放在哪里存储呢？是的，我们可以直接存储在前面提到的以太网数据包的Data部分。</p>
+<p>IP地址长这样：</p>
+<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:80px;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block;width:160px;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Data</span><br></div><br><br><br>“标头”部分主要包括版本、长度、IP地址等信息，”数据”部分则是IP数据包的具体内容。<br>现在把它加到以太网数据包里面：</p>
+<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:80px;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block; width:80px;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block;width:160px;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Data</span><br></div><br><br><br>IP数据包的”标头”部分的长度为20到60字节，整个数据包的总长度最大为65,535字节。因此，理论上，一个IP数据包的”数据”部分，最长为65,515字节。前面说过，以太网数据包的”数据”部分，最长只有1500字节。因此，如果IP数据包超过了1500字节，它就需要分割成几个以太网数据包，分开发送了。</p>
+<h4 id="4-3-ARP协议"><a href="#4-3-ARP协议" class="headerlink" title="4.3 ARP协议"></a>4.3 ARP协议</h4><p>现在为止我们必须知道两个地址，一个是IP地址，一个是Mac地址才能把数据发送到目标主机，那么IP地址是已知的（后文解释），MAC地址怎么获取呢？</p>
+<p>我们需要一种能通过IP地址得知MAC地址的机制，这个极致就是ARP协议。</p>
+<p>那么，这里又分成两种情况，一种是两台计算机在同一个子网络，那么我们可以用ARP协议，得到对方的MAC地址。ARP协议也是发出一个数据包（包含在以太网数据包中），其中包含它所要查询主机的IP地址，在对方的MAC地址这一栏，填的是FF:FF:FF:FF:FF:FF，表示这是一个”广播”地址。它所在子网络的每一台主机，都会收到这个数据包，从中取出IP地址，与自身的IP地址进行比较。如果两者相同，都做出回复，向对方报告自己的MAC地址，否则就丢弃这个包。</p>
+<p>另一种情况是两台计算机不在同一个子网络，<br>那么事实上没有办法得到对方的MAC地址，只能把数据包传送到两个子网络连接处的”网关”（gateway），让网关（后文解释）去处理。</p>
+<h4 id="4-4总结"><a href="#4-4总结" class="headerlink" title="4.4总结"></a>4.4总结</h4><p>这一层为止，如果目标主机和本机在同一个子网络，我们通过IP地址，子网掩码比较得出在同一个子网络的结果，在通过ARP协议得到目标主机的Mac地址，发送！Success！</p>
+<p>如果目标主机和本机不在同一个子网络，我们通过IP地址，子网掩码比较得出在同一个子网络的结果，然后交给本网络的网关A处理，网关A根据路由协议得到目标主机所在子网络的网关B，网关B再通过IP地址判断得出和目标主机在同一个子网络，然后再通过ARP协议获取Mac地址，发送！Success!</p>
+<h3 id="5-传输层"><a href="#5-传输层" class="headerlink" title="5. 传输层"></a>5. 传输层</h3><blockquote>
+<p>该层的协议为应用进程提供端到端的通信服务。它提供面向连接的数据流支持、可靠性、流量控制、多路复用等服务。——<a href="https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E5%B1%82" target="_blank" rel="external">传输层（维基百科）</a></p>
+</blockquote>
+<h4 id="5-1-传输层的产生"><a href="#5-1-传输层的产生" class="headerlink" title="5.1 传输层的产生"></a>5.1 传输层的产生</h4><p>我们现在成功的实现了主机和主机之间的通信，那么问题又来了，主机之间不同的程序该怎么区分这个数据是不是发送给自己的呢。要知道，当你正在QQ聊天的时候，微信发送过来的消息内容呈现在了QQ界面，这会让计算机懵逼的！太混乱了！</p>
+<p>这个时候我们就需要一个新的参数了！这个参数就是<code>端口</code>。</p>
+<blockquote>
+<p>可连接两个或两个以上不同之电路装置使之能够传递电子或任何形式讯号之装置.——<a href="https://zh.wikipedia.org/wiki/%E6%8E%A5%E5%8F%A3" target="_blank" rel="external">端口（维基百科）</a></p>
+</blockquote>
+<p>它其实是每一个使用网卡的程序的编号。每个数据包都发到主机的特定端口，所以不同的程序就能取到自己所需要的数据。</p>
+<p>不同的程序在计算机中所占用的端口是不同的，确切的说是不能相同的，否则就混乱了。比如，HTTP所占用的端口一般是80，HTTPS所占用的端口一般是443。</p>
+<p><code>端口</code>是0到65535之间的一个整数，正好16个二进制位。0到1023的<code>端口</code>被系统占用，用户只能选用大于1023的<code>端口</code>。不管是浏览网页还是在线聊天，应用程序会随机选用一个<code>端口</code>，然后与服务器的相应<code>端口</code>联系。</p>
+<p><strong>确切的说，传输层实现的是端对端的服务，网络层实现的仅仅是主机到主机之间的服务。</strong>只要确定主机和端口，我们就能实现程序之间的交流。因此，Unix系统就把主机+端口，叫做”套接字”（socket）。</p>
+<h4 id="5-2-UDP协议"><a href="#5-2-UDP协议" class="headerlink" title="5.2 UDP协议"></a>5.2 UDP协议</h4><p>现在又出了一个新的数据，就是端口信息。现在以太网数据包里已经包括发送者，接受者信息，数据类型，IP地址数据包，UDp数据包。</p>
+<p>UDP数据包同样是由标头和数据组成：</p>
+<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:80px;height:40px;background:#77C787;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block;width:160px;height:40px;background:#77C787;color:white;line-height:40px;text-align:center;border-radius:5px;">Data</span><br></div><br><br><br><code>标头</code>部分主要定义了发出端口和接收端口，<br><code>数据</code>部分定义了具体的内容。然后把它放在IP地址数据包的数据部分，前面我们说过IP数据包是放在以太网数据包的数据里面的，那么现在整个以太网数据包就成了这样：</p>
+<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:15%;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block;width:30%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Data</span><br></div><br><br><br>UDP数据包非常简单，”标头”部分一共只有8个字节，总长度不超过65,535字节，一个IP数据包正好可以容纳。</p>
+<h4 id="5-3-TCP协议"><a href="#5-3-TCP协议" class="headerlink" title="5.3 TCP协议"></a>5.3 TCP协议</h4><p>为了解决这个问题，提高网络可靠性，TCP协议就诞生了。这个协议非常复杂，但可以近似认为，它就是有确认机制的UDP协议，每发出一个数据包都要求确认。如果有一个数据包遗失，就收不到确认，发出方就知道有必要重发这个数据包了。</p>
+<p>因此，TCP协议能够确保数据不会遗失。它的缺点是过程复杂、实现困难、消耗较多的资源。<br>TCP数据包和UDP数据包一样，都是内嵌在IP数据包的”数据”部分。TCP数据包没有长度限制，理论上可以无限长，但是为了保证网络的效率，通常TCP数据包的长度不会超过IP数据包的长度，以确保单个TCP数据包不必再分割。</p>
+<p>关于TCP协议的三次握手和四次挥手过程博主在<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>这篇博客里有较为详细的说明。</p>
+<h3 id="6-应用层"><a href="#6-应用层" class="headerlink" title="6. 应用层"></a>6. 应用层</h3><blockquote>
+<p>应用层直接和应用程序接口并提供常见的网络应用服务。 ——<a href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E5%B1%82" target="_blank" rel="external">应用层（维基百科）</a></p>
+</blockquote>
+<h4 id="6-1-应用层介绍"><a href="#6-1-应用层介绍" class="headerlink" title="6.1 应用层介绍"></a>6.1 应用层介绍</h4><p>应用程序收到”传输层”的数据，接下来就要进行解读。由于互联网是开放架构，数据来源五花八门，必须事先规定好格式，否则根本无法解读。</p>
+<p><strong>“应用层”的作用，就是规定应用程序的数据格式。</strong></p>
+<p>举例来说，TCP协议可以为各种各样的程序传递数据，比如Email、WWW、FTP等等。那么，必须有不同协议规定电子邮件、网页、FTP数据的格式，这些应用程序协议就构成了”应用层”。</p>
+<p>这是最高的一层，直接面对用户。它的数据就放在TCP数据包的”数据”部分。因此，现在的以太网的数据包就变成下面这样：</p>
+<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:15%;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(以太网)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(IP)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(TCP)</span><br>    <span style="display:inline-block;width:30%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Data(应用层数据包)</span><br></div><br><br></p>
+<p>上面买的坑改填了，我们前面说过，我们对于目标主机的IP地址肯定知道的，为什么呢？还有就是当两台计算机不在同一个子网络的时候，我们需要通过本机所在子网络的网关A，再通过路由协议得到目标主机子网络的网关B，由网关B将我们要发送给目标主机的数据包发送给目标主机。那么，网关又是什么呢？</p>
+<h4 id="6-2-DNS协议"><a href="#6-2-DNS协议" class="headerlink" title="6.2 DNS协议"></a>6.2 DNS协议</h4><p>我们都知道由于IP地址不方便记忆，我们创造了域名这个概念。</p>
+<p>DNS（网域名称系统，Domain Name System，有时也简称为域名）是因特网的一项核心服务，它作为可以将域名和IP地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP地址数串。</p>
+<p>例如，damonare.cn是一个域名，和IP地址119.29.180.47相对应。DNS就像是一个自动的电话号码簿，我们可以直接拨打damonare的名字来代替电话号码（IP地址）。我们直接调用网站的名字以后，DNS就会将便于人类使用的名字（如 damonare.cn）转化成便于机器识别的IP地址（如119.29.180.47）。</p>
+<p>已知DNS服务器为8.8.8.8（这个和IP地址一样管理员告知或是通过自行设置的），于是我们向这个地址发送一个DNS数据包（53端口）：</p>
+<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:15%;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(以太网)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(IP)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(UDP)</span><br>    <span style="display:inline-block;width:30%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Data(DNS数据包)</span><br></div><br><br></p>
+<p>DNS服务器做出响应，告诉我们Google的IP地址是172.194.72.105。于是，我们知道了对方的IP地址。</p>
+<h4 id="6-2-网关"><a href="#6-2-网关" class="headerlink" title="6.2 网关"></a>6.2 网关</h4><blockquote>
+<p>网关要区别于路由器（由于历史的原因，许多有关TCP/IP的文献曾经把网络层使用的路由器（英语：Router）称为网关，在今天很多局域网采用都是路由来接入网络，因此现在通常指的网关就是路由器的IP），经常在家庭中或者小型企业网络中使用，用于连接局域网和Internet。</p>
+</blockquote>
+<p><img src="http://image.beekka.com/blog/201206/bg2012061101.jpg" alt="网关作用"></p>
+<p>前面我们已经说过发送以太网数据包，需要知道两个地址：</p>
+<ul>
+<li>对方的MAC地址</li>
+<li>对方的IP地址</li>
+</ul>
+<p>有了这两个地址，数据包才能准确送到接收者手中。但是，前面说过，MAC地址有局限性，如果两台电脑不在同一个子网络，就无法知道对方的MAC地址，必须通过网关（gateway）转发。</p>
+<p>上图中，1号电脑要向4号电脑发送一个数据包。它先判断4号电脑是否在同一个子网络，结果发现不是（后文介绍判断方法），于是就把这个数据包发到网关A。网关A通过路由协议，发现4号电脑位于子网络B，又把数据包发给网关B，网关B再转发到4号电脑。</p>
+<h4 id="6-3-DHCP协议"><a href="#6-3-DHCP协议" class="headerlink" title="6.3 DHCP协议"></a>6.3 DHCP协议</h4><p>新买的电脑通常你必须做一些设置，才能上网，有时，管理员（或者ISP）会告诉你下面四个参数，你把它们填入操作系统，计算机就能连上网了：</p>
+<ul>
+<li>本机的IP地址</li>
+<li>子网掩码</li>
+<li>网关的IP地址</li>
+<li>DNS的IP地址</li>
+</ul>
+<p>由于它们是给定的，计算机每次开机，都会分到同样的IP地址，所以这种情况被称作”静态IP地址上网”。如下图Window静态IP上网设置界面：</p>
+<p><img src="http://nic.ysu.edu.cn/images/13/03/18/44mhv9wgmi/20112261000564.gif" alt=""></p>
+<p>这样的设置很专业，但普通用户望而生畏，而且如果一台电脑的IP地址保持不变，其他电脑就不能使用这个地址，不够灵活。出于这两个原因，大多数用户使用”动态IP地址上网”。</p>
+<p>动态IP地址上网使用的协议就是<code>DHCP协议</code>，这个协议规定，每一个子网络中，有一台计算机负责管理本网络的所有IP地址，它叫做”DHCP服务器”。新的计算机加入网络，必须向”DHCP服务器”发送一个”DHCP请求”数据包，申请IP地址和相关的网络参数。</p>
+<p>前面说过，如果两台计算机在同一个子网络，必须知道对方的<code>MAC地址</code>和<code>IP地址</code>，才能发送数据包。但是，新加入的计算机不知道这两个地址，怎么发送数据包呢？</p>
+<p><code>DHCP协议</code>做了一些巧妙的规定。</p>
+<p>首先DHCP协议是建立在UDP协议之上，所以整个数据包是这样的：</p>
+<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:15%;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(以太网)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(IP)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(UDP)</span><br>    <span style="display:inline-block;width:30%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Data(DHCP数据包)</span><br></div><br><br></p>
+<ul>
+<li>(1).最前面的”以太网标头”，设置发出方（本机）的MAC地址和接收方（DHCP服务器）的MAC地址。前者就是本机网卡的MAC地址，后者这时不知道，就填入一个广播地址：FF-FF-FF-FF-FF-FF。</li>
+<li>(2).后面的”IP标头”，设置发出方的IP地址和接收方的IP地址。这时，对于这两者，本机都不知道。于是，发出方的IP地址就设为0.0.0.0，接收方的IP地址设为255.255.255.255。</li>
+<li>(3).最后的”UDP标头”，设置发出方的端口和接收方的端口。这一部分是DHCP协议规定好的，发出方是68端口，接收方是67端口。</li>
+</ul>
+<p>这个数据包构造完成后，就可以发出了。以太网是广播发送，同一个子网络的每台计算机都收到了这个包。因为接收方的MAC地址是FF-FF-FF-FF-FF-FF，看不出是发给谁的，所以每台收到这个包的计算机，还必须分析这个包的IP地址，才能确定是不是发给自己的。当看到发出方IP地址是0.0.0.0，接收方是255.255.255.255，于是DHCP服务器知道”这个包是发给我的”，而其他计算机就可以丢弃这个包。</p>
+<p>接下来，DHCP服务器读出这个包的数据内容，分配好IP地址，发送回去一个”DHCP响应”数据包。这个响应包的结构也是类似的，以太网标头的MAC地址是双方的网卡地址，IP标头的IP地址是DHCP服务器的IP地址（发出方）和255.255.255.255（接收方），UDP标头的端口是67（发出方）和68（接收方），分配给请求端的IP地址和本网络的具体参数则包含在Data部分。</p>
+<p>新加入的计算机收到这个响应包，于是就知道了自己的IP地址、子网掩码、网关地址、DNS服务器等等参数。</p>
+<h4 id="6-4-小结"><a href="#6-4-小结" class="headerlink" title="6.4 小结"></a>6.4 小结</h4><p>应用层比较重要的协议还有大名鼎鼎的HTTP协议，这个在博主的<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>这篇博客里对于TCP/HTTP协议有较为详细的分析，在这里就不多做介绍了。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>通过整篇博客分析，我想整个互联网的层级划分就很清楚了，也应该明白了数据是如何发送的，大概的过程就是如此，但互联网协议浩如烟海究极一生可能也无法真正理解。此篇博客仅仅作为一个入门，也算是一个大致的思路。关于数据包数据具体的形式，路由，以及其他协议就需要读者自己去进一步发掘理解了。</p>
+<p>参考文章：</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html" target="_blank" rel="external">互联网协议入门（一）</a></li>
+</ul>
 
       
       
