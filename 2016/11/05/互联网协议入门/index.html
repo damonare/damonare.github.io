@@ -18,21 +18,29 @@
 原文地址：internet协议入门
 博主博客地址：Damonare的个人博客
 博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。">
-<meta property="og:image" content="http://img.taopic.com/uploads/allimg/130609/318761-13060Z0041268.jpg">
-<meta property="og:image" content="http://e.hiphotos.baidu.com/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=81ba3d099658d109d0eea1e0b031a7da/b812c8fcc3cec3fda0edf902d288d43f869427f1.jpg">
+<meta property="og:image" content="http://img.blog.csdn.net/20161105225615088">
+<meta property="og:image" content="http://img.blog.csdn.net/20161105231008204">
+<meta property="og:image" content="http://img.blog.csdn.net/20161105225723932">
 <meta property="og:image" content="http://img.blog.csdn.net/20161105192250885">
 <meta property="og:image" content="http://it.dgzx.net/zxkt/gaoerji/2005-2006-1N/images/lesson06_01.gif">
 <meta property="og:image" content="http://img.blog.csdn.net/20161105200554600">
+<meta property="og:image" content="http://img.blog.csdn.net/20161105231405610">
+<meta property="og:image" content="http://img.blog.csdn.net/20161105231536033">
+<meta property="og:image" content="http://img.blog.csdn.net/20161105231649143">
+<meta property="og:image" content="http://img.blog.csdn.net/20161105231743213">
+<meta property="og:image" content="http://img.blog.csdn.net/20161105231821409">
+<meta property="og:image" content="http://img.blog.csdn.net/20161105231856550">
 <meta property="og:image" content="http://image.beekka.com/blog/201206/bg2012061101.jpg">
 <meta property="og:image" content="http://nic.ysu.edu.cn/images/13/03/18/44mhv9wgmi/20112261000564.gif">
-<meta property="og:updated_time" content="2016-11-05T14:51:22.021Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20161105231939732">
+<meta property="og:updated_time" content="2016-11-05T15:24:07.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Internet协议入门">
 <meta name="twitter:description" content="前言劳于读书，逸于作文。
 原文地址：internet协议入门
 博主博客地址：Damonare的个人博客
 博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。">
-<meta name="twitter:image" content="http://img.taopic.com/uploads/allimg/130609/318761-13060Z0041268.jpg">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20161105225615088">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -308,11 +316,11 @@
       
         <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概述"><span class="toc-number">2.1.</span> <span class="toc-text">1.概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-模型划分"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1 模型划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-层与协议"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2 层与协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数据链路层"><span class="toc-number">2.2.</span> <span class="toc-text">3. 数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-定义"><span class="toc-number">2.2.1.</span> <span class="toc-text">3.1 定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-以太网协议"><span class="toc-number">2.2.2.</span> <span class="toc-text">3.2 以太网协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-MAC地址"><span class="toc-number">2.2.3.</span> <span class="toc-text">3.3 MAC地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-广播"><span class="toc-number">2.2.4.</span> <span class="toc-text">3.4 广播</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-网络层"><span class="toc-number">2.3.</span> <span class="toc-text">4.网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-网络层的产生"><span class="toc-number">2.3.1.</span> <span class="toc-text">4.1 网络层的产生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-IP协议"><span class="toc-number">2.3.2.</span> <span class="toc-text">4.2 IP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-ARP协议"><span class="toc-number">2.3.3.</span> <span class="toc-text">4.3 ARP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4总结"><span class="toc-number">2.3.4.</span> <span class="toc-text">4.4总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-传输层"><span class="toc-number">2.4.</span> <span class="toc-text">5. 传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-传输层的产生"><span class="toc-number">2.4.1.</span> <span class="toc-text">5.1 传输层的产生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-UDP协议"><span class="toc-number">2.4.2.</span> <span class="toc-text">5.2 UDP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-TCP协议"><span class="toc-number">2.4.3.</span> <span class="toc-text">5.3 TCP协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-应用层"><span class="toc-number">2.5.</span> <span class="toc-text">6. 应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-应用层介绍"><span class="toc-number">2.5.1.</span> <span class="toc-text">6.1 应用层介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-DNS协议"><span class="toc-number">2.5.2.</span> <span class="toc-text">6.2 DNS协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-网关"><span class="toc-number">2.5.3.</span> <span class="toc-text">6.2 网关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-DHCP协议"><span class="toc-number">2.5.4.</span> <span class="toc-text">6.3 DHCP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-小结"><span class="toc-number">2.5.5.</span> <span class="toc-text">6.4 小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概述"><span class="toc-number">2.1.</span> <span class="toc-text">1.概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-模型划分"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1 模型划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-层与协议"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2 层与协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-物理层"><span class="toc-number">2.2.</span> <span class="toc-text">2. 物理层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数据链路层"><span class="toc-number">2.3.</span> <span class="toc-text">3. 数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-定义"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1 定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-以太网协议"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2 以太网协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-MAC地址"><span class="toc-number">2.3.3.</span> <span class="toc-text">3.3 MAC地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-广播"><span class="toc-number">2.3.4.</span> <span class="toc-text">3.4 广播</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-网络层"><span class="toc-number">2.4.</span> <span class="toc-text">4.网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-网络层的产生"><span class="toc-number">2.4.1.</span> <span class="toc-text">4.1 网络层的产生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-IP协议"><span class="toc-number">2.4.2.</span> <span class="toc-text">4.2  IP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-ARP协议"><span class="toc-number">2.4.3.</span> <span class="toc-text">4.3 ARP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4总结"><span class="toc-number">2.4.4.</span> <span class="toc-text">4.4总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-传输层"><span class="toc-number">2.5.</span> <span class="toc-text">5. 传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-传输层的产生"><span class="toc-number">2.5.1.</span> <span class="toc-text">5.1 传输层的产生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-UDP协议"><span class="toc-number">2.5.2.</span> <span class="toc-text">5.2 UDP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-TCP协议"><span class="toc-number">2.5.3.</span> <span class="toc-text">5.3 TCP协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-应用层"><span class="toc-number">2.6.</span> <span class="toc-text">6. 应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-应用层介绍"><span class="toc-number">2.6.1.</span> <span class="toc-text">6.1 应用层介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-DNS协议"><span class="toc-number">2.6.2.</span> <span class="toc-text">6.2 DNS协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-网关"><span class="toc-number">2.6.3.</span> <span class="toc-text">6.2 网关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-DHCP协议"><span class="toc-number">2.6.4.</span> <span class="toc-text">6.3 DHCP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-小结"><span class="toc-number">2.6.5.</span> <span class="toc-text">6.4 小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
         </div>
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>劳于读书，逸于作文。</strong></p>
-<p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">internet协议入门</a></p>
+<p>原文地址：<a href="http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/#more">internet协议入门</a></p>
 <p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
 <p>博主之前写过一篇博客：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。</p>
 <a id="more"></a>
@@ -400,11 +408,12 @@
 </tbody>
 </table>
 <p>如上表格所示，最底下的一层叫做<code>物理层</code>（Physical Layer），最上面的一层叫做<code>应用层</code>（Application Layer），中间的三层（自下而上）分别是<code>数据链路层</code>（Data Link Layer）、<code>网络层</code>（Network Layer）和<code>传输层</code>（Transport Layer）。越下面的层，越靠近硬件；越上面的层，越靠近用户。下面来介绍每一层的功能，着重介绍每一层的主要协议</p>
-<p>###　2. 物理层</p>
-<blockquote>
+<h3 id="2-物理层"><a href="#2-物理层" class="headerlink" title="2. 物理层"></a>2. 物理层</h3><blockquote>
 <p>物理层规定:为传输数据所需要的物理链路创建、维持、拆除，而提供具有机械的，电子的，功能的和规范的特性 ——<a href="https://zh.wikipedia.org/wiki/%E7%89%A9%E7%90%86%E5%B1%82" target="_blank" rel="external">物理层(维基百科)</a></p>
 </blockquote>
-<p>上面维基百科对于物理层的解释说白了就是要把电脑连在一块，方法呢，可以用光缆、电缆、双绞线、无线电波等方式。<br><br><img src="http://img.taopic.com/uploads/allimg/130609/318761-13060Z0041268.jpg" alt="物理层连接"><br><strong><code>物理层</code>就是把电脑连接起来的物理手段。它主要规定了网络的一些电气特性，作用是负责传送0和1的电信号。</strong></p>
+<p>上面维基百科对于物理层的解释说白了就是要把电脑连在一块，方法呢，可以用光缆、电缆、双绞线、无线电波等方式。<br></p>
+<p><img src="http://img.blog.csdn.net/20161105225615088" alt="物理层连接"></p>
+<p><strong><code>物理层</code>就是把电脑连接起来的物理手段。它主要规定了网络的一些电气特性，作用是负责传送0和1的电信号。</strong></p>
 <h3 id="3-数据链路层"><a href="#3-数据链路层" class="headerlink" title="3. 数据链路层"></a>3. 数据链路层</h3><blockquote>
 <p>在两个网络实体之间提供数据链路连接的创建、维持和释放管理。构成数据链路数据单元（frame：数据帧或帧），并对帧定界、同步、收发顺序的控制。 ——<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82" target="_blank" rel="external">数据链路层(维基百科)</a></p>
 </blockquote>
@@ -412,10 +421,11 @@
 <p><strong>这就是数据链路层的功能，规定这些电信号的分组方式。</strong></p>
 <h4 id="3-2-以太网协议"><a href="#3-2-以太网协议" class="headerlink" title="3.2 以太网协议"></a>3.2 以太网协议</h4><p>刚刚开始的时候，每一家公司都有自己的一套对于电信号的解读方式，后来随着时间的推移，一种叫做<code>以太网</code>(Ethernet)的协议，占据了主导地位。</p>
 <p><strong>以太网规定，一组电信号构成一个数据包，叫做”帧”（Frame）。每一帧分成两个部分：标头（Head）和数据（Data）。</strong></p>
-<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:80px;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block;width:160px;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Data</span><br></div><br><br><br><code>标头</code>包含数据包的一些说明项，比如发送者、接受者、数据类型等等；<code>数据</code>则是数据包的具体内容。</p>
+<p><img src="http://img.blog.csdn.net/20161105231008204" alt="以太网数据包"></p>
+<p><code>标头</code>包含数据包的一些说明项，比如发送者、接受者、数据类型等等；<code>数据</code>则是数据包的具体内容。</p>
 <p><code>标头</code>的长度，固定为18字节。<code>数据</code>的长度，最短为46字节，最长为1500字节。因此，整个<code>帧</code>最短为64字节，最长为1518字节。如果数据很长，就必须分割成多个<code>帧</code>进行发送。</p>
 <h4 id="3-3-MAC地址"><a href="#3-3-MAC地址" class="headerlink" title="3.3 MAC地址"></a>3.3 MAC地址</h4><p>我想在日常上网过程中，最为熟悉的就是用一根网线连接端口和电脑了吧，网线连接电脑实际上是连接的这个玩意儿：</p>
-<p><img src="http://e.hiphotos.baidu.com/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=81ba3d099658d109d0eea1e0b031a7da/b812c8fcc3cec3fda0edf902d288d43f869427f1.jpg" alt="网卡"></p>
+<p><img src="http://img.blog.csdn.net/20161105225723932" alt="网卡"></p>
 <p>上面就是我们所说的网卡了，它在物理层和数据链路层两个层级工作，正所谓能力越大责任越大，网卡的重要性自然不言而喻了。前面说，以太网规定每一个数据包都有一个<code>标头</code>（Head）来说明发送者，接受者信息，数据类型等信息。而网卡就是以太网规定的来标明发送者和接受者信息的工具。</p>
 <p><strong>网卡的地址，就是数据包的发送地址和接收地址，这叫做MAC地址。</strong></p>
 <p>这个Mac地址自然就是发送者，接受者信息的了，通过这个每台电脑独一无二的地址计算机就能通过一些方式找到另一台电脑了。每块网卡出厂的时候，都有一个全世界独一无二的MAC地址，长度是48个二进制位，通常用12个十六进制数表示。有了MAC地址，就可以定位网卡和数据包的路径了。</p>
@@ -430,10 +440,10 @@
 <h4 id="4-1-网络层的产生"><a href="#4-1-网络层的产生" class="headerlink" title="4.1 网络层的产生"></a>4.1 网络层的产生</h4><p>走到这里我们实现的只是在一个子网络里传送数据。但我们知道，互联网实际上是由大大小小的子网络组成的：</p>
 <p><img src="http://it.dgzx.net/zxkt/gaoerji/2005-2006-1N/images/lesson06_01.gif" alt="互联网"></p>
 <p>大到一个ISP（因特网服务提供商，国内较大的比如移动电信等），小到一个公司的局域网，正事这些大大小小的子网络组成了庞大的互联网体系。但实际上，广播的方式只能在子网络内进行，不同子网络之间广播方式是行不通的。</p>
-<p>因此我们需要一种方法能够判断两台主机是否在同一个子网络之内，如果在同一个子网络就以广播的方式传输数据，如果不在同一个子网络就以<code>路由</code>的方式传输（路由是个比较大的概念，本文不涉及），关于路由协议的了解戳这里(<a href="https://zh.wikipedia.org/wiki/%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE)，MAC地址做不到这一点，它只和厂商有关，和计算机所处的网络并没有关系。" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE)，MAC地址做不到这一点，它只和厂商有关，和计算机所处的网络并没有关系。</a></p>
+<p>因此我们需要一种方法能够判断两台主机是否在同一个子网络之内，如果在同一个子网络就以广播的方式传输数据，如果不在同一个子网络就以<code>路由</code>的方式传输（路由是个比较大的概念，本文不涉及），关于路由协议的了解<a href="https://zh.wikipedia.org/wiki/%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE" target="_blank" rel="external">戳这里</a>，MAC地址做不到这一点，它只和厂商有关，和计算机所处的网络并没有关系。</p>
 <p><strong>这就导致了”网络层”的诞生。它的作用是引进一套新的地址，使得我们能够区分不同的计算机是否属于同一个子网络。这套地址就叫做”网络地址”，简称”网址”。</strong></p>
 <p>网址的出现，使得每台计算机都有了两个地址，一个是出生就带着不会改变的Mac地址，一个是后期网络管理员分配的可变的网络地址。网址判断两台计算机是否在同一个子网络，Mac地址则是将数据准确的传递到目标计算机中。因此逻辑上可以判断必定是先处理网络地址，再处理Mac地址。</p>
-<h4 id="4-2-IP协议"><a href="#4-2-IP协议" class="headerlink" title="4.2 IP协议"></a>4.2 IP协议</h4><p><strong>规定网络地址的协议，叫做IP协议。它所定义的地址，就被称为IP地址。</strong></p>
+<h4 id="4-2-IP协议"><a href="#4-2-IP协议" class="headerlink" title="4.2  IP协议"></a>4.2  IP协议</h4><p><strong>规定网络地址的协议，叫做IP协议。它所定义的地址，就被称为IP地址。</strong></p>
 <p>现在广泛采用的是IP协议第四版，简称IPv4。这个版本规定，网络地址由32个二进制位组成，IPV6则是64个二进制组成。</p>
 <p><img src="http://img.blog.csdn.net/20161105200554600" alt="IP地址"></p>
 <p>由于IPV6还没有广泛应用，这里还是用IPV4讲解。一般我们用分成四段（IPV6分成八段）的十进制数表示IP地址，从0.0.0.0一直到255.255.255.255。这个地址分成两部分，前一部分是网络部分，后一部分代表主机。But!!!网络部分具体是前16位还是前24位，我们没法从IP地址进行判断，这是我们就需要另一参数叫做<code>子网掩码</code>。</p>
@@ -442,8 +452,10 @@
 <p>比如，已知IP地址172.16.254.1和172.16.254.233的子网掩码都是255.255.255.0，请问它们是否在同一个子网络？两者与子网掩码分别进行AND运算，结果都是172.16.254.0，因此它们在同一个子网络。</p>
 <p>那么问题来了，IP地址放在哪里存储呢？是的，我们可以直接存储在前面提到的以太网数据包的Data部分。</p>
 <p>IP地址长这样：</p>
-<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:80px;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block;width:160px;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Data</span><br></div><br><br><br>“标头”部分主要包括版本、长度、IP地址等信息，”数据”部分则是IP数据包的具体内容。<br>现在把它加到以太网数据包里面：</p>
-<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:80px;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block; width:80px;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block;width:160px;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Data</span><br></div><br><br><br>IP数据包的”标头”部分的长度为20到60字节，整个数据包的总长度最大为65,535字节。因此，理论上，一个IP数据包的”数据”部分，最长为65,515字节。前面说过，以太网数据包的”数据”部分，最长只有1500字节。因此，如果IP数据包超过了1500字节，它就需要分割成几个以太网数据包，分开发送了。</p>
+<p><img src="http://img.blog.csdn.net/20161105231405610" alt="IP数据包"></p>
+<p>“标头”部分主要包括版本、长度、IP地址等信息，”数据”部分则是IP数据包的具体内容。<br>现在把它加到以太网数据包里面：</p>
+<p><img src="http://img.blog.csdn.net/20161105231536033" alt="以太网数据包"></p>
+<p>IP数据包的”标头”部分的长度为20到60字节，整个数据包的总长度最大为65,535字节。因此，理论上，一个IP数据包的”数据”部分，最长为65,515字节。前面说过，以太网数据包的”数据”部分，最长只有1500字节。因此，如果IP数据包超过了1500字节，它就需要分割成几个以太网数据包，分开发送了。</p>
 <h4 id="4-3-ARP协议"><a href="#4-3-ARP协议" class="headerlink" title="4.3 ARP协议"></a>4.3 ARP协议</h4><p>现在为止我们必须知道两个地址，一个是IP地址，一个是Mac地址才能把数据发送到目标主机，那么IP地址是已知的（后文解释），MAC地址怎么获取呢？</p>
 <p>我们需要一种能通过IP地址得知MAC地址的机制，这个极致就是ARP协议。</p>
 <p>那么，这里又分成两种情况，一种是两台计算机在同一个子网络，那么我们可以用ARP协议，得到对方的MAC地址。ARP协议也是发出一个数据包（包含在以太网数据包中），其中包含它所要查询主机的IP地址，在对方的MAC地址这一栏，填的是FF:FF:FF:FF:FF:FF，表示这是一个”广播”地址。它所在子网络的每一台主机，都会收到这个数据包，从中取出IP地址，与自身的IP地址进行比较。如果两者相同，都做出回复，向对方报告自己的MAC地址，否则就丢弃这个包。</p>
@@ -464,8 +476,10 @@
 <p><strong>确切的说，传输层实现的是端对端的服务，网络层实现的仅仅是主机到主机之间的服务。</strong>只要确定主机和端口，我们就能实现程序之间的交流。因此，Unix系统就把主机+端口，叫做”套接字”（socket）。</p>
 <h4 id="5-2-UDP协议"><a href="#5-2-UDP协议" class="headerlink" title="5.2 UDP协议"></a>5.2 UDP协议</h4><p>现在又出了一个新的数据，就是端口信息。现在以太网数据包里已经包括发送者，接受者信息，数据类型，IP地址数据包，UDp数据包。</p>
 <p>UDP数据包同样是由标头和数据组成：</p>
-<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:80px;height:40px;background:#77C787;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block;width:160px;height:40px;background:#77C787;color:white;line-height:40px;text-align:center;border-radius:5px;">Data</span><br></div><br><br><br><code>标头</code>部分主要定义了发出端口和接收端口，<br><code>数据</code>部分定义了具体的内容。然后把它放在IP地址数据包的数据部分，前面我们说过IP数据包是放在以太网数据包的数据里面的，那么现在整个以太网数据包就成了这样：</p>
-<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:15%;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Head</span><br>    <span style="display:inline-block;width:30%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Data</span><br></div><br><br><br>UDP数据包非常简单，”标头”部分一共只有8个字节，总长度不超过65,535字节，一个IP数据包正好可以容纳。</p>
+<p><img src="http://img.blog.csdn.net/20161105231649143" alt="UDP数据包"></p>
+<p><code>标头</code>部分主要定义了发出端口和接收端口，<br><code>数据</code>部分定义了具体的内容。然后把它放在IP地址数据包的数据部分，前面我们说过IP数据包是放在以太网数据包的数据里面的，那么现在整个以太网数据包就成了这样：</p>
+<p><img src="http://img.blog.csdn.net/20161105231743213" alt="以太网数据包"></p>
+<p>UDP数据包非常简单，”标头”部分一共只有8个字节，总长度不超过65,535字节，一个IP数据包正好可以容纳。</p>
 <h4 id="5-3-TCP协议"><a href="#5-3-TCP协议" class="headerlink" title="5.3 TCP协议"></a>5.3 TCP协议</h4><p>为了解决这个问题，提高网络可靠性，TCP协议就诞生了。这个协议非常复杂，但可以近似认为，它就是有确认机制的UDP协议，每发出一个数据包都要求确认。如果有一个数据包遗失，就收不到确认，发出方就知道有必要重发这个数据包了。</p>
 <p>因此，TCP协议能够确保数据不会遗失。它的缺点是过程复杂、实现困难、消耗较多的资源。<br>TCP数据包和UDP数据包一样，都是内嵌在IP数据包的”数据”部分。TCP数据包没有长度限制，理论上可以无限长，但是为了保证网络的效率，通常TCP数据包的长度不会超过IP数据包的长度，以确保单个TCP数据包不必再分割。</p>
 <p>关于TCP协议的三次握手和四次挥手过程博主在<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>这篇博客里有较为详细的说明。</p>
@@ -476,13 +490,13 @@
 <p><strong>“应用层”的作用，就是规定应用程序的数据格式。</strong></p>
 <p>举例来说，TCP协议可以为各种各样的程序传递数据，比如Email、WWW、FTP等等。那么，必须有不同协议规定电子邮件、网页、FTP数据的格式，这些应用程序协议就构成了”应用层”。</p>
 <p>这是最高的一层，直接面对用户。它的数据就放在TCP数据包的”数据”部分。因此，现在的以太网的数据包就变成下面这样：</p>
-<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:15%;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(以太网)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(IP)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(TCP)</span><br>    <span style="display:inline-block;width:30%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Data(应用层数据包)</span><br></div><br><br></p>
+<p><img src="http://img.blog.csdn.net/20161105231821409" alt="以太网数据包"></p>
 <p>上面买的坑改填了，我们前面说过，我们对于目标主机的IP地址肯定知道的，为什么呢？还有就是当两台计算机不在同一个子网络的时候，我们需要通过本机所在子网络的网关A，再通过路由协议得到目标主机子网络的网关B，由网关B将我们要发送给目标主机的数据包发送给目标主机。那么，网关又是什么呢？</p>
 <h4 id="6-2-DNS协议"><a href="#6-2-DNS协议" class="headerlink" title="6.2 DNS协议"></a>6.2 DNS协议</h4><p>我们都知道由于IP地址不方便记忆，我们创造了域名这个概念。</p>
 <p>DNS（网域名称系统，Domain Name System，有时也简称为域名）是因特网的一项核心服务，它作为可以将域名和IP地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP地址数串。</p>
 <p>例如，damonare.cn是一个域名，和IP地址119.29.180.47相对应。DNS就像是一个自动的电话号码簿，我们可以直接拨打damonare的名字来代替电话号码（IP地址）。我们直接调用网站的名字以后，DNS就会将便于人类使用的名字（如 damonare.cn）转化成便于机器识别的IP地址（如119.29.180.47）。</p>
 <p>已知DNS服务器为8.8.8.8（这个和IP地址一样管理员告知或是通过自行设置的），于是我们向这个地址发送一个DNS数据包（53端口）：</p>
-<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:15%;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(以太网)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(IP)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(UDP)</span><br>    <span style="display:inline-block;width:30%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Data(DNS数据包)</span><br></div><br><br></p>
+<p><img src="http://img.blog.csdn.net/20161105231856550" alt="以太网数据包"></p>
 <p>DNS服务器做出响应，告诉我们Google的IP地址是172.194.72.105。于是，我们知道了对方的IP地址。</p>
 <h4 id="6-2-网关"><a href="#6-2-网关" class="headerlink" title="6.2 网关"></a>6.2 网关</h4><blockquote>
 <p>网关要区别于路由器（由于历史的原因，许多有关TCP/IP的文献曾经把网络层使用的路由器（英语：Router）称为网关，在今天很多局域网采用都是路由来接入网络，因此现在通常指的网关就是路由器的IP），经常在家庭中或者小型企业网络中使用，用于连接局域网和Internet。</p>
@@ -509,7 +523,7 @@
 <p>前面说过，如果两台计算机在同一个子网络，必须知道对方的<code>MAC地址</code>和<code>IP地址</code>，才能发送数据包。但是，新加入的计算机不知道这两个地址，怎么发送数据包呢？</p>
 <p><code>DHCP协议</code>做了一些巧妙的规定。</p>
 <p>首先DHCP协议是建立在UDP协议之上，所以整个数据包是这样的：</p>
-<p><div style="width:100%;text-align:center"><br>    <span style="display:inline-block; width:15%;height:40px;background:#56C1FD;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(以太网)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#F45059;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(IP)</span><br>    <span style="display:inline-block; width:15%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Head(UDP)</span><br>    <span style="display:inline-block;width:30%;height:40px;background:#7FC988;color:white;line-height:40px;text-align:center;border-radius:5px;">Data(DHCP数据包)</span><br></div><br><br></p>
+<p><img src="http://img.blog.csdn.net/20161105231939732" alt="以太网数据包"></p>
 <ul>
 <li>(1).最前面的”以太网标头”，设置发出方（本机）的MAC地址和接收方（DHCP服务器）的MAC地址。前者就是本机网卡的MAC地址，后者这时不知道，就填入一个广播地址：FF-FF-FF-FF-FF-FF。</li>
 <li>(2).后面的”IP标头”，设置发出方的IP地址和接收方的IP地址。这时，对于这两者，本机都不知道。于是，发出方的IP地址就设为0.0.0.0，接收方的IP地址设为255.255.255.255。</li>
