@@ -48,6 +48,135 @@ body:after {
 /*right: 90px;
     top: 2px;*/
 }
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 100%;
+}
+.switch {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.switch label {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+.switch input {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+}
+.switch.demo1 {
+  width: 50px;
+  height: 50px;
+}
+.switch.demo1 label {
+  border-radius: 50%;
+  background: #eaeaea;
+  -webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -5px 5px rgba(100,100,100,0.1), inset 0 5px 5px rgba(255,255,255,0.3);
+  box-shadow: 0 3px 5px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -5px 5px rgba(100,100,100,0.1), inset 0 5px 5px rgba(255,255,255,0.3);
+}
+.switch.demo1 label:after {
+  content: "";
+  position: absolute;
+  top: -8%;
+  right: -8%;
+  bottom: -8%;
+  left: -8%;
+  z-index: -1;
+  border-radius: 50%;
+  background: #ddd;
+  background: -moz--webkit-linear-gradient(#ccc, #fff);
+  background: -moz--moz-linear-gradient(#ccc, #fff);
+  background: -moz--ms-linear-gradient(#ccc, #fff);
+  background: -moz-linear-gradient(#ccc, #fff);
+  background: -ms--webkit-linear-gradient(#ccc, #fff);
+  background: -ms--moz-linear-gradient(#ccc, #fff);
+  background: -ms--ms-linear-gradient(#ccc, #fff);
+  background: -ms-linear-gradient(#ccc, #fff);
+  background: -o--webkit-linear-gradient(#ccc, #fff);
+  background: -o--moz-linear-gradient(#ccc, #fff);
+  background: -o--ms-linear-gradient(#ccc, #fff);
+  background: -o-linear-gradient(#ccc, #fff);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#fff));
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#fff));
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#fff));
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#fff));
+  background: -webkit--webkit-linear-gradient(#ccc, #fff);
+  background: -webkit--moz-linear-gradient(#ccc, #fff);
+  background: -webkit--ms-linear-gradient(#ccc, #fff);
+  background: -webkit-linear-gradient(#ccc, #fff);
+  background: -webkit-linear-gradient(#ccc, #fff);
+  background: -moz-linear-gradient(#ccc, #fff);
+  background: -ms-linear-gradient(#ccc, #fff);
+  background: linear-gradient(#ccc, #fff);
+  -webkit-box-shadow: inset 0 2px 1px rgba(0,0,0,0.15), 0 2px 5px rgba(200,200,200,0.1);
+  box-shadow: inset 0 2px 1px rgba(0,0,0,0.15), 0 2px 5px rgba(200,200,200,0.1);
+}
+.switch.demo1 label:before {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  left: 40%;
+  top: 40%;
+  background: #969696;
+  background: -webkit-radial-gradient(40% 35%, #ccc, #969696 60%);
+  background: -moz-radial-gradient(40% 35%, #ccc, #969696 60%);
+  background: -ms-radial-gradient(40% 35%, #ccc, #969696 60%);
+  background: radial-gradient(40% 35%, #ccc, #969696 60%);
+  -webkit-box-shadow: inset 0 2px 4px 1px rgba(0,0,0,0.3), 0 1px 0 #fff, inset 0 1px 0 #fff;
+  box-shadow: inset 0 2px 4px 1px rgba(0,0,0,0.3), 0 1px 0 #fff, inset 0 1px 0 #fff;
+}
+.switch.demo1 input:checked ~ label {
+  background: #dedede;
+  background: -moz--webkit-linear-gradient(#dedede, #fdfdfd);
+  background: -moz--moz-linear-gradient(#dedede, #fdfdfd);
+  background: -moz--ms-linear-gradient(#dedede, #fdfdfd);
+  background: -moz-linear-gradient(#dedede, #fdfdfd);
+  background: -ms--webkit-linear-gradient(#dedede, #fdfdfd);
+  background: -ms--moz-linear-gradient(#dedede, #fdfdfd);
+  background: -ms--ms-linear-gradient(#dedede, #fdfdfd);
+  background: -ms-linear-gradient(#dedede, #fdfdfd);
+  background: -o--webkit-linear-gradient(#dedede, #fdfdfd);
+  background: -o--moz-linear-gradient(#dedede, #fdfdfd);
+  background: -o--ms-linear-gradient(#dedede, #fdfdfd);
+  background: -o-linear-gradient(#dedede, #fdfdfd);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#dedede), to(#fdfdfd));
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#dedede), to(#fdfdfd));
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#dedede), to(#fdfdfd));
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#dedede), to(#fdfdfd));
+  background: -webkit--webkit-linear-gradient(#dedede, #fdfdfd);
+  background: -webkit--moz-linear-gradient(#dedede, #fdfdfd);
+  background: -webkit--ms-linear-gradient(#dedede, #fdfdfd);
+  background: -webkit-linear-gradient(#dedede, #fdfdfd);
+  background: -webkit-linear-gradient(#dedede, #fdfdfd);
+  background: -moz-linear-gradient(#dedede, #fdfdfd);
+  background: -ms-linear-gradient(#dedede, #fdfdfd);
+  background: linear-gradient(#dedede, #fdfdfd);
+}
+.switch.demo1 input:checked ~ label:before {
+  background: #25d025;
+  background: -webkit-radial-gradient(40% 35%, #5aef5a, #25d025 60%);
+  background: -moz-radial-gradient(40% 35%, #5aef5a, #25d025 60%);
+  background: -ms-radial-gradient(40% 35%, #5aef5a, #25d025 60%);
+  background: radial-gradient(40% 35%, #5aef5a, #25d025 60%);
+  -webkit-box-shadow: inset 0 3px 5px 1px rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,0.4), 0 0 10px 2px rgba(0,210,0,0.5);
+  box-shadow: inset 0 3px 5px 1px rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,0.4), 0 0 10px 2px rgba(0,210,0,0.5);
+}
 @font-face {
   font-family: 'FontAwesome';
   src: url("fonts/fontawesome-webfont.eot");
