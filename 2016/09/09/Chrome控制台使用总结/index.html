@@ -41,7 +41,8 @@ Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因
     <link rel="icon" href="/./img/1.png">
   
   <link rel="stylesheet" href="../../../../css/style.css">
-  <link rel="stylesheet" href="../../../../css/css/font-awesome.min.css">
+  <!-- scripts -->
+ <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/js/particles.min.js" src="/js/particles.min.js"></script>
 </head>
 
 <body>
@@ -193,6 +194,7 @@ Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因
 </div>
 
     </div>
+
     <div class="mid-col">
       <nav id="mobile-nav">
   	<div class="overlay">
@@ -542,7 +544,6 @@ Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因
     </div>
 </footer>
 <script>
-    < script >
         var birthDay = new Date('9/05/2016 18:34:23');
     setInterval(function() {
         var now = new Date();
@@ -693,6 +694,33 @@ $(function(){
 })
 </script>
 
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<script src="/js/app.js"></script>
+<!-- stats.js -->
+<script src="/js/lib/stats.js"></script>
+<!--open/close  -->
+<section class="main">
+	<div class="switch demo1">
+		<input type="checkbox">
+		<label></label>
+	</div>
+</section>
+
+<script>
+    $(function(){
+        $('.main').delegate('.switch','click',function(){
+            if($(this).find('input').is(":checked")){
+                $('#particles-js').css('bottom','0');
+            }else{
+                $('#particles-js').css('bottom','100%');
+            }
+        })
+    })
+</script>
+
   </div>
+
 </body>
 </html>
