@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-11-16T03:08:07.445Z</updated>
+  <updated>2016-11-16T03:15:36.687Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
     <id>http://damonare.github.io/2016/11/13/Git 命令总结/</id>
     <published>2016-11-13T15:17:56.608Z</published>
-    <updated>2016-11-16T03:08:07.445Z</updated>
+    <updated>2016-11-16T03:15:36.687Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>人生贵知心，定交无暮早。</strong></p>
-<p>原文博客地址：<a href="http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more">Git命令总结</a></p>
+<p>原文博客地址：<a href="http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more">Git命令总结</a></p>
 <p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&nbsp;&nbsp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
 <a id="more"></a>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-Git简介"><a href="#1-Git简介" class="headerlink" title="1.Git简介"></a>1.Git简介</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;Git的诞生确实是一个有趣的故事，我们知道，当年Linus创建了开源的Linux，从此，Linux系统不断发展，现在已经成为最大的服务器系统软件了。(请不要傻傻分不清Linus和Linux)</p>
@@ -147,7 +147,7 @@
     <summary type="html">
     
       &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;人生贵知心，定交无暮早。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more&quot;&gt;Git命令总结&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more&quot;&gt;Git命令总结&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
     
     </summary>
@@ -208,9 +208,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -497,7 +497,7 @@
 <h2 id="变量的块级作用域"><a href="#变量的块级作用域" class="headerlink" title="变量的块级作用域"></a>变量的块级作用域</h2><p>使用 ES6，声明变量我们可以用 <code>var</code> ，也可以用 <code>let</code> 或 <code>const</code>。</p>
 <p><code>var</code> 有什么不足？</p>
 <p>使用 <code>var</code> 的问题是变量会漏入其他代码块中，诸如 <code>for</code> 循环或 <code>if</code> 代码块。</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
 <p>对于 <code>test(fasle)</code> ，你期望返回 <code>outer</code>，<strong>但是</strong>，你得到的是 <code>undefined</code>。</p>
 <p>为什么？</p>
 <p>因为尽管没有执行 <code>if</code> 代码块，第四行中的表达式 <code>var x</code> 也会被提升。</p>
@@ -509,7 +509,7 @@
 <li>初始化是不被提升的。如果你使用 <code>var</code> 声明变量，请总是将它放在顶部。</li>
 <li>在应用了声明提升规则之后，我们就能更容易地理解发生了什么：</li>
 </ul>
-<pre><code><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x; <span class="comment">// 声明提升</span></div><div class="line">    <span class="keyword">if</span> (inner) &#123;</div><div class="line">        x = <span class="string">'inner'</span>; <span class="comment">// 初始化不被提升</span></div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> x; <span class="comment">// 声明提升</span></div><div class="line">    <span class="keyword">if</span> (inner) &#123;</div><div class="line">        x = <span class="string">'inner'</span>; <span class="comment">// 初始化不被提升</span></div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre></blockquote>
 <p>ECMAScript 2015 找到了解决的办法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">let</span> x = <span class="string">'inner'</span>;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 从第一行获取到预期结果</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// outer</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
@@ -530,7 +530,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> private2 = <span class="number">1</span>;</div><div class="line">&#125;)();</div><div class="line"><span class="built_in">console</span>.log(private2); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
 <p>如果你看一看 jQuery/loadsh 或其他开源项目，你会注意到他们用 IIFE 来避免污染全局环境而且只在全局中定义了诸如 <code>_</code>，<code>$</code>和<code>jQuery</code>。</p>
 <p>在 ES6 上则一目了然，我们可以只用代码块和 <code>let</code>，也不再需要使用 IIFE了。</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> private3 = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(private3); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> private3 = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(private3); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
 <p><strong>Const</strong></p>
 <p>如果你想要一个变量保持不变（常量），你也可以使用 <code>const</code>。</p>
 <p><img src="http://adrianmejia.com/images/javascript-es6-const-variables-example.png" alt="" title="const variable example"></p>
@@ -558,7 +558,7 @@
 <p><strong>交换值</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> tmp = a;</div><div class="line">a = b;</div><div class="line">b = tmp;</div><div class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
 <p>等同于：</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line">[a, b] = [b, a];</div><div class="line">console.<span class="built_in">log</span>(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line">[a, b] = [b, a];</div><div class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
 <p><strong>多个返回值的解构</strong></p>
 <figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function margin() &#123;</div><div class="line">  var <span class="built_in">left</span>=<span class="number">1</span>, <span class="built_in">right</span>=<span class="number">2</span>, <span class="built_in">top</span>=<span class="number">3</span>, <span class="built_in">bottom</span>=<span class="number">4</span>;</div><div class="line">  <span class="keyword">return</span> &#123; <span class="built_in">left</span>: <span class="built_in">left</span>, <span class="built_in">right</span>: <span class="built_in">right</span>, <span class="built_in">top</span>: <span class="built_in">top</span>, <span class="built_in">bottom</span>: <span class="built_in">bottom</span> &#125;;</div><div class="line">&#125;</div><div class="line">var data = margin();</div><div class="line">var <span class="built_in">left</span> = data.<span class="built_in">left</span>;</div><div class="line">var <span class="built_in">bottom</span> = data.<span class="built_in">bottom</span>;</div><div class="line">console.log(<span class="built_in">left</span>, <span class="built_in">bottom</span>); // <span class="number">1</span> <span class="number">4</span></div></pre></td></tr></table></figure>
 <p>在第 3 行中，你也可以用一个像这样的数组返回（同时省去了一些编码）：</p>
@@ -775,9 +775,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -1407,9 +1407,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -2815,11 +2815,11 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
+      <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
+    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
     
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
@@ -2864,7 +2864,7 @@ Model：数据访问层
 </ul>
 <blockquote>
 <p>好的，现在我们Node,git,github都弄好了，现在可以本地化一个hexo了,新建hexo文件夹，任意盘下都可以，然后命令行执行命令：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo -g  <span class="comment">#-g表示全局安装, npm默认为当前项目安装</span></div></pre></td></tr></table></figure></p>
-<p>如果遇到错误：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure></p>
+<p>如果遇到错误：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [<span class="built_in">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [<span class="built_in">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [<span class="built_in">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure></p>
 <p>改用下面的命令安装：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> install hexo --<span class="literal">no</span>-optional</div></pre></td></tr></table></figure></p>
 <p>好的，现在hexo也就绪了,hexo命令：</p>
 </blockquote>
