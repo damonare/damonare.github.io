@@ -1,4 +1,4 @@
-### Damonare个人博客
+### Assember个人博客
 
 - 欢迎star，fork
 - 欢迎提issue
@@ -6,4 +6,4 @@
 
 ### 博客地址
 
-> 个人博客：[Damonare的个人博客](http://damonare.cn)
+> 原作者博客：[Damonare的个人博客](http://damonare.cn)
