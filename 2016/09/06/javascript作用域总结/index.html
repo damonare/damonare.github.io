@@ -30,7 +30,7 @@
 
 
 人生世上风波险，一日风波十二时。">
-<meta property="og:updated_time" content="2016-11-26T10:09:54.927Z">
+<meta property="og:updated_time" content="2016-11-26T10:14:02.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript作用域总结">
 <meta name="twitter:description" content="前言总括： 作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。
@@ -322,7 +322,7 @@
       
         <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数作用域"><span class="toc-number">1.1.</span> <span class="toc-text">函数作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#块级作用域"><span class="toc-number">1.2.</span> <span class="toc-text">块级作用域</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数作用域"><span class="toc-number">2.1.</span> <span class="toc-text">函数作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#块级作用域"><span class="toc-number">2.2.</span> <span class="toc-text">块级作用域</span></a></li></ol></li></ol>
         </div>
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。</p>
@@ -336,8 +336,7 @@
 </ul>
 <p><strong>人生世上风波险，一日风波十二时。</strong></p>
 <a id="more"></a>
-<p>##正文</p>
-<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p><strong>这个应该好理解，函数作用域就是说定义在函数中的参数和变量在函数外部是不可见的。</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p><strong>这个应该好理解，函数作用域就是说定义在函数中的参数和变量在函数外部是不可见的。</strong></p>
 <p><strong>大多数类C语言都拥有块级作用域，JS却没有。请看下文demo:</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//C语言</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> i=<span class="number">2</span>;</div><div class="line">i--;</div><div class="line"><span class="keyword">if</span>(i)</div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> j=<span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d/n"</span>,j);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>运行这段代码，会出现“use an undefined variable:j”的错误。可以看到，C语言拥有块级作用域，因为j是在if的语句块中定义的，因此，它在块外是无法访问的。</strong></p>
 <h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><hr>
