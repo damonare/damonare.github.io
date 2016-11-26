@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>从隐藏元素谈起 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-总括： 本文详细讲述了在网页中用CSS隐藏元素的七种方法。
+  <meta name="description" content="前言总括： 本文详细讲述了在网页中用CSS隐藏元素的七种方法。
 
 原文博客地址：Git命令总结
 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
@@ -15,15 +14,12 @@
 博主博客地址：Damonare的个人博客
 
 
-念念不忘,必有回响;有一口气,点一盏灯。
-正文
-说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下">
+念念不忘,必有回响;有一口气,点一盏灯。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从隐藏元素谈起">
 <meta property="og:url" content="http://damonare.github.io/2016/09/05/从隐藏元素谈起/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="前言
-总括： 本文详细讲述了在网页中用CSS隐藏元素的七种方法。
+<meta property="og:description" content="前言总括： 本文详细讲述了在网页中用CSS隐藏元素的七种方法。
 
 原文博客地址：Git命令总结
 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
@@ -31,14 +27,11 @@
 博主博客地址：Damonare的个人博客
 
 
-念念不忘,必有回响;有一口气,点一盏灯。
-正文
-说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下">
-<meta property="og:updated_time" content="2016-11-26T05:56:17.137Z">
+念念不忘,必有回响;有一口气,点一盏灯。">
+<meta property="og:updated_time" content="2016-11-26T06:00:22.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从隐藏元素谈起">
-<meta name="twitter:description" content="前言
-总括： 本文详细讲述了在网页中用CSS隐藏元素的七种方法。
+<meta name="twitter:description" content="前言总括： 本文详细讲述了在网页中用CSS隐藏元素的七种方法。
 
 原文博客地址：Git命令总结
 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
@@ -46,9 +39,7 @@
 博主博客地址：Damonare的个人博客
 
 
-念念不忘,必有回响;有一口气,点一盏灯。
-正文
-说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下">
+念念不忘,必有回响;有一口气,点一盏灯。">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -331,8 +322,7 @@
           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number"></span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-overflow"><span class="toc-number">1.</span> <span class="toc-text">1. overflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-opacity"><span class="toc-number">2.</span> <span class="toc-text">2.opacity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-visibility"><span class="toc-number">3.</span> <span class="toc-text">3.visibility</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-display"><span class="toc-number">4.</span> <span class="toc-text">4.display</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-position"><span class="toc-number">5.</span> <span class="toc-text">5.position</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-clip-clip-path"><span class="toc-number">6.</span> <span class="toc-text">6.clip/clip-path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-z-index"><span class="toc-number">7.</span> <span class="toc-text">7.z-index</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后记"><span class="toc-number">8.</span> <span class="toc-text">后记</span></a></li></ol>
         </div>
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr>
-<p><strong>总括：</strong> 本文详细讲述了在网页中用CSS隐藏元素的七种方法。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>总括：</strong> 本文详细讲述了在网页中用CSS隐藏元素的七种方法。</p>
 <ul>
 <li>原文博客地址：<a href="http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more">Git命令总结</a></li>
 <li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
@@ -341,13 +331,12 @@
 </li>
 </ul>
 <p><strong>念念不忘,必有回响;有一口气,点一盏灯。</strong></p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
-<p>说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：</p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：</p>
 <blockquote>
 <p>overflow:hidden<br>opacity:0；<br>visibility:hidden<br>display:none<br>position:absolute<br>clip(clip-path):rect()/inset()/polygon()<br>z-index:-1000</p>
 </blockquote>
 <p><strong>我们为什么会需要这么多隐藏元素的方法呢，而且他们看起来实现的都是同样的效果。其实每一种方法实际上都有一些细微的不同，这些不同决定了在一些特定场合下使用哪一种方法。我们下面细细探讨下这些细微之处.</strong></p>
-<a id="more"></a>
 <h3 id="1-overflow"><a href="#1-overflow" class="headerlink" title="1. overflow"></a>1. overflow</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.hide</span>&#123;</div><div class="line">	 <span class="attribute">overflow</span>:hidden; <span class="comment">/* 占据空间，无法点击 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>overflow的hidden用来隐藏元素溢出部分，占据空间，无法响应点击事件。</strong></p>
 <h3 id="2-opacity"><a href="#2-opacity" class="headerlink" title="2.opacity"></a>2.opacity</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.hide</span>&#123;</div><div class="line">	<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="comment">/* 占据空间，可以点击 */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.hide_2</span>&#123;</div><div class="line">	<span class="attribute">-webkit-filter</span>:<span class="built_in">opacity</span>(0);</div><div class="line">	<span class="attribute">filter</span>:<span class="built_in">opacity</span>(0);<span class="comment">/* 占据空间，可以点击 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>

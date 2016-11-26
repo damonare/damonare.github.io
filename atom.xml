@@ -45,9 +45,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -480,9 +480,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -493,10 +493,9 @@
     <link href="http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/"/>
     <id>http://damonare.github.io/2016/11/05/互联网协议入门/</id>
     <published>2016-11-05T04:00:49.017Z</published>
-    <updated>2016-11-26T05:56:32.321Z</updated>
+    <updated>2016-11-26T06:00:37.100Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
-<p><strong>总括：</strong> 博主之前写过一篇博客：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。</p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 博主之前写过一篇博客：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。</p>
 <ul>
 <li><p>原文地址：<a href="http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/#more">internet协议入门</a></p>
 </li>
@@ -507,8 +506,7 @@
 </ul>
 <p><strong>劳于读书，逸于作文。</strong></p>
 <a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
-<h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p><strong>互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p><strong>互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。</strong></p>
 <h4 id="1-1-模型划分"><a href="#1-1-模型划分" class="headerlink" title="1.1 模型划分"></a>1.1 模型划分</h4><p>首先我们需要明白的事互联网的实现是分层级的，那么这个层级的划分根据不同的模型又有一些不同。其中又有两个模型的划分是我们最常见到的，一个是OSI七层划分，另一个是TCP/IP五层划分。他们分别把互联网分成了七层和五层。</p>
 <blockquote>
 <p>OSI和TCP/IP模型是很基础但又非常重要的网络基础知识</p>
@@ -726,8 +724,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 博主之前写过一篇博客：&lt;a href=&quot;http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more&quot;&gt;网络协议分析&lt;/a&gt;,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 博主之前写过一篇博客：&lt;a href=&quot;http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more&quot;&gt;网络协议分析&lt;/a&gt;,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/#more&quot;&gt;internet协议入门&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -1062,9 +1059,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -1167,10 +1164,9 @@
     <link href="http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/"/>
     <id>http://damonare.github.io/2016/10/30/前端跨域整理/</id>
     <published>2016-10-30T07:24:24.028Z</published>
-    <updated>2016-11-26T05:57:17.302Z</updated>
+    <updated>2016-11-26T06:01:06.394Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr>
-<p><strong>总括：</strong> 相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。</p>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>总括：</strong> 相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。</p>
 <ul>
 <li><p>原文地址：<a href="http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more">前端跨域总结</a></p>
 </li>
@@ -1180,8 +1176,7 @@
 </ul>
 <p><strong>人生在勤，不索何获。</strong></p>
 <a id="more"></a>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><hr>
-<h4 id="1-什么是跨域？"><a href="#1-什么是跨域？" class="headerlink" title="1. 什么是跨域？"></a>1. 什么是跨域？</h4><blockquote>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="1-什么是跨域？"><a href="#1-什么是跨域？" class="headerlink" title="1. 什么是跨域？"></a>1. 什么是跨域？</h4><blockquote>
 <p> 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。所以我们要通过一些方法使本域的js能够操作其他域的页面对象或者使其他域的js能操作本域的页面对象（iframe之间）。下面是具体的跨域情况详解：</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">URL                      说明       是否允许通信</div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line">http:<span class="comment">//www.a.com/b.js     同一域名下   允许</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com/lab/a.js</span></div><div class="line">http:<span class="comment">//www.a.com/script/b.js 同一域名下不同文件夹 允许</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com:8000/a.js</span></div><div class="line">http:<span class="comment">//www.a.com/b.js     同一域名，不同端口  不允许</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line">https:<span class="comment">//www.a.com/b.js 同一域名，不同协议 不允许</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line">http:<span class="comment">//70.32.92.74/b.js 域名和域名对应ip 不允许</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line">http:<span class="comment">//script.a.com/b.js 主域相同，子域不同 不允许（cookie这种情况下也不允许访问）</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line">http:<span class="comment">//a.com/b.js 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.cnblogs.com/a.js</span></div><div class="line">http:<span class="comment">//www.a.com/b.js 不同域名 不允许</span></div></pre></td></tr></table></figure>
@@ -1321,8 +1316,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。&lt;/p&gt;
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more&quot;&gt;前端跨域总结&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -1660,9 +1654,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -1808,10 +1802,9 @@
     <link href="http://damonare.github.io/2016/09/09/%E8%81%8A%E8%81%8Aclip-path/"/>
     <id>http://damonare.github.io/2016/09/09/聊聊clip-path/</id>
     <published>2016-09-09T08:51:00.000Z</published>
-    <updated>2016-11-26T05:56:44.742Z</updated>
+    <updated>2016-11-26T06:00:47.378Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
-<p><strong>总括：</strong>  图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！</p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong>  图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！</p>
 <ul>
 <li>原文博客地址：<a href="http://damonare.github.io/2016/09/09/%E8%81%8A%E8%81%8Aclip-path/#more">聊聊clip-path</a></li>
 <li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
@@ -1821,8 +1814,7 @@
 </ul>
 <p><strong>人生如画，岁月如歌。</strong></p>
 <a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
-<h3 id="Flilter"><a href="#Flilter" class="headerlink" title="Flilter"></a>Flilter</h3><blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Flilter"><a href="#Flilter" class="headerlink" title="Flilter"></a>Flilter</h3><blockquote>
 <p>filter有十种特效来处理图片，博主只放几种特效的样例给大家看一下：</p>
 <p>照片反色效果：</p>
 <p><img src="http://img.blog.csdn.net/20160910104748479" alt="照片反色"></p>
@@ -1911,8 +1903,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt;  图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt;  图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/09/%E8%81%8A%E8%81%8Aclip-path/#more&quot;&gt;聊聊clip-path&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
@@ -3408,10 +3399,9 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/05/%E6%BC%AB%E8%B0%88%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2016/09/05/漫谈前端之路/</id>
     <published>2016-09-05T15:55:48.526Z</published>
-    <updated>2016-11-26T05:57:04.551Z</updated>
+    <updated>2016-11-26T06:00:55.967Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
-<p><strong>总括：</strong> 前端之路何其漫漫~</p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 前端之路何其漫漫~</p>
 <ul>
 <li>原文博客地址：<a href="http://damonare.github.io/2016/09/05/%E6%BC%AB%E8%B0%88%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/#more">漫谈前端之路</a></li>
 <li>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></li>
@@ -3419,7 +3409,6 @@ Model：数据访问层
 </ul>
 <p><strong>人生一世，草木一秋。</strong></p>
 <a id="more"></a>
-<hr>
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;总的来说HTML并不难，甚至可以说很无脑……HTML的标签个人觉得过一遍就得，知道什么时候该用什么标签就可以了，因为在以后的开发中打交道最多的就是各种各样的标签，想不熟都难。就像现在我写这篇文章用的Markdown一样，只是几个标签的反复应用。那么html的学习就相对来说很自由了，可以跟着w3school<a href="http://www.w3school.com.cn/html/index.asp" target="_blank" rel="external">W3school网址</a>过一遍标签，网上也有很多其它网站做这个的，像<a href="http://qctlr.cai.swufe.edu.cn/w3c/html/index.html" target="_blank" rel="external">菜鸟教程</a>,<a href="http://www.imooc.com/view/9" target="_blank" rel="external">慕课网视频</a>之类的都可以用,等熟练了就可以去国外看看一些前端的新技术，像<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="external">MDN</a>,<a href="http://www.w3schools.com/" target="_blank" rel="external">W3cschool(国际)</a>，<a href="http://stackoverflow.com/" target="_blank" rel="external">stackoverflow(最大的程序员问答网站)</a>。</p>
 <blockquote>
 <p>HTML重点</p>
@@ -3483,8 +3472,7 @@ Model：数据访问层
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 前端之路何其漫漫~&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 前端之路何其漫漫~&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/05/%E6%BC%AB%E8%B0%88%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/#more&quot;&gt;漫谈前端之路&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/li&gt;

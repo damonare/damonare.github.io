@@ -6,26 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Internet协议入门 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-总括： 博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。
+  <meta name="description" content="前言总括： 博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。
 
 原文地址：internet协议入门
 
 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
 
-博主博客地址：Da">
+博主博客地址：Dam">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Internet协议入门">
 <meta property="og:url" content="http://damonare.github.io/2016/11/05/互联网协议入门/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="前言
-总括： 博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。
+<meta property="og:description" content="前言总括： 博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。
 
 原文地址：internet协议入门
 
 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
 
-博主博客地址：Da">
+博主博客地址：Dam">
 <meta property="og:image" content="http://img.blog.csdn.net/20161105225615088">
 <meta property="og:image" content="http://img.blog.csdn.net/20161105231008204">
 <meta property="og:image" content="http://img.blog.csdn.net/20161105225723932">
@@ -41,17 +39,16 @@
 <meta property="og:image" content="http://image.beekka.com/blog/201206/bg2012061101.jpg">
 <meta property="og:image" content="http://nic.ysu.edu.cn/images/13/03/18/44mhv9wgmi/20112261000564.gif">
 <meta property="og:image" content="http://img.blog.csdn.net/20161105231939732">
-<meta property="og:updated_time" content="2016-11-26T05:56:32.321Z">
+<meta property="og:updated_time" content="2016-11-26T06:00:37.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Internet协议入门">
-<meta name="twitter:description" content="前言
-总括： 博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。
+<meta name="twitter:description" content="前言总括： 博主之前写过一篇博客：网络协议分析,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。
 
 原文地址：internet协议入门
 
 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
 
-博主博客地址：Da">
+博主博客地址：Dam">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20161105225615088">
   
   
@@ -335,8 +332,7 @@
           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概述"><span class="toc-number">2.1.</span> <span class="toc-text">1.概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-模型划分"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1 模型划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-层与协议"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2 层与协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-物理层"><span class="toc-number">2.2.</span> <span class="toc-text">2. 物理层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数据链路层"><span class="toc-number">2.3.</span> <span class="toc-text">3. 数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-定义"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1 定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-以太网协议"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2 以太网协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-MAC地址"><span class="toc-number">2.3.3.</span> <span class="toc-text">3.3 MAC地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-广播"><span class="toc-number">2.3.4.</span> <span class="toc-text">3.4 广播</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-网络层"><span class="toc-number">2.4.</span> <span class="toc-text">4.网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-网络层的产生"><span class="toc-number">2.4.1.</span> <span class="toc-text">4.1 网络层的产生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-IP协议"><span class="toc-number">2.4.2.</span> <span class="toc-text">4.2  IP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-ARP协议"><span class="toc-number">2.4.3.</span> <span class="toc-text">4.3 ARP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4总结"><span class="toc-number">2.4.4.</span> <span class="toc-text">4.4总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-传输层"><span class="toc-number">2.5.</span> <span class="toc-text">5. 传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-传输层的产生"><span class="toc-number">2.5.1.</span> <span class="toc-text">5.1 传输层的产生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-UDP协议"><span class="toc-number">2.5.2.</span> <span class="toc-text">5.2 UDP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-TCP协议"><span class="toc-number">2.5.3.</span> <span class="toc-text">5.3 TCP协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-应用层"><span class="toc-number">2.6.</span> <span class="toc-text">6. 应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-应用层介绍"><span class="toc-number">2.6.1.</span> <span class="toc-text">6.1 应用层介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-DNS协议"><span class="toc-number">2.6.2.</span> <span class="toc-text">6.2 DNS协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-网关"><span class="toc-number">2.6.3.</span> <span class="toc-text">6.2 网关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-DHCP协议"><span class="toc-number">2.6.4.</span> <span class="toc-text">6.3 DHCP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-小结"><span class="toc-number">2.6.5.</span> <span class="toc-text">6.4 小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
         </div>
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
-<p><strong>总括：</strong> 博主之前写过一篇博客：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 博主之前写过一篇博客：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。</p>
 <ul>
 <li><p>原文地址：<a href="http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/#more">internet协议入门</a></p>
 </li>
@@ -347,8 +343,7 @@
 </ul>
 <p><strong>劳于读书，逸于作文。</strong></p>
 <a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
-<h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p><strong>互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p><strong>互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。</strong></p>
 <h4 id="1-1-模型划分"><a href="#1-1-模型划分" class="headerlink" title="1.1 模型划分"></a>1.1 模型划分</h4><p>首先我们需要明白的事互联网的实现是分层级的，那么这个层级的划分根据不同的模型又有一些不同。其中又有两个模型的划分是我们最常见到的，一个是OSI七层划分，另一个是TCP/IP五层划分。他们分别把互联网分成了七层和五层。</p>
 <blockquote>
 <p>OSI和TCP/IP模型是很基础但又非常重要的网络基础知识</p>
