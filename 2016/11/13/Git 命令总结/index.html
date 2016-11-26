@@ -6,23 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>全面理解Git | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言人生贵知心，定交无暮早。
+  <meta name="description" content="前言总括： 本文详细讲解了Git常用命令的技巧和使用方法。
+
 原文博客地址：Git命令总结
-知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）">
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生贵知心，定交无暮早。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="全面理解Git">
 <meta property="og:url" content="http://damonare.github.io/2016/11/13/Git 命令总结/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="前言人生贵知心，定交无暮早。
+<meta property="og:description" content="前言总括： 本文详细讲解了Git常用命令的技巧和使用方法。
+
 原文博客地址：Git命令总结
-知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）">
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生贵知心，定交无暮早。">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png">
-<meta property="og:updated_time" content="2016-11-16T10:54:37.779Z">
+<meta property="og:updated_time" content="2016-11-26T10:01:57.549Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全面理解Git">
-<meta name="twitter:description" content="前言人生贵知心，定交无暮早。
+<meta name="twitter:description" content="前言总括： 本文详细讲解了Git常用命令的技巧和使用方法。
+
 原文博客地址：Git命令总结
-知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）">
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生贵知心，定交无暮早。">
 <meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png">
   
   
@@ -146,7 +167,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -301,10 +322,16 @@
       
           <!-- Table of Contents -->
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>人生贵知心，定交无暮早。</strong></p>
-<p>原文博客地址：<a href="http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more">Git命令总结</a></p>
-<p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
-<a id="more"></a>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>总括：</strong> 本文详细讲解了Git常用命令的技巧和使用方法。</p>
+<ul>
+<li><p>原文博客地址：<a href="http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more">Git命令总结</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生贵知心，定交无暮早。</strong><br><a id="more"></a></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-Git简介"><a href="#1-Git简介" class="headerlink" title="1.Git简介"></a>1.Git简介</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;Git的诞生确实是一个有趣的故事，我们知道，当年Linus创建了开源的Linux，从此，Linux系统不断发展，现在已经成为最大的服务器系统软件了。(请不要傻傻分不清Linus和Linux)</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;但是随着Linux的不断壮大，就需要各种版本控制了，起初Linus带着他的小弟们使用的是BitKeeper(商业版本控制系统),之后呢由于某种原因BitKeeper的公司不让他们使用了，于是Linus自己花了两周时间写出了Git并且开源了(BitKeeper已哭晕在厕所)，阿弥陀佛，幸亏BitKeeper不让Linus他们用了，要不然我们现在也不会有这么好用的Git了，博主更不会在这写这篇博文了。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;之后的岁月里，渐渐有了github,coding等一些可以使用git存储的网站，Git的江湖地位变得无可替代了，如果你是个开发者却还不会使用Git那就太out了。</p>

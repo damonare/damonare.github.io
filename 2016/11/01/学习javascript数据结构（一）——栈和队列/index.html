@@ -6,30 +6,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>学习Javascript数据结构(一)——栈和队列 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言只要你不计较得失，人生还有什么不能想法子克服的。
+  <meta name="description" content="前言总括： 本文使用javascript数组的API定义了栈和队列并较为详细的说明了栈和队列的概念。
+
 原文地址：学习javascript数据结构(一)——栈和队列
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
 博主博客地址：Damonare的个人博客
 
-几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。">
+
+只要你不计较得失，人生还有什么不能想法子克服的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习Javascript数据结构(一)——栈和队列">
 <meta property="og:url" content="http://damonare.github.io/2016/11/01/学习javascript数据结构（一）——栈和队列/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="前言只要你不计较得失，人生还有什么不能想法子克服的。
+<meta property="og:description" content="前言总括： 本文使用javascript数组的API定义了栈和队列并较为详细的说明了栈和队列的概念。
+
 原文地址：学习javascript数据结构(一)——栈和队列
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
 博主博客地址：Damonare的个人博客
 
-几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。">
+
+只要你不计较得失，人生还有什么不能想法子克服的。">
 <meta property="og:image" content="http://img.blog.csdn.net/20161102145616341">
 <meta property="og:image" content="http://img.blog.csdn.net/20161102145601043">
-<meta property="og:updated_time" content="2016-11-13T13:38:20.387Z">
+<meta property="og:updated_time" content="2016-11-26T09:51:16.794Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习Javascript数据结构(一)——栈和队列">
-<meta name="twitter:description" content="前言只要你不计较得失，人生还有什么不能想法子克服的。
+<meta name="twitter:description" content="前言总括： 本文使用javascript数组的API定义了栈和队列并较为详细的说明了栈和队列的概念。
+
 原文地址：学习javascript数据结构(一)——栈和队列
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
 博主博客地址：Damonare的个人博客
 
-几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。">
+
+只要你不计较得失，人生还有什么不能想法子克服的。">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20161102145616341">
   
   
@@ -153,7 +168,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -308,14 +323,19 @@
       
           <!-- Table of Contents -->
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>只要你不计较得失，人生还有什么不能想法子克服的。</strong></p>
-<p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/#more">学习javascript数据结构(一)——栈和队列</a></p>
-<p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-<blockquote>
-<p>几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&nbsp;Array所内置的API可以很方便的模拟栈和队列。</p>
-</blockquote>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文使用javascript数组的API定义了栈和队列并较为详细的说明了栈和队列的概念。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/#more">学习javascript数据结构(一)——栈和队列</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>只要你不计较得失，人生还有什么不能想法子克服的。</strong></p>
 <a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&nbsp;Array所内置的API可以很方便的模拟栈和队列。</p>
+<blockquote>
 <p>我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。</p>
 </blockquote>
 <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p><strong>栈是一种遵从后进先出(LIFO)原则的有序集合。新添加的或是待删除的元素都保存在栈的末尾。我们称作栈顶，而另一端我们称作栈底。</strong><br><br><br>在现实生活中就有很多栈的例子，比如下图的书本，这一摞书如果要取肯定是先去最上面的那一本，但它是最后一个放上去的，也就是栈顶的元素都是待添加或是待删除的。这就是后进先出的实际例子。<br></p>

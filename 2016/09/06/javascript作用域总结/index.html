@@ -6,25 +6,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Javascript作用域总结 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作用域
-作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。
+  <meta name="description" content="前言总括： 作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。
 
-函数作用域">
+原文地址：Javascript作用域总结
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生世上风波险，一日风波十二时。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript作用域总结">
 <meta property="og:url" content="http://damonare.github.io/2016/09/06/javascript作用域总结/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="作用域
-作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。
+<meta property="og:description" content="前言总括： 作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。
 
-函数作用域">
-<meta property="og:updated_time" content="2016-11-05T04:57:32.293Z">
+原文地址：Javascript作用域总结
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生世上风波险，一日风波十二时。">
+<meta property="og:updated_time" content="2016-11-26T10:09:54.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript作用域总结">
-<meta name="twitter:description" content="作用域
-作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。
+<meta name="twitter:description" content="前言总括： 作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。
 
-函数作用域">
+原文地址：Javascript作用域总结
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生世上风波险，一日风波十二时。">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -147,7 +165,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -304,14 +322,22 @@
       
         <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用域"><span class="toc-number">1.</span> <span class="toc-text">作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数作用域"><span class="toc-number">1.1.</span> <span class="toc-text">函数作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#块级作用域"><span class="toc-number">1.2.</span> <span class="toc-text">块级作用域</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数作用域"><span class="toc-number">1.1.</span> <span class="toc-text">函数作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#块级作用域"><span class="toc-number">1.2.</span> <span class="toc-text">块级作用域</span></a></li></ol></li></ol>
         </div>
       
-        <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><blockquote>
-<p>作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。</p>
-</blockquote>
-<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><a id="more"></a>
-<p><strong>这个应该好理解，函数作用域就是说定义在函数中的参数和变量在函数外部是不可见的。</strong></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/09/06/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%80%BB%E7%BB%93/#more">Javascript作用域总结</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生世上风波险，一日风波十二时。</strong></p>
+<a id="more"></a>
+<p>##正文</p>
+<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p><strong>这个应该好理解，函数作用域就是说定义在函数中的参数和变量在函数外部是不可见的。</strong></p>
 <p><strong>大多数类C语言都拥有块级作用域，JS却没有。请看下文demo:</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//C语言</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> i=<span class="number">2</span>;</div><div class="line">i--;</div><div class="line"><span class="keyword">if</span>(i)</div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> j=<span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d/n"</span>,j);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>运行这段代码，会出现“use an undefined variable:j”的错误。可以看到，C语言拥有块级作用域，因为j是在if的语句块中定义的，因此，它在块外是无法访问的。</strong></p>
 <h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><hr>

@@ -58,18 +58,20 @@
     <link href="http://damonare.github.io/2016/11/16/Javascript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/"/>
     <id>http://damonare.github.io/2016/11/16/Javascript本地存储小结/</id>
     <published>2016-11-16T03:35:51.573Z</published>
-    <updated>2016-11-16T15:28:30.969Z</updated>
+    <updated>2016-11-26T10:06:09.110Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>总括：详细讲述<code>Cookie</code>,<code>LocalStorge</code>,<code>SesstionStorge</code>的区别和用法。</p>
-</blockquote>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括:</strong> 详细讲述<code>Cookie</code>,<code>LocalStorge</code>,<code>SesstionStorge</code>的区别和用法。</p>
+<ul>
+<li><p>原文博客地址：<a href="http://damonare.github.io/2016/11/16/Javascript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/#more">Javascript本地存储小结</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
 <p><strong>人生如画，岁月如歌。</strong></p>
-<blockquote>
-<p>原文博客地址：<a href="http://damonare.github.io/2016/11/16/Javascript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/#more">Javascript本地存储小结</a></p>
-<p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
-</blockquote>
 <a id="more"></a>
-<h3 id="1-各种存储方案的简单对比"><a href="#1-各种存储方案的简单对比" class="headerlink" title="1. 各种存储方案的简单对比"></a>1. 各种存储方案的简单对比</h3><ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-各种存储方案的简单对比"><a href="#1-各种存储方案的简单对比" class="headerlink" title="1. 各种存储方案的简单对比"></a>1. 各种存储方案的简单对比</h3><ul>
 <li>Cookies：浏览器均支持，容量为4KB</li>
 <li>UserData：仅IE支持，容量为64KB</li>
 <li>Flash：100KB，非HTML原生，需要插件支持</li>
@@ -259,14 +261,16 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;总括：详细讲述&lt;code&gt;Cookie&lt;/code&gt;,&lt;code&gt;LocalStorge&lt;/code&gt;,&lt;code&gt;SesstionStorge&lt;/code&gt;的区别和用法。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括:&lt;/strong&gt; 详细讲述&lt;code&gt;Cookie&lt;/code&gt;,&lt;code&gt;LocalStorge&lt;/code&gt;,&lt;code&gt;SesstionStorge&lt;/code&gt;的区别和用法。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/11/16/Javascript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/#more&quot;&gt;Javascript本地存储小结&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;人生如画，岁月如歌。&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/11/16/Javascript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/#more&quot;&gt;Javascript本地存储小结&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
     
     </summary>
     
@@ -292,12 +296,18 @@
     <link href="http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
     <id>http://damonare.github.io/2016/11/13/Git 命令总结/</id>
     <published>2016-11-13T15:17:56.608Z</published>
-    <updated>2016-11-16T10:54:37.779Z</updated>
+    <updated>2016-11-26T10:01:57.549Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>人生贵知心，定交无暮早。</strong></p>
-<p>原文博客地址：<a href="http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more">Git命令总结</a></p>
-<p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
-<a id="more"></a>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>总括：</strong> 本文详细讲解了Git常用命令的技巧和使用方法。</p>
+<ul>
+<li><p>原文博客地址：<a href="http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more">Git命令总结</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生贵知心，定交无暮早。</strong><br><a id="more"></a></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-Git简介"><a href="#1-Git简介" class="headerlink" title="1.Git简介"></a>1.Git简介</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;Git的诞生确实是一个有趣的故事，我们知道，当年Linus创建了开源的Linux，从此，Linux系统不断发展，现在已经成为最大的服务器系统软件了。(请不要傻傻分不清Linus和Linux)</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;但是随着Linux的不断壮大，就需要各种版本控制了，起初Linus带着他的小弟们使用的是BitKeeper(商业版本控制系统),之后呢由于某种原因BitKeeper的公司不让他们使用了，于是Linus自己花了两周时间写出了Git并且开源了(BitKeeper已哭晕在厕所)，阿弥陀佛，幸亏BitKeeper不让Linus他们用了，要不然我们现在也不会有这么好用的Git了，博主更不会在这写这篇博文了。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;之后的岁月里，渐渐有了github,coding等一些可以使用git存储的网站，Git的江湖地位变得无可替代了，如果你是个开发者却还不会使用Git那就太out了。</p>
@@ -418,9 +428,16 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;人生贵知心，定交无暮早。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more&quot;&gt;Git命令总结&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文详细讲解了Git常用命令的技巧和使用方法。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more&quot;&gt;Git命令总结&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生贵知心，定交无暮早。&lt;/strong&gt;&lt;br&gt;
     
     </summary>
     
@@ -436,11 +453,18 @@
     <link href="http://damonare.github.io/2016/11/09/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E9%93%BE%E8%A1%A8/"/>
     <id>http://damonare.github.io/2016/11/09/学习javascript数据结构（二）——链表/</id>
     <published>2016-11-09T07:58:46.661Z</published>
-    <updated>2016-11-13T14:05:43.592Z</updated>
+    <updated>2016-11-26T09:49:06.016Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>人生总是直向前行走，从不留下什么。</strong></p>
-<p>原文地址：<a href="http://damonare.github.io/2016/11/09/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E9%93%BE%E8%A1%A8/#more">学习javascript数据结构(二)——链表</a></p>
-<p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文详解解释了数据结构中的链表的概念并阐述了如何在javascript中如何去创建一个链表。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/11/09/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E9%93%BE%E8%A1%A8/#more">学习javascript数据结构(二)——链表</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生总是直向前行走，从不留下什么。</strong></p>
 <a id="more"></a>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="链表简介"><a href="#链表简介" class="headerlink" title="链表简介"></a>链表简介</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;上一篇博客-<a href="http://damonare.github.io/2016/11/01/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/#more">学习javascript数据结构(一)——栈和队列</a>说了栈和队列在javascript中的实现,我们运用javascript提供的API很容易的实现了栈和队列，但这种数据结构有一个很明显的缺点，因为数组大小是固定的所以我们在移除或是添加一项数据的时候成本很高，基本都需要吧数据重排一次。(javascript的Array类方法虽然很方便但背后的原理同样是这样的)</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;相比数组我们今天主角——链表就要来的随性的多，简单的理解可以是这样：在内存中，栈和队列（数组）的存在就是一个整体，如果想要对她内部某一个元素进行移除或是添加一个新元素就要动她内部所有的元素，所谓牵一发而动全身；而链表则不一样，每一个元素都是由元素本身数据和指向下一个元素的指针构成，所以添加或是移除某一个元素不需要对链表整体进行操作，只需要改变相关元素的指针指向就可以了。</p>
@@ -471,9 +495,16 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;人生总是直向前行走，从不留下什么。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/11/09/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E9%93%BE%E8%A1%A8/#more&quot;&gt;学习javascript数据结构(二)——链表&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文详解解释了数据结构中的链表的概念并阐述了如何在javascript中如何去创建一个链表。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/11/09/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E9%93%BE%E8%A1%A8/#more&quot;&gt;学习javascript数据结构(二)——链表&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生总是直向前行走，从不留下什么。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -755,30 +786,33 @@
     <link href="http://damonare.github.io/2016/11/03/JavaScript%20ES6%20%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E4%B8%80%E8%A7%88/"/>
     <id>http://damonare.github.io/2016/11/03/JavaScript ES6 核心功能一览/</id>
     <published>2016-11-03T13:22:28.392Z</published>
-    <updated>2016-11-03T13:25:32.517Z</updated>
+    <updated>2016-11-26T10:04:59.390Z</updated>
     
-    <content type="html"><![CDATA[<ul>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>本文属于转载文章</p>
+</blockquote>
+<ul>
 <li>原文地址：<a href="http://adrianmejia.com/blog/2016/10/19/Overview-of-JavaScript-ES6-features-a-k-a-ECMAScript-6-and-ES2015/" target="_blank" rel="external">Overview of JavaScript ES6 features (a.k.a ECMAScript 6 and ES2015+)</a></li>
 <li>原文作者：<a href="http://adrianmejia.com/#about" target="_blank" rel="external">Adrian Mejia</a></li>
 <li>译文出自：<a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a></li>
 <li>译者：<a href="https://github.com/L9m" target="_blank" rel="external">L9m</a></li>
 <li>校对者：<a href="https://github.com/Tina92" target="_blank" rel="external">Tina92</a>，<a href="https://github.com/luoyaqifei" target="_blank" rel="external">luoyaqifei</a>，<a href="https://github.com/theJian" target="_blank" rel="external">theJian</a></li>
 </ul>
-<h1 id="JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）"><a href="#JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）" class="headerlink" title="JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）"></a>JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）</h1><p>JavaScript 在过去几年里发生了很大的变化。这里介绍 12 个你马上就能用的新功能。</p>
 <a id="more"></a>
-<h1 id="JavaScript-历史"><a href="#JavaScript-历史" class="headerlink" title="JavaScript 历史"></a>JavaScript 历史</h1><p>新的语言规范被称作 ECMAScript 6。也称为 ES6 或 ES2015+ 。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）"><a href="#JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）" class="headerlink" title="JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）"></a>JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）</h3><p>JavaScript 在过去几年里发生了很大的变化。这里介绍 12 个你马上就能用的新功能。</p>
+<h3 id="JavaScript-历史"><a href="#JavaScript-历史" class="headerlink" title="JavaScript 历史"></a>JavaScript 历史</h3><p>新的语言规范被称作 ECMAScript 6。也称为 ES6 或 ES2015+ 。</p>
 <p>自从 1995 年 JavaScript 诞生以来，它一直在缓慢地发展。每隔几年就会增加一些新内容。1997 年，ECMAScript 成为 JavaScript 语言实现的规范。它已经有了好几个版本，比如 ES3 , ES5 , ES6 等等。</p>
 <p><img src="http://adrianmejia.com/images/history-javascript-evolution-es6.png" alt="" title="JavaScript 发展史"></p>
 <p>如你所见，ES3，ES5 和 ES6 之间分别存在着 10 年和 6 年的间隔。像 ES6 那样一次进行大幅修改的模式被逐年渐进式的新模式所替代。</p>
-<h1 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h1><p>所有现代浏览器和环境都已支持 ES6。</p>
+<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><p>所有现代浏览器和环境都已支持 ES6。</p>
 <p><img src="http://adrianmejia.com/images/es6-javascript-support.png" alt="" title="ES6 Support"></p>
 <p>来源: <a href="https://kangax.github.io/compat-table/es6/" target="_blank" rel="external">https://kangax.github.io/compat-table/es6/</a></p>
 <p>Chrome，MS Edge，Firefox，Safari，Node 和许多其他的环境都已内置支持大多数的 JavaScript ES6 功能。所以，在本教程中你学到的每个知识，你都可以马上开始应用。</p>
 <p>让我们开始学习 ECMAScript 6 吧！</p>
-<h1 id="核心-ES6-功能"><a href="#核心-ES6-功能" class="headerlink" title="核心 ES6 功能"></a>核心 ES6 功能</h1><p>你可以在浏览器的控制台中测试所有下面的代码片段。</p>
+<h3 id="核心-ES6-功能"><a href="#核心-ES6-功能" class="headerlink" title="核心 ES6 功能"></a>核心 ES6 功能</h3><p>你可以在浏览器的控制台中测试所有下面的代码片段。</p>
 <p><img src="http://adrianmejia.com/images/javascript-es6-classes-on-browser-console.png" alt="" title="Testing Javascript ES6 classes on browser console"></p>
 <p>不要笃信我的话，而是要亲自去测试每一个 ES5 和 ES6 示例。让我们开始动手吧 💪</p>
-<h2 id="变量的块级作用域"><a href="#变量的块级作用域" class="headerlink" title="变量的块级作用域"></a>变量的块级作用域</h2><p>使用 ES6，声明变量我们可以用 <code>var</code> ，也可以用 <code>let</code> 或 <code>const</code>。</p>
+<h4 id="变量的块级作用域"><a href="#变量的块级作用域" class="headerlink" title="变量的块级作用域"></a>变量的块级作用域</h4><p>使用 ES6，声明变量我们可以用 <code>var</code> ，也可以用 <code>let</code> 或 <code>const</code>。</p>
 <p><code>var</code> 有什么不足？</p>
 <p>使用 <code>var</code> 的问题是变量会漏入其他代码块中，诸如 <code>for</code> 循环或 <code>if</code> 代码块。</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
@@ -825,16 +859,16 @@
 <li>如果你必须重新指定引用，用 <code>let</code> 替代 <code>const</code>。</li>
 </ul>
 </blockquote>
-<h2 id="模板字面量"><a href="#模板字面量" class="headerlink" title="模板字面量"></a>模板字面量</h2><p>有了模板字面量，我们就不用做多余的嵌套拼接了。来看一下：</p>
+<h4 id="模板字面量"><a href="#模板字面量" class="headerlink" title="模板字面量"></a>模板字面量</h4><p>有了模板字面量，我们就不用做多余的嵌套拼接了。来看一下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> first = <span class="string">'Adrian'</span>;</div><div class="line"><span class="keyword">var</span> last = <span class="string">'Mejia'</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Your name is '</span> + first + <span class="string">' '</span> + last + <span class="string">'.'</span>);</div></pre></td></tr></table></figure>
 <p>现在你可以使用反引号 (`) 和字符串插值 <code>${}</code>：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">const</span> first = <span class="string">'Adrian'</span>;</div><div class="line"><span class="keyword">const</span> last = <span class="string">'Mejia'</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">`Your name is <span class="subst">$&#123;first&#125;</span> <span class="subst">$&#123;last&#125;</span>.`</span>);</div></pre></td></tr></table></figure>
-<h2 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h2><p>我们再也不需要添加 + <code>\n</code> 来拼接字符串了：</p>
+<h4 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h4><p>我们再也不需要添加 + <code>\n</code> 来拼接字符串了：</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> template = '&lt;<span class="keyword">li</span> *ngFor=<span class="string">"let todo of todos"</span> [ngClass]=<span class="string">"&#123;completed: todo.isDone&#125;"</span> &gt;\<span class="keyword">n</span>' +</div><div class="line">'  &lt;div <span class="keyword">class</span>=<span class="string">"view"</span>&gt;\<span class="keyword">n</span>' +</div><div class="line">'    &lt;<span class="keyword">input</span> <span class="keyword">class</span>=<span class="string">"toggle"</span> <span class="keyword">type</span>=<span class="string">"checkbox"</span> [checked]=<span class="string">"todo.isDone"</span>&gt;\<span class="keyword">n</span>' +</div><div class="line">'    &lt;<span class="keyword">label</span>&gt;&lt;/<span class="keyword">label</span>&gt;\<span class="keyword">n</span>' +</div><div class="line">'    &lt;button <span class="keyword">class</span>=<span class="string">"destroy"</span>&gt;&lt;/button&gt;\<span class="keyword">n</span>' +</div><div class="line">'  &lt;/div&gt;\<span class="keyword">n</span>' +</div><div class="line">'  &lt;<span class="keyword">input</span> <span class="keyword">class</span>=<span class="string">"edit"</span> value=<span class="string">""</span>&gt;\<span class="keyword">n</span>' +</div><div class="line">'&lt;/<span class="keyword">li</span>&gt;';</div><div class="line">console.<span class="built_in">log</span>(template);</div></pre></td></tr></table></figure>
 <p>在 ES6 上， 我们可以同样使用反引号来解决这个问题：</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">const</span> template = `&lt;<span class="keyword">li</span> *ngFor=<span class="string">"let todo of todos"</span> [ngClass]=<span class="string">"&#123;completed: todo.isDone&#125;"</span> &gt;</div><div class="line">  &lt;div <span class="keyword">class</span>=<span class="string">"view"</span>&gt;</div><div class="line">    &lt;<span class="keyword">input</span> <span class="keyword">class</span>=<span class="string">"toggle"</span> <span class="keyword">type</span>=<span class="string">"checkbox"</span> [checked]=<span class="string">"todo.isDone"</span>&gt;</div><div class="line">    &lt;<span class="keyword">label</span>&gt;&lt;/<span class="keyword">label</span>&gt;</div><div class="line">    &lt;button <span class="keyword">class</span>=<span class="string">"destroy"</span>&gt;&lt;/button&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;<span class="keyword">input</span> <span class="keyword">class</span>=<span class="string">"edit"</span> value=<span class="string">""</span>&gt;</div><div class="line">&lt;/<span class="keyword">li</span>&gt;`;</div><div class="line">console.<span class="built_in">log</span>(template);</div></pre></td></tr></table></figure>
 <p>两段代码的结果是完全一样的。</p>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>ES6 的解构不仅实用而且很简洁。如下例所示：</p>
+<h4 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h4><p>ES6 的解构不仅实用而且很简洁。如下例所示：</p>
 <p><strong>从数组中获取元素</strong></p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line"><span class="built_in">var</span> <span class="built_in">array</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line"><span class="built_in">var</span> <span class="built_in">first</span> = <span class="built_in">array</span>[<span class="number">0</span>];</div><div class="line"><span class="built_in">var</span> <span class="built_in">third</span> = <span class="built_in">array</span>[<span class="number">2</span>];</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">first</span>, <span class="built_in">third</span>); // <span class="number">1</span> <span class="number">3</span></div></pre></td></tr></table></figure>
 <p>等同于：</p>
@@ -869,7 +903,7 @@
 <li>不要对多个返回值使用数组解构，而是要用对象解构。</li>
 </ul>
 </blockquote>
-<h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><p>用 ECMAScript 6，我们从“构造函数”🔨 来到了“类”🍸。</p>
+<h4 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h4><p>用 ECMAScript 6，我们从“构造函数”🔨 来到了“类”🍸。</p>
 <blockquote>
 <p>在 JavaScript 中，每个对象都有一个原型对象。所有的 JavaScript 对象都从它们的原型对象那里继承方法和属性。</p>
 </blockquote>
@@ -884,7 +918,7 @@
 <li>避免使用空的构造函数。如果没有指定，类有一个默认的构造函数。</li>
 </ul>
 </blockquote>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>基于前面的 <code>Animal</code> 类。 让我们扩展它并定义一个 <code>Lion</code> 类。</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>基于前面的 <code>Animal</code> 类。 让我们扩展它并定义一个 <code>Lion</code> 类。</p>
 <p>在 ES5 中，它更多的与原型继承有关。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> Lion = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">MyConstructor</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    Animal.call(<span class="keyword">this</span>, name);</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 原型继承</span></div><div class="line">  MyConstructor.prototype = <span class="built_in">Object</span>.create(Animal.prototype);</div><div class="line">  MyConstructor.prototype.constructor = Animal;</div><div class="line">  MyConstructor.prototype.speak = <span class="function"><span class="keyword">function</span> <span class="title">speak</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    Animal.prototype.speak.call(<span class="keyword">this</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' roars 🦁'</span>);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">return</span> MyConstructor;</div><div class="line">&#125;)();</div><div class="line"><span class="keyword">var</span> lion = <span class="keyword">new</span> Lion(<span class="string">'Simba'</span>);</div><div class="line">lion.speak(); <span class="comment">// Simba makes a noise.</span></div><div class="line"><span class="comment">// Simba roars.</span></div></pre></td></tr></table></figure>
 <p>我不会重复所有的细节，但请注意：</p>
@@ -902,21 +936,21 @@
 <li>使用  <code>extends</code> 内置方法实现继承。</li>
 </ul>
 </blockquote>
-<h2 id="原生-Promises"><a href="#原生-Promises" class="headerlink" title="原生 Promises"></a>原生 Promises</h2><p>从回调地狱 👹 到 promises 🙏。</p>
+<h4 id="原生-Promises"><a href="#原生-Promises" class="headerlink" title="原生 Promises"></a>原生 Promises</h4><p>从回调地狱 👹 到 promises 🙏。</p>
 <figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printAfterTimeout</span>(<span class="params">string, timeout, done</span>)</span>&#123;</div><div class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    done(<span class="built_in">string</span>);</div><div class="line">  &#125;, timeout);</div><div class="line">&#125;</div><div class="line">printAfterTimeout(<span class="string">'Hello '</span>, <span class="number">2e3</span>, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(result);</div><div class="line">  <span class="comment">// 嵌套回调</span></div><div class="line">  printAfterTimeout(result + <span class="string">'Reader'</span>, <span class="number">2e3</span>, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(result);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>我们有一个接收一个回调的函数，当 <code>done</code> 时执行。我们必须一个接一个地执行它两次。这也是为什么我们在回调中第二次调用  <code>printAfterTimeout</code> 的原因。</p>
 <p>如果你需要第 3 次或第 4 次回调，可能很快就会变得混乱。来看看我们用 promises 的写法：</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">//</span> ES6</div><div class="line">function printAfterTimeout(string, timeout)&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Promise(<span class="function"><span class="params">(resolve, reject)</span> =&gt;</span> &#123;</div><div class="line">    setTimeout(function()&#123;</div><div class="line">      resolve(string);</div><div class="line">    &#125;, timeout);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line">printAfterTimeout(<span class="string">'Hello '</span>, <span class="number">2e3</span>).<span class="keyword">then</span>(<span class="function"><span class="params">(result)</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(result);</div><div class="line">  <span class="keyword">return</span> printAfterTimeout(result + <span class="string">'Reader'</span>, <span class="number">2e3</span>);</div><div class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="params">(result)</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(result);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>如你所见，使用 promises 我们能在函数完成后进行一些操作。不再需要嵌套函数。</p>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>ES6 没有移除函数表达式，但是新增了一种，叫做箭头函数。</p>
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>ES6 没有移除函数表达式，但是新增了一种，叫做箭头函数。</p>
 <p>在 ES5 中，对于 <code>this</code> 我们有一些问题：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> _this = <span class="keyword">this</span>; <span class="comment">// 保持一个引用</span></div><div class="line">$(<span class="string">'.btn'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  _this.sendData(); <span class="comment">// 引用的是外层的 this</span></div><div class="line">&#125;);</div><div class="line">$(<span class="string">'.input'</span>).on(<span class="string">'change'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.sendData(); <span class="comment">// 引用的是外层的 this</span></div><div class="line">&#125;.bind(<span class="keyword">this</span>)); <span class="comment">// 绑定到外层的 this</span></div></pre></td></tr></table></figure>
 <p>你需要使用一个临时的 <code>this</code> 在函数内部进行引用或用 <code>bind</code> 绑定。在 ES6 中，你可以用箭头函数。</p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="comment">// 引用的是外部的那个 this</span></div><div class="line">$(<span class="string">'.btn'</span>).click((<span class="keyword">event</span>) =&gt;  <span class="keyword">this</span>.sendData());</div><div class="line"><span class="comment">// 隐式返回</span></div><div class="line"><span class="keyword">const</span> ids = [<span class="number">291</span>, <span class="number">288</span>, <span class="number">984</span>];</div><div class="line"><span class="keyword">const</span> messages = ids.map(<span class="keyword">value</span> =&gt; `ID <span class="keyword">is</span> $&#123;<span class="keyword">value</span>&#125;`);</div></pre></td></tr></table></figure>
-<h2 id="For…of"><a href="#For…of" class="headerlink" title="For…of"></a>For…of</h2><p>从 <code>for</code> 到 <code>forEach</code> 再到 <code>for...of</code>：</p>
+<h4 id="For…of"><a href="#For…of" class="headerlink" title="For…of"></a>For…of</h4><p>从 <code>for</code> 到 <code>forEach</code> 再到 <code>for...of</code>：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="comment">// for</span></div><div class="line"><span class="keyword">var</span> <span class="keyword">array</span> = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">array</span>.length; i++) &#123;</div><div class="line">  <span class="keyword">var</span> element = <span class="keyword">array</span>[i];</div><div class="line">  console.log(element);</div><div class="line">&#125;</div><div class="line"><span class="comment">// forEach</span></div><div class="line"><span class="keyword">array</span>.<span class="keyword">forEach</span>(<span class="function"><span class="keyword">function</span> <span class="params">(element)</span> </span>&#123;</div><div class="line">  console.log(element);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>ES6 的 for…of 同样可以实现迭代。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="comment">// for ...of</span></div><div class="line"><span class="keyword">const</span> <span class="built_in">array</span> = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">const</span> element of <span class="built_in">array</span>) &#123;</div><div class="line">    console.<span class="built_in">log</span>(element);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h2><p>从检查一个变量是否被定义到重新指定一个值再到 <code>default parameters</code>。<br>你以前写过类似这样的代码吗？</p>
+<h4 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h4><p>从检查一个变量是否被定义到重新指定一个值再到 <code>default parameters</code>。<br>你以前写过类似这样的代码吗？</p>
 <figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">point</span>(<span class="params">x, y, isFlag</span>)</span>&#123;</div><div class="line">  x = x || <span class="number">0</span>;</div><div class="line">  y = y || <span class="number">-1</span>;</div><div class="line">  isFlag = isFlag || <span class="literal">true</span>;</div><div class="line">  <span class="built_in">console</span>.log(x,y, isFlag);</div><div class="line">&#125;</div><div class="line"><span class="built_in">point</span>(<span class="number">0</span>, <span class="number">0</span>) <span class="comment">// 0 -1 true 😱</span></div><div class="line"><span class="built_in">point</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="literal">false</span>) <span class="comment">// 0 -1 true 😱😱</span></div><div class="line"><span class="built_in">point</span>(<span class="number">1</span>) <span class="comment">// 1 -1 true</span></div><div class="line"><span class="built_in">point</span>() <span class="comment">// 0 -1 true</span></div></pre></td></tr></table></figure>
 <p>可能有过，这是一种检查变量是否赋值的常见模式，不然则分配一个默认值。然而，这里有一些问题：</p>
 <ul>
@@ -929,12 +963,12 @@
 <p>请注意第 5 行和第 6 行，我们得到了预期的结果。ES5 示例则无效。首先检查是否等于 <code>undefined</code>，因为 <code>false</code>，<code>null</code>，<code>undefined</code> 和 <code>0</code> 都是假值，我们可以避开这些数字，</p>
 <figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">point</span>(<span class="params">x, y, isFlag</span>)</span>&#123;</div><div class="line">  x = x || <span class="number">0</span>;</div><div class="line">  y = <span class="keyword">typeof</span>(y) === <span class="string">'undefined'</span> ? <span class="number">-1</span> : y;</div><div class="line">  isFlag = <span class="keyword">typeof</span>(isFlag) === <span class="string">'undefined'</span> ? <span class="attribute">true</span> : isFlag;</div><div class="line">  <span class="built_in">console</span>.log(x,y, isFlag);</div><div class="line">&#125;</div><div class="line"><span class="built_in">point</span>(<span class="number">0</span>, <span class="number">0</span>) <span class="comment">// 0 0 true</span></div><div class="line"><span class="built_in">point</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="literal">false</span>) <span class="comment">// 0 0 false</span></div><div class="line"><span class="built_in">point</span>(<span class="number">1</span>) <span class="comment">// 1 -1 true</span></div><div class="line"><span class="built_in">point</span>() <span class="comment">// 0 -1 true</span></div></pre></td></tr></table></figure>
 <p>当我们检查是否为 <code>undefined</code> 后，获得了期望的结果。</p>
-<h2 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h2><p>从参数到剩余参数和扩展操作符。</p>
+<h4 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h4><p>从参数到剩余参数和扩展操作符。</p>
 <p>在 ES5 中，获取任意数量的参数是非常麻烦的：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printf</span>(<span class="params">format</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> params = [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'params: '</span>, params);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'format: '</span>, format);</div><div class="line">&#125;</div><div class="line">printf(<span class="string">'%s %d %.2f'</span>, <span class="string">'adrian'</span>, <span class="number">321</span>, <span class="built_in">Math</span>.PI);</div></pre></td></tr></table></figure>
 <p>我们可以用 rest 操作符 <code>...</code> 做到同样的事情。</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printf</span><span class="params">(format, <span class="rest_arg">...params</span>)</span> </span>&#123;</div><div class="line">  console.log(<span class="string">'params: '</span>, params);</div><div class="line">  console.log(<span class="string">'format: '</span>, format);</div><div class="line">&#125;</div><div class="line">printf(<span class="string">'%s %d %.2f'</span>, <span class="string">'adrian'</span>, <span class="number">321</span>, Math.PI);</div></pre></td></tr></table></figure>
-<h2 id="展开运算符"><a href="#展开运算符" class="headerlink" title="展开运算符"></a>展开运算符</h2><p>从 <code>apply()</code> 到展开运算符。我们同样用 <code>...</code> 来解决：</p>
+<h4 id="展开运算符"><a href="#展开运算符" class="headerlink" title="展开运算符"></a>展开运算符</h4><p>从 <code>apply()</code> 到展开运算符。我们同样用 <code>...</code> 来解决：</p>
 <blockquote>
 <p>提醒：我们使用 <code>apply()</code> 将数组转换为一列参数。例如，<code>Math.max()</code> 作用于一列参数，但是如果我们有一个数组，我们就能用 <code>apply</code> 让它生效。</p>
 </blockquote>
@@ -947,20 +981,22 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> array1 = [<span class="number">2</span>,<span class="number">100</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">43</span>];</div><div class="line"><span class="keyword">var</span> array2 = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>];</div><div class="line"><span class="keyword">var</span> array3 = [<span class="literal">false</span>, <span class="literal">true</span>, <span class="literal">null</span>, <span class="literal">undefined</span>];</div><div class="line"><span class="built_in">console</span>.log(array1.concat(array2, array3));</div></pre></td></tr></table></figure>
 <p>在 ES6 中，你可以用展开运算符来压平嵌套：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">const</span> array1 = [<span class="number">2</span>,<span class="number">100</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">43</span>];</div><div class="line"><span class="keyword">const</span> array2 = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>];</div><div class="line"><span class="keyword">const</span> array3 = [<span class="literal">false</span>, <span class="literal">true</span>, <span class="literal">null</span>, <span class="literal">undefined</span>];</div><div class="line"><span class="built_in">console</span>.log([...array1, ...array2, ...array3]);</div></pre></td></tr></table></figure>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>JavaScript 经历了相当多的修改。这篇文章涵盖了每个 JavaScript 开发者都应该了解的大多数核心功能。同样，我们也介绍了一些让你的代码更加简洁，易于理解的最佳实践。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>JavaScript 经历了相当多的修改。这篇文章涵盖了每个 JavaScript 开发者都应该了解的大多数核心功能。同样，我们也介绍了一些让你的代码更加简洁，易于理解的最佳实践。</p>
 <p>如果你认为还有一些没有提到的<strong>必知</strong>的功能，请在下方留言，我会更新这篇文章。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;ul&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本文属于转载文章&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
 &lt;li&gt;原文地址：&lt;a href=&quot;http://adrianmejia.com/blog/2016/10/19/Overview-of-JavaScript-ES6-features-a-k-a-ECMAScript-6-and-ES2015/&quot;&gt;Overview of JavaScript ES6 features (a.k.a ECMAScript 6 and ES2015+)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;原文作者：&lt;a href=&quot;http://adrianmejia.com/#about&quot;&gt;Adrian Mejia&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;译文出自：&lt;a href=&quot;https://github.com/xitu/gold-miner&quot;&gt;掘金翻译计划&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;译者：&lt;a href=&quot;https://github.com/L9m&quot;&gt;L9m&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;校对者：&lt;a href=&quot;https://github.com/Tina92&quot;&gt;Tina92&lt;/a&gt;，&lt;a href=&quot;https://github.com/luoyaqifei&quot;&gt;luoyaqifei&lt;/a&gt;，&lt;a href=&quot;https://github.com/theJian&quot;&gt;theJian&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）&quot;&gt;&lt;a href=&quot;#JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）&quot; class=&quot;headerlink&quot; title=&quot;JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）&quot;&gt;&lt;/a&gt;JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）&lt;/h1&gt;&lt;p&gt;JavaScript 在过去几年里发生了很大的变化。这里介绍 12 个你马上就能用的新功能。&lt;/p&gt;
     
     </summary>
     
@@ -980,16 +1016,21 @@
     <link href="http://damonare.github.io/2016/11/01/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
     <id>http://damonare.github.io/2016/11/01/学习javascript数据结构（一）——栈和队列/</id>
     <published>2016-11-01T13:16:54.812Z</published>
-    <updated>2016-11-13T13:38:20.387Z</updated>
+    <updated>2016-11-26T09:51:16.794Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>只要你不计较得失，人生还有什么不能想法子克服的。</strong></p>
-<p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/#more">学习javascript数据结构(一)——栈和队列</a></p>
-<p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-<blockquote>
-<p>几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&nbsp;Array所内置的API可以很方便的模拟栈和队列。</p>
-</blockquote>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文使用javascript数组的API定义了栈和队列并较为详细的说明了栈和队列的概念。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/#more">学习javascript数据结构(一)——栈和队列</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>只要你不计较得失，人生还有什么不能想法子克服的。</strong></p>
 <a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&nbsp;Array所内置的API可以很方便的模拟栈和队列。</p>
+<blockquote>
 <p>我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。</p>
 </blockquote>
 <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p><strong>栈是一种遵从后进先出(LIFO)原则的有序集合。新添加的或是待删除的元素都保存在栈的末尾。我们称作栈顶，而另一端我们称作栈底。</strong><br><br><br>在现实生活中就有很多栈的例子，比如下图的书本，这一摞书如果要取肯定是先去最上面的那一本，但它是最后一个放上去的，也就是栈顶的元素都是待添加或是待删除的。这就是后进先出的实际例子。<br></p>
@@ -1047,12 +1088,16 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;只要你不计较得失，人生还有什么不能想法子克服的。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/11/01/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/#more&quot;&gt;学习javascript数据结构(一)——栈和队列&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;几乎所有的编程语言都原生支持数组类型，因为数组是最简单的内存数据结构。javascript也有数组类型，而数组呢，其实就是一种特殊的栈或是队列，利用javascript&amp;nbsp;Array所内置的API可以很方便的模拟栈和队列。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文使用javascript数组的API定义了栈和队列并较为详细的说明了栈和队列的概念。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/11/01/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/#more&quot;&gt;学习javascript数据结构(一)——栈和队列&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;只要你不计较得失，人生还有什么不能想法子克服的。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1072,17 +1117,24 @@
     <link href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/"/>
     <id>http://damonare.github.io/2016/11/01/详解javascript的类/</id>
     <published>2016-11-01T03:11:18.192Z</published>
-    <updated>2016-11-05T04:47:15.110Z</updated>
+    <updated>2016-11-26T09:45:40.680Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>生活有度，人生添寿。</strong></p>
-<p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">详解javascript的类</a></p>
-<p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-<blockquote>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文详细讲述了javascript中类的由来实现以及一些类知识的延伸。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">详解javascript的类</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>生活有度，人生添寿。</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote>
 <p>&nbsp;&nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数千行，要是node后端那更不止几千行了。（WTF）代码量的增加给编程带来的首要的问题就是如何去编写和维护如此庞大的代码呢？答案就是模块化思想，其实就是面向对象（OOP）编程，如今比较流行的三大前端框架（angular,react,vue）基本都实现了组件化编程，但组件化和我们所说的模块化又有所不同，应该可以这么理解，组件化是模块化的升级版，模块化是组件化的基础。那么，问题来了，javascript怎么面向对象编程呢？我想这很多老鸟也不定说的清楚吧，前端杂而活跃的各种社区，很多前端er一度依赖各种插件，根本不需要去了解这些深层的东西却照样能完成任务。但我想作为一个有追求的前端er还是很有必要去学习这些看似用不着的东西的，别的不说，就单单因为我们是前端er,只会用jquery一个稍微厉害的后端都能代替你。好吧，废话不多说，到底如何面向对象coding呢…..<br><br><br>&nbsp;&nbsp;很不幸，es5中并没有给出明确的定义‘类’的概念，所以传统的面向对象编程似乎是行不通的，那么又该肿么办呢？值得庆幸的是，前辈们通过不断探索总结，成功的用javascript模拟出了“类”。那么，javascript的类又该怎么定义呢？<br><br></p>
 </blockquote>
 <p><strong>在面向对象编程中，类（class）是对象（object）的模板，定义了同一组对象（又称”实例”）共有的属性和方法。</strong></p>
-<a id="more"></a>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
+<blockquote>
 <p>说到javascript中的“类”就不得不说原型链和继承了，因为javascript是没有真正意义上的类的，所谓的类就是基于原型链和继承来实现的，即使ES6中加入了class,extends关键字实现类和继承，但实际上还是基于原型链和继承， ES6 类（class）是 JavaScript 现有的原型继承的语法糖。</p>
 </blockquote>
 <h4 id="1-原型链和继承"><a href="#1-原型链和继承" class="headerlink" title="1. 原型链和继承"></a>1. 原型链和继承</h4><p>“<br>    在 javaScript 中，每个对象都有一个指向它的原型（prototype）对象的内部链接。这个原型对象又有自己的原型，直到某个对象的原型为 null 为止（也就是不再有原型指向），组成这条链的最后一环。这种一级一级的链结构就称为原型链（prototype chain）。<br>”<br></p>
@@ -1140,13 +1192,16 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;生活有度，人生添寿。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more&quot;&gt;详解javascript的类&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;nbsp;&amp;nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数千行，要是node后端那更不止几千行了。（WTF）代码量的增加给编程带来的首要的问题就是如何去编写和维护如此庞大的代码呢？答案就是模块化思想，其实就是面向对象（OOP）编程，如今比较流行的三大前端框架（angular,react,vue）基本都实现了组件化编程，但组件化和我们所说的模块化又有所不同，应该可以这么理解，组件化是模块化的升级版，模块化是组件化的基础。那么，问题来了，javascript怎么面向对象编程呢？我想这很多老鸟也不定说的清楚吧，前端杂而活跃的各种社区，很多前端er一度依赖各种插件，根本不需要去了解这些深层的东西却照样能完成任务。但我想作为一个有追求的前端er还是很有必要去学习这些看似用不着的东西的，别的不说，就单单因为我们是前端er,只会用jquery一个稍微厉害的后端都能代替你。好吧，废话不多说，到底如何面向对象coding呢…..&lt;br&gt;&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;很不幸，es5中并没有给出明确的定义‘类’的概念，所以传统的面向对象编程似乎是行不通的，那么又该肿么办呢？值得庆幸的是，前辈们通过不断探索总结，成功的用javascript模拟出了“类”。那么，javascript的类又该怎么定义呢？&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;在面向对象编程中，类（class）是对象（object）的模板，定义了同一组对象（又称”实例”）共有的属性和方法。&lt;/strong&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文详细讲述了javascript中类的由来实现以及一些类知识的延伸。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more&quot;&gt;详解javascript的类&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;生活有度，人生添寿。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1344,10 +1399,20 @@
     <link href="http://damonare.github.io/2016/09/16/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%EF%BC%88javascript%E6%8F%8F%E8%BF%B0%EF%BC%89/"/>
     <id>http://damonare.github.io/2016/09/16/十大经典排序算法总结（javascript描述）/</id>
     <published>2016-09-16T06:39:04.538Z</published>
-    <updated>2016-11-05T04:54:22.908Z</updated>
+    <updated>2016-11-26T09:50:20.816Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>读者自行尝试可以<a href="https://github.com/damonare/Sorts" target="_blank" rel="external">想看源码戳这</a>，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦</strong></p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong>  本文图文并茂的详细讲述了十大经典排序算法用javascript实现的过程。</p>
+<ul>
+<li><p>原文博客地址：<a href="http://damonare.github.io/2016/09/16/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%EF%BC%88javascript%E6%8F%8F%E8%BF%B0%EF%BC%89/#more">十大经典排序算法</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生有情泪沾衣，江水江花岂终极。</strong></p>
 <a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>读者自行尝试可以<a href="https://github.com/damonare/Sorts" target="_blank" rel="external">想看源码戳这</a>，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦</p>
 <blockquote>
 <ul>
 <li>这世界上总存在着那么一些看似相似但有完全不同的东西，比如雷锋和雷峰塔，小平和小平头，玛丽和马里奥，Java和javascript….当年javascript为了抱Java大腿恬不知耻的让自己变成了Java的干儿子，哦，不是应该是跪舔，毕竟都跟了Java的姓了。可如今，javascript来了个咸鱼翻身，几乎要统治web领域，Nodejs，React Native的出现使得javascript在后端和移动端都开始占有了一席之地。可以这么说,在Web的江湖，<mark>JavaScript可谓风头无两，已经坐上了头把交椅。</mark></li>
@@ -1355,7 +1420,7 @@
 <li>算法的由来：9世纪波斯数学家提出的：“al-Khowarizmi”就是下图这货（感觉重要数学元素提出者貌似都戴了顶白帽子），开个玩笑，阿拉伯人对于数学史的贡献还是值得人敬佩的。<br><img src="http://img.blog.csdn.net/20160916152402267" alt="大大"></li>
 </ul>
 </blockquote>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="排序算法说明"><a href="#排序算法说明" class="headerlink" title="排序算法说明"></a>排序算法说明</h3><p><strong>（1）排序的定义：对一序列对象根据某个关键字进行排序；</strong></p>
+<h2 id="正文-1"><a href="#正文-1" class="headerlink" title="正文"></a>正文</h2><h3 id="排序算法说明"><a href="#排序算法说明" class="headerlink" title="排序算法说明"></a>排序算法说明</h3><p><strong>（1）排序的定义：对一序列对象根据某个关键字进行排序；</strong></p>
 <p>输入：n个数：a1,a2,a3,…,an<br>输出：n个数的排列:a1’,a2’,a3’,…,an’，使得a1’&lt;=a2’&lt;=a3’&lt;=…&lt;=an’。</p>
 <p>再讲的形象点就是排排坐，调座位，高的站在后面，矮的站在前面咯。</p>
 <p><strong>（3）对于评述算法优劣术语的说明</strong></p>
@@ -1645,7 +1710,16 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;读者自行尝试可以&lt;a href=&quot;https://github.com/damonare/Sorts&quot;&gt;想看源码戳这&lt;/a&gt;，博主在github建了个库，读者可以Clone下来本地尝试。此博文配合源码体验更棒哦&lt;/strong&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt;  本文图文并茂的详细讲述了十大经典排序算法用javascript实现的过程。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/16/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%EF%BC%88javascript%E6%8F%8F%E8%BF%B0%EF%BC%89/#more&quot;&gt;十大经典排序算法&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生有情泪沾衣，江水江花岂终极。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1665,19 +1739,25 @@
     <link href="http://damonare.github.io/2016/09/09/Chrome%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
     <id>http://damonare.github.io/2016/09/09/Chrome控制台使用总结/</id>
     <published>2016-09-09T12:43:11.000Z</published>
-    <updated>2016-11-13T09:21:30.702Z</updated>
+    <updated>2016-11-26T09:57:13.834Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因是它速度快，体积不大，支持的新特性也比其它浏览器多，还有一部分我想就是因为它的控制台功能强大了吧，说它是神器一点也不过分，很方便。但其实很多开发者并没有用出控制台的精髓，只是使用简单的console.log();其实控制台功能远远不止这么简单哦。</p>
-</blockquote>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong>  Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因是它速度快，体积不大，支持的新特性也比其它浏览器多，还有一部分我想就是因为它的控制台功能强大了吧，说它是神器一点也不过分，很方便。但其实很多开发者并没有用出控制台的精髓，只是使用简单的console.log();其实控制台功能远远不止这么简单哦。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/09/09/Chrome%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/#more">Chrome控制台实用指南</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生何适不艰难，赖是胸中万斛宽</strong></p>
 <a id="more"></a>
-<h2 id="console-clear"><a href="#console-clear" class="headerlink" title="console.clear"></a>console.clear</h2><blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="console-clear"><a href="#console-clear" class="headerlink" title="console.clear"></a>console.clear</h3><blockquote>
 <p>console.clear();清空控制台，这个应该和console.log知名度一样高吧。</p>
 </blockquote>
-<h2 id="console-log家族"><a href="#console-log家族" class="headerlink" title="console.log家族"></a>console.log家族</h2><blockquote>
+<h3 id="console-log家族"><a href="#console-log家族" class="headerlink" title="console.log家族"></a>console.log家族</h3><blockquote>
 <p>先简单介绍一下chrome的控制台，打开chrome浏览器，按f12就可以轻松的打开控制台</p>
 </blockquote>
-<p><img src="http://img2.tuicool.com/I3EjMju.png!web" alt="这里写图片描述"></p>
 <p>如果你是一位开发者，我想console.log肯定是经常使用的了，我们主要看看console.log的几个兄弟：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span><span class="built_in">console</span>.log (<span class="string">'普通信息'</span>)</div><div class="line"><span class="number">2.</span><span class="built_in">console</span>.info (<span class="string">'提示性信息'</span>)</div><div class="line"><span class="number">3.</span><span class="built_in">console</span>.error (<span class="string">'错误信息'</span>)</div><div class="line"><span class="number">4.</span><span class="built_in">console</span>.warn (<span class="string">'警示信息'</span>)</div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160909211537532" alt="控制台"></p>
@@ -1698,29 +1778,29 @@
 <p>另外，console.log() 接收不定参数，参数间用逗号分隔，最终会输出会将它们以空白字符连接。</p>
 <p><img src="http://img.blog.csdn.net/20160909215338908" alt="这里写图片描述"></p>
 </blockquote>
-<h2 id="console-table"><a href="#console-table" class="headerlink" title="console.table"></a>console.table</h2><blockquote>
+<h3 id="console-table"><a href="#console-table" class="headerlink" title="console.table"></a>console.table</h3><blockquote>
 <p>看着这种“黑魔法”是不是有种坑分的感觉呢，其实还不止哦！console.table可以让我们输出表格,示例：</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123;code:<span class="number">200</span>,content:[&#123;<span class="string">'品名'</span>: <span class="string">'杜雷斯'</span>, <span class="string">'数量'</span>: <span class="number">4</span>&#125;, &#123;<span class="string">'品名'</span>: <span class="string">'冈本'</span>, <span class="string">'数量'</span>: <span class="number">3</span>&#125;]&#125;;</div><div class="line"><span class="built_in">console</span>.table(data.content);</div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160909214911953" alt="这里写图片描述"></p>
 <p><strong>有的时候后端传回来一大串数据，是不是觉得直接console.log或是通过抓包工具查看都会让人晕头转向呢，这个时候正事console.table发挥作用的时候了，以表格的形式呈现数据，自然一目了然。</strong></p>
-<h2 id="console-assert"><a href="#console-assert" class="headerlink" title="console.assert"></a>console.assert</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> isDebug=<span class="literal">false</span>;</div><div class="line"><span class="built_in">console</span>.assert(isDebug,<span class="string">'开发中的log信息。。。'</span>);</div></pre></td></tr></table></figure>
+<h3 id="console-assert"><a href="#console-assert" class="headerlink" title="console.assert"></a>console.assert</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> isDebug=<span class="literal">false</span>;</div><div class="line"><span class="built_in">console</span>.assert(isDebug,<span class="string">'开发中的log信息。。。'</span>);</div></pre></td></tr></table></figure>
 <blockquote>
 <p>当你想代码满足某些条件时才输出信息到控制台，那么你大可不必写if或者三元表达式来达到目的，cosole.assert便是这样场景下一种很好的工具，它会先对传入的表达式进行断言，只有表达式为假时才输出相应信息到控制台。</p>
 <p><img src="http://img.blog.csdn.net/20160909215637362" alt="这里写图片描述"></p>
 </blockquote>
-<h2 id="console-count"><a href="#console-count" class="headerlink" title="console.count"></a>console.count</h2><blockquote>
+<h3 id="console-count"><a href="#console-count" class="headerlink" title="console.count"></a>console.count</h3><blockquote>
 <p>除了条件输出的场景，还有常见的场景是计数。<br>当你想统计某段代码执行了多少次时也大可不必自己去写相关逻辑，内置的console.count可以很地胜任这样的任务.</p>
 <p><img src="http://img.blog.csdn.net/20160909215931738" alt="这里写图片描述"></p>
 </blockquote>
-<h2 id="console-dir"><a href="#console-dir" class="headerlink" title="console.dir"></a>console.dir</h2><blockquote>
+<h3 id="console-dir"><a href="#console-dir" class="headerlink" title="console.dir"></a>console.dir</h3><blockquote>
 <p>将DOM结点以JavaScript对象的形式输出到控制台<br>而console.log是直接将该DOM结点以DOM树的结构进行输出，与在元素审查时看到的结构是一致的。不同的展现形式，同样的优雅，各种体位任君选择反正就是方便与体贴。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.dir(<span class="built_in">document</span>.body);</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.body);</div></pre></td></tr></table></figure>
 <blockquote>
 <p><img src="http://img.blog.csdn.net/20160909220149156" alt="这里写图片描述"></p>
 </blockquote>
-<h2 id="console-time-amp-console-timeEnd"><a href="#console-time-amp-console-timeEnd" class="headerlink" title="console.time &amp; console.timeEnd"></a>console.time &amp; console.timeEnd</h2><blockquote>
+<h3 id="console-time-amp-console-timeEnd"><a href="#console-time-amp-console-timeEnd" class="headerlink" title="console.time &amp; console.timeEnd"></a>console.time &amp; console.timeEnd</h3><blockquote>
 <p>输出一些调试信息是控制台最常用的功能，当然，它的功能远不止于此。当做一些性能测试时，同样可以在这里很方便地进行。比如需要考量一段代码执行的耗时情况时，可以用console.time与 console.timeEnd来做此事。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.time(<span class="string">"Array耗时"</span>);</div><div class="line"><span class="keyword">var</span> array= <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10000000</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = array.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">    array[i] = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">"Array耗时"</span>);</div></pre></td></tr></table></figure>
@@ -1728,7 +1808,7 @@
 <blockquote>
 <p>当想要查看CPU使用相关的信息时，可以使用console.profile配合 console.profileEnd来完成这个需求。<br>这一功能可以通过UI界面来完成，Chrome 开发者工具里面有个tab便是Profile。使用方法和console.time基本一样，其实time开发者工具里也有个tab就是timeline。关于console.prefile博主就不做多余的介绍了。想要做更多了解的读者可以看<a href="https://developers.google.com/web/tools/chrome-devtools/debug/console/console-reference?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3#consolelogobject-object" target="_blank" rel="external">这里</a>。</p>
 </blockquote>
-<h2 id=""><a href="#" class="headerlink" title="$"></a>$</h2><blockquote>
+<h3 id=""><a href="#" class="headerlink" title="$"></a>$</h3><blockquote>
 <p>讲真，米国程序员们真的很喜欢money啊（谁又不是呢），看看PHP就知道了,满屏的$符号。而在Chrome的控制台里，$用处同样是蛮多且方便的。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span>+<span class="number">2</span><span class="comment">//回车，再</span></div><div class="line">$_+<span class="number">1</span><span class="comment">//回车得5</span></div></pre></td></tr></table></figure>
@@ -1752,7 +1832,7 @@
 <blockquote>
 <p>$(selector)返回的是满足选择条件的首个DOM元素。<br>剥去她伪善的外衣，其实$(selector)是原生JavaScript document.querySelector() 的封装。<br>同时另一个命令$$(selector)返回的是所有满足选择条件的元素的一个集合，是对document.querySelectorAll() 的封装。</p>
 </blockquote>
-<h2 id="x-path"><a href="#x-path" class="headerlink" title="$x(path)"></a>$x(path)</h2><blockquote>
+<h3 id="x-path"><a href="#x-path" class="headerlink" title="$x(path)"></a>$x(path)</h3><blockquote>
 <p>将所匹配的节点放在一个数组里返回</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$x(<span class="string">"//p"</span>);</div><div class="line">$x(<span class="string">"//p[a]"</span>);</div></pre></td></tr></table></figure>
@@ -1760,33 +1840,40 @@
 <blockquote>
 <p>$x(“//p”)匹配所有的p节点，$x(“//p[a]”);匹配所有子节点包含a的p节点</p>
 </blockquote>
-<h2 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">copy(<span class="built_in">document</span>.body)</div></pre></td></tr></table></figure>
+<h3 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">copy(<span class="built_in">document</span>.body)</div></pre></td></tr></table></figure>
 <blockquote>
 <p>然后你就可以Ctrl+v了。</p>
 </blockquote>
 <p><strong>注意：他不依附于任何全局变量比如window，所以其实在JS代码里是访问不了这个copy方法的，所以从代码层面来调用复制功能也就无从谈起。但愿有天浏览器会提供相应的JS实现吧~这样我们就可以通过js代码进行复制操作而不用再依赖Flash插件了。</strong></p>
-<h2 id="keys-amp-values"><a href="#keys-amp-values" class="headerlink" title="keys &amp; values"></a>keys &amp; values</h2><blockquote>
+<h3 id="keys-amp-values"><a href="#keys-amp-values" class="headerlink" title="keys &amp; values"></a>keys &amp; values</h3><blockquote>
 <p>这是一对基友。前者返回传入对象所有属性名组成的数据，后者返回所有属性值组成的数组。具体请看下面的例子：</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tfboy=&#123;name:<span class="string">'wayou'</span>,gender:<span class="string">'unknown'</span>,hobby:<span class="string">'opposite to the gender'</span>&#125;;</div><div class="line">keys(tfboy);</div><div class="line">values(tfboy);</div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160909225910811" alt="这里写图片描述"></p>
-<h2 id="monitor-amp-unmonitor"><a href="#monitor-amp-unmonitor" class="headerlink" title="monitor &amp; unmonitor"></a>monitor &amp; unmonitor</h2><blockquote>
+<h3 id="monitor-amp-unmonitor"><a href="#monitor-amp-unmonitor" class="headerlink" title="monitor &amp; unmonitor"></a>monitor &amp; unmonitor</h3><blockquote>
 <p>monitor(function)，它接收一个函数名作为参数，比如function a,每次a被执行了，都会在控制台输出一条信息，里面包含了函数的名称a及执行时所传入的参数。而unmonitor(function)便是用来停止这一监听。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    alert(<span class="string">'hello,'</span>+name);</div><div class="line">&#125;</div><div class="line">monitor(sayHello);</div><div class="line">sayHello(<span class="string">'damonare'</span>);</div><div class="line">sayHello(<span class="string">'tjz'</span>);</div><div class="line">unmonitor(sayHello);</div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160909230648805" alt="这里写图片描述"></p>
-<h2 id="debug-amp-undebug"><a href="#debug-amp-undebug" class="headerlink" title="debug &amp; undebug"></a>debug &amp; undebug</h2><blockquote>
+<h3 id="debug-amp-undebug"><a href="#debug-amp-undebug" class="headerlink" title="debug &amp; undebug"></a>debug &amp; undebug</h3><blockquote>
 <p>debug同样也是接收一个函数名作为参数。当该函数执行时自动断下来以供调试，类似于在该函数的入口处打了个断点，可以通过debugger来做到，同时也可以通过在Chrome开发者工具里找到相应源码然后手动打断点。而undebug 则是解除该断点。而其他还有好些命令则让人没有说的欲望，因为好些都可以通过Chrome开发者工具的UI界面来操作并且比用在控制台输入要方便。</p>
 </blockquote>
 <p><img src="http://img.blog.csdn.net/20160909231322130" alt=""></p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p><strong>本博文依据<a href="https://developers.google.com/web/tools/chrome-devtools/debug/console/console-reference?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3#consolelogobject-object" target="_blank" rel="external">Console API文档</a>和<a href="https://developers.google.com/web/tools/chrome-devtools/debug/command-line/command-line-reference?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3#debugfunction" target="_blank" rel="external">Commond API</a>书写。</strong></p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p><strong>本博文依据<a href="https://developers.google.com/web/tools/chrome-devtools/debug/console/console-reference?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3#consolelogobject-object" target="_blank" rel="external">Console API文档</a>和<a href="https://developers.google.com/web/tools/chrome-devtools/debug/command-line/command-line-reference?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3#debugfunction" target="_blank" rel="external">Commond API</a>书写。</strong></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因是它速度快，体积不大，支持的新特性也比其它浏览器多，还有一部分我想就是因为它的控制台功能强大了吧，说它是神器一点也不过分，很方便。但其实很多开发者并没有用出控制台的精髓，只是使用简单的console.log();其实控制台功能远远不止这么简单哦。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt;  Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因是它速度快，体积不大，支持的新特性也比其它浏览器多，还有一部分我想就是因为它的控制台功能强大了吧，说它是神器一点也不过分，很方便。但其实很多开发者并没有用出控制台的精髓，只是使用简单的console.log();其实控制台功能远远不止这么简单哦。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/09/09/Chrome%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/#more&quot;&gt;Chrome控制台实用指南&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生何适不艰难，赖是胸中万斛宽&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1927,19 +2014,24 @@
     <link href="http://damonare.github.io/2016/09/07/%E5%86%99%E5%9C%A8%E7%A7%8B%E6%8B%9B%E4%B9%8B%E9%99%85/"/>
     <id>http://damonare.github.io/2016/09/07/写在秋招之际/</id>
     <published>2016-09-07T14:09:22.232Z</published>
-    <updated>2016-11-05T04:02:46.444Z</updated>
+    <updated>2016-11-26T09:47:25.592Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>人生总是会存在那么些说不清道不明的关系。</strong></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><ul>
-<li><h4 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h4><blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;如果说秋招会让大四的崩溃，那么即将到来的春招就好像让我再经历一次高考一样，心里胆战心惊，毫无把握。是的，我想去杭州，不知道为啥就是想去，没有原因的想去。听蘑菇街的学长说合并之后导致HC太多，进蘑菇街的难度基本等同于阿里了。做项目，写博客，说真的，整个暑假过来也没休息过一天。唯一的原因可能就是觉得自己太菜吧。心里哈市想去阿里的，这是一定要去的，如果校招不行那就过几年通过社招，阿里是有情结在里面的，虽然深知阿里工作压力也很大，但同样，别的公司其实压力也是如此不是吗？要试一下的，今晚阿里笔试，考了很多react知识点，不知道明年还会不会考react呢，一切都是未知数啊，所以充满了不确定性。</p>
-</blockquote>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>总括：</strong> 不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。</p>
+<ul>
+<li>原文博客地址：<a href="http://damonare.github.io/2016/09/07/%E5%86%99%E5%9C%A8%E7%A7%8B%E6%8B%9B%E4%B9%8B%E9%99%85/#more">记秋招</a></li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
 </li>
 </ul>
+<p><strong>人生总是会存在那么些说不清道不明的关系。</strong></p>
+<a id="more"></a>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><ul>
+<li><h4 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h4></li>
+</ul>
+<blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;如果说秋招会让大四的崩溃，那么即将到来的春招就好像让我再经历一次高考一样，心里胆战心惊，毫无把握。是的，我想去杭州，不知道为啥就是想去，没有原因的想去。听蘑菇街的学长说合并之后导致HC太多，进蘑菇街的难度基本等同于阿里了。做项目，写博客，说真的，整个暑假过来也没休息过一天。唯一的原因可能就是觉得自己太菜吧。心里哈市想去阿里的，这是一定要去的，如果校招不行那就过几年通过社招，阿里是有情结在里面的，虽然深知阿里工作压力也很大，但同样，别的公司其实压力也是如此不是吗？要试一下的，今晚阿里笔试，考了很多react知识点，不知道明年还会不会考react呢，一切都是未知数啊，所以充满了不确定性。</p>
+</blockquote>
 <p><br></p>
 <ul>
 <li><h4 id="过去"><a href="#过去" class="headerlink" title="过去"></a>过去</h4></li>
@@ -1961,10 +2053,15 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;人生总是会存在那么些说不清道不明的关系。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/07/%E5%86%99%E5%9C%A8%E7%A7%8B%E6%8B%9B%E4%B9%8B%E9%99%85/#more&quot;&gt;记秋招&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生总是会存在那么些说不清道不明的关系。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1973,16 +2070,28 @@
     
       <category term="Fighting" scheme="http://damonare.github.io/tags/Fighting/"/>
     
+      <category term="感悟" scheme="http://damonare.github.io/tags/%E6%84%9F%E6%82%9F/"/>
+    
   </entry>
   
   <entry>
-    <title>前端面试题目</title>
-    <link href="http://damonare.github.io/2016/09/07/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%A4%A7%E5%85%A8%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/"/>
-    <id>http://damonare.github.io/2016/09/07/前端面试大全（转载）/</id>
+    <title>前端面试题集</title>
+    <link href="http://damonare.github.io/2016/09/07/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/"/>
+    <id>http://damonare.github.io/2016/09/07/前端面试题集/</id>
     <published>2016-09-07T14:06:38.001Z</published>
-    <updated>2016-09-16T02:56:19.950Z</updated>
+    <updated>2016-11-26T09:37:43.639Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="一些开放性题目"><a href="#一些开放性题目" class="headerlink" title="一些开放性题目"></a>一些开放性题目</h4><pre><code>1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文涵盖了前端面试中会涉及的方方面面题目。</p>
+<ul>
+<li>原文博客地址：<a href="http://damonare.github.io/2016/09/07/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%A4%A7%E5%85%A8%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/#more">前端面试题集</a></li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生大病，只是一“傲”字。</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h4 id="一些开放性题目"><a href="#一些开放性题目" class="headerlink" title="一些开放性题目"></a>一些开放性题目</h4><pre><code>1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
 
 2.项目介绍
 
@@ -1991,9 +2100,7 @@
 4.平时是如何学习前端开发的？
 
 5.未来三到五年的规划是怎样的？
-</code></pre><p><br></p>
-<a id="more"></a>
-<h4 id="position的值，-relative和absolute分别是相对于谁进行定位的？"><a href="#position的值，-relative和absolute分别是相对于谁进行定位的？" class="headerlink" title="position的值， relative和absolute分别是相对于谁进行定位的？"></a>position的值， relative和absolute分别是相对于谁进行定位的？</h4><ul>
+</code></pre><h4 id="position的值，-relative和absolute分别是相对于谁进行定位的？"><a href="#position的值，-relative和absolute分别是相对于谁进行定位的？" class="headerlink" title="position的值， relative和absolute分别是相对于谁进行定位的？"></a>position的值， relative和absolute分别是相对于谁进行定位的？</h4><ul>
 <li><p><code>absolute</code> :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。</p>
 </li>
 <li><p><code>fixed</code> （老IE不支持）生成绝对定位的元素，通常相对于浏览器窗口或 frame 进行定位。</p>
@@ -2983,16 +3090,15 @@ Model：数据访问层
     
     <summary type="html">
     
-      &lt;h4 id=&quot;一些开放性题目&quot;&gt;&lt;a href=&quot;#一些开放性题目&quot; class=&quot;headerlink&quot; title=&quot;一些开放性题目&quot;&gt;&lt;/a&gt;一些开放性题目&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
-
-2.项目介绍
-
-3.如何看待前端开发？
-
-4.平时是如何学习前端开发的？
-
-5.未来三到五年的规划是怎样的？
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文涵盖了前端面试中会涉及的方方面面题目。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/07/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%A4%A7%E5%85%A8%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/#more&quot;&gt;前端面试题集&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生大病，只是一“傲”字。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -3011,6 +3117,8 @@ Model：数据访问层
     
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
+      <category term="TCP/IP" scheme="http://damonare.github.io/tags/TCP-IP/"/>
+    
   </entry>
   
   <entry>
@@ -3018,14 +3126,18 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/06/Hexo%E6%8A%98%E8%85%BE%E8%AE%B0/"/>
     <id>http://damonare.github.io/2016/09/06/Hexo折腾记/</id>
     <published>2016-09-05T16:17:05.192Z</published>
-    <updated>2016-09-06T11:22:47.967Z</updated>
+    <updated>2016-11-26T10:03:18.091Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p>如果时间可以静止，我希望就停在此刻。</p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>博主之前也有折腾wordpress和jekyll可对于一个前端er来说，wordpress让人没法尽兴，因为不知道该如何添加自己的代码。而jekyll就太麻烦了每一次都需要重新提交，而且样式也不是很丰富，简直就和鸡肋一般。食之无味，弃之可惜。</p>
-</blockquote>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 博主之前也有折腾wordpress和jekyll可对于一个前端er来说，wordpress让人没法尽兴，因为不知道该如何添加自己的代码。而jekyll就太麻烦了每一次都需要重新提交，而且样式也不是很丰富，简直就和鸡肋一般。食之无味，弃之可惜。</p>
+<ul>
+<li><p>原文博客地址：<a href="http://damonare.github.io/2016/09/06/Hexo%E6%8A%98%E8%85%BE%E8%AE%B0/#more">Hexo折腾记</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>如果时间可以静止，我希望就停在此刻。</strong></p>
 <a id="more"></a>
 <p><strong>之前有听说过Hexo这个博客框架，但一直没时间给自己搭一个，其实平时也有注意到很多大牛的博客是很绚丽的，却不知道那就是Hexo。说干就干，历时一整天，踩坑无数，终于变成了博主想要的样子。放个链接<a href="https://damonare.github.io">Damonare的个人博客</a>如果你也想要一个和博主一样的博客，那就继续看下去吧。</strong></p>
 <ul>
@@ -3104,12 +3216,16 @@ Model：数据访问层
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;如果时间可以静止，我希望就停在此刻。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;博主之前也有折腾wordpress和jekyll可对于一个前端er来说，wordpress让人没法尽兴，因为不知道该如何添加自己的代码。而jekyll就太麻烦了每一次都需要重新提交，而且样式也不是很丰富，简直就和鸡肋一般。食之无味，弃之可惜。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 博主之前也有折腾wordpress和jekyll可对于一个前端er来说，wordpress让人没法尽兴，因为不知道该如何添加自己的代码。而jekyll就太麻烦了每一次都需要重新提交，而且样式也不是很丰富，简直就和鸡肋一般。食之无味，弃之可惜。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/06/Hexo%E6%8A%98%E8%85%BE%E8%AE%B0/#more&quot;&gt;Hexo折腾记&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;如果时间可以静止，我希望就停在此刻。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -3125,13 +3241,21 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/06/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%80%BB%E7%BB%93/"/>
     <id>http://damonare.github.io/2016/09/06/javascript作用域总结/</id>
     <published>2016-09-05T16:04:16.808Z</published>
-    <updated>2016-11-05T04:57:32.293Z</updated>
+    <updated>2016-11-26T10:09:54.927Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><blockquote>
-<p>作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。</p>
-</blockquote>
-<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><a id="more"></a>
-<p><strong>这个应该好理解，函数作用域就是说定义在函数中的参数和变量在函数外部是不可见的。</strong></p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/09/06/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%80%BB%E7%BB%93/#more">Javascript作用域总结</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生世上风波险，一日风波十二时。</strong></p>
+<a id="more"></a>
+<p>##正文</p>
+<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p><strong>这个应该好理解，函数作用域就是说定义在函数中的参数和变量在函数外部是不可见的。</strong></p>
 <p><strong>大多数类C语言都拥有块级作用域，JS却没有。请看下文demo:</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//C语言</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> i=<span class="number">2</span>;</div><div class="line">i--;</div><div class="line"><span class="keyword">if</span>(i)</div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> j=<span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d/n"</span>,j);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>运行这段代码，会出现“use an undefined variable:j”的错误。可以看到，C语言拥有块级作用域，因为j是在if的语句块中定义的，因此，它在块外是无法访问的。</strong></p>
 <h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><hr>
@@ -3152,10 +3276,16 @@ Model：数据访问层
     
     <summary type="html">
     
-      &lt;h2 id=&quot;作用域&quot;&gt;&lt;a href=&quot;#作用域&quot; class=&quot;headerlink&quot; title=&quot;作用域&quot;&gt;&lt;/a&gt;作用域&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;函数作用域&quot;&gt;&lt;a href=&quot;#函数作用域&quot; class=&quot;headerlink&quot; title=&quot;函数作用域&quot;&gt;&lt;/a&gt;函数作用域&lt;/h3&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/09/06/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%80%BB%E7%BB%93/#more&quot;&gt;Javascript作用域总结&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生世上风波险，一日风波十二时。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -3171,12 +3301,20 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/06/javscript%E9%97%AD%E5%8C%85%E6%B5%85%E8%B0%88/"/>
     <id>http://damonare.github.io/2016/09/06/javscript闭包浅谈/</id>
     <published>2016-09-05T16:02:50.096Z</published>
-    <updated>2016-11-25T15:18:52.251Z</updated>
+    <updated>2016-11-26T10:12:25.529Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="JavaScript的闭包"><a href="#JavaScript的闭包" class="headerlink" title="JavaScript的闭包"></a>JavaScript的闭包</h2><p>原文博客地址：<a href="http://damonare.github.io/2016/09/06/javscript%E9%97%AD%E5%8C%85%E6%B5%85%E8%B0%88/#more">Javascript闭包小结</a></p>
-<p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
-<p>&nbsp;&nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。</p>
+    <content type="html"><![CDATA[<h2 id="JavaScript的闭包"><a href="#JavaScript的闭包" class="headerlink" title="JavaScript的闭包"></a>JavaScript的闭包</h2><p><strong>总括：</strong> 本文总结了闭包的概念，并搜集了一些经典闭包的案例习题供给各位学习参考。</p>
+<ul>
+<li><p>原文博客地址：<a href="http://damonare.github.io/2016/09/06/javscript%E9%97%AD%E5%8C%85%E6%B5%85%E8%B0%88/#more">Javascript闭包小结</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>良辰难再，人生中大好时刻，不要再去旧梦重圆。</strong></p>
 <a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。</p>
 <p><strong>说了半天，究竟什么是闭包呢？</strong></p>
 <ul>
 <li><p>闭包就是函数的局部变量集合，只是这些局部变量在函数返回后会继续存在。</p>
@@ -3239,9 +3377,16 @@ Model：数据访问层
     
     <summary type="html">
     
-      &lt;h2 id=&quot;JavaScript的闭包&quot;&gt;&lt;a href=&quot;#JavaScript的闭包&quot; class=&quot;headerlink&quot; title=&quot;JavaScript的闭包&quot;&gt;&lt;/a&gt;JavaScript的闭包&lt;/h2&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/06/javscript%E9%97%AD%E5%8C%85%E6%B5%85%E8%B0%88/#more&quot;&gt;Javascript闭包小结&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&amp;nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。&lt;/p&gt;
+      &lt;h2 id=&quot;JavaScript的闭包&quot;&gt;&lt;a href=&quot;#JavaScript的闭包&quot; class=&quot;headerlink&quot; title=&quot;JavaScript的闭包&quot;&gt;&lt;/a&gt;JavaScript的闭包&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文总结了闭包的概念，并搜集了一些经典闭包的案例习题供给各位学习参考。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/06/javscript%E9%97%AD%E5%8C%85%E6%B5%85%E8%B0%88/#more&quot;&gt;Javascript闭包小结&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;良辰难再，人生中大好时刻，不要再去旧梦重圆。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -3257,13 +3402,20 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/06/CSS%E5%B1%85%E4%B8%AD%E5%B0%8F%E8%B0%88/"/>
     <id>http://damonare.github.io/2016/09/06/CSS居中小谈/</id>
     <published>2016-09-05T16:01:12.627Z</published>
-    <updated>2016-11-13T09:22:47.016Z</updated>
+    <updated>2016-11-26T10:00:49.940Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>CSS居中一直是一个比较敏感的话题，为了以后开发的方便，楼主觉得确实需要总结一下了，总的来说，居中问题分为垂直居中和水平居中，实际上水平居中是很简单的，但垂直居中的方式和方法就千奇百怪了。</p>
-</blockquote>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong>  CSS居中一直是一个比较敏感的话题，为了以后开发的方便，楼主觉得确实需要总结一下了，总的来说，居中问题分为垂直居中和水平居中，实际上水平居中是很简单的，但垂直居中的方式和方法就千奇百怪了。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/09/06/CSS%E5%B1%85%E4%B8%AD%E5%B0%8F%E8%B0%88/#more">CSS居中小谈</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生用物，各有天限；夏涝太多，必有秋旱。</strong></p>
 <a id="more"></a>
-<h1 id="内联元素居中方案"><a href="#内联元素居中方案" class="headerlink" title="内联元素居中方案"></a>内联元素居中方案</h1><p><strong>水平居中设置：</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="内联元素居中方案"><a href="#内联元素居中方案" class="headerlink" title="内联元素居中方案"></a>内联元素居中方案</h3><p><strong>水平居中设置：</strong></p>
 <ol>
 <li><p>行内元素 设置 text-align:center；</p>
 </li>
@@ -3307,16 +3459,23 @@ Model：数据访问层
 <li>6.Flex布局;</li>
 </ul>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">display</span>: -webkit-box;</div><div class="line">    <span class="attribute">display</span>: -webkit-flex;</div><div class="line">    <span class="attribute">display</span>: -moz-box;</div><div class="line">    <span class="attribute">display</span>: -moz-flex;</div><div class="line">    <span class="attribute">display</span>: -ms-flexbox;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    水平居中</div><div class="line">    -webkit-box-align: center;</div><div class="line">    -moz-box-align: center;</div><div class="line">    -ms-<span class="attribute">flex</span>-pack:center;</div><div class="line">    -webkit-<span class="attribute">justify-content</span>: center;</div><div class="line">    -moz-<span class="attribute">justify-content</span>: center;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">     垂直居中</div><div class="line">    -webkit-box-pack: center;</div><div class="line">    -moz-box-pack: center;</div><div class="line">    -ms-<span class="attribute">flex</span>-align:center;</div><div class="line">    -webkit-<span class="attribute">align-items</span>: center;</div><div class="line">    -moz-<span class="attribute">align-items</span>: center;</div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><blockquote>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
 <p>博主暂时掌握了这些居中方法，读者如果还有好方法或是觉得那个地方不对，欢迎评论，不吝感谢。</p>
 </blockquote>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;CSS居中一直是一个比较敏感的话题，为了以后开发的方便，楼主觉得确实需要总结一下了，总的来说，居中问题分为垂直居中和水平居中，实际上水平居中是很简单的，但垂直居中的方式和方法就千奇百怪了。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt;  CSS居中一直是一个比较敏感的话题，为了以后开发的方便，楼主觉得确实需要总结一下了，总的来说，居中问题分为垂直居中和水平居中，实际上水平居中是很简单的，但垂直居中的方式和方法就千奇百怪了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/09/06/CSS%E5%B1%85%E4%B8%AD%E5%B0%8F%E8%B0%88/#more&quot;&gt;CSS居中小谈&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生用物，各有天限；夏涝太多，必有秋旱。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -3332,13 +3491,20 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/05/CSS%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/"/>
     <id>http://damonare.github.io/2016/09/05/CSS清除浮动/</id>
     <published>2016-09-05T15:59:07.116Z</published>
-    <updated>2016-11-13T09:24:58.377Z</updated>
+    <updated>2016-11-26T10:00:09.755Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="什么是CSS清除浮动？"><a href="#什么是CSS清除浮动？" class="headerlink" title="什么是CSS清除浮动？"></a>什么是CSS清除浮动？</h2><blockquote>
-<p>在非IE浏览器（如Firefox）下，当容器的高度为auto，且容器的内容中有浮动（float为left或right）的元素，在这种情况下，容器的高度不能自动伸长以适应内容的高度，使得内容溢出到容器外面而影响（甚至破坏）布局的现象。这个现象叫浮动溢出，为了防止这个现象的出现而进行的CSS处理，就叫CSS清除浮动。</p>
-</blockquote>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 在非IE浏览器（如Firefox）下，当容器的高度为auto，且容器的内容中有浮动（float为left或right）的元素，在这种情况下，容器的高度不能自动伸长以适应内容的高度，使得内容溢出到容器外面而影响（甚至破坏）布局的现象。这个现象叫浮动溢出，为了防止这个现象的出现而进行的CSS处理，就叫CSS清除浮动。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/09/05/CSS%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/#more">CSS清除浮动</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生用物，各有天限；夏涝太多，必有秋旱。</strong></p>
 <a id="more"></a>
-<p><strong>引用W3C的例子，news容器没有包围浮动的元素。</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>引用W3C的例子，news容器没有包围浮动的元素。</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.news &#123;</div><div class="line">  background-color: gray;</div><div class="line">  border: solid 1px black;</div><div class="line">  &#125;</div><div class="line">.news img &#123;</div><div class="line">  float: left;</div><div class="line">  &#125;</div><div class="line">.news p &#123;</div><div class="line">  float: right;</div><div class="line">  &#125;</div><div class="line">&lt;div class="news"&gt;</div><div class="line">&lt;img src="news-pic.jpg" /&gt;</div><div class="line">&lt;p&gt;some text&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 <p><img src="http://images.cnitblog.com/blog/349636/201310/23224343-9668661a8f63445699e0a8c24a64662b.jpg" alt="图片">;</p>
 <h2 id="清除浮动方法"><a href="#清除浮动方法" class="headerlink" title="清除浮动方法"></a>清除浮动方法</h2><p><strong>方法一：使用带clear属性的空元素</strong></p>
@@ -3381,9 +3547,16 @@ Model：数据访问层
     
     <summary type="html">
     
-      &lt;h2 id=&quot;什么是CSS清除浮动？&quot;&gt;&lt;a href=&quot;#什么是CSS清除浮动？&quot; class=&quot;headerlink&quot; title=&quot;什么是CSS清除浮动？&quot;&gt;&lt;/a&gt;什么是CSS清除浮动？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;在非IE浏览器（如Firefox）下，当容器的高度为auto，且容器的内容中有浮动（float为left或right）的元素，在这种情况下，容器的高度不能自动伸长以适应内容的高度，使得内容溢出到容器外面而影响（甚至破坏）布局的现象。这个现象叫浮动溢出，为了防止这个现象的出现而进行的CSS处理，就叫CSS清除浮动。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 在非IE浏览器（如Firefox）下，当容器的高度为auto，且容器的内容中有浮动（float为left或right）的元素，在这种情况下，容器的高度不能自动伸长以适应内容的高度，使得内容溢出到容器外面而影响（甚至破坏）布局的现象。这个现象叫浮动溢出，为了防止这个现象的出现而进行的CSS处理，就叫CSS清除浮动。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/09/05/CSS%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/#more&quot;&gt;CSS清除浮动&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生用物，各有天限；夏涝太多，必有秋旱。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     

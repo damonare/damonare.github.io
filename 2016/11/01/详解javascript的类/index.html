@@ -6,28 +6,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>详解Javascript的类(单身狗请自觉进入) | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言生活有度，人生添寿。
+  <meta name="description" content="前言总括： 本文详细讲述了javascript中类的由来实现以及一些类知识的延伸。
+
 原文地址：详解javascript的类
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
 博主博客地址：Damonare的个人博客
 
-&amp;nbsp;&amp;nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数">
+
+生活有度，人生添寿。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="详解Javascript的类(单身狗请自觉进入)">
 <meta property="og:url" content="http://damonare.github.io/2016/11/01/详解javascript的类/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="前言生活有度，人生添寿。
+<meta property="og:description" content="前言总括： 本文详细讲述了javascript中类的由来实现以及一些类知识的延伸。
+
 原文地址：详解javascript的类
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
 博主博客地址：Damonare的个人博客
 
-&amp;nbsp;&amp;nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数">
-<meta property="og:updated_time" content="2016-11-05T04:47:15.110Z">
+
+生活有度，人生添寿。">
+<meta property="og:updated_time" content="2016-11-26T09:45:40.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解Javascript的类(单身狗请自觉进入)">
-<meta name="twitter:description" content="前言生活有度，人生添寿。
+<meta name="twitter:description" content="前言总括： 本文详细讲述了javascript中类的由来实现以及一些类知识的延伸。
+
 原文地址：详解javascript的类
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
 博主博客地址：Damonare的个人博客
 
-&amp;nbsp;&amp;nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数">
+
+生活有度，人生添寿。">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -150,7 +165,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -305,15 +320,22 @@
       
           <!-- Table of Contents -->
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>生活有度，人生添寿。</strong></p>
-<p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">详解javascript的类</a></p>
-<p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-<blockquote>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文详细讲述了javascript中类的由来实现以及一些类知识的延伸。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/11/01/%E8%AF%A6%E8%A7%A3javascript%E7%9A%84%E7%B1%BB/#more">详解javascript的类</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>生活有度，人生添寿。</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote>
 <p>&nbsp;&nbsp;Javascript从当初的一个“弹窗语言”，一步步发展成为现在前后端通吃的庞然大物。javascript的受欢迎程度也是与日俱增，今年最受欢迎编程语言又是花落javascript，这实在是一个充满了活力的语言。如今，随随便一个网页javascript代码量都不下数千行，要是node后端那更不止几千行了。（WTF）代码量的增加给编程带来的首要的问题就是如何去编写和维护如此庞大的代码呢？答案就是模块化思想，其实就是面向对象（OOP）编程，如今比较流行的三大前端框架（angular,react,vue）基本都实现了组件化编程，但组件化和我们所说的模块化又有所不同，应该可以这么理解，组件化是模块化的升级版，模块化是组件化的基础。那么，问题来了，javascript怎么面向对象编程呢？我想这很多老鸟也不定说的清楚吧，前端杂而活跃的各种社区，很多前端er一度依赖各种插件，根本不需要去了解这些深层的东西却照样能完成任务。但我想作为一个有追求的前端er还是很有必要去学习这些看似用不着的东西的，别的不说，就单单因为我们是前端er,只会用jquery一个稍微厉害的后端都能代替你。好吧，废话不多说，到底如何面向对象coding呢…..<br><br><br>&nbsp;&nbsp;很不幸，es5中并没有给出明确的定义‘类’的概念，所以传统的面向对象编程似乎是行不通的，那么又该肿么办呢？值得庆幸的是，前辈们通过不断探索总结，成功的用javascript模拟出了“类”。那么，javascript的类又该怎么定义呢？<br><br></p>
 </blockquote>
 <p><strong>在面向对象编程中，类（class）是对象（object）的模板，定义了同一组对象（又称”实例”）共有的属性和方法。</strong></p>
-<a id="more"></a>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
+<blockquote>
 <p>说到javascript中的“类”就不得不说原型链和继承了，因为javascript是没有真正意义上的类的，所谓的类就是基于原型链和继承来实现的，即使ES6中加入了class,extends关键字实现类和继承，但实际上还是基于原型链和继承， ES6 类（class）是 JavaScript 现有的原型继承的语法糖。</p>
 </blockquote>
 <h4 id="1-原型链和继承"><a href="#1-原型链和继承" class="headerlink" title="1. 原型链和继承"></a>1. 原型链和继承</h4><p>“<br>    在 javaScript 中，每个对象都有一个指向它的原型（prototype）对象的内部链接。这个原型对象又有自己的原型，直到某个对象的原型为 null 为止（也就是不再有原型指向），组成这条链的最后一环。这种一级一级的链结构就称为原型链（prototype chain）。<br>”<br></p>
