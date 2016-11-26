@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-11-16T15:28:30.969Z</updated>
+  <updated>2016-11-26T05:44:21.374Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习Javascript数据结构(三)——集合</title>
+    <link href="http://damonare.github.io/2016/11/26/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E2%80%94%E9%9B%86%E5%90%88/"/>
+    <id>http://damonare.github.io/2016/11/26/学习javascript数据结构（三）——集合/</id>
+    <published>2016-11-26T05:24:45.261Z</published>
+    <updated>2016-11-26T05:44:21.374Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>原文博客地址：<a href="http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more">Git命令总结</a></li>
+<li>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></li>
+<li>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></li>
+</ul>
+<p><strong>事业无穷年。</strong></p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more&quot;&gt;Git命令总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;事业无穷年。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
+    
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Javascript本地存储小结</title>
@@ -455,14 +493,22 @@
     <link href="http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/"/>
     <id>http://damonare.github.io/2016/11/05/互联网协议入门/</id>
     <published>2016-11-05T04:00:49.017Z</published>
-    <updated>2016-11-05T15:28:27.828Z</updated>
+    <updated>2016-11-26T05:56:32.321Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>劳于读书，逸于作文。</strong></p>
-<p>原文地址：<a href="http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/#more">internet协议入门</a></p>
-<p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-<p>博主之前写过一篇博客：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。</p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p><strong>总括：</strong> 博主之前写过一篇博客：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a>,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/#more">internet协议入门</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>劳于读书，逸于作文。</strong></p>
 <a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p><strong>互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
+<h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p><strong>互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。</strong></p>
 <h4 id="1-1-模型划分"><a href="#1-1-模型划分" class="headerlink" title="1.1 模型划分"></a>1.1 模型划分</h4><p>首先我们需要明白的事互联网的实现是分层级的，那么这个层级的划分根据不同的模型又有一些不同。其中又有两个模型的划分是我们最常见到的，一个是OSI七层划分，另一个是TCP/IP五层划分。他们分别把互联网分成了七层和五层。</p>
 <blockquote>
 <p>OSI和TCP/IP模型是很基础但又非常重要的网络基础知识</p>
@@ -680,10 +726,17 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;劳于读书，逸于作文。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/#more&quot;&gt;internet协议入门&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;博主之前写过一篇博客：&lt;a href=&quot;http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more&quot;&gt;网络协议分析&lt;/a&gt;,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 博主之前写过一篇博客：&lt;a href=&quot;http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more&quot;&gt;网络协议分析&lt;/a&gt;,在这篇博客里通过抓包，具体的分析了不同网络协议的传送的数据和传送的方式。而此篇博客则用来作为一个大纲式的内容，按照层级划分，逐步介绍各层级的协议以及他们所起的作用。若有错误之处，欢迎批评指正。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/11/05/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/#more&quot;&gt;internet协议入门&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;劳于读书，逸于作文。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1114,13 +1167,21 @@
     <link href="http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/"/>
     <id>http://damonare.github.io/2016/10/30/前端跨域整理/</id>
     <published>2016-10-30T07:24:24.028Z</published>
-    <updated>2016-11-20T12:13:16.291Z</updated>
+    <updated>2016-11-26T05:57:17.302Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>原文地址：<a href="http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more">前端跨域总结</a></p>
-<p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-<p><strong>相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。</strong></p>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr>
+<p><strong>总括：</strong> 相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more">前端跨域总结</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></li>
+</ul>
+<p><strong>人生在勤，不索何获。</strong></p>
 <a id="more"></a>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="1-什么是跨域？"><a href="#1-什么是跨域？" class="headerlink" title="1. 什么是跨域？"></a>1. 什么是跨域？</h4><blockquote>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><hr>
+<h4 id="1-什么是跨域？"><a href="#1-什么是跨域？" class="headerlink" title="1. 什么是跨域？"></a>1. 什么是跨域？</h4><blockquote>
 <p> 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。所以我们要通过一些方法使本域的js能够操作其他域的页面对象或者使其他域的js能操作本域的页面对象（iframe之间）。下面是具体的跨域情况详解：</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">URL                      说明       是否允许通信</div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line">http:<span class="comment">//www.a.com/b.js     同一域名下   允许</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com/lab/a.js</span></div><div class="line">http:<span class="comment">//www.a.com/script/b.js 同一域名下不同文件夹 允许</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com:8000/a.js</span></div><div class="line">http:<span class="comment">//www.a.com/b.js     同一域名，不同端口  不允许</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line">https:<span class="comment">//www.a.com/b.js 同一域名，不同协议 不允许</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line">http:<span class="comment">//70.32.92.74/b.js 域名和域名对应ip 不允许</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line">http:<span class="comment">//script.a.com/b.js 主域相同，子域不同 不允许（cookie这种情况下也不允许访问）</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.a.com/a.js</span></div><div class="line">http:<span class="comment">//a.com/b.js 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）</span></div><div class="line"></div><div class="line">http:<span class="comment">//www.cnblogs.com/a.js</span></div><div class="line">http:<span class="comment">//www.a.com/b.js 不同域名 不允许</span></div></pre></td></tr></table></figure>
@@ -1139,7 +1200,7 @@
 <ul>
 <li>在页面<a href="http://www.damonare.cn/a.html" target="_blank" rel="external">http://www.damonare.cn/a.html</a> 中设置document.domain:</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;iframe id = <span class="string">"iframe"</span> src=<span class="string">"http://damonare.cn/b.html"</span> onload = <span class="string">"test()"</span>&gt;&lt;/iframe&gt;</div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="built_in">document</span>.domain = <span class="string">'damonare.cn'</span>;<span class="comment">//设置成主域</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="built_in">document</span>.getElementById(<span class="string">'￼iframe'</span>).contentWindow);<span class="comment">//contentWindow 可取得子窗口的 window 对象</span></div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;iframe id = <span class="string">"iframe"</span> src=<span class="string">"http://damonare.cn/b.html"</span> onload = <span class="string">"test()"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="built_in">document</span>.domain = <span class="string">'damonare.cn'</span>;<span class="comment">//设置成主域</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="built_in">document</span>.getElementById(<span class="string">'￼iframe'</span>).contentWindow);<span class="comment">//contentWindow 可取得子窗口的 window 对象</span></div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 <ul>
 <li>在页面<a href="http://damonare.cn/b.html" target="_blank" rel="external">http://damonare.cn/b.html</a> 中也设置document.domain:</li>
 </ul>
@@ -1195,7 +1256,7 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$callback = $_GET[<span class="string">'callback'</span>];<span class="comment">//得到回调函数名</span></div><div class="line">$data = <span class="keyword">array</span>(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>);<span class="comment">//要返回的数据</span></div><div class="line"><span class="keyword">echo</span> $callback.<span class="string">'('</span>.json_encode($data).<span class="string">')'</span>;<span class="comment">//输出</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <p>最终，输出结果为：dosomething([‘a’,’b’,’c’]);</p>
 <p>如果你的页面使用jquery，那么通过它封装的方法就能很方便的来进行jsonp操作了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    $.getJSON(<span class="string">'http://example.com/data.php?callback=?,function(jsondata)'</span>)&#123;</div><div class="line">        <span class="comment">//处理获得的json数据</span></div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    $.getJSON(<span class="string">'http://example.com/data.php?callback=?,function(jsondata)'</span>)&#123;</div><div class="line">        <span class="comment">//处理获得的json数据</span></div><div class="line">    &#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>jquery会自动生成一个全局函数来替换callback=?中的问号，之后获取到数据后又会自动销毁，实际上就是起一个临时代理函数的作用。$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法；跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数。</p>
 <ul>
 <li>JSONP的优缺点<ul>
@@ -1209,9 +1270,9 @@
 </blockquote>
 <p><strong>因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</strong></p>
 <p>平时的ajax请求可能是这样的:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    xhr.open(<span class="string">"POST"</span>, <span class="string">"/damonare"</span>,<span class="literal">true</span>);</div><div class="line">    xhr.send();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    xhr.open(<span class="string">"POST"</span>, <span class="string">"/damonare"</span>,<span class="literal">true</span>);</div><div class="line">    xhr.send();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>以上damonare部分是相对路径，如果我们要使用CORS，相关Ajax代码可能如下所示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    xhr.open(<span class="string">"￼GET"</span>, <span class="string">"http://segmentfault.com/u/trigkit4/"</span>,<span class="literal">true</span>);</div><div class="line">    xhr.send();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    xhr.open(<span class="string">"￼GET"</span>, <span class="string">"http://segmentfault.com/u/trigkit4/"</span>,<span class="literal">true</span>);</div><div class="line">    xhr.send();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>代码与之前的区别就在于相对路径换成了其他域的绝对路径，也就是你要跨域访问的接口地址。</p>
 <p>服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。关于CORS更多了解可以看下阮一峰老师的这一篇文章：<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">跨域资源共享 CORS 详解</a></p>
 <ul>
@@ -1239,7 +1300,7 @@
 <p>由于安全原因，浏览器始终会保持 window.name 是string 类型。</p>
 </blockquote>
 <p>同样这个方法也可以应用到和iframe的交互来：<br>比如：我的页面(<a href="http://damonare.cn/index.html)中内嵌了一个iframe：" target="_blank" rel="external">http://damonare.cn/index.html)中内嵌了一个iframe：</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;iframe id=<span class="string">"iframe"</span> src=<span class="string">"http://www.google.com/iframe.html"</span>&gt;&lt;/iframe&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;iframe id=<span class="string">"iframe"</span> src=<span class="string">"http://www.google.com/iframe.html"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>在 iframe.html 中设置好了 window.name 为我们要传递的字符串。<br>我们在 index.html 中写了下面的代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>);</div><div class="line"><span class="keyword">var</span> data = <span class="string">''</span>;</div><div class="line">iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    data = iframe.contentWindow.name;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>Boom!报错！肯定的，因为两个页面不同源嘛，想要解决这个问题可以这样干：</p>
@@ -1260,9 +1321,16 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more&quot;&gt;前端跨域总结&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。&lt;/strong&gt;&lt;/p&gt;
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more&quot;&gt;前端跨域总结&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生在勤，不索何获。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1740,13 +1808,21 @@
     <link href="http://damonare.github.io/2016/09/09/%E8%81%8A%E8%81%8Aclip-path/"/>
     <id>http://damonare.github.io/2016/09/09/聊聊clip-path/</id>
     <published>2016-09-09T08:51:00.000Z</published>
-    <updated>2016-11-05T04:49:59.519Z</updated>
+    <updated>2016-11-26T05:56:44.742Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！</p>
-</blockquote>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p><strong>总括：</strong>  图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！</p>
+<ul>
+<li>原文博客地址：<a href="http://damonare.github.io/2016/09/09/%E8%81%8A%E8%81%8Aclip-path/#more">聊聊clip-path</a></li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生如画，岁月如歌。</strong></p>
 <a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Flilter"><a href="#Flilter" class="headerlink" title="Flilter"></a>Flilter</h3><blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
+<h3 id="Flilter"><a href="#Flilter" class="headerlink" title="Flilter"></a>Flilter</h3><blockquote>
 <p>filter有十种特效来处理图片，博主只放几种特效的样例给大家看一下：</p>
 <p>照片反色效果：</p>
 <p><img src="http://img.blog.csdn.net/20160910104748479" alt="照片反色"></p>
@@ -1835,9 +1911,16 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt;  图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/09/%E8%81%8A%E8%81%8Aclip-path/#more&quot;&gt;聊聊clip-path&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生如画，岁月如歌。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2929,11 +3012,11 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
+      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+      <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
     
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
@@ -3097,9 +3180,11 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/06/javscript%E9%97%AD%E5%8C%85%E6%B5%85%E8%B0%88/"/>
     <id>http://damonare.github.io/2016/09/06/javscript闭包浅谈/</id>
     <published>2016-09-05T16:02:50.096Z</published>
-    <updated>2016-11-16T05:03:24.608Z</updated>
+    <updated>2016-11-25T15:18:52.251Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="JavaScript的闭包"><a href="#JavaScript的闭包" class="headerlink" title="JavaScript的闭包"></a>JavaScript的闭包</h2><p>&nbsp;&nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。</p>
+    <content type="html"><![CDATA[<h2 id="JavaScript的闭包"><a href="#JavaScript的闭包" class="headerlink" title="JavaScript的闭包"></a>JavaScript的闭包</h2><p>原文博客地址：<a href="http://damonare.github.io/2016/09/06/javscript%E9%97%AD%E5%8C%85%E6%B5%85%E8%B0%88/#more">Javascript闭包小结</a></p>
+<p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+<p>&nbsp;&nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。</p>
 <a id="more"></a>
 <p><strong>说了半天，究竟什么是闭包呢？</strong></p>
 <ul>
@@ -3114,7 +3199,7 @@ Model：数据访问层
 <ul>
 <li>闭包：是指有权访问另外一个函数作用域中的变量的函数。</li>
 </ul>
-<h3 id="JavaScript中的作用域"><a href="#JavaScript中的作用域" class="headerlink" title="JavaScript中的作用域"></a>JavaScript中的作用域</h3><p>&nbsp;&nbsp;<strong>JavaScript中是没有块级作用域的。不过关于块级作用域我们在这里不做深入探究，笔者在<a><a href="http://segmentfault.com/a/1190000004092842M" target="_blank" rel="external">http://segmentfault.com/a/1190000004092842M</a></a>中有对块级作用域较为详细的解释，不懂的读者可以去看看。</strong></p>
+<h3 id="JavaScript中的作用域"><a href="#JavaScript中的作用域" class="headerlink" title="JavaScript中的作用域"></a>JavaScript中的作用域</h3><p>&nbsp;&nbsp;<strong>JavaScript中是没有块级作用域的。不过关于块级作用域我们在这里不做深入探究，笔者在<a href="https://segmentfault.com/a/1190000004092842" target="_blank" rel="external">JavaScript的作用域和块级作用域概念理解</a>中有对块级作用域较为详细的解释，不懂的读者可以去看看。</strong></p>
 <blockquote>
 <p>变量的作用域无非就是两种：全局变量和局部变量。</p>
 <p>Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。</p>
@@ -3163,7 +3248,9 @@ Model：数据访问层
     
     <summary type="html">
     
-      &lt;h2 id=&quot;JavaScript的闭包&quot;&gt;&lt;a href=&quot;#JavaScript的闭包&quot; class=&quot;headerlink&quot; title=&quot;JavaScript的闭包&quot;&gt;&lt;/a&gt;JavaScript的闭包&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。&lt;/p&gt;
+      &lt;h2 id=&quot;JavaScript的闭包&quot;&gt;&lt;a href=&quot;#JavaScript的闭包&quot; class=&quot;headerlink&quot; title=&quot;JavaScript的闭包&quot;&gt;&lt;/a&gt;JavaScript的闭包&lt;/h2&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/06/javscript%E9%97%AD%E5%8C%85%E6%B5%85%E8%B0%88/#more&quot;&gt;Javascript闭包小结&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。&lt;/p&gt;
     
     </summary>
     
@@ -3321,13 +3408,18 @@ Model：数据访问层
     <link href="http://damonare.github.io/2016/09/05/%E6%BC%AB%E8%B0%88%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2016/09/05/漫谈前端之路/</id>
     <published>2016-09-05T15:55:48.526Z</published>
-    <updated>2016-09-09T13:02:22.316Z</updated>
+    <updated>2016-11-26T05:57:04.551Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>前端之路何其漫漫~</p>
-</blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;说明：本篇文章原是写给学弟学妹的，但想来花的功夫确实不少，就把此篇文章当做自己的一个阶段性总结文章了，会保持长期更新。</p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p><strong>总括：</strong> 前端之路何其漫漫~</p>
+<ul>
+<li>原文博客地址：<a href="http://damonare.github.io/2016/09/05/%E6%BC%AB%E8%B0%88%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/#more">漫谈前端之路</a></li>
+<li>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></li>
+<li>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></li>
+</ul>
+<p><strong>人生一世，草木一秋。</strong></p>
 <a id="more"></a>
+<hr>
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;总的来说HTML并不难，甚至可以说很无脑……HTML的标签个人觉得过一遍就得，知道什么时候该用什么标签就可以了，因为在以后的开发中打交道最多的就是各种各样的标签，想不熟都难。就像现在我写这篇文章用的Markdown一样，只是几个标签的反复应用。那么html的学习就相对来说很自由了，可以跟着w3school<a href="http://www.w3school.com.cn/html/index.asp" target="_blank" rel="external">W3school网址</a>过一遍标签，网上也有很多其它网站做这个的，像<a href="http://qctlr.cai.swufe.edu.cn/w3c/html/index.html" target="_blank" rel="external">菜鸟教程</a>,<a href="http://www.imooc.com/view/9" target="_blank" rel="external">慕课网视频</a>之类的都可以用,等熟练了就可以去国外看看一些前端的新技术，像<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="external">MDN</a>,<a href="http://www.w3schools.com/" target="_blank" rel="external">W3cschool(国际)</a>，<a href="http://stackoverflow.com/" target="_blank" rel="external">stackoverflow(最大的程序员问答网站)</a>。</p>
 <blockquote>
 <p>HTML重点</p>
@@ -3391,10 +3483,14 @@ Model：数据访问层
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;前端之路何其漫漫~&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;说明：本篇文章原是写给学弟学妹的，但想来花的功夫确实不少，就把此篇文章当做自己的一个阶段性总结文章了，会保持长期更新。&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 前端之路何其漫漫~&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/05/%E6%BC%AB%E8%B0%88%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/#more&quot;&gt;漫谈前端之路&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生一世，草木一秋。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -3405,69 +3501,11 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="前端构建工具" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从隐藏元素谈起</title>
-    <link href="http://damonare.github.io/2016/09/05/%E4%BB%8E%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E8%B0%88%E8%B5%B7/"/>
-    <id>http://damonare.github.io/2016/09/05/从隐藏元素谈起/</id>
-    <published>2016-09-05T13:54:57.873Z</published>
-    <updated>2016-11-05T04:49:08.664Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>念念不忘,必有回响,有一口气,点一盏灯。</strong></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：</p>
-<blockquote>
-<p>overflow:hidden<br>opacity:0；<br>visibility:hidden<br>display:none<br>position:absolute<br>clip(clip-path):rect()/inset()/polygon()<br>z-index:-1000</p>
-</blockquote>
-<p><strong>我们为什么会需要这么多隐藏元素的方法呢，而且他们看起来实现的都是同样的效果。其实每一种方法实际上都有一些细微的不同，这些不同决定了在一些特定场合下使用哪一种方法。我们下面细细探讨下这些细微之处.</strong></p>
-<a id="more"></a>
-<h3 id="1-overflow"><a href="#1-overflow" class="headerlink" title="1. overflow"></a>1. overflow</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.hide</span>&#123;</div><div class="line">	 <span class="attribute">overflow</span>:hidden; <span class="comment">/* 占据空间，无法点击 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>overflow的hidden用来隐藏元素溢出部分，占据空间，无法响应点击事件。</strong></p>
-<h3 id="2-opacity"><a href="#2-opacity" class="headerlink" title="2.opacity"></a>2.opacity</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.hide</span>&#123;</div><div class="line">	<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="comment">/* 占据空间，可以点击 */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.hide_2</span>&#123;</div><div class="line">	<span class="attribute">-webkit-filter</span>:<span class="built_in">opacity</span>(0);</div><div class="line">	<span class="attribute">filter</span>:<span class="built_in">opacity</span>(0);<span class="comment">/* 占据空间，可以点击 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>过滤元素filter也可使用opacity值设置透明度，不过filter现在的兼容性不好，只支持webkit内核，这里顺带一提。</p>
-</blockquote>
-<p><strong>opacity是用来设置元素透明度的，但当设置成0的时候也就相当于隐藏元素了。因此，元素依然存在原来的位置，占据空间也可响应事件。如果你打算使用 opacity 属性在读屏软件中隐藏元素，很不幸，你并不能如愿。元素和它所有的内容会被读屏软件阅读，就像网页上的其他元素那样。换句话说，元素的行为就和它们不透明时一致。</strong></p>
-<h3 id="3-visibility"><a href="#3-visibility" class="headerlink" title="3.visibility"></a>3.visibility</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.hide</span>&#123;</div><div class="line">	<span class="attribute">visibility</span>:hidden; <span class="comment">/* 占据空间，无法点击 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>如同 opacity 属性，被隐藏的元素依然会对我们的网页布局起作用。与 opacity 唯一不同的是它不会响应任何用户交互。此外，元素在读屏软件中也会被隐藏</strong></p>
-<h3 id="4-display"><a href="#4-display" class="headerlink" title="4.display"></a>4.display</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.hide</span>&#123;</div><div class="line">	<span class="attribute">display</span>:none;<span class="comment">/* 不占据空间，无法点击 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>经典的display隐藏元素,这个是彻底的隐藏了元素，不占据空间，也就不影响布局，当然也无法响应事件。</strong></p>
-<h3 id="5-position"><a href="#5-position" class="headerlink" title="5.position"></a>5.position</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.hide&#123;</div><div class="line">	position：absolute;</div><div class="line">	left:-99999px;</div><div class="line">	top:-90999px;/* 不占据空间，无法点击 */</div><div class="line">&#125;</div><div class="line">.hide-2&#123;</div><div class="line">	position：relative;</div><div class="line">	left:-99999px;</div><div class="line">	top:-90999px;/* 占据空间，无法点击 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>假设有一个元素你想要与它交互，但是你又不想让它影响你的网页布局，没有合适的属性可以处理这种情况（opacity 和 visibility 影响布局， display 不影响布局但又无法直接交互——译者注）。在这种情况下，你只能考虑将元素移出可视区域。这个办法既不会影响布局，有能让元素保持可以操作。下采用这种办法未尝不可 </strong></p>
-<h3 id="6-clip-clip-path"><a href="#6-clip-clip-path" class="headerlink" title="6.clip/clip-path"></a>6.clip/clip-path</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.hide</span>&#123;</div><div class="line">    <span class="attribute">position</span>:absolute;<span class="comment">/*fixed*/</span></div><div class="line">	<span class="attribute">clip</span>:<span class="built_in">rect</span>(top,right,bottom,left);<span class="comment">/* 占据空间，无法点击 */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.hide_2</span> &#123;</div><div class="line">  <span class="attribute">clip-path</span>: <span class="built_in">polygon</span>(0px 0px,0px 0px,0px 0px,0px 0px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>隐藏元素的另一种方法是通过剪裁它们来实现。在以前，这可以通过 clip 属性来实现，但是这个属性被废弃了(现在浏览器依然支持)，换成一个更好的属性叫做 clip-path。clip-path属性实在是用处大大滴有，可以很容易的实现一些复杂的图形<a href="http://species-in-pieces.com/#" target="_blank" rel="external">大漠老师分享的一个链接</a>，该链接里的图形大多都是用clip-path的polygon值来实现的。但可惜的是依旧只能在chrome40+浏览器里使用.</strong></p>
-<h3 id="7-z-index"><a href="#7-z-index" class="headerlink" title="7.z-index"></a>7.z-index</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.hide</span>&#123;</div><div class="line">	<span class="attribute">position</span>:absolute;</div><div class="line">	<span class="attribute">z-index</span>:-<span class="number">1000</span>;<span class="comment">/* 不占据空间，无法点击 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>通过设置z-index值使其它元素遮盖该元素也算是一种隐藏了。</strong></p>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><blockquote>
-<p>在这篇教程里，我们看了 7 种不同的通过 CSS 隐藏元素的方法。每一种方法都与其他几种有一点区别。知道你想要实现什么有助于你决定采用哪一个属性，随着时间推移，你就能根据实际需求本能地选择最佳方式了。如果你对于隐藏元素的这些方法还有任何问题，请在评论中留言。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;念念不忘,必有回响,有一口气,点一盏灯。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;overflow:hidden&lt;br&gt;opacity:0；&lt;br&gt;visibility:hidden&lt;br&gt;display:none&lt;br&gt;position:absolute&lt;br&gt;clip(clip-path):rect()/inset()/polygon()&lt;br&gt;z-index:-1000&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;我们为什么会需要这么多隐藏元素的方法呢，而且他们看起来实现的都是同样的效果。其实每一种方法实际上都有一些细微的不同，这些不同决定了在一些特定场合下使用哪一种方法。我们下面细细探讨下这些细微之处.&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
-    
-    
-      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
-    
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
   </entry>
   

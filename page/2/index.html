@@ -137,7 +137,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../tags/http/" style="font-size: 12px;">http</a> <a href="../../tags/javascript/" style="font-size: 14px;">javascript</a> <a href="../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../tags/数据结构/" style="font-size: 14px;">数据结构</a> <a href="../../tags/数据结构与算法/" style="font-size: 12px;">数据结构与算法</a> <a href="../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../tags/http/" style="font-size: 12px;">http</a> <a href="../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -244,6 +244,76 @@
 
       <div class="body-wrap">
   
+    <article id="post-Chrome控制台使用总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="../../2016/09/09/Chrome控制台使用总结/" class="article-date">
+  	<time datetime="2016-09-09T12:43:11.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2016/09/09/Chrome控制台使用总结/">Chrome控制台实用指南</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>Chrome浏览器我想是每一个前端er必用工具之一吧，一部分原因是它速度快，体积不大，支持的新特性也比其它浏览器多，还有一部分我想就是因为它的控制台功能强大了吧，说它是神器一点也不过分，很方便。但其实很多开发者并没有用出控制台的精髓，只是使用简单的console.log();其实控制台功能远远不止这么简单哦。</p>
+</blockquote>
+      
+      
+
+  
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/工具/">工具</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../categories/其它/">其它</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="../../2016/09/09/Chrome控制台使用总结/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+
+  
+
+
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-聊聊clip-path" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -270,9 +340,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！</p>
-</blockquote>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p><strong>总括：</strong>  图片是一个网站必不可少的元素，而呈现出绚丽多彩的图片效果在很多情况下不仅仅是设计师的工作，通过代码来修饰图片也是一个前端工程师必备的技能。因为兼容性的问题，实际项目中可能用的比较少，包括博主自己也只是用过几次剪切，很多情况下都交给设计师去做了。但作为一个hacker怎么能满足于此呢，必须深入探究！</p>
+<ul>
+<li>原文博客地址：<a href="http://damonare.github.io/2016/09/09/%E8%81%8A%E8%81%8Aclip-path/#more">聊聊clip-path</a></li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生如画，岁月如歌。</strong></p>
       
       
 
@@ -632,7 +709,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JavaScript的闭包"><a href="#JavaScript的闭包" class="headerlink" title="JavaScript的闭包"></a>JavaScript的闭包</h2><p>&nbsp;&nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。</p>
+        <h2 id="JavaScript的闭包"><a href="#JavaScript的闭包" class="headerlink" title="JavaScript的闭包"></a>JavaScript的闭包</h2><p>原文博客地址：<a href="http://damonare.github.io/2016/09/06/javscript%E9%97%AD%E5%8C%85%E6%B5%85%E8%B0%88/#more">Javascript闭包小结</a></p>
+<p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5">前端进击者（简书）</a></p>
+<p>&nbsp;&nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。</p>
       
       
 
@@ -840,10 +919,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>前端之路何其漫漫~</p>
-</blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;说明：本篇文章原是写给学弟学妹的，但想来花的功夫确实不少，就把此篇文章当做自己的一个阶段性总结文章了，会保持长期更新。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p><strong>总括：</strong> 前端之路何其漫漫~</p>
+<ul>
+<li>原文博客地址：<a href="http://damonare.github.io/2016/09/05/%E6%BC%AB%E8%B0%88%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/#more">漫谈前端之路</a></li>
+<li>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5">前端进击者（简书）</a></li>
+<li>博主博客地址：<a href="http://damonare.cn">Damonare的个人博客</a></li>
+</ul>
+<p><strong>人生一世，草木一秋。</strong></p>
       
       
 
@@ -866,79 +949,6 @@
       
         <p class="article-more-link">
           <a  href="../../2016/09/05/漫谈前端之路/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-
-  
-
-
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-从隐藏元素谈起" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="../../2016/09/05/从隐藏元素谈起/" class="article-date">
-  	<time datetime="2016-09-05T13:54:57.873Z" itemprop="datePublished">2016-09-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2016/09/05/从隐藏元素谈起/">从隐藏元素谈起</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>念念不忘,必有回响,有一口气,点一盏灯。</strong></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：</p>
-<blockquote>
-<p>overflow:hidden<br>opacity:0；<br>visibility:hidden<br>display:none<br>position:absolute<br>clip(clip-path):rect()/inset()/polygon()<br>z-index:-1000</p>
-</blockquote>
-<p><strong>我们为什么会需要这么多隐藏元素的方法呢，而且他们看起来实现的都是同样的效果。其实每一种方法实际上都有一些细微的不同，这些不同决定了在一些特定场合下使用哪一种方法。我们下面细细探讨下这些细微之处.</strong></p>
-      
-      
-
-  
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="../../categories/learn/">学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="../../2016/09/05/从隐藏元素谈起/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

@@ -6,25 +6,49 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>从隐藏元素谈起 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="念念不忘,必有回响,有一口气,点一盏灯。
-前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：
+  <meta name="description" content="前言
+总括： 本文详细讲述了在网页中用CSS隐藏元素的七种方法。
 
-overflow:hiddenopacity:0；visibility:hiddendisplay:noneposition:absoluteclip(clip-path):rect()/i">
+原文博客地址：Git命令总结
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+念念不忘,必有回响;有一口气,点一盏灯。
+正文
+说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从隐藏元素谈起">
 <meta property="og:url" content="http://damonare.github.io/2016/09/05/从隐藏元素谈起/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="念念不忘,必有回响,有一口气,点一盏灯。
-前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：
+<meta property="og:description" content="前言
+总括： 本文详细讲述了在网页中用CSS隐藏元素的七种方法。
 
-overflow:hiddenopacity:0；visibility:hiddendisplay:noneposition:absoluteclip(clip-path):rect()/i">
-<meta property="og:updated_time" content="2016-11-05T04:49:08.664Z">
+原文博客地址：Git命令总结
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+念念不忘,必有回响;有一口气,点一盏灯。
+正文
+说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下">
+<meta property="og:updated_time" content="2016-11-26T05:56:17.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从隐藏元素谈起">
-<meta name="twitter:description" content="念念不忘,必有回响,有一口气,点一盏灯。
-前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：
+<meta name="twitter:description" content="前言
+总括： 本文详细讲述了在网页中用CSS隐藏元素的七种方法。
 
-overflow:hiddenopacity:0；visibility:hiddendisplay:noneposition:absoluteclip(clip-path):rect()/i">
+原文博客地址：Git命令总结
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+念念不忘,必有回响;有一口气,点一盏灯。
+正文
+说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -147,7 +171,7 @@ overflow:hiddenopacity:0；visibility:hiddendisplay:noneposition:absoluteclip(cl
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 14px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/数据结构/" style="font-size: 14px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 12px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -304,11 +328,21 @@ overflow:hiddenopacity:0；visibility:hiddendisplay:noneposition:absoluteclip(cl
       
         <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-overflow"><span class="toc-number">2.</span> <span class="toc-text">1. overflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-opacity"><span class="toc-number">3.</span> <span class="toc-text">2.opacity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-visibility"><span class="toc-number">4.</span> <span class="toc-text">3.visibility</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-display"><span class="toc-number">5.</span> <span class="toc-text">4.display</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-position"><span class="toc-number">6.</span> <span class="toc-text">5.position</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-clip-clip-path"><span class="toc-number">7.</span> <span class="toc-text">6.clip/clip-path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-z-index"><span class="toc-number">8.</span> <span class="toc-text">7.z-index</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后记"><span class="toc-number">9.</span> <span class="toc-text">后记</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number"></span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-overflow"><span class="toc-number">1.</span> <span class="toc-text">1. overflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-opacity"><span class="toc-number">2.</span> <span class="toc-text">2.opacity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-visibility"><span class="toc-number">3.</span> <span class="toc-text">3.visibility</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-display"><span class="toc-number">4.</span> <span class="toc-text">4.display</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-position"><span class="toc-number">5.</span> <span class="toc-text">5.position</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-clip-clip-path"><span class="toc-number">6.</span> <span class="toc-text">6.clip/clip-path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-z-index"><span class="toc-number">7.</span> <span class="toc-text">7.z-index</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后记"><span class="toc-number">8.</span> <span class="toc-text">后记</span></a></li></ol>
         </div>
       
-        <p><strong>念念不忘,必有回响,有一口气,点一盏灯。</strong></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr>
+<p><strong>总括：</strong> 本文详细讲述了在网页中用CSS隐藏元素的七种方法。</p>
+<ul>
+<li>原文博客地址：<a href="http://damonare.github.io/2016/11/13/Git%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more">Git命令总结</a></li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>念念不忘,必有回响;有一口气,点一盏灯。</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
+<p>说起隐藏元素我想每一个前端er都能说起几种，但能说全的我想就不是很多了。博主总结了几种隐藏元素的方法，总结如下：</p>
 <blockquote>
 <p>overflow:hidden<br>opacity:0；<br>visibility:hidden<br>display:none<br>position:absolute<br>clip(clip-path):rect()/inset()/polygon()<br>z-index:-1000</p>
 </blockquote>

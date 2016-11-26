@@ -6,16 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Javascript闭包总结 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaScript的闭包&amp;nbsp;&amp;nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。">
+  <meta name="description" content="JavaScript的闭包原文博客地址：Javascript闭包小结
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+&amp;nbsp;&amp;nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript闭包总结">
 <meta property="og:url" content="http://damonare.github.io/2016/09/06/javscript闭包浅谈/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="JavaScript的闭包&amp;nbsp;&amp;nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。">
-<meta property="og:updated_time" content="2016-11-16T05:03:24.608Z">
+<meta property="og:description" content="JavaScript的闭包原文博客地址：Javascript闭包小结
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+&amp;nbsp;&amp;nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如">
+<meta property="og:updated_time" content="2016-11-25T15:18:52.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript闭包总结">
-<meta name="twitter:description" content="JavaScript的闭包&amp;nbsp;&amp;nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。">
+<meta name="twitter:description" content="JavaScript的闭包原文博客地址：Javascript闭包小结
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+&amp;nbsp;&amp;nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -138,7 +144,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 14px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/数据结构/" style="font-size: 14px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 12px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 10px;">面试</a>
 					</div>
 				</section>
 				
@@ -298,7 +304,9 @@
           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript的闭包"><span class="toc-number">1.</span> <span class="toc-text">JavaScript的闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript中的作用域"><span class="toc-number">1.1.</span> <span class="toc-text">JavaScript中的作用域</span></a></li></ol></li></ol>
         </div>
       
-        <h2 id="JavaScript的闭包"><a href="#JavaScript的闭包" class="headerlink" title="JavaScript的闭包"></a>JavaScript的闭包</h2><p>&nbsp;&nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。</p>
+        <h2 id="JavaScript的闭包"><a href="#JavaScript的闭包" class="headerlink" title="JavaScript的闭包"></a>JavaScript的闭包</h2><p>原文博客地址：<a href="http://damonare.github.io/2016/09/06/javscript%E9%97%AD%E5%8C%85%E6%B5%85%E8%B0%88/#more">Javascript闭包小结</a></p>
+<p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+<p>&nbsp;&nbsp;其实关于闭包各个论坛社区里都有很多的文章来讲它，毕竟闭包是JavaScript中一个特色，也正因为这个雨中不同的特色也让闭包理解起来有一些吃力。笔者在这里不仅仅是想介绍闭包，也向列举一些笔者所见过的一些闭包，如果有读者还有一些比较经典的闭包例子，希望可以在评论区里留一下，谢谢。</p>
 <a id="more"></a>
 <p><strong>说了半天，究竟什么是闭包呢？</strong></p>
 <ul>
@@ -313,7 +321,7 @@
 <ul>
 <li>闭包：是指有权访问另外一个函数作用域中的变量的函数。</li>
 </ul>
-<h3 id="JavaScript中的作用域"><a href="#JavaScript中的作用域" class="headerlink" title="JavaScript中的作用域"></a>JavaScript中的作用域</h3><p>&nbsp;&nbsp;<strong>JavaScript中是没有块级作用域的。不过关于块级作用域我们在这里不做深入探究，笔者在<a><a href="http://segmentfault.com/a/1190000004092842M" target="_blank" rel="external">http://segmentfault.com/a/1190000004092842M</a></a>中有对块级作用域较为详细的解释，不懂的读者可以去看看。</strong></p>
+<h3 id="JavaScript中的作用域"><a href="#JavaScript中的作用域" class="headerlink" title="JavaScript中的作用域"></a>JavaScript中的作用域</h3><p>&nbsp;&nbsp;<strong>JavaScript中是没有块级作用域的。不过关于块级作用域我们在这里不做深入探究，笔者在<a href="https://segmentfault.com/a/1190000004092842" target="_blank" rel="external">JavaScript的作用域和块级作用域概念理解</a>中有对块级作用域较为详细的解释，不懂的读者可以去看看。</strong></p>
 <blockquote>
 <p>变量的作用域无非就是两种：全局变量和局部变量。</p>
 <p>Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。</p>
