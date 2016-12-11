@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-12-11T06:26:39.150Z</updated>
+  <updated>2016-12-11T10:11:05.832Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2016/12/07/CSS%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
     <id>http://damonare.github.io/2016/12/07/CSS三栏布局的四种方法/</id>
     <published>2016-12-07T13:15:42.218Z</published>
-    <updated>2016-12-11T06:26:39.150Z</updated>
+    <updated>2016-12-11T10:11:05.832Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 不管是三栏布局还是两栏布局都是我们在平时项目里经常使用的，也许你不知道什么事三栏布局什么是两栏布局但实际已经在用，或许你知道三栏布局的一种或两种方法，但实际操作中也只会依赖那某一种方法，本文具体的介绍了三栏布局的四种方法，并介绍了它的使用场景。</p>
 <ul>
@@ -39,7 +39,7 @@
 <h3 id="1-绝对定位法"><a href="#1-绝对定位法" class="headerlink" title="1.绝对定位法"></a>1.绝对定位法</h3><p>HTML代码如下:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>Left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span>Main<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>Right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>CSS代码如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//简单的进行CSS reset</div><div class="line">body,html&#123;</div><div class="line">    height:100%;</div><div class="line">    padding: 0px;</div><div class="line">    margin:0px;</div><div class="line">&#125;</div><div class="line">//左右绝对定位</div><div class="line">.left,.right&#123;</div><div class="line">    position: absolute;</div><div class="line">    top:0px;</div><div class="line">    background: red;</div><div class="line">    height:100%;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">    left:0;</div><div class="line">    width:100px;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">    right:0px;</div><div class="line">    width:200px;</div><div class="line">&#125;</div><div class="line">//中间使用margin空出左右元素所占据的空间</div><div class="line">.main&#123;</div><div class="line">    margin:0px 100px 200px 0px;</div><div class="line">    height:100%;</div><div class="line">    background: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//简单的进行CSS reset</div><div class="line">body,html&#123;</div><div class="line">    height:100%;</div><div class="line">    padding: 0px;</div><div class="line">    margin:0px;</div><div class="line">&#125;</div><div class="line">//左右绝对定位</div><div class="line">.left,.right&#123;</div><div class="line">    position: absolute;</div><div class="line">    top:0px;</div><div class="line">    background: red;</div><div class="line">    height:100%;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">    left:0;</div><div class="line">    width:100px;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">    right:0px;</div><div class="line">    width:200px;</div><div class="line">&#125;</div><div class="line">//中间使用margin空出左右元素所占据的空间</div><div class="line">.main&#123;</div><div class="line">    margin:0px 200px 0px 100px;</div><div class="line">    height:100%;</div><div class="line">    background: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>该方法有个明显的缺点，就是如果中间栏含有最小宽度限制，或是含有宽度的内部元素，当浏览器宽度小到一定程度，会发生层重叠的情况。</p>
 <h3 id="2-圣杯布局"><a href="#2-圣杯布局" class="headerlink" title="2. 圣杯布局"></a>2. 圣杯布局</h3><p>HTML代码如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//注意元素次序</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span>Main<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>Left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>Right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -60,7 +60,7 @@
 <h3 id="4-浮动"><a href="#4-浮动" class="headerlink" title="4. 浮动"></a>4. 浮动</h3><p>HTML代码如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//注意元素次序</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>Left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>Right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span>Main<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>CSS代码如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//CSS reset</div><div class="line">body,html &#123;</div><div class="line">    height:100%;</div><div class="line">    padding: 0;</div><div class="line">    margin: 0</div><div class="line">&#125;</div><div class="line">//左栏左浮动</div><div class="line">.left &#123;</div><div class="line">    background: red;</div><div class="line">    width: 100px;</div><div class="line">    float: left;</div><div class="line">    height: 100%;</div><div class="line">&#125;</div><div class="line">//中间自适应</div><div class="line">.main &#123;</div><div class="line">    background: blue;</div><div class="line">    height: 100%;</div><div class="line">    margin:0px 100px 0px 200px;</div><div class="line">&#125;</div><div class="line">//右栏右浮动</div><div class="line">.right &#123;</div><div class="line">    background: red;</div><div class="line">    width: 200px;</div><div class="line">    float: right;</div><div class="line">    height: 100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//CSS reset</div><div class="line">body,html &#123;</div><div class="line">    height:100%;</div><div class="line">    padding: 0;</div><div class="line">    margin: 0</div><div class="line">&#125;</div><div class="line">//左栏左浮动</div><div class="line">.left &#123;</div><div class="line">    background: red;</div><div class="line">    width: 100px;</div><div class="line">    float: left;</div><div class="line">    height: 100%;</div><div class="line">&#125;</div><div class="line">//中间自适应</div><div class="line">.main &#123;</div><div class="line">    background: blue;</div><div class="line">    height: 100%;</div><div class="line">    margin:0px 200px 0px 100px;</div><div class="line">&#125;</div><div class="line">//右栏右浮动</div><div class="line">.right &#123;</div><div class="line">    background: red;</div><div class="line">    width: 200px;</div><div class="line">    float: right;</div><div class="line">    height: 100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这种方式代码足够简洁与高效，也容易理解</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>四种方法其实只有圣杯布局和双飞翼布局较难理解，但实际上理解了圣杯布局，双飞翼布局自然就理解了。</p>
 ]]></content>
@@ -175,9 +175,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -641,9 +641,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -1234,9 +1234,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -1858,9 +1858,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -3280,11 +3280,11 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
+      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+      <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
     
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
