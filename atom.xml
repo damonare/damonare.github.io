@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-12-13T12:05:39.252Z</updated>
+  <updated>2016-12-13T12:09:12.376Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://damonare.github.io/2016/12/13/%E6%88%91%E7%9A%84Web%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86-%E7%99%BE%E5%BA%A6/"/>
     <id>http://damonare.github.io/2016/12/13/我的Web面试经历-百度/</id>
     <published>2016-12-13T08:18:32.655Z</published>
-    <updated>2016-12-13T12:05:39.252Z</updated>
+    <updated>2016-12-13T12:09:12.376Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong>  本文总结了博主最近参加百度FE工程师面试过程中的一些心得和体会，分享给还在求职的同学以作参考，希望能给以帮助或是启迪。另外博主就读于<a href="http://www.xidian.edu.cn/" target="_blank" rel="external">西安电子科技大学</a>，现在是大三在读。</p>
 <ul>
-<li><p>原文博客地址：<a href="">百度FE工程师实习offer到手记</a></p>
+<li><p>原文博客地址：<a href="http://damonare.github.io/2016/12/13/%E6%88%91%E7%9A%84Web%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86-%E7%99%BE%E5%BA%A6/#more">百度FE工程师实习offer到手记</a></p>
 </li>
 <li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
 </li>
@@ -137,7 +137,7 @@
     
       &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt;  本文总结了博主最近参加百度FE工程师面试过程中的一些心得和体会，分享给还在求职的同学以作参考，希望能给以帮助或是启迪。另外博主就读于&lt;a href=&quot;http://www.xidian.edu.cn/&quot;&gt;西安电子科技大学&lt;/a&gt;，现在是大三在读。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;&quot;&gt;百度FE工程师实习offer到手记&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/12/13/%E6%88%91%E7%9A%84Web%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86-%E7%99%BE%E5%BA%A6/#more&quot;&gt;百度FE工程师实习offer到手记&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -3420,11 +3420,11 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
+      <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
+    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
     
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
