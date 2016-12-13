@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2016-12-11T10:11:05.832Z</updated>
+  <updated>2016-12-13T12:05:39.252Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -14,6 +14,146 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>百度FE工程师实习offer到手记</title>
+    <link href="http://damonare.github.io/2016/12/13/%E6%88%91%E7%9A%84Web%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86-%E7%99%BE%E5%BA%A6/"/>
+    <id>http://damonare.github.io/2016/12/13/我的Web面试经历-百度/</id>
+    <published>2016-12-13T08:18:32.655Z</published>
+    <updated>2016-12-13T12:05:39.252Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong>  本文总结了博主最近参加百度FE工程师面试过程中的一些心得和体会，分享给还在求职的同学以作参考，希望能给以帮助或是启迪。另外博主就读于<a href="http://www.xidian.edu.cn/" target="_blank" rel="external">西安电子科技大学</a>，现在是大三在读。</p>
+<ul>
+<li><p>原文博客地址：<a href="">百度FE工程师实习offer到手记</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>没有什么能够阻挡，你对自由的向往。</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote>
+<p>整个面试过程是略微曲折的，博主参加了百度两个部门的面试，一个部门拿到了实习offer，另一个部门挂在了二面。文后暂且称为部门甲和部门乙吧。</p>
+</blockquote>
+<h3 id="面试前"><a href="#面试前" class="headerlink" title="面试前"></a>面试前</h3><p><strong>基础知识储备</strong></p>
+<p>作为一个FE(front-end,也就是前端)工程师基础的扎实是十分重要的。基本的HTML，CSS，Javascript知识得懂吧，自己的技术栈得建立起来吧，毕竟前端框架层出不穷，起码要有一个稳定的路线支撑着自己研究下去啊。基础知识部分这里推荐两篇博主之前的博文：</p>
+<ul>
+<li><a href="http://damonare.github.io/2016/09/07/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/#more">前端面试题集</a></li>
+<li><a href="http://damonare.github.io/2016/09/05/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%A4%A7%E5%85%A8/#more">前端面试大全</a></li>
+</ul>
+<p>有一篇是我自己总结的，一篇是转载大牛的，都可以看一下。</p>
+<p><strong>简历与经历</strong></p>
+<p>好的表达能力确实是很加分的，语言流畅，思路清晰，多说专业词汇，我觉得会给面试官留下很好的印象。将简历的内容完整的表达出来并不容易，每一个人在刚开始写简历的时候肯定都会尽量把自己忘好的方向写，但心里没有个尺度是不行的，太完美的人是不存在的，敢写就先要想好如果面试官问该怎么回答，或是会问什么问题，站在面试官的角度思考一下，某一方面到底有没有必要写在简历里。这个自己心里是要有数的。比如：关于某社团经历，组织过什么小活动，怎么组织的，时间地点人物安排的流程是什么样的，心里是要有准的;再比如：关于某项目经历，该项目的技术难点，遇到的问题以及解决方法，技术栈是啥，由几部分人组成，开发周期等信息心里是要有数的。</p>
+<p>简历这块我总结如下，最基本的：</p>
+<ul>
+<li>姓名、电话、邮箱、学校、位置等必要信息</li>
+<li>项目经历(技术栈，个人担任的角色，项目内容要说明白</li>
+<li>获奖经历(别把高中得过三好学生这种的扯出来就好…)</li>
+<li>个人性格(纯属凑字数)</li>
+</ul>
+<p>加分项：</p>
+<ul>
+<li>实习经历</li>
+<li>Github开源项目</li>
+<li>个人博客</li>
+</ul>
+<p><strong>投递地址</strong></p>
+<p>可以找一些招聘网站投递简历，比如：</p>
+<ul>
+<li><a href="http://my.zhaopin.com/" target="_blank" rel="external">智联招聘</a></li>
+<li><a href="http://my.51job.com/" target="_blank" rel="external">前程无忧</a></li>
+<li><a href="http://passport.lagou.com/" target="_blank" rel="external">拉钩</a></li>
+<li>相关企业的校招网站</li>
+<li>大佬内推</li>
+</ul>
+<h3 id="面试中"><a href="#面试中" class="headerlink" title="面试中"></a>面试中</h3><p>博主先面试的是部门甲，一面面试官声音很好听，给人一种很放松的感觉。<br>下面是一面问的问题：</p>
+<ul>
+<li>自我介绍</li>
+<li>拿手项目难点解决方法</li>
+<li>gulp和webpack对比</li>
+<li>git和svn对比</li>
+<li>CSS居中方法</li>
+<li>vue和react对比</li>
+<li>如何用栈实现队列</li>
+<li>取球算法问题</li>
+<li>Es6你常用的特性</li>
+<li>jquery和react对比</li>
+<li>原生实现ajax</li>
+<li>口述react单项数据流</li>
+<li>react子组件如何传值给父组件</li>
+</ul>
+<p>一面太紧张了，很多问题回答的支支吾吾的，好在大佬给了二面机会，二面的面试官感觉性格也是很好的那种人，有说有笑的，问的问题如下：</p>
+<ul>
+<li>HTML5表单新特性</li>
+<li>自己总结下编写html使用嵌套的注意点</li>
+<li>scss的好处</li>
+<li>写过什么复杂的数据交互的页面没，介绍下</li>
+<li>无限级联动的注意点</li>
+<li>描述下跨域使用场景，举例说明</li>
+<li>gulp和webpack对比介绍</li>
+<li>gulp和webpack原理区别</li>
+<li>口述如何模拟radio，模拟下拉框</li>
+</ul>
+<p>然后参加了部门乙的一面，问题如下：</p>
+<ul>
+<li>CSS两栏布局</li>
+<li>gulp和webpack对比</li>
+<li>vue和react对比</li>
+</ul>
+<p>这次的一面博主忘记做记录了，很多问题想不起来了….十分抱歉，二面很简单，问题如下：</p>
+<ul>
+<li>分析下URL由哪几部分组成的</li>
+<li>冒泡排序的时间复杂度，是否稳定</li>
+<li>堆排序的时间复杂度，是否稳定</li>
+<li>单链表反转</li>
+</ul>
+<p>博主自以为这四个问题答得还可以呢，以为应该过了，最后原来只是我以为…部门乙的面试石沉大海再无消息。</p>
+<p>隔天,部门甲来电话说给我笔试题，让我做做看。用他们的技术栈实现一个备忘录，要求一周内完成。说是备忘录实际上就是稍微复杂一点的todolist。技术栈要求：react+redux+react-router+less+ES6。</p>
+<p>这事似乎有门！博主抓紧查阅了资料学习。之前对于react是熟悉的但redux一直没怎么懂，另外博主平时使用较多的CSS预处理语言是scss，less没用过，又是一通查阅。好在博主小爆发了一下，两天时间写完了，交了上去。现在看看，感觉自己还是有潜力发掘的，人被逼急了大脑真是会疯狂运转。算是超预期完成了吧，加上了react-router和本地化存储以及一些小feature。下面是在线地址，感兴趣的话您可以去看看：<a href="http://damonare.cn/memos" target="_blank" rel="external">Damonare的备忘录</a></p>
+<p>笔试题结束后，隔了几天(大佬看完了我的笔试题代码之后)，来了三面，三面的面试官也很和蔼，给人一种很亲切的感觉。大概聊了一下具体的时间安排以及我平时的一些活动和对于一些专业名词的理解。面试官说我技术面实际上表现的很不好，很多问题都答得不尽人意，但看我挺喜欢这行的，就给了我一次笔试的机会，好在我笔试过关了…(很后怕啊)</p>
+<h3 id="面试后"><a href="#面试后" class="headerlink" title="面试后"></a>面试后</h3><p>技术面试流程我总结是这样的：</p>
+<ul>
+<li>自我介绍(必不可少啊，总得让面试官大概的了解自己吧)</li>
+<li>基础知识阶段(广度阶段)</li>
+<li>项目中遇到的难点以及解决方法</li>
+<li>针对某一技术进行深度挖掘</li>
+<li>你有什么要问我的</li>
+</ul>
+<p>我个人在最后的阶段，两个部门都问了一下他们现在所使用的的技术栈。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>实际上能拿到这次百度的实习offer，您也能看出来很大一部分我靠的都是运气。部门甲的面试官们看了我的博客，同时他们在面试的时候也就几篇博文对我提了几个问题，可能也是从博客看出我对于FE的喜爱的吧。所以给了笔试的机会，否则我想部门甲的面试也会和部门乙一样挂掉。</p>
+<p>但话说回来了，博客是自己搭的，博文是一篇一篇积累起来的，也不能说全是运气。</p>
+<p>引用一句从一位现在在阿里工作的学长的一句话：<code>让别人知道你知道</code>。</p>
+<p>让别人知道你知道，说起来好像很简单，但其实做起来并不容易，这个并不是只靠说的，嘴巴一张一合也只是让一个人知道了而已。想让更多人知道就得下点功夫了。不要在意别人的言语，包括博主自己现在某种程度上还是活在别人的眼里。那种过于在意别人的言语，渐渐把自己活成别人眼里的模样的人不是很可悲么。活出自己！过自己的生活，与他人何干。就像博主平时会码代码码到很晚，旁边也常传来一些不理解的话，诸如<code>码农</code>、<code>天天就知道写代码</code>。做自己！干自己喜欢的事！何必去理别人的看法呢！</p>
+<p>另外，博主不是科班出身，不要以非科班或自己是个文科生去逃避，喜欢就去学，想做就做！Man一点好伐！诸如阮一峰，尤小右那样的大神不也是非科班一步步成就了现在的地位的么。</p>
+<p>还有一点，如果您是一个现在在犹豫是否学习FE或是其他技术的人，请理智一点！千万不要拿我不喜欢技术这种枯燥的事为理由搪塞，谁告诉你技术枯燥的？！网络就是程序员的天下，所谓的程序员呆板钱多话少死得早都是程序员自黑的话，这种你也敢信？文字工作发泄情绪的平台是笔杆子，农民发泄情绪的平台是锄头，可悲的是这些并不会被大多数人看到，而程序员的自黑却会被整个网络的人看到。这点道理不明白？羡慕高薪就去学，学完了再去评论。没学过就说不感兴趣，那是愚蠢的！</p>
+<p>最后，试着去推销自己吧，<code>让别人知道你知道</code>的方式有很多，诸如：做公众号，开专栏，写博客等方式。</p>
+<p>当然为了不必要的烦恼，最好还是用昵称来经营自己。那么，博主选择方式就是写博客了。</p>
+<p>就写博客这件事来说，一来可以作为自己学习的记录，二来可以作为一个学习笔记，三来可以作为一个知识分享的形式，一举三得，实在是个很好的方式。博主刚开始写的时候是没有人看的，当您正处在这个阶段的时候，不要放弃，坚持写，坚持记录，总有一天会有人发现某一篇博文的精彩的。不求带来多少经济利益，只为能给屏幕前的读者一丝帮助或是启迪。</p>
+<p>总的来说，面试必需的三个要素我觉得如下：<code>礼貌</code>、<code>专业能力</code>、<code>运气</code>。一次面试的失败并没有什么，天时地利人和是很难凑齐的。不要灰心丧气，重整旗鼓，再战苍穹便是！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt;  本文总结了博主最近参加百度FE工程师面试过程中的一些心得和体会，分享给还在求职的同学以作参考，希望能给以帮助或是启迪。另外博主就读于&lt;a href=&quot;http://www.xidian.edu.cn/&quot;&gt;西安电子科技大学&lt;/a&gt;，现在是大三在读。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;&quot;&gt;百度FE工程师实习offer到手记&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;没有什么能够阻挡，你对自由的向往。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="实习" scheme="http://damonare.github.io/categories/%E5%AE%9E%E4%B9%A0/"/>
+    
+    
+      <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS三栏布局的四种方法</title>
@@ -175,9 +315,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -641,9 +781,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -945,7 +1085,7 @@
 <h4 id="变量的块级作用域"><a href="#变量的块级作用域" class="headerlink" title="变量的块级作用域"></a>变量的块级作用域</h4><p>使用 ES6，声明变量我们可以用 <code>var</code> ，也可以用 <code>let</code> 或 <code>const</code>。</p>
 <p><code>var</code> 有什么不足？</p>
 <p>使用 <code>var</code> 的问题是变量会漏入其他代码块中，诸如 <code>for</code> 循环或 <code>if</code> 代码块。</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
 <p>对于 <code>test(fasle)</code> ，你期望返回 <code>outer</code>，<strong>但是</strong>，你得到的是 <code>undefined</code>。</p>
 <p>为什么？</p>
 <p>因为尽管没有执行 <code>if</code> 代码块，第四行中的表达式 <code>var x</code> 也会被提升。</p>
@@ -957,7 +1097,7 @@
 <li>初始化是不被提升的。如果你使用 <code>var</code> 声明变量，请总是将它放在顶部。</li>
 <li>在应用了声明提升规则之后，我们就能更容易地理解发生了什么：</li>
 </ul>
-<pre><code><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x; <span class="comment">// 声明提升</span></div><div class="line">    <span class="keyword">if</span> (inner) &#123;</div><div class="line">        x = <span class="string">'inner'</span>; <span class="comment">// 初始化不被提升</span></div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> x; <span class="comment">// 声明提升</span></div><div class="line">    <span class="keyword">if</span> (inner) &#123;</div><div class="line">        x = <span class="string">'inner'</span>; <span class="comment">// 初始化不被提升</span></div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre></blockquote>
 <p>ECMAScript 2015 找到了解决的办法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">let</span> x = <span class="string">'inner'</span>;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 从第一行获取到预期结果</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// outer</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
@@ -978,7 +1118,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> private2 = <span class="number">1</span>;</div><div class="line">&#125;)();</div><div class="line"><span class="built_in">console</span>.log(private2); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
 <p>如果你看一看 jQuery/loadsh 或其他开源项目，你会注意到他们用 IIFE 来避免污染全局环境而且只在全局中定义了诸如 <code>_</code>，<code>$</code>和<code>jQuery</code>。</p>
 <p>在 ES6 上则一目了然，我们可以只用代码块和 <code>let</code>，也不再需要使用 IIFE了。</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> private3 = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(private3); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> private3 = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(private3); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
 <p><strong>Const</strong></p>
 <p>如果你想要一个变量保持不变（常量），你也可以使用 <code>const</code>。</p>
 <p><img src="http://adrianmejia.com/images/javascript-es6-const-variables-example.png" alt="" title="const variable example"></p>
@@ -1006,7 +1146,7 @@
 <p><strong>交换值</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> tmp = a;</div><div class="line">a = b;</div><div class="line">b = tmp;</div><div class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
 <p>等同于：</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line">[a, b] = [b, a];</div><div class="line">console.<span class="built_in">log</span>(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line">[a, b] = [b, a];</div><div class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
 <p><strong>多个返回值的解构</strong></p>
 <figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function margin() &#123;</div><div class="line">  var <span class="built_in">left</span>=<span class="number">1</span>, <span class="built_in">right</span>=<span class="number">2</span>, <span class="built_in">top</span>=<span class="number">3</span>, <span class="built_in">bottom</span>=<span class="number">4</span>;</div><div class="line">  <span class="keyword">return</span> &#123; <span class="built_in">left</span>: <span class="built_in">left</span>, <span class="built_in">right</span>: <span class="built_in">right</span>, <span class="built_in">top</span>: <span class="built_in">top</span>, <span class="built_in">bottom</span>: <span class="built_in">bottom</span> &#125;;</div><div class="line">&#125;</div><div class="line">var data = margin();</div><div class="line">var <span class="built_in">left</span> = data.<span class="built_in">left</span>;</div><div class="line">var <span class="built_in">bottom</span> = data.<span class="built_in">bottom</span>;</div><div class="line">console.log(<span class="built_in">left</span>, <span class="built_in">bottom</span>); // <span class="number">1</span> <span class="number">4</span></div></pre></td></tr></table></figure>
 <p>在第 3 行中，你也可以用一个像这样的数组返回（同时省去了一些编码）：</p>
@@ -1234,9 +1374,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -1858,9 +1998,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -3335,7 +3475,7 @@ Model：数据访问层
 </ul>
 <blockquote>
 <p>好的，现在我们Node,git,github都弄好了，现在可以本地化一个hexo了,新建hexo文件夹，任意盘下都可以，然后命令行执行命令：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo -g  <span class="comment">#-g表示全局安装, npm默认为当前项目安装</span></div></pre></td></tr></table></figure></p>
-<p>如果遇到错误：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure></p>
+<p>如果遇到错误：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [<span class="built_in">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [<span class="built_in">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [<span class="built_in">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure></p>
 <p>改用下面的命令安装：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> install hexo --<span class="literal">no</span>-optional</div></pre></td></tr></table></figure></p>
 <p>好的，现在hexo也就绪了,hexo命令：</p>
 </blockquote>
@@ -3564,100 +3704,6 @@ Model：数据访问层
     
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS居中小谈</title>
-    <link href="http://damonare.github.io/2016/09/06/CSS%E5%B1%85%E4%B8%AD%E5%B0%8F%E8%B0%88/"/>
-    <id>http://damonare.github.io/2016/09/06/CSS居中小谈/</id>
-    <published>2016-09-05T16:01:12.627Z</published>
-    <updated>2016-11-30T09:59:44.313Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong>  CSS居中一直是一个比较敏感的话题，为了以后开发的方便，楼主觉得确实需要总结一下了，总的来说，居中问题分为垂直居中和水平居中，实际上水平居中是很简单的，但垂直居中的方式和方法就千奇百怪了。</p>
-<ul>
-<li><p>原文地址：<a href="http://damonare.github.io/2016/09/06/CSS%E5%B1%85%E4%B8%AD%E5%B0%8F%E8%B0%88/#more">CSS居中小谈</a></p>
-</li>
-<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
-</li>
-<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-</li>
-</ul>
-<p><strong>人生用物，各有天限；夏涝太多，必有秋旱。</strong></p>
-<a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="内联元素居中方案"><a href="#内联元素居中方案" class="headerlink" title="内联元素居中方案"></a>内联元素居中方案</h3><p><strong>水平居中设置：</strong></p>
-<ol>
-<li><p>行内元素 设置 text-align:center；</p>
-</li>
-<li><p>Flex布局 设置display:flex;justify-content:center;(灵活运用)</p>
-</li>
-</ol>
-<p><strong>垂直居中设置：</strong></p>
-<ol>
-<li>父元素高度确定的单行文本（内联元素） 设置 height = line-height；</li>
-<li><p>父元素高度确定的多行文本（内联元素） a:插入 table （插入方法和水平居中一样），然后设置 vertical-align:middle； b:先设置 display:table-cell 再设置 vertical-align:middle；</p>
-<h2 id="块级元素居中方案"><a href="#块级元素居中方案" class="headerlink" title="块级元素居中方案"></a>块级元素居中方案</h2><p><strong>水平居中设置：</strong></p>
-</li>
-<li><p>定宽块状元素 设置 左右 margin 值为 auto；</p>
-</li>
-<li><p>不定宽块状元素 a:在元素外加入 table 标签（完整的，包括 table、tbody、tr、td），该元素写在 td 内，然后设置 margin 的值为 auto； b:给该元素设置 display:inine 方法； c:父元素设置 position:relative 和 left:50%，子元素设置 position:relative 和 left:50%；</p>
-</li>
-</ol>
-<p><strong>垂直居中设置：</strong></p>
-<ul>
-<li><p>1.使用position:absolute（fixed）,设置left、top、margin-left、margin-top的属性;</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line"><span class="attribute">position</span>:absolute;<span class="comment">/*或fixed*/</span></div><div class="line"><span class="attribute">top</span>:<span class="number">50%</span>;</div><div class="line"><span class="attribute">left</span>:<span class="number">50%</span>;</div><div class="line"><span class="attribute">margin-top</span>:-<span class="number">100px</span>;</div><div class="line"><span class="attribute">margin-left</span>:-<span class="number">200px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>2.利用position:fixed（absolute）属性，margin:auto这个必须不要忘记了;</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    position: absolute;或fixed</div><div class="line">    top:0;</div><div class="line">    right:0;</div><div class="line">    bottom:0;</div><div class="line">    left:0;</div><div class="line">    margin: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>3.利用display:table-cell属性使内容垂直居中,这个方法在多行文字居中的时候用的比较多;</li>
-</ul>
-<p>HTML代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>多行文字，此处居中设置<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>CSS代码：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">display</span>:table-cell;</div><div class="line">    <span class="attribute">vertical-align</span>:middle;</div><div class="line">    <span class="attribute">text-align</span>:center;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">120px</span>;</div><div class="line">    <span class="attribute">background</span>:purple;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">span</span>&#123;</div><div class="line">    <span class="attribute">display</span>: inline-block;</div><div class="line">    <span class="attribute">vertical-align</span>: middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>4.使用css3的新属性transform:translate(x,y)属性;</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>:<span class="number">50%</span>;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%,-50%);</div><div class="line">    <span class="attribute">-webkit-transform</span>:<span class="built_in">translate</span>(-50%,-50%);</div><div class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">translate</span>(-50%,-50%);</div><div class="line">    <span class="attribute">-ms-transform</span>:<span class="built_in">translate</span>(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>5.最高大上的一种，使用before，after伪元素;</li>
-</ul>
-<p>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'box'</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'content'</span>&gt;</span></div><div class="line">        垂直居中</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>CSS代码：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">position</span>:fixed;</div><div class="line">    <span class="attribute">display</span>:block;</div><div class="line">    <span class="attribute">background</span>:<span class="built_in">rgba</span>(0,0,0,.5);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:before</span>&#123;</div><div class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</div><div class="line">    <span class="attribute">display</span>:inline-block;</div><div class="line">    <span class="attribute">vertical-align</span>:middle;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</div><div class="line">    <span class="attribute">display</span>:inline-block;</div><div class="line">    <span class="attribute">vertical-align</span>:middle;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-class">.content</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">60px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">60px</span>;</div><div class="line">    <span class="attribute">line-height</span>:<span class="number">60px</span>;</div><div class="line">    <span class="attribute">color</span>:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>6.Flex布局;</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    display: -webkit-box;</div><div class="line">    display: -webkit-flex;</div><div class="line">    display: -moz-box;</div><div class="line">    display: -moz-flex;</div><div class="line">    display: -ms-flexbox;</div><div class="line">    display: flex;</div><div class="line">    水平居中</div><div class="line">    -webkit-box-align: center;</div><div class="line">    -moz-box-align: center;</div><div class="line">    -ms-flex-pack:center;</div><div class="line">    -webkit-justify-content: center;</div><div class="line">    -moz-justify-content: center;</div><div class="line">    justify-content: center;</div><div class="line">     垂直居中</div><div class="line">    -webkit-box-pack: center;</div><div class="line">    -moz-box-pack: center;</div><div class="line">    -ms-flex-align:center;</div><div class="line">    -webkit-align-items: center;</div><div class="line">    -moz-align-items: center;</div><div class="line">    align-items: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
-<p>博主暂时掌握了这些居中方法，读者如果还有好方法或是觉得那个地方不对，欢迎评论，不吝感谢。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt;  CSS居中一直是一个比较敏感的话题，为了以后开发的方便，楼主觉得确实需要总结一下了，总的来说，居中问题分为垂直居中和水平居中，实际上水平居中是很简单的，但垂直居中的方式和方法就千奇百怪了。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/09/06/CSS%E5%B1%85%E4%B8%AD%E5%B0%8F%E8%B0%88/#more&quot;&gt;CSS居中小谈&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;人生用物，各有天限；夏涝太多，必有秋旱。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
-    
-    
-      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
   </entry>
   
