@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>React全家桶实现一个简易备忘录 | Damonare的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言总括： 本文采用react+redux+react-router+less+es6+webpack,以实现一个简易备忘录(todolist)为例尽可能全面的讲述使用react全家桶实现一个完整应用的过程。
+
+代码地址：Github代码地址
+
+原文博客地址：React全家桶实现一个简易备忘录
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React全家桶实现一个简易备忘录">
+<meta property="og:url" content="http://damonare.github.io/2016/12/19/React全家桶实现简易备忘录/index.html">
+<meta property="og:site_name" content="Damonare的个人博客">
+<meta property="og:description" content="前言总括： 本文采用react+redux+react-router+less+es6+webpack,以实现一个简易备忘录(todolist)为例尽可能全面的讲述使用react全家桶实现一个完整应用的过程。
+
+代码地址：Github代码地址
+
+原文博客地址：React全家桶实现一个简易备忘录
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主">
+<meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/1444448853198657.jpg">
+<meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/6b3fb1df3ad9c95354280a332065941a_thumb.png">
+<meta property="og:updated_time" content="2016-12-20T05:55:35.679Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React全家桶实现一个简易备忘录">
+<meta name="twitter:description" content="前言总括： 本文采用react+redux+react-router+less+es6+webpack,以实现一个简易备忘录(todolist)为例尽可能全面的讲述使用react全家桶实现一个完整应用的过程。
+
+代码地址：Github代码地址
+
+原文博客地址：React全家桶实现一个简易备忘录
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主">
+<meta name="twitter:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/1444448853198657.jpg">
+  
+  
+    <link rel="icon" href="/./img/1.png">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <!-- scripts -->
+ <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/js/particles.min.js" src="/js/particles.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Damonare</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不念过去，不畏将来</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://damonare.cn/">博客首页</a></li>
+				        
+							<li><a href="../../../../index.html">主页</a></li>
+				        
+							<li><a href="../../../../archives">所有文章</a></li>
+				        
+							<li><a href="../../../../categories/随笔/">随笔</a></li>
+				        
+							<li><a href="../../../../categories/learn/">学习</a></li>
+				        
+							<li><a href="../../../../categories/life/">生活</a></li>
+				        
+							<li><a href="../../../../categories/其它/">其它</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+					        
+								<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+					        
+								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="../../../../tags/CSS/" style="font-size: 18px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 16px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 12px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/React/" style="font-size: 10px;">React</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 12px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/思考/" style="font-size: 10px;">思考</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 16px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 14px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 12px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 12px;">面试</a>
+					</div>
+				</section>
+				
+
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://xdlrt.github.io/">卢睿韬的自留地</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lcodecorex.github.io/">Oscar Blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://qiutc.me/">阿城的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://touch28.github.io/">Lingo的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lengxing.github.io/">冷星</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiao1ong.cn/">xiao1ong</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">姓名：谭继臻    性别：男     学习经历：2014-至今 就读于西安电子科技大学     邮箱：jztan1996@gmail.com     QQ:577964075      微信：tjz19960421</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Damonare</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Damonare</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不念过去，不畏将来</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://damonare.cn/">博客首页</a></li>
+		        
+					<li><a href="../../../../index.html">主页</a></li>
+		        
+					<li><a href="../../../../archives">所有文章</a></li>
+		        
+					<li><a href="../../../../categories/随笔/">随笔</a></li>
+		        
+					<li><a href="../../../../categories/learn/">学习</a></li>
+		        
+					<li><a href="../../../../categories/life/">生活</a></li>
+		        
+					<li><a href="../../../../categories/其它/">其它</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+			        
+						<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+			        
+						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-React全家桶实现简易备忘录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="" class="article-date">
+  	<time datetime="2016-12-19T09:34:38.262Z" itemprop="datePublished">2016-12-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React全家桶实现一个简易备忘录
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../../../categories/learn/">学习</a>
+	</div>
+
+
+    
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  热度： <span id="busuanzi_value_page_pv"></span>℃</span>
+  </div>
+  
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          <!-- Table of Contents -->
+      
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#技术说明"><span class="toc-number">1.1.</span> <span class="toc-text">技术说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能说明"><span class="toc-number">1.2.</span> <span class="toc-text">功能说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-React浅谈"><span class="toc-number">2.1.</span> <span class="toc-text">1. React浅谈</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-组件化"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1  组件化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-JSX语法糖"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2  JSX语法糖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-Virtual-DOM"><span class="toc-number">2.1.3.</span> <span class="toc-text">1.3  Virtual DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-函数式编程"><span class="toc-number">2.1.4.</span> <span class="toc-text">1.4 函数式编程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-数据流"><span class="toc-number">2.1.5.</span> <span class="toc-text">1.5 数据流</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-React-router"><span class="toc-number">2.2.</span> <span class="toc-text">2. React-router</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Redux"><span class="toc-number">2.3.</span> <span class="toc-text">3. Redux</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-简介"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-Store"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2 Store</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-action"><span class="toc-number">2.3.3.</span> <span class="toc-text">3.3 action</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-reducer"><span class="toc-number">2.3.4.</span> <span class="toc-text">3.4 reducer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-数据流"><span class="toc-number">2.3.5.</span> <span class="toc-text">3.5 数据流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-Connect"><span class="toc-number">2.3.6.</span> <span class="toc-text">3.6 Connect</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-Provider"><span class="toc-number">2.3.7.</span> <span class="toc-text">3.7 Provider</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-实战备忘录"><span class="toc-number">2.4.</span> <span class="toc-text">4.实战备忘录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1目录结构"><span class="toc-number">2.4.1.</span> <span class="toc-text">4.1目录结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2入口文件"><span class="toc-number">2.4.2.</span> <span class="toc-text">4.2入口文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Store"><span class="toc-number">2.4.3.</span> <span class="toc-text">4.3 Store</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-Action-创建函数和常量"><span class="toc-number">2.4.4.</span> <span class="toc-text">4.4 Action 创建函数和常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-Reducers"><span class="toc-number">2.4.5.</span> <span class="toc-text">4.5 Reducers</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
+        </div>
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文采用react+redux+react-router+less+es6+webpack,以实现一个简易备忘录(todolist)为例尽可能全面的讲述使用react全家桶实现一个完整应用的过程。</p>
+<ul>
+<li><p>代码地址：<a href="https://github.com/damonare/memos" target="_blank" rel="external">Github代码地址</a></p>
+</li>
+<li><p>原文博客地址：<a href="http://damonare.github.io/2016/09/05/%E4%BB%8E%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E8%B0%88%E8%B5%B7/#more">React全家桶实现一个简易备忘录</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生不失意，焉能暴己知。</strong></p>
+<a id="more"></a>
+<h3 id="技术说明"><a href="#技术说明" class="headerlink" title="技术说明"></a>技术说明</h3><blockquote>
+<p>技术架构：本备忘录使用react+react-router+redux+less+ES6+webpack实现;</p>
+<p>页面UI参照：<a href="http://www.todolist.cn/" target="_blank" rel="external">TodoList官网</a>实现;</p>
+<p>在线演示地址：<a href="http://damonare.cn/memos" target="_blank" rel="external">Damonare的备忘录</a>;</p>
+</blockquote>
+<h3 id="功能说明"><a href="#功能说明" class="headerlink" title="功能说明"></a>功能说明</h3><ul>
+<li>支持回车添加新事项;</li>
+<li>支持删除事项(点击X符号);</li>
+<li>支持状态转换具体包括：<ul>
+<li>新建事项-&gt;正在进行(点击checkbox选项)</li>
+<li>正在进行-&gt;已完成(点击文字内容本身)</li>
+<li>正在进行-&gt;新建事项(点击checkbox选项)</li>
+<li>已完成-&gt;正在进行(点击文字本身)</li>
+</ul>
+</li>
+<li>支持判断输入空字符，过长字符(20个汉字以内);</li>
+<li>支持搜索;</li>
+<li>支持本地化存储;</li>
+<li>支持状态的展开隐藏(点击标题)</li>
+<li>兼容手机端(iPhone6及以上)</li>
+<li>支持路由切换</li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-React浅谈"><a href="#1-React浅谈" class="headerlink" title="1. React浅谈"></a>1. React浅谈</h3><h4 id="1-1-组件化"><a href="#1-1-组件化" class="headerlink" title="1.1  组件化"></a>1.1  组件化</h4><p>​    毫无疑问，当谈到<code>React</code>的时候不能避免的会提到组件化思想。React刚开始想解决的问题只是UI这一层面的问题，也就是MVC中view层面的问题，不成想如今越滚越大，从最早的UI引擎变成了一整套前后端通吃的 Web App 解决方案。对于<code>React</code>组件的理解同样要站在view层面的角度出发，一个完整的页面是由大大小小的组件堆叠而成，就好像搭积木，每一块积木都是一个组件，组件套组件组成了用户所能看到的完整的页面。</p>
+<h4 id="1-2-JSX语法糖"><a href="#1-2-JSX语法糖" class="headerlink" title="1.2  JSX语法糖"></a>1.2  JSX语法糖</h4><p>​    使用<code>React</code>，不一定非要使用<code>JSX</code>语法，可以使用原生的JS进行开发。但是<code>React</code>作者强烈建议我们使用<code>JSX</code>，因为<code>JSX</code>在定义类似HTML这种树形结构时，十分的简单明了。这里简单的讲下<code>JSX</code>的由来。</p>
+<p>​    比如，下面一个div元素，我们用HTML语法描述为：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>   如果换做使用javascript描述这个元素呢？最好的方式可以简单的转化为<code>json</code>对象，如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  type:"div",</div><div class="line">  props:&#123;</div><div class="line">    className:"test",</div><div class="line">    children:&#123;</div><div class="line">      type:"span",</div><div class="line">      props:&#123;</div><div class="line">        children:"Test"</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>   这样我们就可以在javascript中创建一个<code>Virtual DOM</code>（虚拟DOM）了。当然，这样是没法复用的，我们再把它封装一下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Div=&gt;(&#123;text&#125;)&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    type:<span class="string">"div"</span>,</div><div class="line">    props:&#123;</div><div class="line">      className:<span class="string">"test"</span>,</div><div class="line">      children:&#123;</div><div class="line">        type:<span class="string">"span"</span>,</div><div class="line">        props:&#123;</div><div class="line">          children: text,</div><div class="line">        &#125;,</div><div class="line">      &#125;,</div><div class="line">    &#125;,</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  接下来再实现这个div就可以直接调用Div(‘Test’)来创建。但上述结构看起来实在让人不爽，写起来也很容易写混，一旦结构复杂了，很容易让人找不着北，于是<code>JSX</code>语法应运而生。我们用写HTML的方式写这段代码，再经过翻译器转换成javascript后交给浏览器执行。上述代码用<code>JSX</code>重写：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Div =()=&gt;(</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"test"</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">);</div></pre></td></tr></table></figure>
+<p>多么简单明了！！！具体的<code>JSX语法</code>不多说了，学习更多戳这：<a href="http://reactjs.cn/react/docs/jsx-in-depth.html" target="_blank" rel="external">JSX in Depth</a></p>
+<h4 id="1-3-Virtual-DOM"><a href="#1-3-Virtual-DOM" class="headerlink" title="1.3  Virtual DOM"></a>1.3  Virtual DOM</h4><p>   其实上面已经提到了<code>Virtual DOM</code>，它的存在也是<code>React</code>长久不衰的原因之一，虚拟DOM的概念并不是FB首创却在FB的手上大火了起来(后台是多么重要)。</p>
+<p>  我们知道真实的页面对应了一个DOM树，在传统页面的开发模式中，每次需要更新页面时，都需要对DOM进行更新，DOM操作十分昂贵，为减少对于真实DOM的操作，诞生了<code>Virtual DOM</code>的概念，也就是用javascript把真实的DOM树描述了一遍，使用的也就是我们刚刚说过的<code>JSX</code>语法。对比如下：</p>
+<p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/1444448853198657.jpg" alt="Virtual DOM原理"></p>
+<p>   每次数据更新之后，重新计算<code>Virtual DOM</code>，并和上一次的<code>Virtual DOM</code>对比，对发生的变化进行批量更新。React也提供了<code>shouldComponentUpdate</code>生命周期回调，来减少数据变化后不必要的<code>Virtual DOM</code>对比过程，提升了性能。</p>
+<p> <code>Virtual DOM</code>虽然渲染方式比传统的DOM操作要好一些，但并不明显，因为对比DOM节点也是需要计算的，最大的好处在于可以很方便的和其它平台集成，比如<code>react-native</code>就是基于<code>Virtual DOM</code>渲染出原生控件。具体渲染出的是<code>Web DOM</code>还是<code>Android</code>控件或是<code>iOS</code>控件就由平台决定了。所以我们说<code>react</code>的出现是一场革命，一次对于<code>native app</code>的宣战,就像<code>react-native</code>那句口号——<strong>Learn Once,Write Anywhere</strong>.</p>
+<h4 id="1-4-函数式编程"><a href="#1-4-函数式编程" class="headerlink" title="1.4 函数式编程"></a>1.4 函数式编程</h4><p>​    过去编程方式主要是以命令式编程为主，什么意思呢？简单说电脑的思维方式和我们人类的思考方式是不一样的。我们人类的大脑擅长的是分析问题，提出一个解决问题的方案，电脑则是生硬的执行指令，命令式编程就像是给电脑下达命令，让电脑去执行一样，现在主要的编程语言（比如：Java，C，C++等）都是由命令式编程构建起来的。</p>
+<p>​   而函数式编程就不一样了，这是模仿我们人类的思维方式发明出来的。例如：操作某个数组的每一个元素然后返回一个新数组，如果是计算机的思考方式，会这样想：创建一个新数组=&gt;遍历旧数组=&gt;给新数组赋值。如果是人类的思考方式，会这样想：创建一个数组方法，作用在旧数组上，返回新数组。这样此方法可以被重复利用。而这就是函数式编程了。</p>
+<h4 id="1-5-数据流"><a href="#1-5-数据流" class="headerlink" title="1.5 数据流"></a>1.5 数据流</h4><p>  在React中，数据的流动是单向的，即从父节点传递到子节点。也因此组件是简单的，他们只需要从父组件获取props渲染即可。如果顶层的props改变了，React会递归的向下遍历整个组件树，重新渲染所有使用这个属性的组件。那么父组件如何获取子组件数据呢？很简单，通过回调就可以了，父组件定义某个方法供给子组件调用，子组件调用方法传递给父组件数据，Over。</p>
+<h3 id="2-React-router"><a href="#2-React-router" class="headerlink" title="2. React-router"></a>2. React-router</h3><p>这东西我觉得没啥难度，官方例子都很不错，跟着官方例子来一遍基本就明白到底是个啥玩意了，官方例子：<a href="https://github.com/reactjs/react-router-tutorial/tree/master/lessons" target="_blank" rel="external"><strong>react-router-tutorial。</strong></a></p>
+<p>完事以后可以再看一下阮一峰老师的教程，主要是对一些API的讲解：<a href="http://www.ruanyifeng.com/blog/2016/05/react_router.html?utm_source=tool.lu" target="_blank" rel="external">React Router 使用教程</a>。</p>
+<p>还有啥不明白的欢迎评论留言共同探讨。</p>
+<h3 id="3-Redux"><a href="#3-Redux" class="headerlink" title="3. Redux"></a>3. Redux</h3><h4 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1 简介"></a>3.1 简介</h4><p>随着 JavaScript 单页应用开发日趋复杂，<strong>JavaScript 需要管理比任何时候都要多的 state （状态）</strong>。 这些 state 可能包括服务器响应、缓存数据、本地生成尚未持久化到服务器的数据，也包括 UI 状态，如激活的路由，被选中的标签，是否显示加载动效或者分页器等等。如果一个 model 的变化会引起另一个 model 变化，那么当 view 变化时，就可能引起对应 model 以及另一个 model 的变化，依次地，可能会引起另一个 view 的变化。乱！</p>
+<p>这时候<code>Redux</code>就强势登场了，现在你可以把<code>React</code>的model看作是一个个的子民，每一个子民都有自己的一个状态，纷纷扰扰，各自维护着自己状态，我行我素，那哪行啊！太乱了，我们需要一个King来领导大家，我们就可以把<code>Redux</code>看作是这个King。网罗所有的组件组成一个国家，掌控着一切子民的状态！防止有人叛乱生事！</p>
+<p>这个时候就把组件分成了两种：容器组件(King或是路由)和展示组件(子民)。</p>
+<ul>
+<li>容器组件：即<code>redux</code>或是<code>router</code>,起到了维护状态，出发action的作用，其实就是King高高在上下达指令。</li>
+<li>展示组件：不维护状态，所有的状态由容器组件通过<code>props</code>传给他，所有操作通过回调完成。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">展示组件</th>
+<th style="text-align:center">容器组件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">作用</td>
+<td style="text-align:center">描述如何展现（骨架、样式）</td>
+<td style="text-align:center">描述如何运行（数据获取、状态更新）</td>
+</tr>
+<tr>
+<td style="text-align:center">直接使用 Redux</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">数据来源</td>
+<td style="text-align:center">props</td>
+<td style="text-align:center">监听 Redux state</td>
+</tr>
+<tr>
+<td style="text-align:center">数据修改</td>
+<td style="text-align:center">从 props 调用回调函数</td>
+<td style="text-align:center">向 Redux 派发 actions</td>
+</tr>
+<tr>
+<td style="text-align:center">调用方式</td>
+<td style="text-align:center">手动</td>
+<td style="text-align:center">通常由 React Redux 生成</td>
+</tr>
+</tbody>
+</table>
+<p>Redux三大部分：<code>store</code>,<code>action</code>,<code>reducer</code>。相当于King的直系下属。</p>
+<p>那么也可以看出<code>Redux</code>只是一个状态管理方案，完全可以单独拿出来使用，这个King不仅仅可以是React的，去Angular，Ember那里也是可以做King的。在React中维系King和组件关系的库叫做<code>react-redux</code>。</p>
+<p>， 它主要有提供两个东西：<code>Provider</code> 和<code>connect</code>，具体使用文后说明。</p>
+<p>提供几个Redux的学习地址：<a href="http://cn.redux.js.org/index.html" target="_blank" rel="external">官方教程-中文版</a>，<a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html" target="_blank" rel="external">Redux 入门教程（一）：基本用法</a></p>
+<h4 id="3-2-Store"><a href="#3-2-Store" class="headerlink" title="3.2 Store"></a>3.2 Store</h4><p>Store 就是保存数据的地方，它实际上是一个<code>Object tree</code>。整个应用只能有一个 Store。这个Store可以看做是King的首相，掌控一切子民(组件)的活动(state)。</p>
+<p>Redux 提供<code>createStore</code>这个函数，用来生成 Store。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(func);</div></pre></td></tr></table></figure>
+<p>createStore接受一个函数作为参数，返回一个Store对象(首相诞生记)</p>
+<p>我们来看一下Store(首相)的职责：</p>
+<ul>
+<li>维持应用的 state；</li>
+<li>提供 <a href="http://cn.redux.js.org/docs/api/Store.html#getState" target="_blank" rel="external"><code>getState()</code></a> 方法获取 state；</li>
+<li>提供 <a href="http://cn.redux.js.org/docs/api/Store.html#dispatch" target="_blank" rel="external"><code>dispatch(action)</code></a> 方法更新 state；</li>
+<li>通过 <a href="http://cn.redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="external"><code>subscribe(listener)</code></a> 注册监听器;</li>
+<li>通过 <a href="http://cn.redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="external"><code>subscribe(listener)</code></a> 返回的函数注销监听器。</li>
+</ul>
+<h4 id="3-3-action"><a href="#3-3-action" class="headerlink" title="3.3 action"></a>3.3 action</h4><p>State 的变化，会导致 View 的变化。但是，用户接触不到 State，只能接触到 View。所以，State 的变化必须是 View 导致的。Action 就是 View 发出的通知，表示 State 应该要发生变化了。即store的数据变化来自于用户操作。action就是一个通知，它可以看作是首相下面的邮递员，通知子民(组件)改变状态。它是 store 数据的<strong>唯一</strong>来源。一般来说会通过 <a href="http://cn.redux.js.org/docs/api/Store.html#dispatch" target="_blank" rel="external"><code>store.dispatch()</code></a> 将 action 传到 store。</p>
+<p>Action 是一个对象。其中的<code>type</code>属性是必须的，表示 Action 的名称。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> action = &#123;</div><div class="line">  type: <span class="string">'ADD_TODO'</span>,</div><div class="line">  payload: <span class="string">'Learn Redux'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>Action创建函数</strong></p>
+<p><strong>Action 创建函数</strong> 就是生成 action 的方法。“action” 和 “action 创建函数” 这两个概念很容易混在一起，使用时最好注意区分。</p>
+<p>在 Redux 中的 action 创建函数只是简单的返回一个 action:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    type: ADD_TODO,</div><div class="line">    text</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样做将使 action 创建函数更容易被移植和测试。</p>
+<h4 id="3-4-reducer"><a href="#3-4-reducer" class="headerlink" title="3.4 reducer"></a>3.4 reducer</h4><p><strong>Action</strong> 只是描述了<strong>有事情发生了</strong>这一事实，并没有指明应用如何更新 state。而这正是 reducer 要做的事情。也就是邮递员(action)只负责通知，具体你(组件)如何去做，他不负责，这事情只能是你们村长(reducer)告诉你如何去做才能符合社会主义核心价值观，如何做才能对建设共产主义社会有利。</p>
+<p>专业解释: <strong>Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会发生变化。这种 State 的计算过程就叫做 Reducer。</strong></p>
+<p>Reducer 是一个函数，它接受 Action 和当前 State 作为参数，返回一个新的 State。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> reducer = <span class="function"><span class="keyword">function</span> (<span class="params">state, action</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  <span class="keyword">return</span> new_state;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h4 id="3-5-数据流"><a href="#3-5-数据流" class="headerlink" title="3.5 数据流"></a>3.5 数据流</h4><p><strong>严格的单向数据流</strong>是 Redux 架构的设计核心。</p>
+<p>Redux 应用中数据的生命周期遵循下面 4 个步骤：</p>
+<ul>
+<li><strong>调用</strong> <a href="http://cn.redux.js.org/docs/api/Store.html#dispatch" target="_blank" rel="external"><code>store.dispatch(action)</code></a>。</li>
+<li><strong>Redux store 调用传入的 reducer 函数。</strong></li>
+<li><strong>根 reducer 应该把多个子 reducer 输出合并成一个单一的 state 树。</strong></li>
+<li><strong>Redux store 保存了根 reducer 返回的完整 state 树</strong>。</li>
+</ul>
+<p>工作流程图如下：</p>
+<p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/6b3fb1df3ad9c95354280a332065941a_thumb.png" alt="redux工作原理图"></p>
+<h4 id="3-6-Connect"><a href="#3-6-Connect" class="headerlink" title="3.6 Connect"></a>3.6 Connect</h4><p>这里需要再强调一下：Redux 和 React 之间没有关系。Redux 支持 React、Angular、Ember、jQuery 甚至纯 JavaScript。</p>
+<p>尽管如此，Redux 还是和 <a href="http://facebook.github.io/react/" target="_blank" rel="external">React</a> 和 <a href="https://github.com/dekujs/deku" target="_blank" rel="external">Deku</a> 这类框架搭配起来用最好，因为这类框架允许你以 state 函数的形式来描述界面，Redux 通过 action 的形式来发起 state 变化。</p>
+<p>Redux 默认并不包含 <a href="https://github.com/reactjs/react-redux" target="_blank" rel="external">React 绑定库</a>，需要单独安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save react-redux</div></pre></td></tr></table></figure>
+<p>当然，我们这个实例里是不需要的，所有需要的依赖已经在package.json里配置好了。</p>
+<p><code>React-Redux</code> 提供<code>connect</code>方法，用于从 UI 组件生成容器组件。<code>connect</code>的意思，就是将这两种组件连起来。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</div><div class="line"><span class="keyword">const</span> TodoList = connect()(Memos);</div></pre></td></tr></table></figure>
+<p>上面代码中<code>Memos</code>是个UI组件，<code>TodoList</code>就是由 React-Redux 通过<code>connect</code>方法自动生成的容器组件。</p>
+<p>而只是纯粹的这样把Memos包裹起来毫无意义，完整的connect方法这样使用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">const</span> TodoList = connect(</div><div class="line">  mapStateToProps</div><div class="line">)(Memos)</div></pre></td></tr></table></figure>
+<p>上面代码中，<code>connect</code>方法接受两个参数：<code>mapStateToProps</code>和<code>mapDispatchToProps</code>。它们定义了 UI 组件的业务逻辑。前者负责输入逻辑，即将<code>state</code>映射到 UI 组件的参数（<code>props</code>），后者负责输出逻辑，即将用户对 UI 组件的操作映射成 Action。</p>
+<h4 id="3-7-Provider"><a href="#3-7-Provider" class="headerlink" title="3.7 Provider"></a>3.7 Provider</h4><p> 这个Provider 其实是一个中间件，它是为了解决让容器组件拿到King的指令(<code>state</code>对象)而存在的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> todoApp <span class="keyword">from</span> <span class="string">'./reducers'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./components/App'</span></div><div class="line"><span class="keyword">let</span> store = createStore(todoApp);</div><div class="line">render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">App</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span>,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>上面代码中，<code>Provider</code>在根组件外面包了一层，这样一来，<code>App</code>的所有子组件就默认都可以拿到<code>state</code>了。</p>
+<h3 id="4-实战备忘录"><a href="#4-实战备忘录" class="headerlink" title="4.实战备忘录"></a>4.实战备忘录</h3><h4 id="4-1目录结构"><a href="#4-1目录结构" class="headerlink" title="4.1目录结构"></a>4.1目录结构</h4><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── app                 <span class="comment">#开发目录</span></div><div class="line">|<span class="string">   </span>|<span class="string">   </span></div><div class="line">|<span class="string">   ├──actions          #action的文件</span></div><div class="line">|<span class="string">   </span>|<span class="string">   </span></div><div class="line">|<span class="string">   ├──components       #展示组件</span></div><div class="line">|<span class="string">   </span>|<span class="string">   </span></div><div class="line">|<span class="string">   ├──containers       #容器组件,主页</span></div><div class="line">|<span class="string">   </span>|<span class="string">   </span></div><div class="line">|<span class="string">   ├──reducers         #reducer文件</span></div><div class="line">|<span class="string">   </span>|</div><div class="line">|<span class="string">   </span>|<span class="string">——routes		   #路由文件，容器组件</span></div><div class="line">|<span class="string">   </span>|</div><div class="line">|<span class="string">   </span>|<span class="string">——static           #静态文件</span></div><div class="line">|<span class="string">   </span>|</div><div class="line">|<span class="string">   ├──stores           #store配置文件</span></div><div class="line">|<span class="string">   </span>|</div><div class="line">|<span class="string">   </span>|<span class="string">——main.less        #路由样式</span></div><div class="line">|<span class="string">   </span>|</div><div class="line">|<span class="string">   └──main.js          #入口文件</span></div><div class="line">|<span class="string">      </span></div><div class="line">├── build                #发布目录</div><div class="line">├── node_modules        #包文件夹</div><div class="line">├── .gitignore     </div><div class="line">├── .jshintrc      </div><div class="line">├── webpack.production.config.js  #生产环境配置      </div><div class="line">├── webpack.config.js   #webpack配置文件</div><div class="line">├── package.json        #环境配置</div><div class="line">└── README.md		   #使用说明</div></pre></td></tr></table></figure>
+<p>接下来，我们只关注app目录就好了。</p>
+<h4 id="4-2入口文件"><a href="#4-2入口文件" class="headerlink" title="4.2入口文件"></a>4.2入口文件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> &#123;Route, IndexRoute, browserHistory, Router&#125; <span class="keyword">from</span> <span class="string">'react-router'</span>;</div><div class="line"><span class="keyword">import</span> &#123;createStore&#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">import</span> &#123;Provider&#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./container/App'</span>;</div><div class="line"><span class="keyword">import</span> AllMemosRoute <span class="keyword">from</span> <span class="string">'./routes/AllMemosRoute'</span>;</div><div class="line"><span class="keyword">import</span> TodoRoute <span class="keyword">from</span> <span class="string">'./routes/TodoRoute'</span>;</div><div class="line"><span class="keyword">import</span> DoingRoute <span class="keyword">from</span> <span class="string">'./routes/DoingRoute'</span>;</div><div class="line"><span class="keyword">import</span> DoneRoute <span class="keyword">from</span> <span class="string">'./routes/DoneRoute'</span>;</div><div class="line"><span class="keyword">import</span> configureStore <span class="keyword">from</span> <span class="string">'./stores'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'./main.less'</span>;</div><div class="line"><span class="keyword">const</span> store = configureStore();</div><div class="line">ReactDOM.render(</div><div class="line">    &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">        &lt;Router history=&#123;browserHistory&#125;&gt;</div><div class="line">            &lt;Route path="/"  component=&#123;App&#125;&gt;</div><div class="line">                &lt;IndexRoute component=&#123;AllMemosRoute&#125;/&gt;</div><div class="line">                &lt;Route path="/todo" component=&#123;TodoRoute&#125;/&gt;</div><div class="line">                &lt;Route path="/doing" component=&#123;DoingRoute&#125;/&gt;</div><div class="line">                &lt;Route path="/done" component=&#123;DoneRoute&#125;/&gt;</div><div class="line">            &lt;/Route&gt;</div><div class="line">        &lt;/Router&gt;</div><div class="line">   &lt;/Provider&gt;,</div><div class="line"> document.body.appendChild(document.createElement('div')))</div></pre></td></tr></table></figure>
+<p>这里我们从<code>react-redux</code>中获取到 Provider 组件，我们把它渲染到应用的最外层。<br>他需要一个属性 store ，他把这个 store 放在context里，给Router(connect)用。</p>
+<h4 id="4-3-Store"><a href="#4-3-Store" class="headerlink" title="4.3 Store"></a>4.3 Store</h4><blockquote>
+<p> app/store/index.jsx</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'../reducers'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">configureStore</span>(<span class="params">initialState</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> store = createStore(reducer, initialState);</div><div class="line">  <span class="keyword">if</span> (<span class="built_in">module</span>.hot) &#123;</div><div class="line">    <span class="comment">// Enable Webpack hot module replacement for reducers</span></div><div class="line">    <span class="built_in">module</span>.hot.accept(<span class="string">'../reducers'</span>, () =&gt; &#123;</div><div class="line">      <span class="keyword">const</span> nextReducer = <span class="built_in">require</span>(<span class="string">'../reducers'</span>);</div><div class="line">      store.replaceReducer(nextReducer);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> store;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="4-4-Action-创建函数和常量"><a href="#4-4-Action-创建函数和常量" class="headerlink" title="4.4 Action 创建函数和常量"></a>4.4 Action 创建函数和常量</h4><blockquote>
+<p>app/action/index.jsx</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * @author Damonare 2016-12-10</div><div class="line"> * @version 1.0.0</div><div class="line"> * action 类型</div><div class="line"> */</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> Add_Todo = <span class="string">'Add_Todo'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> Change_Todo_To_Doing = <span class="string">'Change_Todo_To_Doing'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> Change_Doing_To_Done = <span class="string">'Change_Doing_To_Done'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> Change_Done_To_Doing = <span class="string">'Change_Done_To_Doing'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> Change_Doing_To_Todo = <span class="string">'Change_Doing_To_Todo'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> Search=<span class="string">'Search'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> Delete_Todo=<span class="string">'Delete_Todo'</span>;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * action 创建函数</div><div class="line"> * @method  addTodo添加新事项</div><div class="line"> * @param  &#123;String&#125; text 添加事项的内容</div><div class="line"> */</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">      type: Add_Todo,</div><div class="line">      text</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * @method  search 查找事项</div><div class="line"> * @param  &#123;String&#125; text 查找事项的内容</div><div class="line"> */</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">search</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">      type: Search,</div><div class="line">      text</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * @method  changeTodoToDoing 状态由todo转为doing</div><div class="line"> * @param  &#123;Number&#125; index 需要改变状态的事项的下标</div><div class="line"> */</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">changeTodoToDoing</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">      type: Change_Todo_To_Doing,</div><div class="line">      index</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * @method  changeDoneToDoing 状态由done转为doing</div><div class="line"> * @param  &#123;Number&#125; index 需要改变状态的事项的下标</div><div class="line"> */</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">changeDoneToDoing</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">      type: Change_Done_To_Doing,</div><div class="line">      index</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * @method  changeDoingToTodo 状态由doing转为todo</div><div class="line"> * @param  &#123;Number&#125; index 需要改变状态的事项的下标</div><div class="line"> */</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">changeDoingToTodo</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">      type: Change_Doing_To_Todo,</div><div class="line">      index</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * @method  changeDoingToDone 状态由doing转为done</div><div class="line"> * @param  &#123;Number&#125; index 需要改变状态的事项的下标</div><div class="line"> */</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">changeDoingToDone</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">      type: Change_Doing_To_Done,</div><div class="line">      index</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * @method  deleteTodo 删除事项</div><div class="line"> * @param  &#123;Number&#125; index 需要删除的事项的下标</div><div class="line"> */</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">deleteTodo</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">      type: Delete_Todo,</div><div class="line">      index</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在声明每一个返回 action 函数的时候，我们需要在头部声明这个 action 的 type，以便好组织管理。<br>每个函数都会返回一个 action 对象，所以在 容器组件里面调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">text =&gt;</div><div class="line">  dispatch(addTodo(text))</div></pre></td></tr></table></figure>
+<p>就是调用<code>dispatch(action)</code> 。</p>
+<h4 id="4-5-Reducers"><a href="#4-5-Reducers" class="headerlink" title="4.5 Reducers"></a>4.5 Reducers</h4><blockquote>
+<p>app/reducers/index.jsx</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">import</span> todolist <span class="keyword">from</span> <span class="string">'./todos'</span>;</div><div class="line"><span class="comment">// import visibilityFilter from './visibilityFilter';</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> reducer = combineReducers(&#123;</div><div class="line">  todolist</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> reducer;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>app/reducers/todos.jsx</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;</div><div class="line">    Add_Todo,</div><div class="line">    Delete_Todo,</div><div class="line">    Change_Todo_To_Doing,</div><div class="line">    Change_Doing_To_Done,</div><div class="line">    Change_Doing_To_Todo,</div><div class="line">    Change_Done_To_Doing,</div><div class="line">    Search</div><div class="line">&#125; <span class="keyword">from</span> <span class="string">'../actions'</span>;</div><div class="line"><span class="keyword">let</span> todos;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (localStorage.todos) &#123;</div><div class="line">        todos = <span class="built_in">JSON</span>.parse(localStorage.todos)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        todos = []</div><div class="line">    &#125;</div><div class="line">&#125;)();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">todolist</span>(<span class="params">state = todos, action</span>) </span>&#123;</div><div class="line">    <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">            <span class="comment">/*</span></div><div class="line">        *  添加新的事项</div><div class="line">        *  并进行本地化存储</div><div class="line">        *  使用ES6展开运算符链接新事项和旧事项</div><div class="line">        *  JSON.stringify进行对象深拷贝</div><div class="line">        */</div><div class="line">        <span class="keyword">case</span> Add_Todo:</div><div class="line">            localStorage.setItem(<span class="string">'todos'</span>, <span class="built_in">JSON</span>.stringify([</div><div class="line">                ...state, &#123;</div><div class="line">                    todo: action.text,</div><div class="line">                    istodo: <span class="literal">true</span>,</div><div class="line">                    doing: <span class="literal">false</span>,</div><div class="line">                    done: <span class="literal">false</span></div><div class="line">                &#125;</div><div class="line">            ]));</div><div class="line">            <span class="keyword">return</span> [</div><div class="line">                ...state, &#123;</div><div class="line">                    todo: action.text,</div><div class="line">                    istodo: <span class="literal">true</span>,</div><div class="line">                    doing: <span class="literal">false</span>,</div><div class="line">                    done: <span class="literal">false</span></div><div class="line">                &#125;</div><div class="line">            ];</div><div class="line">            <span class="comment">/*</span></div><div class="line">            *  将todo转为doing状态，注意action.index的类型转换</div><div class="line">            */</div><div class="line">        <span class="keyword">case</span> Change_Todo_To_Doing:</div><div class="line">            localStorage.setItem(<span class="string">'todos'</span>, <span class="built_in">JSON</span>.stringify([</div><div class="line">                ...state.slice(<span class="number">0</span>, action.index),</div><div class="line">                &#123;</div><div class="line">                    todo:state[action.index].todo,</div><div class="line">                    istodo: <span class="literal">false</span>,</div><div class="line">                    doing: <span class="literal">true</span>,</div><div class="line">                    done: <span class="literal">false</span></div><div class="line">                &#125;,</div><div class="line">                ...state.slice(<span class="built_in">parseInt</span>(action.index) + <span class="number">1</span>)</div><div class="line">            ]));</div><div class="line">            <span class="keyword">return</span> [</div><div class="line">                ...state.slice(<span class="number">0</span>, action.index),</div><div class="line">                &#123;</div><div class="line">                    todo:state[action.index].todo,</div><div class="line">                    istodo: <span class="literal">false</span>,</div><div class="line">                    doing: <span class="literal">true</span>,</div><div class="line">                    done: <span class="literal">false</span></div><div class="line">                &#125;,</div><div class="line">                ...state.slice(<span class="built_in">parseInt</span>(action.index) + <span class="number">1</span>)</div><div class="line">            ];</div><div class="line">            <span class="comment">/*</span></div><div class="line">            *  将doing转为done状态</div><div class="line">            */</div><div class="line">        <span class="keyword">case</span> Change_Doing_To_Done:</div><div class="line">            localStorage.setItem(<span class="string">'todos'</span>, <span class="built_in">JSON</span>.stringify([</div><div class="line">                ...state.slice(<span class="number">0</span>, action.index),</div><div class="line">                &#123;</div><div class="line">                    todo:state[action.index].todo,</div><div class="line">                    istodo: <span class="literal">false</span>,</div><div class="line">                    doing: <span class="literal">false</span>,</div><div class="line">                    done: <span class="literal">true</span></div><div class="line">                &#125;,</div><div class="line">                ...state.slice(<span class="built_in">parseInt</span>(action.index) + <span class="number">1</span>)</div><div class="line">            ]));</div><div class="line">            <span class="keyword">return</span> [</div><div class="line">                ...state.slice(<span class="number">0</span>, action.index),</div><div class="line">                &#123;</div><div class="line">                    todo:state[action.index].todo,</div><div class="line">                    istodo: <span class="literal">false</span>,</div><div class="line">                    doing: <span class="literal">false</span>,</div><div class="line">                    done: <span class="literal">true</span></div><div class="line">                &#125;,</div><div class="line">                ...state.slice(<span class="built_in">parseInt</span>(action.index) + <span class="number">1</span>)</div><div class="line">            ];</div><div class="line">            <span class="comment">/*</span></div><div class="line">            *  将done转为doing状态</div><div class="line">            */</div><div class="line">        <span class="keyword">case</span> Change_Done_To_Doing:</div><div class="line">            localStorage.setItem(<span class="string">'todos'</span>, <span class="built_in">JSON</span>.stringify([</div><div class="line">                ...state.slice(<span class="number">0</span>, action.index),</div><div class="line">                &#123;</div><div class="line">                    todo:state[action.index].todo,</div><div class="line">                    istodo: <span class="literal">false</span>,</div><div class="line">                    doing: <span class="literal">true</span>,</div><div class="line">                    done: <span class="literal">false</span></div><div class="line">                &#125;,</div><div class="line">                ...state.slice(<span class="built_in">parseInt</span>(action.index) + <span class="number">1</span>)</div><div class="line">            ]));</div><div class="line">            <span class="keyword">return</span> [</div><div class="line">                ...state.slice(<span class="number">0</span>, action.index),</div><div class="line">                &#123;</div><div class="line">                    todo:state[action.index].todo,</div><div class="line">                    istodo: <span class="literal">false</span>,</div><div class="line">                    doing: <span class="literal">true</span>,</div><div class="line">                    done: <span class="literal">false</span></div><div class="line">                &#125;,</div><div class="line">                ...state.slice(<span class="built_in">parseInt</span>(action.index) + <span class="number">1</span>)</div><div class="line">            ];</div><div class="line">            <span class="comment">/*</span></div><div class="line">            *  将doing转为todo状态</div><div class="line">            */</div><div class="line">        <span class="keyword">case</span> Change_Doing_To_Todo:</div><div class="line">            localStorage.setItem(<span class="string">'todos'</span>, <span class="built_in">JSON</span>.stringify([</div><div class="line">                ...state.slice(<span class="number">0</span>, action.index),</div><div class="line">                &#123;</div><div class="line">                    todo:state[action.index].todo,</div><div class="line">                    istodo: <span class="literal">true</span>,</div><div class="line">                    doing: <span class="literal">false</span>,</div><div class="line">                    done: <span class="literal">false</span></div><div class="line">                &#125;,</div><div class="line">                ...state.slice(<span class="built_in">parseInt</span>(action.index) + <span class="number">1</span>)</div><div class="line">            ]));</div><div class="line">            <span class="keyword">return</span> [</div><div class="line">                ...state.slice(<span class="number">0</span>, action.index),</div><div class="line">                &#123;</div><div class="line">                    todo:state[action.index].todo,</div><div class="line">                    istodo: <span class="literal">true</span>,</div><div class="line">                    doing: <span class="literal">false</span>,</div><div class="line">                    done: <span class="literal">false</span></div><div class="line">                &#125;,</div><div class="line">                ...state.slice(<span class="built_in">parseInt</span>(action.index) + <span class="number">1</span>)</div><div class="line">            ];</div><div class="line">            <span class="comment">/*</span></div><div class="line">            *  删除某个事项</div><div class="line">            */</div><div class="line">        <span class="keyword">case</span> Delete_Todo:</div><div class="line">            localStorage.setItem(<span class="string">'todos'</span>, <span class="built_in">JSON</span>.stringify([</div><div class="line">                ...state.slice(<span class="number">0</span>, action.index),</div><div class="line">                ...state.slice(<span class="built_in">parseInt</span>(action.index) + <span class="number">1</span>)</div><div class="line">            ]));</div><div class="line">            <span class="keyword">return</span> [</div><div class="line">                ...state.slice(<span class="number">0</span>, action.index),</div><div class="line">                ...state.slice(<span class="built_in">parseInt</span>(action.index) + <span class="number">1</span>)</div><div class="line">            ];</div><div class="line">            <span class="comment">/*</span></div><div class="line">            *  搜索</div><div class="line">            */</div><div class="line">        <span class="keyword">case</span> Search:</div><div class="line">        <span class="keyword">let</span> text=action.text;</div><div class="line">        <span class="keyword">let</span> reg=<span class="built_in">eval</span>(<span class="string">"/"</span>+text+<span class="string">"/gi"</span>);</div><div class="line">            <span class="keyword">return</span> state.filter(item=&gt; item.todo.match(reg));</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> todolist;</div></pre></td></tr></table></figure>
+<p>具体的展示组件这里就不罗列代码了，感兴趣的可以戳这：<a href="https://github.com/damonare/memos/tree/master/app/components" target="_blank" rel="external">备忘录展示组件地址</a></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>严格来说，这个备忘录并不是使用的react全家桶，毕竟还有一部分less代码，不过这一个应用也算是比较全面的使用了react+react-router+redux，作为react全家桶技术学习的练手的小项目再适合不过了。如果您对这个小东西感兴趣，欢迎戳这:<a href="https://github.com/damonare/memos" target="_blank" rel="external">React全家桶实现简易备忘录</a>给个star。</p>
+
+      
+      
+
+  
+    </div>
+    
+  </div>
+
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="../../13/我的Web面试经历-百度/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">百度FE工程师实习offer到手记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+
+
+</article>
+
+
+
+
+<div class="support-author">
+	<p>如果您觉得我的文章对您有用，请随意打赏。</p>
+	<p>您的支持将鼓励我继续创作！</p>
+	<button id='alipay'>￥支付宝支持</button>
+	<button id='wechat'>￥微信支持</button>
+	<p>
+		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+	</p>
+	<script type="text/javascript">
+	document.querySelector('#alipay').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	})
+	document.querySelector('#wechat').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	})
+	</script>
+</div>
+<div class="ds-share" data-thread-key="React全家桶实现简易备忘录" data-title="React全家桶实现一个简易备忘录" data-images="http://damonare.github.io" data-content="React全家桶实现一个简易备忘录" data-url="https://damonare.github.io">
+	<div class="ds-share-inline">
+	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
+
+	   <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);"></a></li>
+	   <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+	   <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+	   <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+	   <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+
+	 </ul>
+	 <div class="ds-share-icons-more">
+	 </div>
+   </div>
+</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="React全家桶实现简易备忘录" data-title="React全家桶实现一个简易备忘录" data-url="http://damonare.github.io"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"damonare"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://damonare.cn/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                如果您对我感兴趣欢迎查看<a href="http://damonare.cn/resume/">Damonare的个人简历</a>
+                <span>由<a href="http://hexo.io/">Hexo</a>强力驱动</span> &copy;
+                2016
+                    Damonare
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten -->
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                <span id="busuanzi_container_site_uv">
+    您是本站第<span id="busuanzi_value_site_uv"></span>位访客
+                </span>
+                <span id="showDays"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        var birthDay = new Date('9/05/2016 18:34:23');
+    setInterval(function() {
+        var now = new Date();
+        var num_1 = 1000 * 60 * 60 * 24;
+        var num_2 = 1000 * 60 * 60;
+        var duration = now.getTime() - birthDay.getTime();
+        var total = Math.floor(duration / num_1);
+        var hour = Math.floor((duration % num_1) / num_2);
+        var minute = Math.floor(((duration % num_1) % num_2) / (1000 * 60));
+        var second = Math.floor((((duration % num_1) % num_2) % (1000 * 60)) / 1000);
+        document.getElementById("showDays").innerHTML = "本站已运行" + total + "天" + hour + '时' + minute + '分' + second + '秒';
+    }, 1000);
+</script>
+
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<script>
+    var bszCaller, bszTag;
+    ! function() {
+        var c, d, e, a = !1,
+            b = [];
+        ready = function(c) {
+            return a || "interactive" === document.readyState || "complete" === document.readyState ? c.call(document) : b.push(function() {
+                return c.call(this)
+            }), this
+        }, d = function() {
+            for (var a = 0, c = b.length; c > a; a++) b[a].apply(document);
+            b = []
+        }, e = function() {
+            a || (a = !0, d.call(window), document.removeEventListener ? document.removeEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.detachEvent("onreadystatechange", e), window == window.top && (clearInterval(c),
+                c = null)))
+        }, document.addEventListener ? document.addEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.attachEvent("onreadystatechange", function() {
+            /loaded|complete/.test(document.readyState) && e()
+        }), window == window.top && (c = setInterval(function() {
+            try {
+                a || document.documentElement.doScroll("left")
+            } catch (b) {
+                return
+            }
+            e()
+        }, 5)))
+    }(), bszCaller = {
+        fetch: function(a, b) {
+            var c = "BusuanziCallback_" + Math.floor(1099511627776 * Math.random());
+            window[c] = this.evalCall(b), a = a.replace("=BusuanziCallback", "=" + c), scriptTag = document.createElement("SCRIPT"), scriptTag.type = "text/javascript", scriptTag.defer = !0, scriptTag.src = a, document.getElementsByTagName(
+                "HEAD")[0].appendChild(scriptTag)
+        },
+        evalCall: function(a) {
+            return function(b) {
+                ready(function() {
+                    try {
+                        a(b), scriptTag.parentElement.removeChild(scriptTag)
+                    } catch (c) {
+                        bszTag.hides()
+                    }
+                })
+            }
+        }
+    }, bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", function(a) {
+        bszTag.texts(a), bszTag.shows()
+    }), bszTag = {
+        bszs: ["site_pv", "page_pv", "site_uv"],
+        texts: function(a) {
+            this.bszs.map(function(b) {
+                var c = document.getElementById("busuanzi_value_" + b);
+                c && (c.innerHTML = a[b])
+            })
+        },
+        hides: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "none")
+            })
+        },
+        shows: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "inline")
+            })
+        }
+    };
+</script>
+
+    </div>
+    
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        mathjax: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false
+    }
+</script>
+<script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="../../../../js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e839062c43d17bbd439d0bb5b80ab5e1";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+ eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('g(0).h(e(){e d(){0.9=0[b]?" 看这里，看这里！":a}f b,c,a=0.9;"2"!=4 0.8?(b="8",c="k"):"2"!=4 0.5?(b="5",c="j"):"2"!=4 0.6&&(b="6",c="l"),("2"!=4 0.7||"2"!=4 0[b])&&0.7(c,d,!1)});',22,22,'document||undefined||typeof|mozHidden|webkitHidden|addEventListener|hidden|title|||||function|var|jQuery|ready|Hi|mozvisibilitychange|visibilitychange|webkitvisibilitychange'.split('|'),0,{}))
+</script>
+<script>
+$(function(){
+    $('.ds-share').attr('data-url',window.location.href);
+})
+</script>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<script src="/js/app.js"></script>
+<!-- stats.js -->
+<script src="/js/lib/stats.js"></script>
+<!--open/close  -->
+<section class="main">
+	<div class="switch demo1">
+		<input type="checkbox">
+		<label></label>
+	</div>
+</section>
+
+<script>
+    $(function(){
+        $('.main').delegate('.switch','click',function(){
+            if($(this).find('input').is(":checked")){
+                $('#particles-js').css('bottom','0');
+            }else{
+                $('#particles-js').css('bottom','100%');
+            }
+        })
+    })
+</script>
+
+  </div>
+
+</body>
+</html>
