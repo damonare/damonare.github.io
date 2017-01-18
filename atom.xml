@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-01-18T14:50:40.085Z</updated>
+  <updated>2017-01-18T14:56:01.280Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://damonare.github.io/2017/01/18/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82ajax%E5%90%97%EF%BC%9F/"/>
     <id>http://damonare.github.io/2017/01/18/你真的懂ajax吗？/</id>
     <published>2017-01-18T06:29:40.316Z</published>
-    <updated>2017-01-18T14:50:40.085Z</updated>
+    <updated>2017-01-18T14:56:01.280Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文讲解了ajax的历史，工作原理以及优缺点，对XMLHttpRequest对象进行了详细的讲解，并使用原生js实现了一个ajax对象以方便日常开始使用。</p>
 <ul>
 <li>damonare的ajax库：<a href="https://github.com/damonare/ajax/tree/master" target="_blank" rel="external">damonare的ajax库</a></li>
 </ul>
 <ul>
-<li>原文博客地址：<a href="https://damonare.github.io/2017/01/14/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E2%80%94%E6%A0%91/#more">学习javascript数据结构(四)——树</a></li>
+<li>原文博客地址：<a href="https://damonare.github.io/2017/01/18/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82ajax%E5%90%97%EF%BC%9F/#more">你真的懂ajax吗？</a></li>
 <li>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></li>
 <li>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></li>
 </ul>
@@ -185,7 +185,7 @@
 &lt;li&gt;damonare的ajax库：&lt;a href=&quot;https://github.com/damonare/ajax/tree/master&quot;&gt;damonare的ajax库&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ul&gt;
-&lt;li&gt;原文博客地址：&lt;a href=&quot;https://damonare.github.io/2017/01/14/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E2%80%94%E6%A0%91/#more&quot;&gt;学习javascript数据结构(四)——树&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;原文博客地址：&lt;a href=&quot;https://damonare.github.io/2017/01/18/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82ajax%E5%90%97%EF%BC%9F/#more&quot;&gt;你真的懂ajax吗？&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -553,9 +553,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="React" scheme="http://damonare.github.io/tags/React/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -2542,9 +2542,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -3964,9 +3964,9 @@ Model：数据访问层
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTTP" scheme="http://damonare.github.io/tags/HTTP/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
