@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>你真的懂Ajax吗？ | Damonare的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言总括： 本文讲解了ajax的历史，工作原理以及优缺点，对XMLHttpRequest对象进行了详细的讲解，并使用原生js实现了一个ajax对象以方便日常开始使用。
+
+damonare的ajax库：damonare的ajax库
+
+
+原文博客地址：学习javascript数据结构(四)——树
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+博主博客地">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你真的懂Ajax吗？">
+<meta property="og:url" content="http://damonare.github.io/2017/01/18/你真的懂ajax吗？/index.html">
+<meta property="og:site_name" content="Damonare的个人博客">
+<meta property="og:description" content="前言总括： 本文讲解了ajax的历史，工作原理以及优缺点，对XMLHttpRequest对象进行了详细的讲解，并使用原生js实现了一个ajax对象以方便日常开始使用。
+
+damonare的ajax库：damonare的ajax库
+
+
+原文博客地址：学习javascript数据结构(四)——树
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+博主博客地">
+<meta property="og:updated_time" content="2017-01-18T14:50:40.085Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你真的懂Ajax吗？">
+<meta name="twitter:description" content="前言总括： 本文讲解了ajax的历史，工作原理以及优缺点，对XMLHttpRequest对象进行了详细的讲解，并使用原生js实现了一个ajax对象以方便日常开始使用。
+
+damonare的ajax库：damonare的ajax库
+
+
+原文博客地址：学习javascript数据结构(四)——树
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+博主博客地">
+  
+  
+    <link rel="icon" href="/./img/1.png">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <!-- scripts -->
+ <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/js/particles.min.js" src="/js/particles.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Damonare</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不念过去，不畏将来</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://damonare.cn/">博客首页</a></li>
+				        
+							<li><a href="../../../../index.html">主页</a></li>
+				        
+							<li><a href="../../../../archives">所有文章</a></li>
+				        
+							<li><a href="../../../../categories/随笔/">随笔</a></li>
+				        
+							<li><a href="../../../../categories/learn/">学习</a></li>
+				        
+							<li><a href="../../../../categories/life/">生活</a></li>
+				        
+							<li><a href="../../../../categories/其它/">其它</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+					        
+								<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+					        
+								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="../../../../tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 11.67px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/React/" style="font-size: 10px;">React</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 11.67px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18.33px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/思考/" style="font-size: 10px;">思考</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 15px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 13.33px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 11.67px;">网络协议</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 11.67px;">面试</a>
+					</div>
+				</section>
+				
+
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://xdlrt.github.io/">卢睿韬的自留地</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lcodecorex.github.io/">Oscar Blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://qiutc.me/">阿城的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://touch28.github.io/">Lingo的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lengxing.github.io/">冷星</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiao1ong.cn/">xiao1ong</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">姓名：谭继臻    性别：男     学习经历：2014-至今 就读于西安电子科技大学     邮箱：jztan1996@gmail.com     QQ:577964075      微信：tjz19960421</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Damonare</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Damonare</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不念过去，不畏将来</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://damonare.cn/">博客首页</a></li>
+		        
+					<li><a href="../../../../index.html">主页</a></li>
+		        
+					<li><a href="../../../../archives">所有文章</a></li>
+		        
+					<li><a href="../../../../categories/随笔/">随笔</a></li>
+		        
+					<li><a href="../../../../categories/learn/">学习</a></li>
+		        
+					<li><a href="../../../../categories/life/">生活</a></li>
+		        
+					<li><a href="../../../../categories/其它/">其它</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+			        
+						<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+			        
+						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-你真的懂ajax吗？" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="" class="article-date">
+  	<time datetime="2017-01-18T06:29:40.316Z" itemprop="datePublished">2017-01-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      你真的懂Ajax吗？
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../../../categories/learn/">学习</a>
+	</div>
+
+
+    
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  热度： <span id="busuanzi_value_page_pv"></span>℃</span>
+  </div>
+  
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          <!-- Table of Contents -->
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文讲解了ajax的历史，工作原理以及优缺点，对XMLHttpRequest对象进行了详细的讲解，并使用原生js实现了一个ajax对象以方便日常开始使用。</p>
+<ul>
+<li>damonare的ajax库：<a href="https://github.com/damonare/ajax/tree/master" target="_blank" rel="external">damonare的ajax库</a></li>
+</ul>
+<ul>
+<li>原文博客地址：<a href="https://damonare.github.io/2017/01/14/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E2%80%94%E6%A0%91/#more">学习javascript数据结构(四)——树</a></li>
+<li>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></li>
+<li>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></li>
+</ul>
+<p><strong>古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>相信每个前端程序员日常工作中都避免不了的工作就是和后端联调，联调自然就避免不了使用<code>ajax</code>，但我相信，不管是使用jquery封装的<code>ajax</code>方法还是使用vue的插件<code>vue-resource</code>的程序员，真正对于<code>ajax</code>有过深入探究的并不多，我们更多的是为了使用而使用，至于它的原理往往因为即使不了解依旧能做出东西而懒得去看，我们都被轮子们惯坏了。根据<a href="https://zh.wikipedia.org/wiki/%E5%B8%95%E9%9B%B7%E6%89%98%E6%B3%95%E5%88%99" target="_blank" rel="external">二八定律</a>，即任何一组东西中，最重要的只占其中一小部分，约20%，其余80%的尽管是多数，却是次要的。因 此，如果想挤进那20%的行列，就要学到一般人学不到的深度，学到一般人学不了的东西。</p>
+<p>好的，现在我们从头来说一下<code>ajax</code>。</p>
+<h3 id="Ajax简介"><a href="#Ajax简介" class="headerlink" title="Ajax简介"></a>Ajax简介</h3><p>在上世纪90年代，几乎所有的网站都由HTML页面实现，服务器处理每一个用户请求都需要重新加载网页。形式是怎样的呢？就比如说你在浏览器上登录自己的微博账号，填完了表单，点击登录按钮，一次”完整”的HTTP请求就此触发，服务器发现你的登录密码不对头，立马把网页原原本本的返回给你，在用户看来呢，就是一次重新加载的过程！用户体验极差！而且这个做法浪费了许多带宽，因为在前后两个页面中的大部分HTML码往往是相同的。由于每次应用的沟通都需要向服务器发送请求，应用的回应时间依赖于服务器的回应时间。这导致了用户界面的回应比本机应用慢得多。</p>
+<p>到了2005年，google率先在它的应用(诸如google地图、gmail)里使用了<code>ajax</code>技术，这才让这项技术正式风靡开来。</p>
+<p>如今它的应用已经十分广泛：</p>
+<ul>
+<li>运用<a href="https://zh.wikipedia.org/wiki/XHTML" target="_blank" rel="external">XHTML</a>+<a href="https://zh.wikipedia.org/wiki/CSS" target="_blank" rel="external">CSS</a>来表达信息；</li>
+<li>运用<a href="https://zh.wikipedia.org/wiki/JavaScript" target="_blank" rel="external">JavaScript</a>操作<a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%89%A9%E4%BB%B6%E6%A8%A1%E5%9E%8B" target="_blank" rel="external">DOM</a>（Document Object Model）来运行动态效果；</li>
+<li>运用<a href="https://zh.wikipedia.org/wiki/XML" target="_blank" rel="external">XML</a>和<a href="https://zh.wikipedia.org/wiki/XSLT" target="_blank" rel="external">XSLT</a>操作数据；</li>
+<li>运用<a href="https://zh.wikipedia.org/wiki/XMLHttpRequest" target="_blank" rel="external">XMLHttpRequest</a>或新的Fetch API与<a href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E9%A0%81%E4%BC%BA%E6%9C%8D%E5%99%A8" target="_blank" rel="external">网页服务器</a>进行异步数据交换；</li>
+<li>注意：AJAX与<a href="https://zh.wikipedia.org/wiki/Flash" target="_blank" rel="external">Flash</a>、<a href="https://zh.wikipedia.org/wiki/Silverlight" target="_blank" rel="external">Silverlight</a>和<a href="https://zh.wikipedia.org/wiki/Java_Applet" target="_blank" rel="external">Java Applet</a>等<a href="https://zh.wikipedia.org/wiki/RIA" target="_blank" rel="external">RIA</a>技术是有区分的。</li>
+</ul>
+<h3 id="Ajax工作原理"><a href="#Ajax工作原理" class="headerlink" title="Ajax工作原理"></a>Ajax工作原理</h3><p> Ajax的工作原理相当于在用户和服务器之间加了一个中间层(ajax引擎),使用户操作与服务器响应异步化。并不是所有的用户请求都提交给服务器,像—些数据验证(比如判断用户是否输入了数据)和数据处理(比如判断用户输入数据是否是数字)等都交给Ajax引擎自己来做, 只有确定需要从服务器读取新数据时再由Ajax引擎代为向服务器提交请求。把这些交给了Ajax引擎，用户操作起来也就感觉更加流畅了。</p>
+<h3 id="Ajax优缺点"><a href="#Ajax优缺点" class="headerlink" title="Ajax优缺点"></a>Ajax优缺点</h3><h4 id="Ajax的优点"><a href="#Ajax的优点" class="headerlink" title="Ajax的优点"></a>Ajax的优点</h4><ol>
+<li>无刷新更新数据。</li>
+</ol>
+<p>AJAX最大优点就是能在不刷新整个页面的前提下与服务器通信维护数据。这使得Web应用程序更为迅捷地响应用户交互，并避免了在网络上发送那些没有改变的信息，减少用户等待时间，带来非常好的用户体验。</p>
+<ol>
+<li>异步与服务器通信。</li>
+</ol>
+<p>AJAX使用异步方式与服务器通信，不需要打断用户的操作，具有更加迅速的响应能力。优化了Browser和Server之间的沟通，减少不必要的数据传输、时间及降低网络上数据流量。</p>
+<ol>
+<li>前端和后端负载平衡。</li>
+</ol>
+<p>AJAX可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。并且减轻服务器的负担，AJAX的原则是“按需取数据”，可以最大程度的减少冗余请求和响应对服务器造成的负担，提升站点性能。</p>
+<ol>
+<li>基于标准被广泛支持。</li>
+</ol>
+<p>AJAX基于标准化的并被广泛支持的技术，不需要下载浏览器插件或者小程序，但需要客户允许JavaScript在浏览器上执行。随着Ajax的成熟，一些简化Ajax使用方法的程序库也相继问世。同样，也出现了另一种辅助程序设计的技术，为那些不支持JavaScript的用户提供替代功能。</p>
+<ol>
+<li>界面与应用分离。</li>
+</ol>
+<p>Ajax使WEB中的界面与应用分离（也可以说是数据与呈现分离），有利于分工合作、减少非技术人员对页面的修改造成的WEB应用程序错误、提高效率、也更加适用于现在的发布系统。</p>
+<h4 id="Ajax缺点"><a href="#Ajax缺点" class="headerlink" title="Ajax缺点"></a>Ajax缺点</h4><ol>
+<li>AjAX干掉了Back和加入收藏书签功能，即对浏览器机制的破坏。</li>
+</ol>
+<blockquote>
+<p> 对应用Ajax最主要的批评就是，它可能破坏浏览器的后退与加入收藏书签功能。在动态更新页面的情况下，用户无法回到前一个页面状态，这是因为浏览器仅能记下历史记录中的<a href="https://zh.wikipedia.org/w/index.php?title=%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2&amp;action=edit&amp;redlink=1" target="_blank" rel="external">静态页面</a>。一个被完整读入的页面与一个已经被动态修改过的页面之间的可能差别非常微妙；用户通常都希望单击后退按钮，就能够取消他们的前一次操作，但是在Ajax应用程序中，却无法这样做。不过开发者已想出了种种办法来解决这个问题，<a href="https://zh.wikipedia.org/wiki/HTML5" target="_blank" rel="external">HTML5</a> 之前的方法大多是在用户单击后退按钮访问历史记录时，通过创建或使用一个隐藏的IFRAME来重现页面上的变更。（例如，当用户在Google Maps中单击后退时，它在一个隐藏的<a href="https://zh.wikipedia.org/w/index.php?title=IFRAME&amp;action=edit&amp;redlink=1" target="_blank" rel="external">IFRAME</a>中进行搜索，然后将搜索结果反映到Ajax元素上，以便将应用程序状态恢复到当时的状态）。</p>
+<p>关于无法将状态加入收藏或书签的问题，<a href="https://zh.wikipedia.org/wiki/HTML5" target="_blank" rel="external">HTML5</a>之前的一种方式是使用<a href="https://zh.wikipedia.org/wiki/URL" target="_blank" rel="external">URL</a>片断标识符（通常被称为<a href="https://zh.wikipedia.org/wiki/%E9%94%9A%E7%82%B9" target="_blank" rel="external">锚点</a>，即URL中#后面的部分）来保持追踪，允许用户回到指定的某个应用程序状态。（许多浏览器允许JavaScript动态更新锚点，这使得Ajax应用程序能够在更新显示内容的同时更新锚点。）<a href="https://zh.wikipedia.org/wiki/HTML5" target="_blank" rel="external">HTML5</a> 以后可以直接操作浏览历史，并以字符串形式存储网页状态，将网页加入网页收藏夹或书签时状态会被隐形地保留。上述两个方法也可以同时解决无法后退的问题。</p>
+</blockquote>
+<ol>
+<li>AJAX的安全问题。</li>
+</ol>
+<p>AJAX技术给用户带来很好的用户体验的同时也对IT企业带来了新的安全威胁，Ajax技术就如同对企业数据建立了一个直接通道。这使得开发者在不经意间会暴露比以前更多的数据和服务器逻辑。Ajax的逻辑可以对客户端的安全扫描技术隐藏起来，允许黑客从远端服务器上建立新的攻击。还有Ajax也难以避免一些已知的安全弱点，诸如跨站点脚步攻击、SQL注入攻击和基于Credentials的安全漏洞等等。</p>
+<ol>
+<li>因为网络延迟需要给用户提供必要提示</li>
+</ol>
+<p>进行Ajax开发时，网络延迟——即用户发出请求到服务器发出响应之间的间隔——需要慎重考虑。如果不给予用户明确的回应，没有恰当的预读数据，或者对XMLHttpRequest的不恰当处理，都会使用户感到厌烦。通常的解决方案是，使用一个可视化的组件来告诉用户系统正在进行后台操作并且正在读取数据和内容。</p>
+<h3 id="XMLhttpRequest介绍"><a href="#XMLhttpRequest介绍" class="headerlink" title="XMLhttpRequest介绍"></a>XMLhttpRequest介绍</h3><p>Ajax(Asynchronous  JavaScript  and  XML)不是指一种单一的技术，而是有机地利用了一系列相关的技术。虽然其名称包含XML，但实际上数据格式可以由<a href="https://zh.wikipedia.org/wiki/JSON" target="_blank" rel="external">JSON</a>代替，进一步减少数据量，形成所谓的AJAJ。为了使用JavaScript向服务器发出 <a href="https://developer.mozilla.org/en/HTTP" target="_blank" rel="external">HTTP</a> 请求，需要一个提供此功能的类的实例。这就是XMLHttpRequest的由来。这样的类最初是在Internet Explorer中作为一个名为XMLHTTP的ActiveX对象引入的。然后，Mozilla，Safari和其他浏览器，实现一个XMLHttpRequest类，支持Microsoft的原始ActiveX对象的方法和属性。同时微软也实现了XMLHttpRequest。</p>
+<p>显而易见XMLHttpRequest类是重中之重了。</p>
+<h4 id="XMLhttpRequest属性"><a href="#XMLhttpRequest属性" class="headerlink" title="XMLhttpRequest属性"></a>XMLhttpRequest属性</h4><h5 id="onreadystatechange"><a href="#onreadystatechange" class="headerlink" title="onreadystatechange"></a>onreadystatechange</h5><p>一个JavaScript函数对象，当readyState属性改变时会调用它。回调函数会在user interface线程中调用。</p>
+<h5 id="readyState"><a href="#readyState" class="headerlink" title="readyState"></a>readyState</h5><p>HTTP 请求的状态.当一个 XMLHttpRequest 初次创建时，这个属性的值从 0 开始，直到接收到完整的 HTTP 响应，这个值增加到 4。</p>
+<p>5 个状态中每一个都有一个相关联的非正式的名称，下表列出了状态、名称和含义：</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Uninitialized</td>
+<td>初始化状态。XMLHttpRequest 对象已创建或已被 abort() 方法重置。</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Open</td>
+<td>open() 方法已调用，但是 send() 方法未调用。请求还没有被发送。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sent</td>
+<td>Send() 方法已调用，HTTP 请求已发送到 Web 服务器。未接收到响应。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Receiving</td>
+<td>所有响应头部都已经接收到。响应体开始接收但未完成。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Loaded</td>
+<td>HTTP 响应已经完全接收。</td>
+</tr>
+</tbody>
+</table>
+<p>readyState 的值不会递减，除非当一个请求在处理过程中的时候调用了 abort() 或 open() 方法。每次这个属性的值增加的时候，都会触发 onreadystatechange 事件句柄。</p>
+<h5 id="responseText"><a href="#responseText" class="headerlink" title="responseText"></a>responseText</h5><p>目前为止为服务器接收到的响应体（不包括头部），或者如果还没有接收到数据的话，就是空字符串。</p>
+<p>如果 readyState 小于 3，这个属性就是一个空字符串。当 readyState 为 3，这个属性返回目前已经接收的响应部分。如果 readyState 为 4，这个属性保存了完整的响应体。</p>
+<p>如果响应包含了为响应体指定字符编码的头部，就使用该编码。否则，假定使用 Unicode UTF-8。</p>
+<h5 id="responseXML"><a href="#responseXML" class="headerlink" title="responseXML"></a>responseXML</h5><p>对请求的响应，解析为 XML 并作为 Document 对象返回。</p>
+<h5 id="status"><a href="#status" class="headerlink" title="status"></a>status</h5><p>由服务器返回的 HTTP 状态代码，如 200 表示成功，而 404 表示 “Not Found” 错误。当 readyState 小于 3 的时候读取这一属性会导致一个异常。</p>
+<h5 id="statusText"><a href="#statusText" class="headerlink" title="statusText"></a>statusText</h5><p>这个属性用名称而不是数字指定了请求的 HTTP 的状态代码。也就是说，当状态为 200 的时候它是 “OK”，当状态为 404 的时候它是 “Not Found”。和 status 属性一样，当 readyState 小于 3 的时候读取这一属性会导致一个异常。</p>
+<h4 id="XMLHttpRequest方法"><a href="#XMLHttpRequest方法" class="headerlink" title="XMLHttpRequest方法"></a>XMLHttpRequest方法</h4><h5 id="abort"><a href="#abort" class="headerlink" title="abort()"></a>abort()</h5><p>取消当前响应，关闭连接并且结束任何未决的网络活动。</p>
+<p>这个方法把 XMLHttpRequest 对象重置为 readyState 为 0 的状态，并且取消所有未决的网络活动。例如，如果请求用了太长时间，而且响应不再必要的时候，可以调用这个方法。</p>
+<h5 id="getAllResponseHeaders"><a href="#getAllResponseHeaders" class="headerlink" title="getAllResponseHeaders()"></a>getAllResponseHeaders()</h5><p>把 HTTP 响应头部作为未解析的字符串返回。</p>
+<p>如果 readyState 小于 3，这个方法返回 null。否则，它返回服务器发送的所有 HTTP 响应的头部。头部作为单个的字符串返回，一行一个头部。每行用换行符 “\r\n” 隔开。</p>
+<h5 id="getResponseHeader"><a href="#getResponseHeader" class="headerlink" title="getResponseHeader()"></a>getResponseHeader()</h5><p>返回指定的 HTTP 响应头部的值。其参数是要返回的 HTTP 响应头部的名称。可以使用任何大小写来制定这个头部名字，和响应头部的比较是不区分大小写的。</p>
+<p>该方法的返回值是指定的 HTTP 响应头部的值，如果没有接收到这个头部或者 readyState 小于 3 则为空字符串。如果接收到多个有指定名称的头部，这个头部的值被连接起来并返回，使用逗号和空格分隔开各个头部的值。</p>
+<h5 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h5><p>初始化一个请求. 该方法用于JavaScript代码中;如果是本地代码, 使用 <a href="https://developer.mozilla.org/zh-cn/nsIXMLHttpRequest#openRequest(" target="_blank" rel="external"><code>openRequest()</code></a>)方法代替.</p>
+<blockquote>
+<p> <strong>注意:</strong> 在一个已经激活的request下（已经调用open()或者openRequest()方法的request）再次调用这个方法相当于调用了abort（）方法。</p>
+</blockquote>
+<p>参数</p>
+<ul>
+<li><p><code>method</code></p>
+<p>请求所使用的HTTP方法; 例如 “GET”, “POST”, “PUT”, “DELETE”等. 如果下个参数是非HTTP(S)的URL,则忽略该参数.</p>
+</li>
+<li><p><code>url</code></p>
+<p>该请求所要访问的URL</p>
+</li>
+<li><p><code>async</code></p>
+<p>一个可选的布尔值参数，默认为true,意味着是否执行异步操作，如果值为false,则send()方法不会返回任何东西，直到接受到了服务器的返回数据。如果为值为true，一个对开发者透明的通知会发送到相关的事件监听者。这个值必须是true,如果multipart 属性是true，否则将会出现一个意外。</p>
+</li>
+<li><p><code>user</code></p>
+<p>用户名,可选参数,为授权使用;默认参数为空string.</p>
+</li>
+<li><p><code>password</code></p>
+<p>密码,可选参数,为授权使用;默认参数为空string.</p>
+</li>
+</ul>
+<h5 id="send"><a href="#send" class="headerlink" title="send()"></a>send()</h5><p>发送 HTTP 请求，使用传递给 open() 方法的参数，以及传递给该方法的可选请求体。</p>
+<h5 id="setRequestHeader"><a href="#setRequestHeader" class="headerlink" title="setRequestHeader()"></a>setRequestHeader()</h5><p>向一个打开但未发送的请求设置或添加一个 HTTP 请求(设置请求头)。</p>
+<p>参数</p>
+<ul>
+<li><p><code>header</code></p>
+<p>将要被赋值的请求头名称</p>
+</li>
+<li><p><code>value</code></p>
+<p>给指定的请求头赋的值</p>
+</li>
+</ul>
+<h3 id="Ajax原生js实现"><a href="#Ajax原生js实现" class="headerlink" title="Ajax原生js实现"></a>Ajax原生js实现</h3><p>下面是使用原生js写的ajax：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ajax = &#123;&#125;;</div><div class="line">ajax.httpRequest = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//判断是否支持XMLHttpRequest对象</span></div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//兼容IE浏览器</span></div><div class="line">    <span class="keyword">var</span> versions = [</div><div class="line">        <span class="string">"MSXML2.XmlHttp.6.0"</span>,</div><div class="line">        <span class="string">"MSXML2.XmlHttp.5.0"</span>,</div><div class="line">        <span class="string">"MSXML2.XmlHttp.4.0"</span>,</div><div class="line">        <span class="string">"MSXML2.XmlHttp.3.0"</span>,</div><div class="line">        <span class="string">"MSXML2.XmlHttp.2.0"</span>,</div><div class="line">        <span class="string">"Microsoft.XmlHttp"</span></div><div class="line">    ];</div><div class="line">	<span class="comment">//定义局部变量xhr,储存IE浏览器的ActiveXObject对象</span></div><div class="line">    <span class="keyword">var</span> xhr;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; versions.length; i++) &#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            xhr = <span class="keyword">new</span> ActiveXObject(versions[i]);</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> xhr;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">ajax.send = <span class="function"><span class="keyword">function</span> (<span class="params">url, callback, method, data, async</span>) </span>&#123;</div><div class="line">    <span class="comment">//默认异步</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">async</span> === <span class="literal">undefined</span>) &#123;</div><div class="line">        <span class="keyword">async</span> = <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> httpRequest = ajax.httpRequest();</div><div class="line">    <span class="comment">//初始化HTTP请求</span></div><div class="line">    httpRequest.open(method, url, <span class="keyword">async</span>);</div><div class="line">    <span class="comment">//onreadystatechange函数对象</span></div><div class="line">    httpRequest.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">//readyState 的值等于4，从服务器拿到了数据</span></div><div class="line">        <span class="keyword">if</span> (httpRequest.readyState == <span class="number">4</span>) &#123;</div><div class="line">            <span class="comment">//回调服务器响应数据</span></div><div class="line">            callback(httpRequest.responseText)</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">if</span> (method == <span class="string">'POST'</span>) &#123;</div><div class="line">      	<span class="comment">//给指定的HTTP请求头赋值</span></div><div class="line">        httpRequest.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>);</div><div class="line">    &#125;</div><div class="line">  	<span class="comment">//发送HTTP请求</span></div><div class="line">    httpRequest.send(data);</div><div class="line">&#125;;</div><div class="line"><span class="comment">//实现GET请求</span></div><div class="line">ajax.get = <span class="function"><span class="keyword">function</span> (<span class="params">url, data, callback, async</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> query = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> data) &#123;</div><div class="line">        query.push(<span class="built_in">encodeURIComponent</span>(key) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(data[key]));</div><div class="line">    &#125;</div><div class="line">    ajax.send(url + (query.length ? <span class="string">'?'</span> + query.join(<span class="string">'&amp;'</span>) : <span class="string">''</span>), callback, <span class="string">'GET'</span>, <span class="literal">null</span>, <span class="keyword">async</span>)</div><div class="line">&#125;;</div><div class="line"><span class="comment">//实现POST请求</span></div><div class="line">ajax.post = <span class="function"><span class="keyword">function</span> (<span class="params">url, data, callback, async</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> query = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> data) &#123;</div><div class="line">        query.push(<span class="built_in">encodeURIComponent</span>(key) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(data[key]));</div><div class="line">    &#125;</div><div class="line">    ajax.send(url, callback, <span class="string">'POST'</span>, query.join(<span class="string">'&amp;'</span>), <span class="keyword">async</span>)</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>如果你使用jquery或是zepto很大部分是因为它的ajax兼容性高的缘故，不妨试试这个：<a href="https://github.com/damonare/ajax/tree/master" target="_blank" rel="external">damonare的ajax库</a>，喜欢给个star也是可以的。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>ajax技术对于整个web应用意义都是非凡的，仅以此篇致敬那些曾经奋斗在一线为了ajax技术的实现和普及做出工作的前辈们。</p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><a href="http://www.cnblogs.com/SanMaoSpace/archive/2013/06/15/3137180.html" target="_blank" rel="external">Ajax工作原理记优缺点</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/AJAX" target="_blank" rel="external">Ajax</a></li>
+</ul>
+
+      
+      
+
+  
+    </div>
+    
+  </div>
+
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="../../14/学习javascript数据结构（四）——树/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习Javascript数据结构(四)——树</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+
+
+</article>
+
+
+
+
+<div class="support-author">
+	<p>如果您觉得我的文章对您有用，请随意打赏。</p>
+	<p>您的支持将鼓励我继续创作！</p>
+	<button id='alipay'>￥支付宝支持</button>
+	<button id='wechat'>￥微信支持</button>
+	<p>
+		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+	</p>
+	<script type="text/javascript">
+	document.querySelector('#alipay').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	})
+	document.querySelector('#wechat').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	})
+	</script>
+</div>
+<div class="ds-share" data-thread-key="你真的懂ajax吗？" data-title="你真的懂Ajax吗？" data-images="http://damonare.github.io" data-content="你真的懂Ajax吗？" data-url="https://damonare.github.io">
+	<div class="ds-share-inline">
+	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
+
+	   <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);"></a></li>
+	   <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+	   <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+	   <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+	   <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+
+	 </ul>
+	 <div class="ds-share-icons-more">
+	 </div>
+   </div>
+</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="你真的懂ajax吗？" data-title="你真的懂Ajax吗？" data-url="http://damonare.github.io"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"damonare"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://damonare.cn/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                如果您对我感兴趣欢迎查看<a href="http://damonare.cn/resume/">Damonare的个人简历</a>
+                <span>由<a href="http://hexo.io/">Hexo</a>强力驱动</span> &copy;
+                2017
+                    Damonare
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten -->
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                <span id="busuanzi_container_site_uv">
+    您是本站第<span id="busuanzi_value_site_uv"></span>位访客
+                </span>
+                <span id="showDays"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        var birthDay = new Date('9/05/2016 18:34:23');
+    setInterval(function() {
+        var now = new Date();
+        var num_1 = 1000 * 60 * 60 * 24;
+        var num_2 = 1000 * 60 * 60;
+        var duration = now.getTime() - birthDay.getTime();
+        var total = Math.floor(duration / num_1);
+        var hour = Math.floor((duration % num_1) / num_2);
+        var minute = Math.floor(((duration % num_1) % num_2) / (1000 * 60));
+        var second = Math.floor((((duration % num_1) % num_2) % (1000 * 60)) / 1000);
+        document.getElementById("showDays").innerHTML = "本站已运行" + total + "天" + hour + '时' + minute + '分' + second + '秒';
+    }, 1000);
+</script>
+
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<script>
+    var bszCaller, bszTag;
+    ! function() {
+        var c, d, e, a = !1,
+            b = [];
+        ready = function(c) {
+            return a || "interactive" === document.readyState || "complete" === document.readyState ? c.call(document) : b.push(function() {
+                return c.call(this)
+            }), this
+        }, d = function() {
+            for (var a = 0, c = b.length; c > a; a++) b[a].apply(document);
+            b = []
+        }, e = function() {
+            a || (a = !0, d.call(window), document.removeEventListener ? document.removeEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.detachEvent("onreadystatechange", e), window == window.top && (clearInterval(c),
+                c = null)))
+        }, document.addEventListener ? document.addEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.attachEvent("onreadystatechange", function() {
+            /loaded|complete/.test(document.readyState) && e()
+        }), window == window.top && (c = setInterval(function() {
+            try {
+                a || document.documentElement.doScroll("left")
+            } catch (b) {
+                return
+            }
+            e()
+        }, 5)))
+    }(), bszCaller = {
+        fetch: function(a, b) {
+            var c = "BusuanziCallback_" + Math.floor(1099511627776 * Math.random());
+            window[c] = this.evalCall(b), a = a.replace("=BusuanziCallback", "=" + c), scriptTag = document.createElement("SCRIPT"), scriptTag.type = "text/javascript", scriptTag.defer = !0, scriptTag.src = a, document.getElementsByTagName(
+                "HEAD")[0].appendChild(scriptTag)
+        },
+        evalCall: function(a) {
+            return function(b) {
+                ready(function() {
+                    try {
+                        a(b), scriptTag.parentElement.removeChild(scriptTag)
+                    } catch (c) {
+                        bszTag.hides()
+                    }
+                })
+            }
+        }
+    }, bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", function(a) {
+        bszTag.texts(a), bszTag.shows()
+    }), bszTag = {
+        bszs: ["site_pv", "page_pv", "site_uv"],
+        texts: function(a) {
+            this.bszs.map(function(b) {
+                var c = document.getElementById("busuanzi_value_" + b);
+                c && (c.innerHTML = a[b])
+            })
+        },
+        hides: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "none")
+            })
+        },
+        shows: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "inline")
+            })
+        }
+    };
+</script>
+
+    </div>
+    
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        mathjax: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false
+    }
+</script>
+<script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="../../../../js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e839062c43d17bbd439d0bb5b80ab5e1";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+ eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('g(0).h(e(){e d(){0.9=0[b]?" 看这里，看这里！":a}f b,c,a=0.9;"2"!=4 0.8?(b="8",c="k"):"2"!=4 0.5?(b="5",c="j"):"2"!=4 0.6&&(b="6",c="l"),("2"!=4 0.7||"2"!=4 0[b])&&0.7(c,d,!1)});',22,22,'document||undefined||typeof|mozHidden|webkitHidden|addEventListener|hidden|title|||||function|var|jQuery|ready|Hi|mozvisibilitychange|visibilitychange|webkitvisibilitychange'.split('|'),0,{}))
+</script>
+<script>
+$(function(){
+    $('.ds-share').attr('data-url',window.location.href);
+})
+</script>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<script src="/js/app.js"></script>
+<!-- stats.js -->
+<script src="/js/lib/stats.js"></script>
+<!--open/close  -->
+<section class="main">
+	<div class="switch demo1">
+		<input type="checkbox">
+		<label></label>
+	</div>
+</section>
+
+<script>
+    $(function(){
+        $('.main').delegate('.switch','click',function(){
+            if($(this).find('input').is(":checked")){
+                $('#particles-js').css('bottom','0');
+            }else{
+                $('#particles-js').css('bottom','100%');
+            }
+        })
+    })
+</script>
+
+  </div>
+
+</body>
+</html>

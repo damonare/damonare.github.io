@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-01-16T13:28:23.163Z</updated>
+  <updated>2017-01-18T14:50:40.085Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -16,11 +16,196 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>你真的懂Ajax吗？</title>
+    <link href="http://damonare.github.io/2017/01/18/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82ajax%E5%90%97%EF%BC%9F/"/>
+    <id>http://damonare.github.io/2017/01/18/你真的懂ajax吗？/</id>
+    <published>2017-01-18T06:29:40.316Z</published>
+    <updated>2017-01-18T14:50:40.085Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文讲解了ajax的历史，工作原理以及优缺点，对XMLHttpRequest对象进行了详细的讲解，并使用原生js实现了一个ajax对象以方便日常开始使用。</p>
+<ul>
+<li>damonare的ajax库：<a href="https://github.com/damonare/ajax/tree/master" target="_blank" rel="external">damonare的ajax库</a></li>
+</ul>
+<ul>
+<li>原文博客地址：<a href="https://damonare.github.io/2017/01/14/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E2%80%94%E6%A0%91/#more">学习javascript数据结构(四)——树</a></li>
+<li>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></li>
+<li>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></li>
+</ul>
+<p><strong>古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>相信每个前端程序员日常工作中都避免不了的工作就是和后端联调，联调自然就避免不了使用<code>ajax</code>，但我相信，不管是使用jquery封装的<code>ajax</code>方法还是使用vue的插件<code>vue-resource</code>的程序员，真正对于<code>ajax</code>有过深入探究的并不多，我们更多的是为了使用而使用，至于它的原理往往因为即使不了解依旧能做出东西而懒得去看，我们都被轮子们惯坏了。根据<a href="https://zh.wikipedia.org/wiki/%E5%B8%95%E9%9B%B7%E6%89%98%E6%B3%95%E5%88%99" target="_blank" rel="external">二八定律</a>，即任何一组东西中，最重要的只占其中一小部分，约20%，其余80%的尽管是多数，却是次要的。因 此，如果想挤进那20%的行列，就要学到一般人学不到的深度，学到一般人学不了的东西。</p>
+<p>好的，现在我们从头来说一下<code>ajax</code>。</p>
+<h3 id="Ajax简介"><a href="#Ajax简介" class="headerlink" title="Ajax简介"></a>Ajax简介</h3><p>在上世纪90年代，几乎所有的网站都由HTML页面实现，服务器处理每一个用户请求都需要重新加载网页。形式是怎样的呢？就比如说你在浏览器上登录自己的微博账号，填完了表单，点击登录按钮，一次”完整”的HTTP请求就此触发，服务器发现你的登录密码不对头，立马把网页原原本本的返回给你，在用户看来呢，就是一次重新加载的过程！用户体验极差！而且这个做法浪费了许多带宽，因为在前后两个页面中的大部分HTML码往往是相同的。由于每次应用的沟通都需要向服务器发送请求，应用的回应时间依赖于服务器的回应时间。这导致了用户界面的回应比本机应用慢得多。</p>
+<p>到了2005年，google率先在它的应用(诸如google地图、gmail)里使用了<code>ajax</code>技术，这才让这项技术正式风靡开来。</p>
+<p>如今它的应用已经十分广泛：</p>
+<ul>
+<li>运用<a href="https://zh.wikipedia.org/wiki/XHTML" target="_blank" rel="external">XHTML</a>+<a href="https://zh.wikipedia.org/wiki/CSS" target="_blank" rel="external">CSS</a>来表达信息；</li>
+<li>运用<a href="https://zh.wikipedia.org/wiki/JavaScript" target="_blank" rel="external">JavaScript</a>操作<a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%89%A9%E4%BB%B6%E6%A8%A1%E5%9E%8B" target="_blank" rel="external">DOM</a>（Document Object Model）来运行动态效果；</li>
+<li>运用<a href="https://zh.wikipedia.org/wiki/XML" target="_blank" rel="external">XML</a>和<a href="https://zh.wikipedia.org/wiki/XSLT" target="_blank" rel="external">XSLT</a>操作数据；</li>
+<li>运用<a href="https://zh.wikipedia.org/wiki/XMLHttpRequest" target="_blank" rel="external">XMLHttpRequest</a>或新的Fetch API与<a href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E9%A0%81%E4%BC%BA%E6%9C%8D%E5%99%A8" target="_blank" rel="external">网页服务器</a>进行异步数据交换；</li>
+<li>注意：AJAX与<a href="https://zh.wikipedia.org/wiki/Flash" target="_blank" rel="external">Flash</a>、<a href="https://zh.wikipedia.org/wiki/Silverlight" target="_blank" rel="external">Silverlight</a>和<a href="https://zh.wikipedia.org/wiki/Java_Applet" target="_blank" rel="external">Java Applet</a>等<a href="https://zh.wikipedia.org/wiki/RIA" target="_blank" rel="external">RIA</a>技术是有区分的。</li>
+</ul>
+<h3 id="Ajax工作原理"><a href="#Ajax工作原理" class="headerlink" title="Ajax工作原理"></a>Ajax工作原理</h3><p> Ajax的工作原理相当于在用户和服务器之间加了一个中间层(ajax引擎),使用户操作与服务器响应异步化。并不是所有的用户请求都提交给服务器,像—些数据验证(比如判断用户是否输入了数据)和数据处理(比如判断用户输入数据是否是数字)等都交给Ajax引擎自己来做, 只有确定需要从服务器读取新数据时再由Ajax引擎代为向服务器提交请求。把这些交给了Ajax引擎，用户操作起来也就感觉更加流畅了。</p>
+<h3 id="Ajax优缺点"><a href="#Ajax优缺点" class="headerlink" title="Ajax优缺点"></a>Ajax优缺点</h3><h4 id="Ajax的优点"><a href="#Ajax的优点" class="headerlink" title="Ajax的优点"></a>Ajax的优点</h4><ol>
+<li>无刷新更新数据。</li>
+</ol>
+<p>AJAX最大优点就是能在不刷新整个页面的前提下与服务器通信维护数据。这使得Web应用程序更为迅捷地响应用户交互，并避免了在网络上发送那些没有改变的信息，减少用户等待时间，带来非常好的用户体验。</p>
+<ol>
+<li>异步与服务器通信。</li>
+</ol>
+<p>AJAX使用异步方式与服务器通信，不需要打断用户的操作，具有更加迅速的响应能力。优化了Browser和Server之间的沟通，减少不必要的数据传输、时间及降低网络上数据流量。</p>
+<ol>
+<li>前端和后端负载平衡。</li>
+</ol>
+<p>AJAX可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。并且减轻服务器的负担，AJAX的原则是“按需取数据”，可以最大程度的减少冗余请求和响应对服务器造成的负担，提升站点性能。</p>
+<ol>
+<li>基于标准被广泛支持。</li>
+</ol>
+<p>AJAX基于标准化的并被广泛支持的技术，不需要下载浏览器插件或者小程序，但需要客户允许JavaScript在浏览器上执行。随着Ajax的成熟，一些简化Ajax使用方法的程序库也相继问世。同样，也出现了另一种辅助程序设计的技术，为那些不支持JavaScript的用户提供替代功能。</p>
+<ol>
+<li>界面与应用分离。</li>
+</ol>
+<p>Ajax使WEB中的界面与应用分离（也可以说是数据与呈现分离），有利于分工合作、减少非技术人员对页面的修改造成的WEB应用程序错误、提高效率、也更加适用于现在的发布系统。</p>
+<h4 id="Ajax缺点"><a href="#Ajax缺点" class="headerlink" title="Ajax缺点"></a>Ajax缺点</h4><ol>
+<li>AjAX干掉了Back和加入收藏书签功能，即对浏览器机制的破坏。</li>
+</ol>
+<blockquote>
+<p> 对应用Ajax最主要的批评就是，它可能破坏浏览器的后退与加入收藏书签功能。在动态更新页面的情况下，用户无法回到前一个页面状态，这是因为浏览器仅能记下历史记录中的<a href="https://zh.wikipedia.org/w/index.php?title=%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2&amp;action=edit&amp;redlink=1" target="_blank" rel="external">静态页面</a>。一个被完整读入的页面与一个已经被动态修改过的页面之间的可能差别非常微妙；用户通常都希望单击后退按钮，就能够取消他们的前一次操作，但是在Ajax应用程序中，却无法这样做。不过开发者已想出了种种办法来解决这个问题，<a href="https://zh.wikipedia.org/wiki/HTML5" target="_blank" rel="external">HTML5</a> 之前的方法大多是在用户单击后退按钮访问历史记录时，通过创建或使用一个隐藏的IFRAME来重现页面上的变更。（例如，当用户在Google Maps中单击后退时，它在一个隐藏的<a href="https://zh.wikipedia.org/w/index.php?title=IFRAME&amp;action=edit&amp;redlink=1" target="_blank" rel="external">IFRAME</a>中进行搜索，然后将搜索结果反映到Ajax元素上，以便将应用程序状态恢复到当时的状态）。</p>
+<p>关于无法将状态加入收藏或书签的问题，<a href="https://zh.wikipedia.org/wiki/HTML5" target="_blank" rel="external">HTML5</a>之前的一种方式是使用<a href="https://zh.wikipedia.org/wiki/URL" target="_blank" rel="external">URL</a>片断标识符（通常被称为<a href="https://zh.wikipedia.org/wiki/%E9%94%9A%E7%82%B9" target="_blank" rel="external">锚点</a>，即URL中#后面的部分）来保持追踪，允许用户回到指定的某个应用程序状态。（许多浏览器允许JavaScript动态更新锚点，这使得Ajax应用程序能够在更新显示内容的同时更新锚点。）<a href="https://zh.wikipedia.org/wiki/HTML5" target="_blank" rel="external">HTML5</a> 以后可以直接操作浏览历史，并以字符串形式存储网页状态，将网页加入网页收藏夹或书签时状态会被隐形地保留。上述两个方法也可以同时解决无法后退的问题。</p>
+</blockquote>
+<ol>
+<li>AJAX的安全问题。</li>
+</ol>
+<p>AJAX技术给用户带来很好的用户体验的同时也对IT企业带来了新的安全威胁，Ajax技术就如同对企业数据建立了一个直接通道。这使得开发者在不经意间会暴露比以前更多的数据和服务器逻辑。Ajax的逻辑可以对客户端的安全扫描技术隐藏起来，允许黑客从远端服务器上建立新的攻击。还有Ajax也难以避免一些已知的安全弱点，诸如跨站点脚步攻击、SQL注入攻击和基于Credentials的安全漏洞等等。</p>
+<ol>
+<li>因为网络延迟需要给用户提供必要提示</li>
+</ol>
+<p>进行Ajax开发时，网络延迟——即用户发出请求到服务器发出响应之间的间隔——需要慎重考虑。如果不给予用户明确的回应，没有恰当的预读数据，或者对XMLHttpRequest的不恰当处理，都会使用户感到厌烦。通常的解决方案是，使用一个可视化的组件来告诉用户系统正在进行后台操作并且正在读取数据和内容。</p>
+<h3 id="XMLhttpRequest介绍"><a href="#XMLhttpRequest介绍" class="headerlink" title="XMLhttpRequest介绍"></a>XMLhttpRequest介绍</h3><p>Ajax(Asynchronous  JavaScript  and  XML)不是指一种单一的技术，而是有机地利用了一系列相关的技术。虽然其名称包含XML，但实际上数据格式可以由<a href="https://zh.wikipedia.org/wiki/JSON" target="_blank" rel="external">JSON</a>代替，进一步减少数据量，形成所谓的AJAJ。为了使用JavaScript向服务器发出 <a href="https://developer.mozilla.org/en/HTTP" target="_blank" rel="external">HTTP</a> 请求，需要一个提供此功能的类的实例。这就是XMLHttpRequest的由来。这样的类最初是在Internet Explorer中作为一个名为XMLHTTP的ActiveX对象引入的。然后，Mozilla，Safari和其他浏览器，实现一个XMLHttpRequest类，支持Microsoft的原始ActiveX对象的方法和属性。同时微软也实现了XMLHttpRequest。</p>
+<p>显而易见XMLHttpRequest类是重中之重了。</p>
+<h4 id="XMLhttpRequest属性"><a href="#XMLhttpRequest属性" class="headerlink" title="XMLhttpRequest属性"></a>XMLhttpRequest属性</h4><h5 id="onreadystatechange"><a href="#onreadystatechange" class="headerlink" title="onreadystatechange"></a>onreadystatechange</h5><p>一个JavaScript函数对象，当readyState属性改变时会调用它。回调函数会在user interface线程中调用。</p>
+<h5 id="readyState"><a href="#readyState" class="headerlink" title="readyState"></a>readyState</h5><p>HTTP 请求的状态.当一个 XMLHttpRequest 初次创建时，这个属性的值从 0 开始，直到接收到完整的 HTTP 响应，这个值增加到 4。</p>
+<p>5 个状态中每一个都有一个相关联的非正式的名称，下表列出了状态、名称和含义：</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Uninitialized</td>
+<td>初始化状态。XMLHttpRequest 对象已创建或已被 abort() 方法重置。</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Open</td>
+<td>open() 方法已调用，但是 send() 方法未调用。请求还没有被发送。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sent</td>
+<td>Send() 方法已调用，HTTP 请求已发送到 Web 服务器。未接收到响应。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Receiving</td>
+<td>所有响应头部都已经接收到。响应体开始接收但未完成。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Loaded</td>
+<td>HTTP 响应已经完全接收。</td>
+</tr>
+</tbody>
+</table>
+<p>readyState 的值不会递减，除非当一个请求在处理过程中的时候调用了 abort() 或 open() 方法。每次这个属性的值增加的时候，都会触发 onreadystatechange 事件句柄。</p>
+<h5 id="responseText"><a href="#responseText" class="headerlink" title="responseText"></a>responseText</h5><p>目前为止为服务器接收到的响应体（不包括头部），或者如果还没有接收到数据的话，就是空字符串。</p>
+<p>如果 readyState 小于 3，这个属性就是一个空字符串。当 readyState 为 3，这个属性返回目前已经接收的响应部分。如果 readyState 为 4，这个属性保存了完整的响应体。</p>
+<p>如果响应包含了为响应体指定字符编码的头部，就使用该编码。否则，假定使用 Unicode UTF-8。</p>
+<h5 id="responseXML"><a href="#responseXML" class="headerlink" title="responseXML"></a>responseXML</h5><p>对请求的响应，解析为 XML 并作为 Document 对象返回。</p>
+<h5 id="status"><a href="#status" class="headerlink" title="status"></a>status</h5><p>由服务器返回的 HTTP 状态代码，如 200 表示成功，而 404 表示 “Not Found” 错误。当 readyState 小于 3 的时候读取这一属性会导致一个异常。</p>
+<h5 id="statusText"><a href="#statusText" class="headerlink" title="statusText"></a>statusText</h5><p>这个属性用名称而不是数字指定了请求的 HTTP 的状态代码。也就是说，当状态为 200 的时候它是 “OK”，当状态为 404 的时候它是 “Not Found”。和 status 属性一样，当 readyState 小于 3 的时候读取这一属性会导致一个异常。</p>
+<h4 id="XMLHttpRequest方法"><a href="#XMLHttpRequest方法" class="headerlink" title="XMLHttpRequest方法"></a>XMLHttpRequest方法</h4><h5 id="abort"><a href="#abort" class="headerlink" title="abort()"></a>abort()</h5><p>取消当前响应，关闭连接并且结束任何未决的网络活动。</p>
+<p>这个方法把 XMLHttpRequest 对象重置为 readyState 为 0 的状态，并且取消所有未决的网络活动。例如，如果请求用了太长时间，而且响应不再必要的时候，可以调用这个方法。</p>
+<h5 id="getAllResponseHeaders"><a href="#getAllResponseHeaders" class="headerlink" title="getAllResponseHeaders()"></a>getAllResponseHeaders()</h5><p>把 HTTP 响应头部作为未解析的字符串返回。</p>
+<p>如果 readyState 小于 3，这个方法返回 null。否则，它返回服务器发送的所有 HTTP 响应的头部。头部作为单个的字符串返回，一行一个头部。每行用换行符 “\r\n” 隔开。</p>
+<h5 id="getResponseHeader"><a href="#getResponseHeader" class="headerlink" title="getResponseHeader()"></a>getResponseHeader()</h5><p>返回指定的 HTTP 响应头部的值。其参数是要返回的 HTTP 响应头部的名称。可以使用任何大小写来制定这个头部名字，和响应头部的比较是不区分大小写的。</p>
+<p>该方法的返回值是指定的 HTTP 响应头部的值，如果没有接收到这个头部或者 readyState 小于 3 则为空字符串。如果接收到多个有指定名称的头部，这个头部的值被连接起来并返回，使用逗号和空格分隔开各个头部的值。</p>
+<h5 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h5><p>初始化一个请求. 该方法用于JavaScript代码中;如果是本地代码, 使用 <a href="https://developer.mozilla.org/zh-cn/nsIXMLHttpRequest#openRequest(" target="_blank" rel="external"><code>openRequest()</code></a>)方法代替.</p>
+<blockquote>
+<p> <strong>注意:</strong> 在一个已经激活的request下（已经调用open()或者openRequest()方法的request）再次调用这个方法相当于调用了abort（）方法。</p>
+</blockquote>
+<p>参数</p>
+<ul>
+<li><p><code>method</code></p>
+<p>请求所使用的HTTP方法; 例如 “GET”, “POST”, “PUT”, “DELETE”等. 如果下个参数是非HTTP(S)的URL,则忽略该参数.</p>
+</li>
+<li><p><code>url</code></p>
+<p>该请求所要访问的URL</p>
+</li>
+<li><p><code>async</code></p>
+<p>一个可选的布尔值参数，默认为true,意味着是否执行异步操作，如果值为false,则send()方法不会返回任何东西，直到接受到了服务器的返回数据。如果为值为true，一个对开发者透明的通知会发送到相关的事件监听者。这个值必须是true,如果multipart 属性是true，否则将会出现一个意外。</p>
+</li>
+<li><p><code>user</code></p>
+<p>用户名,可选参数,为授权使用;默认参数为空string.</p>
+</li>
+<li><p><code>password</code></p>
+<p>密码,可选参数,为授权使用;默认参数为空string.</p>
+</li>
+</ul>
+<h5 id="send"><a href="#send" class="headerlink" title="send()"></a>send()</h5><p>发送 HTTP 请求，使用传递给 open() 方法的参数，以及传递给该方法的可选请求体。</p>
+<h5 id="setRequestHeader"><a href="#setRequestHeader" class="headerlink" title="setRequestHeader()"></a>setRequestHeader()</h5><p>向一个打开但未发送的请求设置或添加一个 HTTP 请求(设置请求头)。</p>
+<p>参数</p>
+<ul>
+<li><p><code>header</code></p>
+<p>将要被赋值的请求头名称</p>
+</li>
+<li><p><code>value</code></p>
+<p>给指定的请求头赋的值</p>
+</li>
+</ul>
+<h3 id="Ajax原生js实现"><a href="#Ajax原生js实现" class="headerlink" title="Ajax原生js实现"></a>Ajax原生js实现</h3><p>下面是使用原生js写的ajax：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ajax = &#123;&#125;;</div><div class="line">ajax.httpRequest = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//判断是否支持XMLHttpRequest对象</span></div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//兼容IE浏览器</span></div><div class="line">    <span class="keyword">var</span> versions = [</div><div class="line">        <span class="string">"MSXML2.XmlHttp.6.0"</span>,</div><div class="line">        <span class="string">"MSXML2.XmlHttp.5.0"</span>,</div><div class="line">        <span class="string">"MSXML2.XmlHttp.4.0"</span>,</div><div class="line">        <span class="string">"MSXML2.XmlHttp.3.0"</span>,</div><div class="line">        <span class="string">"MSXML2.XmlHttp.2.0"</span>,</div><div class="line">        <span class="string">"Microsoft.XmlHttp"</span></div><div class="line">    ];</div><div class="line">	<span class="comment">//定义局部变量xhr,储存IE浏览器的ActiveXObject对象</span></div><div class="line">    <span class="keyword">var</span> xhr;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; versions.length; i++) &#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            xhr = <span class="keyword">new</span> ActiveXObject(versions[i]);</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> xhr;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">ajax.send = <span class="function"><span class="keyword">function</span> (<span class="params">url, callback, method, data, async</span>) </span>&#123;</div><div class="line">    <span class="comment">//默认异步</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">async</span> === <span class="literal">undefined</span>) &#123;</div><div class="line">        <span class="keyword">async</span> = <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> httpRequest = ajax.httpRequest();</div><div class="line">    <span class="comment">//初始化HTTP请求</span></div><div class="line">    httpRequest.open(method, url, <span class="keyword">async</span>);</div><div class="line">    <span class="comment">//onreadystatechange函数对象</span></div><div class="line">    httpRequest.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">//readyState 的值等于4，从服务器拿到了数据</span></div><div class="line">        <span class="keyword">if</span> (httpRequest.readyState == <span class="number">4</span>) &#123;</div><div class="line">            <span class="comment">//回调服务器响应数据</span></div><div class="line">            callback(httpRequest.responseText)</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">if</span> (method == <span class="string">'POST'</span>) &#123;</div><div class="line">      	<span class="comment">//给指定的HTTP请求头赋值</span></div><div class="line">        httpRequest.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>);</div><div class="line">    &#125;</div><div class="line">  	<span class="comment">//发送HTTP请求</span></div><div class="line">    httpRequest.send(data);</div><div class="line">&#125;;</div><div class="line"><span class="comment">//实现GET请求</span></div><div class="line">ajax.get = <span class="function"><span class="keyword">function</span> (<span class="params">url, data, callback, async</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> query = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> data) &#123;</div><div class="line">        query.push(<span class="built_in">encodeURIComponent</span>(key) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(data[key]));</div><div class="line">    &#125;</div><div class="line">    ajax.send(url + (query.length ? <span class="string">'?'</span> + query.join(<span class="string">'&amp;'</span>) : <span class="string">''</span>), callback, <span class="string">'GET'</span>, <span class="literal">null</span>, <span class="keyword">async</span>)</div><div class="line">&#125;;</div><div class="line"><span class="comment">//实现POST请求</span></div><div class="line">ajax.post = <span class="function"><span class="keyword">function</span> (<span class="params">url, data, callback, async</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> query = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> data) &#123;</div><div class="line">        query.push(<span class="built_in">encodeURIComponent</span>(key) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(data[key]));</div><div class="line">    &#125;</div><div class="line">    ajax.send(url, callback, <span class="string">'POST'</span>, query.join(<span class="string">'&amp;'</span>), <span class="keyword">async</span>)</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>如果你使用jquery或是zepto很大部分是因为它的ajax兼容性高的缘故，不妨试试这个：<a href="https://github.com/damonare/ajax/tree/master" target="_blank" rel="external">damonare的ajax库</a>，喜欢给个star也是可以的。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>ajax技术对于整个web应用意义都是非凡的，仅以此篇致敬那些曾经奋斗在一线为了ajax技术的实现和普及做出工作的前辈们。</p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><a href="http://www.cnblogs.com/SanMaoSpace/archive/2013/06/15/3137180.html" target="_blank" rel="external">Ajax工作原理记优缺点</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/AJAX" target="_blank" rel="external">Ajax</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文讲解了ajax的历史，工作原理以及优缺点，对XMLHttpRequest对象进行了详细的讲解，并使用原生js实现了一个ajax对象以方便日常开始使用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;damonare的ajax库：&lt;a href=&quot;https://github.com/damonare/ajax/tree/master&quot;&gt;damonare的ajax库&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;原文博客地址：&lt;a href=&quot;https://damonare.github.io/2017/01/14/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E2%80%94%E6%A0%91/#more&quot;&gt;学习javascript数据结构(四)——树&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
+    
+    
+      <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>学习Javascript数据结构(四)——树</title>
     <link href="http://damonare.github.io/2017/01/14/%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E2%80%94%E6%A0%91/"/>
     <id>http://damonare.github.io/2017/01/14/学习javascript数据结构（四）——树/</id>
     <published>2017-01-14T05:22:28.299Z</published>
-    <updated>2017-01-16T13:28:23.163Z</updated>
+    <updated>2017-01-16T13:41:31.907Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文讲解了数据结构中的[树]的概念，尽可能通俗易懂的解释树这种数据结构的概念，使用javascript实现了树，如有纰漏，欢迎批评指正。</p>
 <ul>
@@ -116,7 +301,7 @@
 
 （3）它的左、右子树也分别为二叉查找树。
 </code></pre><p>首先我们声明一个BinarySearchTree类：</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">BinarySearchTree</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">var</span> Node = <span class="function"><span class="keyword">function</span><span class="params">(key)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.key = key;</div><div class="line">        <span class="keyword">this</span>.left = <span class="literal">null</span>;</div><div class="line">        <span class="keyword">this</span>.right = <span class="literal">null</span>;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> root=<span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">BinarySearchTree</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> Node = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.key = key;</div><div class="line">        <span class="keyword">this</span>.left = <span class="literal">null</span>;</div><div class="line">        <span class="keyword">this</span>.right = <span class="literal">null</span>;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> root=<span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/binary6.gif" alt="二叉树"></p>
 <p>和链表一样，二叉树也通过指针来表示节点之间的关系。在双向链表中，每一个节点有两个指针，一个指向下一个节点，一个指向上一个节点。对于树，使用同样的方式，只不过一个指向左孩子，一个指向右孩子。现在我们给这棵树弄一些方法：</p>
 <ul>
@@ -153,9 +338,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -368,9 +553,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
     
   </entry>
   
@@ -674,9 +859,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -1140,9 +1325,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -1444,7 +1629,7 @@
 <h4 id="变量的块级作用域"><a href="#变量的块级作用域" class="headerlink" title="变量的块级作用域"></a>变量的块级作用域</h4><p>使用 ES6，声明变量我们可以用 <code>var</code> ，也可以用 <code>let</code> 或 <code>const</code>。</p>
 <p><code>var</code> 有什么不足？</p>
 <p>使用 <code>var</code> 的问题是变量会漏入其他代码块中，诸如 <code>for</code> 循环或 <code>if</code> 代码块。</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
 <p>对于 <code>test(fasle)</code> ，你期望返回 <code>outer</code>，<strong>但是</strong>，你得到的是 <code>undefined</code>。</p>
 <p>为什么？</p>
 <p>因为尽管没有执行 <code>if</code> 代码块，第四行中的表达式 <code>var x</code> 也会被提升。</p>
@@ -1456,7 +1641,7 @@
 <li>初始化是不被提升的。如果你使用 <code>var</code> 声明变量，请总是将它放在顶部。</li>
 <li>在应用了声明提升规则之后，我们就能更容易地理解发生了什么：</li>
 </ul>
-<pre><code><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x; <span class="comment">// 声明提升</span></div><div class="line">    <span class="keyword">if</span> (inner) &#123;</div><div class="line">        x = <span class="string">'inner'</span>; <span class="comment">// 初始化不被提升</span></div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> x; <span class="comment">// 声明提升</span></div><div class="line">    <span class="keyword">if</span> (inner) &#123;</div><div class="line">        x = <span class="string">'inner'</span>; <span class="comment">// 初始化不被提升</span></div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre></blockquote>
 <p>ECMAScript 2015 找到了解决的办法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">let</span> x = <span class="string">'inner'</span>;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 从第一行获取到预期结果</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// outer</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
@@ -1477,7 +1662,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> private2 = <span class="number">1</span>;</div><div class="line">&#125;)();</div><div class="line"><span class="built_in">console</span>.log(private2); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
 <p>如果你看一看 jQuery/loadsh 或其他开源项目，你会注意到他们用 IIFE 来避免污染全局环境而且只在全局中定义了诸如 <code>_</code>，<code>$</code>和<code>jQuery</code>。</p>
 <p>在 ES6 上则一目了然，我们可以只用代码块和 <code>let</code>，也不再需要使用 IIFE了。</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> private3 = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(private3); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> private3 = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(private3); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
 <p><strong>Const</strong></p>
 <p>如果你想要一个变量保持不变（常量），你也可以使用 <code>const</code>。</p>
 <p><img src="http://adrianmejia.com/images/javascript-es6-const-variables-example.png" alt="" title="const variable example"></p>
@@ -1505,7 +1690,7 @@
 <p><strong>交换值</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> tmp = a;</div><div class="line">a = b;</div><div class="line">b = tmp;</div><div class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
 <p>等同于：</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line">[a, b] = [b, a];</div><div class="line">console.<span class="built_in">log</span>(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line">[a, b] = [b, a];</div><div class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
 <p><strong>多个返回值的解构</strong></p>
 <figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function margin() &#123;</div><div class="line">  var <span class="built_in">left</span>=<span class="number">1</span>, <span class="built_in">right</span>=<span class="number">2</span>, <span class="built_in">top</span>=<span class="number">3</span>, <span class="built_in">bottom</span>=<span class="number">4</span>;</div><div class="line">  <span class="keyword">return</span> &#123; <span class="built_in">left</span>: <span class="built_in">left</span>, <span class="built_in">right</span>: <span class="built_in">right</span>, <span class="built_in">top</span>: <span class="built_in">top</span>, <span class="built_in">bottom</span>: <span class="built_in">bottom</span> &#125;;</div><div class="line">&#125;</div><div class="line">var data = margin();</div><div class="line">var <span class="built_in">left</span> = data.<span class="built_in">left</span>;</div><div class="line">var <span class="built_in">bottom</span> = data.<span class="built_in">bottom</span>;</div><div class="line">console.log(<span class="built_in">left</span>, <span class="built_in">bottom</span>); // <span class="number">1</span> <span class="number">4</span></div></pre></td></tr></table></figure>
 <p>在第 3 行中，你也可以用一个像这样的数组返回（同时省去了一些编码）：</p>
@@ -1733,9 +1918,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="javascript" scheme="http://damonare.github.io/tags/javascript/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数据结构与算法" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
@@ -2357,9 +2542,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -3788,121 +3973,6 @@ Model：数据访问层
       <category term="面试" scheme="http://damonare.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
       <category term="TCP/IP" scheme="http://damonare.github.io/tags/TCP-IP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo折腾记</title>
-    <link href="http://damonare.github.io/2016/09/06/Hexo%E6%8A%98%E8%85%BE%E8%AE%B0/"/>
-    <id>http://damonare.github.io/2016/09/06/Hexo折腾记/</id>
-    <published>2016-09-05T16:17:05.192Z</published>
-    <updated>2016-11-26T10:03:18.091Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 博主之前也有折腾wordpress和jekyll可对于一个前端er来说，wordpress让人没法尽兴，因为不知道该如何添加自己的代码。而jekyll就太麻烦了每一次都需要重新提交，而且样式也不是很丰富，简直就和鸡肋一般。食之无味，弃之可惜。</p>
-<ul>
-<li><p>原文博客地址：<a href="http://damonare.github.io/2016/09/06/Hexo%E6%8A%98%E8%85%BE%E8%AE%B0/#more">Hexo折腾记</a></p>
-</li>
-<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
-</li>
-<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-</li>
-</ul>
-<p><strong>如果时间可以静止，我希望就停在此刻。</strong></p>
-<a id="more"></a>
-<p><strong>之前有听说过Hexo这个博客框架，但一直没时间给自己搭一个，其实平时也有注意到很多大牛的博客是很绚丽的，却不知道那就是Hexo。说干就干，历时一整天，踩坑无数，终于变成了博主想要的样子。放个链接<a href="https://damonare.github.io">Damonare的个人博客</a>如果你也想要一个和博主一样的博客，那就继续看下去吧。</strong></p>
-<ul>
-<li>博主系统Window7,搭建博客主题Yilia。下面记录博主搭建的整个过程。</li>
-</ul>
-<h2 id="git和github"><a href="#git和github" class="headerlink" title="git和github"></a>git和github</h2><blockquote>
-<ul>
-<li>想搭建一个博客的应该大多数都是程序员吧，那么github账号应该是一定有的了。你要是实在清新脱俗到连个github账号也没有，不用担心，给你个外链<a href="https://github.com" target="_blank" rel="external">Github</a>,账号设置然后添加SSH,这样你之后输入hexo命令的时候就不用一次次输入密码了，关于如何注册github和添加SSH，这里需要提醒一点，github账号最好都是小写字母，不然容易解析错误，还有邮箱，尽量别用国内的邮箱，很容易出问题了，比如你git提交的贡献不被记录。</li>
-<li>Git身为程序员给他应该是会用的吧。好吧假设你不会使用git和github给你个外链<a href="http://www.cnblogs.com/peterzd/archive/2012/04/22/2465230.html" target="_blank" rel="external">看这里</a></li>
-</ul>
-</blockquote>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><ul>
-<li><p>好的，现在你有了github和git了，也配置好了，那么就需要在github新建一个仓库了,</p>
-<p><img src="http://img.blog.csdn.net/20160906153800293" alt="这里写图片描述"></p>
-<p><strong>注意：这里的仓库名称要和你的username对应</strong></p>
-</li>
-<li>Node安装</li>
-</ul>
-<blockquote>
-<p>Node可以去官网下载，或是在国内下载，由于众所周知的原因，这里放一个<a href="http://nodejs.cn/" target="_blank" rel="external">nodejs.cn</a>的链接<br>Node内置npm包，我们之后就可以打开node命令行使用npm进行安装一些依赖，如果觉得太慢，可以使用淘宝镜像cnpm</p>
-</blockquote>
-<ul>
-<li>Hexo安装</li>
-</ul>
-<blockquote>
-<p>好的，现在我们Node,git,github都弄好了，现在可以本地化一个hexo了,新建hexo文件夹，任意盘下都可以，然后命令行执行命令：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo -g  <span class="comment">#-g表示全局安装, npm默认为当前项目安装</span></div></pre></td></tr></table></figure></p>
-<p>如果遇到错误：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure></p>
-<p>改用下面的命令安装：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> install hexo --<span class="literal">no</span>-optional</div></pre></td></tr></table></figure></p>
-<p>好的，现在hexo也就绪了,hexo命令：</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/git</div><div class="line">hexo init hexo  <span class="comment">#执行init命令初始化到你指定的hexo目录</span></div><div class="line"><span class="built_in">cd</span> hexo</div><div class="line">npm install    <span class="comment">#install before start blogging</span></div><div class="line">hexo generate       <span class="comment">#自动根据当前目录下文件,生成静态网页</span></div><div class="line">hexo server         <span class="comment">#运行本地服务</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>浏览器输入<a href="http://localhost:4000就可以看到效果。" target="_blank" rel="external">http://localhost:4000就可以看到效果。</a><br> <strong>浏览目录</strong><br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">├── .deploy       <span class="meta">#需要部署的文件</span></div><div class="line">├── node_modules  <span class="meta">#Hexo插件</span></div><div class="line">├── <span class="keyword">public</span>        <span class="meta">#生成的静态网页文件</span></div><div class="line">├── scaffolds     <span class="meta">#模板</span></div><div class="line">├── source        <span class="meta">#博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里</span></div><div class="line">|   ├── _drafts   <span class="meta">#草稿</span></div><div class="line">|   └── _posts    <span class="meta">#文章</span></div><div class="line">├── themes        <span class="meta">#主题</span></div><div class="line">├── _config.yml   <span class="meta">#全局配置文件</span></div><div class="line">└── <span class="keyword">package</span>.json</div></pre></td></tr></table></figure></p>
-<p>添加博文<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>  <span class="meta">#新建博文,其中postName是博文题目</span></div></pre></td></tr></table></figure></p>
-<p>如果不想博文在首页全部显示, 并能出现阅读全文按钮效果, 需要在你想在首页显示的部分下添加</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--more--&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>这点和wordpress是一样的</p>
-</blockquote>
-<h2 id="Hexo-Yilia主题配置"><a href="#Hexo-Yilia主题配置" class="headerlink" title="Hexo Yilia主题配置"></a>Hexo Yilia主题配置</h2><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd <span class="regexp">~/git/</span>hexo</div><div class="line">git clone git<span class="meta">@github</span>.<span class="string">com:</span>litten<span class="regexp">/hexo-theme-yilia.git themes/</span>yilia</div></pre></td></tr></table></figure>
-<blockquote>
-<p>在./_config.yml，修改主题为yilia<br>theme: yilia</p>
-<p>Hexo <a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">主题</a></p>
-</blockquote>
-<p>查看本地效果<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo g</span></div><div class="line">hexo s</div></pre></td></tr></table></figure></p>
-<h3 id="完整配置信息如下："><a href="#完整配置信息如下：" class="headerlink" title="完整配置信息如下："></a>完整配置信息如下：</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Site #站点信息</span></div><div class="line"><span class="attr">title:</span> blog Name <span class="comment">#标题</span></div><div class="line"><span class="attr">subtitle:</span> Subtitle <span class="comment">#副标题</span></div><div class="line"><span class="attr">description:</span> my blog desc <span class="comment">#描述</span></div><div class="line"><span class="attr">author:</span> me <span class="comment">#作者</span></div><div class="line"><span class="attr">language:</span> zh-CN <span class="comment">#语言</span></div><div class="line"><span class="attr">timezone:</span> Asia/Shanghai <span class="comment">#时区</span></div><div class="line"></div><div class="line"><span class="comment"># URL</span></div><div class="line"><span class="attr">url:</span> http://yoururl.com   <span class="comment">#用于绑定域名, 其他的不需要配置</span></div><div class="line"><span class="attr">root:</span> /</div><div class="line"><span class="comment">#permalink: :year/:month/:day/:title/</span></div><div class="line"><span class="attr">permalink:</span> posts/title.html</div><div class="line"><span class="attr">permalink_defaults:</span></div><div class="line"></div><div class="line"><span class="comment"># Directory #目录</span></div><div class="line"><span class="attr">source_dir:</span> source <span class="comment">#源文件</span></div><div class="line"><span class="attr">public_dir:</span> public <span class="comment">#生成的网页文件</span></div><div class="line"><span class="attr">tag_dir:</span> tags <span class="comment">#标签</span></div><div class="line"><span class="attr">archive_dir:</span> archives <span class="comment">#归档</span></div><div class="line"><span class="attr">category_dir:</span> categories <span class="comment">#分类</span></div><div class="line"><span class="attr">code_dir:</span> downloads/code</div><div class="line"><span class="attr">i18n_dir:</span> :lang <span class="comment">#国际化</span></div><div class="line"><span class="attr">skip_render:</span></div><div class="line"></div><div class="line"><span class="comment"># Writing #写作</span></div><div class="line"><span class="attr">new_post_name:</span> :title.md <span class="comment">#新文章标题</span></div><div class="line"><span class="attr">default_layout:</span> post <span class="comment">#默认模板(post page photo draft)</span></div><div class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment">#标题转换成大写</span></div><div class="line"><span class="attr">external_link:</span> <span class="literal">true</span> <span class="comment">#新标签页里打开连接</span></div><div class="line"><span class="attr">filename_case:</span> <span class="number">0</span></div><div class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></div><div class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span></div><div class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></div><div class="line"><span class="attr">future:</span> <span class="literal">true</span></div><div class="line"><span class="attr">highlight:</span> <span class="comment">#语法高亮</span></div><div class="line"><span class="attr">  enable:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  line_number:</span> <span class="literal">true</span> <span class="comment">#显示行号</span></div><div class="line"><span class="attr">  auto_detect:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  tab_replace:</span></div><div class="line"></div><div class="line"><span class="comment"># Category &amp; Tag #分类和标签</span></div><div class="line"><span class="attr">default_category:</span> uncategorized <span class="comment">#默认分类</span></div><div class="line"><span class="attr">category_map:</span></div><div class="line"><span class="attr">tag_map:</span></div><div class="line"></div><div class="line"><span class="comment"># Date / Time format #日期时间格式</span></div><div class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></div><div class="line"><span class="attr">date_format:</span> YYYY-MM-DD</div><div class="line"><span class="attr">time_format:</span> HH:mm:ss</div><div class="line"></div><div class="line"><span class="comment"># Pagination #分页</span></div><div class="line"><span class="attr">per_page:</span> <span class="number">10</span> <span class="comment">#每页文章数, 设置成 0 禁用分页</span></div><div class="line"><span class="attr">pagination_dir:</span> page</div><div class="line"></div><div class="line"><span class="comment"># Extensions #插件和主题</span></div><div class="line"><span class="comment">## 插件: http://hexo.io/plugins/</span></div><div class="line"><span class="comment">## 主题: http://hexo.io/themes/</span></div><div class="line"><span class="attr">theme:</span> next</div><div class="line"></div><div class="line"><span class="comment"># Deployment #部署, 同时发布在 GitHub 和 GitCafe 上面</span></div><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">- type:</span> git</div><div class="line"><span class="attr">  repo:</span> git@gitcafe.com:username/username.git,gitcafe-pages</div><div class="line"><span class="attr">- type:</span> git</div><div class="line"><span class="attr">  repo:</span> git@github.com:username/username.github.io.git,master</div><div class="line"></div><div class="line"><span class="comment"># Disqus #Disqus评论系统</span></div><div class="line"><span class="attr">disqus_shortname:</span></div><div class="line"></div><div class="line"><span class="attr">plugins:</span> <span class="comment">#插件，例如生成 RSS 和站点地图的</span></div><div class="line"><span class="bullet">-</span> hexo-generator-feed</div><div class="line"><span class="bullet">-</span> hexo-generator-sitemap</div></pre></td></tr></table></figure>
-<blockquote>
-<p>其它设置，可参考：<a href="http://write.blog.csdn.net/mdeditor" target="_blank" rel="external">这篇博文</a></p>
-</blockquote>
-<h3 id="Hexo-Yilia-Bug修改"><a href="#Hexo-Yilia-Bug修改" class="headerlink" title="Hexo Yilia Bug修改"></a>Hexo Yilia Bug修改</h3><blockquote>
-<p>修改参考<a href="https://github.com/litten/hexo-theme-yilia/issues" target="_blank" rel="external">这里</a>基本所有的问题都能在这里解决了,所以啊，一个项目的issue真的很具有参考价值，少走不少弯路，通过这里的代码博主添加了 Hexo文章统计 功能，没有动画，头像设置有null的问题以及点击小房子没反应的bug。</p>
-</blockquote>
-<p>&gt;</p>
-<h2 id="Hexo添加文章目录"><a href="#Hexo添加文章目录" class="headerlink" title="Hexo添加文章目录"></a>Hexo添加文章目录</h2><blockquote>
-<p>我们首先要编辑文章显示页面的模板，也就是<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">themes<span class="regexp">/landscape/</span>layout<span class="regexp">/_partial/</span>article.ejs</div></pre></td></tr></table></figure></p>
-<p>文件。为了将目录生成在正文之前，我们首先在这个文件中找到<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">%-</span></span></span><span class="ruby"> post.content </span><span class="xml"><span class="tag">%&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>并在这一行之前加入如下代码：</p>
-</blockquote>
-<figure class="highlight mojolicious"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="comment">&lt;!-- Table of Contents --&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="perl"> <span class="keyword">if</span> (!<span class="keyword">index</span> &amp;&amp; post.toc)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"toc"</span> <span class="attr">class</span>=<span class="string">"toc-article"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">strong</span> <span class="attr">class</span>=<span class="string">"toc-title"</span>&gt;</span>文章目录<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="perl">- toc(post.content) </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="perl"> &#125; </span><span class="xml"><span class="tag">%&gt;</span></span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>这段代码的含义清晰明了，if语句中有两个条件，!index是为了不在首页的文章摘要中生成目录，post.toc确保了只在显式地标记了toc: true的文章中生成目录。若这两个条件满足，则创建一个目录的div。</p>
-<p>修改完这个文件之后，找一篇包含了多个子标题的文章，并在文章开头的front-matter中添加一句toc: true，在浏览器中访问这篇文章，应该可以看到文章的开头处已经有了带链接的目录。但是这样的目录实在太难看，我们还需要添加相应的CSS来将其指定为我们想要的样式。</p>
-<p>要指定目录的样式，我们要修改的文件是<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">themes<span class="regexp">/landscape/</span><span class="keyword">source</span><span class="regexp">/css/</span>_partial<span class="regexp">/article.styl</span></div></pre></td></tr></table></figure></p>
-<p>在文件的最后，添加如下代码：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*toc*/</span></div><div class="line"><span class="selector-class">.toc-article</span></div><div class="line">	<span class="attribute">background</span> <span class="number">#eee</span></div><div class="line">	<span class="attribute">border</span> <span class="number">1px</span> solid <span class="number">#bbb</span></div><div class="line">	<span class="attribute">border-radius</span> <span class="number">10px</span></div><div class="line">	<span class="attribute">margin</span> <span class="number">1.5em</span> <span class="number">0</span> <span class="number">0.3em</span> <span class="number">1.5em</span></div><div class="line">	<span class="attribute">padding</span> <span class="number">1.2em</span> <span class="number">1em</span> <span class="number">0</span> <span class="number">1em</span></div><div class="line">	<span class="attribute">max-width</span> <span class="number">28%</span></div><div class="line"></div><div class="line"><span class="selector-class">.toc-title</span></div><div class="line">	<span class="attribute">font-size</span> <span class="number">120%</span></div><div class="line"></div><div class="line"><span class="selector-id">#toc</span></div><div class="line">	<span class="attribute">line-height</span> <span class="number">1em</span></div><div class="line">	<span class="attribute">font-size</span> <span class="number">0.9em</span></div><div class="line">	<span class="attribute">float</span> right</div><div class="line"><span class="selector-class">.toc</span></div><div class="line">	<span class="attribute">padding</span> <span class="number">0</span></div><div class="line">	<span class="attribute">margin</span> <span class="number">1em</span></div><div class="line">	<span class="attribute">line-height</span> <span class="number">1.8em</span></div><div class="line">	<span class="selector-tag">li</span></div><div class="line">	<span class="attribute">list-style-type</span> none</div><div class="line"></div><div class="line"><span class="selector-class">.toc-child</span></div><div class="line">	<span class="attribute">margin-left</span> <span class="number">1em</span></div></pre></td></tr></table></figure>
-<p>由于Hexo使用的是stylus预处理器，所以CSS代码要注意缩进，不然就报错了，这种目录要是不满意完全可以按照自己意愿写一个。</p>
-</blockquote>
-<h2 id="Hexo-多说评论框"><a href="#Hexo-多说评论框" class="headerlink" title="Hexo 多说评论框"></a>Hexo 多说评论框</h2><blockquote>
-<p>链接：<a href="http://ssk.91txh.com/205" target="_blank" rel="external">多说社会化评论框核心脚本embed.js本地化方法</a><br>链接：<a href="http://ssk.91txh.com/207" target="_blank" rel="external">多说社会化评论框添加 站长回复 标记</a><br>链接： <a href="http://ssk.91txh.com/209" target="_blank" rel="external">多说回复后显示浏览器及操作系统信息（Useragent）</a></p>
-</blockquote>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><blockquote>
-<p>有任何问题请在评论中回复，博主会在评论中解答。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 博主之前也有折腾wordpress和jekyll可对于一个前端er来说，wordpress让人没法尽兴，因为不知道该如何添加自己的代码。而jekyll就太麻烦了每一次都需要重新提交，而且样式也不是很丰富，简直就和鸡肋一般。食之无味，弃之可惜。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/06/Hexo%E6%8A%98%E8%85%BE%E8%AE%B0/#more&quot;&gt;Hexo折腾记&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;如果时间可以静止，我希望就停在此刻。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="http://damonare.github.io/categories/life/"/>
-    
-    
-      <category term="Hexo" scheme="http://damonare.github.io/tags/Hexo/"/>
     
   </entry>
   
