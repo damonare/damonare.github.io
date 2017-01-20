@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-01-18T14:56:01.280Z</updated>
+  <updated>2017-01-20T13:21:18.335Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -16,18 +16,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>你真的懂Ajax吗？</title>
-    <link href="http://damonare.github.io/2017/01/18/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82ajax%E5%90%97%EF%BC%9F/"/>
-    <id>http://damonare.github.io/2017/01/18/你真的懂ajax吗？/</id>
+    <title>Ajax入门</title>
+    <link href="http://damonare.github.io/2017/01/18/ajax%E5%85%A5%E9%97%A8/"/>
+    <id>http://damonare.github.io/2017/01/18/ajax入门/</id>
     <published>2017-01-18T06:29:40.316Z</published>
-    <updated>2017-01-18T14:56:01.280Z</updated>
+    <updated>2017-01-20T13:21:18.335Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文讲解了ajax的历史，工作原理以及优缺点，对XMLHttpRequest对象进行了详细的讲解，并使用原生js实现了一个ajax对象以方便日常开始使用。</p>
 <ul>
-<li>damonare的ajax库：<a href="https://github.com/damonare/ajax/tree/master" target="_blank" rel="external">damonare的ajax库</a></li>
-</ul>
-<ul>
-<li>原文博客地址：<a href="https://damonare.github.io/2017/01/18/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82ajax%E5%90%97%EF%BC%9F/#more">你真的懂ajax吗？</a></li>
+<li><p>damonare的ajax库：<a href="https://github.com/damonare/ajax/tree/master" target="_blank" rel="external">damonare的ajax库</a></p>
+</li>
+<li><p>原文博客地址：<a href="https://damonare.github.io/2017/01/18/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82ajax%E5%90%97%EF%BC%9F/#more">你真的懂ajax吗？</a></p>
+</li>
 <li>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></li>
 <li>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></li>
 </ul>
@@ -182,10 +182,10 @@
     
       &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文讲解了ajax的历史，工作原理以及优缺点，对XMLHttpRequest对象进行了详细的讲解，并使用原生js实现了一个ajax对象以方便日常开始使用。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;damonare的ajax库：&lt;a href=&quot;https://github.com/damonare/ajax/tree/master&quot;&gt;damonare的ajax库&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;原文博客地址：&lt;a href=&quot;https://damonare.github.io/2017/01/18/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82ajax%E5%90%97%EF%BC%9F/#more&quot;&gt;你真的懂ajax吗？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;damonare的ajax库：&lt;a href=&quot;https://github.com/damonare/ajax/tree/master&quot;&gt;damonare的ajax库&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;https://damonare.github.io/2017/01/18/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82ajax%E5%90%97%EF%BC%9F/#more&quot;&gt;你真的懂ajax吗？&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -301,7 +301,7 @@
 
 （3）它的左、右子树也分别为二叉查找树。
 </code></pre><p>首先我们声明一个BinarySearchTree类：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">BinarySearchTree</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> Node = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.key = key;</div><div class="line">        <span class="keyword">this</span>.left = <span class="literal">null</span>;</div><div class="line">        <span class="keyword">this</span>.right = <span class="literal">null</span>;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> root=<span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">BinarySearchTree</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">var</span> Node = <span class="function"><span class="keyword">function</span><span class="params">(key)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.key = key;</div><div class="line">        <span class="keyword">this</span>.left = <span class="literal">null</span>;</div><div class="line">        <span class="keyword">this</span>.right = <span class="literal">null</span>;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> root=<span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/binary6.gif" alt="二叉树"></p>
 <p>和链表一样，二叉树也通过指针来表示节点之间的关系。在双向链表中，每一个节点有两个指针，一个指向下一个节点，一个指向上一个节点。对于树，使用同样的方式，只不过一个指向左孩子，一个指向右孩子。现在我们给这棵树弄一些方法：</p>
 <ul>
@@ -1629,7 +1629,7 @@
 <h4 id="变量的块级作用域"><a href="#变量的块级作用域" class="headerlink" title="变量的块级作用域"></a>变量的块级作用域</h4><p>使用 ES6，声明变量我们可以用 <code>var</code> ，也可以用 <code>let</code> 或 <code>const</code>。</p>
 <p><code>var</code> 有什么不足？</p>
 <p>使用 <code>var</code> 的问题是变量会漏入其他代码块中，诸如 <code>for</code> 循环或 <code>if</code> 代码块。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
 <p>对于 <code>test(fasle)</code> ，你期望返回 <code>outer</code>，<strong>但是</strong>，你得到的是 <code>undefined</code>。</p>
 <p>为什么？</p>
 <p>因为尽管没有执行 <code>if</code> 代码块，第四行中的表达式 <code>var x</code> 也会被提升。</p>
@@ -1641,7 +1641,7 @@
 <li>初始化是不被提升的。如果你使用 <code>var</code> 声明变量，请总是将它放在顶部。</li>
 <li>在应用了声明提升规则之后，我们就能更容易地理解发生了什么：</li>
 </ul>
-<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> x; <span class="comment">// 声明提升</span></div><div class="line">    <span class="keyword">if</span> (inner) &#123;</div><div class="line">        x = <span class="string">'inner'</span>; <span class="comment">// 初始化不被提升</span></div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x; <span class="comment">// 声明提升</span></div><div class="line">    <span class="keyword">if</span> (inner) &#123;</div><div class="line">        x = <span class="string">'inner'</span>; <span class="comment">// 初始化不被提升</span></div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre></blockquote>
 <p>ECMAScript 2015 找到了解决的办法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">let</span> x = <span class="string">'inner'</span>;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 从第一行获取到预期结果</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// outer</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
@@ -1662,7 +1662,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> private2 = <span class="number">1</span>;</div><div class="line">&#125;)();</div><div class="line"><span class="built_in">console</span>.log(private2); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
 <p>如果你看一看 jQuery/loadsh 或其他开源项目，你会注意到他们用 IIFE 来避免污染全局环境而且只在全局中定义了诸如 <code>_</code>，<code>$</code>和<code>jQuery</code>。</p>
 <p>在 ES6 上则一目了然，我们可以只用代码块和 <code>let</code>，也不再需要使用 IIFE了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> private3 = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(private3); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> private3 = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(private3); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
 <p><strong>Const</strong></p>
 <p>如果你想要一个变量保持不变（常量），你也可以使用 <code>const</code>。</p>
 <p><img src="http://adrianmejia.com/images/javascript-es6-const-variables-example.png" alt="" title="const variable example"></p>
@@ -1690,7 +1690,7 @@
 <p><strong>交换值</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> tmp = a;</div><div class="line">a = b;</div><div class="line">b = tmp;</div><div class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
 <p>等同于：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line">[a, b] = [b, a];</div><div class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line">[a, b] = [b, a];</div><div class="line">console.<span class="built_in">log</span>(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
 <p><strong>多个返回值的解构</strong></p>
 <figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function margin() &#123;</div><div class="line">  var <span class="built_in">left</span>=<span class="number">1</span>, <span class="built_in">right</span>=<span class="number">2</span>, <span class="built_in">top</span>=<span class="number">3</span>, <span class="built_in">bottom</span>=<span class="number">4</span>;</div><div class="line">  <span class="keyword">return</span> &#123; <span class="built_in">left</span>: <span class="built_in">left</span>, <span class="built_in">right</span>: <span class="built_in">right</span>, <span class="built_in">top</span>: <span class="built_in">top</span>, <span class="built_in">bottom</span>: <span class="built_in">bottom</span> &#125;;</div><div class="line">&#125;</div><div class="line">var data = margin();</div><div class="line">var <span class="built_in">left</span> = data.<span class="built_in">left</span>;</div><div class="line">var <span class="built_in">bottom</span> = data.<span class="built_in">bottom</span>;</div><div class="line">console.log(<span class="built_in">left</span>, <span class="built_in">bottom</span>); // <span class="number">1</span> <span class="number">4</span></div></pre></td></tr></table></figure>
 <p>在第 3 行中，你也可以用一个像这样的数组返回（同时省去了一些编码）：</p>
@@ -2542,9 +2542,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
