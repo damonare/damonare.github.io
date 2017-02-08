@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-02-08T08:30:56.725Z</updated>
+  <updated>2017-02-08T08:39:17.133Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>理解Node.js(译文)</title>
     <link href="http://damonare.github.io/2017/02/05/%E7%90%86%E8%A7%A3Node.js(%E8%AF%91%E6%96%87)/"/>
     <id>http://damonare.github.io/2017/02/05/理解Node.js(译文)/</id>
     <published>2017-02-05T09:29:12.158Z</published>
-    <updated>2017-02-08T08:30:56.725Z</updated>
+    <updated>2017-02-08T08:39:17.133Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括</strong> ：这篇文章十分生动形象的的介绍了Node，满足了读者想去了解Node的需求。作者是Node的第一批贡献者之一，德国前端大神。译者觉得作者的比喻很适合初学者理解Node，特此翻译。</p>
 <p><strong>译者</strong> ：原文网址里有只小蚂蚁的效果很有意思(多次鼠标悬浮会有惊喜)，哈哈哈，可以去看一下哦。</p>
@@ -79,6 +79,12 @@
     
     </summary>
     
+      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
+    
+    
+      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
+    
+      <category term="译文" scheme="http://damonare.github.io/tags/%E8%AF%91%E6%96%87/"/>
     
   </entry>
   
@@ -2706,9 +2712,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
