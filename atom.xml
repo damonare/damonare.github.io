@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-01-21T10:01:28.495Z</updated>
+  <updated>2017-02-08T08:30:56.725Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -16,9 +16,76 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://damonare.github.io/2017/02/05/%E7%90%86%E8%A7%A3Node.js(%E8%AF%91%E6%96%87)/"/>
+    <id>http://damonare.github.io/2017/02/05/理解Node.js(译文)/</id>
+    <published>2017-02-05T09:29:12.158Z</published>
+    <updated>2017-02-08T08:30:56.725Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括</strong> ：这篇文章十分生动形象的的介绍了Node，满足了读者想去了解Node的需求。作者是Node的第一批贡献者之一，德国前端大神。译者觉得作者的比喻很适合初学者理解Node，特此翻译。</p>
+<p><strong>译者</strong> ：原文网址里有只小蚂蚁的效果很有意思(多次鼠标悬浮会有惊喜)，哈哈哈，可以去看一下哦。</p>
+<ul>
+<li>原文地址：[<a href="http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb" target="_blank" rel="external">Understanding node.js</a>]</li>
+<li>原文作者：<a href="http://felixge.de/" target="_blank" rel="external">Felix Geisendörfer</a></li>
+<li>Node小应用：<a href="https://github.com/damonare/node-sample" target="_blank" rel="external">Node-sample</a></li>
+<li>译者：<a href="http://damonare.cn" target="_blank" rel="external">Damonare</a></li>
+</ul>
+<p><strong>本文属于译文</strong> </p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>当我向别人介绍<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a> 的时候一般会有两种反应，要么是立马就弄明白它是个什么玩意儿，要么是被它搞的很糊涂。</p>
+<p>如果你现在还处于后者，下面就是我对于<code>node</code>的解释：</p>
+<ul>
+<li>它是一个命令行工具，你可以下载一个tarball文件，编译然后安装源文件；</li>
+<li>它可以让你在你的终端输入<code>node my_app.js</code>来运行Javascript程序；</li>
+<li>Node的JS代码是由 <a href="http://code.google.com/p/v8/" target="_blank" rel="external">V8 javascript 引擎</a>（就是那个使得Chrome如此之快的东西）所执行的；</li>
+<li>Node提供了诸如访问网络或是操作文件系统的<code>Javascript API</code></li>
+</ul>
+<h4 id="“但我也可以用-Ruby-Python-Php-Java-…等语言来做我想要做的事啊”"><a href="#“但我也可以用-Ruby-Python-Php-Java-…等语言来做我想要做的事啊”" class="headerlink" title="“但我也可以用 Ruby, Python, Php,Java, …等语言来做我想要做的事啊”"></a>“但我也可以用 Ruby, Python, Php,Java, …等语言来做我想要做的事啊”</h4><p>我听到你说的话了，你是对的。<code>Node</code>不是狡猾的独角兽，这点很抱歉，它不会帮你做你该做的事。它仅仅是一个工具，而且他也不会替代你现在所常用的一些工具，至少现在不会。</p>
+<h4 id="“说重点！！！”"><a href="#“说重点！！！”" class="headerlink" title="“说重点！！！”"></a>“说重点！！！”</h4><p>好的，我会的，当你需要同时做好几件事的时候<code>Node</code>会表现的十分优秀。你有写了一段代码然后对他说”我想你可以并行运行！”的体验吗？哈哈哈，在Node中除了你的代码所有的东西都是并行运行的。</p>
+<h4 id="“啊？！”"><a href="#“啊？！”" class="headerlink" title="“啊？！”"></a>“啊？！”</h4><p>是的，没错，除了你的代码之外所有的代码都是并行运行的。为了理解这一点，你可以把你自己的代码想象成一个国王，而<code>Node</code>就是他的仆人军队。</p>
+<p>新的一天是这样开始的：某个仆人叫醒了国王，然后问他是否需要什么。国王给了这个仆人一个任务清单然后就回去继续睡觉了。然后这个仆人就把任务清单上的任务分发下去，仆人们开始工作了。</p>
+<p>当一个仆人完成了他的任务的时候，他就跑到国王寝宫外面排队等候报告。国王一次只能听取一个仆人报告任务，有的时候国王会在仆人报告结束的时候给他更多的任务。(看你代码咋写咯)</p>
+<p>生活是美好的，因为国王的诸多仆人同时执行多个任务，但报告结果的时候是一个一个来的，所以国王能够很专注。</p>
+<h4 id="“那确实很美好，但你能结束这个愚蠢的比喻用更加geek的方式来告诉我吗？”"><a href="#“那确实很美好，但你能结束这个愚蠢的比喻用更加geek的方式来告诉我吗？”" class="headerlink" title="“那确实很美好，但你能结束这个愚蠢的比喻用更加geek的方式来告诉我吗？”"></a>“那确实很美好，但你能结束这个愚蠢的比喻用更加geek的方式来告诉我吗？”</h4><p>好的，一个<code>node</code>程序或许是下面这样的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line">  , sys = <span class="built_in">require</span>(<span class="string">'sys'</span>);</div><div class="line"><span class="comment">//译者注：sys is deprecated. Use util instead.这里我们直接用console.log即可</span></div><div class="line">fs.readFile(<span class="string">'treasure-chamber-report.txt'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">report</span>) </span>&#123;</div><div class="line">  <span class="comment">//sys.puts("oh, look at all my money: "+report);</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"oh, look at all my money: "</span>+report)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">fs.writeFile(<span class="string">'letter-to-princess.txt'</span>, <span class="string">'...'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">//sys.puts("can't wait to hear back from her!");</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"can't wait to hear back from her!"</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>你的代码(国王)给了<code>node</code>(仆人)两个任务即读(readFile)和写(writeFile)文件，然后就去睡大觉了。一旦node完成了某个任务，跟这个任务对应的回调就会触发。但同一时间只能有一个回调被触发，在那个回调执行完成之前，所有其它的回调都得排队等待。进一步说，回调触发的顺序是不能被保证的。</p>
+<h4 id="“所以我不必担心代码在同一时间访问同一个数据结构？”"><a href="#“所以我不必担心代码在同一时间访问同一个数据结构？”" class="headerlink" title="“所以我不必担心代码在同一时间访问同一个数据结构？”"></a>“所以我不必担心代码在同一时间访问同一个数据结构？”</h4><p>你确实理解了，这就是JavaScript的单进程/事件循环设计美丽的地方。</p>
+<h4 id="“好棒，但我为什么应该用它呢？”"><a href="#“好棒，但我为什么应该用它呢？”" class="headerlink" title="“好棒，但我为什么应该用它呢？”"></a>“好棒，但我为什么应该用它呢？”</h4><p>一个原因是效率。在一个web应用中，响应时间主要是花在了执行数据库查询上面，而用<code>node</code>,你可以一次性执行所有的数据库查询。将响应时间减少到了执行最慢的数据库查询所用的时间。</p>
+<p>另一个原因是<code>Javascript</code>。你可以使用<code>Node</code>让你的浏览器和后端共享代码。Javascript也在渐渐成为一门真正的通用语言。不管你在过去是用Python, Ruby, Java, PHP, …等等，你都或多或少的使用过Javasctipt，对吗？</p>
+<p>最后一个原因是原生速度。V8正在不断的推进作为地球上最快的动态语言编译器之一的边界，我也想不到有任何其它的语言在速度上能够像Javascript一样不断的高歌猛进。再进一步说，<code>node</code>的I/O设备真的十分的轻量，能够让你尽可能最大程度的利用系统的I/O容量。</p>
+<h4 id="“所以你是说从现在开始我应该用Node写我所有的应用么？”"><a href="#“所以你是说从现在开始我应该用Node写我所有的应用么？”" class="headerlink" title="“所以你是说从现在开始我应该用Node写我所有的应用么？”"></a>“所以你是说从现在开始我应该用Node写我所有的应用么？”</h4><p>是也不是，一旦你开始舞弄<code>node</code>这柄锤子，所有的东西都会开始变得像钉子。但如果你当前的工作有一个deadline，你可以参考下面的几点来做决定用不用<code>node</code>:</p>
+<ul>
+<li>低响应时间/高并发是否重要？Node真的很擅长处理这俩问题；</li>
+<li>项目有多大？小项目没问题，如果是大项目就应该认真评估了(可用的库，修复一个bug所需的资源或者two upstream等等)</li>
+</ul>
+<h4 id="“我能在Node中访问DOM吗？”"><a href="#“我能在Node中访问DOM吗？”" class="headerlink" title="“我能在Node中访问DOM吗？”"></a>“我能在Node中访问DOM吗？”</h4><p>这是一个好问题！答案是不行，DOM是浏览器的东西吗，不过幸好node的JS引擎（V8）跟那些混乱的东西是完全分离的。不过，有人在以node模块的形式来实现DOM，或许带来令人兴奋的可能性比如对客户端代码进行单元测试。(译者注：现在已经有人实现了这个模块，详情查看<a href="https://www.npmjs.com/package/node-dom" target="_blank" rel="external">Node-dom</a>)。</p>
+<h4 id="“难道事件驱动编程真的很难吗？”"><a href="#“难道事件驱动编程真的很难吗？”" class="headerlink" title="“难道事件驱动编程真的很难吗？”"></a>“难道事件驱动编程真的很难吗？”</h4><p>这取决于你自己，如果你已经学会了如何在浏览器里调用Ajax或是调用某个事件，那么学习node对你不会是什么难题。</p>
+<p>同时，测试驱动开发能够真正的帮助你从做一个可维护的设计开始学习node。</p>
+<h4 id="“我应该从哪里学到更多？”"><a href="#“我应该从哪里学到更多？”" class="headerlink" title="“我应该从哪里学到更多？”"></a>“我应该从哪里学到更多？”</h4><p>Tim Caswell正在运作优秀的<a href="http://howtonode.org/" target="_blank" rel="external">How To Node</a>博客。在twitter上Follow <a href="https://twitter.com/search?q=node.js&amp;src=typd" target="_blank" rel="external">nodejs</a>。订阅<a href="http://groups.google.com/group/nodejs" target="_blank" rel="external">邮件列表</a>。(译者注：也可以结合<a href="http://nodejs.cn/api/" target="_blank" rel="external">Node.js 6.9.5 文档</a>进行学习，另外，译者写了一个node的小应用<a href="https://github.com/damonare/node-sample" target="_blank" rel="external">node-sample</a>可以clone下来看下)</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本篇文章的比如讲真是有些简单了，但从现实事物中找到真正相对应的也是在太难。，另外，由于时间原因，本文一些不妥之处或是当时还处在实验性阶段的东西译者或删或改。能力有限，水平一般，翻译不妥之处，还望指正。感谢。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括&lt;/strong&gt; ：这篇文章十分生动形象的的介绍了Node，满足了读者想去了解Node的需求。作者是Node的第一批贡献者之一，德国前端大神。译者觉得作者的比喻很适合初学者理解Node，特此翻译。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;译者&lt;/strong&gt; ：原文网址里有只小蚂蚁的效果很有意思(多次鼠标悬浮会有惊喜)，哈哈哈，可以去看一下哦。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原文地址：[&lt;a href=&quot;http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb&quot;&gt;Understanding node.js&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;原文作者：&lt;a href=&quot;http://felixge.de/&quot;&gt;Felix Geisendörfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Node小应用：&lt;a href=&quot;https://github.com/damonare/node-sample&quot;&gt;Node-sample&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;译者：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;本文属于译文&lt;/strong&gt; &lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Javascript闭包入门(译文)</title>
-    <link href="http://damonare.github.io/2017/01/20/Javascript%E9%97%AD%E5%8C%85%E5%85%A5%E9%97%A8/"/>
-    <id>http://damonare.github.io/2017/01/20/Javascript闭包入门/</id>
+    <link href="http://damonare.github.io/2017/01/20/Javascript%E9%97%AD%E5%8C%85%E5%85%A5%E9%97%A8(%E8%AF%91%E6%96%87)/"/>
+    <id>http://damonare.github.io/2017/01/20/Javascript闭包入门(译文)/</id>
     <published>2017-01-20T13:32:20.200Z</published>
     <updated>2017-01-21T10:01:28.495Z</updated>
     
@@ -114,8 +181,8 @@
   
   <entry>
     <title>Ajax入门</title>
-    <link href="http://damonare.github.io/2017/01/18/ajax%E5%85%A5%E9%97%A8/"/>
-    <id>http://damonare.github.io/2017/01/18/ajax入门/</id>
+    <link href="http://damonare.github.io/2017/01/18/Ajax%E5%85%A5%E9%97%A8/"/>
+    <id>http://damonare.github.io/2017/01/18/Ajax入门/</id>
     <published>2017-01-18T06:29:40.316Z</published>
     <updated>2017-01-20T13:21:18.335Z</updated>
     
@@ -2917,47 +2984,6 @@
     
     
       <category term="CSS3" scheme="http://damonare.github.io/tags/CSS3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何看待&quot;罗一笑，你给我站住&quot;营销事件</title>
-    <link href="http://damonare.github.io/2016/09/09/%E7%BD%97%E4%B8%80%E7%AC%91%E4%BA%8B%E4%BB%B6/"/>
-    <id>http://damonare.github.io/2016/09/09/罗一笑事件/</id>
-    <published>2016-09-09T08:00:00.000Z</published>
-    <updated>2016-11-30T06:43:56.120Z</updated>
-    
-    <content type="html"><![CDATA[<p>关于”罗一笑事件”的一点思考</p>
-<a id="more"></a>
-<p><img src="http://img.blog.csdn.net/20161130140949429" alt="营销"></p>
-<p>今天一大早起床，按照惯例刷了会朋友圈，发现整个朋友圈都被一个题目为’罗一笑，你给我站住’的文章占领了！我滴个乖乖！什么情况，出于好奇进去看看吧。文章说的是一位父亲为病重的女儿所写的鼓励的文字，看朋友圈里的人都在说是在卖文赚钱救女。感动！泪点满分！但总觉得还是有猫腻，点赞10W+让我觉得很不像是正常的公益活动。果不其然，当我洗漱完毕的时候，朋友圈已经有人在辟谣了！这又是一次赤裸裸的营销操作！</p>
-<p>附上朋友圈转发时都会附带的一段话：</p>
-<blockquote>
-<p>「深圳本土作家罗尔5岁多的爱女罗一笑，被检查出白血病，住进了深圳市儿童医院。医疗费每天1至3万。父亲心急如焚，但他没有选择公益捐款，而是选择＂卖文＂，大家每转发一次，小铜人公司向罗尔定向捐赠1元；保底捐赠两万元，上限五十万元；截止11月30日零时。」</p>
-</blockquote>
-<p>讲真的，这次营销活动着实是成功的，10W+的点赞数量足够让背后的团队赚的盆满钵满。</p>
-<p>本身罗一笑小同学的了白血病，实在让人可怜，却被人利用成为了一次全国性的营销事件。别的不说，作为父亲的罗尔这么做实在让人心寒。如果说你没能力治病还则罢了，事实却是是个并不差钱的主儿。我们来看下最近几个小时网友的爆料：</p>
-<h3 id="爆料一：事件背后有人营销"><a href="#爆料一：事件背后有人营销" class="headerlink" title="爆料一：事件背后有人营销"></a>爆料一：事件背后有人营销</h3><p><img src="http://img.blog.csdn.net/20161130141646496" alt="这里写图片描述"></p>
-<h3 id="爆料2：赶走前妻，迷上交际花"><a href="#爆料2：赶走前妻，迷上交际花" class="headerlink" title="爆料2：赶走前妻，迷上交际花"></a>爆料2：赶走前妻，迷上交际花</h3><p><img src="http://img.blog.csdn.net/20161130142146136" alt="这里写图片描述"></p>
-<h3 id="爆料3：捐款已经足够"><a href="#爆料3：捐款已经足够" class="headerlink" title="爆料3：捐款已经足够"></a>爆料3：捐款已经足够</h3><p><img src="http://img.blog.csdn.net/20161130142218154" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20161130142529468" alt="这里写图片描述"></p>
-<h3 id="爆料4：小铜人公司的恶意营销"><a href="#爆料4：小铜人公司的恶意营销" class="headerlink" title="爆料4：小铜人公司的恶意营销"></a>爆料4：小铜人公司的恶意营销</h3><p><img src="http://img.blog.csdn.net/20161130142324888" alt="这里写图片描述"></p>
-<h3 id="一点个人思考"><a href="#一点个人思考" class="headerlink" title="一点个人思考"></a>一点个人思考</h3><p>其实站在转发者的角度思考，一个可怜的小女孩得了白血病，无钱治疗，已经够可怜了，再加上作者罗尔文字的渲染，自然而然让人想要转发帮助罗一笑。因为啥？因为转发对于自己没坏处！而且转发之后还可能给罗一笑更大的帮助！</p>
-<p>营销者恰恰抓住了这点，利用人们的同情心，殊不知全国每天都有像罗一笑一样可怜的孩子，可悲的是我们不知道，也从来没去主动关注过。</p>
-<p>舆论的焦点不该在此的，同情别人的同时也该去思考下事情的本源，按理说这应该算是诈骗吧，法律去哪了…继续如此，后果只会是继续有人诈骗，捐钱人信任危机该得到帮助的人一分钱也得不到帮助。</p>
-<p>文后：如果真想救助贫苦，那就每天多走两步吧，腾讯公益，阿里公益起码目前还是值得信任的。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关于”罗一笑事件”的一点思考&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其它" scheme="http://damonare.github.io/categories/%E5%85%B6%E5%AE%83/"/>
-    
-    
-      <category term="思考" scheme="http://damonare.github.io/tags/%E6%80%9D%E8%80%83/"/>
     
   </entry>
   
