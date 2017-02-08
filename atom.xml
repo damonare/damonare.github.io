@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-02-08T08:39:17.133Z</updated>
+  <updated>2017-02-08T14:48:57.557Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -16,16 +16,78 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>理解Node.js的事件轮询</title>
+    <link href="http://damonare.github.io/2017/02/08/%E7%90%86%E8%A7%A3Node.js%E7%9A%84%E4%BA%8B%E4%BB%B6%E8%BD%AE%E8%AF%A2/"/>
+    <id>http://damonare.github.io/2017/02/08/理解Node.js的事件轮询/</id>
+    <published>2017-02-08T11:49:30.871Z</published>
+    <updated>2017-02-08T14:48:57.557Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括</strong> ：</p>
+<ul>
+<li>原文地址：<a href="">理解Node.js的事件轮询</a></li>
+<li>Node小应用：<a href="https://github.com/damonare/node-sample" target="_blank" rel="external">Node-sample</a></li>
+</ul>
+<p><strong>智者阅读群书，亦阅历人生</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h4 id="Node-js的两个基本概念"><a href="#Node-js的两个基本概念" class="headerlink" title="Node.js的两个基本概念"></a>Node.js的两个基本概念</h4><p>Node.js的第一个基本概念就是I/O操作开销是巨大的：</p>
+<p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/io-cost.png" alt=""></p>
+<p>所以，当前变成技术中最大的浪费来自于等待I/O操作的完成。有几种方法可以解决性能的影响：</p>
+<ul>
+<li><strong>同步方式</strong>：按次序一个一个的处理请求。<em>利</em>：简单；<em>弊</em>：任何一个请求都可以阻塞其他所有请求。</li>
+<li><strong>开启新进程</strong>：每个请求都开启一个新进程。<em>利</em>：简单；<em>弊</em>：大量的链接意味着大量的进程。</li>
+<li><strong>开启新线程</strong>：每个请求都开启一个新线程。<em>利</em>：简单，而且跟进程比，对系统内核更加友好，因为线程比进程轻的多;<em>弊</em>:不是所有的机器都支持线程，而且对于要处理共享资源的情况，多线程编程会很快变得太过于复杂。</li>
+</ul>
+<p>第二个基本概念是每个连接都创建一个新线程是很消耗内存的（例如：你可以对比Nginx回想一下Apache内存耗尽的情景）。</p>
+<p>Apache是多线程的：它为每个请求开启一个新的线程（或者是进程，这取决于你的配置），当并发连接增多时，你可以看看它是怎么一点一点耗尽内存的。Nginx和Node.js不是多线程的，因为线程的消耗太“重”了。它们两个是单线程、基于事件的，这就把处理众多连接所产生的线程/进程消耗给消除了。</p>
+<h4 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h4><p>确实只有一个线程：你不能并行执行任何代码，比如：下面的“sleep”将会阻塞sever1秒钟：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="keyword">var</span> now = <span class="keyword">new</span> Data().getTime();</div><div class="line">   <span class="keyword">while</span> (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime() &lt; now + <span class="number">1000</span>) &#123;</div><div class="line">         <span class="comment">// do nothing</span></div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">sleep();</div></pre></td></tr></table></figure>
+<p>但就我目前学习阶段而言，我觉得好多人对于所谓的node单线程是有误解的。实际上官方给出的“单线程”是具有误导性的。所谓的单线程是指你的代码只运行在一个线程上(好多地方都叫它主线程，实际上Javascript的浏览器运行环境不也是这么处理我们写的Javascript代码的嘛)，而诸多任务的并行处理，就需要多线程了，如下图：</p>
+<p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/104032-20150917140900539-1845886135.png" alt=""></p>
+<p>如上图，Node.js中的单线程之说指的就是这个主线程，这个主线程有一个循环结构，保持着整个程序(你写的代码)的运转。</p>
+<h4 id="事件轮询"><a href="#事件轮询" class="headerlink" title="事件轮询"></a>事件轮询</h4><p>其实上面我们所说的<strong>维持主线程运行的循环</strong>这部分就是”事件轮询”，它存在于主线程中，负责不停地调用开发者编写的代码。但对开发者是不可见的。so…开发者编写的代码是怎样被调用的呢？看下图：</p>
+<p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/104032-20150917141055570-1948801510.png" alt=""></p>
+<p>如上图，异步函数在执行结束后，会在事件队列中添加一个事件(遵循先进先出原则)，主线程中的代码执行完毕后(即一次循环结束)，下一次循环开始就在事件队列中”读取”事件，然后调用它所对应的回调函数(所以回调函数的执行顺序是不一定的)。如果开发者在回调函数中调用了阻塞方法(比如上文中的sleep函数)，那么整个事件轮询就会阻塞，事件队列中的事件得不到及时处理。正因为这样，nodejs中的一些库方法均是异步的，也提倡用户调用异步方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line">fs.readFile(<span class="string">'hello.txt'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;  <span class="comment">//异步读取文件</span></div><div class="line">　　<span class="built_in">console</span>.log(<span class="string">"read file end"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="keyword">while</span>(<span class="number">1</span>)</div><div class="line">&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"call readFile over"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如上代码，我们虽然使用了异步方法readfile读取文件，但<code>read file end</code>永远不会输出，因为代码始终在while循环中，下一次事件轮询始终没法开始，也就没法’读取’事件队列调用相应的回调函数了。</p>
+<p>最后有一个<a href="https://github.com/damonare/node-sample" target="_blank" rel="external">Node-sample</a>是博主平时积累的一些代码，包含注释，汇总成了一个小应用，还是可以看到学习的蛛丝马迹的。感兴趣的您可以看看。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>参考文章：</p>
+<ul>
+<li><a href="http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop" target="_blank" rel="external">Understanding the node.js event loop</a></li>
+<li><a href="http://www.cnblogs.com/xiaozhi_5638/p/4816265.html" target="_blank" rel="external">nodejs事件轮询详述</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括&lt;/strong&gt; ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原文地址：&lt;a href=&quot;&quot;&gt;理解Node.js的事件轮询&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Node小应用：&lt;a href=&quot;https://github.com/damonare/node-sample&quot;&gt;Node-sample&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;智者阅读群书，亦阅历人生&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
+    
+    
+      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
+    
+      <category term="Node.js" scheme="http://damonare.github.io/tags/Node-js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>理解Node.js(译文)</title>
     <link href="http://damonare.github.io/2017/02/05/%E7%90%86%E8%A7%A3Node.js(%E8%AF%91%E6%96%87)/"/>
     <id>http://damonare.github.io/2017/02/05/理解Node.js(译文)/</id>
     <published>2017-02-05T09:29:12.158Z</published>
-    <updated>2017-02-08T08:39:17.133Z</updated>
+    <updated>2017-02-08T11:58:57.643Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括</strong> ：这篇文章十分生动形象的的介绍了Node，满足了读者想去了解Node的需求。作者是Node的第一批贡献者之一，德国前端大神。译者觉得作者的比喻很适合初学者理解Node，特此翻译。</p>
 <p><strong>译者</strong> ：原文网址里有只小蚂蚁的效果很有意思(多次鼠标悬浮会有惊喜)，哈哈哈，可以去看一下哦。</p>
 <ul>
-<li>原文地址：[<a href="http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb" target="_blank" rel="external">Understanding node.js</a>]</li>
+<li>原文地址：<a href="http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb" target="_blank" rel="external">Understanding node.js</a></li>
 <li>原文作者：<a href="http://felixge.de/" target="_blank" rel="external">Felix Geisendörfer</a></li>
 <li>Node小应用：<a href="https://github.com/damonare/node-sample" target="_blank" rel="external">Node-sample</a></li>
 <li>译者：<a href="http://damonare.cn" target="_blank" rel="external">Damonare</a></li>
@@ -70,7 +132,7 @@
       &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括&lt;/strong&gt; ：这篇文章十分生动形象的的介绍了Node，满足了读者想去了解Node的需求。作者是Node的第一批贡献者之一，德国前端大神。译者觉得作者的比喻很适合初学者理解Node，特此翻译。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;译者&lt;/strong&gt; ：原文网址里有只小蚂蚁的效果很有意思(多次鼠标悬浮会有惊喜)，哈哈哈，可以去看一下哦。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;原文地址：[&lt;a href=&quot;http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb&quot;&gt;Understanding node.js&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;原文地址：&lt;a href=&quot;http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb&quot;&gt;Understanding node.js&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;原文作者：&lt;a href=&quot;http://felixge.de/&quot;&gt;Felix Geisendörfer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Node小应用：&lt;a href=&quot;https://github.com/damonare/node-sample&quot;&gt;Node-sample&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;译者：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare&lt;/a&gt;&lt;/li&gt;
@@ -85,6 +147,8 @@
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
       <category term="译文" scheme="http://damonare.github.io/tags/%E8%AF%91%E6%96%87/"/>
+    
+      <category term="Node.js" scheme="http://damonare.github.io/tags/Node-js/"/>
     
   </entry>
   
@@ -471,7 +535,7 @@
 
 （3）它的左、右子树也分别为二叉查找树。
 </code></pre><p>首先我们声明一个BinarySearchTree类：</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">BinarySearchTree</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">var</span> Node = <span class="function"><span class="keyword">function</span><span class="params">(key)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.key = key;</div><div class="line">        <span class="keyword">this</span>.left = <span class="literal">null</span>;</div><div class="line">        <span class="keyword">this</span>.right = <span class="literal">null</span>;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> root=<span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">BinarySearchTree</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> Node = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.key = key;</div><div class="line">        <span class="keyword">this</span>.left = <span class="literal">null</span>;</div><div class="line">        <span class="keyword">this</span>.right = <span class="literal">null</span>;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> root=<span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/binary6.gif" alt="二叉树"></p>
 <p>和链表一样，二叉树也通过指针来表示节点之间的关系。在双向链表中，每一个节点有两个指针，一个指向下一个节点，一个指向上一个节点。对于树，使用同样的方式，只不过一个指向左孩子，一个指向右孩子。现在我们给这棵树弄一些方法：</p>
 <ul>
@@ -1799,7 +1863,7 @@
 <h4 id="变量的块级作用域"><a href="#变量的块级作用域" class="headerlink" title="变量的块级作用域"></a>变量的块级作用域</h4><p>使用 ES6，声明变量我们可以用 <code>var</code> ，也可以用 <code>let</code> 或 <code>const</code>。</p>
 <p><code>var</code> 有什么不足？</p>
 <p>使用 <code>var</code> 的问题是变量会漏入其他代码块中，诸如 <code>for</code> 循环或 <code>if</code> 代码块。</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="string">'inner'</span>; <span class="comment">// 作用于整个 function</span></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 因为第四行的声明提升，被重新定义</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// undefined 😱</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
 <p>对于 <code>test(fasle)</code> ，你期望返回 <code>outer</code>，<strong>但是</strong>，你得到的是 <code>undefined</code>。</p>
 <p>为什么？</p>
 <p>因为尽管没有执行 <code>if</code> 代码块，第四行中的表达式 <code>var x</code> 也会被提升。</p>
@@ -1811,7 +1875,7 @@
 <li>初始化是不被提升的。如果你使用 <code>var</code> 声明变量，请总是将它放在顶部。</li>
 <li>在应用了声明提升规则之后，我们就能更容易地理解发生了什么：</li>
 </ul>
-<pre><code><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(inner)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x; <span class="comment">// 声明提升</span></div><div class="line">    <span class="keyword">if</span> (inner) &#123;</div><div class="line">        x = <span class="string">'inner'</span>; <span class="comment">// 初始化不被提升</span></div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> x; <span class="comment">// 声明提升</span></div><div class="line">    <span class="keyword">if</span> (inner) &#123;</div><div class="line">        x = <span class="string">'inner'</span>; <span class="comment">// 初始化不被提升</span></div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre></blockquote>
 <p>ECMAScript 2015 找到了解决的办法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> x = <span class="string">'outer'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">inner</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (inner) &#123;</div><div class="line">    <span class="keyword">let</span> x = <span class="string">'inner'</span>;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> x; <span class="comment">// 从第一行获取到预期结果</span></div><div class="line">&#125;</div><div class="line">test(<span class="literal">false</span>); <span class="comment">// outer</span></div><div class="line">test(<span class="literal">true</span>); <span class="comment">// inner</span></div></pre></td></tr></table></figure>
@@ -1832,7 +1896,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> private2 = <span class="number">1</span>;</div><div class="line">&#125;)();</div><div class="line"><span class="built_in">console</span>.log(private2); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
 <p>如果你看一看 jQuery/loadsh 或其他开源项目，你会注意到他们用 IIFE 来避免污染全局环境而且只在全局中定义了诸如 <code>_</code>，<code>$</code>和<code>jQuery</code>。</p>
 <p>在 ES6 上则一目了然，我们可以只用代码块和 <code>let</code>，也不再需要使用 IIFE了。</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> private3 = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(private3); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> private3 = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(private3); <span class="comment">// Uncaught ReferenceError</span></div></pre></td></tr></table></figure>
 <p><strong>Const</strong></p>
 <p>如果你想要一个变量保持不变（常量），你也可以使用 <code>const</code>。</p>
 <p><img src="http://adrianmejia.com/images/javascript-es6-const-variables-example.png" alt="" title="const variable example"></p>
@@ -1860,7 +1924,7 @@
 <p><strong>交换值</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> tmp = a;</div><div class="line">a = b;</div><div class="line">b = tmp;</div><div class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
 <p>等同于：</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line">[a, b] = [b, a];</div><div class="line">console.<span class="built_in">log</span>(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line">[a, b] = [b, a];</div><div class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 2 1</span></div></pre></td></tr></table></figure>
 <p><strong>多个返回值的解构</strong></p>
 <figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function margin() &#123;</div><div class="line">  var <span class="built_in">left</span>=<span class="number">1</span>, <span class="built_in">right</span>=<span class="number">2</span>, <span class="built_in">top</span>=<span class="number">3</span>, <span class="built_in">bottom</span>=<span class="number">4</span>;</div><div class="line">  <span class="keyword">return</span> &#123; <span class="built_in">left</span>: <span class="built_in">left</span>, <span class="built_in">right</span>: <span class="built_in">right</span>, <span class="built_in">top</span>: <span class="built_in">top</span>, <span class="built_in">bottom</span>: <span class="built_in">bottom</span> &#125;;</div><div class="line">&#125;</div><div class="line">var data = margin();</div><div class="line">var <span class="built_in">left</span> = data.<span class="built_in">left</span>;</div><div class="line">var <span class="built_in">bottom</span> = data.<span class="built_in">bottom</span>;</div><div class="line">console.log(<span class="built_in">left</span>, <span class="built_in">bottom</span>); // <span class="number">1</span> <span class="number">4</span></div></pre></td></tr></table></figure>
 <p>在第 3 行中，你也可以用一个像这样的数组返回（同时省去了一些编码）：</p>
@@ -2712,9 +2776,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -2990,71 +3054,6 @@
     
     
       <category term="CSS3" scheme="http://damonare.github.io/tags/CSS3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记秋招</title>
-    <link href="http://damonare.github.io/2016/09/07/%E5%86%99%E5%9C%A8%E7%A7%8B%E6%8B%9B%E4%B9%8B%E9%99%85/"/>
-    <id>http://damonare.github.io/2016/09/07/写在秋招之际/</id>
-    <published>2016-09-07T14:09:22.232Z</published>
-    <updated>2016-11-26T09:47:25.592Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>总括：</strong> 不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。</p>
-<ul>
-<li>原文博客地址：<a href="http://damonare.github.io/2016/09/07/%E5%86%99%E5%9C%A8%E7%A7%8B%E6%8B%9B%E4%B9%8B%E9%99%85/#more">记秋招</a></li>
-<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
-</li>
-<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-</li>
-</ul>
-<p><strong>人生总是会存在那么些说不清道不明的关系。</strong></p>
-<a id="more"></a>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><ul>
-<li><h4 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h4></li>
-</ul>
-<blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;如果说秋招会让大四的崩溃，那么即将到来的春招就好像让我再经历一次高考一样，心里胆战心惊，毫无把握。是的，我想去杭州，不知道为啥就是想去，没有原因的想去。听蘑菇街的学长说合并之后导致HC太多，进蘑菇街的难度基本等同于阿里了。做项目，写博客，说真的，整个暑假过来也没休息过一天。唯一的原因可能就是觉得自己太菜吧。心里哈市想去阿里的，这是一定要去的，如果校招不行那就过几年通过社招，阿里是有情结在里面的，虽然深知阿里工作压力也很大，但同样，别的公司其实压力也是如此不是吗？要试一下的，今晚阿里笔试，考了很多react知识点，不知道明年还会不会考react呢，一切都是未知数啊，所以充满了不确定性。</p>
-</blockquote>
-<p><br></p>
-<ul>
-<li><h4 id="过去"><a href="#过去" class="headerlink" title="过去"></a>过去</h4></li>
-</ul>
-<blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;曾经我以为那个人就是我的全部，我有一个很明确的目标，就是让她过上简简单单的幸福生活。可惜到头来把自己弄的伤痕累累。人呐，真是受过伤才能长大。<strong>越是在意的东西往往越容易失去，不管你期望值放多高，来往始终是相互的，既然做不到礼尚往来，不如各自安好。</strong>感谢你在我生命中的出现让我真正看清了人性，谢谢你的离开。</p>
-</blockquote>
-<p><br></p>
-<ul>
-<li><h4 id="将来"><a href="#将来" class="headerlink" title="将来"></a>将来</h4></li>
-</ul>
-<blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;无数次幻想过那个真正愿意和我风雨同舟的人到底是什么样子，她出现了么，或是出现了我不知道？心里还是存在一丝的希冀。可如今，似乎现实了点，不会再去想象，或许是因为曾经有一段时间我觉得自己找到了那个人吧，可现实却又一次打在了脸上，很多事不是一个人能控制的，尤其感情。自己能控制的只有自己的内心，可真正能控制自己内心的还是在少数啊……可能这就是<strong>尽人事，听天命</strong>的深层含义吧。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<mark>面对无能为力的事，也只能信命。我居然会说出这样的话，估计也是受伤太多次了。<br>那么，以后会怎样？<br>—-听天由命﻿</mark></p>
-</blockquote>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><blockquote>
-<p>20岁，我，不服！</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/09/07/%E5%86%99%E5%9C%A8%E7%A7%8B%E6%8B%9B%E4%B9%8B%E9%99%85/#more&quot;&gt;记秋招&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;人生总是会存在那么些说不清道不明的关系。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其它" scheme="http://damonare.github.io/categories/%E5%85%B6%E5%AE%83/"/>
-    
-    
-      <category term="Fighting" scheme="http://damonare.github.io/tags/Fighting/"/>
-    
-      <category term="感悟" scheme="http://damonare.github.io/tags/%E6%84%9F%E6%82%9F/"/>
     
   </entry>
   

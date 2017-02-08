@@ -4,23 +4,42 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>其它 | Damonare的个人博客</title>
+  <title>理解Node.js的事件轮询 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果时间可以停止，希望它就停止在现在。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="其它">
-<meta property="og:url" content="http://damonare.github.io/other/index.html">
+  <meta name="description" content="前言总括 ：
+
+原文地址：理解Node.js的事件轮询
+Node小应用：Node-sample
+
+智者阅读群书，亦阅历人生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解Node.js的事件轮询">
+<meta property="og:url" content="http://damonare.github.io/2017/02/08/理解Node.js的事件轮询/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="如果时间可以停止，希望它就停止在现在。">
-<meta property="og:updated_time" content="2016-09-05T14:31:23.626Z">
+<meta property="og:description" content="前言总括 ：
+
+原文地址：理解Node.js的事件轮询
+Node小应用：Node-sample
+
+智者阅读群书，亦阅历人生">
+<meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/io-cost.png">
+<meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/104032-20150917140900539-1845886135.png">
+<meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/104032-20150917141055570-1948801510.png">
+<meta property="og:updated_time" content="2017-02-08T14:48:57.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="其它">
-<meta name="twitter:description" content="如果时间可以停止，希望它就停止在现在。">
+<meta name="twitter:title" content="理解Node.js的事件轮询">
+<meta name="twitter:description" content="前言总括 ：
+
+原文地址：理解Node.js的事件轮询
+Node小应用：Node-sample
+
+智者阅读群书，亦阅历人生">
+<meta name="twitter:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/io-cost.png">
   
   
     <link rel="icon" href="/./img/1.png">
   
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
   <!-- scripts -->
  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/js/particles.min.js" src="/js/particles.min.js"></script>
 </head>
@@ -96,17 +115,17 @@
 						
 							<li><a href="http://damonare.cn/">博客首页</a></li>
 				        
-							<li><a href="../index.html">主页</a></li>
+							<li><a href="../../../../index.html">主页</a></li>
 				        
-							<li><a href="../archives">所有文章</a></li>
+							<li><a href="../../../../archives">所有文章</a></li>
 				        
-							<li><a href="../categories/随笔/">随笔</a></li>
+							<li><a href="../../../../categories/随笔/">随笔</a></li>
 				        
-							<li><a href="../categories/learn/">学习</a></li>
+							<li><a href="../../../../categories/learn/">学习</a></li>
 				        
-							<li><a href="../categories/life/">生活</a></li>
+							<li><a href="../../../../categories/life/">生活</a></li>
 				        
-							<li><a href="../categories/其它/">其它</a></li>
+							<li><a href="../../../../categories/其它/">其它</a></li>
 				        
 						</ul>
 					</nav>
@@ -129,7 +148,7 @@
 					        
 								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
 					        
-								<a class="rss" target="_blank" href="../atom.xml" title="rss">rss</a>
+								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
 					        
 						</div>
 					</nav>
@@ -138,7 +157,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../tags/Git/" style="font-size: 10px;">Git</a> <a href="../tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../tags/HTTP/" style="font-size: 11.67px;">HTTP</a> <a href="../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../tags/IP/" style="font-size: 10px;">IP</a> <a href="../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="../tags/React/" style="font-size: 10px;">React</a> <a href="../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../tags/http/" style="font-size: 11.67px;">http</a> <a href="../tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../tags/前端/" style="font-size: 18.33px;">前端</a> <a href="../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../tags/工具/" style="font-size: 10px;">工具</a> <a href="../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../tags/数据结构/" style="font-size: 15px;">数据结构</a> <a href="../tags/数据结构与算法/" style="font-size: 13.33px;">数据结构与算法</a> <a href="../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../tags/算法/" style="font-size: 10px;">算法</a> <a href="../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../tags/网络协议/" style="font-size: 11.67px;">网络协议</a> <a href="../tags/译文/" style="font-size: 11.67px;">译文</a> <a href="../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../tags/转载/" style="font-size: 10px;">转载</a> <a href="../tags/面试/" style="font-size: 11.67px;">面试</a>
+						<a href="../../../../tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 11.67px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="../../../../tags/React/" style="font-size: 10px;">React</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 11.67px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18.33px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 15px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 13.33px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 11.67px;">网络协议</a> <a href="../../../../tags/译文/" style="font-size: 11.67px;">译文</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 11.67px;">面试</a>
 					</div>
 				</section>
 				
@@ -201,17 +220,17 @@
 				
 					<li><a href="http://damonare.cn/">博客首页</a></li>
 		        
-					<li><a href="../index.html">主页</a></li>
+					<li><a href="../../../../index.html">主页</a></li>
 		        
-					<li><a href="../archives">所有文章</a></li>
+					<li><a href="../../../../archives">所有文章</a></li>
 		        
-					<li><a href="../categories/随笔/">随笔</a></li>
+					<li><a href="../../../../categories/随笔/">随笔</a></li>
 		        
-					<li><a href="../categories/learn/">学习</a></li>
+					<li><a href="../../../../categories/learn/">学习</a></li>
 		        
-					<li><a href="../categories/life/">生活</a></li>
+					<li><a href="../../../../categories/life/">生活</a></li>
 		        
-					<li><a href="../categories/其它/">其它</a></li>
+					<li><a href="../../../../categories/其它/">其它</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -235,7 +254,7 @@
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
 			        
-						<a class="rss" target="_blank" href="../atom.xml" title="rss">rss</a>
+						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
 			        
 				</div>
 			</nav>
@@ -243,11 +262,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-理解Node.js的事件轮询" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="" class="article-date">
-  	<time datetime="2016-09-05T09:40:31.000Z" itemprop="datePublished">2016-09-05</time>
+  	<time datetime="2017-02-08T11:49:30.871Z" itemprop="datePublished">2017-02-08</time>
 </a>
     </div>
   
@@ -260,7 +279,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      其它
+      理解Node.js的事件轮询
     </h1>
   
 
@@ -268,7 +287,15 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Node-js/">Node.js</a></li></ul>
+	</div>
+
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../../../categories/learn/">学习</a>
+	</div>
+
 
     
     <div class="bookicon"></div>
@@ -285,7 +312,45 @@
       
           <!-- Table of Contents -->
       
-        
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Node-js的两个基本概念"><span class="toc-number">2.0.1.</span> <span class="toc-text">Node.js的两个基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单线程"><span class="toc-number">2.0.2.</span> <span class="toc-text">单线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件轮询"><span class="toc-number">2.0.3.</span> <span class="toc-text">事件轮询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
+        </div>
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括</strong> ：</p>
+<ul>
+<li>原文地址：<a href="">理解Node.js的事件轮询</a></li>
+<li>Node小应用：<a href="https://github.com/damonare/node-sample" target="_blank" rel="external">Node-sample</a></li>
+</ul>
+<p><strong>智者阅读群书，亦阅历人生</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h4 id="Node-js的两个基本概念"><a href="#Node-js的两个基本概念" class="headerlink" title="Node.js的两个基本概念"></a>Node.js的两个基本概念</h4><p>Node.js的第一个基本概念就是I/O操作开销是巨大的：</p>
+<p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/io-cost.png" alt=""></p>
+<p>所以，当前变成技术中最大的浪费来自于等待I/O操作的完成。有几种方法可以解决性能的影响：</p>
+<ul>
+<li><strong>同步方式</strong>：按次序一个一个的处理请求。<em>利</em>：简单；<em>弊</em>：任何一个请求都可以阻塞其他所有请求。</li>
+<li><strong>开启新进程</strong>：每个请求都开启一个新进程。<em>利</em>：简单；<em>弊</em>：大量的链接意味着大量的进程。</li>
+<li><strong>开启新线程</strong>：每个请求都开启一个新线程。<em>利</em>：简单，而且跟进程比，对系统内核更加友好，因为线程比进程轻的多;<em>弊</em>:不是所有的机器都支持线程，而且对于要处理共享资源的情况，多线程编程会很快变得太过于复杂。</li>
+</ul>
+<p>第二个基本概念是每个连接都创建一个新线程是很消耗内存的（例如：你可以对比Nginx回想一下Apache内存耗尽的情景）。</p>
+<p>Apache是多线程的：它为每个请求开启一个新的线程（或者是进程，这取决于你的配置），当并发连接增多时，你可以看看它是怎么一点一点耗尽内存的。Nginx和Node.js不是多线程的，因为线程的消耗太“重”了。它们两个是单线程、基于事件的，这就把处理众多连接所产生的线程/进程消耗给消除了。</p>
+<h4 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h4><p>确实只有一个线程：你不能并行执行任何代码，比如：下面的“sleep”将会阻塞sever1秒钟：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="keyword">var</span> now = <span class="keyword">new</span> Data().getTime();</div><div class="line">   <span class="keyword">while</span> (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime() &lt; now + <span class="number">1000</span>) &#123;</div><div class="line">         <span class="comment">// do nothing</span></div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">sleep();</div></pre></td></tr></table></figure>
+<p>但就我目前学习阶段而言，我觉得好多人对于所谓的node单线程是有误解的。实际上官方给出的“单线程”是具有误导性的。所谓的单线程是指你的代码只运行在一个线程上(好多地方都叫它主线程，实际上Javascript的浏览器运行环境不也是这么处理我们写的Javascript代码的嘛)，而诸多任务的并行处理，就需要多线程了，如下图：</p>
+<p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/104032-20150917140900539-1845886135.png" alt=""></p>
+<p>如上图，Node.js中的单线程之说指的就是这个主线程，这个主线程有一个循环结构，保持着整个程序(你写的代码)的运转。</p>
+<h4 id="事件轮询"><a href="#事件轮询" class="headerlink" title="事件轮询"></a>事件轮询</h4><p>其实上面我们所说的<strong>维持主线程运行的循环</strong>这部分就是”事件轮询”，它存在于主线程中，负责不停地调用开发者编写的代码。但对开发者是不可见的。so…开发者编写的代码是怎样被调用的呢？看下图：</p>
+<p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/104032-20150917141055570-1948801510.png" alt=""></p>
+<p>如上图，异步函数在执行结束后，会在事件队列中添加一个事件(遵循先进先出原则)，主线程中的代码执行完毕后(即一次循环结束)，下一次循环开始就在事件队列中”读取”事件，然后调用它所对应的回调函数(所以回调函数的执行顺序是不一定的)。如果开发者在回调函数中调用了阻塞方法(比如上文中的sleep函数)，那么整个事件轮询就会阻塞，事件队列中的事件得不到及时处理。正因为这样，nodejs中的一些库方法均是异步的，也提倡用户调用异步方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line">fs.readFile(<span class="string">'hello.txt'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;  <span class="comment">//异步读取文件</span></div><div class="line">　　<span class="built_in">console</span>.log(<span class="string">"read file end"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="keyword">while</span>(<span class="number">1</span>)</div><div class="line">&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"call readFile over"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如上代码，我们虽然使用了异步方法readfile读取文件，但<code>read file end</code>永远不会输出，因为代码始终在while循环中，下一次事件轮询始终没法开始，也就没法’读取’事件队列调用相应的回调函数了。</p>
+<p>最后有一个<a href="https://github.com/damonare/node-sample" target="_blank" rel="external">Node-sample</a>是博主平时积累的一些代码，包含注释，汇总成了一个小应用，还是可以看到学习的蛛丝马迹的。感兴趣的您可以看看。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>参考文章：</p>
+<ul>
+<li><a href="http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop" target="_blank" rel="external">Understanding the node.js event loop</a></li>
+<li><a href="http://www.cnblogs.com/xiaozhi_5638/p/4816265.html" target="_blank" rel="external">nodejs事件轮询详述</a></li>
+</ul>
+
       
       
 
@@ -296,6 +361,16 @@
 
   
     
+<nav id="article-nav">
+  
+  
+    <a href="../../05/理解Node.js(译文)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">理解Node.js(译文)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 
 
@@ -323,7 +398,7 @@
 	})
 	</script>
 </div>
-<div class="ds-share" data-thread-key="undefined" data-title="其它" data-images="http://damonare.github.io" data-content="其它" data-url="https://damonare.github.io">
+<div class="ds-share" data-thread-key="理解Node.js的事件轮询" data-title="理解Node.js的事件轮询" data-images="http://damonare.github.io" data-content="理解Node.js的事件轮询" data-url="https://damonare.github.io">
 	<div class="ds-share-inline">
 	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
 
@@ -340,7 +415,7 @@
 </div>
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="其它" data-url="http://damonare.github.io"></div>
+	<div class="ds-thread" data-thread-key="理解Node.js的事件轮询" data-title="理解Node.js的事件轮询" data-url="http://damonare.github.io"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -467,7 +542,7 @@
 
     </div>
     
-  <link rel="stylesheet" href="../fancybox/jquery.fancybox.css">
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -476,7 +551,7 @@
         mathjax: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -485,7 +560,7 @@
 </script>
 <script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-<script src="../js/main.js"></script>
+<script src="../../../../js/main.js"></script>
 
 
 
