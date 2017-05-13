@@ -6,52 +6,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>我的前端进阶之路 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="React和Vue对比相同点:
+  <meta name="description" content="总括： 搜集了自己在面试过程中遇到的一些好问题
 
-数据驱动视图，提供响应式的视图组件
-都有Virtual DOM，组件化开发，通过props参数进行父子组件数据的传递，都实现webComponents规范
-数据流动单向
-都支持服务端渲染
-都有支持native的方案，React的React native，Vue的weex
+原文地址：我的前端进阶之路
 
-不同点：
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
 
-社区：React社区还是要比vue大很多；
+博主博客地址：Damonare的个人博客
 
-开发模式：React在view层">
+
+人生世上风波险，一日风波十二时。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的前端进阶之路">
 <meta property="og:url" content="http://damonare.github.io/2017/04/24/我的前端进阶之路/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="React和Vue对比相同点:
+<meta property="og:description" content="总括： 搜集了自己在面试过程中遇到的一些好问题
 
-数据驱动视图，提供响应式的视图组件
-都有Virtual DOM，组件化开发，通过props参数进行父子组件数据的传递，都实现webComponents规范
-数据流动单向
-都支持服务端渲染
-都有支持native的方案，React的React native，Vue的weex
+原文地址：我的前端进阶之路
 
-不同点：
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
 
-社区：React社区还是要比vue大很多；
+博主博客地址：Damonare的个人博客
 
-开发模式：React在view层">
-<meta property="og:updated_time" content="2017-05-13T07:26:05.000Z">
+
+人生世上风波险，一日风波十二时。">
+<meta property="og:updated_time" content="2017-05-13T07:29:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的前端进阶之路">
-<meta name="twitter:description" content="React和Vue对比相同点:
+<meta name="twitter:description" content="总括： 搜集了自己在面试过程中遇到的一些好问题
 
-数据驱动视图，提供响应式的视图组件
-都有Virtual DOM，组件化开发，通过props参数进行父子组件数据的传递，都实现webComponents规范
-数据流动单向
-都支持服务端渲染
-都有支持native的方案，React的React native，Vue的weex
+原文地址：我的前端进阶之路
 
-不同点：
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
 
-社区：React社区还是要比vue大很多；
+博主博客地址：Damonare的个人博客
 
-开发模式：React在view层">
+
+人生世上风波险，一日风波十二时。">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -334,7 +325,17 @@
           <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#React和Vue对比"><span class="toc-number">1.</span> <span class="toc-text">React和Vue对比</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gulp和webpack区别"><span class="toc-number">2.</span> <span class="toc-text">gulp和webpack区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#防止重复发送Ajax请求"><span class="toc-number">3.</span> <span class="toc-text">防止重复发送Ajax请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件模型"><span class="toc-number">4.</span> <span class="toc-text">事件模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器缓存机制"><span class="toc-number">5.</span> <span class="toc-text">浏览器缓存机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ajax的状态值与HTTP状态码"><span class="toc-number">6.</span> <span class="toc-text">Ajax的状态值与HTTP状态码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React-router原理"><span class="toc-number">7.</span> <span class="toc-text">React-router原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是原型链"><span class="toc-number">8.</span> <span class="toc-text">什么是原型链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是闭包"><span class="toc-number">9.</span> <span class="toc-text">什么是闭包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片懒加载与预加载"><span class="toc-number">10.</span> <span class="toc-text">图片懒加载与预加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#跨域"><span class="toc-number">11.</span> <span class="toc-text">跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数节流和函数防抖"><span class="toc-number">12.</span> <span class="toc-text">函数节流和函数防抖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#百度实习遇到的问题和解决方案"><span class="toc-number">13.</span> <span class="toc-text">百度实习遇到的问题和解决方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#快速排序"><span class="toc-number">14.</span> <span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AMD和CMD的区别"><span class="toc-number">15.</span> <span class="toc-text">AMD和CMD的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript内存泄露的原因以及如何去手动释放内存"><span class="toc-number">16.</span> <span class="toc-text">JavaScript内存泄露的原因以及如何去手动释放内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目遇到的问题以及如何解决的"><span class="toc-number">17.</span> <span class="toc-text">项目遇到的问题以及如何解决的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#柯里化函数"><span class="toc-number">18.</span> <span class="toc-text">柯里化函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react中setState的原理"><span class="toc-number">19.</span> <span class="toc-text">react中setState的原理</span></a></li></ol>
         </div>
       
-        <a id="more"></a>
+        <p><strong>总括：</strong> 搜集了自己在面试过程中遇到的一些好问题</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/09/06/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%80%BB%E7%BB%93/#more">我的前端进阶之路</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生世上风波险，一日风波十二时。</strong></p>
+<a id="more"></a>
 <h4 id="React和Vue对比"><a href="#React和Vue对比" class="headerlink" title="React和Vue对比"></a>React和Vue对比</h4><p>相同点:</p>
 <ol>
 <li>数据驱动视图，提供响应式的视图组件</li>

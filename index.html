@@ -270,244 +270,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-          <!-- Table of Contents -->
-      
-        <a id="more"></a>
-<h4 id="React和Vue对比"><a href="#React和Vue对比" class="headerlink" title="React和Vue对比"></a>React和Vue对比</h4><p>相同点:</p>
-<ol>
-<li>数据驱动视图，提供响应式的视图组件</li>
-<li>都有Virtual DOM，组件化开发，通过props参数进行父子组件数据的传递，都实现webComponents规范</li>
-<li>数据流动单向</li>
-<li>都支持服务端渲染</li>
-<li>都有支持native的方案，React的<code>React native</code>，Vue的<code>weex</code></li>
-</ol>
-<p>不同点：</p>
-<ol>
-<li><p>社区：React社区还是要比vue大很多；</p>
-</li>
-<li><p>开发模式：React在view层侵入性还是要比Vue大很多的,React严格上只针对MVC的view层，Vue则是MVVM模式的一种实现；</p>
-</li>
-<li><p>数据绑定：Vue有实现了双向数据绑定，React数据流动是单向的</p>
-</li>
-<li><p>数据渲染：对于大规模数据渲染，React要比Vue更快，渲染机制启动时候要做的工作比较多；</p>
-</li>
-<li><p>数据更新方面：Vue 由于采用依赖追踪，默认就是优化状态：你动了多少数据，就触发多少更新，不多也不少。React在复杂的应用里有两个选择:</p>
-<p>(1). 手动添加 shouldComponentUpdate 来避免不需要的 vdom re-render。  (2).Components 尽可能都用 pureRenderMixin，然后采用 redux 结构 + Immutable.js；</p>
-</li>
-<li><p>开发风格的偏好：React 推荐的做法是 JSX + inline style，也就是把 HTML 和 CSS 全都写进 JavaScript 了，即”all in js”；Vue进阶之后推荐的是使用 webpack + vue-loader 的单文件组件格式，即html,css,js写在同一个文件；</p>
-</li>
-<li><p>使用场景：React配合Redux架构适合超大规模多人协作的复杂项目;Vue则适合小快灵的项目。对于需要对 DOM 进行很多自定义操作的项目，Vue 的灵活性优于 React；</p>
-</li>
-<li><p>Vue要比React更好上手，具体可能体现在很多人不熟悉React的JSX语法和函数式编程的思想，以及想要发挥出React的最大威力需要学习它一系列生态的缘故；</p>
-</li>
-<li><p>Vue着重提高开发效率,让前端程序员更快速方便的开发应用。React着重于变革开发思想，提升前端程序员编程的深度与创造力,让前端工程师成为真正的程序员而不是UI的构建者；</p>
-</li>
-</ol>
-<h4 id="gulp和webpack区别"><a href="#gulp和webpack区别" class="headerlink" title="gulp和webpack区别"></a>gulp和webpack区别</h4><ol>
-<li>gulp是一种工具，我们可以用它来优化前端的工作流程，比如自动刷新页面、combo、压缩css、js、编译less等等。具体体现为：在gulp的配置文件中书写一个个的task，webpack则是一种打包工具，或者说是一种模块化解决方案，实际上很大一部分人刚开始使用webpack的方式就是通过gulp-webpack这个插件，写好task来使用webpack对前端的一些文件进行打包;</li>
-<li>gulp的处理任务需要自己去写，webpack则有现成的解决方案，只需要在webpack.config.js配置好即可;</li>
-</ol>
-<h4 id="防止重复发送Ajax请求"><a href="#防止重复发送Ajax请求" class="headerlink" title="防止重复发送Ajax请求"></a>防止重复发送Ajax请求</h4><ol>
-<li>用户点击之后按钮disabled;</li>
-<li>函数节流</li>
-<li>abort掉上一个请求。</li>
-</ol>
-<h4 id="事件模型"><a href="#事件模型" class="headerlink" title="事件模型"></a>事件模型</h4><ul>
-<li>事件捕获阶段(capturing phase)。事件从document一直向下传播到目标元素, 依次检查经过的节点是否绑定了事件监听函数，如果有则执行。</li>
-<li>事件处理阶段(target phase)。事件到达目标元素, 触发目标元素的监听函数。</li>
-<li>事件冒泡阶段(bubbling phase)。事件从目标元素冒泡到document, 依次检查经过的节点是否绑定了事件监听函数，如果有则执行。</li>
-</ul>
-<h4 id="浏览器缓存机制"><a href="#浏览器缓存机制" class="headerlink" title="浏览器缓存机制"></a>浏览器缓存机制</h4><ol>
-<li>Expires策略</li>
-</ol>
-<p>Expires是Web服务器响应消息头字段，在响应http请求时告诉<strong>浏览器在过期时间前</strong>浏览器可以直接从浏览器缓存取数据，而无需再次请求。Expires 是HTTP 1.0的东西，现在默认浏览器均默认使用HTTP 1.1，所以它的作用基本忽略。</p>
-<ol>
-<li>Cache-Control策略</li>
-</ol>
-<p>Cache-Control与Expires的作用一致，都是指明当前资源的<strong>有效期</strong>，控制浏览器是否直接从浏览器缓读取数据还是重新发请求到服务器取数据。只不过Cache-Control的<strong>选择更多，设置更细致</strong>，如果同时设置的话，其<strong>优先级高于Expires</strong>。</p>
-<p>以上是设置缓存时间的两种方法。那么当缓存时间过了咋整呢？有人肯定说了，那就再次发起请求啊，这是对的。问题是如果服务器资源并没有更新呢？比如说我有一个<code>jQuery.js</code>文件已经缓存了，当它的缓存时间到了之后服务器的<code>jQuery.js</code>文件也没有更新，那实际上我们直接使用本地缓存的文件就可以啊！没必要浪费带宽和时间去重新请求一个新的文件啊！这时候我们就需要再进一步看一下HTTP协议里这几个参数的作用了。</p>
-<ol>
-<li>Last-Modified/If-Modified-Since</li>
-</ol>
-<p>首先Last-Modified/If-Modified-Since要配合Cache-Control使用。</p>
+        <p><strong>总括：</strong> 搜集了自己在面试过程中遇到的一些好问题</p>
 <ul>
-<li>Last-Modified：标示这个响应资源的最后修改时间。web服务器在响应请求时，告诉浏览器资源的最后修改时间(这个参数是和Cache-Control一起过来的)。</li>
-<li>If-Modified-Since：当资源过期时（使用Cache-Control标识的max-age），发现资源具有Last-Modified声明，则再次向web服务器请求时带上头 <strong>If-Modified-Since</strong>，表示请求时间。<strong>web服务器收到请求后发现有头If-Modified-Since ，则与被请求资源的最后修改时间进行比对</strong>。若最后修改时间较新，说明资源又被改动过，则响应整片资源内容（写在响应消息包体内），HTTP 200；若最后修改时间较旧，说明资源无新修改，则响应HTTP 304 (无需包体，节省浏览)，告知浏览器继续使用所保存的cache。</li>
-</ul>
-<ol>
-<li>ETag/If-None-Match</li>
-</ol>
-<p>Etag/If-None-Match也要配合Cache-Control使用。</p>
-<ul>
-<li>Etag：web服务器响应请求时，告诉浏览器当前资源在服务器的唯一标识（生成规则由服务器觉得）。<em>Apache</em>中，ETag的值，<strong>默认是对文件的索引节（INode），大小（Size）和最后修改时间（MTime</strong>）进行<em>Hash</em>后得到的。</li>
-<li>If-None-Match：当资源过期时（使用Cache-Control标识的max-age），发现资源具有Etage声明，则再次向web服务器请求时带上头If-None-Match（Etag的值）。<strong>web服务器收到请求后发现有头If-None-Match 则与被请求资源的相应校验串进行比对</strong>，决定返回200或304。</li>
-</ul>
-<ol>
-<li>ETag和Last-Modified</li>
-</ol>
-<p>HTTP1.1中Etag的出现主要是为了解决几个Last-Modified比较难解决的问题：</p>
-<ul>
-<li>Last-Modified标注的最后修改只能精确到秒级，如果某些文件在1秒钟以内，被修改多次的话，它将不能准确标注文件的修改时间</li>
-<li>如果某些文件会被定期生成，当有时内容并没有任何变化，但Last-Modified却改变了，导致文件没法使用缓存</li>
-<li>有可能存在服务器没有准确获取文件修改时间，或者与代理服务器时间不一致等情形</li>
-</ul>
-<p>Etag是服务器自动生成或者由开发者生成的对应资源在服务器端的唯一标识符，能够更加准确的控制缓存。<strong>Last-Modified</strong>与ETag是可以一起使用的，服务器会优先验证ETag<strong>，一致的情况下，才会继续比对Last-Modified</strong>，最后才决定是否返回304。</p>
-<h4 id="Ajax的状态值与HTTP状态码"><a href="#Ajax的状态值与HTTP状态码" class="headerlink" title="Ajax的状态值与HTTP状态码"></a>Ajax的状态值与HTTP状态码</h4><ul>
-<li><p>Ajax的状态值</p>
-<p>0: (未初始化)还没有调用send()方法。<br>1: (载入)已经调用send()方法，正在派发请求。<br>2: (载入完成)send()已经执行完成，已经接收到全部的响应内容。<br>3: (交互)正在解析响应内容。<br>4: (完成)响应内容已经解析完成，用户可以调用。</p>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/09/06/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%80%BB%E7%BB%93/#more">我的前端进阶之路</a></p>
 </li>
-<li><p>HTTP状态码</p>
-<p>200 &amp; OK: 请求成功；</p>
-<p>204 &amp; No Content: 请求处理成功，但没有资源可以返回；</p>
-<p>206 &amp; Partial Content: 对资源某一部分进行请求(比如对于只加载了一般的图片剩余部分的请求)；</p>
-<p>301 &amp; Move Permanently: 永久性重定向；</p>
-<p>302 &amp; Found： 临时性重定向；</p>
-<p>303 &amp;  See Other: 请求资源存在另一个URI，应使用get方法请求；</p>
-<p>304 &amp; Not Modified: 使用本地的过期缓存；</p>
-<p>307 &amp; Temporary Redirect: 临时重定向；</p>
-<p>400 &amp; Bad Request: 请求报文存在语法错误；</p>
-<p>401 &amp; Unauthorized: 请求需要通过HTTP认证；</p>
-<p>403 &amp; Forbidden: 请求资源被服务器拒绝，访问权限的问题；</p>
-<p>404 &amp; Not Found: 服务器上没有请求的资源；</p>
-<p>500 &amp; Internal Server Error: 服务器执行请求时出现错误；</p>
-<p>502 &amp; Bad Gateway: 错误的网关；</p>
-<p>503 &amp; Service Unavailable: 服务器超载或正在维护，无法处理请求；</p>
-<p>504 &amp; Gateway timeout: 网关超时；</p>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn">Damonare的个人博客</a></p>
 </li>
 </ul>
-<h4 id="React-router原理"><a href="#React-router原理" class="headerlink" title="React-router原理"></a>React-router原理</h4><p>1.<strong>History</strong></p>
-<ul>
-<li>老浏览器的history: 主要通过hash来实现，对应<code>createHashHistory</code></li>
-<li>高版本浏览器: 通过html5里面的history，对应<code>createBrowserHistory</code></li>
-<li>node环境下: 主要存储在memeory里面，对应<code>createMemoryHistory</code></li>
-</ul>
-<p>内部<code>createHistory</code>实现：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 内部的抽象实现</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createHistory</span>(<span class="params">options=&#123;&#125;</span>) </span>&#123;</div><div class="line">  ...</div><div class="line">  return &#123;</div><div class="line">    listenBefore, <span class="comment">// 内部的hook机制，可以在location发生变化前执行某些行为，AOP的实现</span></div><div class="line">    listen, <span class="comment">// location发生改变时触发回调</span></div><div class="line">    transitionTo, <span class="comment">// 执行location的改变</span></div><div class="line">    push, <span class="comment">// 改变location</span></div><div class="line">    replace,</div><div class="line">    go,</div><div class="line">    goBack,</div><div class="line">    goForward,</div><div class="line">    createKey, <span class="comment">// 创建location的key，用于唯一标示该location，是随机生成的</span></div><div class="line">    createPath,</div><div class="line">    createHref,</div><div class="line">    createLocation, <span class="comment">// 创建location</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>createLocation</code>方法:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createLocation</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    pathname, <span class="comment">// url的基本路径</span></div><div class="line">    search, <span class="comment">// 查询字段</span></div><div class="line">    hash, <span class="comment">// url中的hash值</span></div><div class="line">    state, <span class="comment">// url对应的state字段</span></div><div class="line">    action, <span class="comment">// 分为push、replace、pop三种</span></div><div class="line">    key <span class="comment">// 生成方法为: Math.random().toString(36).substr(2, length)</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>三种方法各自执行<code>URL</code>前进的方式：</p>
-<ul>
-<li><code>createBrowserHistory</code>: pushState、replaceState</li>
-<li><code>createHashHistory</code>: <code>location.hash=***</code> <code>location.replace()</code></li>
-<li><code>createMemoryHistory</code>: 在内存中进行历史记录的存储</li>
-</ul>
-<p>伪代码实现:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// createBrowserHistory(HTML5)中的前进实现</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">finishTransition</span>(<span class="params">location</span>) </span>&#123;</div><div class="line">  ...</div><div class="line">  const historyState = &#123; key &#125;;</div><div class="line">  ...</div><div class="line">  if (location.action === <span class="string">'PUSH'</span>) ) &#123;</div><div class="line">    <span class="built_in">window</span>.history.pushState(historyState, <span class="literal">null</span>, path);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">window</span>.history.replaceState(historyState, <span class="literal">null</span>, path)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// createHashHistory的内部实现</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">finishTransition</span>(<span class="params">location</span>) </span>&#123;</div><div class="line">  ...</div><div class="line">  if (location.action === <span class="string">'PUSH'</span>) ) &#123;</div><div class="line">    <span class="built_in">window</span>.location.hash = path;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">window</span>.location.replace(</div><div class="line">    <span class="built_in">window</span>.location.pathname + <span class="built_in">window</span>.location.search + <span class="string">'#'</span> + path</div><div class="line">  );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// createMemoryHistory的内部实现</span></div><div class="line">entries = [];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">finishTransition</span>(<span class="params">location</span>) </span>&#123;</div><div class="line">  ...</div><div class="line">  switch (location.action) &#123;</div><div class="line">    <span class="keyword">case</span> <span class="string">'PUSH'</span>:</div><div class="line">      entries.push(location);</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="string">'REPLACE'</span>:</div><div class="line">      entries[current] = location;</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li><strong>React-router的基本原理</strong></li>
-</ol>
-<p><code>URL</code>对应<code>Location</code>对象，而<code>UI</code>是由react的 <code>components</code>来决定的，这样就转变成<code>location</code>与<code>components</code>之间的同步问题。</p>
-<h4 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h4><p>每一个对象都会在内部链接到另一个对象(该对象的原型对象)，该对象有一个原型<code>prototype</code>，当访问对象的属性或是方法的时候，不仅仅会在原对象上查找，还会顺着原型链在原型对象的原型链上查找，直到查到<code>null</code>(所有原型链的顶层)为止。原型是JavaScript实现继承的基础，<code>new</code>关键字做的主要的事情就是将实例对象的<code>__proto__</code>属性指向原型对象的prototype。</p>
-<h4 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h4><ul>
-<li><p>闭包是javascript支持<a href="https://zh.wikipedia.org/wiki/%E5%A4%B4%E7%AD%89%E5%87%BD%E6%95%B0" target="_blank" rel="external">头等函数</a>的一种方式，它是一个能够引用其内部作用域变量(在本作用域第一次声明的变量)的表达式，这个表达式可以赋值给某个变量，可以作为参数传递给函数，也可以作为一个函数返回值返回。</p>
-</li>
-<li><p>闭包是函数开始执行的时候被分配的一个<a href="http://baike.baidu.com/link?url=x9za8fl-K8Gsdc0IFBbC5fTininX3H8qVBuSPsChIJd8bmzTRXvd8scDL1uCYKLS26m6GMbXgHFC5K8yXz7nZ3eImibufpfwiBWzlBDAyT_" target="_blank" rel="external">栈帧</a>，在函数执行结束返回后仍不会被释放(就好像一个栈帧被分配在堆里而不是栈里！)</p>
-</li>
-<li><p>闭包的应用：</p>
-<ul>
-<li>比如写柯里化函数的时候利用闭包，保存参数在内存中；</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> currying = <span class="function"><span class="keyword">function</span>(<span class="params">fun</span>) </span>&#123;</div><div class="line">  	<span class="comment">//格式化arguments</span></div><div class="line">	<span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</div><div class="line">  	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      	<span class="comment">//收集所有的参数在同一个数组中，进行计算</span></div><div class="line">      	<span class="keyword">var</span> _args = args.concat(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>));</div><div class="line">      	<span class="keyword">return</span> fun.apply(<span class="literal">null</span>, _args);</div><div class="line">  	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>​</p>
-<ul>
-<li>模拟私有变量或是私有方法；</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> people = (num) =&gt; &#123;</div><div class="line">  	<span class="keyword">var</span> num = num;</div><div class="line">  	<span class="keyword">return</span> &#123;</div><div class="line">    	increase: () =&gt; &#123;</div><div class="line">          	num++;</div><div class="line">		&#125;,</div><div class="line">      	get: () =&gt; &#123;</div><div class="line">          	<span class="keyword">return</span> num;</div><div class="line">      	&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> man = people(<span class="number">4</span>);</div><div class="line">man.increase();</div><div class="line">man.get();</div></pre></td></tr></table></figure>
-<ul>
-<li>避免引用错误</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</div><div class="line">  	(<span class="function"><span class="keyword">function</span>(<span class="params">_i</span>) </span>&#123;</div><div class="line">      	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      		<span class="built_in">console</span>.log(_i)</div><div class="line">		&#125;, <span class="number">1000</span>)</div><div class="line">  	&#125;)(i)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ul>
-<h4 id="图片懒加载与预加载"><a href="#图片懒加载与预加载" class="headerlink" title="图片懒加载与预加载"></a>图片懒加载与预加载</h4><ul>
-<li><p>图片懒加载的原理就是暂时不设置图片的<code>src</code>属性，而是将图片的<code>url</code>隐藏起来，比如先写在<code>data-src</code>里面，等某些事件触发的时候(比如滚动到底部，点击加载图片)再将图片真实的<code>url</code>放进<code>src</code>属性里面，从而实现图片的延迟加载</p>
-</li>
-<li><p>图片预加载，是指在一些需要展示大量图片的网站，实现图片的提前加载。从而提升用户体验。常用的方式有两种，一种是隐藏在css的background的url属性里面，一种是通过javascript的Image对象设置实例对象的src属性实现图片的预加载。相关代码如下：</p>
-</li>
-<li><ol>
-<li>CSS预加载图片方式：</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#preload-01</span> &#123; <span class="attribute">background</span>: <span class="built_in">url</span>(http://domain.tld/image-01.png) no-repeat -<span class="number">9999px</span> -<span class="number">9999px</span>; &#125;  </div><div class="line"><span class="selector-id">#preload-02</span> &#123; <span class="attribute">background</span>: <span class="built_in">url</span>(http://domain.tld/image-02.png) no-repeat -<span class="number">9999px</span> -<span class="number">9999px</span>; &#125;  </div><div class="line"><span class="selector-id">#preload-03</span> &#123; <span class="attribute">background</span>: <span class="built_in">url</span>(http://domain.tld/image-03.png) no-repeat -<span class="number">9999px</span> -<span class="number">9999px</span>; &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><ol>
-<li>Javascript预加载图片的方式：</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">preloadImg</span>(<span class="params">url</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</div><div class="line">    img.src = url;</div><div class="line">    <span class="keyword">if</span>(img.complete) &#123;</div><div class="line">        <span class="comment">//接下来可以使用图片了</span></div><div class="line">        <span class="comment">//do something here</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">//接下来可以使用图片了</span></div><div class="line">            <span class="comment">//do something here</span></div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h4><p>跨域的方式有很多种，最常用的是<code>jsonp</code>主要利用了<code>script</code>的开放策略:通过script标签引入一个js或者是一个其他后缀形式（如php，jsp等）的文件，此文件返回一个js函数的调用。缺点在于只支持get请求而且存在安全问题。</p>
-<p>CORS跨域，关键在于服务器，如果服务器实现了CORS跨域的接口，那么就可以使用ajax(请求路径为绝对路径)进行跨域请求。CORS请求分为两种，一种是简单请求，一种是非简单请求。简单请求是指请求方法在<code>HEAD</code>,<code>GET</code>,<code>POST</code>三者之间并且请求头信息局限在</p>
-<ul>
-<li>Accept</li>
-<li>Accept-Language</li>
-<li>Content-Language</li>
-</ul>
-<ul>
-<li>Content-Type：只限于三个值<code>application/x-www-form-urlencoded</code>、<code>multipart/form-data</code>、<code>text/plain</code></li>
-</ul>
-<p>非简单请求请求头：</p>
-<p><strong>（1）Access-Control-Request-Method</strong></p>
-<p>该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法</p>
-<p><strong>（2）Access-Control-Request-Headers</strong></p>
-<p>该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段</p>
-<p>执行简单请求的时候，浏览器会在请求头信息增加<code>origin</code>字段，服务器据此来判断请求域名是否在许可范围之内，来决定是否返回<code>Access-Control-Allow-Origin</code>字段。响应头有以下几种：</p>
-<p><strong>（1）Access-Control-Allow-Origin</strong></p>
-<p>该字段是必须的。它的值要么是请求时<code>Origin</code>字段的值，要么是一个<code>*</code>，表示接受任意域名的请求。</p>
-<p><strong>（2）Access-Control-Allow-Credentials</strong></p>
-<p>该字段可选。它的值是一个布尔值，表示是否允许发送Cookie。默认情况下，Cookie不包括在CORS请求之中。设为<code>true</code>，即表示服务器明确许可，Cookie可以包含在请求中，一起发给服务器。这个值也只能设为<code>true</code>，如果服务器不要浏览器发送Cookie，删除该字段即可。</p>
-<p><strong>（3）Access-Control-Expose-Headers</strong></p>
-<p>该字段可选。CORS请求时，<code>XMLHttpRequest</code>对象的<code>getResponseHeader()</code>方法只能拿到6个基本字段：<code>Cache-Control</code>、<code>Content-Language</code>、<code>Content-Type</code>、<code>Expires</code>、<code>Last-Modified</code>、<code>Pragma</code>。如果想拿到其他字段，就必须在<code>Access-Control-Expose-Headers</code>里面指定。</p>
-<p>  <strong>(4)Access-Control-Max-Age</strong></p>
-<p><code>Access-Control-Max-Age</code> 首部字段指明了预检请求的响应的有效时间。</p>
-<p>  <strong>(5)Access-Control-Allow-Methods</strong></p>
-<p><code>Access-Control-Allow-Methods</code> 首部字段用于预检请求的响应。其指明了实际请求所允许使用的 HTTP 方法。</p>
-<p>  <strong>(6)Access-Control-Allow-Headers</strong></p>
-<p><code>Access-Control-Allow-Headers</code>首部字段用于预检请求的响应。其指明了实际请求中允许携带的首部字段。</p>
-<p>其他方法：<code>document.domin</code>,html5的<code>postMessage</code>,<code>window.name</code>等</p>
-<h4 id="函数节流和函数防抖"><a href="#函数节流和函数防抖" class="headerlink" title="函数节流和函数防抖"></a>函数节流和函数防抖</h4><p>函数节流让指函数有规律的进行调用，应用场景：window.resize，游戏中子弹发射(1s只能发射一颗子弹)等；</p>
-<p>函数防抖让函数在”调用’’之后的一段时间后生效，应用场景:输入框(例：在用户停止输入的500ms后再处理用户数据)。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//函数节流</span></div><div class="line"><span class="comment">/*</span></div><div class="line">* @params &#123;Function&#125; fun 调用函数</div><div class="line">* @params &#123;delay&#125; number 延迟时间</div><div class="line">*/</div><div class="line"><span class="keyword">const</span> throttle = (fun, delay, ...rest) =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> last = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">return</span> () =&gt; &#123;</div><div class="line">        <span class="keyword">const</span> now = + <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">        <span class="keyword">if</span> (now - last &gt; delay) &#123;</div><div class="line">            fun(rest);</div><div class="line">            last = now;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//实例</span></div><div class="line"><span class="keyword">const</span> throttleExample  = throttle(() =&gt; <span class="built_in">console</span>.log(<span class="number">1</span>), <span class="number">1000</span>);</div><div class="line"><span class="comment">//调用</span></div><div class="line">throttleExample();</div><div class="line">throttleExample();</div><div class="line">throttleExample();</div><div class="line"><span class="comment">//函数防抖</span></div><div class="line"><span class="keyword">const</span> debouce = (fun, delay, ...rest) =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> timer = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">return</span> () =&gt; &#123;</div><div class="line">        clearTimeout(timer);</div><div class="line">        timer = setTimeout(() =&gt; &#123;</div><div class="line">            fun(rest);</div><div class="line">        &#125;, delay);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//实例</span></div><div class="line"><span class="keyword">const</span> debouceExample = debouce(() =&gt; <span class="built_in">console</span>.log(<span class="number">1</span>), <span class="number">1000</span>);</div><div class="line"><span class="comment">//调用</span></div><div class="line">debouceExample();</div><div class="line">debouceExample();</div><div class="line">debouceExample();</div></pre></td></tr></table></figure>
-<h4 id="百度实习遇到的问题和解决方案"><a href="#百度实习遇到的问题和解决方案" class="headerlink" title="百度实习遇到的问题和解决方案"></a>百度实习遇到的问题和解决方案</h4><ol>
-<li><code>sort</code>API的问题，场景：后端返回的某一段数据经过前端sort方法排序后，顺序乱掉了。深入研究得知：sort方法底层算法是这样的：22以内是插入排序，22以上是快速排序。该场景下基准选择的是第一个数据，导致第一次快排结束后数据的顺序乱掉了。解决方法：直接提取，因为后端返回的数据是正确的。</li>
-<li><code>react-router</code>，问题：onEnter钩子函数的问题，传入第三个参数callback，官方文档说callback得异步执行，但必须在异步调用一次后在主线程再调用一次才会生效，看源码未解。最后放弃了传入callback改为同步执行解决。给react-router提了issue，未得到回应。</li>
-</ol>
-<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><ol>
-<li>从数列中挑出一个元素，称为”基准”（pivot），</li>
-<li>重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为<strong>分区（partition）</strong>操作。</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E9%80%92%E5%BD%92" target="_blank" rel="external">递归</a>地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。</li>
-</ol>
-<p>时间复杂度平均情况：O(n\log n) 最快：O(n^{2})  空间复杂度:  O(\log n)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> quickSort = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.time(<span class="string">'2.快速排序耗时'</span>);</div><div class="line">　　<span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123; <span class="keyword">return</span> arr; &#125;</div><div class="line">　　<span class="keyword">var</span> pivot = arr.splice(<span class="number">0</span>, <span class="number">1</span>)[<span class="number">0</span>];</div><div class="line">　　<span class="keyword">var</span> left = [];</div><div class="line">　　<span class="keyword">var</span> right = [];</div><div class="line">　　<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">　　　　<span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</div><div class="line">　　　　　　left.push(arr[i]);</div><div class="line">　　　　&#125; <span class="keyword">else</span> &#123;</div><div class="line">　　　　　　right.push(arr[i]);</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'2.快速排序耗时'</span>);</div><div class="line">　　<span class="keyword">return</span> quickSort(left).concat([pivot], quickSort(right));</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr=[<span class="number">3</span>,<span class="number">44</span>,<span class="number">38</span>,<span class="number">5</span>,<span class="number">47</span>,<span class="number">15</span>,<span class="number">36</span>,<span class="number">26</span>,<span class="number">27</span>,<span class="number">2</span>,<span class="number">46</span>,<span class="number">4</span>,<span class="number">19</span>,<span class="number">50</span>,<span class="number">48</span>];</div><div class="line"><span class="built_in">console</span>.log(quickSort(arr));<span class="comment">//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</span></div></pre></td></tr></table></figure>
-<h4 id="AMD和CMD的区别"><a href="#AMD和CMD的区别" class="headerlink" title="AMD和CMD的区别"></a>AMD和CMD的区别</h4><p>AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。<br>CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。</p>
-<ol>
-<li>对于依赖的模块，AMD 是<strong>提前执行</strong>，CMD 是<strong>延迟执行</strong>。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible.</li>
-<li>CMD 推崇<strong>依赖就近</strong>，AMD 推崇<strong>依赖前置</strong>。</li>
-<li>AMD 的 API 默认是<strong>一个当多个用</strong>，CMD 的 API 严格区分，推崇<strong>职责单一</strong>。比如 AMD 里，require 分全局 require 和局部 require，都叫 require。CMD 里，没有全局 require，而是根据模块系统的完备性，提供 seajs.use 来实现模块系统的加载启动。CMD 里，每个 API 都<strong>简单纯粹</strong>。</li>
-</ol>
-<h4 id="JavaScript内存泄露的原因以及如何去手动释放内存"><a href="#JavaScript内存泄露的原因以及如何去手动释放内存" class="headerlink" title="JavaScript内存泄露的原因以及如何去手动释放内存"></a>JavaScript内存泄露的原因以及如何去手动释放内存</h4><p><strong>易出现泄露的场景</strong></p>
-<ul>
-<li>XMLHttpRequest 泄漏发生在IE7-8,释放方法，将XMLHttpRequest实例对象设置为Null；</li>
-<li>DOM&amp;BOM等COM对象循环绑定 泄漏发生在IE6-8，释放方法，切断循环引用，将对对象的应用设置为Null；</li>
-<li>定时器(严格上说不能算是泄露，是被闭包持有了，是正常的表现)，对于闭包中无用的变量可以使用delete操作符进行释放；</li>
-</ul>
-<p><strong>JavaScript垃圾回收机制</strong></p>
-<ul>
-<li>引用计数</li>
-</ul>
-<p>此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。</p>
-<p>限制：无法处理循环引用。在下面的例子中，两个对象被创建，并互相引用，形成了一个循环。它们被调用之后不会离开函数作用域，所以它们已经没有用了，可以被回收了。然而，引用计数算法考虑到它们互相都有至少一次引用，所以它们不会被回收。</p>
-<ul>
-<li>标记清除</li>
-</ul>
-<p>当变量进入环境时，例如，在函数中声明一个变量，就将这个变量标记为“进入环境”。从逻辑上讲，永远不能释放进入环境的变量所占用的内存，因为只要执行流进入相应的环境，就可能会用到它们。而当变量离开环境时，则将其标记为“离开环境”。</p>
-<p>垃圾回收器在运行的时候会给存储在内存中的所有变量都加上标记（当然，可以使用任何标记方式）。然后，它会去掉环境中的变量以及被环境中的变量引用的变量的标记（<strong>闭包</strong>）。而在此之后再被加上标记的变量将被视为准备删除的变量，原因是环境中的变量已经无法访问到这些变量了。最后，垃圾回收器完成内存清除工作，销毁那些带标记的值并回收它们所占用的内存空间。</p>
-<h4 id="项目遇到的问题以及如何解决的"><a href="#项目遇到的问题以及如何解决的" class="headerlink" title="项目遇到的问题以及如何解决的"></a>项目遇到的问题以及如何解决的</h4><ol>
-<li>Canvas和图像的问题，当图像写入canvas之后只能写不能读，canvas对象的toDataURL等API都不能用了，原因是同源策略存在的缘故。解决方案：将图片放在支持CORS的服务器上，设置<code>img</code>属性值<code>crossorigin</code>为<code>anonymous</code>使canvas可读；</li>
-</ol>
-<h4 id="柯里化函数"><a href="#柯里化函数" class="headerlink" title="柯里化函数"></a>柯里化函数</h4><p>所谓的柯里化函数简单的说就是将本来接受多个参数的函数变为只接受一个参数的函数。柯里化函数的模板和实例如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> currying = <span class="function"><span class="keyword">function</span>(<span class="params">fun</span>) </span>&#123;</div><div class="line">  	<span class="comment">//格式化arguments</span></div><div class="line">	<span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</div><div class="line">  	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      	<span class="comment">//收集所有的参数在同一个数组中，进行计算</span></div><div class="line">      	<span class="keyword">var</span> _args = args.concat(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>));</div><div class="line">      	<span class="keyword">return</span> fun.apply(<span class="literal">null</span>, _args);</div><div class="line">  	&#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> add = currying(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</div><div class="line">  	<span class="keyword">return</span> args.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> a + b;</div><div class="line">    &#125;);</div><div class="line">&#125;)</div><div class="line">add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>)</div><div class="line"><span class="comment">/*</span></div><div class="line"> * 经典面试题</div><div class="line"> * 函数参数不定回调函数数目不定</div><div class="line"> * 编写函数实现:</div><div class="line"> * add(1,2,3,4,5)==15</div><div class="line"> * add(1,2)(3,4)(5)==15</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// 第一次执行时，定义一个数组专门用来存储所有的参数</span></div><div class="line">    <span class="keyword">var</span> _args = [].slice.call(<span class="built_in">arguments</span>);</div><div class="line">    <span class="comment">// 在内部声明一个函数，利用闭包的特性保存_args并收集所有的参数值</span></div><div class="line">    <span class="keyword">var</span> adder = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> _adder = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            [].push.apply(_args, [].slice.call(<span class="built_in">arguments</span>));</div><div class="line">            <span class="keyword">return</span> _adder;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        <span class="comment">// 利用隐式转换的特性，当最后执行时隐式转换，并计算最终的值返回</span></div><div class="line">        _adder.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> _args.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</div><div class="line">                <span class="keyword">return</span> a + b;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> _adder;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> adder.apply(<span class="literal">null</span>, _args);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 输出结果，可自由组合的参数</span></div><div class="line"><span class="built_in">console</span>.log(add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>));  <span class="comment">// 15</span></div><div class="line"><span class="built_in">console</span>.log(add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)(<span class="number">5</span>));  <span class="comment">// 15</span></div><div class="line"><span class="built_in">console</span>.log(add(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>)(<span class="number">5</span>));  <span class="comment">// 15</span></div></pre></td></tr></table></figure>
-<h4 id="react中setState的原理"><a href="#react中setState的原理" class="headerlink" title="react中setState的原理"></a>react中setState的原理</h4>
+<p><strong>人生世上风波险，一日风波十二时。</strong></p>
       
       
 
@@ -527,6 +299,10 @@
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a  href="2017/04/24/我的前端进阶之路/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
