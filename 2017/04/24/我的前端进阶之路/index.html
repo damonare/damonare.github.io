@@ -6,16 +6,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>我的前端进阶之路 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面试遇到的难点+[x] React和Vue区别+[x] gulp和webpack区别+[x] 防止重复发送ajax请求+[x] 浏览器缓存机制+[x] 事件模型+[x] 什么是原型链+[x] 什么是闭包+[x] React-router原理+[ ] Redux异步流+[ ] web worker+[ ] 操作系统相关+[ ] 任意源码阅读+[x] 图片懒加载与预加载+[x] 跨域+[x] Ajax">
+  <meta name="description" content="React和Vue对比相同点:
+
+数据驱动视图，提供响应式的视图组件
+都有Virtual DOM，组件化开发，通过props参数进行父子组件数据的传递，都实现webComponents规范
+数据流动单向
+都支持服务端渲染
+都有支持native的方案，React的React native，Vue的weex
+
+不同点：
+
+社区：React社区还是要比vue大很多；
+
+开发模式：React在view层">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的前端进阶之路">
 <meta property="og:url" content="http://damonare.github.io/2017/04/24/我的前端进阶之路/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="面试遇到的难点+[x] React和Vue区别+[x] gulp和webpack区别+[x] 防止重复发送ajax请求+[x] 浏览器缓存机制+[x] 事件模型+[x] 什么是原型链+[x] 什么是闭包+[x] React-router原理+[ ] Redux异步流+[ ] web worker+[ ] 操作系统相关+[ ] 任意源码阅读+[x] 图片懒加载与预加载+[x] 跨域+[x] Ajax">
-<meta property="og:updated_time" content="2017-05-13T07:24:12.000Z">
+<meta property="og:description" content="React和Vue对比相同点:
+
+数据驱动视图，提供响应式的视图组件
+都有Virtual DOM，组件化开发，通过props参数进行父子组件数据的传递，都实现webComponents规范
+数据流动单向
+都支持服务端渲染
+都有支持native的方案，React的React native，Vue的weex
+
+不同点：
+
+社区：React社区还是要比vue大很多；
+
+开发模式：React在view层">
+<meta property="og:updated_time" content="2017-05-13T07:26:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的前端进阶之路">
-<meta name="twitter:description" content="面试遇到的难点+[x] React和Vue区别+[x] gulp和webpack区别+[x] 防止重复发送ajax请求+[x] 浏览器缓存机制+[x] 事件模型+[x] 什么是原型链+[x] 什么是闭包+[x] React-router原理+[ ] Redux异步流+[ ] web worker+[ ] 操作系统相关+[ ] 任意源码阅读+[x] 图片懒加载与预加载+[x] 跨域+[x] Ajax">
+<meta name="twitter:description" content="React和Vue对比相同点:
+
+数据驱动视图，提供响应式的视图组件
+都有Virtual DOM，组件化开发，通过props参数进行父子组件数据的传递，都实现webComponents规范
+数据流动单向
+都支持服务端渲染
+都有支持native的方案，React的React native，Vue的weex
+
+不同点：
+
+社区：React社区还是要比vue大很多；
+
+开发模式：React在view层">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -295,11 +331,10 @@
       
         <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#面试遇到的难点"><span class="toc-number">1.</span> <span class="toc-text">面试遇到的难点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#React和Vue对比"><span class="toc-number">1.1.</span> <span class="toc-text">React和Vue对比</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gulp和webpack区别"><span class="toc-number">1.2.</span> <span class="toc-text">gulp和webpack区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#防止重复发送Ajax请求"><span class="toc-number">1.3.</span> <span class="toc-text">防止重复发送Ajax请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件模型"><span class="toc-number">1.4.</span> <span class="toc-text">事件模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器缓存机制"><span class="toc-number">1.5.</span> <span class="toc-text">浏览器缓存机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ajax的状态值与HTTP状态码"><span class="toc-number">1.6.</span> <span class="toc-text">Ajax的状态值与HTTP状态码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React-router原理"><span class="toc-number">1.7.</span> <span class="toc-text">React-router原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是原型链"><span class="toc-number">1.8.</span> <span class="toc-text">什么是原型链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是闭包"><span class="toc-number">1.9.</span> <span class="toc-text">什么是闭包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片懒加载与预加载"><span class="toc-number">1.10.</span> <span class="toc-text">图片懒加载与预加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#跨域"><span class="toc-number">1.11.</span> <span class="toc-text">跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数节流和函数防抖"><span class="toc-number">1.12.</span> <span class="toc-text">函数节流和函数防抖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#百度实习遇到的问题和解决方案"><span class="toc-number">1.13.</span> <span class="toc-text">百度实习遇到的问题和解决方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#快速排序"><span class="toc-number">1.14.</span> <span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AMD和CMD的区别"><span class="toc-number">1.15.</span> <span class="toc-text">AMD和CMD的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript内存泄露的原因以及如何去手动释放内存"><span class="toc-number">1.16.</span> <span class="toc-text">JavaScript内存泄露的原因以及如何去手动释放内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目遇到的问题以及如何解决的"><span class="toc-number">1.17.</span> <span class="toc-text">项目遇到的问题以及如何解决的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#柯里化函数"><span class="toc-number">1.18.</span> <span class="toc-text">柯里化函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react中setState的原理"><span class="toc-number">1.19.</span> <span class="toc-text">react中setState的原理</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#React和Vue对比"><span class="toc-number">1.</span> <span class="toc-text">React和Vue对比</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gulp和webpack区别"><span class="toc-number">2.</span> <span class="toc-text">gulp和webpack区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#防止重复发送Ajax请求"><span class="toc-number">3.</span> <span class="toc-text">防止重复发送Ajax请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件模型"><span class="toc-number">4.</span> <span class="toc-text">事件模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器缓存机制"><span class="toc-number">5.</span> <span class="toc-text">浏览器缓存机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ajax的状态值与HTTP状态码"><span class="toc-number">6.</span> <span class="toc-text">Ajax的状态值与HTTP状态码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React-router原理"><span class="toc-number">7.</span> <span class="toc-text">React-router原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是原型链"><span class="toc-number">8.</span> <span class="toc-text">什么是原型链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是闭包"><span class="toc-number">9.</span> <span class="toc-text">什么是闭包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片懒加载与预加载"><span class="toc-number">10.</span> <span class="toc-text">图片懒加载与预加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#跨域"><span class="toc-number">11.</span> <span class="toc-text">跨域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数节流和函数防抖"><span class="toc-number">12.</span> <span class="toc-text">函数节流和函数防抖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#百度实习遇到的问题和解决方案"><span class="toc-number">13.</span> <span class="toc-text">百度实习遇到的问题和解决方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#快速排序"><span class="toc-number">14.</span> <span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AMD和CMD的区别"><span class="toc-number">15.</span> <span class="toc-text">AMD和CMD的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript内存泄露的原因以及如何去手动释放内存"><span class="toc-number">16.</span> <span class="toc-text">JavaScript内存泄露的原因以及如何去手动释放内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目遇到的问题以及如何解决的"><span class="toc-number">17.</span> <span class="toc-text">项目遇到的问题以及如何解决的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#柯里化函数"><span class="toc-number">18.</span> <span class="toc-text">柯里化函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react中setState的原理"><span class="toc-number">19.</span> <span class="toc-text">react中setState的原理</span></a></li></ol>
         </div>
       
-        <h3 id="面试遇到的难点"><a href="#面试遇到的难点" class="headerlink" title="面试遇到的难点"></a>面试遇到的难点</h3><p>+[x] React和Vue区别<br>+[x] gulp和webpack区别<br>+[x] 防止重复发送ajax请求<br>+[x] 浏览器缓存机制<br>+[x] 事件模型<br>+[x] 什么是原型链<br>+[x] 什么是闭包<br>+[x] React-router原理<br>+[ ] Redux异步流<br>+[ ] web worker<br>+[ ] 操作系统相关<br>+[ ] 任意源码阅读<br>+[x] 图片懒加载与预加载<br>+[x] 跨域<br>+[x] Ajax状态值和HTTP状态码<br>+[x] 快速排序<br>+[x] 柯里化函数<br>+[ ] react中setState的原理<br>+[ ] XSS与CSRF介绍<br>+[x] 函数节流和函数防抖<br>+[x] AMD和CMD的区别和联系<br>+[x] 百度实习遇到的问题和解决方案<br>+[x] 项目遇到的问题，以及如何解决的<br>+[x] JavaScript内存泄露的原因及如何去手动释放内存</p>
-<a id="more"></a>
+        <a id="more"></a>
 <h4 id="React和Vue对比"><a href="#React和Vue对比" class="headerlink" title="React和Vue对比"></a>React和Vue对比</h4><p>相同点:</p>
 <ol>
 <li>数据驱动视图，提供响应式的视图组件</li>
