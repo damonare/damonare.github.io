@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>网络协议分析 | Damonare的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言总括：  本文图文并茂的详细讲述了十大经典排序算法用javascript实现的过程。
+
+原文博客地址：网络协议分析
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生在勤，勤则不匮；户枢不蠹，流水不腐。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络协议分析">
+<meta property="og:url" content="http://damonare.github.io/2016/11/26/网络协议分析/index.html">
+<meta property="og:site_name" content="Damonare的个人博客">
+<meta property="og:description" content="前言总括：  本文图文并茂的详细讲述了十大经典排序算法用javascript实现的过程。
+
+原文博客地址：网络协议分析
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生在勤，勤则不匮；户枢不蠹，流水不腐。">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLGj">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLHK">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLHQ">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLH3">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLH8">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLIL">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLIO">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLIR">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLIV">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLI1">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLI9">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLJe">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLJi">
+<meta property="og:image" content="https://segmentfault.com/img/bVyLJj">
+<meta property="og:updated_time" content="2016-11-26T09:43:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络协议分析">
+<meta name="twitter:description" content="前言总括：  本文图文并茂的详细讲述了十大经典排序算法用javascript实现的过程。
+
+原文博客地址：网络协议分析
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生在勤，勤则不匮；户枢不蠹，流水不腐。">
+<meta name="twitter:image" content="https://segmentfault.com/img/bVyLGj">
+  
+  
+    <link rel="icon" href="/./img/1.png">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <!-- scripts -->
+ <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/js/particles.min.js" src="/js/particles.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Damonare</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不念过去，不畏将来</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://damonare.cn/">博客首页</a></li>
+				        
+							<li><a href="../../../../index.html">主页</a></li>
+				        
+							<li><a href="../../../../archives">所有文章</a></li>
+				        
+							<li><a href="../../../../categories/随笔/">随笔</a></li>
+				        
+							<li><a href="../../../../categories/learn/">学习</a></li>
+				        
+							<li><a href="../../../../categories/life/">生活</a></li>
+				        
+							<li><a href="../../../../categories/其它/">其它</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+					        
+								<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+					        
+								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="../../../../tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 11.67px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="../../../../tags/React/" style="font-size: 10px;">React</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 11.67px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18.33px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 15px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 13.33px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 11.67px;">网络协议</a> <a href="../../../../tags/译文/" style="font-size: 11.67px;">译文</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 11.67px;">面试</a>
+					</div>
+				</section>
+				
+
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://xdlrt.github.io/">卢睿韬的自留地</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lcodecorex.github.io/">Oscar Blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://qiutc.me/">阿城的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://touch28.github.io/">Lingo的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lengxing.github.io/">冷星</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiao1ong.cn/">xiao1ong</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">姓名：谭继臻    性别：男     学习经历：2014-至今 就读于西安电子科技大学     邮箱：jztan1996@gmail.com     QQ:577964075      微信：tjz19960421</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Damonare</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Damonare</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不念过去，不畏将来</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://damonare.cn/">博客首页</a></li>
+		        
+					<li><a href="../../../../index.html">主页</a></li>
+		        
+					<li><a href="../../../../archives">所有文章</a></li>
+		        
+					<li><a href="../../../../categories/随笔/">随笔</a></li>
+		        
+					<li><a href="../../../../categories/learn/">学习</a></li>
+		        
+					<li><a href="../../../../categories/life/">生活</a></li>
+		        
+					<li><a href="../../../../categories/其它/">其它</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+			        
+						<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+			        
+						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-网络协议分析" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="" class="article-date">
+  	<time datetime="2016-11-26T09:43:18.000Z" itemprop="datePublished">2016-11-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      网络协议分析
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/网络协议/">网络协议</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../../../categories/learn/">学习</a>
+	</div>
+
+
+    
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  热度： <span id="busuanzi_value_page_pv"></span>℃</span>
+  </div>
+  
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          <!-- Table of Contents -->
+      
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-基于Fiddler的HTTP-HTTPS协议分析"><span class="toc-number">2.1.</span> <span class="toc-text">1.基于Fiddler的HTTP/HTTPS协议分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-基于Wireshark的TCP-HTTP协议深入分析"><span class="toc-number">2.2.</span> <span class="toc-text">2.基于Wireshark的TCP/HTTP协议深入分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-使用Wireshark分析ARP协议"><span class="toc-number">2.3.</span> <span class="toc-text">3.使用Wireshark分析ARP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-使用Wireshark分析ICMP协议"><span class="toc-number">2.4.</span> <span class="toc-text">4.使用Wireshark分析ICMP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-使用Wireshark分析IP协议"><span class="toc-number">2.5.</span> <span class="toc-text">5.使用Wireshark分析IP协议</span></a></li></ol></li></ol>
+        </div>
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong>  本文图文并茂的详细讲述了十大经典排序算法用javascript实现的过程。</p>
+<ul>
+<li>原文博客地址：<a href="http://damonare.github.io/2016/09/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/#more">网络协议分析</a></li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生在勤，勤则不匮；户枢不蠹，流水不腐。</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>网络协议分析</strong></p>
+<h3 id="1-基于Fiddler的HTTP-HTTPS协议分析"><a href="#1-基于Fiddler的HTTP-HTTPS协议分析" class="headerlink" title="1.基于Fiddler的HTTP/HTTPS协议分析"></a>1.基于Fiddler的HTTP/HTTPS协议分析</h3><p><strong>关于Fiddler：</strong> Fiddler是一款由C#开发的免费http调试代理软件，有.net 2和.net 4两种版本。Fiddler能够记录所有的电脑和互联网之间的http通讯，Fiddler 可以也可以检查所有的http通讯，设置断点，以及Fiddle 所有的”进出”的数据。</p>
+<p> <strong>优点：</strong></p>
+<blockquote>
+<p><strong>a</strong>.Firebug虽然可以抓包，但是对于分析http请求的详细信息，不够强大。模拟http请求的功能也不够，且firebug常常是需要”无刷新修改”，如果刷新了页面，所有的修改都不会保存； <strong>b</strong>.Wireshark是通用的抓包工具，但是比较庞大，对于只需要抓取http请求的应用来说，似乎有些大材小用。且Wireshark无法解密HTTPS故而选择使用fiddler来对HTTP协议进行分析； <strong>c</strong>.Httpwatch也是比较常用的http抓包工具，但是只支持IE和firefox浏览器（其他浏览器可能会有相应的插件），对于想要调试chrome浏览器的http请求，似乎稍显无力，而Fiddler2 是一个使用本地 127.0.0.1:8888 的 HTTP 代理，任何能够设置 HTTP 代理为 127.0.0.1:8888 的浏览器和应用程序都可以使用 Fiddler。</p>
+</blockquote>
+<p>这里为体现个人特色，选择在本地服务器运行观察抓包结果，如图： <img src="https://segmentfault.com/img/bVyLGj" alt="图片描述"></p>
+<p>实际上，Wireshark抓不到本地服务器发送报文，这也是Fiddler更利于开发调试的原因之一。 HTTP协议分析（1）：由于之前本地测试过，所以第一次抓到的包返回的状态码是304，清除缓存后变为正常的200，图中我们可以看到返回的数据：”谭继臻FiddlerHTTP协议测试”，这里我们通过请求头报文可以看到请求站点（localhost:81）,请求方式（XMLHttpReQuest）等信息。由于Fiddler只能抓到HTTP/HTTPS的包，关于HTTP协议的深入分析我们使用Wireshark进行。、</p>
+<h3 id="2-基于Wireshark的TCP-HTTP协议深入分析"><a href="#2-基于Wireshark的TCP-HTTP协议深入分析" class="headerlink" title="2.基于Wireshark的TCP/HTTP协议深入分析"></a>2.基于Wireshark的TCP/HTTP协议深入分析</h3><p><strong>关于Wireshark：</strong> Wireshark（前称Ethereal）是一个网络封包分析软件。网络封包分析软件的功能是撷取网络封包，并尽可能显示出最为详细的网络封包资料。Wireshark使用WinPCAP作为接口，直接与网卡进行数据报文交换。 优点：</p>
+<blockquote>
+<p><strong>a</strong>.使用操作非常简单，对于初级和中级网络学习者来说是一款完美的抓包软件。</p>
+<p><strong>b</strong>.有很多小工具和小技巧可以帮助我们更快更好的了解网络，例如filter，expression，statistics等等。</p>
+<p><strong>c</strong>.界面设计很简洁，给使用者一种非常清新的感觉。</p>
+<p><strong>d</strong>.与Fiddler相比可抓取的包更广，更多，并且软件开源，用着放心。</p>
+</blockquote>
+<p><strong>实例分析TCP三次握手过程：</strong></p>
+<p>这里我们打开哔哩哔哩网站首页观察抓包情况（<a href="http://www.bilibili.com/）；" target="_blank" rel="external">http://www.bilibili.com/）；</a></p>
+<ul>
+<li>第一次握手数据包</li>
+</ul>
+<p>客户端发送一个TCP，标志位为SYN，序列号为0， 代表客户端请求建立连接。如下图： <img src="https://segmentfault.com/img/bVyLHK" alt="第一次握手"></p>
+<ul>
+<li>第二次握手的数据包</li>
+</ul>
+<p>服务器发回确认包, 标志位为 SYN,ACK. 将确认序号(Acknowledgement Number)设置为客户的I S N加1以.即0+1=1, 如下图： <img src="https://segmentfault.com/img/bVyLHQ" alt="第二次握手"></p>
+<ul>
+<li>第三次握手的数据包</li>
+</ul>
+<p>客户端再次发送确认包(ACK) SYN标志位为0,ACK标志位为1.并且把服务器发来ACK的序号字段+1,放在确定字段中发送给对方.并且在数据段放写ISN的+1,如下图： <img src="https://segmentfault.com/img/bVyLH3" alt="第三次握手"></p>
+<p>就这样通过了TCP三次握手，建立了连接,三次握手基本结束，开始真正的数据传送阶段： 建立了三次握手后，我们就开始利用这个链接来传送信息了。下面我们看看经过三次握手后的第四个TCP报文段。这是服务器返回来的报文段： <img src="https://segmentfault.com/img/bVyLH8" alt="图片描述"></p>
+<p>我们惊奇的发现服务器返回了ack=557，即请求第557Byte的数据，而这557Bytes是什么时候发出去的呢，我们想到了在第三次握手的时候，客户端发送的TCP是能够携带数据的。怎么验证是否携带了557Bytes数据呢，我们想到了HTTP协议封装的报文，我们来验证一下是否是557Bytes，打开HTTP协议如下:</p>
+<p><img src="https://segmentfault.com/img/bVyLIL" alt="图片描述"></p>
+<p>我们看到，HTTP协议封装的报文，长度为Bytes in flight：556。表示已经发送了557Bytes，所以，服务器理应返回一个ack=554的确认，以表示接收到了556Bytes以前的数据，希望接受557bytes以及以后的数据。而上面的第四个报文也正是这么做的。 服务端返回了ack=557之后，服务端没有继续停下，而是继续向客户端发送了两个报文段。我们来看下第五、六个报文段:</p>
+<p><img src="https://segmentfault.com/img/bVyLIO" alt="图片描述"></p>
+<p>第五个报文段发送了seq=557，ack=1203告诉服务端，请求你的1203数据，我这是第557个数据。发完后服务端又发送了第六个报文，如下:</p>
+<p><img src="https://segmentfault.com/img/bVyLIR" alt="图片描述"></p>
+<p>服务端发送了seq=1113，ack=2400，这表示：我请求第2400Bytes，这是我的第1113Bytes,这个报文之后，服务端会继续给客户端传送数据，这里就不一一列出了。</p>
+<p>断开连接： 断开连接时，要发送FIN=1，并且对方要回复ACK=1。我们来看下截取的报文段。</p>
+<p><img src="https://segmentfault.com/img/bVyLIV" alt="图片描述"></p>
+<p>我们看到FIN=1。</p>
+<p><img src="https://segmentfault.com/img/bVyLI1" alt="图片描述"></p>
+<p>返回了ACK=1，结束连接。</p>
+<p>到这里HTTP协议就算分析结束了，我们可以看到HTTP传输数据确实是靠TCP协议来完成的，由于哔哩哔哩网站内容很多，所以看起来很乱…这点没有考虑周全。</p>
+<h3 id="3-使用Wireshark分析ARP协议"><a href="#3-使用Wireshark分析ARP协议" class="headerlink" title="3.使用Wireshark分析ARP协议"></a>3.使用Wireshark分析ARP协议</h3><p>在显示筛选编辑框中输入”arp”，回车，分组列表窗口将只显示ARP消息。点击第一行查看具体数据：</p>
+<p><img src="https://segmentfault.com/img/bVyLI9" alt="图片描述"></p>
+<blockquote>
+<p>可以看出硬件类型（hardware type）是以太网（1），协议类型（protocol type）为0x0800，表示使用ARP的协议类型为IPV4。硬件地址长度（hardware size）为6。协议地址长度（protocol size）为4。 发送方硬件地址（sender MAC address）：bc:30:7d:97:c8:08 发送方协议地址（Sender IP address）：192.168.1.5 目的硬件地址（target MAC address）为00:00:00:00:00:00，表示是广播地址。 目的协议地址（target IP address）为192.168.1.1，定义目的设备的协议地址。</p>
+</blockquote>
+<h3 id="4-使用Wireshark分析ICMP协议"><a href="#4-使用Wireshark分析ICMP协议" class="headerlink" title="4.使用Wireshark分析ICMP协议"></a>4.使用Wireshark分析ICMP协议</h3><p>在cmder(也可以是一般的命令行窗口)中以www.damonare.cn(个人网站)为目标主机，在命令行窗口执行Ping命令，要求ping通10次；</p>
+<p><img src="https://segmentfault.com/img/bVyLJe" alt="图片描述"></p>
+<p>停止截获报文，抓包结果:（只显示ping的数据包） 在显示筛选编辑框中输入”icmpv6”，回车，分组列表窗口将只显示icmp消息。点击第一行查看具体数据：</p>
+<p><img src="https://segmentfault.com/img/bVyLJi" alt="图片描述"></p>
+<h3 id="5-使用Wireshark分析IP协议"><a href="#5-使用Wireshark分析IP协议" class="headerlink" title="5.使用Wireshark分析IP协议"></a>5.使用Wireshark分析IP协议</h3><p>在显示筛选编辑框中输入”ip”，回车，分组列表窗口将只显示IP消息。选取一个有IP协议的数据报：</p>
+<p><img src="https://segmentfault.com/img/bVyLJj" alt="图片描述"></p>
+
+      
+      
+
+  
+    </div>
+    
+  </div>
+
+  
+    
+<nav id="article-nav">
+  
+    <a href="../详解javascript的类/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          详解Javascript的类(单身狗请自觉进入)
+        
+      </div>
+    </a>
+  
+  
+    <a href="../前端面试题集/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端面试题集</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+
+
+</article>
+
+
+
+
+<div class="support-author">
+	<p>如果您觉得我的文章对您有用，请随意打赏。</p>
+	<p>您的支持将鼓励我继续创作！</p>
+	<button id='alipay'>￥支付宝支持</button>
+	<button id='wechat'>￥微信支持</button>
+	<p>
+		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+	</p>
+	<script type="text/javascript">
+	document.querySelector('#alipay').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	})
+	document.querySelector('#wechat').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	})
+	</script>
+</div>
+<div class="ds-share" data-thread-key="网络协议分析" data-title="网络协议分析" data-images="http://damonare.github.io" data-content="网络协议分析" data-url="https://damonare.github.io">
+	<div class="ds-share-inline">
+	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
+
+	   <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);"></a></li>
+	   <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+	   <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+	   <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+	   <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+
+	 </ul>
+	 <div class="ds-share-icons-more">
+	 </div>
+   </div>
+</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="网络协议分析" data-title="网络协议分析" data-url="http://damonare.github.io"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"damonare"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://damonare.cn/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                如果您对我感兴趣欢迎查看<a href="http://damonare.cn/resume/">Damonare的个人简历</a>
+                <span>由<a href="http://hexo.io/">Hexo</a>强力驱动</span> &copy;
+                2017
+                    Damonare
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten -->
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                <span id="busuanzi_container_site_uv">
+    您是本站第<span id="busuanzi_value_site_uv"></span>位访客
+                </span>
+                <span id="showDays"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        var birthDay = new Date('9/05/2016 18:34:23');
+    setInterval(function() {
+        var now = new Date();
+        var num_1 = 1000 * 60 * 60 * 24;
+        var num_2 = 1000 * 60 * 60;
+        var duration = now.getTime() - birthDay.getTime();
+        var total = Math.floor(duration / num_1);
+        var hour = Math.floor((duration % num_1) / num_2);
+        var minute = Math.floor(((duration % num_1) % num_2) / (1000 * 60));
+        var second = Math.floor((((duration % num_1) % num_2) % (1000 * 60)) / 1000);
+        document.getElementById("showDays").innerHTML = "本站已运行" + total + "天" + hour + '时' + minute + '分' + second + '秒';
+    }, 1000);
+</script>
+
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<script>
+    var bszCaller, bszTag;
+    ! function() {
+        var c, d, e, a = !1,
+            b = [];
+        ready = function(c) {
+            return a || "interactive" === document.readyState || "complete" === document.readyState ? c.call(document) : b.push(function() {
+                return c.call(this)
+            }), this
+        }, d = function() {
+            for (var a = 0, c = b.length; c > a; a++) b[a].apply(document);
+            b = []
+        }, e = function() {
+            a || (a = !0, d.call(window), document.removeEventListener ? document.removeEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.detachEvent("onreadystatechange", e), window == window.top && (clearInterval(c),
+                c = null)))
+        }, document.addEventListener ? document.addEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.attachEvent("onreadystatechange", function() {
+            /loaded|complete/.test(document.readyState) && e()
+        }), window == window.top && (c = setInterval(function() {
+            try {
+                a || document.documentElement.doScroll("left")
+            } catch (b) {
+                return
+            }
+            e()
+        }, 5)))
+    }(), bszCaller = {
+        fetch: function(a, b) {
+            var c = "BusuanziCallback_" + Math.floor(1099511627776 * Math.random());
+            window[c] = this.evalCall(b), a = a.replace("=BusuanziCallback", "=" + c), scriptTag = document.createElement("SCRIPT"), scriptTag.type = "text/javascript", scriptTag.defer = !0, scriptTag.src = a, document.getElementsByTagName(
+                "HEAD")[0].appendChild(scriptTag)
+        },
+        evalCall: function(a) {
+            return function(b) {
+                ready(function() {
+                    try {
+                        a(b), scriptTag.parentElement.removeChild(scriptTag)
+                    } catch (c) {
+                        bszTag.hides()
+                    }
+                })
+            }
+        }
+    }, bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", function(a) {
+        bszTag.texts(a), bszTag.shows()
+    }), bszTag = {
+        bszs: ["site_pv", "page_pv", "site_uv"],
+        texts: function(a) {
+            this.bszs.map(function(b) {
+                var c = document.getElementById("busuanzi_value_" + b);
+                c && (c.innerHTML = a[b])
+            })
+        },
+        hides: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "none")
+            })
+        },
+        shows: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "inline")
+            })
+        }
+    };
+</script>
+
+    </div>
+    
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        mathjax: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false
+    }
+</script>
+<script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="../../../../js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e839062c43d17bbd439d0bb5b80ab5e1";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+ eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('g(0).h(e(){e d(){0.9=0[b]?" 看这里，看这里！":a}f b,c,a=0.9;"2"!=4 0.8?(b="8",c="k"):"2"!=4 0.5?(b="5",c="j"):"2"!=4 0.6&&(b="6",c="l"),("2"!=4 0.7||"2"!=4 0[b])&&0.7(c,d,!1)});',22,22,'document||undefined||typeof|mozHidden|webkitHidden|addEventListener|hidden|title|||||function|var|jQuery|ready|Hi|mozvisibilitychange|visibilitychange|webkitvisibilitychange'.split('|'),0,{}))
+</script>
+<script>
+$(function(){
+    $('.ds-share').attr('data-url',window.location.href);
+})
+</script>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<script src="/js/app.js"></script>
+<!-- stats.js -->
+<script src="/js/lib/stats.js"></script>
+<!--open/close  -->
+<section class="main">
+	<div class="switch demo1">
+		<input type="checkbox">
+		<label></label>
+	</div>
+</section>
+
+<script>
+    $(function(){
+        $('.main').delegate('.switch','click',function(){
+            if($(this).find('input').is(":checked")){
+                $('#particles-js').css('bottom','0');
+            }else{
+                $('#particles-js').css('bottom','100%');
+            }
+        })
+    })
+</script>
+
+  </div>
+
+</body>
+</html>

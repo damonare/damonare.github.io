@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Javascript填坑史 | Damonare的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言总括： 这是笔者平时积累的一些觉得比较有意思或是比较有难度的JavaScript题目理解和心得，会保持长期更新。
+
+原文地址：Javascript填坑史
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生莫作妇人身，百年苦乐由他人。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript填坑史">
+<meta property="og:url" content="http://damonare.github.io/2016/12/23/Javascript填坑史/index.html">
+<meta property="og:site_name" content="Damonare的个人博客">
+<meta property="og:description" content="前言总括： 这是笔者平时积累的一些觉得比较有意思或是比较有难度的JavaScript题目理解和心得，会保持长期更新。
+
+原文地址：Javascript填坑史
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生莫作妇人身，百年苦乐由他人。">
+<meta property="og:updated_time" content="2016-12-23T09:38:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript填坑史">
+<meta name="twitter:description" content="前言总括： 这是笔者平时积累的一些觉得比较有意思或是比较有难度的JavaScript题目理解和心得，会保持长期更新。
+
+原文地址：Javascript填坑史
+
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+
+博主博客地址：Damonare的个人博客
+
+
+人生莫作妇人身，百年苦乐由他人。">
+  
+  
+    <link rel="icon" href="/./img/1.png">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <!-- scripts -->
+ <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/js/particles.min.js" src="/js/particles.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Damonare</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不念过去，不畏将来</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://damonare.cn/">博客首页</a></li>
+				        
+							<li><a href="../../../../index.html">主页</a></li>
+				        
+							<li><a href="../../../../archives">所有文章</a></li>
+				        
+							<li><a href="../../../../categories/随笔/">随笔</a></li>
+				        
+							<li><a href="../../../../categories/learn/">学习</a></li>
+				        
+							<li><a href="../../../../categories/life/">生活</a></li>
+				        
+							<li><a href="../../../../categories/其它/">其它</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+					        
+								<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+					        
+								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="../../../../tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 11.67px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="../../../../tags/React/" style="font-size: 10px;">React</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 11.67px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18.33px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 15px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 13.33px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 11.67px;">网络协议</a> <a href="../../../../tags/译文/" style="font-size: 11.67px;">译文</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 11.67px;">面试</a>
+					</div>
+				</section>
+				
+
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://xdlrt.github.io/">卢睿韬的自留地</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lcodecorex.github.io/">Oscar Blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://qiutc.me/">阿城的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://touch28.github.io/">Lingo的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lengxing.github.io/">冷星</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiao1ong.cn/">xiao1ong</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">姓名：谭继臻    性别：男     学习经历：2014-至今 就读于西安电子科技大学     邮箱：jztan1996@gmail.com     QQ:577964075      微信：tjz19960421</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Damonare</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Damonare</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不念过去，不畏将来</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://damonare.cn/">博客首页</a></li>
+		        
+					<li><a href="../../../../index.html">主页</a></li>
+		        
+					<li><a href="../../../../archives">所有文章</a></li>
+		        
+					<li><a href="../../../../categories/随笔/">随笔</a></li>
+		        
+					<li><a href="../../../../categories/learn/">学习</a></li>
+		        
+					<li><a href="../../../../categories/life/">生活</a></li>
+		        
+					<li><a href="../../../../categories/其它/">其它</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+			        
+						<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+			        
+						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Javascript填坑史" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="" class="article-date">
+  	<time datetime="2016-12-23T09:38:48.000Z" itemprop="datePublished">2016-12-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript填坑史
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../../../categories/learn/">学习</a>
+	</div>
+
+
+    
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  热度： <span id="busuanzi_value_page_pv"></span>℃</span>
+  </div>
+  
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          <!-- Table of Contents -->
+      
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-setTimeout和setInterval深入理解"><span class="toc-number">2.1.</span> <span class="toc-text">1.setTimeout和setInterval深入理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-闭包初探小题"><span class="toc-number">2.2.</span> <span class="toc-text">2. 闭包初探小题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Array-map-Number-parseInt"><span class="toc-number">2.3.</span> <span class="toc-text">3. Array/map,Number/parseInt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-nbsp-0-1-0-2-0-3和9999999999999999-10000000000000000"><span class="toc-number">2.4.</span> <span class="toc-text">4. 0.1+0.2!=0.3和9999999999999999 == 10000000000000000;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-lt-2-lt-3-3-lt-2-lt-1"><span class="toc-number">2.5.</span> <span class="toc-text">5. [1<2<3,3<2<1]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-浏览器懵逼史（1）"><span class="toc-number">2.6.</span> <span class="toc-text">6. 浏览器懵逼史（1）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-声明提升"><span class="toc-number">2.7.</span> <span class="toc-text">7. 声明提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-坑爹史（1）"><span class="toc-number">2.8.</span> <span class="toc-text">8. 坑爹史（1）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-坑爹史（3）"><span class="toc-number">2.9.</span> <span class="toc-text">10. 坑爹史（3）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-坑爹史（4）"><span class="toc-number">2.10.</span> <span class="toc-text">11. 坑爹史（4）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-浏览器懵逼史-2"><span class="toc-number">2.11.</span> <span class="toc-text">12. 浏览器懵逼史(2)</span></a></li></ol></li></ol>
+        </div>
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 这是笔者平时积累的一些觉得比较有意思或是比较有难度的JavaScript题目理解和心得，会保持长期更新。</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/09/05/javascript%E5%A1%AB%E5%9D%91%E5%8F%B2/#more">Javascript填坑史</a></p>
+</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生莫作妇人身，百年苦乐由他人。</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-setTimeout和setInterval深入理解"><a href="#1-setTimeout和setInterval深入理解" class="headerlink" title="1.setTimeout和setInterval深入理解"></a>1.setTimeout和setInterval深入理解</h3><p>在<a href="https://segmentfault.com/a/1190000004034739" target="_blank" rel="external">setTimeout和setInterval深入理解</a>这篇博客里笔者曾做过总结，我们知道JavaScript试单线程的产物，两个函数就是利用了插入代码的方式实现了伪异步，和AJAX的原理实际上是一样的。下面来看下这个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"1"</span>);</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"3"</span>)</div><div class="line">	&#125;,<span class="number">0</span>);</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"2"</span>);</div></pre></td></tr></table></figure>
+<p>结果：控制台依次输出1,2,3;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'can you see me?'</span>);&#125;,<span class="number">1000</span>);</div><div class="line"><span class="keyword">while</span>(<span class="literal">true</span>) &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>你觉得这段代码的执行结果是什么呢？答案是，alert永远不会出现。<br>&nbsp;&nbsp;&nbsp;&nbsp;这是为什么呢？因为，while这段代码没有执行完，所以插入在后面的代码便永远不会执行。<br>综上所述，其实JS终归是单线程产物。无论如何“异步”都不可能突破单线程这个障碍。所以许多的“异步调用”（包括Ajax）事实上也只是“伪异步”而已。只要理解了这么一个概念，也许理解setTimeout和setInterval也就不难了。</p>
+<h3 id="2-闭包初探小题"><a href="#2-闭包初探小题" class="headerlink" title="2. 闭包初探小题"></a>2. 闭包初探小题</h3><p>在<a href="https://segmentfault.com/a/1190000004093058" target="_blank" rel="external">JavaScript闭包初探</a>这篇博客里面进行了初步探讨，有几个小题个人觉得还是比较有意思的:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">　　<span class="keyword">var</span> name = <span class="string">"The Window"</span>;</div><div class="line">　　<span class="keyword">var</span> object = &#123;</div><div class="line">　　　　name : <span class="string">"My Object"</span>,</div><div class="line">　　　　getNameFunc : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　　　<span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">　　　　　　&#125;;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;;</div><div class="line">　　alert(object.getNameFunc()());<span class="comment">//The Window</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">　  <span class="keyword">var</span> name = <span class="string">"The Window"</span>;</div><div class="line">　　<span class="keyword">var</span> object = &#123;</div><div class="line">　　　　name : <span class="string">"My Object"</span>,</div><div class="line">　　　　getNameFunc : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　<span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　　　<span class="keyword">return</span> that.name;</div><div class="line">　　　　　　&#125;;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;;　　alert(object.getNameFunc()());<span class="comment">//My Object</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">n,o</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(o)</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    fun:<span class="function"><span class="keyword">function</span>(<span class="params">m</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> fun(m,n);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = fun(<span class="number">0</span>);  a.fun(<span class="number">1</span>);  a.fun(<span class="number">2</span>);  a.fun(<span class="number">3</span>);<span class="comment">//undefined,?,?,?</span></div><div class="line"><span class="keyword">var</span> b = fun(<span class="number">0</span>).fun(<span class="number">1</span>).fun(<span class="number">2</span>).fun(<span class="number">3</span>);<span class="comment">//undefined,?,?,?</span></div><div class="line"><span class="keyword">var</span> c = fun(<span class="number">0</span>).fun(<span class="number">1</span>);  c.fun(<span class="number">2</span>);  c.fun(<span class="number">3</span>);<span class="comment">//undefined,?,?,?</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>//问:三行a,b,c的输出分别是什么？</p>
+</blockquote>
+<p><strong>这是一道非常典型的JS闭包问题。其中嵌套了三层fun函数，搞清楚每层fun的函数是那个fun函数尤为重要。</strong></p>
+<blockquote>
+<p>//答案：<br>//a: undefined,0,0,0<br>//b: undefined,0,1,2<br>//c: undefined,0,1,1</p>
+</blockquote>
+<h3 id="3-Array-map-Number-parseInt"><a href="#3-Array-map-Number-parseInt" class="headerlink" title="3. Array/map,Number/parseInt"></a>3. Array/map,Number/parseInt</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>].map(<span class="built_in">parseInt</span>)<span class="comment">//求输出结果</span></div></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;首先, map接受两个参数, 一个回调函数 callback, 一个回调函数的this值<br>其中回调函数接受三个参数 currentValue, index, arrary;而题目中, map只传入了回调函数–parseInt.其次, parseInt 只接受两个两个参数 string, radix(基数). radix的合法区间是2-36. 0或是默认是10.所以本题即问</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseInt</span>(<span class="string">'1'</span>, <span class="number">0</span>);</div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'2'</span>, <span class="number">1</span>);</div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'3'</span>, <span class="number">2</span>);</div></pre></td></tr></table></figure>
+<p>后两者参数不合法.所以答案是：[1, NaN, NaN]；</p>
+<h3 id="4-nbsp-0-1-0-2-0-3和9999999999999999-10000000000000000"><a href="#4-nbsp-0-1-0-2-0-3和9999999999999999-10000000000000000" class="headerlink" title="4.&nbsp;0.1+0.2!=0.3和9999999999999999 == 10000000000000000;"></a>4.&nbsp;0.1+0.2!=0.3和9999999999999999 == 10000000000000000;</h3><blockquote>
+<p>根据语言规范，JavaScript 采用“IEEE 754 标准定义的双精度64位格式”（”double-precision 64-bit format IEEE 754 values”）表示数字。据此我们能得到一个有趣的结论，和其他编程语言（如 C 和 Java）不同，JavaScript 不区分整数值和浮点数值，所有数字在 JavaScript 中均用浮点数值表示，所以在进行数字运算的时候要特别注意。<a href="http://demon.tw/copy-paste/javascript-precision.html" target="_blank" rel="external">精度丢失</a>看看下面的例子:</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">0.1</span> + <span class="number">0.2</span> = <span class="number">0.30000000000000004</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>在具体实现时，整数值通常被视为32位整型变量，在个别实现（如某些浏览器）中也以32位整型变量的形式进行存储，直到它被用于执行某些32位整型不支持的操作，这是为了便于进行位操作。大整数精度在2的53次方以内是不会丢失的，也就是说浏览器能精确计算Math.pow(2,53)以内所有的数，小数精度，当十进制小数的二进制表示的有限数字不超过 52 位时，在 JavaScript 里也是可以精确存储的。<br>解决办法：Math.round( (.1+.2)*100)/100;</p>
+</blockquote>
+<h3 id="5-1-lt-2-lt-3-3-lt-2-lt-1"><a href="#5-1-lt-2-lt-3-3-lt-2-lt-1" class="headerlink" title="5. [1&lt;2&lt;3,3&lt;2&lt;1]"></a>5. [1&lt;2&lt;3,3&lt;2&lt;1]</h3><p>&nbsp;&nbsp;此题会让人误以为是2&gt;1&amp;&amp;2&lt;3,其实不是的，这个题等价于</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>&lt;<span class="number">2</span>=&gt;<span class="literal">true</span>;</div><div class="line"><span class="literal">true</span>&lt;<span class="number">3</span>=&gt;<span class="number">1</span>&lt;<span class="number">3</span>=&gt;<span class="literal">true</span>;</div><div class="line"><span class="number">3</span>&lt;<span class="number">2</span>=&gt;<span class="literal">true</span>;</div><div class="line"><span class="literal">false</span>&lt;<span class="number">1</span>=&gt;<span class="number">0</span>&lt;<span class="number">1</span>=&gt;<span class="literal">true</span>;</div></pre></td></tr></table></figure>
+<p><strong>答案：[true,true]</strong> 这个题的重点是对于运算符的理解，一是javascript对于不同类型数值的比较规则，详见<a href="http://dorey.github.io/JavaScript-Equality-Table/" target="_blank" rel="external">js比较表</a>,<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank" rel="external">javascript相等性判断</a>；二是对于<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_operator" target="_blank" rel="external">比较操作符</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Assignment_Operators" target="_blank" rel="external">赋值运算符</a>的理解，即一个自左向右一个自右向左~</p>
+<h3 id="6-浏览器懵逼史（1）"><a href="#6-浏览器懵逼史（1）" class="headerlink" title="6. 浏览器懵逼史（1）"></a>6. 浏览器懵逼史（1）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">3.</span>toString;</div><div class="line"><span class="number">3.</span>.toString;</div><div class="line"><span class="number">3.</span>..toString;</div></pre></td></tr></table></figure>
+<p>这个题感觉脑洞很大啊~先说答案：error,’3’,error;<br>可如果是</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">3</span>;</div><div class="line">a.toString;</div></pre></td></tr></table></figure>
+<p>却又合法了答案就是’3’;<br>为啥呢？<br>因为在JS中1.1,1.,.1都是合法数字啊！那么在解析3.toString的时候到底是这是个数字呢，还是方法调用呢？浏览器就懵逼了呗，只能抛出一个error,所以说感觉此题就是在戏耍浏览器……</p>
+<h3 id="7-声明提升"><a href="#7-声明提升" class="headerlink" title="7. 声明提升"></a>7. 声明提升</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'World!'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>) &#123;</div><div class="line">        <span class="keyword">var</span> name = <span class="string">'Jack'</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbye '</span> + name);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>答案是什么呢…笔者第一次做的时候傻傻的觉得是Hello,world…实则不然，正确答案是:Goodbye Jack;<br>为什么呢，声明提升…上述代码相当于下面的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'World!'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> name;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>) &#123;</div><div class="line">        name = <span class="string">'Jack'</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbye '</span> + name);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h3 id="8-坑爹史（1）"><a href="#8-坑爹史（1）" class="headerlink" title="8. 坑爹史（1）"></a>8. 坑爹史（1）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">0</span>];</div><div class="line"><span class="keyword">if</span> ([<span class="number">0</span>]) &#123;</div><div class="line">  <span class="built_in">console</span>.log(a == <span class="literal">true</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"wut"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>读者们你们觉得此题答案是什么呢？true?因为[0]被看做Boolean是被认为是true，理所当然的推出来[0]==true,控制台输出true…看似没错，然而并不是这样滴~[0]这个玩意儿在单独使用的时候是被认为是true的，但用作比较的时候它是false…所以正确答案是false；不信的话，F12控制台输出[0]==false；看是不是true……</p>
+<p>###9. 坑爹史（2）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> + - + + + - + <span class="number">1</span></div></pre></td></tr></table></figure>
+<p>这题应该是等同于：（倒着看）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> + (a)  =&gt; <span class="number">2</span></div><div class="line">a = - (b) =&gt; <span class="number">1</span></div><div class="line">b = + (c) =&gt; <span class="number">-1</span></div><div class="line">c = + (d) =&gt; <span class="number">-1</span></div><div class="line">d = + (e) =&gt; <span class="number">-1</span></div><div class="line">e = + (f) =&gt; <span class="number">-1</span></div><div class="line">f = - (g) =&gt; <span class="number">-1</span></div><div class="line">g = + <span class="number">1</span>   =&gt; <span class="number">1</span></div></pre></td></tr></table></figure>
+<p>答案是2</p>
+<h3 id="10-坑爹史（3）"><a href="#10-坑爹史（3）" class="headerlink" title="10. 坑爹史（3）"></a>10. 坑爹史（3）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sidEffecting</span>(<span class="params">ary</span>) </span>&#123;</div><div class="line">  ary[<span class="number">0</span>] = ary[<span class="number">2</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">a,b,c</span>) </span>&#123;</div><div class="line">  c = <span class="number">10</span></div><div class="line">  sidEffecting(<span class="built_in">arguments</span>);</div><div class="line">  <span class="keyword">return</span> a + b + c;</div><div class="line">&#125;</div><div class="line">bar(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<p>此题涉及ES6语法，实在坑的不行…<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank" rel="external">arguments</a><br>首先 The arguments object is an Array-like object corresponding to the arguments passed to a function.也就是说 arguments 是一个 object, c 就是 arguments<a href="https://segmentfault.com/a/1190000004093058" target="_blank" rel="external">2</a>, 所以对于 c 的修改就是对 arguments<a href="https://segmentfault.com/a/1190000004093058" target="_blank" rel="external">2</a> 的修改.<br>所以答案是 21.<br>然而!!!!!!<br>当函数参数涉及到 any rest parameters, any default parameters or any destructured parameters 的时候, 这个 arguments 就不在是一个 mapped arguments object 了…..请看:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sidEffecting</span>(<span class="params">ary</span>) </span>&#123;</div><div class="line">  ary[<span class="number">0</span>] = ary[<span class="number">2</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">a,b,c=3</span>) </span>&#123;</div><div class="line">  c = <span class="number">10</span></div><div class="line">  sidEffecting(<span class="built_in">arguments</span>);</div><div class="line">  <span class="keyword">return</span> a + b + c;</div><div class="line">&#125;</div><div class="line">bar(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<p>答案是12…<br>请读者细细体会!!</p>
+<h3 id="11-坑爹史（4）"><a href="#11-坑爹史（4）" class="headerlink" title="11. 坑爹史（4）"></a>11. 坑爹史（4）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[,,,].join(<span class="string">", "</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[,,,] =&gt; [<span class="literal">undefined</span> × <span class="number">3</span>]</div></pre></td></tr></table></figure>
+<p>因为javascript 在定义数组的时候允许最后一个元素后跟一个,, 所以这是个长度为三的稀疏数组(这是长度为三, 并没有 0, 1, 2三个属性哦)<br>答案: “, , “</p>
+<h3 id="12-浏览器懵逼史-2"><a href="#12-浏览器懵逼史-2" class="headerlink" title="12. 浏览器懵逼史(2)"></a>12. 浏览器懵逼史(2)</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = &#123;class: "Animal", name: 'Fido'&#125;;</div><div class="line">a.class</div></pre></td></tr></table></figure>
+<p>这个题比较流氓.. 因为是浏览器相关, class是个保留字(现在是个关键字了);Fuck!<br>所以答案不重要, 重要的是自己在取属性名称的时候尽量避免保留字. 如果使用的话请加引号 a[‘class’]</p>
+
+      
+      
+
+  
+    </div>
+    
+  </div>
+
+  
+    
+<nav id="article-nav">
+  
+    <a href="../../../../2017/01/02/从隐藏元素谈起/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          从隐藏元素谈起
+        
+      </div>
+    </a>
+  
+  
+    <a href="../Javascript闭包浅谈/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Javascript闭包总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+
+
+</article>
+
+
+
+
+<div class="support-author">
+	<p>如果您觉得我的文章对您有用，请随意打赏。</p>
+	<p>您的支持将鼓励我继续创作！</p>
+	<button id='alipay'>￥支付宝支持</button>
+	<button id='wechat'>￥微信支持</button>
+	<p>
+		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+	</p>
+	<script type="text/javascript">
+	document.querySelector('#alipay').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	})
+	document.querySelector('#wechat').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	})
+	</script>
+</div>
+<div class="ds-share" data-thread-key="Javascript填坑史" data-title="Javascript填坑史" data-images="http://damonare.github.io" data-content="Javascript填坑史" data-url="https://damonare.github.io">
+	<div class="ds-share-inline">
+	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
+
+	   <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);"></a></li>
+	   <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+	   <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+	   <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+	   <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+
+	 </ul>
+	 <div class="ds-share-icons-more">
+	 </div>
+   </div>
+</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Javascript填坑史" data-title="Javascript填坑史" data-url="http://damonare.github.io"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"damonare"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://damonare.cn/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                如果您对我感兴趣欢迎查看<a href="http://damonare.cn/resume/">Damonare的个人简历</a>
+                <span>由<a href="http://hexo.io/">Hexo</a>强力驱动</span> &copy;
+                2017
+                    Damonare
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten -->
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                <span id="busuanzi_container_site_uv">
+    您是本站第<span id="busuanzi_value_site_uv"></span>位访客
+                </span>
+                <span id="showDays"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        var birthDay = new Date('9/05/2016 18:34:23');
+    setInterval(function() {
+        var now = new Date();
+        var num_1 = 1000 * 60 * 60 * 24;
+        var num_2 = 1000 * 60 * 60;
+        var duration = now.getTime() - birthDay.getTime();
+        var total = Math.floor(duration / num_1);
+        var hour = Math.floor((duration % num_1) / num_2);
+        var minute = Math.floor(((duration % num_1) % num_2) / (1000 * 60));
+        var second = Math.floor((((duration % num_1) % num_2) % (1000 * 60)) / 1000);
+        document.getElementById("showDays").innerHTML = "本站已运行" + total + "天" + hour + '时' + minute + '分' + second + '秒';
+    }, 1000);
+</script>
+
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<script>
+    var bszCaller, bszTag;
+    ! function() {
+        var c, d, e, a = !1,
+            b = [];
+        ready = function(c) {
+            return a || "interactive" === document.readyState || "complete" === document.readyState ? c.call(document) : b.push(function() {
+                return c.call(this)
+            }), this
+        }, d = function() {
+            for (var a = 0, c = b.length; c > a; a++) b[a].apply(document);
+            b = []
+        }, e = function() {
+            a || (a = !0, d.call(window), document.removeEventListener ? document.removeEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.detachEvent("onreadystatechange", e), window == window.top && (clearInterval(c),
+                c = null)))
+        }, document.addEventListener ? document.addEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.attachEvent("onreadystatechange", function() {
+            /loaded|complete/.test(document.readyState) && e()
+        }), window == window.top && (c = setInterval(function() {
+            try {
+                a || document.documentElement.doScroll("left")
+            } catch (b) {
+                return
+            }
+            e()
+        }, 5)))
+    }(), bszCaller = {
+        fetch: function(a, b) {
+            var c = "BusuanziCallback_" + Math.floor(1099511627776 * Math.random());
+            window[c] = this.evalCall(b), a = a.replace("=BusuanziCallback", "=" + c), scriptTag = document.createElement("SCRIPT"), scriptTag.type = "text/javascript", scriptTag.defer = !0, scriptTag.src = a, document.getElementsByTagName(
+                "HEAD")[0].appendChild(scriptTag)
+        },
+        evalCall: function(a) {
+            return function(b) {
+                ready(function() {
+                    try {
+                        a(b), scriptTag.parentElement.removeChild(scriptTag)
+                    } catch (c) {
+                        bszTag.hides()
+                    }
+                })
+            }
+        }
+    }, bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", function(a) {
+        bszTag.texts(a), bszTag.shows()
+    }), bszTag = {
+        bszs: ["site_pv", "page_pv", "site_uv"],
+        texts: function(a) {
+            this.bszs.map(function(b) {
+                var c = document.getElementById("busuanzi_value_" + b);
+                c && (c.innerHTML = a[b])
+            })
+        },
+        hides: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "none")
+            })
+        },
+        shows: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "inline")
+            })
+        }
+    };
+</script>
+
+    </div>
+    
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        mathjax: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false
+    }
+</script>
+<script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="../../../../js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e839062c43d17bbd439d0bb5b80ab5e1";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+ eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('g(0).h(e(){e d(){0.9=0[b]?" 看这里，看这里！":a}f b,c,a=0.9;"2"!=4 0.8?(b="8",c="k"):"2"!=4 0.5?(b="5",c="j"):"2"!=4 0.6&&(b="6",c="l"),("2"!=4 0.7||"2"!=4 0[b])&&0.7(c,d,!1)});',22,22,'document||undefined||typeof|mozHidden|webkitHidden|addEventListener|hidden|title|||||function|var|jQuery|ready|Hi|mozvisibilitychange|visibilitychange|webkitvisibilitychange'.split('|'),0,{}))
+</script>
+<script>
+$(function(){
+    $('.ds-share').attr('data-url',window.location.href);
+})
+</script>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<script src="/js/app.js"></script>
+<!-- stats.js -->
+<script src="/js/lib/stats.js"></script>
+<!--open/close  -->
+<section class="main">
+	<div class="switch demo1">
+		<input type="checkbox">
+		<label></label>
+	</div>
+</section>
+
+<script>
+    $(function(){
+        $('.main').delegate('.switch','click',function(){
+            if($(this).find('input').is(":checked")){
+                $('#particles-js').css('bottom','0');
+            }else{
+                $('#particles-js').css('bottom','100%');
+            }
+        })
+    })
+</script>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>漫谈前端之路 | Damonare的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言总括： 前端之路何其漫漫~
+
+原文博客地址：漫谈前端之路
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+博主博客地址：Damonare的个人博客
+
+人生一世，草木一秋。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="漫谈前端之路">
+<meta property="og:url" content="http://damonare.github.io/2016/11/26/漫谈前端之路/index.html">
+<meta property="og:site_name" content="Damonare的个人博客">
+<meta property="og:description" content="前言总括： 前端之路何其漫漫~
+
+原文博客地址：漫谈前端之路
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+博主博客地址：Damonare的个人博客
+
+人生一世，草木一秋。">
+<meta property="og:image" content="https://segmentfault.com/img/bVtlKv">
+<meta property="og:updated_time" content="2016-11-26T06:00:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="漫谈前端之路">
+<meta name="twitter:description" content="前言总括： 前端之路何其漫漫~
+
+原文博客地址：漫谈前端之路
+知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）
+博主博客地址：Damonare的个人博客
+
+人生一世，草木一秋。">
+<meta name="twitter:image" content="https://segmentfault.com/img/bVtlKv">
+  
+  
+    <link rel="icon" href="/./img/1.png">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <!-- scripts -->
+ <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/js/particles.min.js" src="/js/particles.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+			<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Damonare</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不念过去，不畏将来</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://damonare.cn/">博客首页</a></li>
+				        
+							<li><a href="../../../../index.html">主页</a></li>
+				        
+							<li><a href="../../../../archives">所有文章</a></li>
+				        
+							<li><a href="../../../../categories/随笔/">随笔</a></li>
+				        
+							<li><a href="../../../../categories/learn/">学习</a></li>
+				        
+							<li><a href="../../../../categories/life/">生活</a></li>
+				        
+							<li><a href="../../../../categories/其它/">其它</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+					        
+								<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+					        
+								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="../../../../tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 11.67px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/Node-js/" style="font-size: 11.67px;">Node.js</a> <a href="../../../../tags/React/" style="font-size: 10px;">React</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 11.67px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 18.33px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 15px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 13.33px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 11.67px;">网络协议</a> <a href="../../../../tags/译文/" style="font-size: 11.67px;">译文</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 11.67px;">面试</a>
+					</div>
+				</section>
+				
+
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://xdlrt.github.io/">卢睿韬的自留地</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lcodecorex.github.io/">Oscar Blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://qiutc.me/">阿城的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://touch28.github.io/">Lingo的blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lengxing.github.io/">冷星</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiao1ong.cn/">xiao1ong</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">姓名：谭继臻    性别：男     学习经历：2014-至今 就读于西安电子科技大学     邮箱：jztan1996@gmail.com     QQ:577964075      微信：tjz19960421</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Damonare</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://7xsssj.com1.z0.glb.clouddn.com/1.jpg" class="js-avatar show">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Damonare</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不念过去，不畏将来</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://damonare.cn/">博客首页</a></li>
+		        
+					<li><a href="../../../../index.html">主页</a></li>
+		        
+					<li><a href="../../../../archives">所有文章</a></li>
+		        
+					<li><a href="../../../../categories/随笔/">随笔</a></li>
+		        
+					<li><a href="../../../../categories/learn/">学习</a></li>
+		        
+					<li><a href="../../../../categories/life/">生活</a></li>
+		        
+					<li><a href="../../../../categories/其它/">其它</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Damonare" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5269827708/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jztan" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/jizhentan/" title="douban">douban</a>
+			        
+						<a class="mail" target="_blank" href="mailto:jztan1996@gmail.com" title="mail">mail</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010336060704" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/113387310756029958675" title="google">google</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
+			        
+						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-漫谈前端之路" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="" class="article-date">
+  	<time datetime="2016-11-26T06:00:56.000Z" itemprop="datePublished">2016-11-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      漫谈前端之路
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/前端构建工具/">前端构建工具</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="../../../../categories/随笔/">随笔</a>
+	</div>
+
+
+    
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  热度： <span id="busuanzi_value_page_pv"></span>℃</span>
+  </div>
+  
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          <!-- Table of Contents -->
+      
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-number">2.</span> <span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS"><span class="toc-number">3.</span> <span class="toc-text">CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript"><span class="toc-number">4.</span> <span class="toc-text">JavaScript</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后端"><span class="toc-number">5.</span> <span class="toc-text">后端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它"><span class="toc-number">6.</span> <span class="toc-text">其它</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端工具"><span class="toc-number">7.</span> <span class="toc-text">前端工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日常学习"><span class="toc-number">8.</span> <span class="toc-text">日常学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#书籍推荐"><span class="toc-number">8.1.</span> <span class="toc-text">书籍推荐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自媒体平台推荐"><span class="toc-number">8.2.</span> <span class="toc-text">自媒体平台推荐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端大牛-团队推荐"><span class="toc-number">8.3.</span> <span class="toc-text">前端大牛/团队推荐</span></a></li></ol></li></ol>
+        </div>
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 前端之路何其漫漫~</p>
+<ul>
+<li>原文博客地址：<a href="http://damonare.github.io/2016/09/05/%E6%BC%AB%E8%B0%88%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/#more">漫谈前端之路</a></li>
+<li>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></li>
+<li>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></li>
+</ul>
+<p><strong>人生一世，草木一秋。</strong></p>
+<a id="more"></a>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;总的来说HTML并不难，甚至可以说很无脑……HTML的标签个人觉得过一遍就得，知道什么时候该用什么标签就可以了，因为在以后的开发中打交道最多的就是各种各样的标签，想不熟都难。就像现在我写这篇文章用的Markdown一样，只是几个标签的反复应用。那么html的学习就相对来说很自由了，可以跟着w3school<a href="http://www.w3school.com.cn/html/index.asp" target="_blank" rel="external">W3school网址</a>过一遍标签，网上也有很多其它网站做这个的，像<a href="http://qctlr.cai.swufe.edu.cn/w3c/html/index.html" target="_blank" rel="external">菜鸟教程</a>,<a href="http://www.imooc.com/view/9" target="_blank" rel="external">慕课网视频</a>之类的都可以用,等熟练了就可以去国外看看一些前端的新技术，像<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="external">MDN</a>,<a href="http://www.w3schools.com/" target="_blank" rel="external">W3cschool(国际)</a>，<a href="http://stackoverflow.com/" target="_blank" rel="external">stackoverflow(最大的程序员问答网站)</a>。</p>
+<blockquote>
+<p>HTML重点</p>
+<ol>
+<li>标签，span,div分清他们的特性，哪些是块级元素，哪些是行内元素;</li>
+<li>语义化编程,HTML5的新元素的运用;</li>
+<li>按照XHTML规范写代码,XHTML简单说是一种比HTML规范更加严格的HTML;</li>
+<li>XML，这个和HTML实际上关系不大但长得很像，了解下即可，这是一种作为数据传输的文本形式，如今用的更多的是json传输数据，XML基本已经退出历史舞台了;</li>
+</ol>
+</blockquote>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;一个网页，我们把它分为结构层（HTML），样式层（CSS），行为层（JavaScript）。这三门语言就构成了我们平常所见到的所有的网页。需要强调的是，包括手机端网页在内都逃脱不了这三门语言，只不过是无数的前辈为了让后来人写代码更自由一点，更爽一点，自己封装了很多函数供我们调用。比如HTML ，CSS比较有名的框架<a href="http://www.bootcss.com/" target="_blank" rel="external">Bootstrap</a>,JavaScript的<a href="http://jquery.com/" target="_blank" rel="external">jQuery</a>。Bootstrap是Twitter员工设计的现在整个github上star数最多的估计就是bootstrap了，截止改动日期已经达到了96802,相信过不了多久就会突破十万了！bootstrap呢，有人说这是专门为后端设计的框架，因为它运用起来十分的简单，将文件引入后，知道它的定义效果是什么样的就能很熟练的运用，而且支持移动端，响应式布局做的很好，这是它受欢迎的很大一部分原因~关于jquery,JQuery是继prototype之后又一个优秀的Javascript库。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器（IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+）,jQuery是免费、开源的，使用MIT许可协议。jQuery的语法设计可以使开发更加便捷，例如操作文档对象、选择DOM元素、制作动画效果、事件处理、使用Ajax以及其他功能。设计理念就是写更少的代码做更多的事，因此这个库用起来还是很爽的，但同样也导致很多人会用jQuery实现某个功能却不知道原生js如何实现，个人觉得原生js还是要学深的，毕竟框架和库总是在改变，但核心——JavaScript是不会变的。<br>&nbsp;&nbsp;&nbsp;&nbsp;那么CSS该如何学习呢，就一个字，敲！等你把CSS所有的坑都踩过一遍之后，CSS也就彻底出师了。在CSS3出来之前CSS就是一个纯粹的样式表，想要什么样式，直接设置就OK，但随着CSS3的推出，整个CSS好像就被打了鸡血一样，焕发着活力。因为在一定程度上它把JavaScript的活给抢了，比如简单动画，对鼠标事件的某些触发等等，很多人说CSS是其实是设计师的工具，因为他没有变量也没有条件语句，纯粹的罗列代码，很多程序员都觉得写CSS很痛苦，事实上也的确如此，所以有了sass和less等CSS预处理器，这个让CSS写起来变得爽多了~另外，CSS3的动画也是很值得研究的。</p>
+<blockquote>
+<p>CSS重点</p>
+<ol>
+<li>明白什么是块级元素，什么是内联元素；块级元素（div, form，h1-h6,hr,p等），内联元素（span,b,a,i,img）；</li>
+<li>id和class选择器的理解；</li>
+<li>div和CSS的配合（包括叠加，定位和浮动）；</li>
+<li>布局，普通，自适应，响应式，流式等布局（一点点理解吧）；</li>
+<li>对于这张图的理解；<img src="https://segmentfault.com/img/bVtlKv" alt="明白这张图">；</li>
+<li><a href="http://www.1024i.com/demo/less/" target="_blank" rel="external">less</a>和<a href="http://sass.bootcss.com/docs/sass-reference/" target="_blank" rel="external">sass</a>的学习；</li>
+<li>bootstrap学习;</li>
+<li>CSS3动画 @keyframes;</li>
+</ol>
+</blockquote>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;首先我想让大家明白的是，这门语言很好入门，况且是在大家学了一学期C语言的前提下，但同样要明白的是作为一门编程语言，想要精通这门语言绝不是一两月那么简单的。在浏览器里面有一个叫JS引擎的东西，它是用C++写出来的，而它的作用就是渲染JavaScript代码，说的通俗点，就是让浏览器知道我们所写出来的JavaScript应该如何解析。Chrome之所以让人感觉快就是因为它自己有一个牛逼的V8引擎，这是其它四个浏览器（IE，Firefox,Opera,Safari）所没有的，这个V8引擎不论解析JavaScript还是Jquery都特别的吊，所以呈现页面也就特别的快。这里需要说一下的是，浏览器解析一个网页的顺序大体上是这样的：先加载HTML标签组成DOM树（不知道DOM是啥不要紧，学完数据结构就明白了），遇到link,script然后加载相关的CSS或是JavaScript代码，这也是为什么一般script标签写在body之后的原因，因为一旦相关的DOM没有加载完而JavaScript需要对它有操作，那浏览器就要懵逼了。<br>&nbsp;&nbsp;&nbsp;&nbsp;如果说HTML和CSS给网页穿上了一件衣服的话，那么JavaScript就是在构造网页的五脏六腑了。我们在编写代码的时候一定要记住我们是在和浏览器说话，是在和浏览器交流，你要让浏览器明白你想要呈现出的效果是什么，不然你让它猜（它的确会猜，这也是HTML代码比较自由的原因，不过还是推荐大家按照XHTML的要求写代码）,浏览器会感觉很操蛋的，那这个交流就很不成功，即使呈现出了想要的页面，以后想要优化的话就比较费力了。<br>&nbsp;&nbsp;&nbsp;&nbsp;附上几个学习地址：<a href="http://www.imooc.com/view/36" target="_blank" rel="external">慕课网视频</a>；<a href="http://www.w3school.com.cn/js/" target="_blank" rel="external">W3School</a>；我这里还有极客学院的视频有要的可以找我拷。给大家总结下JavaScript的重点吧：</p>
+<blockquote>
+<ol>
+<li>如果你认为JS就是操作DOM树，弹出个警告框那么简单的话就错了，一定要抱着谦虚的态度去学（学完HTML，CSS很容易让人产生JavaScript也很简单的错觉），当然它并没有C++那么逆天，好好学还是很容易出成绩的。</li>
+<li>表单验证，对于表单的提交，容错性的考虑；</li>
+<li>网页特效，比如我们经常看到的图片轮播，菜单导航（有一部分是纯粹的CSS代码写的）等；</li>
+<li>数据传输，通过Ajax我们可以在不刷新网页的前提下更新网页的部分元素哦，而且通过对于数据的操作，我们可以实现诸如瀑布流，数据交换等功能。这点可以参考QQ空间网页版看好友动态，只要你往下一直翻，就有结果呈现出来。以前我们数据传输的形式是直接把php代码写在HTML文件中，但AJAX的出现打破了这一僵局，使得前后端分离的更为彻底，因为只需要一个接口，前后端定下接口也就各干各事了。</li>
+<li>事件触发（鼠标点击，键盘），开发WebAPP的话得考虑手机系统API的调用，和鼠标键盘时间就不一样的了，前端的API实际上只有14w+但webapp光安卓的API就有40w+,所以webapp是个大坑，在它还没法超越原生性能之前还是不要触碰的好~；</li>
+<li>OOP,jaascript没有传统的类的概念，所以它的很多东西实际上都是特立独行的一套，但OOP思想才是javascript的精髓，前面操作个DOM树，页面优化啥的实际上并没有多少技术含量;刚开始可能会无从下手，相信我，每个人都是这样。先从一个小demo写起来,起码{}得有啊;</li>
+<li>json，接触了OOP,学会了AJAX那么现在就得学下json了，json是一种数据格式，在页面交互中,后端会把数据以json格式返回，前端用ajax拿到后，把这个字符串进行相应的解析,从而得到我们需要的数据。到了这一步，你就可以出去找项目了，只有实践才能不断提高自己；</li>
+<li>闭包，这个后期很重要，也是javascript的一大特色，简单的说，闭包就是实现了在函数外调用函数内定义的局部变量的功能；</li>
+<li>原型链和继承，这是个很抽象的东西，但很有用处的东西，一定要深入看才行，真的，不然真的看不懂…找个角落，带上耳机，看看闭包原型链何尝不是一种乐趣呢~;</li>
+<li>库和框架的学习，近几年jquery不是很受待见了，这倒不是说jquery不值得学了,只是新技术层出不穷，使得jquery的优势不再明显，这实际上是个好事，一方面说明技术不断进步，另一方面也说明前端始终散发着活力。最近几年angularjs,react，Vue都是比较火的框架，有机会可以看看，你会发现写前端顿时变成了一件享受的事情，国内的框架还有dcloud,apicloud等等,这俩国人设计出来主要的方向是webapp，所以想做app的童鞋也可以尝试下，感受下一次开发多平台调用的快感~关于webapp有兴趣的可以了解下，这里按下不表。框架建议学完jquery再看;</li>
+<li>webpack,grunt,gulp等前端构建工具的学习和使用;</li>
+<li>ECMAscript6学习<a href="http://www.ruanyifeng.com/blog/2014/04/ecmascript_6_primer.html" target="_blank" rel="external">阮一峰的日志</a>;</li>
+<li>Nodejs学习;</li>
+</ol>
+</blockquote>
+<h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;现在的前端并不是纯粹的前端，绝大数都已经叛变了！我们口口声声宣称着要实现前后端分离（实际上这才是开发的终极目标），但在实际开发中往往不能分离，所以基本每一个前端都会学一门后台语言，比较热门的后台语言有：PHP，Java，Python，Node；PHP运用的最为广泛，Java适合开发大型网站（什么是大型网站呢，就类似于淘宝那种满天的图片数据那种），现在世界上80%网站还是用的PHP的，所以PHP尽量了解下（这估计是你们下学期考虑的事了），Node就是js(和js的语法啥的一毛一样)，不过它多了一个模块，弥补了js的缺陷，关于模块….不知道你们理解不理解，像java有类文件，Python有import机制，PHP有require和include。现在不懂Node的前端是很尴尬的，所以以后有机会也要了解下的。Node我也还在学习中,按下不表;</p>
+<blockquote>
+<p>后端重点</p>
+<ol>
+<li>PHP语法简单的了解;</li>
+<li>PHP框架了解CI,thinkphp,laravel等等;</li>
+<li>SQL语句学习，这个必备，虽然现在的数据库工具十分的强大，但必要的SQL语句还得懂要不怎么用PHP代码操作数据库呢~;</li>
+<li>Node学习，Node发展实在太快，醉的不行，现在都6.2.0版本了~;</li>
+<li>PHP7.0语法了解，这个具体的不太清楚,听那些后端说加了很多新的特性~;</li>
+<li>其它语言推荐，也可以尝试下Java写后端的感觉，试试Python，Python在写爬虫和数据处理上效率还是很给劲的~</li>
+</ol>
+</blockquote>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;Photoshop,身为前端工程师Photoshop肯定是要掌握的因为很多时候设计师给的图并不是切好的，我们主要自己切图，于是乎，切图也就成了我们的必备技能，切图仔的戏称由此而来。另外，会点Photoshop也可以给自己PP图，装装逼嘛~<br>&nbsp;&nbsp;&nbsp;&nbsp;很多人觉得前端工程师不需要懂算法，但事实却是各大公司的面试题里都会多多少少有算法题，这门学问很深，倒也不必深入研究，术业有专攻，能把前端一层搞好就不错了，切记眼高手低~，一些比较基础经典的算法，比如快速排序算法，堆排序算法，归并排序，选择排序算法，深度优先，广度优先…等等等，试着用javascript敲一遍成就感还是很大大滴有的~~~;<br>&nbsp;&nbsp;&nbsp;&nbsp;数据结构~有算法也就有数据结构咯~栈，队列等线性表，树，图;come on,baby!<br>&nbsp;&nbsp;&nbsp;&nbsp;网络协议，我们知道OSI七层协议：物理层，数据链路层，网络层，传输层，会话层，表示层，应用层；我们所做的都是在这层皮肤上（应用层）,接触最多的就是是HTTP协议了，协议这个玩意看不见摸不着的，很抽象，我们可以用一些抓包工具抓包像Wireshark,Fiddler等抓包工具,可以很方便抓取数据，其中wireshark各种协议通吃，也是国际上认可度很高的一款抓包工具，Fiddler一般开发者用的比较多，它可以抓取HTTPS协议，而且对于前端后端交互的数据有很好的处理，深受前端开发者的喜爱~。协议这东西看起来很无用，似乎黑客用的比较多一点~但这玩意有个好处——稳定啊，不会变，整个世界都在用的就是TCP/IP，学习成本低，也不会贬值，何不拿来耍耍~另外，很多公司面试都会问本机和服务器建立连接时的三次握手具体都发生了什么~所以协议这块还是很有必要学的；<br>&nbsp;&nbsp;&nbsp;&nbsp;操作系统…以我现在的水平说不出来…没学过，不过起码得熟悉window，Linux,Mac系统的操作吧(好像还是啥都没说，留着以后补充吧);</p>
+<h2 id="前端工具"><a href="#前端工具" class="headerlink" title="前端工具"></a>前端工具</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;作为一个前端开发者，要有适合自己的工具做开发使用，那么使用IDE还文本是编辑器，我在这里就不给建议了，刚开始的个人倾向还是文本编辑器，因为不同于其它语言，HTML有点像语言学科，需要记，使用IDE的话不太利于记忆标签。IDE的话推荐WebStorm和atom(我现在再用)，国内有一款Hbuilder（可开发webapp，配合mui,html5plus,dcloud），我用过一段时间…..很蛋疼的IDE，界面设计的很不错，也还好用，也一直在我电脑里，但不写APP的话是不会打开的….像VS,Dreamweaver之流可以体验，要是你骨骼惊奇觉得好用也可以用….并不强求；文本编辑器呢，那不用说肯定Sublime，Sublime强大的插件支持让它如虎添翼，用着用着就会发现，实际上在插件的支持下它本身就是一个IDE，但却没有IDE启动缓慢的诟病。刚开始可以各种工具（notepad++，UEditor，Vim等等）都试一下，不过我相信最后你还是会回到Sublime的怀抱的（如果你觉得Sublime不好用，那只能说明你还不会用它）。附上学习地址：<a href="http://www.imooc.com/view/40" target="_blank" rel="external">慕课视频</a>，<a href="http://www.imjeff.cn/blog/2313/" target="_blank" rel="external">Sublime相关博客</a>；安装的话网上教程多得是，自己百一下就行。<br>&nbsp;&nbsp;&nbsp;&nbsp;说完了开发工具，再来说下调试工具，调试工具的话，Firefox有一个 插件叫Firebug很好用，也可以使用浏览器自带的开发者工具（按F12就出来了，console的使用，XHR的使用，断点调试，基本已经足够日常开发了），如果要对网页某个元素进行操作或是了解就把鼠标放到元素下面，右键检查就OK。或是直接点击左上角的箭头移动鼠标到要检查的元素上面。调试很重要，前端前辈们在很长一段时间里调试JavaScript纯粹靠运气。所以我们是很幸运的。</p>
+<h2 id="日常学习"><a href="#日常学习" class="headerlink" title="日常学习"></a>日常学习</h2><h3 id="书籍推荐"><a href="#书籍推荐" class="headerlink" title="书籍推荐"></a>书籍推荐</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;《JavaScript高级程序设计》《JavaScript权威指南》如果你要走前端这两本书是必买的，甚至整个职业生涯有这两本书就足够了，尤其是高程深入浅出很适合新手学习。<br>&nbsp;&nbsp;&nbsp;&nbsp;《JavaScript DOM编程艺术》很通俗，适合入门；<br>&nbsp;&nbsp;&nbsp;&nbsp;《锋利的jquery》jquery入门书；<br>&nbsp;&nbsp;&nbsp;&nbsp;《PHP和MySQL web开发》这本是很多人PHP的入门书籍，经典程度不亚于高程；<br>&nbsp;&nbsp;&nbsp;&nbsp;《深入浅出nodeJS》国内最好的nodejs书籍，淘宝在职大牛朴灵著作，但这本不适合入门…入门的话推荐看下面这本<br>&nbsp;&nbsp;&nbsp;&nbsp;《Nodejs开发指南》郭家宝著作;<br>&nbsp;&nbsp;&nbsp;&nbsp;《图解HTTP》通过漫画的形式讲解HTTP协议，很通俗易懂，小日本的这本书的确不错哦~<br>&nbsp;&nbsp;&nbsp;&nbsp;《HTTP权威指南》HTTP权威书籍，O’REILLY出品必属精品~条件好的话真心推荐把O’REILLY出版的前端方面的书都买来看看;</p>
+<h3 id="自媒体平台推荐"><a href="#自媒体平台推荐" class="headerlink" title="自媒体平台推荐"></a>自媒体平台推荐</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;作为一个程序员，我们逛的网站肯定就有偏向性咯，要说程序员聚集地肯定是Github(感兴趣的可以了解下，这里按下不表)，国内网站做的比较好的博客平台有<a href="http://www.csdn.net/" target="_blank" rel="external">CSDN</a>，<a href="http://www.cnblogs.com/" target="_blank" rel="external">博客园</a>，<a href="https://segmentfault.com" target="_blank" rel="external">Segmentfault</a>，<a href="http://www.v2ex.com/" target="_blank" rel="external">V2EX</a>,<a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="external">MDN</a>，<a href="http://gold.xitu.io/explore/frontend" target="_blank" rel="external">掘金</a>等等，经常逛逛这些网站看看大牛们的博客也是很有好处的。当然像<a href="http://www.zhihu.com/" target="_blank" rel="external">知乎</a>，<a href="http://toutiao.com/" target="_blank" rel="external">今日头条</a>等类似自媒体平台，想学也是有很多文章可以看得。<strong>微信订阅号推荐：优秀网页设计，前端开发，Web开发，差评（这个主要是增长点Web之外的互联网知识），前端大全</strong>。<strong>微博账号推荐：IT程序猿，优秀网页设计，酷勤网-程序员的那点事</strong>。大家有好的媒体平台记得分享给我啊，嘿嘿。</p>
+<h3 id="前端大牛-团队推荐"><a href="#前端大牛-团队推荐" class="headerlink" title="前端大牛/团队推荐"></a>前端大牛/团队推荐</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;前端的世界变化快，但也正因为此涌现出了一批大牛，他们对新技术的学习乐此不疲，常常自发的翻译新技术文章，解释新技术要点，成为新技术的布道者。<a href="http://www.zhangxinxu.com/" target="_blank" rel="external">张鑫旭</a>,<a href="http://www.ruanyifeng.com/home.html" target="_blank" rel="external">阮一峰</a>，<a href="http://www.aoao.org.cn/" target="_blank" rel="external">嗷嗷</a>，<a href="http://www.welefen.com/" target="_blank" rel="external">李成银</a>，<a href="http://jayli.github.io/" target="_blank" rel="external">拔持</a>，<a href="http://www.cnblogs.com/Darren_code/" target="_blank" rel="external">聂微东</a>，<a href="http://jiongks.name/" target="_blank" rel="external">囧克斯</a>，<a href="http://justjavac.com/" target="_blank" rel="external">justjavac</a>…..还有一些牛×的前端团队,<a href="http://www.75team.com/" target="_blank" rel="external">360的奇舞团</a>，<a href="http://fex.baidu.com/" target="_blank" rel="external">百度FEX</a>，<a href="http://www.taobaofed.org/" target="_blank" rel="external">淘宝FED</a>,<a href="http://www.alloyteam.com/" target="_blank" rel="external">腾讯的alloy</a>……这些基本就是国内前端技术的最前沿了，想学新技术或是想把一个点挖深可以多关注下这些站点~</p>
+
+      
+      
+
+  
+    </div>
+    
+  </div>
+
+  
+    
+<nav id="article-nav">
+  
+    <a href="../前端面试大全/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          前端面试题
+        
+      </div>
+    </a>
+  
+  
+    <a href="../互联网协议入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Internet协议入门</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+
+
+</article>
+
+
+
+
+<div class="support-author">
+	<p>如果您觉得我的文章对您有用，请随意打赏。</p>
+	<p>您的支持将鼓励我继续创作！</p>
+	<button id='alipay'>￥支付宝支持</button>
+	<button id='wechat'>￥微信支持</button>
+	<p>
+		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+	</p>
+	<script type="text/javascript">
+	document.querySelector('#alipay').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	})
+	document.querySelector('#wechat').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	})
+	</script>
+</div>
+<div class="ds-share" data-thread-key="漫谈前端之路" data-title="漫谈前端之路" data-images="http://damonare.github.io" data-content="漫谈前端之路" data-url="https://damonare.github.io">
+	<div class="ds-share-inline">
+	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
+
+	   <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);"></a></li>
+	   <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+	   <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+	   <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+	   <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+
+	 </ul>
+	 <div class="ds-share-icons-more">
+	 </div>
+   </div>
+</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="漫谈前端之路" data-title="漫谈前端之路" data-url="http://damonare.github.io"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"damonare"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://damonare.cn/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                如果您对我感兴趣欢迎查看<a href="http://damonare.cn/resume/">Damonare的个人简历</a>
+                <span>由<a href="http://hexo.io/">Hexo</a>强力驱动</span> &copy;
+                2017
+                    Damonare
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten -->
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                <span id="busuanzi_container_site_uv">
+    您是本站第<span id="busuanzi_value_site_uv"></span>位访客
+                </span>
+                <span id="showDays"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        var birthDay = new Date('9/05/2016 18:34:23');
+    setInterval(function() {
+        var now = new Date();
+        var num_1 = 1000 * 60 * 60 * 24;
+        var num_2 = 1000 * 60 * 60;
+        var duration = now.getTime() - birthDay.getTime();
+        var total = Math.floor(duration / num_1);
+        var hour = Math.floor((duration % num_1) / num_2);
+        var minute = Math.floor(((duration % num_1) % num_2) / (1000 * 60));
+        var second = Math.floor((((duration % num_1) % num_2) % (1000 * 60)) / 1000);
+        document.getElementById("showDays").innerHTML = "本站已运行" + total + "天" + hour + '时' + minute + '分' + second + '秒';
+    }, 1000);
+</script>
+
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<script>
+    var bszCaller, bszTag;
+    ! function() {
+        var c, d, e, a = !1,
+            b = [];
+        ready = function(c) {
+            return a || "interactive" === document.readyState || "complete" === document.readyState ? c.call(document) : b.push(function() {
+                return c.call(this)
+            }), this
+        }, d = function() {
+            for (var a = 0, c = b.length; c > a; a++) b[a].apply(document);
+            b = []
+        }, e = function() {
+            a || (a = !0, d.call(window), document.removeEventListener ? document.removeEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.detachEvent("onreadystatechange", e), window == window.top && (clearInterval(c),
+                c = null)))
+        }, document.addEventListener ? document.addEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.attachEvent("onreadystatechange", function() {
+            /loaded|complete/.test(document.readyState) && e()
+        }), window == window.top && (c = setInterval(function() {
+            try {
+                a || document.documentElement.doScroll("left")
+            } catch (b) {
+                return
+            }
+            e()
+        }, 5)))
+    }(), bszCaller = {
+        fetch: function(a, b) {
+            var c = "BusuanziCallback_" + Math.floor(1099511627776 * Math.random());
+            window[c] = this.evalCall(b), a = a.replace("=BusuanziCallback", "=" + c), scriptTag = document.createElement("SCRIPT"), scriptTag.type = "text/javascript", scriptTag.defer = !0, scriptTag.src = a, document.getElementsByTagName(
+                "HEAD")[0].appendChild(scriptTag)
+        },
+        evalCall: function(a) {
+            return function(b) {
+                ready(function() {
+                    try {
+                        a(b), scriptTag.parentElement.removeChild(scriptTag)
+                    } catch (c) {
+                        bszTag.hides()
+                    }
+                })
+            }
+        }
+    }, bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", function(a) {
+        bszTag.texts(a), bszTag.shows()
+    }), bszTag = {
+        bszs: ["site_pv", "page_pv", "site_uv"],
+        texts: function(a) {
+            this.bszs.map(function(b) {
+                var c = document.getElementById("busuanzi_value_" + b);
+                c && (c.innerHTML = a[b])
+            })
+        },
+        hides: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "none")
+            })
+        },
+        shows: function() {
+            this.bszs.map(function(a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "inline")
+            })
+        }
+    };
+</script>
+
+    </div>
+    
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        mathjax: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false
+    }
+</script>
+<script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="../../../../js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e839062c43d17bbd439d0bb5b80ab5e1";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+ eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('g(0).h(e(){e d(){0.9=0[b]?" 看这里，看这里！":a}f b,c,a=0.9;"2"!=4 0.8?(b="8",c="k"):"2"!=4 0.5?(b="5",c="j"):"2"!=4 0.6&&(b="6",c="l"),("2"!=4 0.7||"2"!=4 0[b])&&0.7(c,d,!1)});',22,22,'document||undefined||typeof|mozHidden|webkitHidden|addEventListener|hidden|title|||||function|var|jQuery|ready|Hi|mozvisibilitychange|visibilitychange|webkitvisibilitychange'.split('|'),0,{}))
+</script>
+<script>
+$(function(){
+    $('.ds-share').attr('data-url',window.location.href);
+})
+</script>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<script src="/js/app.js"></script>
+<!-- stats.js -->
+<script src="/js/lib/stats.js"></script>
+<!--open/close  -->
+<section class="main">
+	<div class="switch demo1">
+		<input type="checkbox">
+		<label></label>
+	</div>
+</section>
+
+<script>
+    $(function(){
+        $('.main').delegate('.switch','click',function(){
+            if($(this).find('input').is(":checked")){
+                $('#particles-js').css('bottom','0');
+            }else{
+                $('#particles-js').css('bottom','100%');
+            }
+        })
+    })
+</script>
+
+  </div>
+
+</body>
+</html>
