@@ -6,30 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Javascript闭包入门(译文) | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言总括 ：这篇文章使用有效的javascript代码向程序员们解释了闭包，大牛和功能型程序员请自行忽略。
-译者 ：文章写在2006年，可直到翻译的21小时之前作者还在完善这篇文章，在Stackoverflow的How do JavaScript closures work?这个问题里更是得到了4000+的赞同，文章内容质量自然不必多说。
-
-原文地址：JavaScript Closures for">
+  <meta name="description" content="前言总括 ：这篇文章使用有效的javascript代码向程序员们解释了闭包，大牛和功能型程序员请自行忽略。 译者 ：文章写在2006年，可直到翻译的21小时之前作者还在完善这篇文章，在Stackoverflow的How do JavaScript closures work?这个问题里更是得到了4000+的赞同，文章内容质量自然不必多说。  原文地址：JavaScript Closures for">
+<meta name="keywords" content="JavaScript,译文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript闭包入门(译文)">
 <meta property="og:url" content="http://damonare.github.io/2017/01/21/Javascript闭包入门(译文)/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="前言总括 ：这篇文章使用有效的javascript代码向程序员们解释了闭包，大牛和功能型程序员请自行忽略。
-译者 ：文章写在2006年，可直到翻译的21小时之前作者还在完善这篇文章，在Stackoverflow的How do JavaScript closures work?这个问题里更是得到了4000+的赞同，文章内容质量自然不必多说。
-
-原文地址：JavaScript Closures for">
+<meta property="og:description" content="前言总括 ：这篇文章使用有效的javascript代码向程序员们解释了闭包，大牛和功能型程序员请自行忽略。 译者 ：文章写在2006年，可直到翻译的21小时之前作者还在完善这篇文章，在Stackoverflow的How do JavaScript closures work?这个问题里更是得到了4000+的赞同，文章内容质量自然不必多说。  原文地址：JavaScript Closures for">
 <meta property="og:updated_time" content="2017-01-21T10:01:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript闭包入门(译文)">
-<meta name="twitter:description" content="前言总括 ：这篇文章使用有效的javascript代码向程序员们解释了闭包，大牛和功能型程序员请自行忽略。
-译者 ：文章写在2006年，可直到翻译的21小时之前作者还在完善这篇文章，在Stackoverflow的How do JavaScript closures work?这个问题里更是得到了4000+的赞同，文章内容质量自然不必多说。
-
-原文地址：JavaScript Closures for">
+<meta name="twitter:description" content="前言总括 ：这篇文章使用有效的javascript代码向程序员们解释了闭包，大牛和功能型程序员请自行忽略。 译者 ：文章写在2006年，可直到翻译的21小时之前作者还在完善这篇文章，在Stackoverflow的How do JavaScript closures work?这个问题里更是得到了4000+的赞同，文章内容质量自然不必多说。  原文地址：JavaScript Closures for">
   
   
     <link rel="icon" href="/./img/1.png">
   
-  <link rel="stylesheet" href="../../../../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <!-- scripts -->
  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/js/particles.min.js" src="/js/particles.min.js"></script>
 </head>
@@ -105,17 +97,17 @@
 						
 							<li><a href="http://damonare.cn/">博客首页</a></li>
 				        
-							<li><a href="../../../../index.html">主页</a></li>
+							<li><a href="/">主页</a></li>
 				        
-							<li><a href="../../../../archives">所有文章</a></li>
+							<li><a href="/archives">所有文章</a></li>
 				        
-							<li><a href="../../../../categories/随笔/">随笔</a></li>
+							<li><a href="/categories/随笔/">随笔</a></li>
 				        
-							<li><a href="../../../../categories/learn/">学习</a></li>
+							<li><a href="/categories/learn/">学习</a></li>
 				        
-							<li><a href="../../../../categories/life/">生活</a></li>
+							<li><a href="/categories/life/">生活</a></li>
 				        
-							<li><a href="../../../../categories/其它/">其它</a></li>
+							<li><a href="/categories/其它/">其它</a></li>
 				        
 						</ul>
 					</nav>
@@ -138,7 +130,7 @@
 					        
 								<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
 					        
-								<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
 					        
 						</div>
 					</nav>
@@ -147,7 +139,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="../../../../tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="../../../../tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="../../../../tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="../../../../tags/ES6/" style="font-size: 10px;">ES6</a> <a href="../../../../tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="../../../../tags/Git/" style="font-size: 10px;">Git</a> <a href="../../../../tags/HTML/" style="font-size: 14.29px;">HTML</a> <a href="../../../../tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="../../../../tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IP/" style="font-size: 10px;">IP</a> <a href="../../../../tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="../../../../tags/Node-js/" style="font-size: 11.43px;">Node.js</a> <a href="../../../../tags/React/" style="font-size: 10px;">React</a> <a href="../../../../tags/TCP/" style="font-size: 10px;">TCP</a> <a href="../../../../tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="../../../../tags/http/" style="font-size: 11.43px;">http</a> <a href="../../../../tags/javascript/" style="font-size: 15.71px;">javascript</a> <a href="../../../../tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="../../../../tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="../../../../tags/前端/" style="font-size: 17.14px;">前端</a> <a href="../../../../tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="../../../../tags/工具/" style="font-size: 10px;">工具</a> <a href="../../../../tags/感悟/" style="font-size: 10px;">感悟</a> <a href="../../../../tags/数据结构/" style="font-size: 14.29px;">数据结构</a> <a href="../../../../tags/数据结构与算法/" style="font-size: 12.86px;">数据结构与算法</a> <a href="../../../../tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="../../../../tags/算法/" style="font-size: 10px;">算法</a> <a href="../../../../tags/缓存/" style="font-size: 10px;">缓存</a> <a href="../../../../tags/网络协议/" style="font-size: 11.43px;">网络协议</a> <a href="../../../../tags/译文/" style="font-size: 11.43px;">译文</a> <a href="../../../../tags/跨域/" style="font-size: 10px;">跨域</a> <a href="../../../../tags/转载/" style="font-size: 10px;">转载</a> <a href="../../../../tags/面试/" style="font-size: 11.43px;">面试</a>
+						<a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 14.29px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 11.43px;">Node.js</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/http/" style="font-size: 11.43px;">http</a> <a href="/tags/javascript/" style="font-size: 15.71px;">javascript</a> <a href="/tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="/tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="/tags/前端/" style="font-size: 17.14px;">前端</a> <a href="/tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/感悟/" style="font-size: 10px;">感悟</a> <a href="/tags/数据结构/" style="font-size: 14.29px;">数据结构</a> <a href="/tags/数据结构与算法/" style="font-size: 12.86px;">数据结构与算法</a> <a href="/tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网络协议/" style="font-size: 11.43px;">网络协议</a> <a href="/tags/译文/" style="font-size: 11.43px;">译文</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
 					</div>
 				</section>
 				
@@ -210,17 +202,17 @@
 				
 					<li><a href="http://damonare.cn/">博客首页</a></li>
 		        
-					<li><a href="../../../../index.html">主页</a></li>
+					<li><a href="/">主页</a></li>
 		        
-					<li><a href="../../../../archives">所有文章</a></li>
+					<li><a href="/archives">所有文章</a></li>
 		        
-					<li><a href="../../../../categories/随笔/">随笔</a></li>
+					<li><a href="/categories/随笔/">随笔</a></li>
 		        
-					<li><a href="../../../../categories/learn/">学习</a></li>
+					<li><a href="/categories/learn/">学习</a></li>
 		        
-					<li><a href="../../../../categories/life/">生活</a></li>
+					<li><a href="/categories/life/">生活</a></li>
 		        
-					<li><a href="../../../../categories/其它/">其它</a></li>
+					<li><a href="/categories/其它/">其它</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -244,7 +236,7 @@
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/jizhentan" title="twitter">twitter</a>
 			        
-						<a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
 			        
 				</div>
 			</nav>
@@ -255,7 +247,7 @@
       <div class="body-wrap"><article id="post-Javascript闭包入门(译文)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="" class="article-date">
+      <a href="/2017/01/21/Javascript闭包入门(译文)/" class="article-date">
   	<time datetime="2017-01-21T10:01:30.000Z" itemprop="datePublished">2017-01-21</time>
 </a>
     </div>
@@ -278,12 +270,12 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/译文/">译文</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译文/">译文</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="../../../../categories/learn/">学习</a>
+	<a class="article-category-link" href="/categories/learn/">学习</a>
 	</div>
 
 
@@ -355,7 +347,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayAlice</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(alice); &#125;</div><div class="line">    <span class="comment">// 局部变量最后保存在闭包中</span></div><div class="line">    <span class="keyword">var</span> alice = <span class="string">'Hello Alice'</span>;</div><div class="line">    <span class="keyword">return</span> say;</div><div class="line">&#125;</div><div class="line">sayAlice()();<span class="comment">// 输出"Hello Alice"</span></div></pre></td></tr></table></figure>
 <p><strong>技巧：需要注意变量<code>say</code>也是在闭包内部，也能被在<code>sayAlice()</code>内部声明的其它函数访问，或者也可以在函数内部递归访问它。</strong></p>
 <h4 id="例7"><a href="#例7" class="headerlink" title="例7"></a>例7</h4><p>最后一个例子说明了每次调用函数都会为局部变量创建一个闭包。实际上每次函数声明并不会创建一个单独的闭包，但每次调用函数都会创建一个独立的闭包。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">newClosure</span>(<span class="params">someNum, someRef</span>) </span>&#123;</div><div class="line">    <span class="comment">// 局部变量最终保存在闭包中</span></div><div class="line">    <span class="keyword">var</span> num = someNum;</div><div class="line">    <span class="keyword">var</span> anArray = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">    <span class="keyword">var</span> ref = someRef;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">        num += x;</div><div class="line">        anArray.push(num);</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'num: '</span> + num +</div><div class="line">            <span class="string">'\nanArray '</span> + anArray.toString() +</div><div class="line">            <span class="string">'\nref.someVar '</span> + ref.someVar);</div><div class="line">      &#125;</div><div class="line">&#125;</div><div class="line">obj = &#123;someVar: <span class="number">4</span>&#125;;</div><div class="line">fn1 = newClosure(<span class="number">4</span>, obj);</div><div class="line">fn2 = newClosure(<span class="number">5</span>, obj);</div><div class="line">fn1(<span class="number">1</span>); <span class="comment">// num: 5; anArray: 1,2,3,5; ref.someVar: 4;</span></div><div class="line">fn2(<span class="number">1</span>); <span class="comment">// num: 6; anArray: 1,2,3,6; ref.someVar: 4;</span></div><div class="line">obj.someVar++;</div><div class="line">fn1(<span class="number">2</span>); <span class="comment">// num: 7; anArray: 1,2,3,5,7; ref.someVar: 5;</span></div><div class="line">fn2(<span class="number">2</span>); <span class="comment">// num: 8; anArray: 1,2,3,6,8; ref.someVar: 5;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">newClosure</span>(<span class="params">someNum, someRef</span>) </span>&#123;</div><div class="line">    <span class="comment">// 局部变量最终保存在闭包中</span></div><div class="line">    <span class="keyword">var</span> num = someNum;</div><div class="line">    <span class="keyword">var</span> anArray = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">    <span class="keyword">var</span> ref = someRef;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">        num += x;</div><div class="line">        anArray.push(num);</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'num: '</span> + num +</div><div class="line">            <span class="string">'\nanArray '</span> + anArray.toString() +</div><div class="line">            <span class="string">'\nref.someVar '</span> + ref.someVar);</div><div class="line">      &#125;</div><div class="line">&#125;</div><div class="line">obj = &#123;<span class="attr">someVar</span>: <span class="number">4</span>&#125;;</div><div class="line">fn1 = newClosure(<span class="number">4</span>, obj);</div><div class="line">fn2 = newClosure(<span class="number">5</span>, obj);</div><div class="line">fn1(<span class="number">1</span>); <span class="comment">// num: 5; anArray: 1,2,3,5; ref.someVar: 4;</span></div><div class="line">fn2(<span class="number">1</span>); <span class="comment">// num: 6; anArray: 1,2,3,6; ref.someVar: 4;</span></div><div class="line">obj.someVar++;</div><div class="line">fn1(<span class="number">2</span>); <span class="comment">// num: 7; anArray: 1,2,3,5,7; ref.someVar: 5;</span></div><div class="line">fn2(<span class="number">2</span>); <span class="comment">// num: 8; anArray: 1,2,3,6,8; ref.someVar: 5;</span></div></pre></td></tr></table></figure>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>如果任何不太明白的地方最好的方式就是把玩这几个例子，去机械地阅读一些文章远比去做这些实例难得多。我关于闭包的说明、栈框体(stack-frame)的说明等等，严格理论上讲并不是完全正确的——它们只是为了理解而简化处理过的。当基础的概念心领神会之后，就可以轻松地理解这些细节了。</p>
 <h3 id="最终总结"><a href="#最终总结" class="headerlink" title="最终总结"></a>最终总结</h3><ul>
 <li>每当你在另一个函数里使用了关键字<code>function</code>，一个闭包就被创建了</li>
@@ -385,7 +377,7 @@
     
 <nav id="article-nav">
   
-    <a href="../../../02/08/理解Node.js(译文)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/08/理解Node.js(译文)/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
@@ -395,7 +387,7 @@
     </a>
   
   
-    <a href="../../20/Ajax入门/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/01/20/Ajax入门/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Ajax入门</div>
       <strong class="article-nav-caption">></strong>
     </a>
@@ -429,7 +421,7 @@
 	})
 	</script>
 </div>
-<div class="ds-share" data-thread-key="Javascript闭包入门(译文)" data-title="Javascript闭包入门(译文)" data-images="http://damonare.github.io" data-content="Javascript闭包入门(译文)" data-url="https://damonare.github.io">
+<div class="ds-share" data-thread-key="Javascript闭包入门(译文)" data-title="Javascript闭包入门(译文)" data-images="http://damonare.github.io/2017/01/21/Javascript闭包入门(译文)/" data-content="Javascript闭包入门(译文)" data-url="https://damonare.github.io">
 	<div class="ds-share-inline">
 	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
 
@@ -446,7 +438,7 @@
 </div>
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Javascript闭包入门(译文)" data-title="Javascript闭包入门(译文)" data-url="http://damonare.github.io"></div>
+	<div class="ds-thread" data-thread-key="Javascript闭包入门(译文)" data-title="Javascript闭包入门(译文)" data-url="http://damonare.github.io/2017/01/21/Javascript闭包入门(译文)/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -573,7 +565,7 @@
 
     </div>
     
-  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -591,7 +583,7 @@
 </script>
 <script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-<script src="../../../../js/main.js"></script>
+<script src="/js/main.js"></script>
 
 
 
