@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-05-15T14:13:29.000Z</updated>
+  <updated>2017-05-16T06:03:00.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-05-15T14:13:29.000Z</updated>
+    <updated>2017-05-16T06:03:00.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>总括：</strong> 搜集了自己在面试过程中遇到的一些好问题</p>
 <ul>
@@ -301,6 +301,13 @@
 <p>如图：事务会将所需要执行的方法(图中的anyMethod)使用<code>wrapper</code>封装起来，再通过<code>perform</code>方法执行该方法，但在<code>perform</code>执行之前会先执行所有<code>wrapper</code>中的<code>initialize</code>方法，<code>perform</code>方法执行结束后，再执行所有的<code>close</code>方法；</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Transaction = <span class="built_in">require</span>(<span class="string">'./Transaction'</span>);</div><div class="line"><span class="comment">// 我们自己定义的</span></div><div class="line"><span class="keyword">var</span> MyTransaction = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">  <span class="comment">//do something</span></div><div class="line">&#125;;</div><div class="line"><span class="built_in">Object</span>.assign(MyTransaction.prototype, Transaction.Mixin, &#123;</div><div class="line">  	<span class="comment">//需要自定义一个getTransactionWrappers对象，获取所有需要封装的initialize方法和close方法</span></div><div class="line">  	getTransactionWrappers: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    </div><div class="line">  		<span class="keyword">return</span> [&#123;      </div><div class="line">          	<span class="attr">initialize</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;        </div><div class="line">              <span class="built_in">console</span>.log(<span class="string">'before method perform'</span>);      </div><div class="line">            &#125;,      </div><div class="line">          	<span class="attr">close</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;        </div><div class="line">              <span class="built_in">console</span>.log(<span class="string">'after method perform'</span>);      </div><div class="line">            &#125;    </div><div class="line">        &#125;];  </div><div class="line">	&#125;;</div><div class="line">&#125;);</div><div class="line"><span class="comment">//实例化一个transaction</span></div><div class="line"><span class="keyword">var</span> transaction = <span class="keyword">new</span> MyTransaction();</div><div class="line"><span class="comment">//需要调用的方法</span></div><div class="line"><span class="keyword">var</span> testMethod = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'test'</span>);</div><div class="line">&#125;</div><div class="line">transaction.perform(testMethod);</div><div class="line"><span class="comment">//before method perform</span></div><div class="line"><span class="comment">//test</span></div><div class="line"><span class="comment">//after method perform</span></div></pre></td></tr></table></figure>
 <p>理解题目的关键是，整个组件渲染到DOM中的过程就已经处于一次大的事务中了，因此在<code>componentDidMount</code>方法中调用<code>setState</code>的时候<code>ReactDefaultBatchingStrategy.isBatchingUpdates = true;</code>这句代码已经执行过了，所以<code>setState</code>的结果并没有立即生效，而是扔进了<code>dirtyComponent</code>;因此执行三次setState的结果this.state.value的值依然是0,而setTimeout中的两次setState由于没有调用过<code>batchedUpdates</code>方法(<code>isBatchingUpdates</code>默认为<code>false</code>)，所以<code>setState</code>方法立即生效，第二次<code>setSState</code>同理</p>
+<h4 id="XSS与CSRF介绍"><a href="#XSS与CSRF介绍" class="headerlink" title="XSS与CSRF介绍"></a>XSS与CSRF介绍</h4><p>XSS是一种跨站脚本攻击，是属于代码注入的一种，攻击者通过将代码注入网页中，其他用户看到会受到影响(代码内容有请求外部服务器);</p>
+<p>CSRF是一种跨站请求伪造，冒充用户发起请求，完成一些违背用户请求的行为(删帖，改密码，发邮件，发帖等)</p>
+<p>防御方法举例:</p>
+<ol>
+<li>对一些关键字和特殊字符进行过滤(&lt;&gt;,?,script等)，或对用户输入内容进行URL编码(encodeURIComponent);</li>
+<li>Cookie不要存放用户名和密码，对cookie信息进行MD5等算法散列存放，必要时可以将IP和cookie绑定;</li>
+</ol>
 ]]></content>
     
     <summary type="html">
