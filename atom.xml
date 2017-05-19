@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-05-19T15:19:19.000Z</updated>
+  <updated>2017-05-19T17:34:28.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-05-19T15:19:19.000Z</updated>
+    <updated>2017-05-19T17:34:28.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。</p>
 <ul>
@@ -302,11 +302,12 @@
 <li>Cookie不要存放用户名和密码，对cookie信息进行MD5等算法散列存放，必要时可以将IP和cookie绑定;</li>
 </ol>
 <h4 id="new关键字的过程"><a href="#new关键字的过程" class="headerlink" title="new关键字的过程"></a>new关键字的过程</h4><ol>
-<li>创建临时对象;</li>
-<li>绑定临时对象的原型;</li>
-<li>return 临时对象;</li>
-<li>统一临时对象原型名称(prototype);</li>
+<li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。</li>
+<li>属性和方法被加入到 this 引用的对象中。</li>
+<li>新创建的对象由 this 所引用，并且最后隐式的返回 this 。</li>
 </ol>
+<p>伪代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">obj.__proto__ = Base.prototype;<span class="comment">//Base为构造函数</span></div><div class="line">Base.call(obj);</div><div class="line"><span class="keyword">return</span> obj</div></pre></td></tr></table></figure>
 <h4 id="外边距合并"><a href="#外边距合并" class="headerlink" title="外边距合并"></a>外边距合并</h4><ol>
 <li>相邻的兄弟姐妹元素</li>
 </ol>
@@ -346,6 +347,20 @@
 <p>var()：var函数用来都读取变量；</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-pseudo">:root</span> &#123;</div><div class="line">  <span class="attribute">--color</span>: <span class="number">#333</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="built_in">var</span>(--color);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="移动端click事件300ms延迟问题"><a href="#移动端click事件300ms延迟问题" class="headerlink" title="移动端click事件300ms延迟问题"></a>移动端click事件300ms延迟问题</h4><p>追溯到早期苹果厂商给iPhone设置的双击缩放功能，浏览器需要300ms时间判断用户是否会有下一次点击(以此触发缩放或是双击666等功能)。</p>
+<p>解决方案:</p>
+<ul>
+<li><strong>禁用缩放</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"user-scalable=no"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=1,maximum-scale=1"</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>更改默认的视口宽度(width=device-width)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>指针事件 (Pointer Events)</strong></li>
+</ul>
+<p>根据<a href="https://dvcs.w3.org/hg/pointerevents/raw-file/tip/pointerEvents.html#the-touch-action-css-property" target="_blank" rel="external">规范</a>，<code>touch-action</code> 属性决定 <em>“是否触摸操作会触发用户代理的默认行为。这包括但不限于双指缩放等行为”</em>。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>时隔三个月，终于迎来了博文的更新，有看到博友在评论留言：<br><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-14%2018.37.36.png" alt=""><br>心里很温暖，这篇不算博文的博文就当是回归之作吧，接下来的时间会尽量保持在一周一更，实习结束有的是时间了，哈哈哈。</p>
 ]]></content>
     
