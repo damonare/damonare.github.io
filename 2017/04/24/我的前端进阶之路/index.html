@@ -16,7 +16,7 @@
 <meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/setState%E7%AE%80%E5%8C%96%E8%B0%83%E7%94%A8%E6%A0%88.svg">
 <meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-15%2021.55.30.png">
 <meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-14%2018.37.36.png">
-<meta property="og:updated_time" content="2017-05-19T09:38:16.000Z">
+<meta property="og:updated_time" content="2017-05-19T09:44:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的前端进阶之路">
 <meta name="twitter:description" content="前言总括： 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。  原文地址：我的前端进阶之路  知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   烈火试真金，逆境试强者">
@@ -395,7 +395,7 @@
 <p>Etag是服务器自动生成或者由开发者生成的对应资源在服务器端的唯一标识符，能够更加准确的控制缓存。<strong>Last-Modified</strong>与ETag是可以一起使用的，服务器会优先验证ETag<strong>，一致的情况下，才会继续比对Last-Modified</strong>，最后才决定是否返回304。</p>
 <h4 id="Ajax的状态值与HTTP状态码"><a href="#Ajax的状态值与HTTP状态码" class="headerlink" title="Ajax的状态值与HTTP状态码"></a>Ajax的状态值与HTTP状态码</h4><ul>
 <li><p>Ajax的状态值</p>
-<p>  0: (未初始化)还没有调用open()方法。<br>  1: (载入)已经调用open()方法，正在派发请求可以调用send()方法。<br>  2: (载入完成)send()已经执行完成，已经接收到全部的响应内容。<br>  3: (交互)正在解析响应内容。<br>  4: (完成)响应内容已经解析完成，用户可以调用。</p>
+<p>  0: (未初始化)还没有调用open()方法；<br>  1: (载入)已经调用open()方法，正在派发请求，send()方法还未被调用；<br>  2: (载入完成)send()已经调用，响应头和响应状态已经返回；<br>  3: (交互)响应体下载中; responseText中已经获取了部分数据；<br>  4: (完成)响应内容已经解析完成，用户可以调用。</p>
 </li>
 <li><p>HTTP状态码</p>
 <p>200 &amp; OK: 请求成功；</p>
