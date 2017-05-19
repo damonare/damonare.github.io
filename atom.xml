@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-05-19T03:59:15.000Z</updated>
+  <updated>2017-05-19T09:38:16.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-05-19T03:59:15.000Z</updated>
+    <updated>2017-05-19T09:38:16.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。</p>
 <ul>
@@ -114,7 +114,7 @@
 <p>Etag是服务器自动生成或者由开发者生成的对应资源在服务器端的唯一标识符，能够更加准确的控制缓存。<strong>Last-Modified</strong>与ETag是可以一起使用的，服务器会优先验证ETag<strong>，一致的情况下，才会继续比对Last-Modified</strong>，最后才决定是否返回304。</p>
 <h4 id="Ajax的状态值与HTTP状态码"><a href="#Ajax的状态值与HTTP状态码" class="headerlink" title="Ajax的状态值与HTTP状态码"></a>Ajax的状态值与HTTP状态码</h4><ul>
 <li><p>Ajax的状态值</p>
-<p>0: (未初始化)还没有调用send()方法。<br>1: (载入)已经调用send()方法，正在派发请求。<br>2: (载入完成)send()已经执行完成，已经接收到全部的响应内容。<br>3: (交互)正在解析响应内容。<br>4: (完成)响应内容已经解析完成，用户可以调用。</p>
+<p>  0: (未初始化)还没有调用open()方法。<br>  1: (载入)已经调用open()方法，正在派发请求可以调用send()方法。<br>  2: (载入完成)send()已经执行完成，已经接收到全部的响应内容。<br>  3: (交互)正在解析响应内容。<br>  4: (完成)响应内容已经解析完成，用户可以调用。</p>
 </li>
 <li><p>HTTP状态码</p>
 <p>200 &amp; OK: 请求成功；</p>
@@ -1176,9 +1176,9 @@
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -1588,9 +1588,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
     
   </entry>
   
@@ -1928,9 +1928,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
