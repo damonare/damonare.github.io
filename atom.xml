@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-05-19T17:34:28.000Z</updated>
+  <updated>2017-05-20T07:23:46.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-05-19T17:34:28.000Z</updated>
+    <updated>2017-05-20T07:23:46.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。</p>
 <ul>
@@ -241,6 +241,9 @@
 <li>CMD 推崇<strong>依赖就近</strong>，AMD 推崇<strong>依赖前置</strong>。</li>
 <li>AMD 的 API 默认是<strong>一个当多个用</strong>，CMD 的 API 严格区分，推崇<strong>职责单一</strong>。比如 AMD 里，require 分全局 require 和局部 require，都叫 require。CMD 里，没有全局 require，而是根据模块系统的完备性，提供 seajs.use 来实现模块系统的加载启动。CMD 里，每个 API 都<strong>简单纯粹</strong>。</li>
 </ol>
+<h4 id="Web-worker"><a href="#Web-worker" class="headerlink" title="Web worker"></a>Web worker</h4><p>Web Workers是一种机制，通过它可以使一个脚本操作在与Web应用程序的主执行线程分离的后台线程中运行。这样做的优点是可以在单独的线程中执行繁琐的处理，让主（通常是UI）线程运行而不被阻塞/减慢。</p>
+<p>Web Worker 规范中定义了两类工作线程，分别是专用线程Dedicated Worker和共享线程 Shared Worker，其中，Dedicated Worker只能为一个页面所使用，而Shared Worker则可以被多个页面所共享。</p>
+<p>——来自<a href="http://www.alloyteam.com/2015/11/deep-in-web-worker/" target="_blank" rel="external">深入理解web worker</a></p>
 <h4 id="JavaScript内存泄露的原因以及如何去手动释放内存"><a href="#JavaScript内存泄露的原因以及如何去手动释放内存" class="headerlink" title="JavaScript内存泄露的原因以及如何去手动释放内存"></a>JavaScript内存泄露的原因以及如何去手动释放内存</h4><p><strong>易出现泄露的场景</strong></p>
 <ul>
 <li>XMLHttpRequest 泄漏发生在IE7-8,释放方法，将XMLHttpRequest实例对象设置为Null；</li>
@@ -1968,9 +1971,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
