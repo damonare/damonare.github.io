@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-05-20T07:23:46.000Z</updated>
+  <updated>2017-05-21T04:30:55.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-05-20T07:23:46.000Z</updated>
+    <updated>2017-05-21T04:30:55.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。</p>
 <ul>
@@ -196,6 +196,87 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">preloadImg</span>(<span class="params">url</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</div><div class="line">    img.src = url;</div><div class="line">    <span class="keyword">if</span>(img.complete) &#123;</div><div class="line">        <span class="comment">//接下来可以使用图片了</span></div><div class="line">        <span class="comment">//do something here</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">//接下来可以使用图片了</span></div><div class="line">            <span class="comment">//do something here</span></div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h4 id="类型数组"><a href="#类型数组" class="headerlink" title="类型数组"></a>类型数组</h4><p>JavaScript 是一种提供了访问原始二进制数据机制的类似数组的对象。</p>
+<p>为了最大的灵活性和效率(mdn这么说的，不明觉厉)，JavaScript类型化数组提供了两部分来实现，一种是缓冲(ArrayBuffer)，一种是视图(TypedArray和DataView)。</p>
+<p>所谓的<strong>缓冲</strong>其实是一种数据类型，表示一个通用的、固定长度的二进制数据缓冲区。该对象没法直接访问具体的数据，仅仅提供’缓冲’作用，要访问具体的数据，必须通过视图；</p>
+<p>所谓的<strong>视图</strong>分为两种：<strong>TypedArray</strong>和<strong>DataView</strong>：</p>
+<p><strong>TypedArray</strong>：</p>
+<p>共包括9种类型的视图，比如<code>Uint8Array</code>（无符号8位整数）数组视图, <code>Int16Array</code>（16位整数）数组视图, <code>Float32Array</code>（32位浮点数）数组视图等等。</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>字节长度</th>
+<th>含义</th>
+<th>对应的C语言类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Int8</td>
+<td>1</td>
+<td>8位带符号整数</td>
+<td>signed char</td>
+</tr>
+<tr>
+<td>Uint8</td>
+<td>1</td>
+<td>8位不带符号整数</td>
+<td>unsigned char</td>
+</tr>
+<tr>
+<td>Uint8C</td>
+<td>1</td>
+<td>8位不带符号整数（自动过滤溢出）</td>
+<td>unsigned char</td>
+</tr>
+<tr>
+<td>Int16</td>
+<td>2</td>
+<td>16位带符号整数</td>
+<td>short</td>
+</tr>
+<tr>
+<td>Uint16</td>
+<td>2</td>
+<td>16位不带符号整数</td>
+<td>unsigned short</td>
+</tr>
+<tr>
+<td>Int32</td>
+<td>4</td>
+<td>32位带符号整数</td>
+<td>int</td>
+</tr>
+<tr>
+<td>Uint32</td>
+<td>4</td>
+<td>32位不带符号的整数</td>
+<td>unsigned int</td>
+</tr>
+<tr>
+<td>Float32</td>
+<td>4</td>
+<td>32位浮点数</td>
+<td>float</td>
+</tr>
+<tr>
+<td>Float64</td>
+<td>8</td>
+<td>64位浮点数</td>
+<td>double</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DataView</strong>：</p>
+<p>DataView提供可以操作缓冲区中任意数据的读写接口。这对操作不同类型数据的场景很有帮助。而不再像TypedArray一样局限于某一种类型数据。</p>
+<p><strong>应用</strong>：</p>
+<ul>
+<li>FileReader API(readAsArrayBuffer方法)</li>
+<li>XMlHttpRequest的send方法(支持类型数组作为参数)</li>
+<li>Canvas</li>
+</ul>
+<p>说明：类型数组并不是支持所有的原生数组的API(比如push和pop就不可用，因为ArrayBuffer给定了字节数，TypedArray视图自然无法调用)。</p>
 <h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h4><p>跨域的方式有很多种，最常用的是<code>jsonp</code>主要利用了<code>script</code>的开放策略:通过script标签引入一个js或者是一个其他后缀形式（如php，jsp等）的文件，此文件返回一个js函数的调用。缺点在于只支持get请求而且存在安全问题。</p>
 <p>CORS跨域，关键在于服务器，如果服务器实现了CORS跨域的接口，那么就可以使用ajax(请求路径为绝对路径)进行跨域请求。CORS请求分为两种，一种是简单请求，一种是非简单请求。简单请求是指请求方法在<code>HEAD</code>,<code>GET</code>,<code>POST</code>三者之间并且请求头信息局限在</p>
 <ul>
