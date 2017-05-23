@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-05-21T04:30:55.000Z</updated>
+  <updated>2017-05-22T15:45:12.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-05-21T04:30:55.000Z</updated>
+    <updated>2017-05-22T15:45:12.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。</p>
 <ul>
@@ -445,6 +445,20 @@
 <li><strong>指针事件 (Pointer Events)</strong></li>
 </ul>
 <p>根据<a href="https://dvcs.w3.org/hg/pointerevents/raw-file/tip/pointerEvents.html#the-touch-action-css-property" target="_blank" rel="external">规范</a>，<code>touch-action</code> 属性决定 <em>“是否触摸操作会触发用户代理的默认行为。这包括但不限于双指缩放等行为”</em>。</p>
+<h4 id="域名发散和域名收敛"><a href="#域名发散和域名收敛" class="headerlink" title="域名发散和域名收敛"></a>域名发散和域名收敛</h4><p><strong>域名发散:</strong>所谓域名发散是为了突破浏览器的并发限制。因此遵循这么一条定律：</p>
+<blockquote>
+<p>http 静态资源采用多个子域名</p>
+</blockquote>
+<p>比如：如果有大量图片会通过多个域名进行请求。</p>
+<p><img src="https://camo.githubusercontent.com/e8881588de4903a30904e30de1fc6548ff906136/687474703a2f2f696d61676573323031352e636e626c6f67732e636f6d2f626c6f672f3630383738322f3230313630342f3630383738322d32303136303430373139353130363632352d313235343234383232362e6a7067" alt="各浏览器同一域名的请求并发数"></p>
+<p>浏览器同一域名并发数存在的原因：</p>
+<ul>
+<li>减轻服务器压力，防止服务器崩溃。</li>
+<li>出于安全的考虑，防止DDOS攻击。因为一般DDOS攻击就是通过合理的请求加大服务器压力从而搞垮服务器，有了这个并发限制，DDOS起码没有那么简单了。</li>
+</ul>
+<p><strong>域名收敛:</strong>这个是和域名发散相反的(手动滑稽)，发散是说将资源分散为多个域名进行请求，以避开浏览器的并发限制。而域名收敛则是说将资源放在同一个域名下进行请求。那么实际上这是两种应用场景的解决方案罢了。域名发散是为了解决PC端浏览器并发请求限制。而域名收敛则是针对的移动端的(2G,3G网络环境不容忽视)。</p>
+<p>域名收敛的原因很简单，<strong>减少不必要的域名解析</strong>，充分利用缓存，从而加快页面打开的速度。</p>
+<p>关于域名收敛可以看这篇：<a href="http://taobaofed.org/blog/2015/12/16/h5-performance-optimization-and-domain-convergence/" target="_blank" rel="external">无线性能优化：域名收敛</a></p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>时隔三个月，终于迎来了博文的更新，有看到博友在评论留言：<br><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-14%2018.37.36.png" alt=""><br>心里很温暖，这篇不算博文的博文就当是回归之作吧，接下来的时间会尽量保持在一周一更，实习结束有的是时间了，哈哈哈。</p>
 ]]></content>
     
@@ -2052,9 +2066,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
