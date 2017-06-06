@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-06-05T12:59:34.000Z</updated>
+  <updated>2017-06-05T13:12:18.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-06-05T12:59:34.000Z</updated>
+    <updated>2017-06-05T13:12:18.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。</p>
 <ul>
@@ -415,7 +415,7 @@
 </ol>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p style="margin-bottom: 0px;"&gt;这个段落的和下面段落的距离将为20px&lt;/p&gt;</div><div class="line">&lt;div style="margin-top: 20px; margin-bottom: 20px;"&gt;&lt;/div&gt;</div><div class="line">&lt;p style="margin-top: 0px;"&gt;这个段落的和上面段落的距离将为20px&lt;/p&gt;</div></pre></td></tr></table></figure>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/CSS/float" target="_blank" rel="external">浮动</a> 及 <a href="https://developer.mozilla.org/zh-CN/docs/CSS/position" target="_blank" rel="external">绝对定位</a> 元素外边距不会合并。—来自MDN</p>
-<h4 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h4><p>浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。</p>
+<h4 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h4><p>浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。本身根元素就处在一个大的BFC中，BFC中元素竖直排列，IFC(行内格式上文)中的元素横向排列</p>
 <p>块格式化上下文由以下之一创建：</p>
 <ul>
 <li>根元素或其它包含它的元素</li>
