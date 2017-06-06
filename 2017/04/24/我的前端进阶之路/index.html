@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-15%2021.55.30.png">
 <meta property="og:image" content="https://camo.githubusercontent.com/e8881588de4903a30904e30de1fc6548ff906136/687474703a2f2f696d61676573323031352e636e626c6f67732e636f6d2f626c6f672f3630383738322f3230313630342f3630383738322d32303136303430373139353130363632352d313235343234383232362e6a7067">
 <meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-14%2018.37.36.png">
-<meta property="og:updated_time" content="2017-06-06T15:21:32.000Z">
+<meta property="og:updated_time" content="2017-06-06T15:47:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的前端进阶之路">
 <meta name="twitter:description" content="前言总括： 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。  原文地址：我的前端进阶之路  知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   烈火试真金，逆境试强者">
@@ -559,7 +559,7 @@
 <li>Canvas</li>
 </ul>
 <p>说明：类型数组并不是支持所有的原生数组的API(比如push和pop就不可用，因为ArrayBuffer给定了字节数，TypedArray视图自然无法调用)。</p>
-<h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h4><p>跨域的方式有很多种，最常用的是<code>jsonp</code>主要利用了<code>script</code>的开放策略:通过script标签引入一个js或者是一个其他后缀形式（如php，jsp等）的文件，此文件返回一个js函数的调用。缺点在于只支持get请求而且存在安全问题。</p>
+<h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h4><p>跨域的方式有很多种，最常用的是<code>jsonp</code>主要利用了<code>script</code>的开放策略:通过script标签引入一个js或者是一个其他后缀形式（如php，jsp等）的文件，此文件返回一个js函数的调用。缺点在于只支持get请求而且存在安全问题，可能会导致CSRF,因为请求的数据来源于其他网站，因为恶意攻击者可以利用这段代码进行请求，获取数据，有可能会泄露用户密码等重要信息。</p>
 <p>CORS跨域，关键在于服务器，如果服务器实现了CORS跨域的接口，那么就可以使用ajax(请求路径为绝对路径)进行跨域请求。CORS请求分为两种，一种是简单请求，一种是非简单请求。简单请求是指请求方法在<code>HEAD</code>,<code>GET</code>,<code>POST</code>三者之间并且请求头信息局限在</p>
 <ul>
 <li>Accept</li>
