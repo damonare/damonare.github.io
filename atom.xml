@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-06-06T15:47:25.000Z</updated>
+  <updated>2017-06-07T05:08:10.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-06-06T15:47:25.000Z</updated>
+    <updated>2017-06-07T05:08:10.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。</p>
 <ul>
@@ -485,6 +485,11 @@
 <li>使用textarea标签对</li>
 <li>内容放在textarea标签对中</li>
 <li>使用row、col指定大小<br>– 来自博客园<a href="http://www.cnblogs.com/abcd1234/p/4709486.html" target="_blank" rel="external">HTML中input和textarea的区别</a></li>
+</ol>
+<h4 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h4><ol>
+<li>TCP面向连接（确认有创建三方交握，连接已创建才作传输。）<br>UDP不是面向连接的，UDP传送数据前并不与对方建立连接，对接收到的数据也不发送确认信号，发送端不知道数据是否会正确接收，当然也不用重发，所以说UDP是无连接的、不可靠的一种数据传输协议。</li>
+<li>UDP传输速率更高，因为不必确认收发数据，实时性更好</li>
+<li>TCP数据是有序的，以什么顺序发送的数据，接收时同样会按照此顺序；UDP是无序的，发出（1，2，3），有可能按照（1，3，2）的顺序收到。应用程序必须自己做分组排序。</li>
 </ol>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>时隔三个月，终于迎来了博文的更新，有看到博友在评论留言：<br><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-14%2018.37.36.png" alt=""><br>心里很温暖，这篇不算博文的博文就当是回归之作吧，接下来的时间会尽量保持在一周一更，实习结束有的是时间了，哈哈哈。</p>
 ]]></content>
@@ -1341,9 +1346,9 @@
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
-      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
   </entry>
   
@@ -1753,9 +1758,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="React" scheme="http://damonare.github.io/tags/React/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
