@@ -489,16 +489,16 @@
 	<button id='alipay'>￥支付宝支持</button>
 	<button id='wechat'>￥微信支持</button>
 	<p>
-		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+		<img class="qrcode" src="http://damonare.cn/2.jpg" alt="">
 	</p>
 	<script type="text/javascript">
 	document.querySelector('#alipay').addEventListener('click',function(){
 	    document.querySelector('.qrcode').style.display='block';
-	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	    document.querySelector('.qrcode').setAttribute('src','http://damonare.cn/2.jpg')
 	})
 	document.querySelector('#wechat').addEventListener('click',function(){
 	    document.querySelector('.qrcode').style.display='block';
-	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	    document.querySelector('.qrcode').setAttribute('src','http://damonare.cn/3.jpg')
 	})
 	</script>
 </div>
@@ -517,24 +517,18 @@
 	 </div>
    </div>
 </div>
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="前端跨域整理" data-title="前端跨域整理" data-url="http://damonare.github.io/2016/12/01/前端跨域整理/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"damonare"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://damonare.cn/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0]
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+var cloudTieConfig = {
+  url: document.location.href,
+  sourceId: "",
+  productKey: "2d824758cd8349eb82d9e5577480b2df",
+  target: "cloud-tie-wrapper"
+};
+var yunManualLoad = true;
+Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+</script>
 
 
 

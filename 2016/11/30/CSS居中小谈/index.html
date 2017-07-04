@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://damonare.github.io/2016/11/30/CSS居中小谈/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
 <meta property="og:description" content="前言总括：  CSS居中一直是一个比较敏感的话题，为了以后开发的方便，楼主觉得确实需要总结一下了，总的来说，居中问题分为垂直居中和水平居中，实际上水平居中是很简单的，但垂直居中的方式和方法就千奇百怪了。  原文地址：CSS居中小谈  知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   人生用物，各有天限；夏">
-<meta property="og:updated_time" content="2017-06-01T11:40:59.000Z">
+<meta property="og:updated_time" content="2017-06-20T04:13:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS居中小谈">
 <meta name="twitter:description" content="前言总括：  CSS居中一直是一个比较敏感的话题，为了以后开发的方便，楼主觉得确实需要总结一下了，总的来说，居中问题分为垂直居中和水平居中，实际上水平居中是很简单的，但垂直居中的方式和方法就千奇百怪了。  原文地址：CSS居中小谈  知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   人生用物，各有天限；夏">
@@ -334,7 +334,7 @@
 <li><p>1.使用position:absolute（fixed）,设置left、top、margin-left、margin-top的属性(定高);</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background</span>: red;</div><div class="line">    <span class="attribute">position</span>: absolute;<span class="comment">/*或fixed*/</span></div><div class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">margin-top</span>: -<span class="number">100px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">100px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>2.利用position:fixed（absolute）属性，margin:auto这个必须不要忘记了(定高);</li>
+<li>2.利用position:fixed（absolute）属性，margin:auto这个必须不要忘记了(不定高不定宽);</li>
 </ul>
 </li>
 </ul>
@@ -411,16 +411,16 @@
 	<button id='alipay'>￥支付宝支持</button>
 	<button id='wechat'>￥微信支持</button>
 	<p>
-		<img class="qrcode" src="../../../../../img/2.jpg" alt="">
+		<img class="qrcode" src="http://damonare.cn/2.jpg" alt="">
 	</p>
 	<script type="text/javascript">
 	document.querySelector('#alipay').addEventListener('click',function(){
 	    document.querySelector('.qrcode').style.display='block';
-	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/2.jpg')
+	    document.querySelector('.qrcode').setAttribute('src','http://damonare.cn/2.jpg')
 	})
 	document.querySelector('#wechat').addEventListener('click',function(){
 	    document.querySelector('.qrcode').style.display='block';
-	    document.querySelector('.qrcode').setAttribute('src','../../../../../img/3.jpg')
+	    document.querySelector('.qrcode').setAttribute('src','http://damonare.cn/3.jpg')
 	})
 	</script>
 </div>
@@ -439,24 +439,18 @@
 	 </div>
    </div>
 </div>
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="CSS居中小谈" data-title="CSS居中小谈" data-url="http://damonare.github.io/2016/11/30/CSS居中小谈/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"damonare"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://damonare.cn/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0]
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+var cloudTieConfig = {
+  url: document.location.href,
+  sourceId: "",
+  productKey: "2d824758cd8349eb82d9e5577480b2df",
+  target: "cloud-tie-wrapper"
+};
+var yunManualLoad = true;
+Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+</script>
 
 
 

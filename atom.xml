@@ -1356,9 +1356,9 @@
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -1768,9 +1768,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
     
   </entry>
   
@@ -2511,7 +2511,7 @@
     <link href="http://damonare.github.io/2016/11/30/CSS%E5%B1%85%E4%B8%AD%E5%B0%8F%E8%B0%88/"/>
     <id>http://damonare.github.io/2016/11/30/CSS居中小谈/</id>
     <published>2016-11-30T09:59:46.000Z</published>
-    <updated>2017-06-01T11:40:59.000Z</updated>
+    <updated>2017-06-20T04:13:04.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong>  CSS居中一直是一个比较敏感的话题，为了以后开发的方便，楼主觉得确实需要总结一下了，总的来说，居中问题分为垂直居中和水平居中，实际上水平居中是很简单的，但垂直居中的方式和方法就千奇百怪了。</p>
 <ul>
@@ -2548,7 +2548,7 @@
 <li><p>1.使用position:absolute（fixed）,设置left、top、margin-left、margin-top的属性(定高);</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background</span>: red;</div><div class="line">    <span class="attribute">position</span>: absolute;<span class="comment">/*或fixed*/</span></div><div class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">margin-top</span>: -<span class="number">100px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">100px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>2.利用position:fixed（absolute）属性，margin:auto这个必须不要忘记了(定高);</li>
+<li>2.利用position:fixed（absolute）属性，margin:auto这个必须不要忘记了(不定高不定宽);</li>
 </ul>
 </li>
 </ul>
