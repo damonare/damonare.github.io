@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-06-07T15:23:50.000Z</updated>
+  <updated>2017-07-05T14:33:17.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-06-07T15:23:50.000Z</updated>
+    <updated>2017-07-05T14:33:17.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。</p>
 <ul>
@@ -501,7 +501,7 @@
 <li>这次第三条被成功接收，接收方可以直接确认第5条，因为4，5两条已收到。</li>
 </ol>
 <p>TCP的16位的校验和（checksum）的计算和检验过程如下：发送者将TCP报文段的头部和数据部分的和计算出来，再对其求反码（一的补数），就得到了校验和，然后将结果装入报文中传输。（这里用反码和的原因是这种方法的循环进位使校验和可以在16位、32位、64位等情况下的计算结果再叠加后相同）接收者在收到报文后再按相同的算法计算一次校验和。</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>时隔三个月，终于迎来了博文的更新，有看到博友在评论留言：<br><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-14%2018.37.36.png" alt=""><br>心里很温暖，这篇不算博文的博文就当是回归之作吧，接下来的时间会尽量保持在一周一更，实习结束有的是时间了，哈哈哈。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>时隔三个月，终于迎来了博文的更新，有看到博友在评论留言：<br><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-14%2018.37.36.png" alt=""><br>心里很温，感谢支持。</p>
 ]]></content>
     
     <summary type="html">
@@ -1356,9 +1356,9 @@
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
-      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
     
   </entry>
   
@@ -1768,9 +1768,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="React" scheme="http://damonare.github.io/tags/React/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
