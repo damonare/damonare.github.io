@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-07-05T14:33:17.000Z</updated>
+  <updated>2017-07-09T03:29:49.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -16,11 +16,56 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>从CSS盒子模型说起</title>
+    <link href="http://damonare.github.io/2017/07/08/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://damonare.github.io/2017/07/08/CSS盒子模型/</id>
+    <published>2017-07-08T11:05:27.000Z</published>
+    <updated>2017-07-09T03:29:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/#more">从CSS盒子模型说起</a></p>
+</li>
+<li><p>知乎专栏：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>为学之道，莫先于穷理；穷理之要，必先于读书。</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>  CSS盒子模型是CSS基础中的基础，个人之前对于这块的理解有偏差，由于涉及知识点比较多所以写一篇总结备忘。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/#more&quot;&gt;从CSS盒子模型说起&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端进击者&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;为学之道，莫先于穷理；穷理之要，必先于读书。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
+    
+    
+      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
+    
+      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>我的前端进阶之路</title>
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-07-05T14:33:17.000Z</updated>
+    <updated>2017-07-06T16:27:07.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。</p>
 <ul>
@@ -35,7 +80,7 @@
 <a id="more"></a>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h4 id="React和Vue对比"><a href="#React和Vue对比" class="headerlink" title="React和Vue对比"></a>React和Vue对比</h4><p>相同点:</p>
 <ol>
-<li>数据驱动视图，提供响应式的视图组件</li>
+<li>数据驱动视图，提供了响应式（Reactive）和组件化（Composable）的视图组件。</li>
 <li>都有Virtual DOM，组件化开发，通过props参数进行父子组件数据的传递，都实现webComponents规范</li>
 <li>数据流动单向</li>
 <li>都支持服务端渲染</li>
@@ -43,7 +88,7 @@
 </ol>
 <p>不同点：</p>
 <ol>
-<li><p>社区：React社区还是要比vue大很多；</p>
+<li><p>社区：React社区还是要比Vue大很多；</p>
 </li>
 <li><p>开发模式：React在view层侵入性还是要比Vue大很多的,React严格上只针对MVC的view层，Vue则是MVVM模式的一种实现；</p>
 </li>
@@ -524,9 +569,9 @@
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
     
-      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
-    
       <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -1768,9 +1813,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="React" scheme="http://damonare.github.io/tags/React/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -2899,236 +2944,6 @@
       <category term="localStorage" scheme="http://damonare.github.io/tags/localStorage/"/>
     
       <category term="sessionStorage" scheme="http://damonare.github.io/tags/sessionStorage/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript ES6 核心功能一览</title>
-    <link href="http://damonare.github.io/2016/11/26/JavaScript%20ES6%20%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E4%B8%80%E8%A7%88/"/>
-    <id>http://damonare.github.io/2016/11/26/JavaScript ES6 核心功能一览/</id>
-    <published>2016-11-26T10:05:00.000Z</published>
-    <updated>2016-11-26T10:05:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>本文属于转载文章</p>
-</blockquote>
-<ul>
-<li>原文地址：<a href="http://adrianmejia.com/blog/2016/10/19/Overview-of-JavaScript-ES6-features-a-k-a-ECMAScript-6-and-ES2015/" target="_blank" rel="external">Overview of JavaScript ES6 features (a.k.a ECMAScript 6 and ES2015+)</a></li>
-<li>原文作者：<a href="http://adrianmejia.com/#about" target="_blank" rel="external">Adrian Mejia</a></li>
-<li>译文出自：<a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a></li>
-<li>译者：<a href="https://github.com/L9m" target="_blank" rel="external">L9m</a></li>
-<li>校对者：<a href="https://github.com/Tina92" target="_blank" rel="external">Tina92</a>，<a href="https://github.com/luoyaqifei" target="_blank" rel="external">luoyaqifei</a>，<a href="https://github.com/theJian" target="_blank" rel="external">theJian</a></li>
-</ul>
-<a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）"><a href="#JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）" class="headerlink" title="JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）"></a>JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）</h3><p>JavaScript 在过去几年里发生了很大的变化。这里介绍 12 个你马上就能用的新功能。</p>
-<h3 id="JavaScript-历史"><a href="#JavaScript-历史" class="headerlink" title="JavaScript 历史"></a>JavaScript 历史</h3><p>新的语言规范被称作 ECMAScript 6。也称为 ES6 或 ES2015+ 。</p>
-<p>自从 1995 年 JavaScript 诞生以来，它一直在缓慢地发展。每隔几年就会增加一些新内容。1997 年，ECMAScript 成为 JavaScript 语言实现的规范。它已经有了好几个版本，比如 ES3 , ES5 , ES6 等等。</p>
-<p><img src="http://adrianmejia.com/images/history-javascript-evolution-es6.png" alt="" title="JavaScript 发展史"></p>
-<p>如你所见，ES3，ES5 和 ES6 之间分别存在着 10 年和 6 年的间隔。像 ES6 那样一次进行大幅修改的模式被逐年渐进式的新模式所替代。</p>
-<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><p>所有现代浏览器和环境都已支持 ES6。</p>
-<p><img src="http://adrianmejia.com/images/es6-javascript-support.png" alt="" title="ES6 Support"></p>
-<p>来源: <a href="https://kangax.github.io/compat-table/es6/" target="_blank" rel="external">https://kangax.github.io/compat-table/es6/</a></p>
-<p>Chrome，MS Edge，Firefox，Safari，Node 和许多其他的环境都已内置支持大多数的 JavaScript ES6 功能。所以，在本教程中你学到的每个知识，你都可以马上开始应用。</p>
-<p>让我们开始学习 ECMAScript 6 吧！</p>
-<h3 id="核心-ES6-功能"><a href="#核心-ES6-功能" class="headerlink" title="核心 ES6 功能"></a>核心 ES6 功能</h3><p>你可以在浏览器的控制台中测试所有下面的代码片段。</p>
-<p><img src="http://adrianmejia.com/images/javascript-es6-classes-on-browser-console.png" alt="" title="Testing Javascript ES6 classes on browser console"></p>
-<p>不要笃信我的话，而是要亲自去测试每一个 ES5 和 ES6 示例。让我们开始动手吧 💪</p>
-<h4 id="变量的块级作用域"><a href="#变量的块级作用域" class="headerlink" title="变量的块级作用域"></a>变量的块级作用域</h4><p>使用 ES6，声明变量我们可以用 <code>var</code> ，也可以用 <code>let</code> 或 <code>const</code>。</p>
-<p><code>var</code> 有什么不足？</p>
-<p>使用 <code>var</code> 的问题是变量会漏入其他代码块中，诸如 <code>for</code> 循环或 <code>if</code> 代码块。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var x = &apos;outer&apos;;</div><div class="line">function test(inner) &#123;</div><div class="line">  if (inner) &#123;</div><div class="line">    var x = &apos;inner&apos;; // 作用于整个 function</div><div class="line">    return x;</div><div class="line">  &#125;</div><div class="line">  return x; // 因为第四行的声明提升，被重新定义</div><div class="line">&#125;</div><div class="line">test(false); // undefined 😱</div><div class="line">test(true); // inner</div></pre></td></tr></table></figure>
-<p>对于 <code>test(fasle)</code> ，你期望返回 <code>outer</code>，<strong>但是</strong>，你得到的是 <code>undefined</code>。</p>
-<p>为什么？</p>
-<p>因为尽管没有执行 <code>if</code> 代码块，第四行中的表达式 <code>var x</code> 也会被提升。</p>
-<blockquote>
-<p>var <strong>提升</strong>：</p>
-<ul>
-<li><code>var</code> 是函数作用域。在整个函数中甚至是声明语句之前都是可用的。</li>
-<li>声明被提升。所以你能在声明之前使用一个变量。</li>
-<li>初始化是不被提升的。如果你使用 <code>var</code> 声明变量，请总是将它放在顶部。</li>
-<li>在应用了声明提升规则之后，我们就能更容易地理解发生了什么：</li>
-</ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var x = &apos;outer&apos;;</div><div class="line">function test(inner) &#123;</div><div class="line">    var x; // 声明提升</div><div class="line">    if (inner) &#123;</div><div class="line">        x = &apos;inner&apos;; // 初始化不被提升</div><div class="line">        return x;</div><div class="line">    &#125;</div><div class="line">    return x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre></blockquote>
-<p>ECMAScript 2015 找到了解决的办法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">let x = &apos;outer&apos;;</div><div class="line">function test(inner) &#123;</div><div class="line">  if (inner) &#123;</div><div class="line">    let x = &apos;inner&apos;;</div><div class="line">    return x;</div><div class="line">  &#125;</div><div class="line">  return x; // 从第一行获取到预期结果</div><div class="line">&#125;</div><div class="line">test(false); // outer</div><div class="line">test(true); // inner</div></pre></td></tr></table></figure>
-<p>将 <code>var</code> 改为 <code>let</code>，代码将像期望的那样运行。如果 <code>if</code> 代码块没有被调用，<code>x</code> 变量也就不会在代码块外被提升。</p>
-<blockquote>
-<p>let <strong>提升</strong> 和“暂存死区（temporal dead zone）”</p>
-<ul>
-<li>在 ES6 中，<code>let</code> 将变量提升到代码块的顶部（不是像 ES5 那样的函数顶部）。</li>
-<li>然而，代码块中，在变量声明之前引用它会导致 <code>ReferenceError</code> 错误。</li>
-<li><code>let</code> 是块级作用域。你不能在它被声明之前引用它。</li>
-<li>“暂存死区（Temporal dead zone）”是指从代码块开始直到变量被声明之间的区域。</li>
-</ul>
-</blockquote>
-<p><strong>IIFE</strong></p>
-<p>在解释 IIFE 之前让我们看一个例子。来看一下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">&#123;</div><div class="line">  var private = 1;</div><div class="line">&#125;</div><div class="line">console.log(private); // 1</div></pre></td></tr></table></figure>
-<p>如你所见，<code>private</code> 漏出(代码块)。你需要使用 IIFE（immediately-invoked function expression，立即执行函数表达式）来包含它：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">(function()&#123;</div><div class="line">  var private2 = 1;</div><div class="line">&#125;)();</div><div class="line">console.log(private2); // Uncaught ReferenceError</div></pre></td></tr></table></figure>
-<p>如果你看一看 jQuery/loadsh 或其他开源项目，你会注意到他们用 IIFE 来避免污染全局环境而且只在全局中定义了诸如 <code>_</code>，<code>$</code>和<code>jQuery</code>。</p>
-<p>在 ES6 上则一目了然，我们可以只用代码块和 <code>let</code>，也不再需要使用 IIFE了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">&#123;</div><div class="line">  let private3 = 1;</div><div class="line">&#125;</div><div class="line">console.log(private3); // Uncaught ReferenceError</div></pre></td></tr></table></figure>
-<p><strong>Const</strong></p>
-<p>如果你想要一个变量保持不变（常量），你也可以使用 <code>const</code>。</p>
-<p><img src="http://adrianmejia.com/images/javascript-es6-const-variables-example.png" alt="" title="const variable example"></p>
-<blockquote>
-<p>总之：用 <code>let</code>，<code>const</code> 而不是 <code>var</code></p>
-<ul>
-<li>对所有引用使用 <code>const</code>；避免使用 <code>var</code>。</li>
-<li>如果你必须重新指定引用，用 <code>let</code> 替代 <code>const</code>。</li>
-</ul>
-</blockquote>
-<h4 id="模板字面量"><a href="#模板字面量" class="headerlink" title="模板字面量"></a>模板字面量</h4><p>有了模板字面量，我们就不用做多余的嵌套拼接了。来看一下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var first = &apos;Adrian&apos;;</div><div class="line">var last = &apos;Mejia&apos;;</div><div class="line">console.log(&apos;Your name is &apos; + first + &apos; &apos; + last + &apos;.&apos;);</div></pre></td></tr></table></figure>
-<p>现在你可以使用反引号 (`) 和字符串插值 <code>${}</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">const first = &apos;Adrian&apos;;</div><div class="line">const last = &apos;Mejia&apos;;</div><div class="line">console.log(`Your name is $&#123;first&#125; $&#123;last&#125;.`);</div></pre></td></tr></table></figure>
-<h4 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h4><p>我们再也不需要添加 + <code>\n</code> 来拼接字符串了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var template = &apos;&lt;li *ngFor=&quot;let todo of todos&quot; [ngClass]=&quot;&#123;completed: todo.isDone&#125;&quot; &gt;\n&apos; +</div><div class="line">&apos;  &lt;div class=&quot;view&quot;&gt;\n&apos; +</div><div class="line">&apos;    &lt;input class=&quot;toggle&quot; type=&quot;checkbox&quot; [checked]=&quot;todo.isDone&quot;&gt;\n&apos; +</div><div class="line">&apos;    &lt;label&gt;&lt;/label&gt;\n&apos; +</div><div class="line">&apos;    &lt;button class=&quot;destroy&quot;&gt;&lt;/button&gt;\n&apos; +</div><div class="line">&apos;  &lt;/div&gt;\n&apos; +</div><div class="line">&apos;  &lt;input class=&quot;edit&quot; value=&quot;&quot;&gt;\n&apos; +</div><div class="line">&apos;&lt;/li&gt;&apos;;</div><div class="line">console.log(template);</div></pre></td></tr></table></figure>
-<p>在 ES6 上， 我们可以同样使用反引号来解决这个问题：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">const template = `&lt;li *ngFor=&quot;let todo of todos&quot; [ngClass]=&quot;&#123;completed: todo.isDone&#125;&quot; &gt;</div><div class="line">  &lt;div class=&quot;view&quot;&gt;</div><div class="line">    &lt;input class=&quot;toggle&quot; type=&quot;checkbox&quot; [checked]=&quot;todo.isDone&quot;&gt;</div><div class="line">    &lt;label&gt;&lt;/label&gt;</div><div class="line">    &lt;button class=&quot;destroy&quot;&gt;&lt;/button&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;input class=&quot;edit&quot; value=&quot;&quot;&gt;</div><div class="line">&lt;/li&gt;`;</div><div class="line">console.log(template);</div></pre></td></tr></table></figure>
-<p>两段代码的结果是完全一样的。</p>
-<h4 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h4><p>ES6 的解构不仅实用而且很简洁。如下例所示：</p>
-<p><strong>从数组中获取元素</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var array = [1, 2, 3, 4];</div><div class="line">var first = array[0];</div><div class="line">var third = array[2];</div><div class="line">console.log(first, third); // 1 3</div></pre></td></tr></table></figure>
-<p>等同于：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const array = [1, 2, 3, 4];</div><div class="line">const [first, ,third] = array;</div><div class="line">console.log(first, third); // 1 3</div></pre></td></tr></table></figure>
-<p><strong>交换值</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var a = 1;</div><div class="line">var b = 2;</div><div class="line">var tmp = a;</div><div class="line">a = b;</div><div class="line">b = tmp;</div><div class="line">console.log(a, b); // 2 1</div></pre></td></tr></table></figure>
-<p>等同于：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">let a = 1;</div><div class="line">let b = 2;</div><div class="line">[a, b] = [b, a];</div><div class="line">console.log(a, b); // 2 1</div></pre></td></tr></table></figure>
-<p><strong>多个返回值的解构</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function margin() &#123;</div><div class="line">  var left=1, right=2, top=3, bottom=4;</div><div class="line">  return &#123; left: left, right: right, top: top, bottom: bottom &#125;;</div><div class="line">&#125;</div><div class="line">var data = margin();</div><div class="line">var left = data.left;</div><div class="line">var bottom = data.bottom;</div><div class="line">console.log(left, bottom); // 1 4</div></pre></td></tr></table></figure>
-<p>在第 3 行中，你也可以用一个像这样的数组返回（同时省去了一些编码）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return [left, right, top, bottom];</div></pre></td></tr></table></figure>
-<p>但另一方面，调用者需要考虑返回数据的顺序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var left = data[0];</div><div class="line">var bottom = data[3];</div></pre></td></tr></table></figure>
-<p>用 ES6，调用者只需选择他们需要的数据即可（第 6 行）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line"></div><div class="line">function margin() &#123;</div><div class="line">  const left=1, right=2, top=3, bottom=4;</div><div class="line">  return &#123; left, right, top, bottom &#125;;</div><div class="line">&#125;</div><div class="line">const &#123; left, bottom &#125; = margin();</div><div class="line">console.log(left, bottom); // 1 4</div></pre></td></tr></table></figure>
-<p><em>注意：</em> 在第 3 行中，我们使用了一些其他的 ES6 功能。我们将 <code>{ left: left }</code> 简化到只有 <code>{ left }</code>。与 ES5 版本相比，它变得如此简洁。酷不酷？</p>
-<p><strong>参数匹配的解构</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var user = &#123;firstName: &apos;Adrian&apos;, lastName: &apos;Mejia&apos;&#125;;</div><div class="line">function getFullName(user) &#123;</div><div class="line">  var firstName = user.firstName;</div><div class="line">  var lastName = user.lastName;</div><div class="line">  return firstName + &apos; &apos; + lastName;</div><div class="line">&#125;</div><div class="line">console.log(getFullName(user)); // Adrian Mejia</div></pre></td></tr></table></figure>
-<p>等同于（但更简洁）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">const user = &#123;firstName: &apos;Adrian&apos;, lastName: &apos;Mejia&apos;&#125;;</div><div class="line">function getFullName(&#123; firstName, lastName &#125;) &#123;</div><div class="line">  return `$&#123;firstName&#125; $&#123;lastName&#125;`;</div><div class="line">&#125;</div><div class="line">console.log(getFullName(user)); // Adrian Mejia</div></pre></td></tr></table></figure>
-<p><strong>深度匹配</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function settings() &#123;</div><div class="line">  return &#123; display: &#123; color: &apos;red&apos; &#125;, keyboard: &#123; layout: &apos;querty&apos;&#125; &#125;;</div><div class="line">&#125;</div><div class="line">var tmp = settings();</div><div class="line">var displayColor = tmp.display.color;</div><div class="line">var keyboardLayout = tmp.keyboard.layout;</div><div class="line">console.log(displayColor, keyboardLayout); // red querty</div></pre></td></tr></table></figure>
-<p>等同于（但更简洁）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">function settings() &#123;</div><div class="line">  return &#123; display: &#123; color: &apos;red&apos; &#125;, keyboard: &#123; layout: &apos;querty&apos;&#125; &#125;;</div><div class="line">&#125;</div><div class="line">const &#123; display: &#123; color: displayColor &#125;, keyboard: &#123; layout: keyboardLayout &#125;&#125; = settings();</div><div class="line">console.log(displayColor, keyboardLayout); // red querty</div></pre></td></tr></table></figure>
-<p>这也称作对象的解构。</p>
-<p>如你所见，解构是非常实用的而且有利于促进良好的编码风格。</p>
-<blockquote>
-<p>最佳实践:</p>
-<ul>
-<li>使用数组解构去获取元素或交换值。它可以避免创建临时引用。</li>
-<li>不要对多个返回值使用数组解构，而是要用对象解构。</li>
-</ul>
-</blockquote>
-<h4 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h4><p>用 ECMAScript 6，我们从“构造函数”🔨 来到了“类”🍸。</p>
-<blockquote>
-<p>在 JavaScript 中，每个对象都有一个原型对象。所有的 JavaScript 对象都从它们的原型对象那里继承方法和属性。</p>
-</blockquote>
-<p>在 ES5 中，为了实现面向对象编程（OOP），我们使用构造函数来创建对象，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var Animal = (function () &#123;</div><div class="line">  function MyConstructor(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">  &#125;</div><div class="line">  MyConstructor.prototype.speak = function speak() &#123;</div><div class="line">    console.log(this.name + &apos; makes a noise.&apos;);</div><div class="line">  &#125;;</div><div class="line">  return MyConstructor;</div><div class="line">&#125;)();</div><div class="line">var animal = new Animal(&apos;animal&apos;);</div><div class="line">animal.speak(); // animal makes a noise.</div></pre></td></tr></table></figure></p>
-<p>ES6 中有了一些语法糖。通过像 <code>class</code> 和 <code>constructor</code> 这样的关键字和减少样板代码，我们可以做到同样的事情。另外，<code>speak()</code> 相对照 <code>constructor.prototype.speak = function ()</code>  更加清晰：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">class Animal &#123;</div><div class="line">  constructor(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">  &#125;</div><div class="line">  speak() &#123;</div><div class="line">    console.log(this.name + &apos; makes a noise.&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">const animal = new Animal(&apos;animal&apos;);</div><div class="line">animal.speak(); // animal makes a noise.</div></pre></td></tr></table></figure>
-<p>正如你所见，两种式样（ES5 与 6）在幕后产生相同的结果而且用法一致。</p>
-<blockquote>
-<p>最佳实践：</p>
-<ul>
-<li>总是使用 <code>class</code> 语法并避免直接直接操纵 <code>prototype</code>。为什么？因为它让代码更加简洁和易于理解。</li>
-<li>避免使用空的构造函数。如果没有指定，类有一个默认的构造函数。</li>
-</ul>
-</blockquote>
-<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>基于前面的 <code>Animal</code> 类。 让我们扩展它并定义一个 <code>Lion</code> 类。</p>
-<p>在 ES5 中，它更多的与原型继承有关。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var Lion = (function () &#123;</div><div class="line">  function MyConstructor(name)&#123;</div><div class="line">    Animal.call(this, name);</div><div class="line">  &#125;</div><div class="line">  // 原型继承</div><div class="line">  MyConstructor.prototype = Object.create(Animal.prototype);</div><div class="line">  MyConstructor.prototype.constructor = Animal;</div><div class="line">  MyConstructor.prototype.speak = function speak() &#123;</div><div class="line">    Animal.prototype.speak.call(this);</div><div class="line">    console.log(this.name + &apos; roars 🦁&apos;);</div><div class="line">  &#125;;</div><div class="line">  return MyConstructor;</div><div class="line">&#125;)();</div><div class="line">var lion = new Lion(&apos;Simba&apos;);</div><div class="line">lion.speak(); // Simba makes a noise.</div><div class="line">// Simba roars.</div></pre></td></tr></table></figure>
-<p>我不会重复所有的细节，但请注意：</p>
-<ul>
-<li>第 3 行中，我们添加参数显式调用了 <code>Animal</code> 构造函数。</li>
-<li>第 7-8 行，我们将 <code>Lion</code> 原型指派给 <code>Animal</code> 原型。</li>
-<li>第 11行中，我们调用了父类 <code>Animal</code> 的 <code>speak</code> 方法。</li>
-</ul>
-<p>在 ES6 中，我们有了新关键词 <code>extends</code> 和 <code>super</code> <img src="http://adrianmejia.com/images/superman_shield.svg" width="25" height="25" alt="superman shield" style="display:inline-block;" data-pin-nopin="true">。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">class Lion extends Animal &#123;</div><div class="line">  speak() &#123;</div><div class="line">    super.speak();</div><div class="line">    console.log(this.name + &apos; roars 🦁&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">const lion = new Lion(&apos;Simba&apos;);</div><div class="line">lion.speak(); // Simba makes a noise.</div><div class="line">// Simba roars.</div></pre></td></tr></table></figure>
-<p>虽然 ES6 和 ES5 的代码作用一致，但是 ES6 的代码显得更易读。更胜一筹！</p>
-<blockquote>
-<p>最佳实践：</p>
-<ul>
-<li>使用  <code>extends</code> 内置方法实现继承。</li>
-</ul>
-</blockquote>
-<h4 id="原生-Promises"><a href="#原生-Promises" class="headerlink" title="原生 Promises"></a>原生 Promises</h4><p>从回调地狱 👹 到 promises 🙏。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function printAfterTimeout(string, timeout, done)&#123;</div><div class="line">  setTimeout(function()&#123;</div><div class="line">    done(string);</div><div class="line">  &#125;, timeout);</div><div class="line">&#125;</div><div class="line">printAfterTimeout(&apos;Hello &apos;, 2e3, function(result)&#123;</div><div class="line">  console.log(result);</div><div class="line">  // 嵌套回调</div><div class="line">  printAfterTimeout(result + &apos;Reader&apos;, 2e3, function(result)&#123;</div><div class="line">    console.log(result);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>我们有一个接收一个回调的函数，当 <code>done</code> 时执行。我们必须一个接一个地执行它两次。这也是为什么我们在回调中第二次调用  <code>printAfterTimeout</code> 的原因。</p>
-<p>如果你需要第 3 次或第 4 次回调，可能很快就会变得混乱。来看看我们用 promises 的写法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">function printAfterTimeout(string, timeout)&#123;</div><div class="line">  return new Promise((resolve, reject) =&gt; &#123;</div><div class="line">    setTimeout(function()&#123;</div><div class="line">      resolve(string);</div><div class="line">    &#125;, timeout);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line">printAfterTimeout(&apos;Hello &apos;, 2e3).then((result) =&gt; &#123;</div><div class="line">  console.log(result);</div><div class="line">  return printAfterTimeout(result + &apos;Reader&apos;, 2e3);</div><div class="line">&#125;).then((result) =&gt; &#123;</div><div class="line">  console.log(result);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>如你所见，使用 promises 我们能在函数完成后进行一些操作。不再需要嵌套函数。</p>
-<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>ES6 没有移除函数表达式，但是新增了一种，叫做箭头函数。</p>
-<p>在 ES5 中，对于 <code>this</code> 我们有一些问题：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var _this = this; // 保持一个引用</div><div class="line">$(&apos;.btn&apos;).click(function(event)&#123;</div><div class="line">  _this.sendData(); // 引用的是外层的 this</div><div class="line">&#125;);</div><div class="line">$(&apos;.input&apos;).on(&apos;change&apos;,function(event)&#123;</div><div class="line">  this.sendData(); // 引用的是外层的 this</div><div class="line">&#125;.bind(this)); // 绑定到外层的 this</div></pre></td></tr></table></figure>
-<p>你需要使用一个临时的 <code>this</code> 在函数内部进行引用或用 <code>bind</code> 绑定。在 ES6 中，你可以用箭头函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">// 引用的是外部的那个 this</div><div class="line">$(&apos;.btn&apos;).click((event) =&gt;  this.sendData());</div><div class="line">// 隐式返回</div><div class="line">const ids = [291, 288, 984];</div><div class="line">const messages = ids.map(value =&gt; `ID is $&#123;value&#125;`);</div></pre></td></tr></table></figure>
-<h4 id="For…of"><a href="#For…of" class="headerlink" title="For…of"></a>For…of</h4><p>从 <code>for</code> 到 <code>forEach</code> 再到 <code>for...of</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">// for</div><div class="line">var array = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;];</div><div class="line">for (var i = 0; i &lt; array.length; i++) &#123;</div><div class="line">  var element = array[i];</div><div class="line">  console.log(element);</div><div class="line">&#125;</div><div class="line">// forEach</div><div class="line">array.forEach(function (element) &#123;</div><div class="line">  console.log(element);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>ES6 的 for…of 同样可以实现迭代。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">// for ...of</div><div class="line">const array = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;];</div><div class="line">for (const element of array) &#123;</div><div class="line">    console.log(element);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h4><p>从检查一个变量是否被定义到重新指定一个值再到 <code>default parameters</code>。<br>你以前写过类似这样的代码吗？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function point(x, y, isFlag)&#123;</div><div class="line">  x = x || 0;</div><div class="line">  y = y || -1;</div><div class="line">  isFlag = isFlag || true;</div><div class="line">  console.log(x,y, isFlag);</div><div class="line">&#125;</div><div class="line">point(0, 0) // 0 -1 true 😱</div><div class="line">point(0, 0, false) // 0 -1 true 😱😱</div><div class="line">point(1) // 1 -1 true</div><div class="line">point() // 0 -1 true</div></pre></td></tr></table></figure>
-<p>可能有过，这是一种检查变量是否赋值的常见模式，不然则分配一个默认值。然而，这里有一些问题：</p>
-<ul>
-<li>第 8 行中，我们传入 <code>0, 0</code> 返回了 <code>0, -1</code>。</li>
-<li>第 9 行中， 我们传入 <code>false</code> 但是返回了 <code>true</code>。</li>
-</ul>
-<p>如果你传入一个布尔值作为默认参数或将值设置为 0，它不能正常起作用。你知道为什么吗？在讲完 ES6 示例后我会告诉你。</p>
-<p>用 ES6，现在你可以用更少的代码做到更好！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">function point(x = 0, y = -1, isFlag = true)&#123;</div><div class="line">  console.log(x,y, isFlag);</div><div class="line">&#125;</div><div class="line">point(0, 0) // 0 0 true</div><div class="line">point(0, 0, false) // 0 0 false</div><div class="line">point(1) // 1 -1 true</div><div class="line">point() // 0 -1 true</div></pre></td></tr></table></figure>
-<p>请注意第 5 行和第 6 行，我们得到了预期的结果。ES5 示例则无效。首先检查是否等于 <code>undefined</code>，因为 <code>false</code>，<code>null</code>，<code>undefined</code> 和 <code>0</code> 都是假值，我们可以避开这些数字，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function point(x, y, isFlag)&#123;</div><div class="line">  x = x || 0;</div><div class="line">  y = typeof(y) === &apos;undefined&apos; ? -1 : y;</div><div class="line">  isFlag = typeof(isFlag) === &apos;undefined&apos; ? true : isFlag;</div><div class="line">  console.log(x,y, isFlag);</div><div class="line">&#125;</div><div class="line">point(0, 0) // 0 0 true</div><div class="line">point(0, 0, false) // 0 0 false</div><div class="line">point(1) // 1 -1 true</div><div class="line">point() // 0 -1 true</div></pre></td></tr></table></figure>
-<p>当我们检查是否为 <code>undefined</code> 后，获得了期望的结果。</p>
-<h4 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h4><p>从参数到剩余参数和扩展操作符。</p>
-<p>在 ES5 中，获取任意数量的参数是非常麻烦的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">function printf(format) &#123;</div><div class="line">  var params = [].slice.call(arguments, 1);</div><div class="line">  console.log(&apos;params: &apos;, params);</div><div class="line">  console.log(&apos;format: &apos;, format);</div><div class="line">&#125;</div><div class="line">printf(&apos;%s %d %.2f&apos;, &apos;adrian&apos;, 321, Math.PI);</div></pre></td></tr></table></figure>
-<p>我们可以用 rest 操作符 <code>...</code> 做到同样的事情。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line"></div><div class="line">function printf(format, ...params) &#123;</div><div class="line">  console.log(&apos;params: &apos;, params);</div><div class="line">  console.log(&apos;format: &apos;, format);</div><div class="line">&#125;</div><div class="line">printf(&apos;%s %d %.2f&apos;, &apos;adrian&apos;, 321, Math.PI);</div></pre></td></tr></table></figure>
-<h4 id="展开运算符"><a href="#展开运算符" class="headerlink" title="展开运算符"></a>展开运算符</h4><p>从 <code>apply()</code> 到展开运算符。我们同样用 <code>...</code> 来解决：</p>
-<blockquote>
-<p>提醒：我们使用 <code>apply()</code> 将数组转换为一列参数。例如，<code>Math.max()</code> 作用于一列参数，但是如果我们有一个数组，我们就能用 <code>apply</code> 让它生效。</p>
-</blockquote>
-<p><img src="http://adrianmejia.com/images/javascript-math-apply-arrays.png" alt="" title="JavaScript Math apply for arrays"></p>
-<p>正如我们较早之前看过的，我们可以使用 <code>apply</code> 将数组作为参数列表传递：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">Math.max.apply(Math, [2,100,1,6,43]) // 100</div></pre></td></tr></table></figure>
-<p>在 ES6 中，你可以用展开运算符：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">Math.max(...[2,100,1,6,43]) // 100</div></pre></td></tr></table></figure>
-<p>同样，从 <code>concat</code> 数组到使用展开运算符：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// ES5</div><div class="line">var array1 = [2,100,1,6,43];</div><div class="line">var array2 = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;];</div><div class="line">var array3 = [false, true, null, undefined];</div><div class="line">console.log(array1.concat(array2, array3));</div></pre></td></tr></table></figure>
-<p>在 ES6 中，你可以用展开运算符来压平嵌套：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">const array1 = [2,100,1,6,43];</div><div class="line">const array2 = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;];</div><div class="line">const array3 = [false, true, null, undefined];</div><div class="line">console.log([...array1, ...array2, ...array3]);</div></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>JavaScript 经历了相当多的修改。这篇文章涵盖了每个 JavaScript 开发者都应该了解的大多数核心功能。同样，我们也介绍了一些让你的代码更加简洁，易于理解的最佳实践。</p>
-<p>如果你认为还有一些没有提到的<strong>必知</strong>的功能，请在下方留言，我会更新这篇文章。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本文属于转载文章&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;原文地址：&lt;a href=&quot;http://adrianmejia.com/blog/2016/10/19/Overview-of-JavaScript-ES6-features-a-k-a-ECMAScript-6-and-ES2015/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Overview of JavaScript ES6 features (a.k.a ECMAScript 6 and ES2015+)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;原文作者：&lt;a href=&quot;http://adrianmejia.com/#about&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Adrian Mejia&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;译文出自：&lt;a href=&quot;https://github.com/xitu/gold-miner&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;掘金翻译计划&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;译者：&lt;a href=&quot;https://github.com/L9m&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;L9m&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;校对者：&lt;a href=&quot;https://github.com/Tina92&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tina92&lt;/a&gt;，&lt;a href=&quot;https://github.com/luoyaqifei&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;luoyaqifei&lt;/a&gt;，&lt;a href=&quot;https://github.com/theJian&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;theJian&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
-    
-    
-      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
-    
-      <category term="转载" scheme="http://damonare.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-      <category term="ES6" scheme="http://damonare.github.io/tags/ES6/"/>
     
   </entry>
   

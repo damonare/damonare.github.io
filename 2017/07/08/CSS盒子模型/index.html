@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>记秋招 | Damonare的个人博客</title>
+  <title>从CSS盒子模型说起 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言总括： 不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。  原文博客地址：记秋招 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   人生">
-<meta name="keywords" content="Fighting,感悟">
+  <meta name="description" content="前言总括： 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结  原文地址：从CSS盒子模型说起  知乎专栏：前端进击者  博主博客地址：Damonare的个人博客   为学之道，莫先于穷理；穷理之要，必先于读书。">
+<meta name="keywords" content="CSS,HTML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记秋招">
-<meta property="og:url" content="http://damonare.github.io/2016/11/26/写在秋招之际/index.html">
+<meta property="og:title" content="从CSS盒子模型说起">
+<meta property="og:url" content="http://damonare.github.io/2017/07/08/CSS盒子模型/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="前言总括： 不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。  原文博客地址：记秋招 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   人生">
-<meta property="og:updated_time" content="2016-11-26T09:47:26.000Z">
+<meta property="og:description" content="前言总括： 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结  原文地址：从CSS盒子模型说起  知乎专栏：前端进击者  博主博客地址：Damonare的个人博客   为学之道，莫先于穷理；穷理之要，必先于读书。">
+<meta property="og:updated_time" content="2017-07-09T03:29:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记秋招">
-<meta name="twitter:description" content="前言总括： 不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。  原文博客地址：记秋招 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   人生">
+<meta name="twitter:title" content="从CSS盒子模型说起">
+<meta name="twitter:description" content="前言总括： 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结  原文地址：从CSS盒子模型说起  知乎专栏：前端进击者  博主博客地址：Damonare的个人博客   为学之道，莫先于穷理；穷理之要，必先于读书。">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -139,7 +139,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Fighting/" style="font-size: 10px;">Fighting</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 14.29px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 11.43px;">Node.js</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/http/" style="font-size: 11.43px;">http</a> <a href="/tags/javascript/" style="font-size: 15.71px;">javascript</a> <a href="/tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="/tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="/tags/前端/" style="font-size: 17.14px;">前端</a> <a href="/tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/感悟/" style="font-size: 10px;">感悟</a> <a href="/tags/数据结构/" style="font-size: 14.29px;">数据结构</a> <a href="/tags/数据结构与算法/" style="font-size: 12.86px;">数据结构与算法</a> <a href="/tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网络协议/" style="font-size: 11.43px;">网络协议</a> <a href="/tags/译文/" style="font-size: 11.43px;">译文</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
+						<a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 11.43px;">Node.js</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/http/" style="font-size: 11.43px;">http</a> <a href="/tags/javascript/" style="font-size: 15.71px;">javascript</a> <a href="/tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="/tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="/tags/前端/" style="font-size: 17.14px;">前端</a> <a href="/tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/数据结构/" style="font-size: 14.29px;">数据结构</a> <a href="/tags/数据结构与算法/" style="font-size: 12.86px;">数据结构与算法</a> <a href="/tags/深度玄学/" style="font-size: 10px;">深度玄学</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网络协议/" style="font-size: 11.43px;">网络协议</a> <a href="/tags/译文/" style="font-size: 11.43px;">译文</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
 					</div>
 				</section>
 				
@@ -244,11 +244,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-写在秋招之际" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-CSS盒子模型" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/26/写在秋招之际/" class="article-date">
-  	<time datetime="2016-11-26T09:47:26.000Z" itemprop="datePublished">2016-11-26</time>
+      <a href="/2017/07/08/CSS盒子模型/" class="article-date">
+  	<time datetime="2017-07-08T11:05:27.000Z" itemprop="datePublished">2017-07-08</time>
 </a>
     </div>
   
@@ -261,7 +261,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      记秋招
+      从CSS盒子模型说起
     </h1>
   
 
@@ -270,12 +270,12 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fighting/">Fighting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/感悟/">感悟</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/其它/">其它</a>
+	<a class="article-category-link" href="/categories/learn/">学习</a>
 	</div>
 
 
@@ -294,39 +294,23 @@
       
           <!-- Table of Contents -->
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>总括：</strong> 不知不觉已经过去很长时间了好像，身边的每一个人似乎都在改变着，我说着自己不想变。却抵不住这改变的大潮浪势。有时候会想就这样吧，不要再试图改变了，也许你就是这样的人，就是这样平庸，面对赤裸裸的现实连反抗都不敢的懦夫。</p>
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a></li></ol>
+        </div>
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结</p>
 <ul>
-<li>原文博客地址：<a href="http://damonare.github.io/2016/09/07/%E5%86%99%E5%9C%A8%E7%A7%8B%E6%8B%9B%E4%B9%8B%E9%99%85/#more">记秋招</a></li>
-<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+<li><p>原文地址：<a href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/#more">从CSS盒子模型说起</a></p>
+</li>
+<li><p>知乎专栏：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者</a></p>
 </li>
 <li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
 </li>
 </ul>
-<p><strong>人生总是会存在那么些说不清道不明的关系。</strong></p>
+<p><strong>为学之道，莫先于穷理；穷理之要，必先于读书。</strong></p>
 <a id="more"></a>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><ul>
-<li><h4 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h4></li>
-</ul>
-<blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;如果说秋招会让大四的崩溃，那么即将到来的春招就好像让我再经历一次高考一样，心里胆战心惊，毫无把握。是的，我想去杭州，不知道为啥就是想去，没有原因的想去。听蘑菇街的学长说合并之后导致HC太多，进蘑菇街的难度基本等同于阿里了。做项目，写博客，说真的，整个暑假过来也没休息过一天。唯一的原因可能就是觉得自己太菜吧。心里哈市想去阿里的，这是一定要去的，如果校招不行那就过几年通过社招，阿里是有情结在里面的，虽然深知阿里工作压力也很大，但同样，别的公司其实压力也是如此不是吗？要试一下的，今晚阿里笔试，考了很多react知识点，不知道明年还会不会考react呢，一切都是未知数啊，所以充满了不确定性。</p>
-</blockquote>
-<p><br></p>
-<ul>
-<li><h4 id="过去"><a href="#过去" class="headerlink" title="过去"></a>过去</h4></li>
-</ul>
-<blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;曾经我以为那个人就是我的全部，我有一个很明确的目标，就是让她过上简简单单的幸福生活。可惜到头来把自己弄的伤痕累累。人呐，真是受过伤才能长大。<strong>越是在意的东西往往越容易失去，不管你期望值放多高，来往始终是相互的，既然做不到礼尚往来，不如各自安好。</strong>感谢你在我生命中的出现让我真正看清了人性，谢谢你的离开。</p>
-</blockquote>
-<p><br></p>
-<ul>
-<li><h4 id="将来"><a href="#将来" class="headerlink" title="将来"></a>将来</h4></li>
-</ul>
-<blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;无数次幻想过那个真正愿意和我风雨同舟的人到底是什么样子，她出现了么，或是出现了我不知道？心里还是存在一丝的希冀。可如今，似乎现实了点，不会再去想象，或许是因为曾经有一段时间我觉得自己找到了那个人吧，可现实却又一次打在了脸上，很多事不是一个人能控制的，尤其感情。自己能控制的只有自己的内心，可真正能控制自己内心的还是在少数啊……可能这就是<strong>尽人事，听天命</strong>的深层含义吧。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<mark>面对无能为力的事，也只能信命。我居然会说出这样的话，估计也是受伤太多次了。<br>那么，以后会怎样？<br>—-听天由命﻿</mark></p>
-</blockquote>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><blockquote>
-<p>20岁，我，不服！</p>
-</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>  CSS盒子模型是CSS基础中的基础，个人之前对于这块的理解有偏差，由于涉及知识点比较多所以写一篇总结备忘。</p>
 
       
       
@@ -340,18 +324,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/11/26/学习javascript数据结构（二）——链表/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          学习Javascript数据结构(二)——链表
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/26/详解javascript的类/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">详解Javascript的类(单身狗请自觉进入)</div>
+    <a href="/2017/04/24/我的前端进阶之路/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的前端进阶之路</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -384,7 +359,7 @@
 	})
 	</script>
 </div>
-<div class="ds-share" data-thread-key="写在秋招之际" data-title="记秋招" data-images="http://damonare.github.io/2016/11/26/写在秋招之际/" data-content="记秋招" data-url="https://damonare.github.io">
+<div class="ds-share" data-thread-key="CSS盒子模型" data-title="从CSS盒子模型说起" data-images="http://damonare.github.io/2017/07/08/CSS盒子模型/" data-content="从CSS盒子模型说起" data-url="https://damonare.github.io">
 	<div class="ds-share-inline">
 	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
 
