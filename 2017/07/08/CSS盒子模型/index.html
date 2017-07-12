@@ -13,10 +13,13 @@
 <meta property="og:url" content="http://damonare.github.io/2017/07/08/CSS盒子模型/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
 <meta property="og:description" content="前言总括： 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结  原文地址：从CSS盒子模型说起  知乎专栏：前端进击者  博主博客地址：Damonare的个人博客   为学之道，莫先于穷理；穷理之要，必先于读书。">
-<meta property="og:updated_time" content="2017-07-09T03:29:49.000Z">
+<meta property="og:image" content="https://www.w3.org/TR/CSS2/images/boxdim.png">
+<meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/2081525038-56ea01986c0f9_articlex%20%281%29.jpeg">
+<meta property="og:updated_time" content="2017-07-12T05:47:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从CSS盒子模型说起">
 <meta name="twitter:description" content="前言总括： 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结  原文地址：从CSS盒子模型说起  知乎专栏：前端进击者  博主博客地址：Damonare的个人博客   为学之道，莫先于穷理；穷理之要，必先于读书。">
+<meta name="twitter:image" content="https://www.w3.org/TR/CSS2/images/boxdim.png">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -296,12 +299,12 @@
       
         <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#盒子模型"><span class="toc-number">2.1.</span> <span class="toc-text">盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IE盒子模型"><span class="toc-number">2.1.1.</span> <span class="toc-text">IE盒子模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标准盒子模型"><span class="toc-number">2.1.2.</span> <span class="toc-text">标准盒子模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行内元素的思考"><span class="toc-number">2.2.</span> <span class="toc-text">行内元素的思考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外边距合并"><span class="toc-number">2.3.</span> <span class="toc-text">外边距合并</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#相邻兄弟元素"><span class="toc-number">2.3.1.</span> <span class="toc-text">相邻兄弟元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#父子元素"><span class="toc-number">2.3.2.</span> <span class="toc-text">父子元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC"><span class="toc-number">2.4.</span> <span class="toc-text">BFC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#块级盒子的概念"><span class="toc-number">2.4.1.</span> <span class="toc-text">块级盒子的概念</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IFC"><span class="toc-number">2.5.</span> <span class="toc-text">IFC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#行内盒子的概念"><span class="toc-number">2.5.1.</span> <span class="toc-text">行内盒子的概念</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定位"><span class="toc-number">2.6.</span> <span class="toc-text">定位</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常规流"><span class="toc-number">2.6.1.</span> <span class="toc-text">常规流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浮动-Floats"><span class="toc-number">2.6.2.</span> <span class="toc-text">浮动(Floats)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#绝对定位-Absolute-positioning"><span class="toc-number">2.6.3.</span> <span class="toc-text">绝对定位(Absolute positioning)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文章"><span class="toc-number">3.1.</span> <span class="toc-text">参考文章</span></a></li></ol></li></ol>
         </div>
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结</p>
 <ul>
-<li><p>原文地址：<a href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/#more">从CSS盒子模型说起</a></p>
+<li><p>原文地址：<a href="http://blog.damonare.cn/2017/07/08/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/#more" target="_blank" rel="external">从CSS盒子模型说起</a></p>
 </li>
 <li><p>知乎专栏：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者</a></p>
 </li>
@@ -310,7 +313,121 @@
 </ul>
 <p><strong>为学之道，莫先于穷理；穷理之要，必先于读书。</strong></p>
 <a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>  CSS盒子模型是CSS基础中的基础，个人之前对于这块的理解有偏差，由于涉及知识点比较多所以写一篇总结备忘。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>​    CSS盒子模型是CSS基础中的基础，个人之前对于这块的理解有偏差💔，由于涉及知识点比较多所以写一篇总结备忘。<br>之前打算的是两周一次更新博文的，但是时间用在了刷题上，做了很多leetcode上算法数据结构的题记录在<a href="https://github.com/damonare/Xd-front-end-Interview-summary/blob/master/Damonare/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="external">github</a>，但其实也有在更新啦~只不过是对之前的一些博文进行纠正:)😄</p>
+<p>​    最近秋招在即，压力倍增，前几天把博客导入页的<code>在读大三本科生</code>改为了<code>在读大四本科生</code>，不禁心生感慨，时光荏苒。转眼间我的这个小窝竟然已经快一年了。当初建立这个站点也是想找个说话的地方，有的人可能就是不喜欢说，只喜欢写(比如我)，然而自从实习后确实提不起精神来写了，一是没精力，二是对于遇到的一些坑不想单独写一篇博客记录。这里还是想保持一份纯净，就是以总结和理解难点为主调 其它的一般会托管在github库里记录一下。闲话不多说，说说今天的主角🤦‍♀️</p>
+<p>​    CSS盒子模型想来都不陌生，但还是想先介绍一下，以保证文章的完整性。😳</p>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>​    CSS盒子模型：</p>
+<p><img src="https://www.w3.org/TR/CSS2/images/boxdim.png" alt="盒子模型"></p>
+<p>在一个文档中，每一个元素都被抽象成一个盒子，每一个盒子又包括四部分(从内到外):内容(content)，内填充(padding)，边框(border)，外边距(margin)。见上图，这是从二维的角度分析，来张三维立体图：😜</p>
+<p><img src="http://7xsssj.com2.z0.glb.qiniucdn.com/2081525038-56ea01986c0f9_articlex%20%281%29.jpeg" alt="网上找的图片"></p>
+<p>此图很形象的解释了CSS盒子的构成：</p>
+<ol>
+<li>content box：立体盒子的核心</li>
+<li>padding box：内边距区域padding area 延伸到包围padding的边框。如果内容区域content area设置了背景、颜色或者图片，这些样式将会延伸到padding上(当然我们可以通过background-clip设置作用区域)</li>
+<li>border box：由border和4条border edge组成。若border宽度设置为0，则border edge与padding edage重叠；</li>
+<li>margin box：由margin和4条margin edge组成。若margin宽度设置为0，则margin edge与border edage重叠。</li>
+</ol>
+<p>😨看起来很复杂的样子…</p>
+<p>拿PS图层的概念更好理解这块，最上面的就是content box往下一次是padding box,border box,margin box。</p>
+<p>那么盒子模型一般分为两种：</p>
+<h4 id="IE盒子模型"><a href="#IE盒子模型" class="headerlink" title="IE盒子模型"></a>IE盒子模型</h4><p>所谓IE盒子模型，就是之前IE浏览器实现的一种怪异的盒子模型，怎么怪异呢？当我们这样设置的时候:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  	<span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>理论上我们想要设置的就是content box的宽高嘛，但是IE在解析的时候会按照这个规则解析：</p>
+<blockquote>
+<p>width = content-width + padding-width + border-width<br>height = content-height + padding-height + border-height</p>
+</blockquote>
+<p>这就导致了这种尴尬的境地:<a href="https://jsfiddle.net/Damonare/f7vh400t/" target="_blank" rel="external">下面无内容的话直接戳这里</a>😓</p>
+<script async src="https://jsfiddle.net/Damonare/f7vh400t/embed/html,css,result//"></script>
+
+<h4 id="标准盒子模型"><a href="#标准盒子模型" class="headerlink" title="标准盒子模型"></a>标准盒子模型</h4><p>标准就比较符合常人的思维了，设置的width,height就是content的width和height</p>
+<p>规则就是:</p>
+<blockquote>
+<p>width = content-width</p>
+<p>height = content-height </p>
+</blockquote>
+<p>实例如下：<a href="https://jsfiddle.net/Damonare/a6oogyyz" target="_blank" rel="external">无内容戳这</a>😓</p>
+<script async src="https://jsfiddle.net/Damonare/a6oogyyz/embed/html,css,result/"></script>
+
+<p>可能秉着宽大为怀的准则，CSS3加了个box-sizing属性，变相承认了这两种盒子都对(好吧，可能一个人有一个人的看法吧)，不过box-sizing默认属性就是content-box，即标准盒子模式，IE盒子模型呢，是属性border-box。刚刚查MDN发现还有一个属性padding-box(width=content-width+padding-width)，不过并没有浏览器实现它(真可怜)，并无卵用🤣</p>
+<h3 id="行内元素的思考"><a href="#行内元素的思考" class="headerlink" title="行内元素的思考"></a>行内元素的思考</h3><p>刚刚说的是以块级元素为例说的，那么行内元素呢？好吧，其实你知道，行内盒是没法设置width和height的，那么之前我就有了这样的思维定势：行内盒没有padding，margin，然后发现，哦！行内盒是有padding-left,padding-right,margin-left,margin-right的！WOC!，然后又发现，行内盒是实际上身怀八甲…😷</p>
+<p><a href="https://jsfiddle.net/Damonare/826gyrrh" target="_blank" rel="external">戳这里</a></p>
+<script async src="https://jsfiddle.net/Damonare/826gyrrh/embed/html,css,result/"></script>
+
+<p>行内盒子的高由font-size决定的；<br>行内盒子的宽等于其子行级盒子的外宽度(margin+border+padding+content width)之和。</p>
+<p>是有padding-top和padding-bottom,margin-left,margin-bottom的但并不占据空间…这就符合盒子模型了嘛，既都是盒子，自然应该是一样的。行内盒的margin-top, margin-bottom不占空间，由此联想到了另一个问题——😑</p>
+<h3 id="外边距合并"><a href="#外边距合并" class="headerlink" title="外边距合并"></a>外边距合并</h3><p>所谓外边距合并呢，就是margin合并嘛，看下MDN的定义：</p>
+<blockquote>
+<p> 块的顶部外边距和底部外边距有时被组合(折叠)为单个外边距，其大小是组合到其中的最大外边距，这种行为称为<strong>外边距合并</strong>。</p>
+</blockquote>
+<p>😱注意只是上下，没有说左右。而且是针对块级元素说的。</p>
+<p>外边距合并有这几种情况：</p>
+<h4 id="相邻兄弟元素"><a href="#相邻兄弟元素" class="headerlink" title="相邻兄弟元素"></a>相邻兄弟元素</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//HTML</div><div class="line">&lt;div class="up"&gt;我在上面&lt;/div&gt;</div><div class="line">&lt;div class="down"&gt;我在下面&lt;/div&gt;</div><div class="line">//CSS</div><div class="line">.up &#123;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">  border: 1px solid blue;</div><div class="line">  margin: 100px;</div><div class="line">&#125;</div><div class="line">.down &#123;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">  border: 1px solid red;</div><div class="line">  margin: 100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们感性上觉得上下两个元素应该是相差200px距离，然而并不是。</p>
+<h4 id="父子元素"><a href="#父子元素" class="headerlink" title="父子元素"></a>父子元素</h4><p>如果块级父元素中，不存在上边框、上内补、inline content、清除浮动这四条属性（对于上边框和上内补，也可以说，当上边距及上内补宽度为0时），那么这个块级元素和其第一个子元素的上边距就可以说”挨到了一起“。此时这个块级父元素和其第一个子元素就会发生 上外边距合并 现象，换句话说，此时这个父元素对外展现出来的外边距将直接变成这个父元素和其第一个子元素的margin-top的较大者。😊</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//HTML</div><div class="line">&lt;div class="parent"&gt;</div><div class="line">  &lt;div class="child"&gt;我是儿子&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">//CSS</div><div class="line">.parent &#123;</div><div class="line">  width: 100px;</div><div class="line">  height: 200px;</div><div class="line">  background: red;</div><div class="line">  margin-left: 100px;</div><div class="line">&#125;</div><div class="line">.child &#123;</div><div class="line">  width: 50px;</div><div class="line">  height: 50px;</div><div class="line">  margin-top: 100px;</div><div class="line">  border: 1px solid blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面代码感性上可能会觉得，父元素没有上边距，然而并不是。</p>
+<p>MDN给了三种情况，但第三种空块元素，我觉得可以包含在这两种之内，就没举🌰</p>
+<p>那么这种外边距合并的情况咋解决呢？看下一个概念…</p>
+<h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><p>😯定义：</p>
+<blockquote>
+<p>一个<strong>块格式化上下文（block formatting context）</strong> 是Web页面的可视化CSS渲染的一部分。它是块盒子的布局发生，浮动互相交互的区域。</p>
+</blockquote>
+<p>那么触发BFC的情况有哪些呢？</p>
+<p>看MDN：</p>
+<p>😱一个<strong>块格式化上下文</strong>由以下之一创建：</p>
+<ul>
+<li>根元素或其它包含它的元素</li>
+<li>浮动 (元素的<code>`[</code>float<code>](https://developer.mozilla.org/zh-CN/docs/Web/CSS/float) 不是</code>none`)</li>
+<li>绝对定位的元素 (元素具有 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/position" target="_blank" rel="external"><code>position</code></a> 为 <code>absolute</code> 或 <code>fixed</code>)</li>
+<li>内联块 inline-blocks (元素具有 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external"><code>display</code></a><code>: inline-block</code>)</li>
+<li>表格单元格 (元素具有 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external"><code>display</code></a><code>: table-cell，HTML表格单元格默认属性</code>)</li>
+<li>表格标题 (元素具有 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external"><code>display</code></a><code>: table-caption</code>, HTML表格标题默认属性)</li>
+<li>块元素具有<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow" target="_blank" rel="external"><code>overflow</code></a> ，且值不是 <code>visible</code></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external"><code>display</code></a><code>: flow-root</code></li>
+</ul>
+<p><strong>注意，根元素就创建了一个BFC</strong></p>
+<p>那么BFC又有一下特性：</p>
+<ol>
+<li>内部块级盒子垂直方向排列</li>
+<li>盒子垂直距离由margin决定，同一个BFC的盒子外边距会合并</li>
+<li>BFC就是一个隔离的容器，内部子元素不会影响到外部元素</li>
+<li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
+<li>BFC的区域不会与float box叠加。</li>
+</ol>
+<p>好，上面外边距合并的两种情况，利用BFC如何解决呢？<a href="https://jsfiddle.net/Damonare/ejntapom/" target="_blank" rel="external">下面没内容的话请戳这里</a>😓</p>
+<script async src="https://jsfiddle.net/Damonare/ejntapom/embed/html,css,result/"></script>
+
+<p>关于第四五条特性，请看上面的示例。</p>
+<p><strong>BFC用途：</strong></p>
+<ol>
+<li>清除浮动;</li>
+<li>解决外边距合并;</li>
+<li>布局;</li>
+</ol>
+<h4 id="块级盒子的概念"><a href="#块级盒子的概念" class="headerlink" title="块级盒子的概念"></a>块级盒子的概念</h4><p>关于这块有好多个概念…首先是块级元素和块级盒子：<strong>每个块级元素至少生成一个块级盒</strong>，称为主要块级盒。一些元素，比如li，生成额外的盒来放置项目符号，不过多数元素只生成一个主要块级盒。 </p>
+<p>主要块级盒将包含后代元素生成的盒以及生成的内容。它也是可以使用(<a href="https://developer.mozilla.org/en-US/docs/CSS/Positioning_scheme" target="_blank" rel="external">定位方案 positioning scheme</a>)的盒。</p>
+<p>块容器盒(<em>block container box)</em> 只包含其它块级盒，或生成一个行内格式化上下文(inline formatting context)</p>
+<p><strong>注意块级盒与块容器盒概念不同。 前者描述元素跟它的父元素与兄弟元素之间的表现，后者描述元素跟它的后代之间的影响。</strong></p>
+<p><strong>同时是块容器盒的块级盒称为块盒(block boxes)。</strong>（注意块盒和块级盒并不是全等）</p>
+<p>还有一个特殊的块盒——匿名块盒</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Some inline text <span class="tag">&lt;<span class="name">p</span>&gt;</span>followed by a paragraph<span class="tag">&lt;/<span class="name">p</span>&gt;</span> followed by more inline text.<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">//将创建两个匿名块盒，一个包含 <span class="tag">&lt;<span class="name">p</span>&gt;</span> 前面的文本 (Some inline text)， 一个包含 <span class="tag">&lt;<span class="name">p</span>&gt;</span> 后面的文本(followed by more inline text),</div></pre></td></tr></table></figure>
+<p>块级元素触发BFC，行内元素会触发啥么❓</p>
+<h3 id="IFC"><a href="#IFC" class="headerlink" title="IFC"></a>IFC</h3><p>IFC 只有在一个块级元素中<strong>仅包含</strong>内联级别元素时才会生成。</p>
+<h4 id="行内盒子的概念"><a href="#行内盒子的概念" class="headerlink" title="行内盒子的概念"></a>行内盒子的概念</h4><p>当元素的 CSS 属性 display的计算值为 <code>inline</code>, <code>inline-block</code> 或 <code>inline-table</code>时，称它为行内级元素。视觉上它将内容与其它行内级元素排列为多行。典型的如段落内容，有文本(可以有多种格式譬如着重)，或图片，都是行内级元素。</p>
+<p>行内级元素生成行内级盒(<em>inline-level boxes)</em>，参与行内格式化上下文(inline formatting context)。同时参与生成行内格式化上下文的行内级盒称为行内盒(<em>Inline boxes)。</em>所有display:inline 的非替换元素生成的盒是行内盒。而不参与生成行内格式化上下文的行内级盒称为原子行内级盒(*atomic inline-level boxes)。这些盒由可替换行内元素，或 display 值为 <code>inline-block</code> 或 <code>inline-table</code>的元素生成，不能拆分成多个盒。</p>
+<p>另外CSS3还新增了两种格式上下文：GFC（Grid Formatting Contexts）栅格格式化上下文和FFC（Flex Formatting Contexts）Flex格式化上下文，即分别在元素display为grid和flex、 inline-flex 时触发</p>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h4 id="常规流"><a href="#常规流" class="headerlink" title="常规流"></a>常规流</h4><p>分清了这些盒子的概念，具体怎么排列呢？以下来自MDN：</p>
+<p>在常规流中，盒一个接着一个排列。在块级格式化上下文里面， 它们竖着排列；在行内格式化上下文里面， 它们横着排列。 当 position为 <code>static</code> 或 <code>relative</code>，并且 float 为 <code>none</code> 时会触发常规流。</p>
+<h4 id="浮动-Floats"><a href="#浮动-Floats" class="headerlink" title="浮动(Floats)"></a>浮动(Floats)</h4><p>对于浮动定位方案(<em>float positioning scheme)</em>, 盒称为浮动盒(<em>floating boxes)</em>。它位于当前行的开头或末尾。这导致常规流环绕在它的周边，除非设置 clear 属性。</p>
+<p>要使用浮动定位方案，元素 CSS 属性position 为 <code>static</code> 或 <code>relative</code>，然后<code>float</code>不为<code>none</code> 。如果 <code>float</code>设为 <code>left</code>, 浮动由行盒的开头开始定位。如果设为 <code>right</code>, 浮动定位在行盒的末尾。</p>
+<h4 id="绝对定位-Absolute-positioning"><a href="#绝对定位-Absolute-positioning" class="headerlink" title="绝对定位(Absolute positioning)"></a>绝对定位(Absolute positioning)</h4><p>对于绝对定位方案， 盒从常规流中被移除，不影响常规流的布局。 它的定位相对于它的包含块，相关CSS属性：top, bottom, left及right 。</p>
+<p>如果元素的属性position为 <code>absolute</code> 或 <code>fixed， 它是绝对定位元素。</code></p>
+<p>固定定位元素(<em>fixed positioned element)</em>也是绝对定位元素，它的包含块是视口。当页面滚动时它固定在屏幕上，因为视口没有移动。</p>
+<p>以上。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="external">外边距塌陷</a></p>
+<p><a href="https://www.w3.org/TR/CSS21/box.html#box-dimensions" target="_blank" rel="external">Box model</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="external">Block formatting context</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Visual_formatting_model" target="_blank" rel="external">视觉格式化模型</a></p>
 
       
       
