@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: JavaScript | Damonare的个人博客</title>
+  <title>Javascript填坑史 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果时间可以停止，希望它就停止在现在。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Damonare的个人博客">
-<meta property="og:url" content="http://damonare.github.io/tags/JavaScript/index.html">
+  <meta name="description" content="前言总括:详解JavaScript中的this的一篇总结，不懂this这个难点，很多时候会造成一些困扰，写出一些bug不知如何收场，所以一起来写bug吧  原文地址：JavaScript中的this  知乎专栏: 前端进击者  博主博客地址：Damonare的个人博客   人生在世须尽欢，莫使金樽空对月">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript填坑史">
+<meta property="og:url" content="http://damonare.github.io/2017/07/22/Javascript中的this/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="如果时间可以停止，希望它就停止在现在。">
+<meta property="og:description" content="前言总括:详解JavaScript中的this的一篇总结，不懂this这个难点，很多时候会造成一些困扰，写出一些bug不知如何收场，所以一起来写bug吧  原文地址：JavaScript中的this  知乎专栏: 前端进击者  博主博客地址：Damonare的个人博客   人生在世须尽欢，莫使金樽空对月">
+<meta property="og:updated_time" content="2017-07-22T09:13:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Damonare的个人博客">
-<meta name="twitter:description" content="如果时间可以停止，希望它就停止在现在。">
+<meta name="twitter:title" content="Javascript填坑史">
+<meta name="twitter:description" content="前言总括:详解JavaScript中的this的一篇总结，不懂this这个难点，很多时候会造成一些困扰，写出一些bug不知如何收场，所以一起来写bug吧  原文地址：JavaScript中的this  知乎专栏: 前端进击者  博主博客地址：Damonare的个人博客   人生在世须尽欢，莫使金樽空对月">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -242,246 +244,151 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Javascript中的this" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/22/Javascript中的this/" class="archive-article-date">
-  	<time datetime="2017-07-22T07:08:09.000Z" itemprop="datePublished">Jul 22</time>
+    <div class="article-meta">
+      <a href="/2017/07/22/Javascript中的this/" class="article-date">
+  	<time datetime="2017-07-22T07:08:09.000Z" itemprop="datePublished">2017-07-22</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/22/Javascript中的this/">Javascript填坑史</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript填坑史
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 	</div>
 
-          
+        
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/learn/">学习</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  热度： <span id="busuanzi_value_page_pv"></span>℃</span>
   </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/24/我的前端进阶之路/" class="archive-article-date">
-  	<time datetime="2017-04-24T12:57:34.000Z" itemprop="datePublished">Apr 24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/24/我的前端进阶之路/">我的前端进阶之路</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/learn/">学习</a>
-	</div>
-
-
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/08/理解Node.js的事件轮询/" class="archive-article-date">
-  	<time datetime="2017-02-08T14:54:02.000Z" itemprop="datePublished">Feb 8</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/08/理解Node.js的事件轮询/">理解Node.js的事件轮询</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/learn/">学习</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/08/理解Node.js(译文)/" class="archive-article-date">
-  	<time datetime="2017-02-08T11:58:58.000Z" itemprop="datePublished">Feb 8</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/08/理解Node.js(译文)/">理解Node.js(译文)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译文/">译文</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/learn/">学习</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/21/Javascript闭包入门(译文)/" class="archive-article-date">
-  	<time datetime="2017-01-21T10:01:30.000Z" itemprop="datePublished">Jan 21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/21/Javascript闭包入门(译文)/">Javascript闭包入门(译文)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译文/">译文</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/learn/">学习</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+      </div>
       
-        </div></section>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          <!-- Table of Contents -->
+      
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">1.1.</span> <span class="toc-text">正文</span></a></li></ol></li></ol>
+        </div>
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>总括:详解JavaScript中的this的一篇总结，不懂this这个难点，很多时候会造成一些困扰，写出一些bug不知如何收场，所以一起来写bug吧</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/09/05/javascript%E5%A1%AB%E5%9D%91%E5%8F%B2/#more">JavaScript中的this</a></p>
+</li>
+<li><p>知乎专栏: <a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生在世须尽欢，莫使金樽空对月</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>this这个东西实在是个坑货，但要是真d</p>
+
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
+
+  
+    </div>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/23/Javascript填坑史/" class="archive-article-date">
-  	<time datetime="2016-12-23T09:38:48.000Z" itemprop="datePublished">Dec 23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/23/Javascript填坑史/">Javascript填坑史</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/learn/">学习</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
   </div>
-</article>
+
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/07/08/CSS盒子模型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从CSS盒子模型说起</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/JavaScript/page/2/">2</a><a class="page-number" href="/tags/JavaScript/page/3/">3</a><a class="extend next" rel="next" href="/tags/JavaScript/page/2/">Next &raquo;</a>
-    </nav>
-  
+
+</article>
+
+
+
+
+<div class="support-author">
+	<p>如果您觉得我的文章对您有用，请随意打赏。</p>
+	<p>您的支持将鼓励我继续创作！</p>
+	<button id='alipay'>￥支付宝支持</button>
+	<button id='wechat'>￥微信支持</button>
+	<p>
+		<img class="qrcode" src="http://damonare.cn/2.jpg" alt="">
+	</p>
+	<script type="text/javascript">
+	document.querySelector('#alipay').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','http://damonare.cn/2.jpg')
+	})
+	document.querySelector('#wechat').addEventListener('click',function(){
+	    document.querySelector('.qrcode').style.display='block';
+	    document.querySelector('.qrcode').setAttribute('src','http://damonare.cn/3.jpg')
+	})
+	</script>
+</div>
+<div class="ds-share" data-thread-key="Javascript中的this" data-title="Javascript填坑史" data-images="http://damonare.github.io/2017/07/22/Javascript中的this/" data-content="Javascript填坑史" data-url="https://damonare.github.io">
+	<div class="ds-share-inline">
+	 <ul  class="ds-share-icons-32" style='padding-left:30px;padding-bottom:20px;'>
+
+	   <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);"></a></li>
+	   <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+	   <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+	   <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+	   <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+
+	 </ul>
+	 <div class="ds-share-icons-more">
+	 </div>
+   </div>
+</div>
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+var cloudTieConfig = {
+  url: document.location.href,
+  sourceId: "",
+  productKey: "2d824758cd8349eb82d9e5577480b2df",
+  target: "cloud-tie-wrapper"
+};
+var yunManualLoad = true;
+Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+</script>
+
+
+
 
 </div>
       <footer id="footer">
@@ -599,9 +506,9 @@
         mathjax: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         open_in_new: false
     }
@@ -661,31 +568,6 @@ $(function(){
 <script src="/js/app.js"></script>
 <!-- stats.js -->
 <script src="/js/lib/stats.js"></script>
-<!--open/close  -->
-<section class="main">
-	<div class="switch demo1">
-		<input type="checkbox">
-		<label></label>
-	</div>
-</section>
-
-<script>
-    $(function(){
-        $('.main').delegate('.switch','click',function(){
-            if($(this).find('input').is(":checked")){
-                $('#particles-js').css('bottom','0');
-            }else{
-                $('#particles-js').css('bottom','100%');
-            }
-        })
-    })
-</script>
-
-  </div>
-
-</body>
-</html>
-s"></script>
 <!--open/close  -->
 <section class="main">
 	<div class="switch demo1">

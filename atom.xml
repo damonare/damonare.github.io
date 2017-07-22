@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-07-12T05:47:58.000Z</updated>
+  <updated>2017-07-22T09:13:52.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -16,11 +16,54 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Javascript填坑史</title>
+    <link href="http://damonare.github.io/2017/07/22/Javascript%E4%B8%AD%E7%9A%84this/"/>
+    <id>http://damonare.github.io/2017/07/22/Javascript中的this/</id>
+    <published>2017-07-22T07:08:09.000Z</published>
+    <updated>2017-07-22T09:13:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>总括:详解JavaScript中的this的一篇总结，不懂this这个难点，很多时候会造成一些困扰，写出一些bug不知如何收场，所以一起来写bug吧</p>
+<ul>
+<li><p>原文地址：<a href="http://damonare.github.io/2016/09/05/javascript%E5%A1%AB%E5%9D%91%E5%8F%B2/#more">JavaScript中的this</a></p>
+</li>
+<li><p>知乎专栏: <a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>人生在世须尽欢，莫使金樽空对月</strong></p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>this这个东西实在是个坑货，但要是真d</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;总括:详解JavaScript中的this的一篇总结，不懂this这个难点，很多时候会造成一些困扰，写出一些bug不知如何收场，所以一起来写bug吧&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/09/05/javascript%E5%A1%AB%E5%9D%91%E5%8F%B2/#more&quot;&gt;JavaScript中的this&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏: &lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端进击者&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;人生在世须尽欢，莫使金樽空对月&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
+    
+    
+      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从CSS盒子模型说起</title>
     <link href="http://damonare.github.io/2017/07/08/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
     <id>http://damonare.github.io/2017/07/08/CSS盒子模型/</id>
     <published>2017-07-08T11:05:27.000Z</published>
-    <updated>2017-07-12T05:47:58.000Z</updated>
+    <updated>2017-07-12T05:51:06.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结</p>
 <ul>
@@ -70,7 +113,7 @@
 
 <p>可能秉着宽大为怀的准则，CSS3加了个box-sizing属性，变相承认了这两种盒子都对(好吧，可能一个人有一个人的看法吧)，不过box-sizing默认属性就是content-box，即标准盒子模式，IE盒子模型呢，是属性border-box。刚刚查MDN发现还有一个属性padding-box(width=content-width+padding-width)，不过并没有浏览器实现它(真可怜)，并无卵用🤣</p>
 <h3 id="行内元素的思考"><a href="#行内元素的思考" class="headerlink" title="行内元素的思考"></a>行内元素的思考</h3><p>刚刚说的是以块级元素为例说的，那么行内元素呢？好吧，其实你知道，行内盒是没法设置width和height的，那么之前我就有了这样的思维定势：行内盒没有padding，margin，然后发现，哦！行内盒是有padding-left,padding-right,margin-left,margin-right的！WOC!，然后又发现，行内盒是实际上身怀八甲…😷</p>
-<p><a href="https://jsfiddle.net/Damonare/826gyrrh" target="_blank" rel="external">戳这里</a></p>
+<p><a href="https://jsfiddle.net/Damonare/826gyrrh" target="_blank" rel="external">以下无内容戳这里</a></p>
 <script async src="https://jsfiddle.net/Damonare/826gyrrh/embed/html,css,result/"></script>
 
 <p>行内盒子的高由font-size决定的；<br>行内盒子的宽等于其子行级盒子的外宽度(margin+border+padding+content width)之和。</p>
@@ -1526,9 +1569,9 @@
     <link href="http://damonare.github.io/2016/12/23/Javascript%E5%A1%AB%E5%9D%91%E5%8F%B2/"/>
     <id>http://damonare.github.io/2016/12/23/Javascript填坑史/</id>
     <published>2016-12-23T09:38:48.000Z</published>
-    <updated>2016-12-23T09:38:48.000Z</updated>
+    <updated>2017-07-22T08:28:16.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 这是笔者平时积累的一些觉得比较有意思或是比较有难度的JavaScript题目理解和心得，会保持长期更新。</p>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>总括：</strong> 这是笔者平时积累的一些觉得比较有意思或是比较有难度的JavaScript题目理解和心得，会保持长期更新。</p>
 <ul>
 <li><p>原文地址：<a href="http://damonare.github.io/2016/09/05/javascript%E5%A1%AB%E5%9D%91%E5%8F%B2/#more">Javascript填坑史</a></p>
 </li>
@@ -1539,12 +1582,12 @@
 </ul>
 <p><strong>人生莫作妇人身，百年苦乐由他人。</strong></p>
 <a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-setTimeout和setInterval深入理解"><a href="#1-setTimeout和setInterval深入理解" class="headerlink" title="1.setTimeout和setInterval深入理解"></a>1.setTimeout和setInterval深入理解</h3><p>在<a href="https://segmentfault.com/a/1190000004034739" target="_blank" rel="external">setTimeout和setInterval深入理解</a>这篇博客里笔者曾做过总结，我们知道JavaScript试单线程的产物，两个函数就是利用了插入代码的方式实现了伪异步，和AJAX的原理实际上是一样的。下面来看下这个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"1"</span>);</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"3"</span>)</div><div class="line">	&#125;,<span class="number">0</span>);</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"2"</span>);</div></pre></td></tr></table></figure>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="1-setTimeout和setInterval深入理解"><a href="#1-setTimeout和setInterval深入理解" class="headerlink" title="1.setTimeout和setInterval深入理解"></a>1.setTimeout和setInterval深入理解</h2><p>在<a href="https://segmentfault.com/a/1190000004034739" target="_blank" rel="external">setTimeout和setInterval深入理解</a>这篇博客里笔者曾做过总结，我们知道JavaScript试单线程的产物，两个函数就是利用了插入代码的方式实现了伪异步，和AJAX的原理实际上是一样的。下面来看下这个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"1"</span>);</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"3"</span>)</div><div class="line">    &#125;,<span class="number">0</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"2"</span>);</div></pre></td></tr></table></figure>
 <p>结果：控制台依次输出1,2,3;</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'can you see me?'</span>);&#125;,<span class="number">1000</span>);</div><div class="line"><span class="keyword">while</span>(<span class="literal">true</span>) &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>你觉得这段代码的执行结果是什么呢？答案是，alert永远不会出现。<br>&nbsp;&nbsp;&nbsp;&nbsp;这是为什么呢？因为，while这段代码没有执行完，所以插入在后面的代码便永远不会执行。<br>综上所述，其实JS终归是单线程产物。无论如何“异步”都不可能突破单线程这个障碍。所以许多的“异步调用”（包括Ajax）事实上也只是“伪异步”而已。只要理解了这么一个概念，也许理解setTimeout和setInterval也就不难了。</p>
-<h3 id="2-闭包初探小题"><a href="#2-闭包初探小题" class="headerlink" title="2. 闭包初探小题"></a>2. 闭包初探小题</h3><p>在<a href="https://segmentfault.com/a/1190000004093058" target="_blank" rel="external">JavaScript闭包初探</a>这篇博客里面进行了初步探讨，有几个小题个人觉得还是比较有意思的:</p>
+<p>你觉得这段代码的执行结果是什么呢？答案是，alert永远不会出现。 这是为什么呢？因为，while这段代码没有执行完，所以插入在后面的代码便永远不会执行。 综上所述，其实JS终归是单线程产物。无论如何”异步”都不可能突破单线程这个障碍。所以许多的”异步调用”（包括Ajax）事实上也只是”伪异步”而已。只要理解了这么一个概念，也许理解setTimeout和setInterval也就不难了。</p>
+<h2 id="2-闭包初探小题"><a href="#2-闭包初探小题" class="headerlink" title="2. 闭包初探小题"></a>2. 闭包初探小题</h2><p>在<a href="https://segmentfault.com/a/1190000004093058" target="_blank" rel="external">JavaScript闭包初探</a>这篇博客里面进行了初步探讨，有几个小题个人觉得还是比较有意思的:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">　　<span class="keyword">var</span> name = <span class="string">"The Window"</span>;</div><div class="line">　　<span class="keyword">var</span> object = &#123;</div><div class="line">　　　　<span class="attr">name</span> : <span class="string">"My Object"</span>,</div><div class="line">　　　　<span class="attr">getNameFunc</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　　　<span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">　　　　　　&#125;;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;;</div><div class="line">　　alert(object.getNameFunc()());<span class="comment">//The Window</span></div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">　  <span class="keyword">var</span> name = <span class="string">"The Window"</span>;</div><div class="line">　　<span class="keyword">var</span> object = &#123;</div><div class="line">　　　　<span class="attr">name</span> : <span class="string">"My Object"</span>,</div><div class="line">　　　　<span class="attr">getNameFunc</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　<span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　　　<span class="keyword">return</span> that.name;</div><div class="line">　　　　　　&#125;;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;;　　alert(object.getNameFunc()());<span class="comment">//My Object</span></div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">n,o</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(o)</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">fun</span>:<span class="function"><span class="keyword">function</span>(<span class="params">m</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> fun(m,n);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = fun(<span class="number">0</span>);  a.fun(<span class="number">1</span>);  a.fun(<span class="number">2</span>);  a.fun(<span class="number">3</span>);<span class="comment">//undefined,?,?,?</span></div><div class="line"><span class="keyword">var</span> b = fun(<span class="number">0</span>).fun(<span class="number">1</span>).fun(<span class="number">2</span>).fun(<span class="number">3</span>);<span class="comment">//undefined,?,?,?</span></div><div class="line"><span class="keyword">var</span> c = fun(<span class="number">0</span>).fun(<span class="number">1</span>);  c.fun(<span class="number">2</span>);  c.fun(<span class="number">3</span>);<span class="comment">//undefined,?,?,?</span></div></pre></td></tr></table></figure>
@@ -1553,50 +1596,49 @@
 </blockquote>
 <p><strong>这是一道非常典型的JS闭包问题。其中嵌套了三层fun函数，搞清楚每层fun的函数是那个fun函数尤为重要。</strong></p>
 <blockquote>
-<p>//答案：<br>//a: undefined,0,0,0<br>//b: undefined,0,1,2<br>//c: undefined,0,1,1</p>
+<p>//答案： //a: undefined,0,0,0 //b: undefined,0,1,2 //c: undefined,0,1,1</p>
 </blockquote>
-<h3 id="3-Array-map-Number-parseInt"><a href="#3-Array-map-Number-parseInt" class="headerlink" title="3. Array/map,Number/parseInt"></a>3. Array/map,Number/parseInt</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>].map(<span class="built_in">parseInt</span>)<span class="comment">//求输出结果</span></div></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;首先, map接受两个参数, 一个回调函数 callback, 一个回调函数的this值<br>其中回调函数接受三个参数 currentValue, index, arrary;而题目中, map只传入了回调函数–parseInt.其次, parseInt 只接受两个两个参数 string, radix(基数). radix的合法区间是2-36. 0或是默认是10.所以本题即问</p>
+<h2 id="3-Array-map-Number-parseInt"><a href="#3-Array-map-Number-parseInt" class="headerlink" title="3. Array/map,Number/parseInt"></a>3. Array/map,Number/parseInt</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>].map(<span class="built_in">parseInt</span>)<span class="comment">//求输出结果</span></div></pre></td></tr></table></figure>
+<p>首先, map接受两个参数, 一个回调函数 callback, 一个回调函数的this值 其中回调函数接受三个参数 currentValue, index, arrary;而题目中, map只传入了回调函数–parseInt.其次, parseInt 只接受两个两个参数 string, radix(基数). radix的合法区间是2-36. 0或是默认是10.所以本题即问</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseInt</span>(<span class="string">'1'</span>, <span class="number">0</span>);</div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'2'</span>, <span class="number">1</span>);</div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'3'</span>, <span class="number">2</span>);</div></pre></td></tr></table></figure>
 <p>后两者参数不合法.所以答案是：[1, NaN, NaN]；</p>
-<h3 id="4-nbsp-0-1-0-2-0-3和9999999999999999-10000000000000000"><a href="#4-nbsp-0-1-0-2-0-3和9999999999999999-10000000000000000" class="headerlink" title="4.&nbsp;0.1+0.2!=0.3和9999999999999999 == 10000000000000000;"></a>4.&nbsp;0.1+0.2!=0.3和9999999999999999 == 10000000000000000;</h3><blockquote>
-<p>根据语言规范，JavaScript 采用“IEEE 754 标准定义的双精度64位格式”（”double-precision 64-bit format IEEE 754 values”）表示数字。据此我们能得到一个有趣的结论，和其他编程语言（如 C 和 Java）不同，JavaScript 不区分整数值和浮点数值，所有数字在 JavaScript 中均用浮点数值表示，所以在进行数字运算的时候要特别注意。<a href="http://demon.tw/copy-paste/javascript-precision.html" target="_blank" rel="external">精度丢失</a>看看下面的例子:</p>
+<h2 id="4-0-1-0-2-0-3和9999999999999999-10000000000000000"><a href="#4-0-1-0-2-0-3和9999999999999999-10000000000000000" class="headerlink" title="4. 0.1+0.2!=0.3和9999999999999999 == 10000000000000000;"></a>4. 0.1+0.2!=0.3和9999999999999999 == 10000000000000000;</h2><blockquote>
+<p>根据语言规范，JavaScript 采用”IEEE 754 标准定义的双精度64位格式”（”double-precision 64-bit format IEEE 754 values”）表示数字。据此我们能得到一个有趣的结论，和其他编程语言（如 C 和 Java）不同，JavaScript 不区分整数值和浮点数值，所有数字在 JavaScript 中均用浮点数值表示，所以在进行数字运算的时候要特别注意。<a href="http://demon.tw/copy-paste/javascript-precision.html" target="_blank" rel="external">精度丢失</a>看看下面的例子:</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">0.1</span> + <span class="number">0.2</span> = <span class="number">0.30000000000000004</span></div></pre></td></tr></table></figure>
 <blockquote>
-<p>在具体实现时，整数值通常被视为32位整型变量，在个别实现（如某些浏览器）中也以32位整型变量的形式进行存储，直到它被用于执行某些32位整型不支持的操作，这是为了便于进行位操作。大整数精度在2的53次方以内是不会丢失的，也就是说浏览器能精确计算Math.pow(2,53)以内所有的数，小数精度，当十进制小数的二进制表示的有限数字不超过 52 位时，在 JavaScript 里也是可以精确存储的。<br>解决办法：Math.round( (.1+.2)*100)/100;</p>
+<p>在具体实现时，整数值通常被视为32位整型变量，在个别实现（如某些浏览器）中也以32位整型变量的形式进行存储，直到它被用于执行某些32位整型不支持的操作，这是为了便于进行位操作。大整数精度在2的53次方以内是不会丢失的，也就是说浏览器能精确计算Math.pow(2,53)以内所有的数，小数精度，当十进制小数的二进制表示的有限数字不超过 52 位时，在 JavaScript 里也是可以精确存储的。 解决办法：Math.round( (.1+.2)*100)/100;</p>
 </blockquote>
-<h3 id="5-1-lt-2-lt-3-3-lt-2-lt-1"><a href="#5-1-lt-2-lt-3-3-lt-2-lt-1" class="headerlink" title="5. [1&lt;2&lt;3,3&lt;2&lt;1]"></a>5. [1&lt;2&lt;3,3&lt;2&lt;1]</h3><p>&nbsp;&nbsp;此题会让人误以为是2&gt;1&amp;&amp;2&lt;3,其实不是的，这个题等价于</p>
+<h2 id="5-1-lt-2-lt-3-3-lt-2-lt-1"><a href="#5-1-lt-2-lt-3-3-lt-2-lt-1" class="headerlink" title="5. [1&lt;2&lt;3,3&lt;2&lt;1]"></a>5. [1&lt;2&lt;3,3&lt;2&lt;1]</h2><p>此题会让人误以为是2&gt;1&amp;&amp;2&lt;3,其实不是的，这个题等价于</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>&lt;<span class="number">2</span>=&gt;<span class="literal">true</span>;</div><div class="line"><span class="literal">true</span>&lt;<span class="number">3</span>=&gt;<span class="number">1</span>&lt;<span class="number">3</span>=&gt;<span class="literal">true</span>;</div><div class="line"><span class="number">3</span>&lt;<span class="number">2</span>=&gt;<span class="literal">true</span>;</div><div class="line"><span class="literal">false</span>&lt;<span class="number">1</span>=&gt;<span class="number">0</span>&lt;<span class="number">1</span>=&gt;<span class="literal">true</span>;</div></pre></td></tr></table></figure>
 <p><strong>答案：[true,true]</strong> 这个题的重点是对于运算符的理解，一是javascript对于不同类型数值的比较规则，详见<a href="http://dorey.github.io/JavaScript-Equality-Table/" target="_blank" rel="external">js比较表</a>,<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank" rel="external">javascript相等性判断</a>；二是对于<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_operator" target="_blank" rel="external">比较操作符</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Assignment_Operators" target="_blank" rel="external">赋值运算符</a>的理解，即一个自左向右一个自右向左~</p>
-<h3 id="6-浏览器懵逼史（1）"><a href="#6-浏览器懵逼史（1）" class="headerlink" title="6. 浏览器懵逼史（1）"></a>6. 浏览器懵逼史（1）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">3.</span>toString;</div><div class="line"><span class="number">3.</span>.toString;</div><div class="line"><span class="number">3.</span>..toString;</div></pre></td></tr></table></figure>
-<p>这个题感觉脑洞很大啊~先说答案：error,’3’,error;<br>可如果是</p>
+<h2 id="6-浏览器懵逼史（1）"><a href="#6-浏览器懵逼史（1）" class="headerlink" title="6. 浏览器懵逼史（1）"></a>6. 浏览器懵逼史（1）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">3.</span>toString;</div><div class="line"><span class="number">3.</span>.toString;</div><div class="line"><span class="number">3.</span>..toString;</div></pre></td></tr></table></figure>
+<p>这个题感觉脑洞很大啊~先说答案：error,’3’,error; 可如果是</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">3</span>;</div><div class="line">a.toString;</div></pre></td></tr></table></figure>
-<p>却又合法了答案就是’3’;<br>为啥呢？<br>因为在JS中1.1,1.,.1都是合法数字啊！那么在解析3.toString的时候到底是这是个数字呢，还是方法调用呢？浏览器就懵逼了呗，只能抛出一个error,所以说感觉此题就是在戏耍浏览器……</p>
-<h3 id="7-声明提升"><a href="#7-声明提升" class="headerlink" title="7. 声明提升"></a>7. 声明提升</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'World!'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>) &#123;</div><div class="line">        <span class="keyword">var</span> name = <span class="string">'Jack'</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbye '</span> + name);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<p>答案是什么呢…笔者第一次做的时候傻傻的觉得是Hello,world…实则不然，正确答案是:Goodbye Jack;<br>为什么呢，声明提升…上述代码相当于下面的代码：</p>
+<p>却又合法了答案就是’3’; 为啥呢？ 因为在JS中1.1,1.,.1都是合法数字啊！那么在解析3.toString的时候到底是这是个数字呢，还是方法调用呢？浏览器就懵逼了呗，只能抛出一个error,所以说感觉此题就是在戏耍浏览器……</p>
+<h2 id="7-声明提升"><a href="#7-声明提升" class="headerlink" title="7. 声明提升"></a>7. 声明提升</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'World!'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>) &#123;</div><div class="line">        <span class="keyword">var</span> name = <span class="string">'Jack'</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbye '</span> + name);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>答案是什么呢…笔者第一次做的时候傻傻的觉得是Hello,world…实则不然，正确答案是:Goodbye Jack; 为什么呢，声明提升…上述代码相当于下面的代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'World!'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> name;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>) &#123;</div><div class="line">        name = <span class="string">'Jack'</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbye '</span> + name);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<h3 id="8-坑爹史（1）"><a href="#8-坑爹史（1）" class="headerlink" title="8. 坑爹史（1）"></a>8. 坑爹史（1）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">0</span>];</div><div class="line"><span class="keyword">if</span> ([<span class="number">0</span>]) &#123;</div><div class="line">  <span class="built_in">console</span>.log(a == <span class="literal">true</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"wut"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="8-坑爹史（1）"><a href="#8-坑爹史（1）" class="headerlink" title="8. 坑爹史（1）"></a>8. 坑爹史（1）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">0</span>];</div><div class="line"><span class="keyword">if</span> ([<span class="number">0</span>]) &#123;</div><div class="line">  <span class="built_in">console</span>.log(a == <span class="literal">true</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"wut"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>读者们你们觉得此题答案是什么呢？true?因为[0]被看做Boolean是被认为是true，理所当然的推出来[0]==true,控制台输出true…看似没错，然而并不是这样滴~[0]这个玩意儿在单独使用的时候是被认为是true的，但用作比较的时候它是false…所以正确答案是false；不信的话，F12控制台输出[0]==false；看是不是true……</p>
-<p>###9. 坑爹史（2）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> + - + + + - + <span class="number">1</span></div></pre></td></tr></table></figure>
+<h2 id="9-坑爹史（2）"><a href="#9-坑爹史（2）" class="headerlink" title="9. 坑爹史（2）"></a>9. 坑爹史（2）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> + - + + + - + <span class="number">1</span></div></pre></td></tr></table></figure>
 <p>这题应该是等同于：（倒着看）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> + <span class="function">(<span class="params">a</span>)  =&gt;</span> <span class="number">2</span></div><div class="line">a = - <span class="function">(<span class="params">b</span>) =&gt;</span> <span class="number">1</span></div><div class="line">b = + <span class="function">(<span class="params">c</span>) =&gt;</span> <span class="number">-1</span></div><div class="line">c = + <span class="function">(<span class="params">d</span>) =&gt;</span> <span class="number">-1</span></div><div class="line">d = + <span class="function">(<span class="params">e</span>) =&gt;</span> <span class="number">-1</span></div><div class="line">e = + <span class="function">(<span class="params">f</span>) =&gt;</span> <span class="number">-1</span></div><div class="line">f = - <span class="function">(<span class="params">g</span>) =&gt;</span> <span class="number">-1</span></div><div class="line">g = + <span class="number">1</span>   =&gt; <span class="number">1</span></div></pre></td></tr></table></figure>
 <p>答案是2</p>
-<h3 id="10-坑爹史（3）"><a href="#10-坑爹史（3）" class="headerlink" title="10. 坑爹史（3）"></a>10. 坑爹史（3）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sidEffecting</span>(<span class="params">ary</span>) </span>&#123;</div><div class="line">  ary[<span class="number">0</span>] = ary[<span class="number">2</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">a,b,c</span>) </span>&#123;</div><div class="line">  c = <span class="number">10</span></div><div class="line">  sidEffecting(<span class="built_in">arguments</span>);</div><div class="line">  <span class="keyword">return</span> a + b + c;</div><div class="line">&#125;</div><div class="line">bar(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</div></pre></td></tr></table></figure>
-<p>此题涉及ES6语法，实在坑的不行…<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank" rel="external">arguments</a><br>首先 The arguments object is an Array-like object corresponding to the arguments passed to a function.也就是说 arguments 是一个 object, c 就是 arguments<a href="https://segmentfault.com/a/1190000004093058" target="_blank" rel="external">2</a>, 所以对于 c 的修改就是对 arguments<a href="https://segmentfault.com/a/1190000004093058" target="_blank" rel="external">2</a> 的修改.<br>所以答案是 21.<br>然而!!!!!!<br>当函数参数涉及到 any rest parameters, any default parameters or any destructured parameters 的时候, 这个 arguments 就不在是一个 mapped arguments object 了…..请看:</p>
+<h2 id="10-坑爹史（3）"><a href="#10-坑爹史（3）" class="headerlink" title="10. 坑爹史（3）"></a>10. 坑爹史（3）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sidEffecting</span>(<span class="params">ary</span>) </span>&#123;</div><div class="line">  ary[<span class="number">0</span>] = ary[<span class="number">2</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">a,b,c</span>) </span>&#123;</div><div class="line">  c = <span class="number">10</span></div><div class="line">  sidEffecting(<span class="built_in">arguments</span>);</div><div class="line">  <span class="keyword">return</span> a + b + c;</div><div class="line">&#125;</div><div class="line">bar(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<p>此题涉及ES6语法，实在坑的不行…<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank" rel="external">arguments</a> 首先 The arguments object is an Array-like object corresponding to the arguments passed to a function.也就是说 arguments 是一个 object, c 就是 arguments<a href="https://segmentfault.com/a/1190000004093058" target="_blank" rel="external">2</a>, 所以对于 c 的修改就是对 arguments<a href="https://segmentfault.com/a/1190000004093058" target="_blank" rel="external">2</a> 的修改. 所以答案是 21. 然而!!!!!! 当函数参数涉及到 any rest parameters, any default parameters or any destructured parameters 的时候, 这个 arguments 就不在是一个 mapped arguments object 了…..请看:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sidEffecting</span>(<span class="params">ary</span>) </span>&#123;</div><div class="line">  ary[<span class="number">0</span>] = ary[<span class="number">2</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">a,b,c=<span class="number">3</span></span>) </span>&#123;</div><div class="line">  c = <span class="number">10</span></div><div class="line">  sidEffecting(<span class="built_in">arguments</span>);</div><div class="line">  <span class="keyword">return</span> a + b + c;</div><div class="line">&#125;</div><div class="line">bar(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</div></pre></td></tr></table></figure>
-<p>答案是12…<br>请读者细细体会!!</p>
-<h3 id="11-坑爹史（4）"><a href="#11-坑爹史（4）" class="headerlink" title="11. 坑爹史（4）"></a>11. 坑爹史（4）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[,,,].join(<span class="string">", "</span>)</div></pre></td></tr></table></figure>
+<p>答案是12… 请读者细细体会!!</p>
+<h2 id="11-坑爹史（4）"><a href="#11-坑爹史（4）" class="headerlink" title="11. 坑爹史（4）"></a>11. 坑爹史（4）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[,,,].join(<span class="string">", "</span>)</div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[,,,] =&gt; [<span class="literal">undefined</span> × <span class="number">3</span>]</div></pre></td></tr></table></figure>
-<p>因为javascript 在定义数组的时候允许最后一个元素后跟一个,, 所以这是个长度为三的稀疏数组(这是长度为三, 并没有 0, 1, 2三个属性哦)<br>答案: “, , “</p>
-<h3 id="12-浏览器懵逼史-2"><a href="#12-浏览器懵逼史-2" class="headerlink" title="12. 浏览器懵逼史(2)"></a>12. 浏览器懵逼史(2)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">class</span>: <span class="string">"Animal"</span>, <span class="attr">name</span>: <span class="string">'Fido'</span>&#125;;</div><div class="line">a.class</div></pre></td></tr></table></figure>
-<p>这个题比较流氓.. 因为是浏览器相关, class是个保留字(现在是个关键字了);Fuck!<br>所以答案不重要, 重要的是自己在取属性名称的时候尽量避免保留字. 如果使用的话请加引号 a[‘class’]</p>
+<p>因为javascript 在定义数组的时候允许最后一个元素后跟一个,, 所以这是个长度为三的稀疏数组(这是长度为三, 并没有 0, 1, 2三个属性哦) 答案: “, , “</p>
+<h2 id="12-浏览器懵逼史-2"><a href="#12-浏览器懵逼史-2" class="headerlink" title="12. 浏览器懵逼史(2)"></a>12. 浏览器懵逼史(2)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">class</span>: <span class="string">"Animal"</span>, <span class="attr">name</span>: <span class="string">'Fido'</span>&#125;;</div><div class="line">a.class</div></pre></td></tr></table></figure>
+<p>这个题比较流氓.. 因为是浏览器相关, class是个保留字(现在是个关键字了);Fuck! 所以答案不重要, 重要的是自己在取属性名称的时候尽量避免保留字. 如果使用的话请加引号 a[‘class’]</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 这是笔者平时积累的一些觉得比较有意思或是比较有难度的JavaScript题目理解和心得，会保持长期更新。&lt;/p&gt;
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 这是笔者平时积累的一些觉得比较有意思或是比较有难度的JavaScript题目理解和心得，会保持长期更新。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/09/05/javascript%E5%A1%AB%E5%9D%91%E5%8F%B2/#more&quot;&gt;Javascript填坑史&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -2267,9 +2309,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -2820,244 +2862,6 @@
     
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript本地存储小结</title>
-    <link href="http://damonare.github.io/2016/11/26/Javascript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/"/>
-    <id>http://damonare.github.io/2016/11/26/Javascript本地存储小结/</id>
-    <published>2016-11-26T10:06:10.000Z</published>
-    <updated>2016-11-26T10:06:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括:</strong> 详细讲述<code>Cookie</code>,<code>LocalStorge</code>,<code>SesstionStorge</code>的区别和用法。</p>
-<ul>
-<li><p>原文博客地址：<a href="http://damonare.github.io/2016/11/16/Javascript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/#more">Javascript本地存储小结</a></p>
-</li>
-<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
-</li>
-<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-</li>
-</ul>
-<p><strong>人生如画，岁月如歌。</strong></p>
-<a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-各种存储方案的简单对比"><a href="#1-各种存储方案的简单对比" class="headerlink" title="1. 各种存储方案的简单对比"></a>1. 各种存储方案的简单对比</h3><ul>
-<li>Cookies：浏览器均支持，容量为4KB</li>
-<li>UserData：仅IE支持，容量为64KB</li>
-<li>Flash：100KB，非HTML原生，需要插件支持</li>
-<li>Google Gears SQLite ：需要插件支持，容量无限制</li>
-<li>LocalStorage：HTML5，容量为5M</li>
-<li>SesstionStorage：HTML5，容量为5M</li>
-<li>globalStorage：Firefox独有的，Firefox13开始就不再支持这个方法<blockquote>
-<p>UserData仅IE支持， Google Gears SQLite需要插件，Flash已经伴随着HTML5的出现渐渐退出了历史舞台，因此今天我们的主角只有他们三个：<code>Cookie</code>,<code>LocalStorge</code>,<code>SesstionStorge</code>;</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="2-Cookie"><a href="#2-Cookie" class="headerlink" title="2. Cookie"></a>2. Cookie</h3><p>作为一个前端和Cookie打交道的次数肯定不会少了，Cookie算是比较古老的技术了<br>1993 年，网景公司雇员 Lou Montulli 为了让用户在访问某网站时，进一步提高访问速度，同时也为了进一步实现个人化网络，发明了今天广泛使用的 Cookie。</p>
-<h4 id="2-1-Cookie的特点"><a href="#2-1-Cookie的特点" class="headerlink" title="2.1 Cookie的特点"></a>2.1 Cookie的特点</h4><p><strong>我们先来看下Cookie的特点：</strong></p>
-<ul>
-<li><p>1）cookie的大小受限制，cookie大小被限制在4KB，不能接受像大文件或邮件那样的大数据。</p>
-</li>
-<li><p>2）只要有请求涉及cookie，cookie就要在服务器和浏览器之间来回传送（这解释为什么本地文件不能测试cookie）。而且cookie数据始终在同源的http请求中携带（即使不需要），这也是Cookie不能太大的重要原因。正统的cookie分发是通过扩展HTTP协议来实现的，服务器通过在HTTP的响应头中加上一行特殊的指示以提示浏览器按照指示生成相应的cookie。</p>
-</li>
-<li><p>3）用户每请求一次服务器数据，cookie则会随着这些请求发送到服务器，服务器脚本语言如PHP等能够处理cookie发送的数据，可以说是非常方便的。当然前端也是可以生成Cookie的，用js对cookie的操作相当的繁琐，浏览器只提供document.cookie这样一个对象，对cookie的赋值，获取都比较麻烦。而在PHP中，我们可以通过setcookie()来设置cookie，通过$_COOKIE这个超全局数组来获取cookie。</p>
-</li>
-</ul>
-<blockquote>
-<p>cookie的内容主要包括：名字，值，过期时间，路径和域。路径与域一起构成cookie的作用范围。若不设置过期时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就消失。这种生命期为浏览器会话期的cookie被称为会话cookie。会话cookie一般不存储在硬盘上而是保存在内存里，当然这种行为并不是规范规定的。若设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再次打开浏览器，这些cookie仍然有效直到超过设定的过期时间。存储在硬盘上的cookie可以在不同的浏览器进程间共享，比如两个IE窗口。而对于保存在内存里的cookie，不同的浏览器有不同的处理方式。</p>
-</blockquote>
-<h4 id="2-2-Session"><a href="#2-2-Session" class="headerlink" title="2.2 Session"></a>2.2 Session</h4><p>说到Cookie就不能不说Session。</p>
-<blockquote>
-<p>Session机制。session机制是一种服务器端的机制，服务器使用一种类似于散列表的结构（也可能就是使用散列表）来保存信息。当程序需要为某个客户端的请求创建一个session时，服务器首先检查这个客户端的请求里是否已包含了一个session标识（称为session id），如果已包含则说明以前已经为此客户端创建过session，服务器就按照session id把这个session检索出来使用（检索不到，会新建一个），如果客户端请求不包含session id，则为此客户端创建一个session并且生成一个与此session相关联的session id，session id的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串，这个session id将被在本次响应中返回给客户端保存。保存这个session id的方式可以采用cookie，这样在交互过程中浏览器可以自动的按照规则把这个标识发送给服务器。一般这个cookie的名字都是类似于SEEESIONID。但cookie可以被人为的禁止，则必须有其他机制以便在cookie被禁止时仍然能够把session id传递回服务器。经常被使用的一种技术叫做URL重写，就是把session id直接附加在URL路径的后面。比如：<code>http://damonare.cn?sessionid=123456</code>还有一种技术叫做表单隐藏字段。就是服务器会自动修改表单，添加一个隐藏字段，以便在表单提交时能够把session id传递回服务器。比如：</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">"testform"</span> <span class="attr">action</span>=<span class="string">"/xxx"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"sessionid"</span> <span class="attr">value</span>=<span class="string">"123456"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>实际上这种技术可以简单的用对action应用URL重写来代替。</p>
-<h4 id="2-3-Cookie和Session简单对比"><a href="#2-3-Cookie和Session简单对比" class="headerlink" title="2.3 Cookie和Session简单对比"></a>2.3 Cookie和Session简单对比</h4><p><strong>Cookie和Session 的区别：</strong></p>
-<ul>
-<li><p>1）cookie数据存放在客户的浏览器上，session数据放在服务器上。</p>
-</li>
-<li><p>2）cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全应当使用session。</p>
-</li>
-<li><p>3）session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用cookie。</p>
-</li>
-<li>4）单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</li>
-<li>5）所以建议：<ul>
-<li>将登陆信息等重要信息存放为SESSION</li>
-<li>其他信息如果需要保留，可以放在cookie中</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-4-document-cookie的属性"><a href="#2-4-document-cookie的属性" class="headerlink" title="2.4 document.cookie的属性"></a>2.4 document.cookie的属性</h4><p><strong>expires属性</strong></p>
-<blockquote>
-<p>指定了coolie的生存期，默认情况下coolie是暂时存在的，他们存储的值只在浏览器会话期间存在，当用户推出浏览器后这些值也会丢失，如果想让cookie存在一段时间，就要为expires属性设置为未来的一个过期日期。现在已经被max-age属性所取代，max-age用秒来设置cookie的生存期。</p>
-</blockquote>
-<p><strong>path属性</strong></p>
-<blockquote>
-<p>它指定与cookie关联在一起的网页。在默认的情况下cookie会与创建它的网页，该网页处于同一目录下的网页以及与这个网页所在目录下的子目录下的网页关联。</p>
-</blockquote>
-<p><strong>domain属性</strong></p>
-<blockquote>
-<p>domain属性可以使多个web服务器共享cookie。domain属性的默认值是创建cookie的网页所在服务器的主机名。不能将一个cookie的域设置成服务器所在的域之外的域。例如让位于order.damonare.cn的服务器能够读取catalog.damonare.cn设置的cookie值。如果catalog.damonare.cn的页面创建的cookie把自己的path属性设置为“/”，把domain属性设置成“.damonare.cn”，那么所有位于catalog.damonare.cn的网页和所有位于orlders.damonare.cn的网页，以及位于damonare.cn域的其他服务器上的网页都可以访问这个cookie。</p>
-</blockquote>
-<p><strong>secure属性</strong></p>
-<blockquote>
-<p>它是一个布尔值，指定在网络上如何传输cookie，默认是不安全的，通过一个普通的http连接传输</p>
-</blockquote>
-<h4 id="2-5-cookie实战"><a href="#2-5-cookie实战" class="headerlink" title="2.5 cookie实战"></a>2.5 cookie实战</h4><blockquote>
-<p>这里我们使用javascript来写一段cookie,借用w3cschool的demo:</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">c_name</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">document</span>.cookie.length&gt;<span class="number">0</span>)&#123;</div><div class="line">        c_start=<span class="built_in">document</span>.cookie.indexOf(c_name + <span class="string">"="</span>)</div><div class="line">        <span class="keyword">if</span> (c_start!=<span class="number">-1</span>)&#123;</div><div class="line">            c_start=c_start + c_name.length+<span class="number">1</span></div><div class="line">            c_end=<span class="built_in">document</span>.cookie.indexOf(<span class="string">";"</span>,c_start)</div><div class="line">            <span class="keyword">if</span> (c_end==<span class="number">-1</span>) c_end=<span class="built_in">document</span>.cookie.length</div><div class="line">            <span class="keyword">return</span> <span class="built_in">unescape</span>(<span class="built_in">document</span>.cookie.substring(c_start,c_end))</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">c_name,value,expiredays</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> exdate=<span class="keyword">new</span> <span class="built_in">Date</span>()</div><div class="line">    exdate.setDate(exdate.getDate()+expiredays)</div><div class="line">    <span class="built_in">document</span>.cookie=c_name+ <span class="string">"="</span> +<span class="built_in">escape</span>(value)+</div><div class="line">            ((expiredays==<span class="literal">null</span>) ? <span class="string">""</span> : <span class="string">"; expires="</span>+exdate.toUTCString())</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkCookie</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    username=getCookie(<span class="string">'username'</span>)</div><div class="line">    <span class="keyword">if</span>(username!=<span class="literal">null</span> &amp;&amp; username!=<span class="string">""</span>)&#123;alert(<span class="string">'Welcome again '</span>+username+<span class="string">'!'</span>)&#125;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        username=prompt(<span class="string">'Please enter your name:'</span>,<span class="string">""</span>)</div><div class="line">        <span class="keyword">if</span> (username!=<span class="literal">null</span> &amp;&amp; username!=<span class="string">""</span>)&#123;</div><div class="line">            setCookie(<span class="string">'username'</span>,username,<span class="number">355</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>注意这里对Cookie的生存期进行了定义，也就是355天</p>
-</blockquote>
-<h3 id="3-localStorage"><a href="#3-localStorage" class="headerlink" title="3. localStorage"></a>3. localStorage</h3><blockquote>
-<p>这是一种持久化的存储方式，也就是说如果不手动清除，数据就永远不会过期。<br>它也是采用Key - Value的方式存储数据，底层数据接口是sqlite，按域名将数据分别保存到对应数据库文件里。它能保存更大的数据（IE8上是10MB，Chrome是5MB），同时保存的数据不会再发送给服务器，避免带宽浪费。</p>
-</blockquote>
-<h4 id="3-1-localStorage的属性方法"><a href="#3-1-localStorage的属性方法" class="headerlink" title="3.1 localStorage的属性方法"></a>3.1 localStorage的属性方法</h4><p>下表是localStorge的一些属性和方法</p>
-<table>
-<thead>
-<tr>
-<th>属性方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>localStorage.length</td>
-<td>获得storage中的个数</td>
-</tr>
-<tr>
-<td>localStorage.key(n)</td>
-<td>获得storage中第n个元素对的键值（第一个元素是0）</td>
-</tr>
-<tr>
-<td>localStorage.getItem(key)</td>
-<td>获取键值key对应的值</td>
-</tr>
-<tr>
-<td>localStorage.key</td>
-<td>获取键值key对应的值</td>
-</tr>
-<tr>
-<td>localStorage.setItem(key, value)</td>
-<td>添加数据，键值为key，值为value</td>
-</tr>
-<tr>
-<td>localStorage.removeItem(key)</td>
-<td>移除键值为key的数据</td>
-</tr>
-<tr>
-<td>localStorage.clear()</td>
-<td>清除所有数据</td>
-</tr>
-</tbody>
-</table>
-<h4 id="3-2-localStorage的缺点"><a href="#3-2-localStorage的缺点" class="headerlink" title="3.2 localStorage的缺点"></a>3.2 localStorage的缺点</h4><ul>
-<li>① localStorage大小限制在500万字符左右，各个浏览器不一致</li>
-<li>② localStorage在隐私模式下不可读取</li>
-<li>③ localStorage本质是在读写文件，数据多的话会比较卡（firefox会一次性将数据导入内存，想想就觉得吓人啊）</li>
-<li>④ localStorage不能被爬虫爬取，不要用它完全取代URL传参</li>
-</ul>
-<h3 id="4-sessionStorage"><a href="#4-sessionStorage" class="headerlink" title="4. sessionStorage"></a>4. sessionStorage</h3><blockquote>
-<p>和服务器端使用的session类似，是一种会话级别的缓存，关闭浏览器会数据会被清除。不过有点特别的是它的作用域是窗口级别的，也就是说不同窗口间的sessionStorage数据不能共享的。使用方法（和localStorage完全相同）：</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>属性方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>sessionStorage.length</td>
-<td>获得storage中的个数</td>
-</tr>
-<tr>
-<td>sessionStorage.key(n)</td>
-<td>获得storage中第n个元素对的键值（第一个元素是0）</td>
-</tr>
-<tr>
-<td>sessionStorage.getItem(key)</td>
-<td>获取键值key对应的值</td>
-</tr>
-<tr>
-<td>sessionStorage.key</td>
-<td>获取键值key对应的值</td>
-</tr>
-<tr>
-<td>sessionStorage.setItem(key, value)</td>
-<td>添加数据，键值为key，值为value</td>
-</tr>
-<tr>
-<td>sessionStorage.removeItem(key)</td>
-<td>移除键值为key的数据</td>
-</tr>
-<tr>
-<td>sessionStorage.clear()</td>
-<td>清除所有数据</td>
-</tr>
-</tbody>
-</table>
-<h3 id="5-sessionStorage和localStorage的区别"><a href="#5-sessionStorage和localStorage的区别" class="headerlink" title="5. sessionStorage和localStorage的区别"></a>5. sessionStorage和localStorage的区别</h3><ul>
-<li><p>sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。当用户关闭浏览器窗口后，数据立马会被删除。</p>
-</li>
-<li><p>localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。第二天、第二周或下一年之后，数据依然可用。</p>
-</li>
-</ul>
-<h4 id="5-1-测试"><a href="#5-1-测试" class="headerlink" title="5.1 测试"></a>5.1 测试</h4><p><strong>sessionStorage:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (sessionStorage.pagecount)&#123;</div><div class="line">    sessionStorage.pagecount=<span class="built_in">Number</span>(sessionStorage.pagecount) +<span class="number">1</span>;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">      sessionStorage.pagecount=<span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"Visits "</span>+ sessionStorage.pagecount + <span class="string">" time(s)."</span>);</div></pre></td></tr></table></figure>
-<p><strong>测试过程：我们在控制台输入上述代码查看打印结果</strong></p>
-<p><strong>控制台首次输入代码：</strong></p>
-<p><img src="http://img.blog.csdn.net/20161116225014652" alt="sessionStorage测试结果"></p>
-<p><strong>关闭窗口，控制台再次输入代码：</strong></p>
-<p><img src="http://img.blog.csdn.net/20161116225014652" alt="sessionStorage测试结果"></p>
-<p><strong>所谓的关闭窗口即销毁，就是这样，关闭窗口重新打开输入代码输出结果还是上面图片的样子，也就是说关闭窗口后sessionStorage.pagecount即被销毁，除非重心创建。或者从历史记录进入才会相关数据才会存在。好的，我们再来看下localStorge表现：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (localStorage.pagecount)&#123;</div><div class="line">    localStorage.pagecount=<span class="built_in">Number</span>(localStorage.pagecount) +<span class="number">1</span>;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    localStorage.pagecount=<span class="number">1</span>;</div><div class="line"> &#125;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"Visits "</span>+ localStorage.pagecount + <span class="string">" time(s)."</span>);</div></pre></td></tr></table></figure>
-<p><strong>控制台首次输入代码：</strong></p>
-<p><img src="http://img.blog.csdn.net/20161116225028996" alt="localStorage测试结果1"></p>
-<p><strong>关闭窗口，控制台再次输入代码：</strong></p>
-<p><img src="http://img.blog.csdn.net/20161116225040575" alt="localStorage测试结果2"></p>
-<h3 id="6-web-Storage和cookie的区别"><a href="#6-web-Storage和cookie的区别" class="headerlink" title="6. web Storage和cookie的区别"></a>6. web Storage和cookie的区别</h3><p>Web Storage(localStorage和sessionStorage)的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用。</p>
-<p>除此之外，Web Storage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCookie，getCookie。</p>
-<p>但是Cookie也是不可以或缺的：Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><blockquote>
-<p>博主尽可能思路清晰的理了一遍cookie，session，localStorage，sessionStorage之间的区别和联系，希望可以帮到大家。<br>参考文章：</p>
-</blockquote>
-<ul>
-<li><a href="http://www.cnblogs.com/shiyangxt/archive/2008/10/07/1305506.html" target="_blank" rel="external">cookie 和session 的区别详解</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括:&lt;/strong&gt; 详细讲述&lt;code&gt;Cookie&lt;/code&gt;,&lt;code&gt;LocalStorge&lt;/code&gt;,&lt;code&gt;SesstionStorge&lt;/code&gt;的区别和用法。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;原文博客地址：&lt;a href=&quot;http://damonare.github.io/2016/11/16/Javascript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/#more&quot;&gt;Javascript本地存储小结&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;人生如画，岁月如歌。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
-    
-    
-      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
-    
-      <category term="HTML5" scheme="http://damonare.github.io/tags/HTML5/"/>
-    
-      <category term="Cookie" scheme="http://damonare.github.io/tags/Cookie/"/>
-    
-      <category term="缓存" scheme="http://damonare.github.io/tags/%E7%BC%93%E5%AD%98/"/>
-    
-      <category term="localStorage" scheme="http://damonare.github.io/tags/localStorage/"/>
-    
-      <category term="sessionStorage" scheme="http://damonare.github.io/tags/sessionStorage/"/>
     
   </entry>
   

@@ -15,7 +15,7 @@
 <meta property="og:description" content="前言总括： 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结  原文地址：从CSS盒子模型说起  知乎专栏：前端进击者  博主博客地址：Damonare的个人博客   为学之道，莫先于穷理；穷理之要，必先于读书。">
 <meta property="og:image" content="https://www.w3.org/TR/CSS2/images/boxdim.png">
 <meta property="og:image" content="http://7xsssj.com2.z0.glb.qiniucdn.com/2081525038-56ea01986c0f9_articlex%20%281%29.jpeg">
-<meta property="og:updated_time" content="2017-07-12T05:47:58.000Z">
+<meta property="og:updated_time" content="2017-07-12T05:51:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从CSS盒子模型说起">
 <meta name="twitter:description" content="前言总括： 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结  原文地址：从CSS盒子模型说起  知乎专栏：前端进击者  博主博客地址：Damonare的个人博客   为学之道，莫先于穷理；穷理之要，必先于读书。">
@@ -350,7 +350,7 @@
 
 <p>可能秉着宽大为怀的准则，CSS3加了个box-sizing属性，变相承认了这两种盒子都对(好吧，可能一个人有一个人的看法吧)，不过box-sizing默认属性就是content-box，即标准盒子模式，IE盒子模型呢，是属性border-box。刚刚查MDN发现还有一个属性padding-box(width=content-width+padding-width)，不过并没有浏览器实现它(真可怜)，并无卵用🤣</p>
 <h3 id="行内元素的思考"><a href="#行内元素的思考" class="headerlink" title="行内元素的思考"></a>行内元素的思考</h3><p>刚刚说的是以块级元素为例说的，那么行内元素呢？好吧，其实你知道，行内盒是没法设置width和height的，那么之前我就有了这样的思维定势：行内盒没有padding，margin，然后发现，哦！行内盒是有padding-left,padding-right,margin-left,margin-right的！WOC!，然后又发现，行内盒是实际上身怀八甲…😷</p>
-<p><a href="https://jsfiddle.net/Damonare/826gyrrh" target="_blank" rel="external">戳这里</a></p>
+<p><a href="https://jsfiddle.net/Damonare/826gyrrh" target="_blank" rel="external">以下无内容戳这里</a></p>
 <script async src="https://jsfiddle.net/Damonare/826gyrrh/embed/html,css,result/"></script>
 
 <p>行内盒子的高由font-size决定的；<br>行内盒子的宽等于其子行级盒子的外宽度(margin+border+padding+content width)之和。</p>
@@ -440,6 +440,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/07/22/Javascript中的this/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Javascript填坑史
+        
+      </div>
+    </a>
   
   
     <a href="/2017/04/24/我的前端进阶之路/" id="article-nav-older" class="article-nav-link-wrap">
