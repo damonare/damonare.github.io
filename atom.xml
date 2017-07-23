@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-07-23T11:35:40.000Z</updated>
+  <updated>2017-07-23T11:48:56.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/07/22/Javascript%E4%B8%AD%E7%9A%84this/"/>
     <id>http://damonare.github.io/2017/07/22/Javascript中的this/</id>
     <published>2017-07-22T07:08:09.000Z</published>
-    <updated>2017-07-23T11:35:40.000Z</updated>
+    <updated>2017-07-23T11:48:56.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>总括:详解JavaScript中的this的一篇总结，不懂this这个难点，很多时候会造成一些困扰，写出一些bug不知如何收场，所以一起来写bug吧，不对，一起来写代码吧。</p>
 <ul>
@@ -91,7 +91,7 @@
 <p>当然如果直接调用Fun(),如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = <span class="string">'Damonre'</span>;</div><div class="line">  <span class="keyword">this</span>.age = <span class="number">21</span>;</div><div class="line">  <span class="keyword">this</span>.sex = <span class="string">'man'</span>;</div><div class="line">  <span class="keyword">this</span>.run = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">'正在跑步'</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">Fun();</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>)</div></pre></td></tr></table></figure>
 <p>其实就是直接调用一个函数，this在非严格模式下指向window，你可以在window对象找到所有的变量。</p>
-<p>另外还有一点，prototype对象的方法的this指向实例对象，因为实例对象的<code>__proto__</code>已经指向了原型函数的prototype。这就涉及原型链的知识了，即方法会沿着对象的原型链进行查找。</p>
+<p>另外还有一点，prototype对象的方法的this指向实例对象，因为实例对象的<code>__proto__</code>已经指向了原型函数的prototype。这就涉及原型链的知识了，即方法会沿着对象的原型链进行查找。实际上不仅仅是构造函数的prototype，即便是在整个原型链中，this代表的也都是当前对象的值。</p>
 <h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>刚刚提到了箭头函数是一个不可以用call和apply改变this的典型。</p>
 <p>我们看下面这个🌰：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  <span class="attr">a</span>: <span class="number">2</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> fun = <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</div><div class="line">fun();<span class="comment">//1</span></div><div class="line">fun.call(obj)<span class="comment">//1</span></div></pre></td></tr></table></figure>
