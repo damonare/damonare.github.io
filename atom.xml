@@ -296,7 +296,7 @@
     <link href="http://damonare.github.io/2017/04/24/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     <id>http://damonare.github.io/2017/04/24/我的前端进阶之路/</id>
     <published>2017-04-24T12:57:34.000Z</published>
-    <updated>2017-07-23T03:57:58.000Z</updated>
+    <updated>2017-07-24T07:32:06.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 包含这三个月来碰到的一些觉得比较好的面试题，三个月没怎么写博客着实有些手痒，哈哈哈。</p>
 <ul>
@@ -759,6 +759,7 @@
 <ol>
 <li>一定要指定type的值为text；</li>
 <li>通过size属性指定显示字符的长度，value属性指定初始值，Maxlength属性指定文本框可以输入的最长的长度；</li>
+<li>表单有两个type不是submit的input不会自动提交(回车自动提交)，表单只有一个input会自动提交，有一个type为submit的按钮或是input会自动提交</li>
 </ol>
 <p><strong>textarea元素</strong></p>
 <ol>
@@ -2047,9 +2048,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
     
   </entry>
   
@@ -2387,9 +2388,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
