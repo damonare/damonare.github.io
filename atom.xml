@@ -2101,9 +2101,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
     
   </entry>
   
