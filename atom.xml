@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-10-26T09:17:09.000Z</updated>
+  <updated>2017-10-26T09:36:00.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,10 +20,9 @@
     <link href="http://damonare.github.io/2017/10/26/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3line-height/"/>
     <id>http://damonare.github.io/2017/10/26/深入了解line-height/</id>
     <published>2017-10-26T08:53:32.000Z</published>
-    <updated>2017-10-26T09:17:09.000Z</updated>
+    <updated>2017-10-26T09:36:00.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
-<p><strong>总括：</strong> 本文通过实例讲解CSS中最大的难点之一，即line-height和vertical-align之前颠沛流离的爱情故事</p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文通过实例讲解CSS中最大的难点之一，即line-height和vertical-align之前颠沛流离的爱情故事</p>
 <ul>
 <li>原文博客地址：</li>
 <li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
@@ -32,14 +31,21 @@
 </li>
 </ul>
 <p><strong>白茶清欢无别事，我在等风，也在等你。</strong>😊</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
-<p>​    讲道理<code>line-height</code>和<code>vertical-align</code>这对基是十分低调的，日常开发中碰到的很多莫名其妙的bug很大一部分都是这俩货搞出来了的，但很少有人知道，因为可能花式转一下CSS代码问题就解决了。实际上搞明白这俩东西才能让我们在布局工作中游刃有余。本文接下来就慢慢分析这对基的关系~刨根问底拦不住~👍</p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>​    讲道理<code>line-height</code>和<code>vertical-align</code>这对基是十分低调的，日常开发中碰到的很多莫名其妙的bug很大一部分都是这俩货搞出来了的，但很少有人知道，因为可能花式转一下CSS代码问题就解决了。实际上搞明白这俩东西才能让我们在布局工作中游刃有余。本文接下来就慢慢分析这对基的关系~刨根问底拦不住~👍</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文通过实例讲解CSS中最大的难点之一，即line-height和vertical-al
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文通过实例讲解CSS中最大的难点之一，即line-height和vertical-align之前颠沛流离的爱情故事&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原文博客地址：&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;白茶清欢无别事，我在等风，也在等你。&lt;/strong&gt;😊&lt;/p&gt;
     
     </summary>
     
@@ -2140,9 +2146,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
     
   </entry>
   
@@ -2480,9 +2486,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
