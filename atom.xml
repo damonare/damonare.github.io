@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-08-17T15:36:18.000Z</updated>
+  <updated>2017-10-26T09:17:09.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深入了解Line-Height</title>
+    <link href="http://damonare.github.io/2017/10/26/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3line-height/"/>
+    <id>http://damonare.github.io/2017/10/26/深入了解line-height/</id>
+    <published>2017-10-26T08:53:32.000Z</published>
+    <updated>2017-10-26T09:17:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p><strong>总括：</strong> 本文通过实例讲解CSS中最大的难点之一，即line-height和vertical-align之前颠沛流离的爱情故事</p>
+<ul>
+<li>原文博客地址：</li>
+<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
+</li>
+<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
+</li>
+</ul>
+<p><strong>白茶清欢无别事，我在等风，也在等你。</strong>😊</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
+<p>​    讲道理<code>line-height</code>和<code>vertical-align</code>这对基是十分低调的，日常开发中碰到的很多莫名其妙的bug很大一部分都是这俩货搞出来了的，但很少有人知道，因为可能花式转一下CSS代码问题就解决了。实际上搞明白这俩东西才能让我们在布局工作中游刃有余。本文接下来就慢慢分析这对基的关系~刨根问底拦不住~👍</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 本文通过实例讲解CSS中最大的难点之一，即line-height和vertical-al
+    
+    </summary>
+    
+      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
+    
+    
+      <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
+    
+      <category term="HTML" scheme="http://damonare.github.io/tags/HTML/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>我的前端进阶之路</title>
@@ -710,7 +749,7 @@
     <link href="http://damonare.github.io/2017/07/08/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
     <id>http://damonare.github.io/2017/07/08/CSS盒子模型/</id>
     <published>2017-07-08T11:05:27.000Z</published>
-    <updated>2017-07-12T05:51:06.000Z</updated>
+    <updated>2017-10-26T09:32:33.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 对于盒子模型，BFC，IFC和外边距合并等概念和问题的总结</p>
 <ul>
@@ -787,7 +826,7 @@
 <p>😱一个<strong>块格式化上下文</strong>由以下之一创建：</p>
 <ul>
 <li>根元素或其它包含它的元素</li>
-<li>浮动 (元素的<code>`[</code>float<code>](https://developer.mozilla.org/zh-CN/docs/Web/CSS/float) 不是</code>none`)</li>
+<li>浮动 (元素的<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/float" target="_blank" rel="external"><code>float</code></a> 不是 <code>none</code>)</li>
 <li>绝对定位的元素 (元素具有 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/position" target="_blank" rel="external"><code>position</code></a> 为 <code>absolute</code> 或 <code>fixed</code>)</li>
 <li>内联块 inline-blocks (元素具有 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external"><code>display</code></a><code>: inline-block</code>)</li>
 <li>表格单元格 (元素具有 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external"><code>display</code></a><code>: table-cell，HTML表格单元格默认属性</code>)</li>
@@ -2101,9 +2140,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="React" scheme="http://damonare.github.io/tags/React/"/>
+    
+      <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -2935,65 +2974,6 @@
     
     
       <category term="CSS" scheme="http://damonare.github.io/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript作用域总结</title>
-    <link href="http://damonare.github.io/2016/11/26/Javascript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%80%BB%E7%BB%93/"/>
-    <id>http://damonare.github.io/2016/11/26/Javascript作用域总结/</id>
-    <published>2016-11-26T10:14:04.000Z</published>
-    <updated>2016-11-26T10:14:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。</p>
-<ul>
-<li><p>原文地址：<a href="http://damonare.github.io/2016/09/06/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%80%BB%E7%BB%93/#more">Javascript作用域总结</a></p>
-</li>
-<li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
-</li>
-<li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
-</li>
-</ul>
-<p><strong>人生世上风波险，一日风波十二时。</strong></p>
-<a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p><strong>这个应该好理解，函数作用域就是说定义在函数中的参数和变量在函数外部是不可见的。</strong></p>
-<p><strong>大多数类C语言都拥有块级作用域，JS却没有。请看下文demo:</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//C语言</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> i=<span class="number">2</span>;</div><div class="line">i--;</div><div class="line"><span class="keyword">if</span>(i)</div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> j=<span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d/n"</span>,j);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>运行这段代码，会出现“use an undefined variable:j”的错误。可以看到，C语言拥有块级作用域，因为j是在if的语句块中定义的，因此，它在块外是无法访问的。</strong></p>
-<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><hr>
-<blockquote>
-<p>任何一对花括号中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。</p>
-</blockquote>
-<p>正如我们举的C语言的例子，大多数类C语言都是有块级作用域的，那么在JavaScript又有什么不同呢？</p>
-<p><strong>我们一起看看这个JavaScript的demo:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">functin test()&#123;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</div><div class="line">&#125;</div><div class="line">alert(i);</div><div class="line">&#125;</div><div class="line">test();</div></pre></td></tr></table></figure>
-<p><strong>运行这段代码，弹出”3”，可见，在块外，块中定义的变量i仍然是可以访问的。也就是说，JS并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。</strong></p>
-<p><strong>那么我们该如何使JS拥有块级作用域呢？是否还记得，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁，我们是否可以用这个特性来模拟出JS的块级作用域呢？看下面这个demo：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">&#125;</div><div class="line">&#125;)();</div><div class="line">alert(i);</div><div class="line">&#125;</div><div class="line">test();</div></pre></td></tr></table></figure>
-<p><strong>这时候再次运行，会弹出”i”未定义的错误，哈哈，实现了吧~~~这里，我们把for语句块放到了一个闭包之中，然后调用这个函数，当函数调用完毕，变量i自动销毁，因此，我们在块外便无法访问了。</strong></p>
-<p><strong>JS的闭包特性is the most important feature((<em>^__^</em>) 大家懂的)。在JS中，为了防止命名冲突，我们应该尽量避免使用全局变量和全局函数。那么，该如何避免呢？不错，正如上文demo所示，我们可以把要定义的所有内容放入到一个</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line"><span class="comment">//内容</span></div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<p><strong>之中，这时候，我们是不是相当于给它们的外层添加了一个函数作用域呢？该作用域之外的程序是无法访问它们的。</strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;总括：&lt;/strong&gt; 作用域永远都是任何一门编程语言中的重中之重，因为它控制着变量与参数的可见性与生命周期。说到这里我们需要理解两个概念：块级作用域与函数作用域。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;原文地址：&lt;a href=&quot;http://damonare.github.io/2016/09/06/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%80%BB%E7%BB%93/#more&quot;&gt;Javascript作用域总结&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;知乎专栏&amp;amp;&amp;amp;简书专题：&lt;a href=&quot;https://zhuanlan.zhihu.com/damonare&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端进击者（知乎）&lt;/a&gt;&amp;amp;&amp;amp;&lt;a href=&quot;http://www.jianshu.com/collection/bbaa63e264f5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端进击者（简书）&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;博主博客地址：&lt;a href=&quot;http://damonare.cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Damonare的个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;人生世上风波险，一日风波十二时。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
-    
-    
-      <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
   </entry>
   
