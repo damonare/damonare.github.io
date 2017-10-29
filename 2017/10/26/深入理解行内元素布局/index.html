@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>深入理解行内元素的布局 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局  原文博客地址： 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
+  <meta name="description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。  原文博客地址： 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
 <meta name="keywords" content="CSS,HTML,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解行内元素的布局">
 <meta property="og:url" content="http://damonare.github.io/2017/10/26/深入理解行内元素布局/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局  原文博客地址： 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
-<meta property="og:updated_time" content="2017-10-29T09:29:35.000Z">
+<meta property="og:description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。  原文博客地址： 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
+<meta property="og:updated_time" content="2017-10-29T09:31:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解行内元素的布局">
-<meta name="twitter:description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局  原文博客地址： 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
+<meta name="twitter:description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。  原文博客地址： 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -299,7 +299,7 @@
           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引出vertical-align"><span class="toc-number">2.1.</span> <span class="toc-text">引出vertical-align</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vertical-align-1"><span class="toc-number">2.2.</span> <span class="toc-text">Vertical-align(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Line-height"><span class="toc-number">2.3.</span> <span class="toc-text">Line-height</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IFC"><span class="toc-number">2.4.</span> <span class="toc-text">IFC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vertical-align-2"><span class="toc-number">2.5.</span> <span class="toc-text">Vertical-align(2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Font-family"><span class="toc-number">2.6.</span> <span class="toc-text">Font-family</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结论"><span class="toc-number">2.7.</span> <span class="toc-text">结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
         </div>
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文通过实例讲解CSS中最大的难点之一，行内元素的布局</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。</p>
 <ul>
 <li>原文博客地址：</li>
 <li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
@@ -309,7 +309,7 @@
 </ul>
 <p><strong>白茶清欢无别事，我在等风，也在等你。</strong>😊</p>
 <a id="more"></a>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><pre><code>讲道理`line-height`和`vertical-align`这对基是十分低调的，日常开发中碰到的很多莫名其妙的bug很大一部分都是这俩货搞出来了的，但很少有人知道这对基的罪恶，因为可能花式改写一下CSS代码问题就解决了。实际上搞明白这俩东西才能让我们在布局工作中游刃有余。本文接下来就通过这对基的关系来了解内联元素具体的布局问题~we are刨根问底拦不住~😝
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><pre><code>讲道理line-height和vertical-align 这对基是十分低调的，日常开发中碰到的很多莫名其妙的bug很大一部分都是这俩货搞出来了的，但很少有人知道这对基的罪恶，因为可能花式改写一下CSS代码问题就解决了。实际上搞明白这俩东西才能让我们在布局工作中游刃有余。本文接下来就通过这对基的关系来了解内联元素具体的布局问题~we are刨根问底拦不住~😝
 </code></pre><p>​    读这篇文章之前请您确定您有以下知识基础:</p>
 <ul>
 <li>line-height的数字值是和font-size大小相关的；</li>
