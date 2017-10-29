@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>深入理解行内元素的布局 | Damonare的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。  原文博客地址： 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
+  <meta name="description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。  原文博客地址：深入理解行内元素的布局 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
 <meta name="keywords" content="CSS,HTML,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解行内元素的布局">
 <meta property="og:url" content="http://damonare.github.io/2017/10/26/深入理解行内元素布局/index.html">
 <meta property="og:site_name" content="Damonare的个人博客">
-<meta property="og:description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。  原文博客地址： 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
-<meta property="og:updated_time" content="2017-10-29T09:33:17.000Z">
+<meta property="og:description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。  原文博客地址：深入理解行内元素的布局 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
+<meta property="og:updated_time" content="2017-10-29T09:34:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解行内元素的布局">
-<meta name="twitter:description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。  原文博客地址： 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
+<meta name="twitter:description" content="前言总括： 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。  原文博客地址：深入理解行内元素的布局 知乎专栏&amp;amp;&amp;amp;简书专题：前端进击者（知乎）&amp;amp;&amp;amp;前端进击者（简书）  博主博客地址：Damonare的个人博客   白茶清欢无别事，我在等风，也在等你。😊">
   
   
     <link rel="icon" href="/./img/1.png">
@@ -301,7 +301,7 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。</p>
 <ul>
-<li>原文博客地址：</li>
+<li>原文博客地址：<a href="http://blog.damonare.cn/2017/10/26/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E5%B8%83%E5%B1%80/#more" target="_blank" rel="external">深入理解行内元素的布局</a></li>
 <li><p>知乎专栏&amp;&amp;简书专题：<a href="https://zhuanlan.zhihu.com/damonare" target="_blank" rel="external">前端进击者（知乎）</a>&amp;&amp;<a href="http://www.jianshu.com/collection/bbaa63e264f5" target="_blank" rel="external">前端进击者（简书）</a></p>
 </li>
 <li><p>博主博客地址：<a href="http://damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
