@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://damonare.github.io/"/>
-  <updated>2017-10-29T10:37:25.000Z</updated>
+  <updated>2017-10-31T02:07:10.000Z</updated>
   <id>http://damonare.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://damonare.github.io/2017/10/26/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E5%B8%83%E5%B1%80/"/>
     <id>http://damonare.github.io/2017/10/26/深入理解行内元素布局/</id>
     <published>2017-10-26T08:53:32.000Z</published>
-    <updated>2017-10-29T10:37:25.000Z</updated>
+    <updated>2017-10-31T02:07:10.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>总括：</strong> 本文通过实例讲解CSS中最大的难点之一，行内元素的布局，主要是挖掘line-height和vertical-align两个属性在布局方面的使用。</p>
 <ul>
@@ -67,7 +67,7 @@
 <h3 id="Line-height"><a href="#Line-height" class="headerlink" title="Line-height"></a>Line-height</h3><p>CSS中起高度作用的只有height和line-height两个属性吧。<strong>如果一个元素没设置height那么其最终的高度一定是由line-height决定的。</strong>之前inline元素的高度我以为是文字内容撑开的，但实际研究了下并不是这样的，看下面的🌰：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.demo1</span>&#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>; </div><div class="line">  <span class="attribute">line-height</span>: <span class="number">0</span>; </div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid blue; </div><div class="line">  <span class="attribute">background</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo2</span>&#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">0</span>; </div><div class="line">  <span class="attribute">line-height</span>: <span class="number">20px</span>; </div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</div><div class="line">  <span class="attribute">background</span>: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>HTML代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"demo1"</span>&gt;</span>测试<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"demo2"</span>&gt;</span>测试<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo1"</span>&gt;</span>测试<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo2"</span>&gt;</span>测试<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="https://jsfiddle.net/Damonare/54ucnkht" target="_blank" rel="external">下面没内容戳这</a>或者自行拷贝代码本地测试</p>
 <script async src="https://jsfiddle.net/Damonare/54ucnkht/embed/html,css,result/"></script>
 
@@ -2281,9 +2281,9 @@
       <category term="学习" scheme="http://damonare.github.io/categories/learn/"/>
     
     
-      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
-    
       <category term="前端" scheme="http://damonare.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="http://damonare.github.io/tags/React/"/>
     
   </entry>
   
@@ -2621,9 +2621,9 @@
     
       <category term="JavaScript" scheme="http://damonare.github.io/tags/JavaScript/"/>
     
-      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="http://damonare.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="http://damonare.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
