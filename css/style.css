@@ -48,6 +48,24 @@ body:after {
 /*right: 90px;
     top: 2px;*/
 }
+.share-all {
+  padding: 20px 30px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  align-item: center;
+}
+.share-all span {
+  line-height: 32px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.share-all div {
+  display: inline-block;
+}
 #particles-js {
   width: 100%;
   height: 100%;
